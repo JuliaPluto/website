@@ -102,11 +102,7 @@ header h1 {
     line-height: 1.1em;
     color: white;
 }
-@media (max-width: 450px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-}
+
 div.header-text {
     /* to match the image */
     margin-bottom: 4rem;
@@ -183,6 +179,21 @@ p-hannes ~ p {
     color: #737373;
 }
 
+
+@media (max-width: 450px) {
+    div.header-text {
+        padding: 0;
+    }
+    header h1 {
+        font-size: 2.5rem;
+    }
+    p-hannes h1-sub {
+        font-size: 1.5rem;
+    }
+    p-hannes h1 {
+        font-size: 2.1rem;
+    }
+}
 
 pre {
     tab-size: 4;

@@ -38,7 +38,7 @@ body {
     /* background: url(bg.svg); */
     /* background-color: hsl(231deg 14% 57%); */
     /* background-size: cover; */
-    
+    word-break: break-word;
 }
 scroll-snapper {
     scroll-snap-type: y proximity;
@@ -101,6 +101,11 @@ header h1 {
     font-weight: 800;
     line-height: 1.1em;
     color: white;
+}
+@media (max-width: 450px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
 }
 div.header-text {
     /* to match the image */
@@ -182,7 +187,7 @@ p-hannes ~ p {
 pre {
     tab-size: 4;
     white-space: pre-wrap;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 pre,

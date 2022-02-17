@@ -3,6 +3,9 @@
 @import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
 @import url('https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.18.0/frontend/vollkorn.css');
 
+/* @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Yantramanav:wght@400;500;700;900&display=swap');
+
 /* default to border-box */
 html {
     box-sizing: border-box;
@@ -54,22 +57,54 @@ header, section {
 }
 
 section.runtime {
-    background: #faefec;
+    --bg-color: #faefec;
+    background-image: url("./interactivity\ pow\ bw.svg");
+    background-repeat: no-repeat;
+    background-size: max(51rem,100vw);
+    /* filter: grayscale(1); */
+    animation: wob-bg-size 500ms;
+    /* animation-play-state: paused; */
+    animation-timing-function: cubic-bezier(0.39, 0.57, 0.44, 1.38);
+    background-position-x: center;
+}
+@keyframes wob-bg-size {
+    from {
+        background-size: max(51rem,80vw);
+        background-position-y: 10vw;
+        
+        
+    }
+    to {
+        background-size: max(51rem,100vw);
+        background-position-y: 00px;
+        
+    }
+    
 }
 section.education {
-    background: #faf8ec;
+    --bg-color: #faf8ec;
 }
 section.reproducibility {
-    background: hsl(264deg 58% 95%);
+    --bg-color: hsl(264deg 58% 95%);
 }
 
 section.reproducibility {
-    background: hsl(264deg 58% 95%);
+    --bg-color: hsl(264deg 58% 95%);
 }
 
 section.install {
-    background: rgb(36, 36, 36);
-    color: white;
+    --bg-color: rgb(36, 36, 36);
+    --fg-color: white;
+}
+section {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+}
+section > main > p,
+section > main > p-hannes {
+    background: var(--bg-color);
+    border-radius: 1rem;
+    border: 0.5rem solid var(--bg-color);
 }
 
 main,
@@ -82,7 +117,7 @@ header-sizer {
 header-sizer {
     display: flex;
     flex-direction: column;
-    min-height: min(100vh,60rem);
+    min-height: min(100vh,75rem);
     align-items: flex-start;
     align-content: stretch;
 }
@@ -153,7 +188,7 @@ p-header {
 
 p-hannes {
     display: block;
-    margin: 7rem auto 2rem auto;
+    margin: 7rem auto 1rem auto;
     max-width: 40rem;
     text-align: center;
 }

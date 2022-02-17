@@ -221,15 +221,29 @@ h1 a, h2 a, h3 a {
 section.julia p-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     /* filter: blur(6px); */
+}
+@media (max-width: 800px) {
+    section.julia p-card-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 500px) {
+    section.julia p-card-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 p-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
     /* filter: blur(6px); */
+}
+
+@media (max-width: 550px) {
+    p-card-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 p-card {

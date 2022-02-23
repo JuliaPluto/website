@@ -35,6 +35,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     color: #222;
+    background: hsl(235deg 19% 16%);
 }
 
 body {
@@ -80,6 +81,9 @@ section.runtime {
         
     }
     
+}
+section.julia {
+    --bg-color: white;
 }
 section.education {
     --bg-color: #faf8ec;

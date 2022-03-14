@@ -38,12 +38,6 @@ body {
     background: hsl(235deg 19% 16%);
 }
 
-body {
-    /* background: url(bg.svg); */
-    /* background-color: hsl(231deg 14% 57%); */
-    /* background-size: cover; */
-    word-break: break-word;
-}
 scroll-snapper {
     scroll-snap-type: y proximity;
     height: 100vh;
@@ -59,7 +53,7 @@ header, section {
 
 section.runtime {
     --bg-color: #faefec;
-    background-image: url("./interactivity\ pow\ bw.svg");
+    background-image: url("../welcome/interactivity\ pow\ bw.svg");
     background-repeat: no-repeat;
     background-size: max(51rem,100vw);
     /* filter: grayscale(1); */
@@ -142,6 +136,9 @@ header h1 {
     font-size: 8vmin;
     font-weight: 800;
     line-height: 1.1em;
+    color: rgba(255, 255, 255, 0.666);
+}
+header h1 em {
     color: white;
 }
 
@@ -234,43 +231,11 @@ p-hannes ~ p {
     }
 }
 
-pre {
-    tab-size: 4;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-pre,
-code {
-    font-family: var(--system-fonts-mono);
-}
-
-/* images and videos max out at full width */
-img,
-video {
-    height: auto;
-    max-width: 100%;
-}
-
-a {
-    font-weight: 500;
-    text-decoration: none;
-}
-a,
-a:visited {
-    color: #4674bc;
-}
-a:hover {
-    text-decoration: underline;
-}
 a.arrow::after {
     content: ' →';
 }
 card-text > a.arrow {
     margin-top: auto;
-}
-h1 a, h2 a, h3 a {
-    font-weight: inherit;
 }
 
 section.julia p-card-container {

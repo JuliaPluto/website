@@ -1,0 +1,287 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="hsl(235deg 19% 16%)">
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Hello world!</title>
+
+	
+	<link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
+	<link rel="stylesheet" href="$(root_url)/assets/styles/welcome.css" type="text/css" />
+
+</head>
+
+<body>
+    <!-- <scroll-snapper> -->
+    <!-- <nav id="topnav">
+        <main>
+            asdfasdfasdf
+        </main>
+    </nav> -->
+    <header>
+        <header-sizer>
+            <!-- <img src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.18.0/frontend/img/logo.svg" class="logo"> -->
+            <!-- <img src="https://user-images.githubusercontent.com/6933510/154362109-9806926e-50cd-44ee-b2f0-9b9c87abdea0.png" class="logo"> -->
+            <div class="logo">
+                
+                <img src="https://user-images.githubusercontent.com/6933510/154362118-48abf2e4-b0c1-4f29-9f0f-e6602e2aff30.png" >
+            </div>
+            <nav id="topnav">
+                
+                <img src="https://user-images.githubusercontent.com/6933510/154362118-48abf2e4-b0c1-4f29-9f0f-e6602e2aff30.png" >
+                
+                <a href="./manual/">Manual</a>
+                <a href="./examples/">Examples</a>
+                <a href="./blog/">Blog</a>
+            </nav>
+
+
+            <div class="header-text">
+                <div>
+                    <h1>
+                        We are on a mission to make <em>scientific computing</em> more <em>accessible and fun</em>.
+                    </h1>
+                    <p>Simple, reactive programming environment for Julia</p>
+                </div>
+            </div>
+        </header-sizer>
+    </header>
+    <section class="julia">
+        <main>
+
+
+            <p-hannes>
+                <h1-sub>Julia programming</h1-sub>
+                <h1>A fresh approach to scientific computing</h1>
+            </p-hannes>
+            <p>
+                Pluto is an environment to work with the <a href="https://julialang.org/">Julia programming language</a>. Easy to use like Python, fast like C. <em>(We think it's the future!)</em>
+            </p>
+
+            <p-card-container>
+                <p-card class="tiny">
+                    <card-text>
+                        <h3>Fast</h3>
+                        <p>Julia was designed from the beginning for <a href="https://julialang.org/benchmarks/">high performance</a>. Julia programs compile to efficient native code for <a href="https://julialang.org/downloads/#currently_supported_platforms">multiple platforms</a> via LLVM.</p>
+                    </card-text>
+                </p-card>
+                <p-card class="tiny">
+                    <card-text>
+                        <h3>Dynamic</h3>
+                        <p>Julia is <a href="https://docs.julialang.org/en/v1/manual/types/">dynamically typed</a>, feels like a scripting language, and has good support for <a href="https://docs.julialang.org/en/v1/stdlib/REPL/">interactive</a> use.</p>
+                        <p></p>
+                    </card-text>
+                </p-card>
+                <p-card class="tiny">
+                    <card-text>
+                        <h3>Reproducible</h3>
+                        <p><a href="https://julialang.github.io/Pkg.jl/v1/environments/">Reproducible environments</a> make it possible to recreate the same Julia environment every time, across platforms, with <a href="https://binarybuilder.org">pre-built binaries</a>.</p>
+                    </card-text>
+                </p-card>
+                <p-card class="tiny">
+                    <card-text>
+                        <h3>Composable</h3>
+                        <p>Julia uses <a href="https://docs.julialang.org/en/v1/manual/methods/">multiple dispatch</a> as a paradigm, making it easy to express many object-oriented and <a href="https://docs.julialang.org/en/v1/manual/functions/">functional</a> programming patterns. The talk on the <a href="https://www.youtube.com/watch?v=kc9HwsxE1OY">Unreasonable Effectiveness of Multiple Dispatch</a> explains why it works so well. </p>
+                    </card-text>
+                </p-card>
+                <p-card class="tiny">
+                    <card-text>
+                        <h3>General</h3>
+                        <p>Julia provides <a href="https://docs.julialang.org/en/v1/manual/networking-and-streams/">asynchronous I/O</a>, <a href="https://docs.julialang.org/en/v1/manual/metaprogramming/">metaprogramming</a>, <a href="https://github.com/JuliaDebug/Debugger.jl">debugging</a>, <a href="https://docs.julialang.org/en/v1/stdlib/Logging/">logging</a>, <a href="https://docs.julialang.org/en/v1/manual/profile/">profiling</a>, a <a href="https://docs.julialang.org/en/v1/stdlib/Pkg/index.html">package manager</a>, and more. One can build entire <a href="https://www.youtube.com/watch?v=uLhXgt_gKJc">Applications and Microservices</a> in Julia.</p>
+                    </card-text>
+                </p-card>
+                <p-card class="tiny">
+                    <card-text>
+                        <h3>Open source</h3>
+                        <p>Julia is an open source project with over 1,000 contributors. It is made available under the <a href="https://github.com/JuliaLang/julia/blob/master/LICENSE.md">MIT license</a>. The <a href="https://github.com/JuliaLang/julia">source code</a> is available on GitHub.</p>
+                    </card-text>
+                </p-card>
+            </p-card-container>
+
+
+
+        </main>
+    </section>
+    <section class="runtime">
+        <main>
+
+
+            <p-hannes>
+                <h1-sub>Reactivity</h1-sub>
+                <h1>Interactivity as a fundamental principle</h1>
+            </p-hannes>
+            <p>
+                Just like a spreadsheet, Pluto understands variable links between code cells, and will re-run a cell when a dependency changes.
+            </p>
+
+            <p-card>
+                <card-text>
+                    <h2>Runs like a spreadsheet</h2>
+                    <p>Balblablkja placeholder bla bla Pluto uses syntax analysis to understand which packages are being used in a notebook, and it <strong>automatically manages a package environment</strong> for your notebook. You no longer need to install packages, you can directly import any registered package like <code>Plots</code> or <code>DataFrames</code> and use it.</p>
+                    
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+                <card-showcase>
+                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif">
+                </card-showcase>
+            </p-card>
+            <p-card-container>
+
+            <p-card class="half">
+                <card-text>
+                    <h2>Reactivity means interactivity</h2>
+
+                    <p dir="auto">Your programming environment becomes interactive by splitting your code into multiple cells! Changing one cell <strong>instantly shows effects</strong> on all other cells, giving you a fast and fun way to experiment with your model.</p>
+
+                    <p dir="auto">In this example, changing the parameter <code>A</code> and running the first cell will directly re-evaluate the second cell and display the new plot.</p>
+                    
+                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/80637344-24ac0180-8a5f-11ea-82dd-813dbceca9c9.gif">
+
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+            </p-card>
+
+
+            <p-card class="half">
+                <card-text>
+                    <h2>HTML interaction</h2>
+
+
+                    <p dir="auto">Lastly, here's <em><strong>one more feature</strong></em>: Pluto notebooks have a <code>@bind</code> macro to create a <strong>live bond between an HTML object and a Julia variable</strong>. Combined with reactivity, this is a very powerful tool!</p>
+
+                    <img alt="@bind macro screencap" src="https://user-images.githubusercontent.com/6933510/134825003-bd72ef08-677b-42fa-a655-e842868b10f6.gif">
+
+                    <p dir="auto">You don't need to know HTML to use it! The <a href="https://github.com/fonsp/PlutoUI.jl">PlutoUI package</a> contains basic inputs like sliders and buttons. Pluto's interactivity is very easy to use, you will learn more from the sample notebooks inside Pluto!</p>
+
+                    <p dir="auto">But for those who want to dive deeper - you can use HTML, JavaScript and CSS to write your own widgets! Custom update events can be fired by dispatching a <code>new CustomEvent("input")</code>, making it compatible with the <a href="https://observablehq.com/@observablehq/a-brief-introduction-to-viewof" rel="nofollow"><code>viewof</code> operator of observablehq</a>. Have a look at the JavaScript sample notebook inside Pluto!</p>
+
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+                
+            </p-card>
+        </p-card-container>
+
+
+
+        </main>
+    </section>
+    <section class="reproducibility">
+        <main>
+
+
+            <p-hannes>
+                <h1-sub>Reproducibility</h1-sub>
+                <h1>Pluto notebooks are reproducible <em>by default</em></h1>
+            </p-hannes>
+            <p>
+                From package management to execution order, Pluto goes to great lengths to make sure that someone else will be able to run your notebook when you're done!
+            </p>
+
+            <p-card>
+                <card-text>
+                    <h2>Built-in package manager</h2>
+                    <p>Pluto uses syntax analysis to understand which packages are being used in a notebook, and it <strong>automatically manages a package environment</strong> for your notebook. You no longer need to install packages, you can directly import any registered package like <code>Plots</code> or <code>DataFrames</code> and use it.</p>
+                    <p class="extra">To ensure reproducibility, the information to exactly reproduce the package environment is <strong>stored in your notebook file</strong>. When someone else opens your notebook with Pluto, the exact same package environment will be used, and packages will work on their computer, automatically!</p>
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+                <card-showcase>
+                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif">
+                </card-showcase>
+            </p-card>
+            <p-card-container>
+            
+            <p-card class="half">
+                <card-text>
+                    <h2>Workspace variables</h2>
+                    <p>
+                        Pluto offers an environment where changed code takes effect instantly and where deleted code leaves no trace.
+                        Unlike Jupyter or Matlab, there is <strong>no mutable workspace</strong>, but rather, an important guarantee:
+                    </p>
+                    <blockquote align="center" class="guarantee">
+                        <em><strong>At any instant</strong>, the program state is <strong>completely described</strong> by the code you see.</em>
+                    </blockquote>
+                    <p>
+                        No hidden state, no hidden bugs.
+                    </p>
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+            </p-card>
+
+
+        </p-card-container>
+
+        </main>
+    </section>
+    <section class="education">
+        <main>
+
+            <p-hannes>
+                <h1-sub>Education</h1-sub>
+                <h1>A programming environment designed for <em>learning and teaching</em></h1>
+            </p-hannes>
+            <p>
+                <!-- Learning programming can be scary! -->
+                <!-- We know how difficult it can be to learn  -->
+
+                We designed Pluto to teach our own course: <a href="asdf.com">Computational Thinking at MIT</a>. The result is a programming environment that prioritizes beginners over advanced users!
+            </p>
+
+            <p-card class="mini">
+                <card-text>
+                    <h2><em>Computational Thinking</em> at MIT</h2>
+
+                    <p dir="auto">Pluto was developed alongside the free online course <a href="https://computationalthinking.mit.edu/" rel="nofollow">Introduction to Computational Thinking</a> at MIT, with the goal of creating a programming environment that is powerful, helpful and interactive, without being too intimidating for students and teachers.</p>
+
+                    <p dir="auto">Are you interested in using Pluto for your class? Here are some presentations by people who are using it already: <a href="https://www.youtube.com/watch?v=LFRI3s0DE-o" rel="nofollow">the MIT team</a>, <a href="https://www.youtube.com/watch?v=6Qs5EXDpZBI" rel="nofollow">Gerhard Dorn</a>, <a href="https://www.youtube.com/watch?v=NrIxgnFXslg" rel="nofollow">Daniel Molina</a>, <a href="https://youtu.be/GnEKgW23PvY?t=586" rel="nofollow">Henki W. Ashadi</a> and <a href="https://www.youtube.com/watch?v=8H5KgSIWsWQ" rel="nofollow">Max Köhler</a>.</p>
+
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+                <card-showcase>
+                    <video src="https://user-images.githubusercontent.com/6933510/134824521-7cefa38a-7102-4767-bee4-777caf30ba47.mp4" data-canonical-src="https://user-images.githubusercontent.com/6933510/134824521-7cefa38a-7102-4767-bee4-777caf30ba47.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;"></video>
+                    <vid-caption>(<a href="https://www.youtube.com/watch?v=rpB6zQNsbQU" rel="nofollow">video</a>) Grant Sanderson (<a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw" rel="nofollow">3Blue1Brown</a>) using Pluto's interactivity to teach <a href="https://computationalthinking.mit.edu/" rel="nofollow">Computational Thinking at MIT</a>!</vid-caption>
+
+                    </video>
+                </card-showcase>
+            </p-card>
+
+
+        </main>
+    </section>
+    <section class="install">
+        <main>
+
+            <p-hannes>
+                <h1-sub>Let's go!</h1-sub>
+                <h1>Let's install Pluto!</h1>
+            </p-hannes>
+            <p>
+                <!-- Learning programming can be scary! -->
+                <!-- We know how difficult it can be to learn  -->
+
+                We designed Pluto to teach our own course: <a href="asdf.com">Computational Thinking at MIT</a>. The result is a programming environment that prioritizes beginners over advanced users!
+            </p>
+
+            <p-card class="mini">
+                <card-text>
+                    <h2><a href="asdf.com">Computational Thinking</a> at MIT</h2>
+
+
+
+                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                </card-text>
+                <card-showcase>
+                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif">
+                </card-showcase>
+            </p-card>
+
+
+        </main>
+    </section>
+    <!-- </scroll-snapper> -->
+
+</body>
+
+</html>

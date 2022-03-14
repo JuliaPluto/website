@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.18.1
+# v0.18.2
 
 using Markdown
 using InteractiveUtils
@@ -370,7 +370,7 @@ md"""
 """
 
 # ╔═╡ c52c9786-a25f-11ec-1fdc-9b13922d7ccb
-const dir = @__DIR__
+const dir = joinpath(@__DIR__, "src")
 
 # ╔═╡ cf27b3d3-1689-4b3a-a8fe-3ad639eb2f82
 md"""
@@ -424,11 +424,7 @@ md"""
 """
 
 # ╔═╡ e01ebbab-dc9a-4aaf-ae16-200d171fcbd9
-const output_dir = let
-	d = joinpath(dir, "_site")
-	mkpath(d)
-	d
-end
+const output_dir = mkpath(joinpath(@__DIR__, "_site"))
 
 # ╔═╡ 37b2cecc-e4c7-4b80-b7d9-71c68f3c0339
 try
@@ -440,7 +436,7 @@ end
 """
 This directory can be used to store cache files that are persisted between builds. Currently used as PlutoSliderServer.jl cache.
 """
-const cache_dir = joinpath(dir, "_cache")
+const cache_dir = mkpath(joinpath(@__DIR__, "_cache"))
 
 # ╔═╡ 4e88cf07-8d85-4327-b310-6c71ba951bba
 md"""

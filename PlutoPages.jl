@@ -386,6 +386,7 @@ function ignore(abs_path)
 
 	any(startswith("_"), splitpath(p)) || # (_cache, _site, _includes)
 		startswith(p, ".git") ||
+		startswith(p, ".vscode") ||
 		abs_path == this_file
 end
 

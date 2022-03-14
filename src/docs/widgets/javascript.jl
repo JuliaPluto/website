@@ -10,7 +10,7 @@ frontmatter = (
 	description = "A simple notebook demonstrating the Julia syntax essentials",
 	date = "2020-06-01",
 	layout = "layout.jlhtml",
-	tags = ["manual", "advanced", "widgets"],
+	tags = ["docs", "advanced", "widgets"],
 )
 
 

@@ -7,7 +7,7 @@ s.options.server.launch_browser = false
 
 nb = Pluto.SessionActions.open(s, joinpath(@__DIR__, "PlutoPages.jl"); run_async=false)
 
-write("generation_report.html", Pluto.generate_html(generate_html))
+write("generation_report.html", Pluto.generate_html(nb))
 
 for c in nb.cells
     if c.errored == "code"

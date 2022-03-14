@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.18.2
+# v0.18.1
 
 using Markdown
 using InteractiveUtils
@@ -453,8 +453,15 @@ md"""
 # ╔═╡ 76c2ac85-2e89-4396-a498-a4ceb1cc80bd
 Base.@kwdef struct Page
 	url::String
+	full_url::String
 	input::TemplateInput
 	output::TemplateOutput
+end
+
+# ╔═╡ a510857f-528b-43e8-be78-69e554d165a6
+function short_url(s::String)
+	a = replace(s, r"index.html$" => "")
+	isempty(a) ? "." : a
 end
 
 # ╔═╡ 1c269e16-65c7-47ae-aeab-001f1b205e14
@@ -510,7 +517,7 @@ md"""
 """
 
 # ╔═╡ f2fbcc70-a714-4eda-8786-7ee5692e3268
-with_doctype(p::Page) = Page(p.url, p.input, with_doctype(p.output))
+with_doctype(p::Page) = Page(p.url, p.full_url, p.input, with_doctype(p.output))
 
 # ╔═╡ 57fd383b-d791-4170-a353-f839356f9d7a
 with_doctype(output::TemplateOutput) = if ishtml(output) && output.contents !== nothing
@@ -674,9 +681,12 @@ end
 
 # ╔═╡ 318dc59e-15f6-4b25-bcf5-1ab6b0d87af7
 pages = Page[
-	Page(
-		 final_url(input, output), input, output,
-	)
+	let
+		u = final_url(input, output)
+		Page(
+			 short_url(u), u, input, output,
+		)
+	end
 	for (input, output) in template_results if output.contents !== nothing
 ]
 
@@ -749,6 +759,7 @@ function process_layouts(page::Page)::Page
 
 		process_layouts(Page(
 			page.url,
+			page.full_url,
 			page.input,
 			TemplateOutput(result; frontmatter = new_frontmatter),
 		))
@@ -769,7 +780,7 @@ process_results = map(rendered_results) do page
 		
 		# TODO: use front matter for permalink
 
-		output_path2 = joinpath(output_dir, page.url)
+		output_path2 = joinpath(output_dir, page.full_url)
 		mkpath(output_path2 |> dirname)
 		# Our magic root url:
 		# in Julia, you can safely call `String` and `replace` on arbitrary, non-utf8 data :)
@@ -779,11 +790,24 @@ process_results = map(rendered_results) do page
 	end
 end
 
+# ╔═╡ 70fa9af8-31f9-4e47-b36b-828c88166b3d
+md"""
+# Verify output
+"""
+
 # ╔═╡ d17c96fb-8459-4527-a139-05fdf74cdc39
-let
+allfiles_output = let
 	process_results
 	PlutoSliderServer.list_files_recursive(output_dir)
 end
+
+# ╔═╡ 9268f35e-1a4e-414e-a7ea-3f5796e0bbf3
+allfiles_output2 = filter(allfiles_output) do f
+	!startswith(f, "generated_assets")
+end
+
+# ╔═╡ e0a25f24-a7de-4eac-9f88-cb7632de09eb
+@assert length(allfiles_output2) ≥ length(pages)
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1372,6 +1396,7 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╟─aaad71bd-5425-4783-952c-82e4d4fa7bb8
 # ╠═76c2ac85-2e89-4396-a498-a4ceb1cc80bd
 # ╠═898eb093-444c-45cf-88d7-3dbe9708ae31
+# ╠═a510857f-528b-43e8-be78-69e554d165a6
 # ╟─1c269e16-65c7-47ae-aeab-001f1b205e14
 # ╟─318dc59e-15f6-4b25-bcf5-1ab6b0d87af7
 # ╟─76193b12-842c-4b82-a23e-fb7403274234
@@ -1387,8 +1412,11 @@ uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
 # ╠═9845db00-149c-45be-9e4f-55d1157afc87
 # ╟─eef54261-767a-4ce4-b549-0b1828379f7e
 # ╟─cda8689d-9ae5-42c4-8e7e-715cf44c33bb
-# ╠═d17c96fb-8459-4527-a139-05fdf74cdc39
 # ╟─4013400c-acb4-40fa-a826-fd0cbae09e7e
 # ╟─5b325b50-8984-44c6-8677-3c6bc5c2b0b1
+# ╟─70fa9af8-31f9-4e47-b36b-828c88166b3d
+# ╠═d17c96fb-8459-4527-a139-05fdf74cdc39
+# ╠═9268f35e-1a4e-414e-a7ea-3f5796e0bbf3
+# ╠═e0a25f24-a7de-4eac-9f88-cb7632de09eb
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

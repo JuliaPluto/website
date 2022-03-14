@@ -47,9 +47,11 @@ jobs:
                   ])
 
                   include("generate.jl")'
-                if ! [ -d "Documentsz" ]; then
-                    exit 1
-                fi
+            
+            - uses: actions/upload-artifact@v2
+              if: always()
+              with:
+                path: generation_report.html
 
             - name: 🚀 Deploy to dist
               uses: JamesIves/github-pages-deploy-action@releases/v3

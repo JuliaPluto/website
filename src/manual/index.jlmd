@@ -1,9 +1,0 @@
----
-title: "Manual"
-tags: ["manual"]
-layout: "md.jlmd"
----
-
-# This should be an automatic redirect
-
-<a href="./introduction/">Go here</a>

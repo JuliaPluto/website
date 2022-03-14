@@ -1,7 +1,0 @@
----
-title: "Hello worfdsld!"
-description: "A longer description of the same thing"
-authors: ["Fonsi"]
-tags: ["welcome"]
-layout: "welcome.jlhtml"
----

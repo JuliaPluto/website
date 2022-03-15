@@ -5,18 +5,25 @@ $(begin
         default = Pluto.generate_html(; 
             pluto_cdn_root=Pluto.PLUTO_VERSION < v"0.19" ? "https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/" : nothing)
         m = match(r"<head.*?>(.*)</head>"s, default)
-        replace(
-            replace(
-                m[1],
-                r"<title.*?/title>" => "",
-            ),
-            r"<meta name=[\"']?description.*?>" => "",
-            # r"<script[^\n]data-pluto-file=[\"']?launch-parameters.*?/script>"s => "",
-        ) |> HTML
+        reduce([
+            # r"<script[^\n]data-pluto-file=[\"']?launch-parameters.*?/script>"s
+            r"<title.*?/title>"
+            r"<meta name=[\"']?description.*?>"
+            r"<meta name=[\"']?description.*?>"
+            r"<link rel=[\"']?icon.*?>"
+        ]; init=m[1]) do s,r
+            replace(s, r => "")
+        end |> HTML
     end
     nothing
 end)<html lang="en">
 <head>
+
+<title>$(get(page.output.frontmatter, "title", splitext(basename(page.input.relative_path))[1])) — Pluto.jl</title>
+<meta name="description" content=$(get(page.output.frontmatter, "description", nothing)) />
+
+<link rel="icon" href="$(root_url)/assets/favicon.ico" />
+<link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml">
 
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
@@ -30,7 +37,7 @@ $(pluto_head)
         <nav id="pages-sidebar">
         <div>
         <ul>
-            <li class="home_link"><a class="home_link" href=$(root_url)><img src="$(root_url)/assets/favicon.svg"><span> Pluto.jl</span></a>
+            <li class="pluto_home_link"><a class="pluto_home_link" href=$(root_url)><img src="$(root_url)/assets/favicon.svg"><span> Pluto.jl</span></a>
             </li>
         $(let
             sidebar_data = Base.include(@__MODULE__, joinpath(@__DIR__, "..", "sidebar data.jl"))

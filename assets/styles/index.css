@@ -80,3 +80,22 @@ a:hover {
 h1 a, h2 a, h3 a {
     font-weight: inherit;
 }
+
+
+/* SIDEBAR LOGO */
+
+a.pluto_home_link img {
+    height: 1.2em;
+    width: 1.2em;
+    
+}
+a.pluto_home_link {
+    font-size: 1.7em;
+    font-weight: 800;
+    color: inherit;
+    padding: .3em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5ch;
+}

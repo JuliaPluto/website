@@ -162,6 +162,38 @@ div.header-text > div {
     margin-bottom: 1rem;
 }
 
+header #topnav {
+    display: flex;
+    height: 3rem;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+header #topnav > * {
+    flex: 0 0 auto;
+}
+
+/* header #topnav img {
+    min-width: 0;
+    height: 2rem;
+} */
+
+header #topnav .pluto_home_link {
+    margin-right: auto;
+    font-size: 2.2rem;
+}
+header #topnav .pluto_home_link ~ a {
+    padding: 1rem;
+    background: #504a41;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    color: white;
+}
+
+
+
 
 
 h1,h2 {

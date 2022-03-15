@@ -30,7 +30,7 @@ $(pluto_head)
         <nav id="pages-sidebar">
         <div>
         <ul>
-            <li class="home_link"><a href=$(root_url)><img src="$(root_url)/assets/favicon_unsaturated_bg.svg"><span> Pluto.jl</span></a>
+            <li class="home_link"><a class="home_link" href=$(root_url)><img src="$(root_url)/assets/favicon.svg"><span> Pluto.jl</span></a>
             </li>
         $(let
             sidebar_data = Base.include(@__MODULE__, joinpath(@__DIR__, "..", "sidebar data.jl"))

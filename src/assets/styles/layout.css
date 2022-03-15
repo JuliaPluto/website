@@ -179,15 +179,13 @@ body {
 
 /* SIDEBAR LOGO */
 
-#pages-sidebar .home_link {
-    font-size: 1.7rem;
-}
 #pages-sidebar .home_link img {
     height: 1.2em;
     width: 1.2em;
     
 }
-#pages-sidebar .home_link a {
+#pages-sidebar a.home_link {
+    font-size: 1.7rem;
     padding: .3em;
     font-weight: 800;    
     display: flex;

@@ -11,11 +11,11 @@ write("generation_report.html", Pluto.generate_html(nb))
 
 for c in nb.cells
     if c.errored == "code"
-        println("Cell errored: ", c.cell_id)
-        println()
-        show(io, MIME"text/plain"(), c.output.body)
-        println()
-        println()
+        println(stderr, "Cell errored: ", c.cell_id)
+        println(stderr)
+        show(stderr, MIME"text/plain"(), c.output.body)
+        println(stderr)
+        println(stderr)
     end
 end
 

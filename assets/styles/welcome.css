@@ -1,10 +1,4 @@
-/* a minimalist set of CSS resets */
 
-@import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
-@import url('https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.18.0/frontend/vollkorn.css');
-
-/* @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Yantramanav:wght@400;500;700;900&display=swap');
 
 /* default to border-box */
 html {

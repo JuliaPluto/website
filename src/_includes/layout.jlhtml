@@ -20,7 +20,12 @@ end)<html lang="en">
 <head>
 
 <title>$(get(page.output.frontmatter, "title", splitext(basename(page.input.relative_path))[1])) — Pluto.jl</title>
-<meta name="description" content=$(get(page.output.frontmatter, "description", nothing)) />
+$(let d = get(page.output.frontmatter, "description", nothing)
+    if d !== nothing
+        @htl("""<meta name="description" content=$(d) />""")
+    end
+end)
+
 
 <link rel="icon" href="$(root_url)/assets/favicon.ico" />
 <link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml">

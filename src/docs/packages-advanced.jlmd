@@ -1,6 +1,7 @@
 ---
 title: "📦 Packages: advanced"
 tags: ["docs", "reproducibility"]
+order: 2
 layout: "md.jlmd"
 ---
 

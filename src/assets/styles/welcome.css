@@ -257,13 +257,6 @@ p-hannes ~ p {
     }
 }
 
-a.arrow::after {
-    content: ' →';
-}
-card-text > a.arrow {
-    margin-top: auto;
-}
-
 section.julia p-card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

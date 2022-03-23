@@ -34,6 +34,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     background: hsl(235deg 19% 16%);
+    color: var(--pluto-output-color);
 }
 
 body {
@@ -43,6 +44,9 @@ body {
     word-break: break-word;
 }
 
+p, ol {
+    line-height: 1.5;
+}
 
 h1,h2 {
     font-weight: 800;

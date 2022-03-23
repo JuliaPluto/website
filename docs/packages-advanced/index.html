@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>📦 Packages: advanced — Pluto.jl</title>
+
+
+
+<link rel="icon" href="../../assets/favicon.ico" />
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../assets/styles/layout.css" type="text/css" />
+<script src="../../assets/scripts/sidebar.js" type="module" defer></script>
+
+
+    <meta name="viewport" content="width=device-width" />
+    
+    <meta charset="utf-8" />
+    <script>
+        console.log(
+            "Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends 🌈"
+        )
+    </script>
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    
+    <link rel="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/img/logo.svg" />
+    <link rel="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/img/favicon_unsaturated.svg" />
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/stdlib@3.3.1/dist/stdlib.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.2.11/js/iframeResizer.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/ansi_up@5.0.1/ansi_up.min.js" defer></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.2.11/js/iframeResizer.contentWindow.min.js" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/editor.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/hide-ui.css" type="text/css" media="all" data-pluto-file="hide-ui" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/binder.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/treeview.css" type="text/css" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/juliamono.css" as="style" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/vollkorn.css" as="style" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/highlightjs.css" type="text/css">
+
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.18.2";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+</script>
+<!-- [automatically generated launch parameters can be inserted here] -->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/editor.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@9ca70c36/frontend/warn_old_browsers.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <script type="text/javascript" id="MathJax-script" not-the-src-yet="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg-full.js" async></script>
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="pluto_home_link"><a class="pluto_home_link" href='../..'><img src="../../assets/favicon.svg"><span> Pluto.jl</span></a>
+            </li>
+        <li>
+<h3>Introduction</h3>
+<ul>
+<li class=''><a href='../../docs/'>🙋 Introduction</a></li><li class=''><a href='../../docs/install/'>🌼 How to install</a></li>
+</ul>
+</li>
+<li>
+<h3>Reproducibility</h3>
+<ul>
+<li class='active'><a href='../../docs/packages-advanced/'>📦 Packages: advanced</a></li><li class=''><a href='../../docs/packages/'>📦 Packages</a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Widgets</h3>
+<ul>
+<li class=''><a href='../../docs/widgets/javascript/' title='A simple notebook demonstrating the Julia syntax essentials'>⚡️ JavaScript for widgets</a></li>
+</ul>
+</li>
+
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+        <div class="pages-markdown">
+<main>
+<h1 id="advanced-set-up-an-environment-with-pkgactivate"><a href="#advanced-set-up-an-environment-with-pkgactivate" class="anchor"></a>Advanced: set up an environment with <code>Pkg.activate</code></h1>
+<p>Pluto’s package manager is enabled for all users, for ease of use and to promote reproducibility in scientific computing. There is no option to disable the behaviour <em>globally</em> (for your entire Pluto session). Instead, Pluto will detect notebooks that use <code>Pkg.activate</code> to set up an environment explicitly, and uses the old behaviour for those notebooks.</p>
+<p>The philosophy here is that everyone should have a reproducible package environment <strong>by default</strong>, without having to do anything. This takes priority over other use cases, and hence <em>not</em> using the built-in package manager requires some extra work.</p>
+<br>
+<p><strong>Any notebook that calls <a href="https://pkgdocs.julialang.org/v1/api/#Pkg.activate"><code>Pkg.activate</code></a> will not use Pluto’s package management,</strong> and run in ‘backwards compatibility mode’. The <code>Pkg.activate</code> call should be placed directly in your notebook code: it is detecting using the same syntax analysis used for reactivity.</p>
+<br>
+<br>
+<h2 id="pattern-the-global-environment"><a href="#pattern-the-global-environment" class="anchor"></a>Pattern: The “global environment”</h2>
+<p>If you do not intend on sharing a notebook file and you want to use your global package environment (called <code>(v1.6)</code> or similar, the one you get when you launch the Julia REPL), then you can call <code>Pkg.activate()</code> without any arguments.</p>
+<blockquote>
+<p>🙋 If you are developing a package, then activating your global environment is an easy way to test your local version in Pluto.</p>
+</blockquote>
+<p>This “global environment” pattern can be placed at the top of a notebook:</p>
+<pre><code class="language-julia">begin
+    import Pkg
+    # careful: this is _not_ a reproducible environment
+    # activate the global environment
+    Pkg.activate()
+<pre><code>using Plots, PlutoUI, LinearAlgebra
+</code></pre>
+<p>end
+</code></pre></p>
+<p>When running this in Pluto (try it out!), you will notice that the status marks next to packages disappear, and Pluto is running in ‘backwards compatibility mode’. Packages will no longer be installed or removed automatically, you have to use the Pkg REPL to do this yourself.</p>
+<br>
+<br>
+<h2 id="pattern-the-shared-environment"><a href="#pattern-the-shared-environment" class="anchor"></a>Pattern: The “shared environment”</h2>
+<p>If you have multiple notebooks in a repository and you want to use share a Pkg environment between them, then you can call <code>Pkg.activate(path_to_environment)</code>. You can use <code>@__DIR__</code> to get the path of the notebook’s folder, and <code>joinpath(@__DIR__, &quot;..&quot;)</code> to get its parent, <code>joinpath(@__DIR__, &quot;..&quot;, &quot;..&quot;)</code> for the parent’s parent, etc.</p>
+<p>The function <code>Base.current_project()</code> can be used to <strong>automatically</strong> find the closest parent directory that contains a <code>Project.toml</code>, in most cases this is what you want.</p>
+<p>For example, if your project looks like this:</p>
+<pre><code>my_project/
+    data/
+        ...
+    notebooks/
+        Interesting analysis.jl
+        ...
+    Project.toml
+    Manifest.toml
+    ...
+</code></pre>
+<p>then the “shared environment” pattern can be placed at the top of a notebook:</p>
+<pre><code class="language-julia">begin
+    import Pkg
+    # activate the shared project environment
+    Pkg.activate(Base.current_project())
+    # instantiate, i.e. make sure that all packages are downloaded
+    Pkg.instantiate()
+<pre><code>using Plots, PlutoUI, LinearAlgebra
+</code></pre>
+<p>end
+</code></pre></p>
+<p>When running this in Pluto, you will notice that the status marks next to packages disappear, and Pluto is running in ‘backwards compatibility mode’. Packages will no longer be installed or removed automatically, you have to use the Pkg REPL to do this yourself.</p>
+<br>
+<br>
+<h2 id="pattern-the-pkg-cell"><a href="#pattern-the-pkg-cell" class="anchor"></a>Pattern: The “Pkg cell”</h2>
+<p>When adding packages, Pluto’s default package management will always install the latest version from the registry. If you need to install a specific version or branch of a package, or a package is not registered, you can use a “Pkg cell”.</p>
+<p>A common pattern is a so-called “Pkg cell”, placed at the top of a notebook:</p>
+<pre><code class="language-julia">begin
+    import Pkg
+    # activate a temporary environment
+    Pkg.activate(mktempdir())
+    Pkg.add([
+        Pkg.PackageSpec(name=&quot;Plots&quot;, version=&quot;1&quot;),
+        Pkg.PackageSpec(name=&quot;PlutoUI&quot;, version=&quot;0.7&quot;),
+    ])
+    using Plots, PlutoUI, LinearAlgebra
+end
+</code></pre>
+<p>This will 1) activate a temporary environment using <code>Pkg.activate</code>, 2) add the required packages, 3) import them with <code>using</code>. When running this in Pluto (try it out!), you will notice that the status marks next to packages disappear, and Pluto is running in ‘backwards compatibility mode’. Packages will no longer be installed or removed automatically, you have to use the Pkg REPL to do this yourself.</p>
+<p>Placing all code in a single <code>begin</code> block ensures that the lines will run in the correct order.</p>
+<blockquote>
+<p>🙋 You can use <a href="https://fonsp.com/article-test-3/pkghelper.html">this helper tool</a> to generate a “Pkg cell” automatically!</p>
+</blockquote>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 id="advanced-edit-the-notebook-environment"><a href="#advanced-edit-the-notebook-environment" class="anchor"></a>Advanced: edit the notebook environment</h1>
+<p>Pluto.jl includes a helper function <code>Pluto.activate_notebook_environment</code> that activates a notebook Pkg environment in the REPL:</p>
+<pre><code class="language-julia">julia&gt; import Pluto
+<p>julia&gt; Pluto.activate_notebook_environment(&quot;~/Documents/hello.jl&quot;)</p>
+<p>julia&gt; ]</p>
+<p>(hello.jl) &gt; status
+</code></pre></p>
+<p>After activating a notebook environment, you can use the <a href="https://pkgdocs.julialang.org/v1/repl/">Pkg REPL</a> to view or modify the embedded environment. Changes from either side are synchronised (i.e. Pkg REPL changes are written to the notebook, editing the notebook updates the Pkg REPL env). Watch the demo video:</p>
+<p>https://user-images.githubusercontent.com/6933510/111483040-b9c9ee80-8734-11eb-97bc-f51703fc57cc.mov</p>
+</main>
+</div>
+
+        </div>
+    </div>
+</body>
+</html>

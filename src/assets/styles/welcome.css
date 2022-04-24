@@ -117,6 +117,7 @@ header-sizer {
 header {
     background: linear-gradient(117deg, #fff4d6, #e9fbff);
     background: linear-gradient(117deg, hsl(235deg 19% 16%), hsl(210deg 10% 24%));
+    background: linear-gradient(135deg, hsl(235deg 19% 16%), hsl(210deg 37% 40%), hsl(329deg 27% 64%), hsl(33deg 74% 71%)) fixed;
     width: 100%;
     color: #f6f6f6;
 }

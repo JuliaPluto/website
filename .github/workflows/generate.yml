@@ -37,9 +37,9 @@ jobs:
               uses: actions/cache@v2
               with:
                 path: ~/.julia
-                key: ${{ runner.os }}-dotjulia-v1-${{ github.run_id }}
+                key: ${{ runner.os }}-dotjulia-v1-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}-${{ github.run_id }}
                 restore-keys: |
-                    ${{ runner.os }}-dotjulia-v1
+                    ${{ runner.os }}-dotjulia-v1-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
 
             - name: 🪴 Generate site
               run: |

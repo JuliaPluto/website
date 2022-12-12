@@ -16,22 +16,19 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-
             - name: Install Julia
               uses: julia-actions/setup-julia@v1
               with:
-                  version: 1.7
-
+                  version: "1.8"
 
             # We set up a folder that Pluto can use to cache exported notebooks. If the notebook file did not change, then Pluto can take the exported file from cache instead of running the notebook.
             - name: ⏱ Cache notebook states
               uses: actions/cache@v2
               with:
-                  path: _cache
-                  key: ${{ runner.os }}-pluto_state_cache-v2-${{ hashFiles('**/Project.toml', '**/Manifest.toml', '.github/workflows/*' ) }}-${{ hashFiles('**/*jl') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pluto_state_cache-v2-${{ hashFiles('**/Project.toml', '**/Manifest.toml', '.github/workflows/*' ) }}
-
+                path: _cache
+                key: ${{ runner.os }}-pluto_state_cache-v3-fall22-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}-${{ github.run_id }}
+                restore-keys: |
+                    ${{ runner.os }}-pluto_state_cache-v3-fall22-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
 
             - name: ⏱ Cache .julia
               uses: actions/cache@v2
@@ -42,15 +39,12 @@ jobs:
                     ${{ runner.os }}-dotjulia-v1-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
 
             - name: 🪴 Generate site
-              run: |
-                julia -e 'using Pkg
-                  Pkg.activate(mktempdir())
-                  Pkg.add([
-                    # this is only the version used to run the generate notebook, not the version used to generate exports...
-                    Pkg.PackageSpec(name="Pluto", version="0.18"),
-                  ])
+              run: julia --project=pluto-deployment-environment -e '
+                  import Pkg;
+                  Pkg.instantiate();
 
-                  include("generate.jl")'
+                  include("./generate.jl")'
+
             
             - uses: actions/upload-artifact@v2
               if: always()

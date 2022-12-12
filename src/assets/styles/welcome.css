@@ -325,7 +325,9 @@ card-text {
 card-showcase {
     flex: 1 1 40%;
     display: grid;
+    gap: 0.7em;
     place-items: center;
+    align-content: center;
 }
 card-showcase img {
     max-width: min(100%, 400px);

@@ -1,5 +1,3 @@
-
-
 /* default to border-box */
 html {
     box-sizing: border-box;
@@ -13,9 +11,9 @@ html {
 }
 
 :root {
-    --system-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', system-ui, sans-serif;
-    --system-fonts-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", system-ui, sans-serif;
+    --system-fonts-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 /* adjust typography defaults */
 body {
@@ -39,8 +37,8 @@ scroll-snapper {
     overflow-y: auto;
 }
 
-
-header, section {
+header,
+section {
     scroll-snap-align: start;
     /* scroll-snap-type: mandatory; */
 }
@@ -49,7 +47,7 @@ section.runtime {
     --bg-color: #faefec;
     background-image: url("../welcome/interactivity\ pow\ bw.svg");
     background-repeat: no-repeat;
-    background-size: max(51rem,100vw);
+    background-size: max(51rem, 100vw);
     /* filter: grayscale(1); */
     animation: wob-bg-size 500ms;
     /* animation-play-state: paused; */
@@ -58,17 +56,13 @@ section.runtime {
 }
 @keyframes wob-bg-size {
     from {
-        background-size: max(51rem,80vw);
+        background-size: max(51rem, 80vw);
         background-position-y: 10vw;
-        
-        
     }
     to {
-        background-size: max(51rem,100vw);
+        background-size: max(51rem, 100vw);
         background-position-y: 00px;
-        
     }
-    
 }
 section.julia {
     --bg-color: white;
@@ -109,7 +103,7 @@ header-sizer {
 header-sizer {
     display: flex;
     flex-direction: column;
-    min-height: min(100vh,75rem);
+    min-height: min(100vh, 75rem);
     align-items: flex-start;
     align-content: stretch;
 }
@@ -187,11 +181,8 @@ header #topnav .pluto_home_link ~ a {
     color: white;
 }
 
-
-
-
-
-h1,h2 {
+h1,
+h2 {
     font-weight: 800;
     font-size: 2rem;
     margin-bottom: 0.1em;
@@ -201,7 +192,7 @@ p-header h1 {
     font-size: 3rem;
     display: inline-flex;
     /* background: white; */
-    padding: 0em .3em;
+    padding: 0em 0.3em;
     border-radius: 6px;
     /* text-shadow: 1px 1px #fdb3b3; */
     background: linear-gradient(45deg, #612c2c, #d47777);
@@ -247,7 +238,6 @@ p-hannes ~ p {
     font-weight: 500;
     color: #737373;
 }
-
 
 @media (max-width: 450px) {
     div.header-text {

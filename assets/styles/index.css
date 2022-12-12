@@ -1,6 +1,6 @@
 /* a minimalist set of CSS resets */
 
-@import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
+@import url("https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css");
 
 /* @import url('https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.18.0/frontend/vollkorn.css'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap'); */
@@ -19,9 +19,9 @@ html {
 }
 
 :root {
-    --system-fonts: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', system-ui, sans-serif;
-    --system-fonts-mono: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    --system-fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", system-ui, sans-serif;
+    --system-fonts-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 /* adjust typography defaults */
 body {
@@ -44,11 +44,13 @@ body {
     word-break: break-word;
 }
 
-p, ol {
+p,
+ol {
     line-height: 1.5;
 }
 
-h1,h2 {
+h1,
+h2 {
     font-weight: 800;
 }
 
@@ -81,12 +83,17 @@ a:visited {
 a:hover {
     text-decoration: underline;
 }
-h1 a, h2 a, h3 a {
+h1 a,
+h2 a,
+h3 a {
     font-weight: inherit;
 }
 
+a.arrow {
+    font-weight: 700;
+}
 a.arrow::after {
-    content: ' →';
+    content: " →";
 }
 card-text > a.arrow {
     margin-top: auto;
@@ -97,15 +104,14 @@ card-text > a.arrow {
 a.pluto_home_link img {
     height: 1.2em;
     width: 1.2em;
-    
 }
 a.pluto_home_link {
     font-size: 1.7em;
     font-weight: 800;
     color: inherit;
-    padding: .3em;
+    padding: 0.3em;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: .5ch;
+    gap: 0.5ch;
 }

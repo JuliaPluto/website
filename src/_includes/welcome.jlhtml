@@ -34,7 +34,7 @@
                 <a class="pluto_home_link" href=$(root_url)><img src="$(root_url)/assets/favicon.svg"><span> Pluto.jl</span></a>
                 
                 <a href="./docs/">Documentation</a>
-                <a href="./examples/">Examples</a>
+                <a href="./featured/">Featured</a>
                 <a href="./blog/">Blog</a>
             </nav>
 
@@ -268,10 +268,7 @@
                 <h1>Let's install Pluto!</h1>
             </p-hannes>
             <p>
-                <!-- Learning programming can be scary! -->
-                <!-- We know how difficult it can be to learn  -->
-
-                We designed Pluto to teach our own course: <a href="asdf.com">Computational Thinking at MIT</a>. The result is a programming environment that prioritizes beginners over advanced users!
+                Pluto can be installed and updated using Julia's package manager.
             </p>
 
             <p-card class="mini">

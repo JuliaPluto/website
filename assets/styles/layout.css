@@ -106,6 +106,7 @@ body {
         top: 0;
         bottom: 0;
         right: 100%;
+        overflow-y: auto;
         transition: transform 300ms cubic-bezier(0.18, 0.89, 0.45, 1.12);
     }
     @media (prefers-reduced-motion) {

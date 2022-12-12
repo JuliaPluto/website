@@ -1,17 +1,17 @@
 ### A Pluto.jl notebook ###
 # v0.18.2
 
+#> [frontmatter]
+#> title = "⚡️ JavaScript for widgets"
+#> description = "A simple notebook demonstrating the Julia syntax essentials"
+#> layout = "layout.jlhtml"
+#> date = "2020-06-01"
+#> tags = ["blog", "advanced", "widgets"]
+
 using Markdown
 using InteractiveUtils
 
 # ╔═╡ 0d3aec92-edeb-11ea-3adb-cd0dc17cbdab
-frontmatter = (
-	title = "Basic syntax",
-	description = "A simple notebook demonstrating the Julia syntax essentials",
-	date = "2020-06-01",
-	layout = "layout.jlhtml",
-	tags = ["examples"],
-)
 
 
 # ╔═╡ 3b038ee0-edeb-11ea-0977-97cc30d1c6ff

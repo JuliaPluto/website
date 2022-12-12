@@ -66,21 +66,11 @@ Every page **should probably** include:
 - *`layout`*: The name of a layout file in `src/_includes`. For basic Markdown or HTML, you probably want `md.jlmd`. For Pluto, you should use `layout.jlhtml`.
 
 ## How to write front matter
-For `.jlmd` files, see the example above. For `.jl` notebooks, you have to define a named tuple called `frontmatter` *anywhere* in your notebook, like so:
-```julia
-frontmatter = (
-	title = "⚡️ JavaScript for widgets",
-	description = "A simple notebook demonstrating the Julia syntax essentials",
-	layout = "layout.jlhtml",
-	tags = ["docs", "advanced", "widgets"],
-);
-```
+For `.jlmd` files, see the example above. 
 
-This definition will be picked up (using syntax analysis) and evaluated. Note:
-- You are not allowed to use variables defined in other cells. (But you can *use* `frontmatter` in your notebook.)
-- You can use `;` to hide it from being displayed, only the definition matters.
+For `.jl` notebooks, use the [Frontmatter GUI](https://github.com/fonsp/Pluto.jl/pull/2104) built into Pluto.
 
-For `.jlhtml`, we still need to figure something out 😄. But it will probably be the same as for notebooks.
+For `.jlhtml`, we still need to figure something out 😄.
 
 # Running locally
 

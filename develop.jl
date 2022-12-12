@@ -82,7 +82,7 @@ output_dir = joinpath(@__DIR__, "_site")
 dev_server_port = rand(40507:40999)
 
 
-dev_server_task = @async run(`$(Deno_jll.deno()) run --allow-read --allow-net https://deno.land/std@0.167.0/http/file_server.ts --cors --port $(dev_server_port) $(output_dir)`) # <=v"0.102.0" because of https://github.com/denoland/deno_std/issues/2251
+dev_server_task = @async run(`$(Deno_jll.deno()) run --allow-read --allow-net https://deno.land/std@0.102.0/http/file_server.ts --cors --port $(dev_server_port) $(output_dir)`) # <=v"0.102.0" because of https://github.com/denoland/deno_std/issues/2251
 
 sleep(.5)
 

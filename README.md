@@ -74,16 +74,31 @@ For `.jlhtml`, we still need to figure something out 😄.
 
 # Running locally
 
-You need to do two things:
-1. Open Pluto and run the `PlutoPages.jl` notebook. The first run can take some time, as it builds up the notebook outputs cache. Leave it running.
-2. Install Deno, go to the `_site` folder (will be created), and run:
-    ```
-    deno run --allow-net --allow-read https://deno.land/std@0.129.0/http/file_server.ts .
-    ```
-3. Go to the URL given by Deno. 
-4. Whenever you edit a file, PlutoPages will automatically regenerate! Refresh your browser tab. If it does not pick up the change, find the cell defining `allfiles`, and run it manually.
+## Developing *content, styles, etc.*
+
+Open this repository in VS Code, and install the recommended extensions.
+
+To start running the development server, open the VS Code *command palette* (press `Cmd+Shift+P`), and search for **`Tasks: Run Task`**, then **`PlutoPages: run development server`**. The first run can take some time, as it builds up the notebook outputs cache. Leave it running.
+
+This will start two things in parallel: the PlutoPages.jl notebook (which generates the website), and a static file server (with Deno_jll). It will open two tabs in your browser: one is the generation dashboard (PlutoPages), the other is the current site preview (Deno_jll).
+ 
+Whenever you edit a file, PlutoPages will automatically regenerate! Refresh your browser tab. If it does not pick up the change, go to the generation dashboard and click the "Read input files again" button.
 
 This workflow is recommended for writing static content, styles, and for site maintenance. But for writing Pluto notebooks, it's best to prepare the notebook first, and then run the site (because it re-runs the entire notebook on any change).
+
+## Developing PlutoPages itself
+
+
+You need to manually run the notebook with Pluto:
+1. Go to this folder, and run `julia --project=pluto-deployment-environment`. Then `import Pkg; Pkg.instantiate();`.
+1. `import Pluto; Pluto.run()` and open the `PlutoPages.jl` notebook in this repository. The first run can take some time, as it builds up the notebook outputs cache. Leave it running.
+2. In a second terminal, go to this folder, and run `julia --project=pluto-deployment-environment`, then:
+    ```julia
+	import Deno_jll
+	run(`$(Deno_jll.deno()) run --allow-read --allow-net https://deno.land/std@0.102.0/http/file_server.ts _site`)
+    ```
+3. Go to the URL printed to your terminal. 
+4. Whenever you edit a file, PlutoPages will automatically regenerate! Refresh your browser tab. If it does not pick up the change, go to the generation dashboard and click the "Read input files again" button.
 
 # PlutoPages.jl?
 

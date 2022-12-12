@@ -322,3 +322,6 @@ card-showcase {
 card-showcase img {
     max-width: min(100%, 400px);
 }
+card-showcase vid-caption {
+    opacity: 0.7;
+}

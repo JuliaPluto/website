@@ -89,6 +89,9 @@ h3 a {
     font-weight: inherit;
 }
 
+a.arrow {
+    font-weight: 700;
+}
 a.arrow::after {
     content: " →";
 }

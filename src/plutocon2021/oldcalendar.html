@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+
+    <title>PlutoCon 2021 calendar</title>
+
+  </head>
+  <body style="min-height: 100vh">
+    <iframe style="border-width:0; height: 80vh " width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    
+    <div style="width: 100%; text-align: right; font-family: sans-serif;">
+      Click here to add the schedule to your calendar ☝️ &nbsp;&nbsp;&nbsp;
+    </div>
+<script type="text/javascript">
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone 
+const html = `https://calendar.google.com/calendar/embed?src=c_u1nivk9cis4rur68grkugtmef0%40group.calendar.google.com&mode=WEEK&dates=20210408/20210409&ctz=${timezone}`
+document.querySelector('iframe').src = html;
+</script>
+  </body>
+</html>
+

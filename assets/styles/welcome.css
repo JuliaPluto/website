@@ -350,3 +350,29 @@ card-showcase img {
 card-showcase vid-caption {
     opacity: 0.7;
 }
+
+footer {
+    /* min-height: 5rem; */
+    color: #e9e9e9;
+    font-family: var(--system-fonts-mono);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2rem;
+    /* font-style: italic; */
+    background: linear-gradient(360deg, #8f867563, transparent);
+}
+footer p {
+    background: #ffffff1f;
+    padding: 0.5em 1em;
+    border-radius: 0.7em;
+}
+
+footer a,
+footer a:visited {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: lightblue;
+    font-weight: 700;
+}

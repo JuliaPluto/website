@@ -31,11 +31,16 @@
                 <img src="https://user-images.githubusercontent.com/6933510/154362118-48abf2e4-b0c1-4f29-9f0f-e6602e2aff30.png" >
             </div> -->
             <nav id="topnav">
-                <a class="pluto_home_link" href='.'><img src="./assets/favicon.svg"><span> Pluto.jl</span></a>
+                <a class="pluto_home_link" href='.'><img src="./assets/favicon.svg" width="128" height="128"><span> Pluto.jl</span></a>
                 
-                <a href="./docs/">Documentation</a>
-                <a href="./featured/">Featured</a>
-                <a href="./blog/">Blog</a>
+                <div class="navlinks">
+                    
+                    <!-- <a href="./docs/">Documentation</a> -->
+                    <a href="https://featured.plutojl.org/">Featured Notebooks</a>
+                    <!-- <a href="./blog/">Blog</a> -->
+                    <a href="https://github.com/fonsp/Pluto.jl">GitHub</a>
+                </div>
+                
             </nav>
 
 
@@ -62,7 +67,7 @@
                 Just like a spreadsheet, Pluto understands variable links between code cells, and will re-run a cell when a dependency changes.
             </p>
 
-            <p-card>
+            <!-- <p-card>
                 <card-text>
                     <h2>Runs like a spreadsheet</h2>
                     
@@ -71,9 +76,9 @@
                     <a href="docs/" class="arrow">Learn more</a>
                 </card-text>
                 <card-showcase>
-                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif">
+                    <img alt="TODO TODO TODO screencap" src="https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif">
                 </card-showcase>
-            </p-card>
+            </p-card> -->
             <p-card-container>
 
             <p-card class="half">
@@ -84,7 +89,7 @@
 
                     <p dir="auto">In this example, changing the parameter <code>A</code> and running the first cell will directly re-evaluate the second cell and display the new plot.</p>
                     
-                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/80637344-24ac0180-8a5f-11ea-82dd-813dbceca9c9.gif">
+                    <img alt="interactivity screencap" src="https://user-images.githubusercontent.com/6933510/80637344-24ac0180-8a5f-11ea-82dd-813dbceca9c9.gif" width="600" height="738">
 
                     <a href="docs/" class="arrow">Learn more</a>
                 </card-text>
@@ -98,7 +103,7 @@
                     
                     <p>Pluto lets you <em>bind</em> a Julia variable to an GUI element. Moving a slider from 0 to 100 will actually change one of your variables from <code>0</code> to <code>100</code>! Combined with reactivity, this is a very powerful tool!</p>
 
-                    <img alt="@bind macro screencap" src="https://user-images.githubusercontent.com/6933510/134825003-bd72ef08-677b-42fa-a655-e842868b10f6.gif">
+                    <img alt="@bind macro screencap" src="https://user-images.githubusercontent.com/6933510/134825003-bd72ef08-677b-42fa-a655-e842868b10f6.gif" width="884" height="330">
                     
                     <p>It's that simple to make your Julia code come to life! That's because reactivity and widget interactivity are the same concept! Less to learn, more to discover.</p>
 
@@ -236,10 +241,10 @@
                 <!-- Learning programming can be scary! -->
                 <!-- We know how difficult it can be to learn  -->
 
-                We designed Pluto to teach our own course: <a href="asdf.com">Computational Thinking at MIT</a>. The result is a programming environment that prioritizes beginners over advanced users!
+                We designed Pluto to teach our own course: <a href="https://computationalthinking.mit.edu/">Computational Thinking at MIT</a>. The result is a programming environment that prioritizes beginners over advanced users!
             </p>
 
-            <p-card class="mini">
+            <p-card>
                 <card-text>
                     <h2><em>Computational Thinking</em> at MIT</h2>
 
@@ -262,6 +267,7 @@
     </section>
     <section class="install">
         <main>
+            
 
             <p-hannes>
                 <h1-sub>Let's go!</h1-sub>
@@ -271,16 +277,54 @@
                 Pluto can be installed and updated using Julia's package manager.
             </p>
 
-            <p-card class="mini">
+            <p-card>
                 <card-text>
-                    <h2><a href="asdf.com">Computational Thinking</a> at MIT</h2>
-
-
-
-                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                    <h2>Step 1: Install Julia <auto-julia-version>1.8.2</auto-julia-version></h2>
+                    
+                    <p>Go to <a href="https://julialang.org/downloads">https://julialang.org/downloads</a> and download the <em>current stable release</em>, Julia <auto-julia-version>1.8.2</auto-julia-version>, using the correct version for your operating system (Linux x86, Mac, Windows, etc).</p>
                 </card-text>
                 <card-showcase>
-                    <img alt="package manager screencap" src="https://user-images.githubusercontent.com/6933510/134823403-fbb79d7f-dd3e-4712-b5d5-b48ad0770f13.gif">
+                </card-showcase>
+                
+            </p-card>
+
+            <p-card>
+                <card-text>
+                    <h2>Step 2: Run Julia</h2>
+
+                    <p>After installing, <strong>make sure that you can run Julia</strong>. On some systems, this means searching for the “Julia <auto-julia-version>1.8.2</auto-julia-version>” program installed on your computer; in others, it means running the command <code>julia</code> in a terminal. Make sure that you can execute <code>1 + 1</code>.</p>
+                </card-text>
+                <card-showcase>
+                    <img src="https://user-images.githubusercontent.com/6933510/207901547-230f77fc-004e-493b-a779-a0178979f145.png" alt="screenshot of the Julia REPL with 1+1 executed" style="border: 3px solid #83838369; border-radius: 6px;" width="972" height="546">
+                </card-showcase>
+            </p-card>
+
+            <p-card>
+                <card-text>
+                    <h2>Step 3: Install Pluto</h2>
+                    
+                    <p>In the Julia terminal, type:</p>
+                    <pre><code>import Pkg; Pkg.add("Pluto")</code></pre>
+                    <p>This will use Julia's package manager to install the Pluto package.</p>
+                    
+                    <p><em>This might take a couple of minutes, so you can go get yourself a cup of tea!</em></p>
+
+                    <a href="https://computationalthinking.mit.edu/Fall22/installation/" class="arrow">Video instructions</a>
+                </card-text>
+                <card-showcase>
+                    <img src="https://user-images.githubusercontent.com/6933510/207904289-7776fce2-acb4-4777-a89f-c6dac62293c8.png" alt="screenshot of the Julia REPL running the command import Pkg; Pkg.add(&quot;Pluto&quot;)" style="border: 3px solid #83838369; border-radius: 6px;" width="972" height="546">
+                </card-showcase>
+            </p-card>
+
+            <p-card>
+                <card-text>
+                    <h2>Step 4: Run Pluto</h2>
+                    
+                    <p>In the Julia terminal, type:</p>
+                    <pre><code>import Pluto; Pluto.run()</code></pre>
+                    <p>Pluto will automatically open your browser when it's ready. 🎉</p>
+                </card-text>
+                <card-showcase>
                 </card-showcase>
             </p-card>
 
@@ -288,6 +332,23 @@
         </main>
     </section>
     <!-- </scroll-snapper> -->
+    
+    
+<script defer>
+    const run = f => f();
+    run(async () => {
+    const versions = await (await fetch(`https://julialang-s3.julialang.org/bin/versions.json`)).json()
+    const version_names = Object.keys(versions).sort().reverse()
+    const stable = version_names.find(v => versions[v].stable)
+    console.log({stable})
+    const pkg_stable = /\d+\.\d+/.exec(stable)[0]
+    document.querySelectorAll("auto-julia-version").forEach(el => {
+        console.log(el)
+        el.innerText = el.getAttribute("short") == null ? stable : pkg_stable
+    })
+    });
+    </script>
+    
 
 </body>
 

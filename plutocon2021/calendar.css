@@ -1,0 +1,166 @@
+pre {
+  font-family: monospace;
+}
+header,
+main {
+  background-color: white;
+  max-width: 600px;
+  padding: 0px 50px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2,
+h1 {
+  padding-top: 2em;
+}
+.card {
+  min-width: 100%;
+  margin-bottom: 10px;
+  border-width: 3px;
+}
+
+.card.Announcements {
+  border-color: #31737d85;
+}
+.card.PlutoDevelopment {
+  border-color: #367d3185;
+}
+.card.break {
+  border-color: transparent;
+  font-style: italic;
+}
+
+.time {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  display: block;
+  font-weight: bold;
+  color: #98739e;
+}
+.card-title {
+  margin-right: 7rem;
+}
+
+.card.Education {
+  border-color: #6e7d3147;
+}
+.card.Tools {
+  border-color: #75317d33;
+}
+.card.Finance {
+  border-color: #317d7d33;
+}
+
+.legend::before {
+  content: "Category";
+  font-style: italic;
+  text-align: left;
+}
+.legend {
+  background: white;
+  padding: 1rem;
+  border-radius: 3px;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  text-align: center;
+}
+.legend .card {
+  margin-bottom: 4px;
+  padding: 0px 5px;
+}
+
+.subtle-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+header h1 {
+  margin: 0px;
+  padding-top: 0px;
+}
+header img {
+  width: 100%;
+  padding-top: 1.5em;
+  padding: 2em 2em 0.5em 2em;
+}
+
+body {
+  background: #f9da892b;
+}
+main {
+  min-height: 100vh;
+}
+
+#fancy-background {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+#fancy-background > img {
+  position: fixed;
+}
+
+#fancy-background img.scrollw {
+  height: 100vh;
+}
+@media (prefers-reduced-motion) {
+  #fancy-background img {
+    transform: none !important;
+    /*     display: none; */
+  }
+}
+
+.juliahub-banner::before{
+  content: 'deployment kindly sponsored by';
+  font-size: .65rem;
+  font-style: italic;
+  line-height: 1;
+  text-align: middle;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.juliahub-banner img {
+  width: 140px;
+}
+.juliahub-banner {
+  display: flex;
+  flex-flow: column nowrap;
+  position: fixed;
+  left: -2px; 
+  bottom: 1rem;
+  background-color: #2a2e48;
+  border-radius:  0 4px 4px 0;
+  padding: .5em;
+  animation-duration: 20s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  65% {
+    transform: translateX(0%);
+  }
+  95% {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

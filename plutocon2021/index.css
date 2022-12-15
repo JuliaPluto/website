@@ -1,0 +1,97 @@
+
+body {
+  cursor: url('https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.12.18/frontend/img/favicon-32x32.png') 16 16, auto;
+}
+
+.action-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+blockquote.main-action {
+  text-align: center;
+  margin: 10px;
+  position: relative;
+  background: transparent;
+}
+blockquote.main-action:hover {
+  
+}
+.fancy-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.fancy-background > img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.fancy-background img.scrollw {
+  height: 100%;
+}
+
+blockquote a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  max-width: 700px;
+  margin: 0px auto;
+  padding: 0px 10px;
+}
+
+.juliahub-banner::before{
+  content: 'deployment kindly sponsored by';
+  font-size: .65rem;
+  font-style: italic;
+  line-height: 1;
+  text-align: middle;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.juliahub-banner img {
+  width: 140px;
+}
+.juliahub-banner {
+  display: flex;
+  flex-flow: column nowrap;
+  position: fixed;
+  right: -2px; 
+  bottom: 1rem;
+  background-color: #2a2e48;
+  border-radius: 4px 0 0 4px;
+  padding: .5em;
+  animation-duration: 20s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  65% {
+    transform: translateX(0%);
+  }
+  95% {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

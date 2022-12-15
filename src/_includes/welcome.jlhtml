@@ -7,7 +7,7 @@
     <link rel="icon" href="$(root_url)/assets/favicon.ico" />
     <link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml">
 
-    <title>Pluto.jl — interactive programming environment</title>
+    <title>Pluto.jl — interactive Julia programming environment</title>
     <meta name="description" content="A free, open source Julia programming environment. Designed to make learning and teaching scientific programming simple!">
 	
 	<link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />

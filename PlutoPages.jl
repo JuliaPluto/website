@@ -518,9 +518,13 @@ end
 # ╔═╡ 1c269e16-65c7-47ae-aeab-001f1b205e14
 ishtml(output::TemplateOutput) = output.file_extension == "html"
 
+# ╔═╡ 5649e688-d602-4baa-b204-551c7d74b9a7
+ishtml(input::TemplateInput) = 
+	lstrip(isequal('.'), splitext(input.relative_path)[2]) == "html"
+
 # ╔═╡ 898eb093-444c-45cf-88d7-3dbe9708ae31
 function final_url(input::TemplateInput, output::TemplateOutput)::String
-	if ishtml(output)
+	if ishtml(output) && !ishtml(input)
 		# Examples:
 		#   a/b.jl   	->    a/b/index.html
 		#   a/index.jl  ->    a/index.html
@@ -991,6 +995,7 @@ end
 # ╠═898eb093-444c-45cf-88d7-3dbe9708ae31
 # ╟─a510857f-528b-43e8-be78-69e554d165a6
 # ╟─1c269e16-65c7-47ae-aeab-001f1b205e14
+# ╟─5649e688-d602-4baa-b204-551c7d74b9a7
 # ╟─318dc59e-15f6-4b25-bcf5-1ab6b0d87af7
 # ╟─76193b12-842c-4b82-a23e-fb7403274234
 # ╠═4f563136-fc7b-4322-92ba-78c0183c40cc

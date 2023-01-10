@@ -121,7 +121,7 @@
     </section>
     
     
-    <section class="reproducibility">
+    <section id="reproducibility" class="reproducibility">
         <main>
 
 
@@ -172,7 +172,7 @@
     </section>
     
     
-    <section class="julia">
+    <section id="julia" class="julia">
         <main>
 
 
@@ -230,7 +230,7 @@
     </section>
     
     
-    <section class="education">
+    <section id="education" class="education">
         <main>
 
             <p-hannes>
@@ -265,7 +265,7 @@
 
         </main>
     </section>
-    <section class="install">
+    <section id="install" class="install">
         <main>
             $(
                 begin

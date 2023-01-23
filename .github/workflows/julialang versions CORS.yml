@@ -1,0 +1,55 @@
+name: "Check availability of versions.json"
+
+on:
+  schedule:
+  - cron: "37 0,6,12,18 * * *"
+  workflow_dispatch:
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.29.4"
+
+      - uses: actions/github-script@v5
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            require("fs").writeFileSync("context.json", JSON.stringify(context))
+
+      - name: Generate comment
+        id: generate-comment
+        run: |
+          deno eval '
+          const response = await fetch("https://julialang-s3.julialang.org/bin/versions.json")
+          const data = await response.json()
+          
+          if(Object.keys(data).length < 50) {
+            console.error("weird response")
+            Deno.exit(1)
+          }
+          if(response.headers.get("access-control-allow-origin") !== "*") {
+            console.error("No CORS header")
+            Deno.exit(1)
+          }
+          
+          console.log(data)
+          
+          Deno.exit(1)
+          
+          '
+
+      - name: Report failure
+        if: ${{ failure() }}
+        run: |
+          curl --request POST \
+          --url https://api.github.com/repos/${{ github.repository }}/issues \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'X-GitHub-Api-Version: 2022-11-28' \
+          --header 'content-type: application/json' \
+          --data '{
+            "title": "Request failure: julialang.org versions.json failed",
+            "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n due to failure in run: _${{ github.run_id }}_."
+            }'

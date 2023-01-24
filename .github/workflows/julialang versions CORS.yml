@@ -27,10 +27,12 @@ jobs:
           
           if(Object.keys(data).length < 50) {
             console.error("weird response")
+            console.log(data)
             Deno.exit(1)
           }
           if(response.headers.get("access-control-allow-origin") !== "*") {
             console.error("No CORS header")
+            console.log(respose.headers)
             Deno.exit(1)
           }
           

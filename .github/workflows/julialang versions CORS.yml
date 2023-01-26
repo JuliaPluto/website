@@ -43,11 +43,10 @@ jobs:
         if: ${{ failure() }}
         run: |
           curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues \
+          --url https://api.github.com/repos/${{ github.repository }}/issues/10/comments \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'X-GitHub-Api-Version: 2022-11-28' \
           --header 'content-type: application/json' \
           --data '{
-            "title": "Request failure: julialang.org versions.json failed",
             "body": "😵‍💫 https://julialang-s3.julialang.org/bin/versions.json is not working!\n\n📄 Log: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}.\n\n![](https://media.giphy.com/media/l4FsIC6XXeS0wGIBG/giphy.gif)"
             }'

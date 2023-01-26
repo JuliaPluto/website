@@ -32,7 +32,7 @@ jobs:
           }
           if(response.headers.get("access-control-allow-origin") !== "*") {
             console.error("No CORS header")
-            console.log(respose.headers)
+            console.log(response.headers)
             Deno.exit(1)
           }
           

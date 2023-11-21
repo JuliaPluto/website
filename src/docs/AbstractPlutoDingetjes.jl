@@ -16,11 +16,13 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ 30e32269-2435-4013-a8bc-eb5a4dc041c1
+# ╔═╡ bf40b702-48a5-4a99-957a-72ad391aa9d5
 using AbstractPlutoDingetjes
 
-# ╔═╡ 35d21862-b193-4450-9a08-490d77b3722e
-pkgversion(AbstractPlutoDingetjes)
+# ╔═╡ 85161a3c-274b-4c90-a9ef-ec86e3e2c59a
+md"""
+# AbstractPlutoDingetjes.jl
+"""
 
 # ╔═╡ 16877f32-8879-11ee-0554-01ef8951f596
 Docs.Binding(AbstractPlutoDingetjes, :AbstractPlutoDingetjes)
@@ -117,6 +119,9 @@ pluto-output .pluto-docs-binding h6
 }
 </style>
 """
+
+# ╔═╡ 35d21862-b193-4450-9a08-490d77b3722e
+pkgversion(AbstractPlutoDingetjes)
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -387,6 +392,8 @@ version = "17.4.0+0"
 
 # ╔═╡ Cell order:
 # ╟─5b3d4dfa-f93a-4854-950f-6b93f6ff42fe
+# ╟─85161a3c-274b-4c90-a9ef-ec86e3e2c59a
+# ╠═bf40b702-48a5-4a99-957a-72ad391aa9d5
 # ╟─16877f32-8879-11ee-0554-01ef8951f596
 # ╟─13a37a8e-023a-45da-8364-fd69ff76285b
 # ╟─39680ebf-8cca-4c64-80aa-afdb261344e7
@@ -402,7 +409,6 @@ version = "17.4.0+0"
 # ╟─86f57e1a-745e-4fac-a662-89231d57e4a4
 # ╟─be0e729c-a1c3-44e8-bf7b-2655bc4f472f
 # ╟─0f7c4a26-e65d-47f9-b8be-47e6ff6fa2a7
-# ╟─30e32269-2435-4013-a8bc-eb5a4dc041c1
 # ╟─d6b36872-77de-4a87-acbf-e1725ca15d27
 # ╠═35d21862-b193-4450-9a08-490d77b3722e
 # ╟─00000000-0000-0000-0000-000000000001

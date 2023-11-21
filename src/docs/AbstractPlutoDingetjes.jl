@@ -1,6 +1,18 @@
 ### A Pluto.jl notebook ###
 # v0.19.32
 
+#> [frontmatter]
+#> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
+#> layout = "layout.jlhtml"
+#> tags = ["docs", "widgets", "AbstractPlutoDingetjes", "advanced"]
+#> date = "2023-11-21"
+#> description = "AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl."
+#> license = "Unlicense"
+#> 
+#>     [[frontmatter.author]]
+#>     name = "Pluto.jl"
+#>     url = "https://github.com/JuliaPluto"
+
 using Markdown
 using InteractiveUtils
 
@@ -9,6 +21,11 @@ using AbstractPlutoDingetjes
 
 # ╔═╡ 16877f32-8879-11ee-0554-01ef8951f596
 Docs.Binding(AbstractPlutoDingetjes, :AbstractPlutoDingetjes)
+
+# ╔═╡ 13a37a8e-023a-45da-8364-fd69ff76285b
+md"""
+![](https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif)
+"""
 
 # ╔═╡ 39680ebf-8cca-4c64-80aa-afdb261344e7
 md"""
@@ -368,6 +385,7 @@ version = "17.4.0+0"
 # ╔═╡ Cell order:
 # ╟─5b3d4dfa-f93a-4854-950f-6b93f6ff42fe
 # ╟─16877f32-8879-11ee-0554-01ef8951f596
+# ╟─13a37a8e-023a-45da-8364-fd69ff76285b
 # ╟─39680ebf-8cca-4c64-80aa-afdb261344e7
 # ╟─a0acd455-b1d2-4580-9607-119ec882315f
 # ╟─c3e83475-6ab0-4aa8-9a57-c2f25772cc75

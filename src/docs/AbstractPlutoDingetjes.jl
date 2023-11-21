@@ -19,6 +19,9 @@ using InteractiveUtils
 # ╔═╡ 30e32269-2435-4013-a8bc-eb5a4dc041c1
 using AbstractPlutoDingetjes
 
+# ╔═╡ 35d21862-b193-4450-9a08-490d77b3722e
+pkgversion(AbstractPlutoDingetjes)
+
 # ╔═╡ 16877f32-8879-11ee-0554-01ef8951f596
 Docs.Binding(AbstractPlutoDingetjes, :AbstractPlutoDingetjes)
 
@@ -401,5 +404,6 @@ version = "17.4.0+0"
 # ╟─0f7c4a26-e65d-47f9-b8be-47e6ff6fa2a7
 # ╟─30e32269-2435-4013-a8bc-eb5a4dc041c1
 # ╟─d6b36872-77de-4a87-acbf-e1725ca15d27
+# ╠═35d21862-b193-4450-9a08-490d77b3722e
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

@@ -279,7 +279,7 @@
 
             <p-card>
                 <card-text>
-                    <h2>Step 1: Install Julia <auto-julia-version>1.8.2</auto-julia-version></h2>
+                    <h2>Step 1: Install Julia <auto-julia-version>1.10.0</auto-julia-version></h2>
                     
                     <p>Go to <a href="https://julialang.org/downloads">https://julialang.org/downloads</a> and download the <em>current stable release</em>.</p>
                 </card-text>
@@ -292,7 +292,7 @@
                 <card-text>
                     <h2>Step 2: Run Julia</h2>
 
-                    <p>After installing, <strong>make sure that you can run Julia</strong>. On some systems, this means searching for the “Julia <auto-julia-version short>1.8</auto-julia-version>” program installed on your computer; in others, it means running the command <code>julia</code> in a terminal.</p>
+                    <p>After installing, <strong>make sure that you can run Julia</strong>. On some systems, this means searching for the “Julia <auto-julia-version short>1.10</auto-julia-version>” program installed on your computer; in others, it means running the command <code>julia</code> in a terminal.</p>
 		    <p>Make sure that you can execute <code>1 + 1</code>.</p>
                 </card-text>
                 <card-showcase>
@@ -346,7 +346,8 @@
     const run = f => f();
     run(async () => {
     const versions = await (await fetch(`https://julialang-s3.julialang.org/bin/versions.json`)).json()
-    const version_names = Object.keys(versions).sort().reverse()
+    const sortby = v => v.split("-")[0].split(".").map(parseFloat).reduce((a,b) => a*10000 + b)
+    const version_names = Object.keys(versions).sort((a,b) => sortby(a) - sortby(b)).reverse()
     const stable = version_names.find(v => versions[v].stable)
     console.log({stable})
     const pkg_stable = /\d+\.\d+/.exec(stable)[0]

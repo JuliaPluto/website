@@ -13,6 +13,11 @@ Pkg.activate()
 # ╔═╡ 8b669928-eb0d-47b6-bea3-da46e98291d3
 using PlutoDependencyExplorer
 
+# ╔═╡ 488a0b76-0d9e-46cc-8db0-f7e072e846f5
+md"""
+# PlutoDependencyExplorer.jl
+"""
+
 # ╔═╡ f10e5aee-a5da-45aa-89d6-8e47835ceffd
 Docs.Binding(PlutoDependencyExplorer, :PlutoDependencyExplorer)
 
@@ -319,6 +324,7 @@ pkgversion(PlutoDependencyExplorer)
 # ╟─23847d62-8f24-433d-b526-86c2fc353d72
 # ╠═7b69f72e-b489-11ee-170e-09164d49c53e
 # ╠═eb1476da-363f-4ddd-a10b-8e6b5e177045
+# ╟─488a0b76-0d9e-46cc-8db0-f7e072e846f5
 # ╠═8b669928-eb0d-47b6-bea3-da46e98291d3
 # ╟─f10e5aee-a5da-45aa-89d6-8e47835ceffd
 # ╟─cf44eaae-7868-464a-8d17-5a5335977a3c

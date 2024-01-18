@@ -106,9 +106,6 @@ This will 1) activate a temporary environment using `Pkg.activate`, 2) add the r
 
 Placing all code in a single `begin` block ensures that the lines will run in the correct order.
 
-> 🙋 You can use [this helper tool](https://fonsp.com/article-test-3/pkghelper.html) to generate a "Pkg cell" automatically!
-
-
 
 
 
@@ -144,5 +141,6 @@ julia> ]
 
 After activating a notebook environment, you can use the [Pkg REPL](https://pkgdocs.julialang.org/v1/repl/) to view or modify the embedded environment. Changes from either side are synchronised (i.e. Pkg REPL changes are written to the notebook, editing the notebook updates the Pkg REPL env). Watch the demo video:
 
-https://user-images.githubusercontent.com/6933510/111483040-b9c9ee80-8734-11eb-97bc-f51703fc57cc.mov
 
+<video src="https://user-images.githubusercontent.com/6933510/111483040-b9c9ee80-8734-11eb-97bc-f51703fc57cc.mov" controls="controls" muted="muted"></video>
+  

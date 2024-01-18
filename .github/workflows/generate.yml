@@ -43,7 +43,9 @@ jobs:
                   import Pkg;
                   Pkg.instantiate();
 
-                  include("./generate.jl")'
+                  include("./generate.jl")
+                  
+                  cp("./netlify.toml", "./_site/netlify.toml")'
 
             
             - uses: actions/upload-artifact@v2

@@ -38,9 +38,6 @@ pluto-output {
 	overflow-y: hidden;
 }
 
-html {
-	font-size: 20px;
-}
 
 pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
 font-family: Jaldi, sans-serif;

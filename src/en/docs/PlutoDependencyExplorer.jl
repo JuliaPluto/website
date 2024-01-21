@@ -28,6 +28,42 @@ md"""
 # ╔═╡ f10e5aee-a5da-45aa-89d6-8e47835ceffd
 Docs.Binding(PlutoDependencyExplorer, :PlutoDependencyExplorer)
 
+# ╔═╡ d917d940-3de5-4f0a-a83e-33c0522b2c83
+html"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+pluto-output {
+	font-family: 'Jaldi', sans-serif;
+	overflow-y: hidden;
+}
+
+pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
+font-family: Jaldi, sans-serif;
+	line-height: 1;
+}
+
+pluto-output .pluto-docs-binding h1 {
+	font-size: 1.4em;
+}
+
+pluto-output h1 {
+	margin-block-start: 2.5em !important;
+}
+
+pluto-output .pluto-docs-binding h2 {
+    font-size: 1.3em;
+}
+pluto-output .pluto-docs-binding h3,
+pluto-output .pluto-docs-binding h4,
+pluto-output .pluto-docs-binding h5,
+pluto-output .pluto-docs-binding h6
+{
+    font-size: 1.1em;
+}
+</style>
+"""
+
 # ╔═╡ cf44eaae-7868-464a-8d17-5a5335977a3c
 md"""
 # Basic example
@@ -280,46 +316,6 @@ Docs.Binding(EEE, :pretransform_pluto)
 
 # ╔═╡ effa9b86-f78f-47a7-898b-308a12c6fee7
 import PlutoUI
-
-# ╔═╡ d917d940-3de5-4f0a-a83e-33c0522b2c83
-html"""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
-
-pluto-output {
-	font-family: 'Jaldi', sans-serif;
-	overflow-y: hidden;
-}
-
-html {
-	font-size: 20px;
-}
-
-pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
-font-family: Jaldi, sans-serif;
-	line-height: 1;
-}
-
-pluto-output .pluto-docs-binding h1 {
-	font-size: 1.4em;
-}
-
-pluto-output h1 {
-	margin-block-start: 2.5em !important;
-}
-
-pluto-output .pluto-docs-binding h2 {
-    font-size: 1.3em;
-}
-pluto-output .pluto-docs-binding h3,
-pluto-output .pluto-docs-binding h4,
-pluto-output .pluto-docs-binding h5,
-pluto-output .pluto-docs-binding h6
-{
-    font-size: 1.1em;
-}
-</style>
-"""
 
 # ╔═╡ 8dac5863-86e0-483c-bce2-f396c698ddb3
 pkgversion(PlutoDependencyExplorer)

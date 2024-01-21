@@ -28,6 +28,46 @@ md"""
 # ╔═╡ 16877f32-8879-11ee-0554-01ef8951f596
 Docs.Binding(AbstractPlutoDingetjes, :AbstractPlutoDingetjes)
 
+# ╔═╡ d6b36872-77de-4a87-acbf-e1725ca15d27
+html"""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+pluto-output {
+	font-family: 'Jaldi', sans-serif;
+	overflow-y: hidden;
+}
+
+html {
+	font-size: 20px;
+}
+
+pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
+font-family: Jaldi, sans-serif;
+	line-height: 1;
+}
+
+pluto-output .pluto-docs-binding h1 {
+	font-size: 1.4em;
+}
+
+pluto-output h1 {
+	margin-block-start: 2.5em !important;
+}
+
+pluto-output .pluto-docs-binding h2 {
+    font-size: 1.3em;
+}
+pluto-output .pluto-docs-binding h3,
+pluto-output .pluto-docs-binding h4,
+pluto-output .pluto-docs-binding h5,
+pluto-output .pluto-docs-binding h6
+{
+    font-size: 1.1em;
+}
+</style>
+"""
+
 # ╔═╡ 13a37a8e-023a-45da-8364-fd69ff76285b
 md"""
 ![](https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif)
@@ -80,46 +120,6 @@ import PlutoUI
 
 # ╔═╡ 5b3d4dfa-f93a-4854-950f-6b93f6ff42fe
 PlutoUI.TableOfContents(include_definitions=true)
-
-# ╔═╡ d6b36872-77de-4a87-acbf-e1725ca15d27
-html"""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
-
-pluto-output {
-	font-family: 'Jaldi', sans-serif;
-	overflow-y: hidden;
-}
-
-html {
-	font-size: 20px;
-}
-
-pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
-font-family: Jaldi, sans-serif;
-	line-height: 1;
-}
-
-pluto-output .pluto-docs-binding h1 {
-	font-size: 1.4em;
-}
-
-pluto-output h1 {
-	margin-block-start: 2.5em !important;
-}
-
-pluto-output .pluto-docs-binding h2 {
-    font-size: 1.3em;
-}
-pluto-output .pluto-docs-binding h3,
-pluto-output .pluto-docs-binding h4,
-pluto-output .pluto-docs-binding h5,
-pluto-output .pluto-docs-binding h6
-{
-    font-size: 1.1em;
-}
-</style>
-"""
 
 # ╔═╡ 35d21862-b193-4450-9a08-490d77b3722e
 pkgversion(AbstractPlutoDingetjes)
@@ -408,6 +408,7 @@ version = "17.4.0+2"
 # ╟─85161a3c-274b-4c90-a9ef-ec86e3e2c59a
 # ╠═bf40b702-48a5-4a99-957a-72ad391aa9d5
 # ╟─16877f32-8879-11ee-0554-01ef8951f596
+# ╟─d6b36872-77de-4a87-acbf-e1725ca15d27
 # ╟─13a37a8e-023a-45da-8364-fd69ff76285b
 # ╟─39680ebf-8cca-4c64-80aa-afdb261344e7
 # ╟─a0acd455-b1d2-4580-9607-119ec882315f
@@ -422,7 +423,6 @@ version = "17.4.0+2"
 # ╟─86f57e1a-745e-4fac-a662-89231d57e4a4
 # ╟─be0e729c-a1c3-44e8-bf7b-2655bc4f472f
 # ╟─0f7c4a26-e65d-47f9-b8be-47e6ff6fa2a7
-# ╟─d6b36872-77de-4a87-acbf-e1725ca15d27
 # ╠═35d21862-b193-4450-9a08-490d77b3722e
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

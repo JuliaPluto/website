@@ -3,7 +3,7 @@
 
 #> [frontmatter]
 #> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
-#> title = "AbstractPlutoDingetjes.jl docs"
+#> title = "AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets"
 #> layout = "layout.jlhtml"
 #> tags = ["docs", "widgets", "AbstractPlutoDingetjes", "advanced"]
 #> date = "2023-11-21"

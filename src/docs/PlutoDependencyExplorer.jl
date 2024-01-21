@@ -1,6 +1,18 @@
 ### A Pluto.jl notebook ###
 # v0.19.36
 
+#> [frontmatter]
+#> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
+#> title = "PlutoDependencyExplorer.jl docs"
+#> date = "2024-01-21"
+#> license = "Unlicense"
+#> description = "This package contains Pluto's dependency sorting algorithm. Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run."
+#> tags = ["docs", "PlutoDependencyExplorer", "internals", "reactivity", "ExpressionExplorer", "advanced"]
+#> 
+#>     [[frontmatter.author]]
+#>     name = "Pluto.jl"
+#>     url = "https://github.com/JuliaPluto"
+
 using Markdown
 using InteractiveUtils
 

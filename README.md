@@ -12,7 +12,7 @@ This is the source code for the Pluto.jl website! It uses a site generation syst
 
 The `/src/` folder is scanned for files, and all files are turned into HTML pages. 
 
-Paths correspond to URLs. For example, `src/docs/install.jlmd` will become available at `plutojl.org/docs/install/`. For files called *"index"*, the URL will point to its parent, e.g. `src/docs/index.jlmd` becomes `plutojl.org/docs/`. Remember that changing URLs is very bad! You can't share Pluto with your friends if the links break.
+Paths correspond to URLs. For example, `src/en/docs/install.jlmd` will become available at `plutojl.org/en/docs/install/`. For files called *"index"*, the URL will point to its parent, e.g. `src/en/docs/index.jlmd` becomes `plutojl.org/en/docs/`. Remember that changing URLs is very bad! You can't share Pluto with your friends if the links break.
 
 > **To add something to our website, just create a new file!** Fons will be super happy to figure out the technical bits.
 

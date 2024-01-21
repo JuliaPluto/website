@@ -1,0 +1,9 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/en/docs/:splat"
+  status = 301

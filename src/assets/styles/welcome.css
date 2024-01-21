@@ -198,6 +198,13 @@ header #topnav .navlinks a {
     color: white;
 }
 
+header #topnav .navlinks a img {
+    height: 1em;
+    filter: invert(1);
+    transform: translate(0, 0.1em) scale(1.2);
+    margin-right: 0.3em;
+}
+
 h1,
 h2 {
     font-weight: 800;

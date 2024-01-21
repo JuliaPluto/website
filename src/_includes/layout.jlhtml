@@ -46,8 +46,14 @@ $(pluto_head)
             </li>
         $(let
             sidebar_data = Base.include(@__MODULE__, joinpath(@__DIR__, "..", "sidebar data.jl"))
-            sections = get(sidebar_data, split(page.url, "/")[1], [])
-        
+            
+            parts = split(page.url, "/")
+            mylang = length(parts) >= 1 ? parts[1] : "en"
+            mysection = length(parts) >= 2 ? parts[2] : ""
+
+            for_my_lang = get(sidebar_data, mylang, Dict())
+            sections = get(for_my_lang, mysection, [])
+
             [
                 @htl("""
                 <li>

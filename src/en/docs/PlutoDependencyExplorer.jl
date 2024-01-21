@@ -8,6 +8,7 @@
 #> license = "Unlicense"
 #> description = "This package contains Pluto's dependency sorting algorithm. Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run."
 #> tags = ["docs", "PlutoDependencyExplorer", "internals", "reactivity", "ExpressionExplorer", "advanced"]
+#> layout = "layout.jlhtml"
 #> 
 #>     [[frontmatter.author]]
 #>     name = "Pluto.jl"

@@ -2,7 +2,7 @@
 # v0.19.36
 
 #> [frontmatter]
-#> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
+#> image = "https://media.giphy.com/media/242BaXJnCfe7hOVrsE/giphy.gif"
 #> title = "PlutoDependencyExplorer.jl docs"
 #> date = "2024-01-21"
 #> license = "Unlicense"
@@ -330,7 +330,7 @@ PlutoDependencyExplorer = "72656b73-756c-7461-726b-72656b6b696b"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-PlutoDependencyExplorer = "~1.0.0"
+PlutoDependencyExplorer = "~1.0.2"
 PlutoUI = "~0.7.55"
 """
 
@@ -340,7 +340,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.10.0"
 manifest_format = "2.0"
-project_hash = "ef27dd404bbb672ceb0074b1a16ed75ee3d228bb"
+project_hash = "a61caaad30753f5c18d955d59875691b323a5d3d"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -497,9 +497,9 @@ version = "1.10.0"
 
 [[deps.PlutoDependencyExplorer]]
 deps = ["ExpressionExplorer", "InteractiveUtils", "Markdown"]
-git-tree-sha1 = "af728e60e653b77185ae854a308fdfc5c09dc683"
+git-tree-sha1 = "0a9c0ed1979817b722836a6b195df96fc5c4ba43"
 uuid = "72656b73-756c-7461-726b-72656b6b696b"
-version = "1.0.0"
+version = "1.0.2"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]

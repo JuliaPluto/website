@@ -3,7 +3,7 @@
 
 #> [frontmatter]
 #> image = "https://media.giphy.com/media/242BaXJnCfe7hOVrsE/giphy.gif"
-#> title = "PlutoDependencyExplorer.jl docs"
+#> title = "PlutoDependencyExplorer.jl – dependency sorting"
 #> date = "2024-01-21"
 #> license = "Unlicense"
 #> description = "This package contains Pluto's dependency sorting algorithm. Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run."

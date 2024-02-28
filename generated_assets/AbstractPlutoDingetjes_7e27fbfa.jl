@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.36
+# v0.19.40
 
 #> [frontmatter]
 #> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
@@ -101,6 +101,9 @@ md"""
 # ╔═╡ c97231c8-d465-48a2-90ec-f94a2895a83a
 Docs.Binding(AbstractPlutoDingetjes.Display, :published_to_js)
 
+# ╔═╡ 0a9ff8c7-b5f8-4ea5-8a45-a1cb2071abba
+Docs.Binding(AbstractPlutoDingetjes.Display, :with_js_link)
+
 # ╔═╡ b540e440-4ae6-46ec-ae20-2350d933e51e
 md"""
 # Extras
@@ -128,8 +131,8 @@ AbstractPlutoDingetjes = "6e696c72-6542-2067-7265-42206c756150"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-AbstractPlutoDingetjes = "~1.2.3"
-PlutoUI = "~0.7.54"
+AbstractPlutoDingetjes = "~1.3.0"
+PlutoUI = "~0.7.58"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -138,13 +141,13 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.10.0"
 manifest_format = "2.0"
-project_hash = "1a8213372290091726f27df60a8401a6eea2c985"
+project_hash = "c3c55fc0ab1fccdbbaadae5b1433c2be036d949f"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
-git-tree-sha1 = "c278dfab760520b8bb7e9511b968bf4ba38b7acc"
+git-tree-sha1 = "0f748c81756f2e5e6854298f11ad8b2dfae6911a"
 uuid = "6e696c72-6542-2067-7265-42206c756150"
-version = "1.2.3"
+version = "1.3.0"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -187,9 +190,9 @@ version = "0.8.4"
 
 [[deps.Hyperscript]]
 deps = ["Test"]
-git-tree-sha1 = "8d511d5b81240fc8e6802386302675bdf47737b9"
+git-tree-sha1 = "179267cfa5e712760cd43dcae385d7ea90cc25a4"
 uuid = "47d2ed2b-36de-50cf-bf87-49c2cf4b8b91"
-version = "0.0.4"
+version = "0.0.5"
 
 [[deps.HypertextLiteral]]
 deps = ["Tricks"]
@@ -199,9 +202,9 @@ version = "0.9.5"
 
 [[deps.IOCapture]]
 deps = ["Logging", "Random"]
-git-tree-sha1 = "d75853a0bdbfb1ac815478bacd89cd27b550ace6"
+git-tree-sha1 = "8b72179abc660bfab5e28472e019392b97d0985c"
 uuid = "b5f81e59-6552-4d32-b1f0-c071b021bf89"
-version = "0.2.3"
+version = "0.2.4"
 
 [[deps.InteractiveUtils]]
 deps = ["Markdown"]
@@ -290,9 +293,9 @@ version = "1.10.0"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
-git-tree-sha1 = "bd7c69c7f7173097e7b5e1be07cee2b8b7447f51"
+git-tree-sha1 = "71a22244e352aa8c5f0f2adde4150f62368a3f2e"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.54"
+version = "0.7.58"
 
 [[deps.PrecompileTools]]
 deps = ["Preferences"]
@@ -416,6 +419,7 @@ version = "17.4.0+2"
 # ╟─6ec4c9b6-e3e2-4f0a-911f-49484a489ec6
 # ╟─fe840c59-2f58-4b8c-9429-7ce33c242bf6
 # ╟─c97231c8-d465-48a2-90ec-f94a2895a83a
+# ╟─0a9ff8c7-b5f8-4ea5-8a45-a1cb2071abba
 # ╟─b540e440-4ae6-46ec-ae20-2350d933e51e
 # ╟─86f57e1a-745e-4fac-a662-89231d57e4a4
 # ╟─be0e729c-a1c3-44e8-bf7b-2655bc4f472f

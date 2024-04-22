@@ -68,9 +68,16 @@ $(pluto_head)
                         desc = get(output.frontmatter, "description", nothing)
                         active = page.url == other_page.url
                         
+                        name_fancy = if occursin("–", name)
+                            title, subtitle = split(name, "–"; limit=2)
+                            @htl("$(title)<br><small>$subtitle</small>")
+                        else
+                            name
+                        end
+                        
                         @htl("""<li class=$([
                             active ? "active" : nothing,
-                        ])><a href=$(root_url * "/" * other_page.url) title=$(desc)>$(name)</a></li>""")
+                        ])><a href=$(root_url * "/" * other_page.url) title=$(desc)>$(name_fancy)</a></li>""")
                     end for other_page in pages
                 ])
                 </ul>

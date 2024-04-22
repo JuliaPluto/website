@@ -2,7 +2,8 @@
 title: "🌼 How to install"
 tags: ["docs", "introduction"]
 layout: "md.jlmd"
+order: 1
 ---
 
-Go to [plutojl.org/#install](https://plutojl.org/#install) for insructions!
+Go to [plutojl.org/#install](https://plutojl.org/#install) for instructions!
 

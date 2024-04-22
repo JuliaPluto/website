@@ -2,6 +2,7 @@
 title: "🙋 Introduction"
 tags: ["docs", "introduction"]
 layout: "md.jlmd"
+order: 0
 ---
 
 # Welcome to Pluto!

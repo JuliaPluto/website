@@ -4,7 +4,7 @@
 #> [frontmatter]
 #> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
 #> title = "AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets"
-#> layout = "layout.jlhtml"
+#> layout = "docsnotebook.jlhtml"
 #> tags = ["docs", "widgets", "AbstractPlutoDingetjes", "advanced"]
 #> date = "2023-11-21"
 #> description = "AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl."
@@ -29,41 +29,7 @@ md"""
 Docs.Binding(AbstractPlutoDingetjes, :AbstractPlutoDingetjes)
 
 # ╔═╡ d6b36872-77de-4a87-acbf-e1725ca15d27
-html"""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
 
-pluto-output {
-	font-family: 'Jaldi', sans-serif;
-	overflow-y: hidden;
-}
-
-
-pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
-font-family: Jaldi, sans-serif;
-	line-height: 1;
-}
-
-pluto-output .pluto-docs-binding h1 {
-	font-size: 1.4em;
-}
-
-pluto-output h1 {
-	margin-block-start: 2.5em !important;
-}
-
-pluto-output .pluto-docs-binding h2 {
-    font-size: 1.3em;
-}
-pluto-output .pluto-docs-binding h3,
-pluto-output .pluto-docs-binding h4,
-pluto-output .pluto-docs-binding h5,
-pluto-output .pluto-docs-binding h6
-{
-    font-size: 1.1em;
-}
-</style>
-"""
 
 # ╔═╡ 13a37a8e-023a-45da-8364-fd69ff76285b
 md"""

@@ -41,7 +41,7 @@ window.pluto_preamble_html = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -53,13 +53,13 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Advanced: Widgets</h3>
 <ul>
-<li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets</a></li>
+<li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li>
 </ul>
 </li>
 <li>
 <h3>Advanced: Internals</h3>
 <ul>
-<li class='active'><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl – documentation </a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl – documentation</a></li>
+<li class='active'><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
 </ul>
 </li>
 
@@ -67,13 +67,41 @@ window.pluto_preamble_html = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <pluto-editor 
- statefile='../../../generated_assets/ExpressionExplorer_0e8a02a0.plutostate' 
- notebookfile='../../../generated_assets/ExpressionExplorer_dc56a608.jl' 
+        <style>
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
 
+pluto-output {
+	font-family: 'Jaldi', sans-serif;
+	font-size: 17px;
+	overflow-y: hidden;
+}
 
-	disable_ui
->
+pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
+font-family: Jaldi, sans-serif;
+	line-height: 1;
+}
+
+pluto-output .pluto-docs-binding h1 {
+	font-size: 1.4em;
+}
+
+pluto-output h1 {
+	margin-block-start: 2.5em !important;
+}
+
+pluto-output .pluto-docs-binding h2 {
+    font-size: 1.3em;
+}
+pluto-output .pluto-docs-binding h3,
+pluto-output .pluto-docs-binding h4,
+pluto-output .pluto-docs-binding h5,
+pluto-output .pluto-docs-binding h6
+{
+    font-size: 1.1em;
+}
+</style>
+</style>
+<pluto-editor statefile='../../../generated_assets/ExpressionExplorer_0d470995.plutostate' notebookfile='../../../generated_assets/ExpressionExplorer_fead94e3.jl' disable-ui=''></pluto-editor>
 
         </div>
     </div>

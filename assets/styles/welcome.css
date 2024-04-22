@@ -41,6 +41,10 @@ section {
     /* scroll-snap-type: mandatory; */
 }
 
+a {
+    text-decoration: none;
+}
+
 section.runtime {
     --bg-color: #faefec;
     background-image: url("../welcome/interactivity\ pow\ bw.svg");

@@ -1,14 +1,14 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.41
 
 #> [frontmatter]
-#> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
-#> title = "AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets"
-#> layout = "layout.jlhtml"
-#> tags = ["docs", "widgets", "AbstractPlutoDingetjes", "advanced"]
-#> date = "2023-11-21"
-#> description = "AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl."
-#> license = "Unlicense"
+#> image = "https://media.giphy.com/media/242BaXJnCfe7hOVrsE/giphy.gif"
+#> title = "ExpressionExplorer.jl – documentation "
+#> layout = "docsnotebook.jlmd"
+#> license = "MIT"
+#> description = "Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl."
+#> tags = ["docs", "internals", "reactivity", "advanced", "ExpressionExplorer"]
+#> date = "2023-10-31"
 #> 
 #>     [[frontmatter.author]]
 #>     name = "Pluto.jl"
@@ -17,121 +17,23 @@
 using Markdown
 using InteractiveUtils
 
-# ╔═╡ bf40b702-48a5-4a99-957a-72ad391aa9d5
-using AbstractPlutoDingetjes
+# ╔═╡ 5f30b5c3-a636-4296-a001-cd13ef4cde65
+using PlutoUI; TableOfContents()
 
-# ╔═╡ 85161a3c-274b-4c90-a9ef-ec86e3e2c59a
-md"""
-# AbstractPlutoDingetjes.jl
-"""
+# ╔═╡ 471e5830-0080-11ef-295e-b7250376af51
+using ExpressionExplorer
 
-# ╔═╡ 16877f32-8879-11ee-0554-01ef8951f596
-Docs.Binding(AbstractPlutoDingetjes, :AbstractPlutoDingetjes)
-
-# ╔═╡ d6b36872-77de-4a87-acbf-e1725ca15d27
-html"""
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
-
-pluto-output {
-	font-family: 'Jaldi', sans-serif;
-	overflow-y: hidden;
-}
-
-
-pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
-font-family: Jaldi, sans-serif;
-	line-height: 1;
-}
-
-pluto-output .pluto-docs-binding h1 {
-	font-size: 1.4em;
-}
-
-pluto-output h1 {
-	margin-block-start: 2.5em !important;
-}
-
-pluto-output .pluto-docs-binding h2 {
-    font-size: 1.3em;
-}
-pluto-output .pluto-docs-binding h3,
-pluto-output .pluto-docs-binding h4,
-pluto-output .pluto-docs-binding h5,
-pluto-output .pluto-docs-binding h6
-{
-    font-size: 1.1em;
-}
-</style>
-"""
-
-# ╔═╡ 13a37a8e-023a-45da-8364-fd69ff76285b
-md"""
-![](https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif)
-"""
-
-# ╔═╡ 39680ebf-8cca-4c64-80aa-afdb261344e7
-md"""
-# AbstractPlutoDingetjes.Bonds
-"""
-
-# ╔═╡ a0acd455-b1d2-4580-9607-119ec882315f
-Docs.Binding(AbstractPlutoDingetjes.Bonds, :initial_value)
-
-# ╔═╡ c3e83475-6ab0-4aa8-9a57-c2f25772cc75
-Docs.Binding(AbstractPlutoDingetjes.Bonds, :transform_value)
-
-# ╔═╡ 3d52b554-7b27-4eed-b1b2-6d100b3bcf93
-Docs.Binding(AbstractPlutoDingetjes.Bonds, :possible_values)
-
-# ╔═╡ 61cd5974-24c4-44d7-b82e-bce729688842
-Docs.Binding(AbstractPlutoDingetjes.Bonds, :NotGiven)
-
-# ╔═╡ 834eb09f-b583-4eed-899e-aaae4fcc8b4e
-Docs.Binding(AbstractPlutoDingetjes.Bonds, :InfinitePossibilities)
-
-# ╔═╡ 6ec4c9b6-e3e2-4f0a-911f-49484a489ec6
-Docs.Binding(AbstractPlutoDingetjes.Bonds, :validate_value)
-
-# ╔═╡ fe840c59-2f58-4b8c-9429-7ce33c242bf6
-md"""
-# AbstractPlutoDingetjes.Display
-"""
-
-# ╔═╡ c97231c8-d465-48a2-90ec-f94a2895a83a
-Docs.Binding(AbstractPlutoDingetjes.Display, :published_to_js)
-
-# ╔═╡ 0a9ff8c7-b5f8-4ea5-8a45-a1cb2071abba
-Docs.Binding(AbstractPlutoDingetjes.Display, :with_js_link)
-
-# ╔═╡ b540e440-4ae6-46ec-ae20-2350d933e51e
-md"""
-# Extras
-"""
-
-# ╔═╡ 86f57e1a-745e-4fac-a662-89231d57e4a4
-Docs.Binding(AbstractPlutoDingetjes, :is_supported_by_display)
-
-# ╔═╡ be0e729c-a1c3-44e8-bf7b-2655bc4f472f
-Docs.Binding(AbstractPlutoDingetjes, :is_inside_pluto)
-
-# ╔═╡ 0f7c4a26-e65d-47f9-b8be-47e6ff6fa2a7
-import PlutoUI
-
-# ╔═╡ 5b3d4dfa-f93a-4854-950f-6b93f6ff42fe
-PlutoUI.TableOfContents(include_definitions=true)
-
-# ╔═╡ 35d21862-b193-4450-9a08-490d77b3722e
-pkgversion(AbstractPlutoDingetjes)
+# ╔═╡ fae31e91-bae1-40b7-ac15-d6eba859e83c
+Markdown.parse(read(joinpath(pkgdir(ExpressionExplorer), "README.md"), String))
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
-AbstractPlutoDingetjes = "6e696c72-6542-2067-7265-42206c756150"
+ExpressionExplorer = "21656369-7473-754a-2065-74616d696c43"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-AbstractPlutoDingetjes = "~1.3.0"
+ExpressionExplorer = "~1.0.2"
 PlutoUI = "~0.7.58"
 """
 
@@ -141,13 +43,13 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.10.0"
 manifest_format = "2.0"
-project_hash = "c3c55fc0ab1fccdbbaadae5b1433c2be036d949f"
+project_hash = "7f0956aa447dddcbdcf5b9c53604c00ab1fa216f"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
-git-tree-sha1 = "0f748c81756f2e5e6854298f11ad8b2dfae6911a"
+git-tree-sha1 = "297b6b41b66ac7cbbebb4a740844310db9fd7b8c"
 uuid = "6e696c72-6542-2067-7265-42206c756150"
-version = "1.3.0"
+version = "1.3.1"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -161,9 +63,9 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[deps.ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
-git-tree-sha1 = "eb7f0f8307f71fac7c606984ea5fb2817275d6e4"
+git-tree-sha1 = "b10d0b65641d57b8b4d5e234446582de5047050d"
 uuid = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
-version = "0.11.4"
+version = "0.11.5"
 
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -178,6 +80,11 @@ uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
 deps = ["ArgTools", "FileWatching", "LibCURL", "NetworkOptions"]
 uuid = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 version = "1.6.0"
+
+[[deps.ExpressionExplorer]]
+git-tree-sha1 = "0da78bef32ca71276337442389a3d1962a1ee0da"
+uuid = "21656369-7473-754a-2065-74616d696c43"
+version = "1.0.2"
 
 [[deps.FileWatching]]
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
@@ -299,15 +206,15 @@ version = "0.7.58"
 
 [[deps.PrecompileTools]]
 deps = ["Preferences"]
-git-tree-sha1 = "03b4c25b43cb84cee5c90aa9b5ea0a78fd848d2f"
+git-tree-sha1 = "5aa36f7049a63a1528fe8f7c3f2113413ffd4e1f"
 uuid = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
-version = "1.2.0"
+version = "1.2.1"
 
 [[deps.Preferences]]
 deps = ["TOML"]
-git-tree-sha1 = "00805cd429dcb4870060ff49ef443486c262e38e"
+git-tree-sha1 = "9306f6085165d270f7e3db02af26a400d580f5c6"
 uuid = "21216c6a-2e73-6563-6e65-726566657250"
-version = "1.4.1"
+version = "1.4.3"
 
 [[deps.Printf]]
 deps = ["Unicode"]
@@ -404,26 +311,8 @@ version = "17.4.0+2"
 """
 
 # ╔═╡ Cell order:
-# ╟─5b3d4dfa-f93a-4854-950f-6b93f6ff42fe
-# ╟─85161a3c-274b-4c90-a9ef-ec86e3e2c59a
-# ╠═bf40b702-48a5-4a99-957a-72ad391aa9d5
-# ╟─16877f32-8879-11ee-0554-01ef8951f596
-# ╟─d6b36872-77de-4a87-acbf-e1725ca15d27
-# ╟─13a37a8e-023a-45da-8364-fd69ff76285b
-# ╟─39680ebf-8cca-4c64-80aa-afdb261344e7
-# ╟─a0acd455-b1d2-4580-9607-119ec882315f
-# ╟─c3e83475-6ab0-4aa8-9a57-c2f25772cc75
-# ╟─3d52b554-7b27-4eed-b1b2-6d100b3bcf93
-# ╟─61cd5974-24c4-44d7-b82e-bce729688842
-# ╟─834eb09f-b583-4eed-899e-aaae4fcc8b4e
-# ╟─6ec4c9b6-e3e2-4f0a-911f-49484a489ec6
-# ╟─fe840c59-2f58-4b8c-9429-7ce33c242bf6
-# ╟─c97231c8-d465-48a2-90ec-f94a2895a83a
-# ╟─0a9ff8c7-b5f8-4ea5-8a45-a1cb2071abba
-# ╟─b540e440-4ae6-46ec-ae20-2350d933e51e
-# ╟─86f57e1a-745e-4fac-a662-89231d57e4a4
-# ╟─be0e729c-a1c3-44e8-bf7b-2655bc4f472f
-# ╟─0f7c4a26-e65d-47f9-b8be-47e6ff6fa2a7
-# ╠═35d21862-b193-4450-9a08-490d77b3722e
+# ╟─fae31e91-bae1-40b7-ac15-d6eba859e83c
+# ╟─5f30b5c3-a636-4296-a001-cd13ef4cde65
+# ╠═471e5830-0080-11ef-295e-b7250376af51
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

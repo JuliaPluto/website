@@ -60,6 +60,8 @@ pre {
 pre,
 code {
     font-family: var(--system-fonts-mono);
+    font-size: 0.9em;
+    /* font-weight: 500; */
 }
 
 /* images and videos max out at full width */
@@ -71,7 +73,6 @@ video {
 
 a {
     font-weight: 500;
-    text-decoration: none;
 }
 a,
 a:visited {

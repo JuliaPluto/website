@@ -32,7 +32,6 @@ begin
     # careful: this is _not_ a reproducible environment
     # activate the global environment
     Pkg.activate()
-
     using Plots, PlutoUI, LinearAlgebra
 end
 ```
@@ -72,7 +71,6 @@ begin
     Pkg.activate(Base.current_project())
     # instantiate, i.e. make sure that all packages are downloaded
     Pkg.instantiate()
-
     using Plots, PlutoUI, LinearAlgebra
 end
 ```

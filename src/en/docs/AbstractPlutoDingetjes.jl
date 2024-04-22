@@ -4,7 +4,7 @@
 #> [frontmatter]
 #> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"
 #> title = "AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets"
-#> layout = "docsnotebook.jlhtml"
+#> layout = "docsnotebook.jlmd"
 #> tags = ["docs", "widgets", "AbstractPlutoDingetjes", "advanced"]
 #> date = "2023-11-21"
 #> description = "AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl."

@@ -8,7 +8,7 @@
 #> license = "Unlicense"
 #> description = "Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl."
 #> tags = ["docs", "PlutoDependencyExplorer", "internals", "reactivity", "ExpressionExplorer", "advanced"]
-#> layout = "docsnotebook.jlhtml"
+#> layout = "docsnotebook.jlmd"
 #> 
 #>     [[frontmatter.author]]
 #>     name = "Pluto.jl"
@@ -19,6 +19,9 @@ using InteractiveUtils
 
 # ╔═╡ 8b669928-eb0d-47b6-bea3-da46e98291d3
 using PlutoDependencyExplorer
+
+# ╔═╡ effa9b86-f78f-47a7-898b-308a12c6fee7
+using PlutoUI; TableOfContents(; include_definitions=true)
 
 # ╔═╡ 488a0b76-0d9e-46cc-8db0-f7e072e846f5
 md"""
@@ -280,9 +283,6 @@ Docs.Binding(EEE, :maybe_macroexpand_pluto)
 
 # ╔═╡ c96381eb-ca8d-498e-bfa4-06a107b1a24a
 Docs.Binding(EEE, :pretransform_pluto)
-
-# ╔═╡ effa9b86-f78f-47a7-898b-308a12c6fee7
-import PlutoUI
 
 # ╔═╡ 8dac5863-86e0-483c-bce2-f396c698ddb3
 pkgversion(PlutoDependencyExplorer)

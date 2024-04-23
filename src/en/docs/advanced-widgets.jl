@@ -37,8 +37,8 @@ md"""
 # Developing advanced widgets for Pluto
 
 Pluto has a number of advanced features for developers who want to create complex widgets for Pluto. Let's define some categories:
-- **Custom input** for `@bind`
-- **Custom output** for visualising results
+- **Custom inputs**: widgets that are used with `@bind`, like a slider or a map location picker.
+- **Custom outputs**: for visualising results, like a plot or a map with labels.
 
 """
 
@@ -49,7 +49,7 @@ md"""
 PlutoUI.jl provides some basic inputs, like sliders, textfields and more. But you can also make your own specialised widget! For example, you could make a
 - [map location picker](https://github.com/lukavdplas/PlutoMapPicker.jl), showing a map, and giving back the clicked coordinate with `@bind`.
   ![screenshot](https://github.com/lukavdplas/PlutoMapPicker.jl/raw/main/screenshot.png)
-- [chemical equation builder](https://youtu.be/lNbU5jNp67s?t=1546), giving back a Catalyst `ReactionSystem` with `@bind`.
+- [chemical equation builder](https://youtu.be/lNbU5jNp67s?t=1546), giving back a `Catalyst.ReactionSystem` with `@bind`.
   ![screenshot](https://github.com/fonsp/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a)
 - widget composed with Markdown and PlutoUI, giving back 4 values in a tuple with `@bind`.
   ![screenshot](https://user-images.githubusercontent.com/6933510/145588612-14824654-5c73-45f8-983c-8913c7101a78.png)
@@ -59,13 +59,15 @@ PlutoUI.jl provides some basic inputs, like sliders, textfields and more. But yo
 # ╔═╡ 782f4475-3e54-4916-8e7a-616a14dc9cc8
 md"""
 
-## Julia only: Composing widgets
-Some widgets can be written as a combination of existing inputs, and static content like text, styles, layout and images. For this, you can use:
+## No JavaScript: Composing widgets
+Some widgets can be written as a combination of existing inputs, and static content like text, styles, layout and images. This means that you can make simple widgets using only Julia and HTML or Markdown, without JavaScript. For this, you can use:
 - [`PlutoUI.combine`](#combine)
 - [`PlutoUI.Experimental.transformed_value`](#transformed_value)
 
 In some cases, you might just want to "wrap" and existing widget in static content:
 - [`PlutoUI.Experimental.wrapped`](#wrapped)
+
+Widgets created with these methods can be published in a package!
 """
 
 # ╔═╡ b9926b7f-989f-47ed-8ab6-703d6ced1f21
@@ -151,7 +153,7 @@ value
 
 # ╔═╡ fe1b49f0-77f8-40a5-bbef-1f4a0aa4837d
 md"""
-It works! Pluto renders you widget (by calling the `Base.show` method, and displaying that in the page), it then finds the first element (`<input ...>`). Pluto adds an event listener to the `"input"` event, and when fired (or when first rendered), Pluto takes the `.value` property, sends it to Julia, and it becomes your bound variable.
+It works! Pluto renders your widget (by calling the `Base.show` method, and displaying that in the page), it then finds the first element (`<input ...>`). Pluto adds an event listener to the `"input"` event, and when fired (or when first rendered), Pluto takes the `.value` property, sends it to Julia, and it becomes your bound variable.
 """
 
 # ╔═╡ 54ecd81d-01eb-45ac-9d2c-dc26393ea091
@@ -240,6 +242,35 @@ md"""
 Pluto can be used as a framework to have high-quality widgets powered by JavaScript, displaying data and calculations from Julia. By creating a **Custom output**, you can wrap your JavaScript-powered widget into a Julia function, such as `plot(data)`.
 
 Techniques used to power Custom Outputs can also be used in **Custom Inputs**! A Custom Input is just a Custom Output with added `@bind` support.
+
+
+DONE:
+```
+currentScript
+value
+```
+
+TODO:
+```
+OBject.definepropeorty(div, "value", {})
+this and id
+returning DOM element from script
+invalidation
+
+observable API
+
+getBoundElementValueLikePluto
+setBoundElementValueLikePluto
+getBoundElementEventNameLikePluto
+
+getNotebookMetadataExperimental
+setNotebookMetadataExperimental
+deleteNotebookMetadataExperimental
+
+getCellMetadataExperimental
+setCellMetadataExperimental
+deleteCellMetadataExperimental
+```
 """
 
 # ╔═╡ e733647f-5af9-462c-9bb6-ef4282a04f6c
@@ -284,6 +315,37 @@ md"""
 
 
 Use `AbstractPlutoDingetjes.Display.with_js_link` when you want to make on-demand requests to Julia from your JavaScript code.
+"""
+
+# ╔═╡ 965e17ea-cc2c-4072-82c4-94f259ce9224
+md"""
+# Distributing widgets
+
+Once you created a cool widget, the most user-friendly way to distribute it is to **publish it in a package**. You can create a new package with your widget, or you can add it to an existing package.
+
+## Dependencies
+When distributing a widget in a package (ExampleWidget.jl), you do not need to add Pluto.jl as a dependency to your Project.toml. You just need to add the packages that you used. This could be: HypertextLiteral.jl or AbstractPlutoDingetjes.jl. If you used `combine` or another PlutoUI feature, you add PlutoUI.jl as a dependency.
+
+HypertextLiteral.jl and especially AbstractPlutoDingetjes.jl are very small dependencies and will not add any noticeable lag to your package installation.
+
+## Code in notebook or Julia file?
+When prototyping your widget, you probably want to work fully inside a notebook. _(Tip: when editing the notebook, copy the `localhost` URL and open it in a second window. That way you can see the code and widget side-by-side.)_ Once you're done, you have two options for moving it to a package.
+
+First, you could store your notebook file directly in the package source code. Use the "Disable in File" feature to disable cells where you test your widget.
+
+![](https://github.com/JuliaPluto/AbstractPlutoDingetjes.jl/assets/6933510/f96980ff-83ce-4b15-8897-dc3e3b1ba72e)
+
+Second, you could move your code to a classic `.jl` file. Then you could use Revise.jl (or `@revise` from [PlutoLinks.jl](https://github.com/JuliaPluto/PlutoLinks.jl)) to test it in a notebook while developing the widget. This option might be nicer if your widget has a lot of JavaScript code.
+
+## Publishing small packages?
+If you just created one cool widget, you might think: "I want to publish this, but it's too small for a package!".
+
+Here is a little political message from fons: do it anyways! Life is too short to not publish small packages! If you made something fun or valuable, you totally deserve to publish it and share it with others. 💛 It's really valuable for others, and a cool experience for you!
+
+Publishing a widget in a small package is really valuable:
+- Others can **use it by simply typing `import ExampleWidget` in a notebook**. Without publishing it on General, users need to download scripts, copy code, ... This creates lots of hard-to-reproduce notebooks!
+- Once it's on the registry, it's **easier for people to discover**! Especially if the name starts with `Pluto`, like PlutoMapPicker.jl. People searching for your widget can find it online, because registered package show up on juliahub.com and more.
+- It's easy to get feedback, bug reports and contributions from users. And you can easily make patches and release them to your users. Or maybe it was right from the start, and you don't need this!
 """
 
 # ╔═╡ e5a05101-a023-40ad-9bef-c6c8d18eb719
@@ -607,6 +669,7 @@ version = "17.4.0+2"
 # ╟─0fff3ea7-74a5-4bd5-a205-db21b23a2601
 # ╟─189cfef6-7bfb-4181-8d7a-3086324968f2
 # ╟─2320e06c-56f8-47ac-b532-a85ae2cbe3f5
+# ╟─965e17ea-cc2c-4072-82c4-94f259ce9224
 # ╠═a17a8282-05f6-469d-9579-63029db89f79
 # ╠═e5a05101-a023-40ad-9bef-c6c8d18eb719
 # ╟─810b3d50-00e0-11ef-034d-73dc15b2f8bd

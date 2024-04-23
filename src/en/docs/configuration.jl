@@ -113,6 +113,7 @@ Docs.Binding(Pluto.Configuration, categories[3])
 Docs.Binding(Pluto.Configuration, categories[4])
 
 # ╔═╡ Cell order:
+# ╟─5a7dc99c-4229-4c7d-8464-8a57d9fcb517
 # ╟─efda32af-e2e8-4793-b553-9c73706ea659
 # ╟─a0da0b14-566e-4adc-bf23-702699e02c72
 # ╟─6606f0f0-e42d-4eef-bf57-fa02f165851d
@@ -124,5 +125,4 @@ Docs.Binding(Pluto.Configuration, categories[4])
 # ╟─c329cbad-4e62-45dc-b7a5-078d29dac386
 # ╟─73055c07-db51-4669-8832-3879636a7801
 # ╟─95afe010-00bf-11ef-3957-7bb8594e7a83
-# ╟─5a7dc99c-4229-4c7d-8464-8a57d9fcb517
 # ╟─05a02bbb-3307-4e85-a090-d5e29e1a476a

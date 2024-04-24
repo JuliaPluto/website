@@ -44,50 +44,48 @@ md"""
 We think the Web APIs and modern JavaScript are very powerful, and you should be able to do anything you want! However, we decided to add a **small amount of extra functionality** to make it easier to write code specifically for Pluto outputs.
 """
 
-# ╔═╡ 1a1621e8-e15c-4cfb-9cce-00c1c8f2f2c6
+# ╔═╡ 88120468-a43d-4d58-ac04-9cc7c86ca179
 md"""
+# Debugging
 
-DONE:
-```
-currentScript
-imports
-invalidation
-returning DOM element from script
+The HTML, CSS and JavaScript that you write run in the browser, so you should use the [browser's built-in developer tools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools) to debug your code. 
 
-observable API
-this and id
-
-
-getBoundElementValueLikePluto
-setBoundElementValueLikePluto
-getBoundElementEventNameLikePluto
-
-
-getNotebookMetadataExperimental
-setNotebookMetadataExperimental
-deleteNotebookMetadataExperimental
-
-getCellMetadataExperimental
-setCellMetadataExperimental
-deleteCellMetadataExperimental
-
-
-```
-
-TODO:
-```
-toplevel await
-strict mode
-
-value
-OBject.definepropeorty(div, "value", {})
-
-nice id attributes for headers
-
-make nice connection between this and the JS featured notebook
-
-```
+Check to make sure that you are able to debug JavaScript code:
 """
+
+# ╔═╡ ea4b2da1-4c83-4a1f-8fc3-c71a120e58e1
+@htl("""
+<script>
+
+console.info("Can you find this message in the console?")
+
+</script>
+""")
+
+# ╔═╡ 321b7f2e-542a-43af-bd4d-1264f5438322
+md"""
+And HTML and CSS:
+"""
+
+# ╔═╡ 08bdeaff-5bfb-49ab-b4cc-3a3446c63edc
+@htl("""
+	<style>
+	.cool-class {
+		font-size: 1.3rem;
+		color: purple;
+		background: lightBlue;
+		padding: 1rem;
+		border-radius: 1rem;
+	}
+	
+	
+	</style>
+	
+	<div class="cool-class">Can you find out which CSS class this is?</div>
+	""")
+
+# ╔═╡ abd91e68-121b-46fc-830f-238f38329f0e
+html"<span id=currentScript>"
 
 # ╔═╡ 9b6b5da9-8372-4ebf-9c66-ae9fcfc45d47
 md"""
@@ -139,9 +137,81 @@ However, this becomes a problem when **combining using the widget multiple times
 Similarly, try not to search relative to the `<pluto-cell>` or `<pluto-output>` element, because users might want to combine multiple instances of the widget in a single cell.
 """
 
+# ╔═╡ ce78a32b-cde5-411a-ad8e-c52dc6228d00
+html"""
+<span id=value></span>
+<span id=input></span>
+<span id=bond></span>
+"""
+
+# ╔═╡ 75e1a973-7ef0-4ac5-b3e2-5edb63577927
+md"""
+# `value` – Custom `@bind` value
+**You can use JavaScript to write input widgets** to be used with Pluto's `@bind`. The `input` event can be triggered on any object using
+
+```javascript
+obj.value = ...
+obj.dispatchEvent(new CustomEvent("input"))
+```
+
+For example, here is a button widget that will send the number of times it has been clicked as the bound value:
+
+"""
+
+# ╔═╡ dd589798-81d7-412d-b689-80c75eba3cd8
+@bind hello @htl("""
+<div>
+<button>Click me</button>
+
+<script>
+let val = 0
+const div = currentScript.parentElement
+const button = div.querySelector("button")
+
+button.addEventListener("click", () => {
+	// 🐸 Set the value of the div element and trigger an event! 🐸
+	div.value = val++
+	div.dispatchEvent(new CustomEvent("input"))
+})
+</script>
+</div>
+""")
+
+# ╔═╡ 4a446964-104d-425b-8afe-cfd07474a7a2
+hello
+
+# ╔═╡ ada382a5-5375-4c96-95f7-9a8721567fc4
+md"""
+## Debouncing
+Pluto automatically debounces all bonds: while cells are running, no intermediate values are sent. Once all cells completed running, any queued bond updates are sent in one batch, but if the value of the same bond changed multiple times, only the last value is set, and intermediate values are discarded.
+
+This prevents a "queue of updates" that you could get when a bond controls a visualisation that takes a while to run. You could try it below:
+"""
+
+# ╔═╡ 7510b8bc-ea4d-43f9-be7c-e9529fe418a9
+@bind fun_fast Slider(1:100)
+
+# ╔═╡ ba7b29da-b706-40a1-916b-df9667ba7726
+fun_fast
+
+# ╔═╡ eb7525c6-5593-4412-9535-39afab419891
+
+
+# ╔═╡ 0dae6755-0e76-429a-8e12-15887e8f03c1
+@bind fun_slow Slider(1:100)
+
+# ╔═╡ 93dbb350-ef2c-4662-af1f-2b522407c51b
+let
+	sleep(1)
+	fun_slow
+end
+
+# ╔═╡ 00fe3318-d05d-4f00-afe6-3191e2b70132
+html"<span id=import>"
+
 # ╔═╡ d83d57e2-4787-4b8d-8669-64ed73d79e73
 md"""
-# Script loading
+# `import` – script loading
 
 To use external javascript dependencies, you can load them from a CDN, such as:
 - [jsdelivr.com](https://www.jsdelivr.com/)
@@ -201,6 +271,9 @@ When using a CDN almost **never** want to use an unpinned import. Always version
 ```
 """
 
+# ╔═╡ bd578b8a-f2dc-4299-8022-770f3323de4a
+html"<span id=invalidation>"
+
 # ╔═╡ 71b78f2b-c171-4807-a886-d2dfa5f203a9
 md"""
 # `invalidation` – cleanup
@@ -258,11 +331,16 @@ invalidation.then(() => {
 </div>
 """
 
+# ╔═╡ 3afa78e2-d01e-4fc0-ae1d-882fe6ca94f7
+html"<span id=return>"
+
 # ╔═╡ eda0947b-16d7-459f-89ef-9a8febf70354
 md"""
 # `return` – generate DOM from JavaScript
 
 If you `<script>` tag returns a `HTMLElement` (like a `<div>` or `<input>`), Pluto will prepend that element before the `<script>` element that generated it. This makes it easier to use JavaScript code to create a DOM element.
+
+(The element is added *before*, not *after* the script, so that it's a bit easier to use with `@bind`.)
 """
 
 # ╔═╡ 0a051a07-4e5f-461d-a588-16b0cc3a3974
@@ -276,6 +354,19 @@ return element
 </script>
 """)
 
+# ╔═╡ 226cd4d6-e719-4e4a-b403-5024a7f83975
+details("Show with syntax highlighting", md"""
+	```htmlmixed
+	<script>
+	const element = document.createElement("h5")
+	element.innerText = "Whoopsiedoo!"
+	element.style.color = "orange"
+	
+	return element
+	</script>
+	```
+	""")
+
 # ╔═╡ 367701a7-82e6-4864-8975-9323060872d4
 md"""
 !!! info "Persistant display"
@@ -286,11 +377,14 @@ md"""
 	Then the DOM element returned by the old script is shown as placeholder while the new script is running (JS runs synchronously, but using top-level `await` can cause a delay). This prevents a flash of empty content in between cell renders. In particular, if the new script happens to `return` the exact same element (using `this` persistence), then that means the DOM element will always be displayed.
 """
 
+# ╔═╡ 48c39379-361d-4adb-b65a-1e2cc07f11f5
+html"<span id=await>"
+
 # ╔═╡ 134f6baa-8f92-4ade-93aa-8dea42092597
 md"""
 # `await` – top-level support
 
-You can use `await` in the top-level code of your script. When your script uses `await`, Pluto will wait for the script to complete before executing the next script.
+You can use `await` in the top-level code of your script. And when your script uses `await`, Pluto will wait for the script to complete before executing the next script.
 
 You can use top-level `await` to `import` libraries and more. `await` is also used internally by `AbstractPlutoDingetjes.Display.published_to_js`.
 
@@ -326,11 +420,23 @@ $widget
 $widget
 """
 
+# ╔═╡ b79cb583-6ebb-411d-845e-0e68c1fd5e27
+html"<span id=observablehq>"
+
 # ╔═╡ 27231bd2-deb3-4c37-849e-b07782439dea
 md"""
 # ObservableHQ stdlib
+Pluto is inspired by [observablehq.com](https://observablehq.com/), an online reactive notebook for JavaScript. _(It's REALLY good, try it out!)_ We design Pluto's JavaScript runtime to be close to the way you write code in observable.
 
-The [`observablehq/stdlib`](https://github.com/observablehq/stdlib) library is pre-imported, you can use:
+Read more about the observable runtime in their (interactive) [documentation](https://observablehq.com/@observablehq/observables-not-javascript). You will find that many features (`this`, `return`, `invalidation`, `await`) are similar in Pluto and Observable. 
+
+The following is different in Pluto:
+- JavaScript code is not reactive, there are no global variables.
+- Cells can contain multiple script tags, and they will run consecutively (also when using `await`)
+- We do not (yet) support async generators, i.e. `yield`.
+- We do not support the observable keywords `viewof` and `mutable`.
+
+In Pluto, the [`observablehq/stdlib`](https://github.com/observablehq/stdlib) library is pre-imported, and you can use:
 - `DOM`
 - `Files`
 - `Generators`
@@ -362,9 +468,12 @@ return html`<h5>Hello world!</h5>`
 </script>
 """)
 
+# ╔═╡ 9d0e67d1-f6ed-4f1d-a181-28a6e9d7016a
+html"<span id=this>"
+
 # ╔═╡ a33c7d7a-8071-448e-abd6-4e38b5444a3a
 md"""
-# Stateful output with `this`
+# `this` – stateful output
 
 In Pluto's runtime, there is a distinction between two types of ways that a cell can run:
 1. **An explicit run**: a run triggered by user input (Ctrl+S, Shift+Enter or clicking the play button) or a cell deletion.
@@ -375,11 +484,11 @@ One difference is the JavaScript API `this`: for an **explicit run**, the variab
 - Performance: you can 'recycle' the previous DOM and update it partially (using d3, for example). _When doing so, Pluto guarantees that the DOM node will always be visible, without flicker._
 
 ##### ☝️ Caveat: `<script id=...>`
-This feature is **only enabled** for `<script>` tags with the `id` attribute set, e.g. `<script id="first">`. Think of setting the `id` attribute as saying: "I am a Pluto script". There are two reasons for this:
+This feature is **only enabled** for `<script>` tags with the `id` attribute set, e.g. `<script id="first">`. Without an `id`, `this` will always be set to `window`. Think of setting the `id` attribute as saying: "I am a Pluto script". There are two reasons for this:
 - One Pluto cell can output multiple scripts, Pluto needs to know which output to assign to which script.
 - Some existing scripts assume that `this` is set to `window` in toplevel code (like in the browser). By hiding the `this`-feature behind this caveat, we still support libraries that output such scripts.
 
-What should the `id` attribute be? This is a bit awkward: we don't know yet. For now, just use the name of your favourite ice cream, but we are working on [something better](https://github.com/JuliaPluto/AbstractPlutoDingetjes.jl/pull/7).
+What should the `id` attribute be? This is a bit awkward: we don't know yet. For now, just use the name of your favourite ice cream, but we are working on [something better](https://github.com/JuliaPluto/AbstractPlutoDingetjes.jl/pull/7). Please comment on that PR if you want it!
 """
 
 # ╔═╡ 91f3dab8-5521-44a0-9890-8d988a994076
@@ -404,6 +513,24 @@ let
 	</script>
 	"""
 end
+
+# ╔═╡ d4bdc4fe-2af8-402f-950f-2afaf77c62de
+details("Show with syntax highlighting", md"""
+	```htmlmixed
+	<script id="something">
+	
+	console.log("'this' is currently:", this)
+
+	if(this == null) {
+		return html`<blockquote>I am running for the first time!</blockqoute>`
+	} else {
+		return html`<blockquote><b>I was triggered by reactivity!</b></blockqoute>`
+	}
+
+
+	</script>
+	```
+	""")
 
 # ╔═╡ e77cfefc-429d-49db-8135-f4604f6a9f0b
 md"""
@@ -459,6 +586,36 @@ return output
 
 """)
 
+# ╔═╡ e910982c-8508-4729-a75d-8b5b847918b6
+details("Show with syntax highlighting", md"""
+```htmlmixed
+<script src="https://cdn.jsdelivr.net/npm/d3@6.2.0/dist/d3.min.js"></script>
+
+<script id="hello">
+
+const positions = $(dot_positions)
+
+const svg = this == null ? DOM.svg(600,200) : this
+const s = this == null ? d3.select(svg) : this.s
+
+s.selectAll("circle")
+	.data(positions)
+	.join("circle")
+	.transition()
+	.duration(300)
+	.attr("cx", d => d)
+	.attr("cy", 100)
+	.attr("r", 10)
+	.attr("fill", "gray")
+
+
+const output = svg
+output.s = s
+return output
+</script>
+```
+""")
+
 # ╔═╡ 781adedc-2da7-4394-b323-e508d614afae
 md"""
 ### Example: Preact with persistent state
@@ -470,7 +627,66 @@ Modify `x`, add and remove elements, and notice that preact maintains its state.
 """
 
 # ╔═╡ 85483b28-341e-4ed6-bb1e-66c33613725e
-x = ["hello pluton!", 232000,2,2,12 ,12,2,21,1,2, 120000]
+x = ["hello pluto!", 232000,2,2,12 ,12,2,21,1,2, 120000]
+
+# ╔═╡ 05d28aa2-9622-4e62-ab39-ca4c7dde6eb4
+details(md"""
+	```htmlmixed
+	<script type="module" id="asdf">
+		//await new Promise(r => setTimeout(r, 1000))
+
+		const { html, render, Component, useEffect, useLayoutEffect, useState, useRef, useMemo, createContext, useContext, } = await import( "https://cdn.jsdelivr.net/npm/htm@3.0.4/preact/standalone.mjs")
+
+		const node = this ?? document.createElement("div")
+
+		const new_state = $(state)
+
+		if(this == null){
+
+			// PREACT APP STARTS HERE
+
+			const Item = ({value}) => {
+				const [loading, set_loading] = useState(true)
+
+				useEffect(() => {
+					set_loading(true)
+
+					const handle = setTimeout(() => {
+						set_loading(false)
+					}, 1000)
+
+					return () => clearTimeout(handle)
+				}, [value])
+
+				return html`<li>\${loading ? 
+					html`<em>Loading...</em>` : 
+					value
+				}</li>`
+			}
+
+			const App = () => {
+
+				const [state, set_state] = useState(new_state)
+				node.set_app_state = set_state
+
+				return html`<h5>Hello world!</h5>
+					<ul>\${
+					state.x.map((x,i) => html`<\${Item} value=\${x} key=\${i}/>`)
+				}</ul>`;
+			}
+
+			// PREACT APP ENDS HERE
+
+			render(html`<\${App}/>`, node);
+
+		} else {
+
+			node.set_app_state(new_state)
+		}
+		return node
+	</script>
+	```
+	""", "Show with syntax highlighting")
 
 # ╔═╡ 3266f9e6-42ad-4103-8db3-b87d2c315290
 state = Dict(
@@ -536,9 +752,12 @@ state = Dict(
 	
 """)
 
+# ╔═╡ ddbe51f7-538a-4eff-b23f-da8d4deebd3c
+html"<span id=getBoundElementValueLikePluto></span><span id=setBoundElementValueLikePluto></span><span id=getBoundElementEventNameLikePluto></span>"
+
 # ╔═╡ fa3a860c-0215-4b55-aec0-a151bcbe1a06
 md"""
-# `getBoundElementValueLikePluto`, `setBoundElementValueLikePluto`, `getBoundElementEventNameLikePluto`
+# Bond internals: `getBoundElementValueLikePluto`, `setBoundElementValueLikePluto`, `getBoundElementEventNameLikePluto`
 
 Okay this one is not so exciting, but when you use `@bind`:
 
@@ -557,6 +776,17 @@ getBoundElementEventNameLikePluto(element: HTMLElement): string
 ```
 
 They can be useful when creating higher-order-widgets: widgets that layer on top of, or interact with other widgets.
+"""
+
+# ╔═╡ d8e77231-6982-4c31-8ace-22fefc6f1e17
+html"""
+<span id=metadata></span>
+<span id=getNotebookMetadataExperimental></span>
+<span id=setNotebookMetadataExperimental></span>
+<span id=deleteNotebookMetadataExperimental></span>
+<span id=getCellMetadataExperimental></span>
+<span id=setCellMetadataExperimental></span>
+<span id=deleteCellMetadataExperimental></span>
 """
 
 # ╔═╡ b99c7ea3-b364-4588-98a7-0ab6d7f99b64
@@ -599,488 +829,8 @@ Providing the `cell_id` is only necessary when storing data on another cell than
 Return type `Promise<void>` means that a promise is returned, that resolves when the data is stored correctly.
 """
 
-# ╔═╡ 29616052-0c9d-4018-a6f6-934ea98bb67e
-
-
-# ╔═╡ f49d23cf-4440-4c4f-830d-2866a429d2af
-
-
-# ╔═╡ 9e8897ba-5d3c-4a97-adc9-0520c7ff152e
-
-
-# ╔═╡ 3c4c56cf-611c-4a0a-a32c-208b0258ea52
-
-
-# ╔═╡ 732957a4-fb8d-4ff6-ae51-6171c96a1407
-
-
-# ╔═╡ e1707690-3dd9-4c0e-80d4-a60a98ce5e0f
-md"""
-# !!!!!!!!!!!!!! OLD
-
-everything below this line is old and still needs to be moved into the right category
-"""
-
-# ╔═╡ 168e13f7-2ff2-4207-be56-e57755041d36
-md"""
-## Prerequisites
-
-This document assumes that you have used HTML, CSS and JavaScript before in another context. If you know Julia, and you want to add these web languages to your skill set, we encourage you to do so! It will be useful knowledge, also outside of Pluto.
-
-If you're new to all this, Pluto's featured notebooks also include more basic notebooks on using HTML and CSS!
-"""
-
-# ╔═╡ ea39c63f-7466-4015-a66c-08bd9c716343
-md"""
-> My personal favourite resource for learning HTML and CSS is the [Mozilla Developer Network (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS). 
-> 
-> _-fons_
-"""
-
-# ╔═╡ 8b082f9a-073e-4112-9422-4087850fc89e
-md"""
-#### Learning JavaScript
-After learning HTML and CSS, you can already spice up your Pluto notebooks by creating custom layouts, generated dynamically from Julia data. To take things to the next level, you can learn JavaScript. We recommend using an online resource for this. 
-
-> My personal favourite is [javascript.info](https://javascript.info/), a high-quality, open source tutorial. I use it too!
-> 
-> _-fons_
-
-It is hard to say whether it is easy to _learn JavaScript using Pluto_. On one hand, we highly recommend the high-quality public learning material that already exists for JavaScript, which is generally written in the context of writing traditional web apps. On the other hand, if you have a specific Pluto-related project in mind, then this could be a great motivator to continue learning!
-
-A third option is to learn JavaScript using [observablehq.com](https://observablehq.com), an online reactive notebook for JavaScript (it's awesome!). Pluto's JavaScript runtime is designed to be very close to the way you write code in observable, so the skills you learn there will be transferable!
-
-If you chose to learn JavaScript using Pluto, let me know how it went, and how we can improve! [fons@plutojl.org](mailto:fons@plutojl.org)
-"""
-
 # ╔═╡ d70a3a02-ef3a-450f-bf5a-4a0d7f6262e2
 TableOfContents()
-
-# ╔═╡ 0866afc2-fd42-42b7-a572-9d824cf8b83b
-md"""
-## Custom `@bind` output
-"""
-
-# ╔═╡ 75e1a973-7ef0-4ac5-b3e2-5edb63577927
-md"""
-**You can use JavaScript to write input widgets.** The `input` event can be triggered on any object using
-
-```javascript
-obj.value = ...
-obj.dispatchEvent(new CustomEvent("input"))
-```
-
-For example, here is a button widget that will send the number of times it has been clicked as the value:
-
-"""
-
-# ╔═╡ e8d8a60e-489b-467a-b49c-1fa844807751
-ClickCounter(text="Click") = @htl("""
-<span>
-<button>$(text)</button>
-
-<script>
-
-	// Select elements relative to `currentScript`
-	const span = currentScript.parentElement
-	const button = span.querySelector("button")
-
-	// we wrapped the button in a `span` to hide its default behaviour from Pluto
-
-	let count = 0
-
-	button.addEventListener("click", (e) => {
-		count += 1
-
-		// we dispatch the input event on the span, not the button, because 
-		// Pluto's `@bind` mechanism listens for events on the **first element** in the
-		// HTML output. In our case, that's the span.
-
-		span.value = count
-		span.dispatchEvent(new CustomEvent("input"))
-		e.preventDefault()
-	})
-
-	// Set the initial value
-	span.value = count
-
-</script>
-</span>
-""")
-
-# ╔═╡ 9346d8e2-9ba0-4475-a21f-11bdd018bc60
-@bind num_clicks ClickCounter()
-
-# ╔═╡ 7822fdb7-bee6-40cc-a089-56bb32d77fe6
-num_clicks
-
-# ╔═╡ 701de4b8-42d3-46a3-a399-d7761dccd83d
-md"""
-As an exercise to get familiar with these techniques, you can try the following:
-- 👉 Add a "reset to zero" button to the widget above.
-- 👉 Make the bound value an array that increases size when you click, instead of a single number.
-- 👉 Create a "two sliders" widget: combine two sliders (`<input type=range>`) into a single widget, where the bound value is the two-element array with both values.
-- 👉 Create a "click to send" widget: combine a text input and a button, and only send the contents of the text field when the button is clicked, not on every keystroke.
-
-Questions? Ask them on our [GitHub Discussions](https://github.com/fonsp/Pluto.jl/discussions)!
-"""
-
-# ╔═╡ 88120468-a43d-4d58-ac04-9cc7c86ca179
-md"""
-## Debugging
-
-The HTML, CSS and JavaScript that you write run in the browser, so you should use the [browser's built-in developer tools](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools) to debug your code. 
-"""
-
-# ╔═╡ ea4b2da1-4c83-4a1f-8fc3-c71a120e58e1
-@htl("""
-
-<script>
-
-console.info("Can you find this message in the console?")
-
-</script>
-
-""")
-
-# ╔═╡ 08bdeaff-5bfb-49ab-b4cc-3a3446c63edc
-@htl("""
-	<style>
-	.cool-class {
-		font-size: 1.3rem;
-		color: purple;
-		background: lightBlue;
-		padding: 1rem;
-		border-radius: 1rem;
-	}
-	
-	
-	</style>
-	
-	<div class="cool-class">Can you find out which CSS class this is?</div>
-	""")
-
-# ╔═╡ 8388a833-d535-4cbd-a27b-de323cea60e8
-md"""
-# Advanced
-"""
-
-# ╔═╡ 4cf27df3-6a69-402e-a71c-26538b2a52e7
-md"""
-## Script output & `observablehq/stdlib`
-
-Pluto's original inspiration was [observablehq.com](https://observablehq.com/), and online reactive notebook for JavaScript. _(It's REALLY good, try it out!)_ We design Pluto's JavaScript runtime to be close to the way you write code in observable.
-
-Read more about the observable runtime in their (interactive) [documentation](https://observablehq.com/@observablehq/observables-not-javascript). The following is also true for JavaScript-inside-scripts in Pluto:
-- ⭐️ If you return an HTML node, it will be displayed.
-- ⭐️ The [`observablehq/stdlib`](https://observablehq.com/@observablehq/stdlib) library is pre-imported, you can use `DOM`, `html`, `Promises`, etc.
-- ⭐️ When a cell re-runs reactively, `this` will be set to the previous output (with caveat, see the later section)
-- The variable `invalidation` is a Promise that will get resolved when the cell output is changed or removed. You can use this to remove event listeners, for example.
-- You can use top-level `await`, and a returned HTML node will be displayed when ready.
-- Code is run in "strict mode", use `let x = 1` instead of `x = 1`.
-
-The following is different in Pluto:
-- JavaScript code is not reactive, there are no global variables.
-- Cells can contain multiple script tags, and they will run consecutively (also when using `await`)
-- We do not (yet) support async generators, i.e. `yield`.
-- We do not support the observable keywords `viewof` and `mutable`.
-"""
-
-# ╔═╡ 5721ad33-a51a-4a91-adb2-0915ea0efa13
-md"""
-### Example: 
-(Though using `HypertextLiteral.jl` would make more sense for this purpose.)
-"""
-
-# ╔═╡ fc8984c8-4668-418a-b258-a1718809470c
-
-
-# ╔═╡ 846354c8-ba3b-4be7-926c-d3c9cc9add5f
-films = [
-	(title="Frances Ha", director="Noah Baumbach", year=2012),
-	(title="Portrait de la jeune fille en feu", director="Céline Sciamma", year=2019),
-	(title="De noorderlingen", director="Alex van Warmerdam", year=1992),
-];
-
-# ╔═╡ c857bb4b-4cf4-426e-b340-592cf7700434
-@htl("""
-	<script>
-	
-	let data = $(films)
-	
-	// html`...` is from https://github.com/observablehq/stdlib
-	// note the escaped dollar signs:
-	let Film = ({title, director, year}) => html`
-		<li class="film">
-			<b>\${title}</b> by <em>\${director}</em> (\${year})
-		</li>
-	`
-	
-	// the returned HTML node is rendered
-	return html`
-		<ul>
-			\${data.map(Film)}
-		</ul>
-	`
-	
-	</script>
-	""")
-
-# ╔═╡ 7d9d6c28-131a-4b2a-84f8-5c085f387e85
-md"""
-## Embedding Julia data directly into JavaScript!
-
-You can use `AbstractPlutoDingetjes.Display.published_to_js` to embed data directly into JavaScript, using Pluto's built-in, optimized data transfer. See [the documentation](https://plutojl.org/en/docs/abstractplutodingetjes/#published_to_js) for more info.
-
-Example usage:
-
-```julia
-let
-	x = rand(UInt8, 10_000)
-	
-	d = Dict(
-		"some_raw_data" => x,
-		"wow" => 1000,
-	)
-	
-	@htl(\"\"\"
-	<script>
-		
-	const d = $(AbstractPlutoDingetjes.Display.published_to_js(d))
-	console.log(d)
-	
-	</script>
-	\"\"\")
-end
-```
-
-In this example, the `const d` is populated from a hook into Pluto's data transfer. For large amounts of typed vector data (e.g. `Vector{UInt8}` or `Vector{Float64}`), this is *much* more efficient than interpolating the data directly with HypertextLiteral using `$(d)`, which would use a JSON-like string serialization.
-"""
-
-# ╔═╡ da7091f5-8ba2-498b-aa8d-bbf3b4505b81
-md"""
-# Appendix
-"""
-
-# ╔═╡ 64cbf19c-a4e3-4cdb-b4ec-1fbe24be55ad
-details(x, summary="Show more") = @htl("""
-	<details>
-		<summary>$(summary)</summary>
-		$(x)
-	</details>
-	""")
-
-# ╔═╡ d4bdc4fe-2af8-402f-950f-2afaf77c62de
-details(md"""
-	```htmlmixed
-	<script id="something">
-	
-	console.log("'this' is currently:", this)
-
-	if(this == null) {
-		return html`<blockquote>I am running for the first time!</blockqoute>`
-	} else {
-		return html`<blockquote><b>I was triggered by reactivity!</b></blockqoute>`
-	}
-
-
-	</script>
-	```
-	""", "Show with syntax highlighting")
-
-# ╔═╡ e910982c-8508-4729-a75d-8b5b847918b6
-details(md"""
-```htmlmixed
-<script src="https://cdn.jsdelivr.net/npm/d3@6.2.0/dist/d3.min.js"></script>
-
-<script id="hello">
-
-const positions = $(dot_positions)
-
-const svg = this == null ? DOM.svg(600,200) : this
-const s = this == null ? d3.select(svg) : this.s
-
-s.selectAll("circle")
-	.data(positions)
-	.join("circle")
-	.transition()
-	.duration(300)
-	.attr("cx", d => d)
-	.attr("cy", 100)
-	.attr("r", 10)
-	.attr("fill", "gray")
-
-
-const output = svg
-output.s = s
-return output
-</script>
-```
-""", "Show with syntax highlighting")
-
-# ╔═╡ 05d28aa2-9622-4e62-ab39-ca4c7dde6eb4
-details(md"""
-	```htmlmixed
-	<script type="module" id="asdf">
-		//await new Promise(r => setTimeout(r, 1000))
-
-		const { html, render, Component, useEffect, useLayoutEffect, useState, useRef, useMemo, createContext, useContext, } = await import( "https://cdn.jsdelivr.net/npm/htm@3.0.4/preact/standalone.mjs")
-
-		const node = this ?? document.createElement("div")
-
-		const new_state = $(state)
-
-		if(this == null){
-
-			// PREACT APP STARTS HERE
-
-			const Item = ({value}) => {
-				const [loading, set_loading] = useState(true)
-
-				useEffect(() => {
-					set_loading(true)
-
-					const handle = setTimeout(() => {
-						set_loading(false)
-					}, 1000)
-
-					return () => clearTimeout(handle)
-				}, [value])
-
-				return html`<li>\${loading ? 
-					html`<em>Loading...</em>` : 
-					value
-				}</li>`
-			}
-
-			const App = () => {
-
-				const [state, set_state] = useState(new_state)
-				node.set_app_state = set_state
-
-				return html`<h5>Hello world!</h5>
-					<ul>\${
-					state.x.map((x,i) => html`<\${Item} value=\${x} key=\${i}/>`)
-				}</ul>`;
-			}
-
-			// PREACT APP ENDS HERE
-
-			render(html`<\${App}/>`, node);
-
-		} else {
-
-			node.set_app_state(new_state)
-		}
-		return node
-	</script>
-	```
-	""", "Show with syntax highlighting")
-
-# ╔═╡ b0c246ed-b871-461b-9541-280e49b49136
-details(md"""
-```htmlmixed
-<div>
-<button>$(text)</button>
-
-<script>
-
-	// Select elements relative to `currentScript`
-	const div = currentScript.parentElement
-	const button = div.querySelector("button")
-
-	// we wrapped the button in a `div` to hide its default behaviour from Pluto
-
-	let count = 0
-
-	button.addEventListener("click", (e) => {
-		count += 1
-
-		// we dispatch the input event on the div, not the button, because 
-		// Pluto's `@bind` mechanism listens for events on the **first element** in the
-		// HTML output. In our case, that's the div.
-
-		div.value = count
-		div.dispatchEvent(new CustomEvent("input"))
-		e.preventDefault()
-	})
-
-	// Set the initial value
-	div.value = count
-
-</script>
-</div>
-```
-""", "Show with syntax highlighting")
-
-# ╔═╡ d121e085-c69b-490f-b315-c11a9abd57a6
-details(md"""
-	```htmlmixed
-	<script>
-	
-	let data = $(films)
-	
-	// html`...` is from https://github.com/observablehq/stdlib
-	// note the escaped dollar signs:
-	let Film = ({title, director, year}) => html`
-		<li class="film">
-			<b>\${title}</b> by <em>\${director}</em> (\${year})
-		</li>
-	`
-	
-	// the returned HTML node is rendered
-	return html`
-		<ul>
-			\${data.map(Film)}
-		</ul>
-	`
-	
-	</script>
-	```
-	""", "Show with syntax highlighting")
-
-# ╔═╡ cc318a19-316f-4fd9-8436-fb1d42f888a3
-demo_img = let
-	url = "https://user-images.githubusercontent.com/6933510/116753174-fa40ab80-aa06-11eb-94d7-88f4171970b2.jpeg"
-	data = read(download(url))
-	PlutoUI.Show(MIME"image/jpg"(), data)
-end
-
-# ╔═╡ 7aacdd8c-1571-4461-ba6e-0fd65dd8d788
-demo_html = @htl("<b style='font-family: cursive;'>Hello!</b>")
-
-# ╔═╡ ebec177c-4c33-45a4-bdbd-f16944631aff
-md"""
-## Embeddable output
-
-Pluto has a multimedia object viewer, which is used to display the result of a cell's output. Depending on the _type_ of the resulting object, the richest possible viewer is used. This includes:
-- an interactive structure viewer for arrays, tables, dictionaries and more: $(embed_display([1,2,(a=3, b=4)]))
-- an `<img>` tag with optimized data transfer for images: $(embed_display(demo_img))
-- raw HTML for HTML-showable objects: $(embed_display(demo_html))
-
-Normally, you get this object viewer for the _output_ of a cell. However, as demonstrated in the list above, you can also **embed Pluto's object viewer in your own HTML**. To do so, Pluto provides a function:
-```julia
-embed_display(x)
-```
-
-#### Example
-
-As an example, here is how you display two arrays side-by-side:
-
-```julia
-@htl("\""
-
-<div style="display: flex;">
-$(embed_display(rand(4)))
-$(embed_display(rand(4)))
-</div>
-
-"\"")
-
-```
-
-You can [learn more](https://github.com/fonsp/Pluto.jl/pull/1126) about how this feature works, or how to use it inside packages.
-"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1099,9 +849,9 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 [[AbstractPlutoDingetjes]]
 deps = ["Pkg"]
-git-tree-sha1 = "793501dcd3fa7ce8d375a2c878dca2296232686e"
+git-tree-sha1 = "6e1d2a35f2f90a4bc7c2ed98079b2ba09c35b83a"
 uuid = "6e696c72-6542-2067-7265-42206c756150"
-version = "1.2.2"
+version = "1.3.2"
 
 [[ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -1115,9 +865,9 @@ uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
 [[ColorTypes]]
 deps = ["FixedPointNumbers", "Random"]
-git-tree-sha1 = "eb7f0f8307f71fac7c606984ea5fb2817275d6e4"
+git-tree-sha1 = "b10d0b65641d57b8b4d5e234446582de5047050d"
 uuid = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
-version = "0.11.4"
+version = "0.11.5"
 
 [[CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -1144,9 +894,9 @@ version = "0.8.4"
 
 [[Hyperscript]]
 deps = ["Test"]
-git-tree-sha1 = "8d511d5b81240fc8e6802386302675bdf47737b9"
+git-tree-sha1 = "179267cfa5e712760cd43dcae385d7ea90cc25a4"
 uuid = "47d2ed2b-36de-50cf-bf87-49c2cf4b8b91"
-version = "0.0.4"
+version = "0.0.5"
 
 [[HypertextLiteral]]
 deps = ["Tricks"]
@@ -1156,9 +906,9 @@ version = "0.9.5"
 
 [[IOCapture]]
 deps = ["Logging", "Random"]
-git-tree-sha1 = "d75853a0bdbfb1ac815478bacd89cd27b550ace6"
+git-tree-sha1 = "8b72179abc660bfab5e28472e019392b97d0985c"
 uuid = "b5f81e59-6552-4d32-b1f0-c071b021bf89"
-version = "0.2.3"
+version = "0.2.4"
 
 [[InteractiveUtils]]
 deps = ["Markdown"]
@@ -1247,21 +997,21 @@ version = "1.10.0"
 
 [[PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
-git-tree-sha1 = "bd7c69c7f7173097e7b5e1be07cee2b8b7447f51"
+git-tree-sha1 = "ab55ee1510ad2af0ff674dbcced5e94921f867a9"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.54"
+version = "0.7.59"
 
 [[PrecompileTools]]
 deps = ["Preferences"]
-git-tree-sha1 = "03b4c25b43cb84cee5c90aa9b5ea0a78fd848d2f"
+git-tree-sha1 = "5aa36f7049a63a1528fe8f7c3f2113413ffd4e1f"
 uuid = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
-version = "1.2.0"
+version = "1.2.1"
 
 [[Preferences]]
 deps = ["TOML"]
-git-tree-sha1 = "00805cd429dcb4870060ff49ef443486c262e38e"
+git-tree-sha1 = "9306f6085165d270f7e3db02af26a400d580f5c6"
 uuid = "21216c6a-2e73-6563-6e65-726566657250"
-version = "1.4.1"
+version = "1.4.3"
 
 [[Printf]]
 deps = ["Unicode"]
@@ -1359,26 +1109,47 @@ version = "17.4.0+2"
 
 # ╔═╡ Cell order:
 # ╟─97914842-76d2-11eb-0c48-a7eedca870fb
-# ╟─1a1621e8-e15c-4cfb-9cce-00c1c8f2f2c6
+# ╟─88120468-a43d-4d58-ac04-9cc7c86ca179
+# ╠═ea4b2da1-4c83-4a1f-8fc3-c71a120e58e1
+# ╟─321b7f2e-542a-43af-bd4d-1264f5438322
+# ╟─08bdeaff-5bfb-49ab-b4cc-3a3446c63edc
 # ╠═571613a1-6b4b-496d-9a68-aac3f6a83a4b
+# ╟─abd91e68-121b-46fc-830f-238f38329f0e
 # ╟─9b6b5da9-8372-4ebf-9c66-ae9fcfc45d47
 # ╟─f18b98f7-1e0f-4273-896f-8a667d15605b
+# ╟─ce78a32b-cde5-411a-ad8e-c52dc6228d00
+# ╟─75e1a973-7ef0-4ac5-b3e2-5edb63577927
+# ╠═dd589798-81d7-412d-b689-80c75eba3cd8
+# ╠═4a446964-104d-425b-8afe-cfd07474a7a2
+# ╟─ada382a5-5375-4c96-95f7-9a8721567fc4
+# ╠═7510b8bc-ea4d-43f9-be7c-e9529fe418a9
+# ╠═ba7b29da-b706-40a1-916b-df9667ba7726
+# ╟─eb7525c6-5593-4412-9535-39afab419891
+# ╠═0dae6755-0e76-429a-8e12-15887e8f03c1
+# ╠═93dbb350-ef2c-4662-af1f-2b522407c51b
+# ╟─00fe3318-d05d-4f00-afe6-3191e2b70132
 # ╟─d83d57e2-4787-4b8d-8669-64ed73d79e73
 # ╟─077c95cf-2a1b-459f-830e-c29c11a2c5cc
 # ╟─80511436-e41f-4913-8a30-d9e113cfaf71
+# ╟─bd578b8a-f2dc-4299-8022-770f3323de4a
 # ╟─71b78f2b-c171-4807-a886-d2dfa5f203a9
 # ╟─311e95cf-ac6b-414b-873e-e5eb69d395e6
 # ╠═1a46b59a-5fa0-486d-9192-b44861bba930
 # ╠═3fe7d1cd-edd7-48f6-987a-577b9e6125c3
+# ╟─3afa78e2-d01e-4fc0-ae1d-882fe6ca94f7
 # ╟─eda0947b-16d7-459f-89ef-9a8febf70354
 # ╠═0a051a07-4e5f-461d-a588-16b0cc3a3974
+# ╟─226cd4d6-e719-4e4a-b403-5024a7f83975
 # ╟─367701a7-82e6-4864-8975-9323060872d4
+# ╟─48c39379-361d-4adb-b65a-1e2cc07f11f5
 # ╟─134f6baa-8f92-4ade-93aa-8dea42092597
 # ╠═392dd5c9-23f8-4b40-a6aa-6e3e9ba76a83
 # ╠═0534ccd3-858f-4247-9dbc-26bea18e437f
 # ╠═48d47baa-edab-49e0-8cc3-b1ab04a70027
+# ╟─b79cb583-6ebb-411d-845e-0e68c1fd5e27
 # ╟─27231bd2-deb3-4c37-849e-b07782439dea
 # ╠═6ce86c19-6f05-4679-b6dc-bd5a9945f316
+# ╟─9d0e67d1-f6ed-4f1d-a181-28a6e9d7016a
 # ╟─a33c7d7a-8071-448e-abd6-4e38b5444a3a
 # ╠═91f3dab8-5521-44a0-9890-8d988a994076
 # ╠═dcaae662-4a4f-4dd3-8763-89ea9eab7d43
@@ -1396,41 +1167,11 @@ version = "17.4.0+2"
 # ╠═9e37c18c-3ebb-443a-9663-bb4064391d6e
 # ╟─05d28aa2-9622-4e62-ab39-ca4c7dde6eb4
 # ╠═3266f9e6-42ad-4103-8db3-b87d2c315290
+# ╟─ddbe51f7-538a-4eff-b23f-da8d4deebd3c
 # ╟─fa3a860c-0215-4b55-aec0-a151bcbe1a06
+# ╟─d8e77231-6982-4c31-8ace-22fefc6f1e17
 # ╟─b99c7ea3-b364-4588-98a7-0ab6d7f99b64
-# ╠═29616052-0c9d-4018-a6f6-934ea98bb67e
-# ╠═f49d23cf-4440-4c4f-830d-2866a429d2af
-# ╠═9e8897ba-5d3c-4a97-adc9-0520c7ff152e
-# ╠═3c4c56cf-611c-4a0a-a32c-208b0258ea52
-# ╠═732957a4-fb8d-4ff6-ae51-6171c96a1407
-# ╟─e1707690-3dd9-4c0e-80d4-a60a98ce5e0f
-# ╟─168e13f7-2ff2-4207-be56-e57755041d36
-# ╟─ea39c63f-7466-4015-a66c-08bd9c716343
-# ╟─8b082f9a-073e-4112-9422-4087850fc89e
 # ╠═d70a3a02-ef3a-450f-bf5a-4a0d7f6262e2
-# ╟─0866afc2-fd42-42b7-a572-9d824cf8b83b
-# ╟─75e1a973-7ef0-4ac5-b3e2-5edb63577927
-# ╠═e8d8a60e-489b-467a-b49c-1fa844807751
-# ╟─b0c246ed-b871-461b-9541-280e49b49136
-# ╠═9346d8e2-9ba0-4475-a21f-11bdd018bc60
-# ╠═7822fdb7-bee6-40cc-a089-56bb32d77fe6
-# ╟─701de4b8-42d3-46a3-a399-d7761dccd83d
-# ╟─88120468-a43d-4d58-ac04-9cc7c86ca179
-# ╠═ea4b2da1-4c83-4a1f-8fc3-c71a120e58e1
-# ╟─08bdeaff-5bfb-49ab-b4cc-3a3446c63edc
-# ╟─8388a833-d535-4cbd-a27b-de323cea60e8
-# ╠═4cf27df3-6a69-402e-a71c-26538b2a52e7
-# ╟─5721ad33-a51a-4a91-adb2-0915ea0efa13
-# ╠═c857bb4b-4cf4-426e-b340-592cf7700434
-# ╟─d121e085-c69b-490f-b315-c11a9abd57a6
-# ╟─fc8984c8-4668-418a-b258-a1718809470c
-# ╠═846354c8-ba3b-4be7-926c-d3c9cc9add5f
-# ╟─7d9d6c28-131a-4b2a-84f8-5c085f387e85
-# ╟─ebec177c-4c33-45a4-bdbd-f16944631aff
-# ╟─da7091f5-8ba2-498b-aa8d-bbf3b4505b81
-# ╠═64cbf19c-a4e3-4cdb-b4ec-1fbe24be55ad
-# ╟─cc318a19-316f-4fd9-8436-fb1d42f888a3
-# ╟─7aacdd8c-1571-4461-ba6e-0fd65dd8d788
 # ╠═6619d10d-d1e0-493d-b854-3deff1cf001f
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

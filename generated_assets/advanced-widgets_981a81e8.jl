@@ -233,9 +233,6 @@ Try dragging a rectangle in the box below:
 # ╔═╡ 4da66c70-7d35-4a2f-a405-7b76555c0284
 dims
 
-# ╔═╡ 5148ee5f-7348-4189-a285-5586bf5a4ccf
-area = abs(prod(dims))
-
 # ╔═╡ 64b4a5a2-8708-40c7-8812-591c9e550d43
 
 
@@ -313,7 +310,7 @@ We recommend performing this check inside the `Base.show(io::IO, m::MIME"text/ht
 
 # ╔═╡ ae310b31-92d4-49ce-bff8-5f51fea6afc8
 html"""
-<a href="https://plutojl.org/en/docs/abstractplutodingetjes/" class="arrow">Learn more: AbstractPlutoDingetjes</a>
+<a href="https://plutojl.org/en/docs/abstractplutodingetjes/" class="arrow">Find more in the AbstractPlutoDingetjes docs</a>
 """
 
 # ╔═╡ 965e17ea-cc2c-4072-82c4-94f259ce9224
@@ -345,6 +342,51 @@ Publishing a widget in a small package is really valuable:
 - Others can **use it by simply typing `import ExampleWidget` in a notebook**. Without publishing it on General, users need to download scripts, copy code, ... This creates lots of hard-to-reproduce notebooks!
 - Once it's on the registry, it's **easier for people to discover**! Especially if the name starts with `Pluto`, like PlutoMapPicker.jl. People searching for your widget can find it online, because registered package show up on juliahub.com and more.
 - It's easy to get feedback, bug reports and contributions from users. And you can easily make patches and release them to your users. Or maybe it was right from the start, and you don't need this!
+"""
+
+# ╔═╡ 35085d64-c324-43d6-a316-0edbf4a97bf1
+demo_img = let
+	url = "https://user-images.githubusercontent.com/6933510/116753174-fa40ab80-aa06-11eb-94d7-88f4171970b2.jpeg"
+	data = read(download(url))
+	PlutoUI.Show(MIME"image/jpg"(), data)
+end
+
+# ╔═╡ 7cea0a79-d139-4ed4-a0e5-ea1aae4c219e
+demo_html = @htl("<b style='font-family: cursive;'>Hello!</b>")
+
+# ╔═╡ 86c77330-d553-4e04-8e7e-38de72626bba
+md"""
+### Embeddable output
+
+Pluto has a multimedia object viewer, which is used to display the result of a cell's output. Depending on the _type_ of the resulting object, the richest possible viewer is used. This includes:
+- an interactive structure viewer for arrays, tables, dictionaries and more: 
+  $(embed_display([1,2,(a=3, b=4)]))
+- an `<img>` tag with optimized data transfer for images: $(embed_display(demo_img))
+- raw HTML for HTML-showable objects: $(embed_display(demo_html))
+
+Normally, you get this object viewer for the _output_ of a cell. However, as demonstrated in the list above, you can also **embed Pluto's object viewer in your own HTML**. To do so, Pluto provides a function:
+```julia
+embed_display(x)
+```
+
+#### Example
+
+As an example, here is how you display two arrays side-by-side:
+
+```julia
+@htl("\""
+
+<div style="display: flex;">
+$(embed_display(rand(4)))
+$(embed_display(rand(4)))
+</div>
+
+"\"")
+```
+
+Currently, you use this function with `PlutoRunner.embed_display` or just `embed_display`. In the future, this will be `AbstractPlutoDingetjes.Display.embed_display`, please comment [this PR](https://github.com/JuliaPluto/AbstractPlutoDingetjes.jl/pull/9) if you want it!
+
+You can [learn more](https://github.com/fonsp/Pluto.jl/pull/1126) about how this feature works, or how to use it inside packages.
 """
 
 # ╔═╡ e5a05101-a023-40ad-9bef-c6c8d18eb719
@@ -660,10 +702,9 @@ version = "17.4.0+2"
 # ╟─fe1b49f0-77f8-40a5-bbef-1f4a0aa4837d
 # ╟─54ecd81d-01eb-45ac-9d2c-dc26393ea091
 # ╠═a7d134fb-59fc-4275-b69a-ed441afa8278
-# ╠═4da66c70-7d35-4a2f-a405-7b76555c0284
-# ╠═5148ee5f-7348-4189-a285-5586bf5a4ccf
 # ╟─1eee3553-2b09-4611-9728-69a8f38a5dd1
 # ╠═f4cc5757-0b32-42db-b0df-83030c9f7886
+# ╠═4da66c70-7d35-4a2f-a405-7b76555c0284
 # ╟─64b4a5a2-8708-40c7-8812-591c9e550d43
 # ╟─547f90c5-f8de-4a1c-9b9e-25bf8c78161e
 # ╠═e733647f-5af9-462c-9bb6-ef4282a04f6c
@@ -678,9 +719,12 @@ version = "17.4.0+2"
 # ╟─08293d88-66ff-433b-bd74-d53279235c88
 # ╟─3775fb8c-ec06-4482-9b0e-a4c1aa32afb7
 # ╟─ae310b31-92d4-49ce-bff8-5f51fea6afc8
+# ╟─86c77330-d553-4e04-8e7e-38de72626bba
 # ╟─965e17ea-cc2c-4072-82c4-94f259ce9224
+# ╟─35085d64-c324-43d6-a316-0edbf4a97bf1
+# ╟─7cea0a79-d139-4ed4-a0e5-ea1aae4c219e
 # ╠═a17a8282-05f6-469d-9579-63029db89f79
 # ╠═e5a05101-a023-40ad-9bef-c6c8d18eb719
-# ╟─810b3d50-00e0-11ef-034d-73dc15b2f8bd
+# ╠═810b3d50-00e0-11ef-034d-73dc15b2f8bd
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

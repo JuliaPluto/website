@@ -2,6 +2,7 @@
 # v0.19.41
 
 #> [frontmatter]
+#> order = "0"
 #> title = "Advanced widgets – overview"
 #> date = "2024-04-22"
 #> tags = ["docs", "advanced", "widgets", "AbstractPlutoDingetjes", "JavaScript"]

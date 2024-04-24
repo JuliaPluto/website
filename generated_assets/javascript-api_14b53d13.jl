@@ -10,6 +10,7 @@
 #> license = "Unlicense"
 #> description = "Use JavaScript to make your own interactive visualizations!"
 #> date = "2024-04-24"
+#> laoyut = "docsnotebook.jlmd"
 #> 
 #>     [[frontmatter.author]]
 #>     name = "Pluto.jl"
@@ -54,17 +55,13 @@ invalidation
 returning DOM element from script
 
 observable API
-```
-
-TODO:
-```
-value
-OBject.definepropeorty(div, "value", {})
 this and id
+
 
 getBoundElementValueLikePluto
 setBoundElementValueLikePluto
 getBoundElementEventNameLikePluto
+
 
 getNotebookMetadataExperimental
 setNotebookMetadataExperimental
@@ -73,6 +70,17 @@ deleteNotebookMetadataExperimental
 getCellMetadataExperimental
 setCellMetadataExperimental
 deleteCellMetadataExperimental
+
+
+```
+
+TODO:
+```
+toplevel await
+strict mode
+
+value
+OBject.definepropeorty(div, "value", {})
 
 nice id attributes for headers
 
@@ -278,6 +286,46 @@ md"""
 	Then the DOM element returned by the old script is shown as placeholder while the new script is running (JS runs synchronously, but using top-level `await` can cause a delay). This prevents a flash of empty content in between cell renders. In particular, if the new script happens to `return` the exact same element (using `this` persistence), then that means the DOM element will always be displayed.
 """
 
+# ╔═╡ 134f6baa-8f92-4ade-93aa-8dea42092597
+md"""
+# `await` – top-level support
+
+You can use `await` in the top-level code of your script. When your script uses `await`, Pluto will wait for the script to complete before executing the next script.
+
+You can use top-level `await` to `import` libraries and more. `await` is also used internally by `AbstractPlutoDingetjes.Display.published_to_js`.
+
+Here is a silly example, showing that use can use `await` and that scripts execute sequentially:
+"""
+
+# ╔═╡ 392dd5c9-23f8-4b40-a6aa-6e3e9ba76a83
+@bind await_example_val TextField(default="coolbeans")
+
+# ╔═╡ 48d47baa-edab-49e0-8cc3-b1ab04a70027
+widget = @htl """
+<div>
+<p>Loading...</p>
+<script>
+const p = currentScript.previousElementSibling
+const val = $await_example_val
+
+await new Promise(resolve => {
+	setTimeout(() => {
+		p.innerText = val
+
+		resolve()
+	}, 1000)
+})
+</script>
+</div>
+""";
+
+# ╔═╡ 0534ccd3-858f-4247-9dbc-26bea18e437f
+@htl """
+$widget
+$widget
+$widget
+"""
+
 # ╔═╡ 27231bd2-deb3-4c37-849e-b07782439dea
 md"""
 # ObservableHQ stdlib
@@ -322,18 +370,16 @@ In Pluto's runtime, there is a distinction between two types of ways that a cell
 1. **An explicit run**: a run triggered by user input (Ctrl+S, Shift+Enter or clicking the play button) or a cell deletion.
 2. **A reactive re-run**: the cell runs because one of the variables referenced in the cell was redefined by another cell run.
 
-One difference is the JavaScript API `this`: for an **explicit run**, the variable `this` is set to `undefined`. But with a **reactive run**, `this` will take the value of the last thing that was returned by the script. If the cell runs for the first time, then `this == undefined`. In particular, if you return an HTML node, and the cell runs a second time, then you can access the HTML node using `this`. Two reasons for using this feature are:
+One difference is the JavaScript API `this`: for an **explicit run**, the variable `this` is set to `undefined`. But with a **reactive run**, `this` will take the value of the last thing that was returned by the script. In particular, if you return an HTML node, and the cell runs a second time, then you can access the HTML node using `this`. Two reasons for using this feature are:
 - Stateful output: you can persist some state in-between re-renders. 
 - Performance: you can 'recycle' the previous DOM and update it partially (using d3, for example). _When doing so, Pluto guarantees that the DOM node will always be visible, without flicker._
 
-##### 'Re-runs reactively'?
-With this, we mean that the Julia cell re-runs not because of user input (Ctrl+S, Shift+Enter or clicking the play button), but because it was triggered by a variable reference.
-
-##### ☝️ Caveat
+##### ☝️ Caveat: `<script id=...>`
 This feature is **only enabled** for `<script>` tags with the `id` attribute set, e.g. `<script id="first">`. Think of setting the `id` attribute as saying: "I am a Pluto script". There are two reasons for this:
 - One Pluto cell can output multiple scripts, Pluto needs to know which output to assign to which script.
 - Some existing scripts assume that `this` is set to `window` in toplevel code (like in the browser). By hiding the `this`-feature behind this caveat, we still support libraries that output such scripts.
 
+What should the `id` attribute be? This is a bit awkward: we don't know yet. For now, just use the name of your favourite ice cream, but we are working on [something better](https://github.com/JuliaPluto/AbstractPlutoDingetjes.jl/pull/7).
 """
 
 # ╔═╡ 91f3dab8-5521-44a0-9890-8d988a994076
@@ -491,10 +537,67 @@ state = Dict(
 """)
 
 # ╔═╡ fa3a860c-0215-4b55-aec0-a151bcbe1a06
+md"""
+# `getBoundElementValueLikePluto`, `setBoundElementValueLikePluto`, `getBoundElementEventNameLikePluto`
 
+Okay this one is not so exciting, but when you use `@bind`:
+
+```julia
+@bind x html("<some-element></some-element>")
+```
+
+Then Pluto will subscribe to the `"input"` event of `<some-element>`, and take its `.value` property to bind to the Julia variable. Well... almost! For some elements, the event name and value-getting is different. E.g. with `<button>`, we actually listen to `"click"` instead of `"input"`. And for `<input type=range>`, we get the `.valueAsNumber` property instead of `.value`.
+
+This is what you can use these functions for:
+
+```ts
+getBoundElementValueLikePluto(element: HTMLElement): any
+setBoundElementValueLikePluto(element: HTMLElement, value: any): void
+getBoundElementEventNameLikePluto(element: HTMLElement): string
+```
+
+They can be useful when creating higher-order-widgets: widgets that layer on top of, or interact with other widgets.
+"""
 
 # ╔═╡ b99c7ea3-b364-4588-98a7-0ab6d7f99b64
+md"""
+# Metadata for notebooks and cells
 
+
+Notebooks can have metadata, which is stored as TOML content at the top of the `.jl` file. For example, [frontmatter](https://github.com/fonsp/Pluto.jl/pull/2104) is stored as notebook metadata.
+
+We have some experimental API that lets you work with notebook metadata from widgets! This could be a very powerful feature when used well!
+
+Note that you can also use [sessionStorage/localStorage](https://javascript.info/localstorage) inside your widgets. Think about what your storage should be persisted for:
+- **`sessionStorage`**: reading a notebook, running and changing cells. But when opening the notebook tomorrow, it should be gone.
+- **`localStorage`**: stored for a long time on this browser. Will be there tomorrow, but someone else opening the notebook will not have the data.
+- **notebook/cell metadata**: stored permanently in the `.jl` file: when someone else opens the notebook, they will continue with your storage.
+
+For this, we provide the following API:
+
+```ts
+getNotebookMetadataExperimental(key: string): any
+setNotebookMetadataExperimental(key: string, value: any): Promise<void>
+deleteNotebookMetadataExperimental(key: string): Promise<void>
+```
+
+The objects that you store should be TOML-serializable: stick to simple JS types like String, Number, Array, Object.
+
+Return type `Promise<void>` means that a promise is returned, that resolves when the data is stored correctly.
+
+### Cell metadata
+
+
+```ts
+getCellMetadataExperimental(key: string, { cell_id: string? }): any
+setCellMetadataExperimental(key: string, value: any, { cell_id: string? }): Promise<void>
+deleteCellMetadataExperimental(key: string, { cell_id: string? }): Promise<void>
+```
+
+Providing the `cell_id` is only necessary when storing data on another cell than that where your `<script>` is executing.
+
+Return type `Promise<void>` means that a promise is returned, that resolves when the data is stored correctly.
+"""
 
 # ╔═╡ 29616052-0c9d-4018-a6f6-934ea98bb67e
 
@@ -552,193 +655,6 @@ If you chose to learn JavaScript using Pluto, let me know how it went, and how w
 
 # ╔═╡ d70a3a02-ef3a-450f-bf5a-4a0d7f6262e2
 TableOfContents()
-
-# ╔═╡ 10cf6ed1-8276-4a4a-ad06-097d10335512
-md"""
-# Essentials
-
-## Using HTML and JavaScript
-
-To use web languages inside Pluto, we recommend the small package [`HypertextLiteral.jl`](https://github.com/MechanicalRabbit/HypertextLiteral.jl), which provides an `@htl` macro.
-
-You wrap `@htl` around a string expression to mark it as an *HTML literal*, as we did in the example cell from earlier. When a cell outputs an HTML-showable object, it is rendered directly in your browser.
-"""
-
-# ╔═╡ d967cdf9-3df9-40bb-9b08-09cae95a5ca7
-@htl(" <b> Hello! </b> ")
-
-# ╔═╡ 858745a9-cd59-43a6-a296-803515518e57
-md"""
-### Adding JavaScript to a cell
-
-You can use JavaScript by including it inside HTML, just like you do when writing a web page.
-
-For example, here we use `<script>` to include some JavaScript.
-"""
-
-# ╔═╡ 21a9e3e6-92f4-475d-9c8e-21e15c09336b
-@htl("""
-
-<div class='blue-background'>
-Hello!
-</div>
-
-<script>
-// more about selecting elements later!
-currentScript.previousElementSibling.innerText = "Hello from JavaScript!"
-
-</script>
-""")
-
-# ╔═╡ 4a3398be-ee86-45f3-ac8b-f627a38c00b8
-md"""
-## Interpolation
-
-Julia has a nice feature: _string interpolation_:
-"""
-
-# ╔═╡ 2d5fd611-284b-4428-b6a5-8909203990b9
-who = "🌍"
-
-# ╔═╡ 82de4674-9ecc-46c4-8a57-0b4453c579c3
-"Hello $(who)!"
-
-# ╔═╡ 70a415be-881a-4c01-9f8c-635b8b89e1ad
-md"""
-With some (frustrating) exceptions, you can also interpolate into Markdown literals:
-"""
-
-# ╔═╡ 730a692f-2bf2-4d5b-86da-6ab861e8b8ac
-md"""
-Hello $(who)!
-"""
-
-# ╔═╡ a45fdec4-2d4b-429b-b809-4c256b57fffe
-md"""
-**However**, you cannot interpolate into an `html"` string:
-"""
-
-# ╔═╡ c68ebd7b-5fb6-4527-ac34-33f9730e4587
-html"""
-<p>Hello $(who)!</p>
-"""
-
-# ╔═╡ 8c03139f-a94b-40cc-859f-0d86f1c72143
-md"""
-
-😢 Luckily we can perform these kinds of interpolations (and much more) with the `@htl` macro, as we will see next.
-
-
-### Interpolating into HTML -- HypertextLiteral.jl
-"""
-
-# ╔═╡ d8dcb044-0ac8-46d1-a043-1073bb6d1ff1
-@htl("""
-	<p> Hello $(who)!</p>
-	""")
-
-# ╔═╡ e7d3db79-8253-4cbd-9832-5afb7dff0abf
-cool_features = [
-	md"Interpolate any **HTML-showable object**, such as plots and images, or another `@htl` literal."
-	md"Interpolated lists are expanded _(like in this cell!)_."
-	"Easy syntax for CSS"
-	]
-
-# ╔═╡ bf592202-a9a4-4e9b-8433-fed55e3aa3bc
-@htl("""
-	<p>It has a bunch of very cool features! Including:</p>
-	<ul>$([
-		@htl(
-			"<li>$(item)</li>"
-		)
-		for item in cool_features
-	])</ul>
-	""")
-
-# ╔═╡ 5ac5b984-8c02-4b8d-a342-d0f05f7909ec
-md"""
-#### Why not just `HTML(...)`?
-
-You might be thinking, why don't we just use the `HTML` function, together with string interpolation? The main problem is correctly handling HTML _escaping rules_. For example:
-"""
-
-# ╔═╡ ef28eb8d-ec98-43e5-9012-3338c3b84f1b
-cool_elements = "<div> and <marquee>"
-
-# ╔═╡ 1ba370cc-3631-47ea-9db5-75587e8e4ff3
-HTML("""
-<h6> My favourite HTML elements are $(cool_elements)!</h6>
-""")
-
-# ╔═╡ 7fcf2f3f-d902-4338-adf0-8ef181e79420
-@htl("""
-<h6> My favourite HTML elements are $(cool_elements)!</h6>
-""")
-
-# ╔═╡ 7afbf8ef-e91c-45b9-bf22-24201cbb4828
-md"""
-### Interpolating into JS -- _HypertextLiteral.jl_
-
-As we see above, using HypertextLiteral.jl, we can interpolate objects (numbers, string, images) into HTML output, great! Next, we want to **interpolate _data_ into _scripts_**. Although you could use `JSON.jl`, HypertextLiteral.jl actually has this ability built-in! 
-
-> When you **interpolate Julia objects into a `<script>` tag** using the `@htl` macro, it will be converted to a JS object _automatically_. 
-"""
-
-# ╔═╡ b226da72-9512-4d14-8582-2f7787c25028
-simple_data = (msg="Hello! ", times=3)
-
-# ╔═╡ a6fd1f7b-a8fc-420d-a8bb-9f549842ad3e
-@htl("""
-	<script>
-
-	// interpolate the data 🐸
-	const data = $(simple_data)
-
-	const span = document.createElement("span")
-	span.innerText = data.msg.repeat(data.times)
-	
-	return span
-	</script>
-""")
-
-# ╔═╡ 965f3660-6ec4-4a86-a2a2-c167dbe9315f
-md"""
-**Let's look at a more exciting example:**
-"""
-
-# ╔═╡ 00d97588-d591-4dad-9f7d-223c237deefd
-@bind fantastic_x Slider(0:400)
-
-# ╔═╡ 01ce31a9-6856-4ee7-8bce-7ce635167457
-my_data = [
-	(name="Cool", coordinate=[100, 100]),
-	(name="Awesome", coordinate=[200, 100]),
-	(name="Fantastic!", coordinate=[fantastic_x, 150]),
-]
-
-# ╔═╡ 21f57310-9ceb-423c-a9ce-5beb1060a5a3
-@htl("""
-	<script src="https://cdn.jsdelivr.net/npm/d3@6.2.0/dist/d3.min.js"></script>
-
-	<script>
-
-	// interpolate the data 🐸
-	const data = $(my_data)
-
-	const svg = DOM.svg(600,200)
-	const s = d3.select(svg)
-
-	s.selectAll("text")
-		.data(data)
-		.join("text")
-		.attr("x", d => d.coordinate[0])
-		.attr("y", d => d.coordinate[1])
-		.style("fill", "red")
-		.text(d => d.name)
-
-	return svg
-	</script>
-""")
 
 # ╔═╡ 0866afc2-fd42-42b7-a572-9d824cf8b83b
 md"""
@@ -1057,32 +973,6 @@ details(md"""
 			node.set_app_state(new_state)
 		}
 		return node
-	</script>
-	```
-	""", "Show with syntax highlighting")
-
-# ╔═╡ 94561cb1-2325-49b6-8b22-943923fdd91b
-details(md"""
-	```htmlmixed
-	<script src="https://cdn.jsdelivr.net/npm/d3@6.2.0/dist/d3.min.js"></script>
-
-	<script>
-
-	// interpolate the data 🐸
-	const data = $(my_data)
-
-	const svg = DOM.svg(600,200)
-	const s = d3.select(svg)
-
-	s.selectAll("text")
-		.data(data)
-		.join("text")
-		.attr("x", d => d.coordinate[0])
-		.attr("y", d => d.coordinate[1])
-		.style("fill", "red")
-		.text(d => d.name)
-
-	return svg
 	</script>
 	```
 	""", "Show with syntax highlighting")
@@ -1483,9 +1373,13 @@ version = "17.4.0+2"
 # ╟─eda0947b-16d7-459f-89ef-9a8febf70354
 # ╠═0a051a07-4e5f-461d-a588-16b0cc3a3974
 # ╟─367701a7-82e6-4864-8975-9323060872d4
+# ╟─134f6baa-8f92-4ade-93aa-8dea42092597
+# ╠═392dd5c9-23f8-4b40-a6aa-6e3e9ba76a83
+# ╠═0534ccd3-858f-4247-9dbc-26bea18e437f
+# ╠═48d47baa-edab-49e0-8cc3-b1ab04a70027
 # ╟─27231bd2-deb3-4c37-849e-b07782439dea
 # ╠═6ce86c19-6f05-4679-b6dc-bd5a9945f316
-# ╠═a33c7d7a-8071-448e-abd6-4e38b5444a3a
+# ╟─a33c7d7a-8071-448e-abd6-4e38b5444a3a
 # ╠═91f3dab8-5521-44a0-9890-8d988a994076
 # ╠═dcaae662-4a4f-4dd3-8763-89ea9eab7d43
 # ╟─d4bdc4fe-2af8-402f-950f-2afaf77c62de
@@ -1502,8 +1396,8 @@ version = "17.4.0+2"
 # ╠═9e37c18c-3ebb-443a-9663-bb4064391d6e
 # ╟─05d28aa2-9622-4e62-ab39-ca4c7dde6eb4
 # ╠═3266f9e6-42ad-4103-8db3-b87d2c315290
-# ╠═fa3a860c-0215-4b55-aec0-a151bcbe1a06
-# ╠═b99c7ea3-b364-4588-98a7-0ab6d7f99b64
+# ╟─fa3a860c-0215-4b55-aec0-a151bcbe1a06
+# ╟─b99c7ea3-b364-4588-98a7-0ab6d7f99b64
 # ╠═29616052-0c9d-4018-a6f6-934ea98bb67e
 # ╠═f49d23cf-4440-4c4f-830d-2866a429d2af
 # ╠═9e8897ba-5d3c-4a97-adc9-0520c7ff152e
@@ -1514,33 +1408,6 @@ version = "17.4.0+2"
 # ╟─ea39c63f-7466-4015-a66c-08bd9c716343
 # ╟─8b082f9a-073e-4112-9422-4087850fc89e
 # ╠═d70a3a02-ef3a-450f-bf5a-4a0d7f6262e2
-# ╟─10cf6ed1-8276-4a4a-ad06-097d10335512
-# ╠═d967cdf9-3df9-40bb-9b08-09cae95a5ca7
-# ╟─858745a9-cd59-43a6-a296-803515518e57
-# ╠═21a9e3e6-92f4-475d-9c8e-21e15c09336b
-# ╟─4a3398be-ee86-45f3-ac8b-f627a38c00b8
-# ╠═2d5fd611-284b-4428-b6a5-8909203990b9
-# ╠═82de4674-9ecc-46c4-8a57-0b4453c579c3
-# ╟─70a415be-881a-4c01-9f8c-635b8b89e1ad
-# ╠═730a692f-2bf2-4d5b-86da-6ab861e8b8ac
-# ╟─a45fdec4-2d4b-429b-b809-4c256b57fffe
-# ╠═c68ebd7b-5fb6-4527-ac34-33f9730e4587
-# ╟─8c03139f-a94b-40cc-859f-0d86f1c72143
-# ╠═d8dcb044-0ac8-46d1-a043-1073bb6d1ff1
-# ╠═bf592202-a9a4-4e9b-8433-fed55e3aa3bc
-# ╟─e7d3db79-8253-4cbd-9832-5afb7dff0abf
-# ╟─5ac5b984-8c02-4b8d-a342-d0f05f7909ec
-# ╠═ef28eb8d-ec98-43e5-9012-3338c3b84f1b
-# ╠═1ba370cc-3631-47ea-9db5-75587e8e4ff3
-# ╠═7fcf2f3f-d902-4338-adf0-8ef181e79420
-# ╟─7afbf8ef-e91c-45b9-bf22-24201cbb4828
-# ╠═b226da72-9512-4d14-8582-2f7787c25028
-# ╠═a6fd1f7b-a8fc-420d-a8bb-9f549842ad3e
-# ╟─965f3660-6ec4-4a86-a2a2-c167dbe9315f
-# ╠═01ce31a9-6856-4ee7-8bce-7ce635167457
-# ╠═00d97588-d591-4dad-9f7d-223c237deefd
-# ╠═21f57310-9ceb-423c-a9ce-5beb1060a5a3
-# ╟─94561cb1-2325-49b6-8b22-943923fdd91b
 # ╟─0866afc2-fd42-42b7-a572-9d824cf8b83b
 # ╟─75e1a973-7ef0-4ac5-b3e2-5edb63577927
 # ╠═e8d8a60e-489b-467a-b49c-1fa844807751

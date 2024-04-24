@@ -10,7 +10,7 @@
 #> license = "Unlicense"
 #> description = "Use JavaScript to make your own interactive visualizations!"
 #> date = "2024-04-24"
-#> laoyut = "docsnotebook.jlmd"
+#> layout = "docsnotebook.jlmd"
 #> 
 #>     [[frontmatter.author]]
 #>     name = "Pluto.jl"

@@ -279,7 +279,7 @@ html"""
 
 # ╔═╡ 0fcf5330-b9b6-4ebc-819d-c8860353a61d
 md"""
-## `AbstractPlutoDingetjes.Display`
+## `AbstractPlutoDingetjes.jl`
 
 We recommend reading [the docs of `AbstractPlutoDingetjes`](https://plutojl.org/en/docs/abstractplutodingetjes/), containing special API that we offer on top of the Web platform. In particular, I want to highlight two functions for special data needs:
 
@@ -297,6 +297,18 @@ let y = \$(AbstractPlutoDingetjes.Display.published_to_js(my_big_vector))
 "\"")
 ```
 
+"""
+
+# ╔═╡ bfded80a-6758-4260-b0d7-5601e5d22e14
+md"""
+Use `AbstractPlutoDingetjes.Display.with_js_link` when you want to make on-demand requests to Julia from your JavaScript code.
+"""
+
+# ╔═╡ e759af43-02c4-4408-8a48-bfc9adf4cfb7
+md"""
+If you create a widget with HTML/JS for multiple environments (VS Code, Jupyter, Documenter, Franklin, Bonito, Genie, etc), it can be useful to check whether the widget is being displayed in Pluto or not.
+
+We recommend performing this check inside the `Base.show(io::IO, m::MIME"text/html", ...)` method, using like `is_inside_pluto(io::IO)` to check for Pluto, or `is_supported_by_display` to check for a specific Pluto feature.
 """
 
 # ╔═╡ ae310b31-92d4-49ce-bff8-5f51fea6afc8
@@ -343,6 +355,9 @@ Docs.Binding(AbstractPlutoDingetjes.Display, :published_to_js)
 
 # ╔═╡ 2320e06c-56f8-47ac-b532-a85ae2cbe3f5
 Docs.Binding(AbstractPlutoDingetjes.Display, :with_js_link)
+
+# ╔═╡ 08293d88-66ff-433b-bd74-d53279235c88
+Docs.Binding(AbstractPlutoDingetjes, :is_inside_pluto)
 
 # ╔═╡ 3775fb8c-ec06-4482-9b0e-a4c1aa32afb7
 Docs.Binding(AbstractPlutoDingetjes, :is_supported_by_display)
@@ -657,7 +672,10 @@ version = "17.4.0+2"
 # ╟─d36015bc-b8dc-458c-b5df-011accb09d12
 # ╟─0fcf5330-b9b6-4ebc-819d-c8860353a61d
 # ╟─0fff3ea7-74a5-4bd5-a205-db21b23a2601
+# ╟─bfded80a-6758-4260-b0d7-5601e5d22e14
 # ╟─2320e06c-56f8-47ac-b532-a85ae2cbe3f5
+# ╟─e759af43-02c4-4408-8a48-bfc9adf4cfb7
+# ╟─08293d88-66ff-433b-bd74-d53279235c88
 # ╟─3775fb8c-ec06-4482-9b0e-a4c1aa32afb7
 # ╟─ae310b31-92d4-49ce-bff8-5f51fea6afc8
 # ╟─965e17ea-cc2c-4072-82c4-94f259ce9224

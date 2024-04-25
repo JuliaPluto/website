@@ -180,6 +180,19 @@ button.addEventListener("click", () => {
 # ╔═╡ 4a446964-104d-425b-8afe-cfd07474a7a2
 hello
 
+# ╔═╡ 320c1fa1-44c5-4832-9d17-87a2cfd83d9d
+md"""
+## Default value: `missing`
+When you write `@bind x Widget()` in your notebook, what is the initial value of `x`? By default, the macro `@bind` will set `x` to [**`missing`**](https://docs.julialang.org/en/v1/manual/missing/), which will be the value of `x` while other cells are also running. 
+
+Once all cells completed running, your browser can send the `.value` that it got from JavaScript, and cells that depend on `x` will run again with the value. (These messages were *debounced* while cells were running, see section below.)
+
+This means that simple JavaScript-powered custom `@bind` widgets will trigger two runs when used in a notebook: a first run with value `missing`, and a second run with the first value from JavaScript.
+
+### `AbstractPlutoDingetjes.Bonds.initial_value`
+To solve this, you can use [`AbstractPlutoDingetjes.Bonds.initial_value`](https://plutojl.org/en/docs/abstractplutodingetjes/#initial_value) to tell Julia what the first value will be. This will then be used as the first value instead of `missing`. And if the first bond update from JavaScript is exactly the same, then this first bond update will not trigger a reactive run.
+"""
+
 # ╔═╡ ada382a5-5375-4c96-95f7-9a8721567fc4
 md"""
 ## Debouncing
@@ -1121,6 +1134,7 @@ version = "17.4.0+2"
 # ╟─75e1a973-7ef0-4ac5-b3e2-5edb63577927
 # ╠═dd589798-81d7-412d-b689-80c75eba3cd8
 # ╠═4a446964-104d-425b-8afe-cfd07474a7a2
+# ╟─320c1fa1-44c5-4832-9d17-87a2cfd83d9d
 # ╟─ada382a5-5375-4c96-95f7-9a8721567fc4
 # ╠═7510b8bc-ea4d-43f9-be7c-e9529fe418a9
 # ╠═ba7b29da-b706-40a1-916b-df9667ba7726

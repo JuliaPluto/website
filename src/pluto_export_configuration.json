@@ -6,7 +6,7 @@
     "collections": [
         {
             "title": "Advanced widgets",
-            "description": "This is how you can use Pluto's special features to make bespoke interactive widgets!",
+            "description": "This is how you can use Pluto's special features to make bespoke interactive widgets! Go to plutojl.org/en/docs to learn more.",
             "tags": ["widgets"]
         }
     ]

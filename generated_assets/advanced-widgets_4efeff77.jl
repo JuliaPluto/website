@@ -90,7 +90,7 @@ md"""
 The Pluto developers 💖💖💖 love JavaScript! And Pluto also provides a first-class framework for writing widgets using JavaScript.
 
 ### Preliminary: writing JavaScript
-Before reading further, make sure that you understand the basics of writing JavaScript inside Pluto, and that you know how to debug the web using the DevTools of your favourite browser. Take a look at the [featured notebooks](https://featured.plutojl.org/) about "Pluto and the Web" to learn more.
+Before reading further, make sure that you understand the basics of writing JavaScript inside Pluto, and that you know how to debug the web using the DevTools of your favourite browser. To learn more, take a look at the [featured notebooks](https://featured.plutojl.org/) about "Pluto and the Web", and read the [documentation about our JavaScript API](https://plutojl.org/en/docs/javascript-api/).
 
 ### Preliminary: `type-show-@htl`
 Here is the core recipe to use when writing your own widgets:
@@ -248,7 +248,7 @@ Techniques used to power Custom Outputs can also be used in **Custom Inputs**! A
 
 # ╔═╡ e733647f-5af9-462c-9bb6-ef4282a04f6c
 md"""
-## Core principle: a visualiser function with `@htl`
+## Core principle: a visualiser function
 
 TODO
 """
@@ -257,7 +257,67 @@ TODO
 md"""
 ## Julia only: Layout
 
-TODO. See `PlutoUI.ExperimentalLayout`
+You can use `PlutoUI.ExperimentalLayout` to display objects in columns, grids, and more. This lets you put plots next to sliders, text and more.
+
+"""
+
+# ╔═╡ 0359ccba-8b57-47a7-a9a3-5d61419479f1
+PlutoUI.ExperimentalLayout.grid([
+	md"# Layout demo!"      Text("")
+	Text("I'm on the left") Dict(:a => 1, :b => [2,3])
+])
+
+# ╔═╡ 119e9c4e-c695-4268-8ec6-b5a6f8d6f877
+md"""
+### Combining bonds and outputs
+When you want to put a bond and an output in **the same cell** (like a slider next to a plot), you need to take special care. You need to **define the bond in a separate cell**, like so:
+"""
+
+# ╔═╡ 113b4f64-0c43-4c65-a0f1-e7a82de3fbed
+bond = @bind val Slider(1:20)
+
+# ╔═╡ b368f749-fbc6-4c44-a0ec-611a7506a0a5
+PlutoUI.ExperimentalLayout.hbox([
+	bond,
+	collect(1:val)
+])
+
+# ╔═╡ 0cfe6b47-429f-49ff-bab7-e1662dd7805c
+md"""
+### Special features
+Using `PlutoUI.ExperimentalLayout` has some special advantages over using `@htl` or another HMTL-based method to create layout: Pluto treats each item as its own display. So a 2x2 `grid` will act like 4 individual Pluto cells arranged in a grid.
+
+In particular, if some of the items in a layout change, then only those items will be re-rendered. Items that stayed the same will be unaffected. For bonds, this means that they will not re-render and get reset to their initial value. When using HTML and JavaScript, this means that if your `Base.show` method returns exactly the same value, the re-render will not be trigger, and `<script>`s don't execute again.
+"""
+
+# ╔═╡ b6486d89-e91a-4fbd-96c0-b3cbf7a3e266
+md"""
+## HTML: HypertextLiteral and alternatives
+
+You can achieve the best results when using HTML, CSS and JavaScript to power your widgets. This gives you full control over appearance and behaviour.
+
+To use HTML inside a `Base.show` function, we highly recommend `@htl` from [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl), a package developed in collaboration with the Pluto developers, but also useful outside of Pluto. It's a small dependency, and it gives optimal performance.
+
+Another option is [HyperScript.jl](https://github.com/JuliaWeb/Hyperscript.jl), which provides a "Julia API to HTML", whereas HypertextLiteral is closer to HTML itself. You could also use no package, and use `write(io, "<div ...")` calls to output HTML without a package. For small widgets this will work well, but we would recommend starting with HypertextLiteral give more flexibility later, with little cost.
+"""
+
+# ╔═╡ e1086b5a-d99f-4df5-9e8b-0c41eba192f6
+function emoji_list(xs::Vector{<:Integer})
+	@htl("""
+	<ol>
+		$((
+			@htl "<li>$(repeat("🌸",x))</li>"
+		for x in xs))
+	</ol>
+	""")
+end
+
+# ╔═╡ eb229878-e216-4ae4-adaa-45911038522c
+emoji_list([5,10,3,2,1])
+
+# ╔═╡ 8baaf3e3-3854-44d8-827b-8853f5512e1f
+html"""
+<a href="https://github.com/JuliaPluto/HypertextLiteral.jl" class="arrow">Learn more: HypertextLiteral.jl</a>
 """
 
 # ╔═╡ ff138461-4ce0-4c2c-b5c4-e90d8f53759a
@@ -412,9 +472,9 @@ HypertextLiteral = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
 PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
-AbstractPlutoDingetjes = "~1.3.1"
+AbstractPlutoDingetjes = "~1.3.2"
 HypertextLiteral = "~0.9.5"
-PlutoUI = "~0.7.58"
+PlutoUI = "~0.7.59"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -423,13 +483,13 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.10.0"
 manifest_format = "2.0"
-project_hash = "88e3ec972704b9568612a10fd51d49f28f47cd6f"
+project_hash = "7965676cd23ebed3ba799477cbe6198412888fe8"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
-git-tree-sha1 = "297b6b41b66ac7cbbebb4a740844310db9fd7b8c"
+git-tree-sha1 = "6e1d2a35f2f90a4bc7c2ed98079b2ba09c35b83a"
 uuid = "6e696c72-6542-2067-7265-42206c756150"
-version = "1.3.1"
+version = "1.3.2"
 
 [[deps.ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
@@ -575,9 +635,9 @@ version = "1.10.0"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
-git-tree-sha1 = "71a22244e352aa8c5f0f2adde4150f62368a3f2e"
+git-tree-sha1 = "ab55ee1510ad2af0ff674dbcced5e94921f867a9"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.58"
+version = "0.7.59"
 
 [[deps.PrecompileTools]]
 deps = ["Preferences"]
@@ -708,7 +768,16 @@ version = "17.4.0+2"
 # ╟─64b4a5a2-8708-40c7-8812-591c9e550d43
 # ╟─547f90c5-f8de-4a1c-9b9e-25bf8c78161e
 # ╠═e733647f-5af9-462c-9bb6-ef4282a04f6c
-# ╠═b6b9a299-0d70-430c-8bf5-d10014261f27
+# ╟─b6b9a299-0d70-430c-8bf5-d10014261f27
+# ╠═0359ccba-8b57-47a7-a9a3-5d61419479f1
+# ╟─119e9c4e-c695-4268-8ec6-b5a6f8d6f877
+# ╠═113b4f64-0c43-4c65-a0f1-e7a82de3fbed
+# ╠═b368f749-fbc6-4c44-a0ec-611a7506a0a5
+# ╟─0cfe6b47-429f-49ff-bab7-e1662dd7805c
+# ╟─b6486d89-e91a-4fbd-96c0-b3cbf7a3e266
+# ╠═e1086b5a-d99f-4df5-9e8b-0c41eba192f6
+# ╠═eb229878-e216-4ae4-adaa-45911038522c
+# ╟─8baaf3e3-3854-44d8-827b-8853f5512e1f
 # ╟─ff138461-4ce0-4c2c-b5c4-e90d8f53759a
 # ╟─d36015bc-b8dc-458c-b5df-011accb09d12
 # ╟─0fcf5330-b9b6-4ebc-819d-c8860353a61d

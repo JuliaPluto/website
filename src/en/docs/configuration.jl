@@ -19,10 +19,21 @@ using InteractiveUtils
 # ╔═╡ 95afe010-00bf-11ef-3957-7bb8594e7a83
 begin
 	import Pkg
-	false && Pkg.activate()
+	pde = joinpath(pwd(), "..", "..", "..", "pluto-deployment-environment")
+	if isdir(pde)
+		Pkg.activate(io=devnull)
+		Pkg.instantiate(io=devnull)
+	else
+		@warn "Notebook launched outside of plutojl.org website repository... Installing Pluto from registry."
+		Pkg.activate(temp=true)
+		Pkg.add(["Pluto", "PlutoUI"])
+	end
 	import Pluto, PlutoUI
 	using HypertextLiteral
 end
+
+# ╔═╡ 5a7dc99c-4229-4c7d-8464-8a57d9fcb517
+PlutoUI.TableOfContents(include_definitions=true)
 
 # ╔═╡ efda32af-e2e8-4793-b553-9c73706ea659
 md"""
@@ -71,9 +82,6 @@ Pluto.run(session)
 
 # ╔═╡ cde195ce-fe33-48a7-9567-b4dc614a2e6f
 
-
-# ╔═╡ 5a7dc99c-4229-4c7d-8464-8a57d9fcb517
-PlutoUI.TableOfContents(include_definitions=true)
 
 # ╔═╡ 05a02bbb-3307-4e85-a090-d5e29e1a476a
 begin

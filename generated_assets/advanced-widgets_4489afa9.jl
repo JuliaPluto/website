@@ -1,7 +1,8 @@
 ### A Pluto.jl notebook ###
-# v0.19.41
+# v0.19.42
 
 #> [frontmatter]
+#> image = "https://github.com/fonsp/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a"
 #> order = "0"
 #> title = "Advanced widgets – overview"
 #> date = "2024-04-22"

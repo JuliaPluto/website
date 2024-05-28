@@ -9,8 +9,5 @@ Dict(
         # "examples" => [
         #     "Getting started" => collections["examples"].pages,
         # ],
-        "blog" => [
-            "Asdfsafd" => collections["blog"].pages
-        ],
     )
 )

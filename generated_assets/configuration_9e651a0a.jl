@@ -21,7 +21,7 @@ begin
 	import Pkg
 	pde = joinpath(pwd(), "..", "..", "..", "pluto-deployment-environment")
 	if isdir(pde)
-		Pkg.activate(io=devnull)
+		Pkg.activate(pde, io=devnull)
 		Pkg.instantiate(io=devnull)
 	else
 		@warn "Notebook launched outside of plutojl.org website repository... Installing Pluto from registry."

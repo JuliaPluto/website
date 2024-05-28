@@ -106,7 +106,16 @@ window.pluto_preamble_html = undefined;
 <br>
 <br>
 <br>
-<h1 id="section"><a href="#section" class="anchor"></a></h1>
+<h1 id="long-waiting-times"><a href="#long-waiting-times" class="anchor"></a>Long waiting times</h1>
+<p>Julia needs to download and precompile packages before you can use them. When using many packages, this can take a <strong>couple of minutes</strong>. Before installing a new package, Pluto can give an estimate of how long it will take to install:</p>
+<img width="541" src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
+<h2 id="pre-installed-versions-are-preferred"><a href="#pre-installed-versions-are-preferred" class="anchor"></a>Pre-installed versions are preferred</h2>
+<p>When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer. This was added in May 2024, on older versions, Pkg would always try to install the newest versions.</p>
+<p>This should make it much faster to open a notebook and import some packages that you already used recently. If you need the latest versions, then you have to use the <strong>Update</strong> button after adding the packages.</p>
+<h2 id="package-installations-are-shared-between-environments"><a href="#package-installations-are-shared-between-environments" class="anchor"></a>Package installations are shared between environments</h2>
+<p>In Julia, packages are always installed globally, while <em>environments</em> (including notebooks) only store <strong>version information</strong>, not the package code itself. This means that multiple notebooks that use the same version of <code>Plots</code> will not lead to more disk usage or precompile time. (This is different from <code>venv</code> in Python/pip, or <code>node_modules</code> in NodeJS/npm, where every environment contains copies of package code by default.) Julia’s package manager is designed to work well with many package environments on the same computer.</p>
+<p>Of course, if different notebooks use different version of the same package, and you work on both in parallel, then source files for both versions will exist on your computer. A small price to pay for simpler reproducibility!</p>
+<p>In Julia 1.6, you can clean up package files that have not been used in a while with <code>import Pkg; Pkg.gc()</code>. In Julia 1.7 and up, this will be done <a href="https://github.com/JuliaLang/Pkg.jl/pull/2567">automatically</a>.</p>
 <h1 id="good-to-know"><a href="#good-to-know" class="anchor"></a>Good to know</h1>
 <h3 id="based-on-pkg"><a href="#based-on-pkg" class="anchor"></a>Based on Pkg</h3>
 <p>Pluto’s package management is a wrapper around <a href="https://pkgdocs.julialang.org/v1/">Pkg.jl</a>, Julia’s built-in package manager. Packages are installed from the <a href="https://github.com/JuliaRegistries/General">General registry</a>.</p>

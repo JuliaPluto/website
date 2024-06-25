@@ -1,0 +1,10 @@
+---
+title: "Three.js in Pluto – example of using a JS library"
+description: "A simple example of using a JavaScript library in Pluto to create a visualisation library."
+tags: ["javascript", "web", "widgets", "advanced", "docs"]
+layout: "md.jlmd"
+order: 5
+---
+
+Fons wrote a short tutorial for using three.js in Pluto, as an example of using a JavaScript library in Pluto to create a simple visualisation library. Available at [featured.plutojl.org/web/threejs](https://featured.plutojl.org/web/threejs)!
+

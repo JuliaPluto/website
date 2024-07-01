@@ -4,6 +4,7 @@
 <title>AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets — Pluto.jl</title>
 <meta name="description" content='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.' />
 
+<link rel="root" href="../../.." />
 
 <link rel="icon" href="../../../assets/favicon.ico" />
 <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
@@ -11,6 +12,10 @@
 <link rel="stylesheet" href="../../../assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="../../../assets/styles/layout.css" type="text/css" />
 <script src="../../../assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../assets/scripts/search.js" type="module" defer></script>
+
 
 <meta name="viewport" content="width=device-width"><meta charset="utf-8">
 <meta name="pluto-insertion-spot-meta">
@@ -38,6 +43,16 @@ window.pluto_preamble_html = undefined;
         <ul>
             <li class="pluto_home_link"><a class="pluto_home_link" href='../../..'><img src="../../../assets/favicon.svg"><span> Pluto.jl</span></a>
             </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="../../../en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
         <li>
 <h3>Introduction</h3>
 <ul>
@@ -53,7 +68,7 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class=''><a href='../../../en/docs/notebooks-online/'>📕 Put notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li>
+<li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li>
 </ul>
 </li>
 <li>

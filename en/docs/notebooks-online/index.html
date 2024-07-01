@@ -1,9 +1,10 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>📕 Put notebooks online – Pluto.jl notebooks as web pages — Pluto.jl</title>
+<title>📕 Notebooks online – Pluto.jl notebooks as web pages — Pluto.jl</title>
+<meta name="description" content='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.' />
 
-
+<link rel="root" href="../../.." />
 
 <link rel="icon" href="../../../assets/favicon.ico" />
 <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
@@ -11,6 +12,10 @@
 <link rel="stylesheet" href="../../../assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="../../../assets/styles/layout.css" type="text/css" />
 <script src="../../../assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../assets/scripts/search.js" type="module" defer></script>
+
 
 <meta name="viewport" content="width=device-width"><meta charset="utf-8">
 <meta name="pluto-insertion-spot-meta">
@@ -38,6 +43,16 @@ window.pluto_preamble_html = undefined;
         <ul>
             <li class="pluto_home_link"><a class="pluto_home_link" href='../../..'><img src="../../../assets/favicon.svg"><span> Pluto.jl</span></a>
             </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="../../../en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
         <li>
 <h3>Introduction</h3>
 <ul>
@@ -53,7 +68,7 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class='active'><a href='../../../en/docs/notebooks-online/'>📕 Put notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li>
+<li class='active'><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li>
 </ul>
 </li>
 <li>
@@ -98,7 +113,7 @@ window.pluto_preamble_html = undefined;
 </ul>
 <p><img src="https://user-images.githubusercontent.com/6933510/103711844-978b5600-4fb8-11eb-8b1b-1e5bdacc1c85.png" alt="screenshot of the actions page, showing a currently running workflow" /></p>
 <h2 id="glass-notebook"><a href="#glass-notebook" class="anchor"></a>Glass Notebook</h2>
-<p>If you have a GitHub account, then <a href="https://glassnotebook.io/">glassnotebook.io</a> is a great option for hosting your notebooks online. Glass can also host notebooks <strong>interactively</strong>: people who visit your website can interact with sliders and buttons instantly!</p>
+<p>If you have a GitHub account, then <a href="https://glassnotebook.io/">glassnotebook.io</a> is a great option for hosting your notebooks online. Glass can also host notebooks <strong>interactively</strong>: people who visit your website can interact with sliders and buttons instantly! Glass was made specifically for Pluto.jl, so it works great with Julia and Pluto!</p>
 <p><strong>Pros:</strong></p>
 <ul>
 <li>Free (for static notebooks)</li>
@@ -110,8 +125,12 @@ window.pluto_preamble_html = undefined;
 <ul>
 <li>You need to use GitHub</li>
 </ul>
+<p><img src="https://github.com/fonsp/Pluto.jl/assets/6933510/bb447901-2747-4b8a-9e91-af8e36a0c91e" alt="screenshot of Glass Notebook showing a list of repositories that are published" /></p>
 <h2 id="netlify-drop-quick-and-dirty"><a href="#netlify-drop-quick-and-dirty" class="anchor"></a>Netlify drop: <em>“quick and dirty”</em></h2>
-<p>If you just have a couple of <code>.html</code> files that you exported with Pluto, then you can use <a href="https://app.netlify.com/drop">netlify drop</a> to put them online as a website. Put all <code>.html</code> files in one folder on your computer, and drag the folder into netlify drop.</p>
+<p>If you just have a couple of <code>.html</code> files that you exported with Pluto, then you can use <a href="https://app.netlify.com/drop">netlify drop</a> to put them online as a website. Put all <code>.html</code> files in one folder on your computer, and drag the folder into netlify drop. This will give you a website!</p>
+<blockquote>
+<p>This only works with <code>.html</code> files that you exported yourself, not with <code>.jl</code> notebook files.</p>
+</blockquote>
 <p><strong>Pros:</strong></p>
 <ul>
 <li>Free</li>
@@ -121,7 +140,9 @@ window.pluto_preamble_html = undefined;
 <ul>
 <li>Updating the website with new notebooks requires a bit of care</li>
 <li>You need a Netlify account</li>
+<li>No automatic index page listing all notebooks</li>
 </ul>
+<p><img src="https://github.com/fonsp/Pluto.jl/assets/6933510/ca2f1797-9fef-4991-b3b3-ff60b99b9191" alt="screenshot of the Netlify Drop interface" /></p>
 <h1 id="work-in-progress-more-coming"><a href="#work-in-progress-more-coming" class="anchor"></a>Work in progress, more coming!</h1>
 </main>
 </div>

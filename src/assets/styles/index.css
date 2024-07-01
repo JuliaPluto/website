@@ -51,6 +51,18 @@ h2 {
     font-weight: 800;
 }
 
+h2 {
+    margin-block-start: 2em;
+    margin-block-end: 0;
+}
+
+blockquote {
+    opacity: 0.8;
+    border-inline-start: 3px solid var(--a-underline);
+    padding-inline-start: 1em;
+    margin-inline-start: 0.2em;
+}
+
 pre {
     tab-size: 4;
     white-space: pre-wrap;

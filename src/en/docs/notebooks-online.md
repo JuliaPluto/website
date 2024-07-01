@@ -1,6 +1,7 @@
 ---
-title: "📕 Put notebooks online – Pluto.jl notebooks as web pages"
-tags: ["docs", "publishing"]
+title: "📕 Notebooks online – Pluto.jl notebooks as web pages"
+description: "How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer."
+tags: ["docs", "publishing", "PlutoSliderServer", "glass", "glassnotebook", "github", "hosting", "web", "export", "html", "netlify"]
 order: 1
 layout: "md.jlmd"
 ---
@@ -31,7 +32,7 @@ If you have a GitHub account, then this is the easiest option. Go to [github.com
 ![screenshot of the actions page, showing a currently running workflow](https://user-images.githubusercontent.com/6933510/103711844-978b5600-4fb8-11eb-8b1b-1e5bdacc1c85.png)
 
 ## Glass Notebook
-If you have a GitHub account, then [glassnotebook.io](https://glassnotebook.io/) is a great option for hosting your notebooks online. Glass can also host notebooks **interactively**: people who visit your website can interact with sliders and buttons instantly!
+If you have a GitHub account, then [glassnotebook.io](https://glassnotebook.io/) is a great option for hosting your notebooks online. Glass can also host notebooks **interactively**: people who visit your website can interact with sliders and buttons instantly! Glass was made specifically for Pluto.jl, so it works great with Julia and Pluto!
 
 **Pros:**
 - Free (for static notebooks)
@@ -42,10 +43,12 @@ If you have a GitHub account, then [glassnotebook.io](https://glassnotebook.io/)
 **Cons:**
 - You need to use GitHub
 
+![screenshot of Glass Notebook showing a list of repositories that are published](https://github.com/fonsp/Pluto.jl/assets/6933510/bb447901-2747-4b8a-9e91-af8e36a0c91e)
 
 ## Netlify drop: *"quick and dirty"*
-If you just have a couple of `.html` files that you exported with Pluto, then you can use [netlify drop](https://app.netlify.com/drop) to put them online as a website. Put all `.html` files in one folder on your computer, and drag the folder into netlify drop.
+If you just have a couple of `.html` files that you exported with Pluto, then you can use [netlify drop](https://app.netlify.com/drop) to put them online as a website. Put all `.html` files in one folder on your computer, and drag the folder into netlify drop. This will give you a website!
 
+> This only works with `.html` files that you exported yourself, not with `.jl` notebook files.
 
 **Pros:**
 - Free
@@ -54,6 +57,14 @@ If you just have a couple of `.html` files that you exported with Pluto, then yo
 **Cons:**
 - Updating the website with new notebooks requires a bit of care
 - You need a Netlify account
+- No automatic index page listing all notebooks
+
+
+![screenshot of the Netlify Drop interface](https://github.com/fonsp/Pluto.jl/assets/6933510/ca2f1797-9fef-4991-b3b3-ff60b99b9191)
+
+
+
+
 
 
 # Work in progress, more coming!

@@ -26,6 +26,7 @@ $(let d = get(page.output.frontmatter, "description", nothing)
     end
 end)
 
+<link rel="root" href="$(root_url)" />
 
 <link rel="icon" href="$(root_url)/assets/favicon.ico" />
 <link rel="icon" href="$(root_url)/assets/favicon.svg" type="image/svg+xml">
@@ -33,6 +34,10 @@ end)
 <link rel="stylesheet" href="$(root_url)/assets/styles/index.css" type="text/css" />
 <link rel="stylesheet" href="$(root_url)/assets/styles/layout.css" type="text/css" />
 <script src="$(root_url)/assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="$(root_url)/pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="$(root_url)/assets/scripts/search.js" type="module" defer></script>
+
 
 $(pluto_head)
 </head>
@@ -44,6 +49,16 @@ $(pluto_head)
         <ul>
             <li class="pluto_home_link"><a class="pluto_home_link" href=$(root_url)><img src="$(root_url)/assets/favicon.svg"><span> Pluto.jl</span></a>
             </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="$(root_url)/en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
         $(let
             sidebar_data = Base.include(@__MODULE__, joinpath(@__DIR__, "..", "sidebar data.jl"))
             

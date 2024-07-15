@@ -5,5 +5,33 @@ layout: "md.jlmd"
 order: 1
 ---
 
+# Install Pluto on your own computer
 Go to [plutojl.org/#install](https://plutojl.org/#install) for instructions!
 
+## System requirements
+Pluto works on Windows, Linux, MacOS, ChromeOS and Android. You need a computer with at least **4GB RAM**, but 8GB is recommended for running multiple notebooks in parallel, or for using large packages.
+
+Pluto needs **Julia** to be installed, we recommend the latest version. Unreleased (alpha/beta preview) versions of Julia do not work well with Pluto.
+
+Pluto also needs a **web browser** to work. Make sure that your web browser is up-to-date, as Pluto uses many modern web technologies to work. Some browser extensions can break Pluto, such as Privacy Badger. You can disable these extensions for the Pluto domain (usually `http://localhost:1234/`).
+
+You do not need to be a **system administrator** to install Julia and Pluto. 
+
+### ChromeOS
+Pluto works on a chromebook! You need to set up the [Linux development environment](https://support.google.com/chromebook/answer/9145439), and then follow the Linux installation instructions as usual!
+
+### iPad and iOS
+It is not possible to run Julia on iPad or iOS (we think)... But you could run Pluto on another computer or a web server, and access Pluto remotely on your iPad or iOS phone. 
+
+
+# Try Pluto without installation
+You can try Pluto in your browser without installation before installing! Go to [plutojl.org/#try](https://plutojl.org/#install) to learn more. Note that your files will not be stored in the cloud!
+
+
+## Use Pluto in the cloud
+If you want to use Pluto without installation for more serious projects, there are a couple of options:
+- [Jolin Cloud](https://cloud.jolin.io/) – jolin.io offers a cloud service for Pluto notebooks, with additional real-time data features
+- [JuliaHub](https://juliahub.com/) – see the [documentation](https://help.juliahub.com/juliahub/stable/tutorials/pluto_notebooks/)
+- [CoCalc](https://cocalc.com/) – see the [documentation](https://doc.cocalc.com/howto/pluto.html)
+
+With these three options you can **store notebooks in the cloud**, and you can also try **bigger computers** and **GPUs**. Jolin and JuliaHub also let you publish notebooks as public/private websites.

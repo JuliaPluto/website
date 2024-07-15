@@ -1,0 +1,45 @@
+---
+title: "🌸 How to update"
+tags: ["docs", "introduction"]
+layout: "md.jlmd"
+order: 1.15
+---
+
+# Update your Pluto installation
+You can update Pluto using the Julia package manager. Open a Julia process and use Pkg to update Pluto:
+
+```jl
+julia> import Pkg
+julia> Pkg.update("Pluto")
+```
+
+This should update Pluto to the latest version <span id="latesthere">(check our [GitHub releases](https://github.com/fonsp/Pluto.jl/releases/) to find out!)</span>.
+
+## Not the latest version?
+Sometimes, it is not possible to install the latest version of Pluto because of **compatibility issues with other packages** that you have installed in your environment. 
+
+First, use `Pkg.status()` to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.
+
+If this did not work, try updating all packages (not just Pluto) with `Pkg.update()`.
+
+Finally, you could use `Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)` to see the compatibility bounds. [Here is an example](https://discourse.julialang.org/t/package-is-not-updating-but-why/88338).
+
+<script defer>
+const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
+method: "GET",
+mode: "cors",
+cache: "no-cache",
+headers: {
+    "Content-Type": "application/json",
+},
+redirect: "follow",
+referrerPolicy: "no-referrer",
+}).then(r => r.json()).then(r => r.reverse()).then(releases => releases[releases.length - 1].tag_name)
+latest.then(v => {
+const el = document.querySelector("#latesthere")
+console.log(el, v)
+el.innerText = v
+el.style.fontWeight = "bold"
+})
+</script>
+

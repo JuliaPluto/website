@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>JavaScript API — Pluto.jl</title>
-<meta name="description" content='Use JavaScript to make your own interactive visualizations!' />
+<title>🌸 How to update — Pluto.jl</title>
+
 
 <link rel="root" href="../../.." />
 
@@ -56,7 +56,7 @@ window.pluto_preamble_html = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class='active'><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -74,7 +74,7 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Advanced: Widgets</h3>
 <ul>
-<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class='active'><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li>
 </ul>
 </li>
 <li>
@@ -88,41 +88,39 @@ window.pluto_preamble_html = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <style>
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
-
-pluto-output {
-	font-family: 'Jaldi', sans-serif;
-	font-size: 17px;
-	overflow-y: hidden;
-}
-
-pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
-font-family: Jaldi, sans-serif;
-	line-height: 1;
-}
-
-pluto-output .pluto-docs-binding h1 {
-	font-size: 1.4em;
-}
-
-pluto-output h1 {
-	margin-block-start: 2.5em !important;
-}
-
-pluto-output .pluto-docs-binding h2 {
-    font-size: 1.3em;
-}
-pluto-output .pluto-docs-binding h3,
-pluto-output .pluto-docs-binding h4,
-pluto-output .pluto-docs-binding h5,
-pluto-output .pluto-docs-binding h6
-{
-    font-size: 1.1em;
-}
-</style>
-</style>
-<pluto-editor statefile='../../../generated_assets/javascript-api_8b266662.plutostate' notebookfile='../../../generated_assets/javascript-api_7da61a64.jl' disable-ui=''></pluto-editor>
+        <div class="pages-markdown">
+<main>
+<h1 id="update-your-pluto-installation"><a href="#update-your-pluto-installation" class="anchor"></a>Update your Pluto installation</h1>
+<p>You can update Pluto using the Julia package manager. Open a Julia process and use Pkg to update Pluto:</p>
+<pre><code class="language-jl">julia&gt; import Pkg
+julia&gt; Pkg.update(&quot;Pluto&quot;)
+</code></pre>
+<p>This should update Pluto to the latest version <span id="latesthere">(check our <a href="https://github.com/fonsp/Pluto.jl/releases/">GitHub releases</a> to find out!)</span>.</p>
+<h2 id="not-the-latest-version"><a href="#not-the-latest-version" class="anchor"></a>Not the latest version?</h2>
+<p>Sometimes, it is not possible to install the latest version of Pluto because of <strong>compatibility issues with other packages</strong> that you have installed in your environment.</p>
+<p>First, use <code>Pkg.status()</code> to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.</p>
+<p>If this did not work, try updating all packages (not just Pluto) with <code>Pkg.update()</code>.</p>
+<p>Finally, you could use <code>Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)</code> to see the compatibility bounds. <a href="https://discourse.julialang.org/t/package-is-not-updating-but-why/88338">Here is an example</a>.</p>
+<script defer>
+const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
+method: "GET",
+mode: "cors",
+cache: "no-cache",
+headers: {
+    "Content-Type": "application/json",
+},
+redirect: "follow",
+referrerPolicy: "no-referrer",
+}).then(r => r.json()).then(r => r.reverse()).then(releases => releases[releases.length - 1].tag_name)
+latest.then(v => {
+const el = document.querySelector("#latesthere")
+console.log(el, v)
+el.innerText = v
+el.style.fontWeight = "bold"
+})
+</script>
+</main>
+</div>
 
         </div>
     </div>

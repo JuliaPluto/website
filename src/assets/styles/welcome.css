@@ -178,11 +178,13 @@ div.header-text > div {
     display: flex;
     gap: 2em;
     justify-content: flex-start;
+    margin-top: 3em;
 }
 
 .header-text .bannerlinks .roundbutton {
-    background: #72167e;
-    box-shadow: 0 0 10px #0000004d;
+    background: #58445a;
+    outline: 4px solid #ffffff91;
+    font-size: 1rem;
 }
 
 header #topnav {

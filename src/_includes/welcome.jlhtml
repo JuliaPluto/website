@@ -48,7 +48,7 @@
                     <h1>
                         We are on a mission to make <em>scientific computing</em> more <em>accessible and fun</em>.
                     </h1>
-                    <p>Simple, reactive programming environment for Julia</p>
+                    <p>Simple, reactive programming environment for the Julia Langauge</p>
                     <div class="bannerlinks">
                         <a class="roundbutton" href="#try"><img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/flash.svg" aria-hidden="true"> Try online</a>
                         

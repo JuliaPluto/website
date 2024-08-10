@@ -14,16 +14,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
             - name: Install Julia
-              uses: julia-actions/setup-julia@v1
+              uses: julia-actions/setup-julia@v2
               with:
                   version: "1.10"
 
             # We set up a folder that Pluto can use to cache exported notebooks. If the notebook file did not change, then Pluto can take the exported file from cache instead of running the notebook.
             - name: ⏱ Cache notebook states
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
                 path: _cache
                 key: ${{ runner.os }}-pluto_state_cache-v3-fall22-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}-${{ github.run_id }}
@@ -31,7 +31,7 @@ jobs:
                     ${{ runner.os }}-pluto_state_cache-v3-fall22-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}
 
             - name: ⏱ Cache .julia
-              uses: actions/cache@v2
+              uses: actions/cache@v4
               with:
                 path: ~/.julia
                 key: ${{ runner.os }}-dotjulia-v1-${{ hashFiles('**/Project.toml', '**/Manifest.toml') }}-${{ github.run_id }}
@@ -48,14 +48,14 @@ jobs:
                   cp("./netlify.toml", "./_site/netlify.toml")'
 
             
-            - uses: actions/upload-artifact@v2
+            - uses: actions/upload-artifact@v4
               if: always()
               with:
                 path: generation_report.html
 
             - name: 🚀 Deploy to dist
-              uses: JamesIves/github-pages-deploy-action@releases/v3
+              uses: JamesIves/github-pages-deploy-action@4
               with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  BRANCH: dist
-                  FOLDER: _site
+                  token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: dist
+                  folder: _site

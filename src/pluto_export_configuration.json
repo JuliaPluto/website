@@ -1,4 +1,5 @@
 {
+    "comment_to_pluto_devs": "README! hello! this file is for a special purpose: some of the notebooks from this repository are also featured Pluto notebooks (they show in the main menu of Pluto, see https://github.com/fonsp/Pluto.jl/pull/2927). More specifically, the site plutojl.org acts as a 'featured source' of pluto, search for plutojl.org in https://github.com/fonsp/Pluto.jl/blob/main/frontend/featured_sources.js . That means: this file does not configure this website plutojl.org",
     
     "title": "Pluto documentation highlights",
     "description": "We are working on brand-new documentation at plutojl.org/en/docs - here are some highlights!",

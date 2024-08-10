@@ -40,10 +40,11 @@ jobs:
 
             - name: 🪴 Generate site
               run: julia --project=pluto-deployment-environment -e '
-                  import Pkg;
-                  Pkg.instantiate();
-
-                  include("./generate.jl")
+                  import Pkg
+                  Pkg.instantiate()
+                  import PlutoPages
+                  
+                  PlutoPages.generate("."; html_report_path="generation_report.html")
                   
                   cp("./netlify.toml", "./_site/netlify.toml")'
 

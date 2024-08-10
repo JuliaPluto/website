@@ -546,7 +546,7 @@ version = "0.1.6"
 
 [[deps.PlutoPages]]
 deps = ["BetterFileWatching", "CommonMark", "Gumbo", "HypertextLiteral", "InteractiveUtils", "JSON", "LiveServer", "Logging", "Malt", "Markdown", "MarkdownLiteral", "Pkg", "Pluto", "PlutoHooks", "PlutoLinks", "PlutoSliderServer", "PlutoUI", "ProgressLogging", "RelocatableFolders", "SHA", "ThreadsX", "Unicode", "YAML"]
-path = "/Users/fons/Documents/PlutoPages.jl/"
+git-tree-sha1 = "5fa183fe8d8b7beaf910f30bea5eb356b8b16b8d"
 uuid = "d5dc3dd1-4774-47c7-8860-0a1ad9e34b8c"
 version = "0.1.6"
 

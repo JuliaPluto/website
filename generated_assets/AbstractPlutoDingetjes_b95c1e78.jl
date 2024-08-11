@@ -23,6 +23,10 @@ using AbstractPlutoDingetjes
 # ╔═╡ 85161a3c-274b-4c90-a9ef-ec86e3e2c59a
 md"""
 # AbstractPlutoDingetjes.jl
+
+If you want to design widgets to be used inside Pluto.jl (like PlutoUI components, a plotting package, etc), AbstractPlutoDingetjes lets you hook into more advanced Pluto features. 
+
+This package works best in combination with [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl). If you don't know about HypertextLiteral.jl yet, you should check out the [overview of Pluto widgets](https://plutojl.org/en/docs/advanced-widgets/) first.
 """
 
 # ╔═╡ 16877f32-8879-11ee-0554-01ef8951f596

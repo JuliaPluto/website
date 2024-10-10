@@ -344,7 +344,7 @@
                 <card-text>
                     <h2>Step 1: Install Julia $(version)</h2>
                     
-                    <p>Go to <a href="https://julialang.org/downloads">https://julialang.org/downloads</a> and download the <em>current stable release</em>.</p>
+                    <p>Go to <a href="https://julialang.org/downloads">https://julialang.org/downloads</a> and install the <em>current stable release</em>.</p>
                 </card-text>
                 <card-showcase>
                 </card-showcase>

@@ -1,0 +1,163 @@
+---
+title: "📗 Export HTML, PDF, Julia"
+description: "How to export a Pluto.jl notebook to HTML, PDF or a Julia file."
+tags: ["docs", "publishing", "pdf", "html", "file", "export", "share", "web"]
+layout: "md.jlmd"
+order: 1
+---
+
+# How to export a Pluto.jl notebook
+
+<!-- These HMTL icons are from Pluto. Open Pluto, click share, then right click an icon and Inspect, then "Copy > Copy outerHTML". -->
+After writing your Pluto notebook, you have a couple options to **export** your notebook, to share with someone else:
+- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="24,0 48,40 0,40" fill="#a270ba" stroke="none"></polygon></svg> **Notebook file (`.jl`)** – This is how Pluto stores your notebook file, and you can share it directly with someone else so they can run your notebook.
+- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#E86F51" stroke="none"></polygon></svg> **Static HTML** – A snapshot of your notebook with outputs in a versatile format.
+- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#619b3d" stroke="none"></polygon></svg> **PDF** – A traditional PDF document for printing.
+- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em;"><circle cx="24" cy="24" r="24" fill="#E86F51"></circle></svg> **Recording** – A special type of video!
+
+
+# Notebook file <span id"jl"></span>
+Pluto notebook files are **stored as `.jl` Julia files**. This file contains:
+- Code for each cell
+- Special comments (start with `#`) that Pluto uses to understand which code belongs to which cell.
+- The exact version numbers of packages that were used. This is stored at the bottom of the `.jl` file, the Project.toml and Manifest.toml content.
+
+When you send your `.jl` notebook file to someone else, they can open the notebook in Pluto and see the same results. This concept is called **reproducibility**, and it is something we work very hard on at Pluto!
+
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "Notebook file".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/18fa2a41-ab15-43aa-9ffa-c11f77079ba2)
+
+
+!!! info
+    The steps above are a quick way to get the `.jl` file. You can also **Save your notebook** on your computer by giving it a file name. In that case, the steps above just give a copy of your file.
+
+
+## Notebooks as scripts
+`.jl` notebook files can also be **run as a script**. Since the `.jl` file just contains your cell code, you can also run it with Julia:
+
+```sh
+> julia my_notebook.jl
+```
+
+Or inside of Julia code, can use `include("my_notebook.jl")` to get variables from your notebook outside of Pluto.
+
+
+# Export to HTML <span id"html"></span>
+This is a snapshot of your notebook with all outputs in a standalone HTML file. You can share this `.html` file via email, and other people can double-click the file to read your notebook. 
+
+!!! info
+    Important: you can open an HTML export file **on any computer**, you do not need to have Julia or Pluto installed!
+
+For some examples of HTML export files, check out our [featured notebooks](https://featured.plutojl.org/).
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "Static HMTL".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/8664ff5d-4891-449d-b762-ee9dfb809587)
+
+
+
+
+## Reproducibility
+What's really cool about HTML export files is that they are **reproducible**: every HTML export file from Pluto **includes the `.jl` source code**! That means that someone who reads the notebook can also run the original code and make changes!
+
+Every HTML export contains an **Edit or run** button in the top right. When you press it, you see a screen where you can:
+1. Run the notebook with **[binder](https://mybinder.org/)**, a free service to run scientific notebooks in the cloud. This works on any browser (including mobile), without needing to install Julia or Pluto.
+2. **Download the `.jl` notebook file** that was used to generate the HTML export. You can open this file with Pluto.
+
+![Screenshot of the "Edit or run" menu with the option to download the notebook file.](https://github.com/user-attachments/assets/a4334cd9-c5ba-4a75-8ed3-bc1f0147a22a)
+
+
+`.html` files from Pluto can also be used as web pages on your blog. <a href="../notebooks-online/" class="arrow">Learn more</a>
+
+
+# Export to PDF <span id"pdf"></span>
+If you want to print your notebook, or submit it as homework assignment, it might be useful to get a PDF file! 
+
+*When possible, we recommend sharing an HTML file instead of a PDF file. HTML files are great for **reproducibility**!*
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "PDF".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/3c4652c6-18e5-4f83-bac1-9738e88a4bc8)
+
+
+## Page layout
+Pluto tries to make your notebook look well on paper. One challenge is where to place "page breaks". Our goal is:
+- Don't split cells between pages, unless necessary.
+- Markdown headers should be at the top of a page.
+
+*🌸 If your notebook does not look good on PDF, generate an [HTML export](#html) and send it to the Pluto developers! 🌸*
+
+
+# Make a recording *(preview)* <span id="recording"></span>
+Pluto has one really cool experimental feature, and we're curious what you think! You can make a **Pluto recording**, which is a bit like recording your screen to a video, but the result is an HTML web page! 
+
+That means that while you watch the video, you can pause and scroll to a different section!
+
+<a href="https://plutojl.org/unitful%20sliders/">Take a look at this example video</a>
+
+Please try it out, and let us know what you think!
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "Record".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/fc177f52-5b72-44e1-bbd9-2a976cede45d)
+
+### Step 4
+Click to start a recording. You can choose between recording **with microphone audio** or **without audio** (screen only).
+
+![Screenshot of the two record buttons](https://github.com/user-attachments/assets/1655550f-08a8-497e-9ac9-9884e5327ca7)
+
+
+
+### Step 5
+You are now recording! You can:
+- Interact with `@bind` elements and see your notebook update.
+- Scroll through the notebook.
+- Speak! Audio can be recorded.
+- Make code changes (currently, individual keystrokes cannot be recorded, you need to run the cell to make changes show in the recording).
+
+### Step 6
+When you are done, press "Stop recording". After a couple seconds, you can choose a location to store the `.html` file.
+
+![Screenshot of the Stop Recording button](https://github.com/user-attachments/assets/ca7e36da-d355-4823-a4d2-a37aca5e8e0e)

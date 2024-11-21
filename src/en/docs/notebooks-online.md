@@ -2,7 +2,7 @@
 title: "📕 Notebooks online – Pluto.jl notebooks as web pages"
 description: "How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer."
 tags: ["docs", "publishing", "PlutoSliderServer", "glass", "glassnotebook", "github", "hosting", "web", "export", "html", "netlify"]
-order: 1
+order: 2
 layout: "md.jlmd"
 ---
 

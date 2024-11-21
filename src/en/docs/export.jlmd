@@ -16,7 +16,7 @@ After writing your Pluto notebook, you have a couple options to **export** your 
 - <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em;"><circle cx="24" cy="24" r="24" fill="#E86F51"></circle></svg> **Recording** – A special type of video!
 
 
-# Notebook file <span id"jl"></span>
+# Notebook file <span id="jl"></span>
 Pluto notebook files are **stored as `.jl` Julia files**. This file contains:
 - Code for each cell
 - Special comments (start with `#`) that Pluto uses to understand which code belongs to which cell.
@@ -54,7 +54,7 @@ Choose "Notebook file".
 Or inside of Julia code, can use `include("my_notebook.jl")` to get variables from your notebook outside of Pluto.
 
 
-# Export to HTML <span id"html"></span>
+# Export to HTML <span id="html"></span>
 This is a snapshot of your notebook with all outputs in a standalone HTML file. You can share this `.html` file via email, and other people can double-click the file to read your notebook. 
 
 !!! info
@@ -92,7 +92,7 @@ Every HTML export contains an **Edit or run** button in the top right. When you 
 `.html` files from Pluto can also be used as web pages on your blog. <a href="../notebooks-online/" class="arrow">Learn more</a>
 
 
-# Export to PDF <span id"pdf"></span>
+# Export to PDF <span id="pdf"></span>
 If you want to print your notebook, or submit it as homework assignment, it might be useful to get a PDF file! 
 
 *When possible, we recommend sharing an HTML file instead of a PDF file. HTML files are great for **reproducibility**!*

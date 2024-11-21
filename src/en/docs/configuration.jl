@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.41
+# v0.20.3
 
 #> [frontmatter]
 #> title = "⚙️ Configuring Pluto"
@@ -83,6 +83,15 @@ Pluto.run(session)
 # ╔═╡ cde195ce-fe33-48a7-9567-b4dc614a2e6f
 
 
+# ╔═╡ bdee1b97-ee4b-4c5a-9207-fc4110fde5e2
+@htl """
+<ul>
+$(map(categories) do c
+	@htl "<li><a href=$(string("#", c))>$c</a></li>"
+end)
+</ul>
+"""
+
 # ╔═╡ 05a02bbb-3307-4e85-a090-d5e29e1a476a
 begin
 	categories = [
@@ -97,15 +106,6 @@ end;
 md"""
 # Configuration options
 Pluto's settings are divided into $(length(categories)) categories:
-"""
-
-# ╔═╡ bdee1b97-ee4b-4c5a-9207-fc4110fde5e2
-@htl """
-<ul>
-$(map(categories) do c
-	@htl "<li><a href=$(string("#", c))>$c</a></li>"
-end)
-</ul>
 """
 
 # ╔═╡ a3b6dcaa-4e72-4e14-8046-e4f924ab71cc

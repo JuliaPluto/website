@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>PlutoDependencyExplorer.jl – documentation — Pluto.jl</title>
-<meta name="description" content='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.' />
+<title>🎥 Recording – experimental video mode — Pluto.jl</title>
+<meta name="description" content='How to use the recording feature of Pluto.jl to create a special HTML video file,' />
 
 <link rel="root" href="../../.." />
 
@@ -68,7 +68,7 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class='active'><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li>
 </ul>
 </li>
 <li>
@@ -80,7 +80,7 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Advanced: Internals</h3>
 <ul>
-<li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class='active'><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
+<li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
 </ul>
 </li>
 
@@ -88,41 +88,39 @@ window.pluto_preamble_html = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <style>
-@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
-
-pluto-output {
-	font-family: 'Jaldi', sans-serif;
-	font-size: 17px;
-	overflow-y: hidden;
-}
-
-pluto-output h1, pluto-output h2, pluto-output h3, pluto-output h4, pluto-output h5, pluto-output h6 {
-font-family: Jaldi, sans-serif;
-	line-height: 1;
-}
-
-pluto-output .pluto-docs-binding h1 {
-	font-size: 1.4em;
-}
-
-pluto-output h1 {
-	margin-block-start: 2.5em !important;
-}
-
-pluto-output .pluto-docs-binding h2 {
-    font-size: 1.3em;
-}
-pluto-output .pluto-docs-binding h3,
-pluto-output .pluto-docs-binding h4,
-pluto-output .pluto-docs-binding h5,
-pluto-output .pluto-docs-binding h6
-{
-    font-size: 1.1em;
-}
-</style>
-</style>
-<pluto-editor statefile='../../../generated_assets/PlutoDependencyExplorer_d2d4a363.plutostate' notebookfile='../../../generated_assets/PlutoDependencyExplorer_57bcb20a.jl' disable-ui=''></pluto-editor>
+        <div class="pages-markdown">
+<main>
+<h1 id="make-a-recording-preview-span-idrecordingspan"><a href="#make-a-recording-preview-span-idrecordingspan" class="anchor"></a>Make a recording <em>(preview)</em> <span id="recording"></span></h1>
+<p>Pluto has one really cool experimental feature, and we’re curious what you think! You can make a <strong>Pluto recording</strong>, which is a bit like recording your screen to a video, but the result is an HTML web page!</p>
+<p>That means that while you watch the video, you can pause and scroll to a different section!</p>
+<blockquote>
+<p><a class="arrow" href="https://plutojl.org/unitful%20sliders/">Take a look at this example video</a></p>
+</blockquote>
+<p>Please try it out, and let us know what you think!</p>
+<h3 id="step-1"><a href="#step-1" class="anchor"></a>Step 1</h3>
+<p>Open your notebook in Pluto, and wait for all cells to finish running.</p>
+<h3 id="step-2"><a href="#step-2" class="anchor"></a>Step 2</h3>
+<p>Press the <strong>Share</strong> button in the top right.</p>
+<p><img src="https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161" alt="Screenshot of the Share button" /></p>
+<h3 id="step-3"><a href="#step-3" class="anchor"></a>Step 3</h3>
+<p>Choose “Record”.</p>
+<p><img src="https://github.com/user-attachments/assets/fc177f52-5b72-44e1-bbd9-2a976cede45d" alt="Screenshot of the export options" /></p>
+<h3 id="step-4"><a href="#step-4" class="anchor"></a>Step 4</h3>
+<p>Click to start a recording. You can choose between recording <strong>with microphone audio</strong> or <strong>without audio</strong> (screen only).</p>
+<p><img src="https://github.com/user-attachments/assets/1655550f-08a8-497e-9ac9-9884e5327ca7" alt="Screenshot of the two record buttons" /></p>
+<h3 id="step-5"><a href="#step-5" class="anchor"></a>Step 5</h3>
+<p>You are now recording! You can:</p>
+<ul>
+<li>Interact with <code>@bind</code> elements and see your notebook update.</li>
+<li>Scroll through the notebook.</li>
+<li>Speak! Audio can be recorded.</li>
+<li>Make code changes (currently, individual keystrokes cannot be recorded, you need to run the cell to make changes show in the recording).</li>
+</ul>
+<h3 id="step-6"><a href="#step-6" class="anchor"></a>Step 6</h3>
+<p>When you are done, press “Stop recording”. After a couple seconds, you can choose a location to store the <code>.html</code> file.</p>
+<p><img src="https://github.com/user-attachments/assets/ca7e36da-d355-4823-a4d2-a37aca5e8e0e" alt="Screenshot of the Stop Recording button" /></p>
+</main>
+</div>
 
         </div>
     </div>

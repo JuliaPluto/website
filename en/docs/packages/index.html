@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>📦 Packages — Pluto.jl</title>
-
+<title>📦 Packages – Built-in package management — Pluto.jl</title>
+<meta name="description" content='Pluto.jl automatically manages a package environment for your notebook.' />
 
 <link rel="root" href="../../.." />
 
@@ -62,13 +62,13 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Reproducibility</h3>
 <ul>
-<li class='active'><a href='../../../en/docs/packages/'>📦 Packages</a></li><li class=''><a href='../../../en/docs/packages-advanced/'>📦 Packages: advanced</a></li>
+<li class='active'><a href='../../../en/docs/packages/' title='Pluto.jl automatically manages a package environment for your notebook.'>📦 Packages <br><small> Built-in package management</small></a></li><li class=''><a href='../../../en/docs/packages-advanced/' title='How to use Pkg.activate in Pluto.jl notebooks to set up a custom Pkg environment.'>📦 Packages: advanced <br><small> Pkg.activate in a cell</small></a></li>
 </ul>
 </li>
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>📗 Export HTML, PDF, Julia</a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li>
 </ul>
 </li>
 <li>
@@ -103,23 +103,23 @@ window.pluto_preamble_html = undefined;
 <h1 id="basic-usage"><a href="#basic-usage" class="anchor"></a>Basic usage</h1>
 <h2 id="installing-and-using-packages"><a href="#installing-and-using-packages" class="anchor"></a>Installing and using packages</h2>
 <p>Pluto will automatically install or remove packages while you work on your notebook. When you import a new package, Pluto will install it:</p>
-<img width="541" alt="Schermafbeelding 2021-06-10 om 20 35 52" src="https://user-images.githubusercontent.com/6933510/121580636-45e66c00-ca2d-11eb-97e2-351068d58057.png">
+<img width="541" alt="Screenshot of code that imports the Plots package. Pluto says that the package will be installed when you run the cell." src="https://user-images.githubusercontent.com/6933510/121580636-45e66c00-ca2d-11eb-97e2-351068d58057.png">
 <blockquote>
 <p>🙋 Most packages will write <em>installation instructions</em> in their documentation: like “Run <code>julia&gt; ] install Example</code> to install <code>Example</code>”. If you are using Pluto, you should <strong>skip these instructions</strong>, and import the package directly, using <code>import Example</code> or <code>using Example</code>.</p>
 </blockquote>
 <h3 id="logs"><a href="#logs" class="anchor"></a>Logs</h3>
-<p>Installing packages can take some time, especially when starting Julia for the first time. Click on the status mark next to a package to view the installation progress. You can click on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/document-text-outline.svg" alt="📄" width=17px> icon to view the logs.</p>
-<img width="541" src="https://media.giphy.com/media/EMv3miTVQPsVspplgY/giphy.gif">
+<p>Installing packages can take some time, especially when starting Julia for the first time. Click on the status mark next to a package to view the installation progress. You can click on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/document-text-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon to view the logs.</p>
+<img width="541" alt="Screen recording of the package Plots being installed in a cell. The package terminal is visible, where the precompilatino progress is visible in a small terminal." src="https://media.giphy.com/media/EMv3miTVQPsVspplgY/giphy.gif">
 <br>
 <br>
 <h2 id="removing-packages"><a href="#removing-packages" class="anchor"></a>Removing packages</h2>
 <p>Removing packages is automatic: when you delete code that imports a package, it will be uninstalled from the package environment. It is <em>recommended</em> to restart the notebook process afterwards to get a fresh start.</p>
-<img width="541" src="https://media.giphy.com/media/dIFYIHZ2zBFrFDCodM/giphy.gif">
+<img width="541" alt="Screen recording of a notebook requesting the user to restart the notebook. Clicking on the message restart the notebook, and the message disappears." src="https://media.giphy.com/media/dIFYIHZ2zBFrFDCodM/giphy.gif">
 <br>
 <br>
 <h2 id="updating-packages"><a href="#updating-packages" class="anchor"></a>Updating packages</h2>
-<p>You can search for and install any available updates by clicking on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/arrow-up-circle-outline.svg" alt="📄" width=17px> icon. A backup of your notebook file will be created in the same folder as your notebook, in case the new versions do not work as expected.</p>
-<img width="541" alt="Update button" src="https://user-images.githubusercontent.com/6933510/121583646-d1adc780-ca30-11eb-9741-fc9529756061.png">
+<p>You can search for and install any available updates by clicking on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/arrow-up-circle-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon. A backup of your notebook file will be created in the same folder as your notebook, in case the new versions do not work as expected.</p>
+<img width="541" alt="Screenshot of the update button visible next to the import of a package" src="https://user-images.githubusercontent.com/6933510/121583646-d1adc780-ca30-11eb-9741-fc9529756061.png">
 <br>
 <br>
 <br>
@@ -129,7 +129,7 @@ window.pluto_preamble_html = undefined;
 <br>
 <h1 id="long-waiting-times"><a href="#long-waiting-times" class="anchor"></a>Long waiting times</h1>
 <p>Julia needs to download and precompile packages before you can use them. When using many packages, this can take a <strong>couple of minutes</strong>. Before installing a new package, Pluto can give an estimate of how long it will take to install:</p>
-<img width="541" src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
+<img width="541" alt="Screenshot of code that imports the DataFrames package. Pluto says that the package will be installed when you run the cell, and it gives an estimate of 53 second for the time it will take to install." src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
 <h2 id="pre-installed-versions-are-preferred"><a href="#pre-installed-versions-are-preferred" class="anchor"></a>Pre-installed versions are preferred</h2>
 <p>When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer. This was added in May 2024, on older versions, Pkg would always try to install the newest versions.</p>
 <p>This should make it much faster to open a notebook and import some packages that you already used recently. If you need the latest versions, then you have to use the <strong>Update</strong> button after adding the packages.</p>

@@ -62,13 +62,13 @@ window.pluto_preamble_html = undefined;
 <li>
 <h3>Reproducibility</h3>
 <ul>
-<li class=''><a href='../../../en/docs/packages/'>📦 Packages</a></li><li class=''><a href='../../../en/docs/packages-advanced/'>📦 Packages: advanced</a></li>
+<li class=''><a href='../../../en/docs/packages/' title='Pluto.jl automatically manages a package environment for your notebook.'>📦 Packages <br><small> Built-in package management</small></a></li><li class=''><a href='../../../en/docs/packages-advanced/' title='How to use Pkg.activate in Pluto.jl notebooks to set up a custom Pkg environment.'>📦 Packages: advanced <br><small> Pkg.activate in a cell</small></a></li>
 </ul>
 </li>
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>📗 Export HTML, PDF, Julia</a></li><li class='active'><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class='active'><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li>
 </ul>
 </li>
 <li>
@@ -96,7 +96,7 @@ window.pluto_preamble_html = undefined;
 <blockquote>
 <h3 id="pluto-file-formats"><a href="#pluto-file-formats" class="anchor"></a>📎 Pluto file formats</h3>
 <p>And good to know: Pluto notebooks are <code>.jl</code> files, which only contain the code of your notebook, not the outputs. For example, if your notebook contains <code>plot(x, y)</code>, then the resulting PNG image is not stored in the <code>.jl</code> file. Other people need to install Pluto to open the file.</p>
-<p>You can also use Pluto to <strong>export</strong> a notebook to a <code>.html</code> or <code>.pdf</code> file by clicking the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/share-outline.svg" alt="share" width=17px> icon. These files <strong>contain outputs</strong>, like the plot image. Other people can open these files directly on their computer, without needing to install Pluto.</p>
+<p>You can also use Pluto to <strong>export</strong> a notebook to a <code>.html</code> or <code>.pdf</code> file by clicking the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/share-outline.svg" alt="share" width=17px style="filter: var(--image-filters);"> icon. These files <strong>contain outputs</strong>, like the plot image. Other people can open these files directly on their computer, without needing to install Pluto.</p>
 </blockquote>
 <h2 id="github-static-export-template"><a href="#github-static-export-template" class="anchor"></a>GitHub: <code>static-export-template</code></h2>
 <p>If you have a GitHub account, then this is the easiest option. Go to <a href="https://github.com/JuliaPluto/static-export-template">github.com/JuliaPluto/static-export-template</a> and follow the easy instructions with screenshots to set up your repository. This sets up a repository with <code>.jl</code> notebook files, which are automatically executed, exported and hosted on the cloud. You get a website like <code>https://username.github.io/my_project</code> where you can read the notebooks.</p>

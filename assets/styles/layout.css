@@ -2,6 +2,11 @@ body {
     font-size: 17px;
 }
 
+body:not(.adsfasdfasdf):not(.sdfsdfdsffdsfds) {
+    /* override this from Pluto.jl */
+    overscroll-behavior: auto;
+}
+
 /* COLOR */
 
 #pages-layout {

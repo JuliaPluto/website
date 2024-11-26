@@ -1,5 +1,6 @@
 ---
-title: "📦 Packages"
+title: "📦 Packages – Built-in package management"
+description: "Pluto.jl automatically manages a package environment for your notebook."
 tags: ["docs", "reproducibility"]
 order: 1
 layout: "md.jlmd"

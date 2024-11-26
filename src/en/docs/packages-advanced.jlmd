@@ -1,5 +1,6 @@
 ---
-title: "📦 Packages: advanced"
+title: "📦 Packages: advanced – Pkg.activate in a cell"
+description: "How to use Pkg.activate in Pluto.jl notebooks to set up a custom Pkg environment."
 tags: ["docs", "reproducibility"]
 order: 2
 layout: "md.jlmd"

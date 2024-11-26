@@ -24,16 +24,16 @@ Pluto has a _built-in_ package manager, which means:
 
 Pluto will automatically install or remove packages while you work on your notebook. When you import a new package, Pluto will install it:
 
-<img width="541" alt="Schermafbeelding 2021-06-10 om 20 35 52" src="https://user-images.githubusercontent.com/6933510/121580636-45e66c00-ca2d-11eb-97e2-351068d58057.png">
+<img width="541" alt="Screenshot of code that imports the Plots package. Pluto says that the package will be installed when you run the cell." src="https://user-images.githubusercontent.com/6933510/121580636-45e66c00-ca2d-11eb-97e2-351068d58057.png">
 
 
 > 🙋 Most packages will write _installation instructions_ in their documentation: like "Run `julia> ] install Example` to install `Example`". If you are using Pluto, you should **skip these instructions**, and import the package directly, using `import Example` or `using Example`.
 
 ### Logs
 
-Installing packages can take some time, especially when starting Julia for the first time. Click on the status mark next to a package to view the installation progress. You can click on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/document-text-outline.svg" alt="📄" width=17px> icon to view the logs.
+Installing packages can take some time, especially when starting Julia for the first time. Click on the status mark next to a package to view the installation progress. You can click on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/document-text-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon to view the logs.
 
-<img width="541" src="https://media.giphy.com/media/EMv3miTVQPsVspplgY/giphy.gif">
+<img width="541" alt="Screen recording of the package Plots being installed in a cell. The package terminal is visible, where the precompilatino progress is visible in a small terminal." src="https://media.giphy.com/media/EMv3miTVQPsVspplgY/giphy.gif">
 
 
 <br>
@@ -44,7 +44,7 @@ Installing packages can take some time, especially when starting Julia for the f
 
 Removing packages is automatic: when you delete code that imports a package, it will be uninstalled from the package environment. It is _recommended_ to restart the notebook process afterwards to get a fresh start.
 
-<img width="541" src="https://media.giphy.com/media/dIFYIHZ2zBFrFDCodM/giphy.gif">
+<img width="541" alt="Screen recording of a notebook requesting the user to restart the notebook. Clicking on the message restart the notebook, and the message disappears." src="https://media.giphy.com/media/dIFYIHZ2zBFrFDCodM/giphy.gif">
 
 <br>
 <br>
@@ -52,9 +52,9 @@ Removing packages is automatic: when you delete code that imports a package, it 
 
 ## Updating packages
 
-You can search for and install any available updates by clicking on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/arrow-up-circle-outline.svg" alt="📄" width=17px> icon. A backup of your notebook file will be created in the same folder as your notebook, in case the new versions do not work as expected.
+You can search for and install any available updates by clicking on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/arrow-up-circle-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon. A backup of your notebook file will be created in the same folder as your notebook, in case the new versions do not work as expected.
 
-<img width="541" alt="Update button" src="https://user-images.githubusercontent.com/6933510/121583646-d1adc780-ca30-11eb-9741-fc9529756061.png">
+<img width="541" alt="Screenshot of the update button visible next to the import of a package" src="https://user-images.githubusercontent.com/6933510/121583646-d1adc780-ca30-11eb-9741-fc9529756061.png">
 
 <br>
 <br>
@@ -68,7 +68,7 @@ You can search for and install any available updates by clicking on the <img src
 # Long waiting times
 Julia needs to download and precompile packages before you can use them. When using many packages, this can take a **couple of minutes**. Before installing a new package, Pluto can give an estimate of how long it will take to install:
 
-<img width="541" src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
+<img width="541" alt="Screenshot of code that imports the DataFrames package. Pluto says that the package will be installed when you run the cell, and it gives an estimate of 53 second for the time it will take to install." src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
 
 ## Pre-installed versions are preferred
 When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer. This was added in May 2024, on older versions, Pkg would always try to install the newest versions.

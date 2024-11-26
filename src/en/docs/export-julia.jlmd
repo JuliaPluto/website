@@ -1,0 +1,44 @@
+---
+title: "📗 Export to Julia"
+description: "How to export a Pluto.jl notebook to a Julia file."
+tags: ["docs", "publishing", "file", "export", "share", "web"]
+layout: "md.jlmd"
+order: 1.1
+---
+
+# Notebook file <span id="jl"></span>
+Pluto notebook files are **stored as `.jl` Julia files**. This file contains:
+- Code for each cell
+- Special comments (start with `#`) that Pluto uses to understand which code belongs to which cell.
+- The exact version numbers of packages that were used. This is stored at the bottom of the `.jl` file, the Project.toml and Manifest.toml content.
+
+When you send your `.jl` notebook file to someone else, they can open the notebook in Pluto and see the same results. This concept is called **reproducibility**, and it is something we work very hard on at Pluto!
+
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "Notebook file".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/18fa2a41-ab15-43aa-9ffa-c11f77079ba2)
+
+
+!!! info
+    The steps above are a quick way to get the `.jl` file. You can also **Save your notebook** on your computer by giving it a file name. In that case, the steps above just give a copy of your file.
+
+
+## Notebooks as scripts
+`.jl` notebook files can also be **run as a script**. Since the `.jl` file just contains your cell code, you can also run it with Julia:
+
+```sh
+> julia my_notebook.jl
+```
+
+The most useful application is to use `include("my_notebook.jl")` in the REPL or a script to get variables from your notebook outside of Pluto.

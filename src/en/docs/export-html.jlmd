@@ -1,0 +1,44 @@
+---
+title: "📗 Export to HTML"
+description: "How to export a Pluto.jl notebook to an HTML file."
+tags: ["docs", "publishing", "html", "file", "export", "share", "web"]
+layout: "md.jlmd"
+order: 1.2
+---
+
+# Export to HTML <span id="html"></span>
+This is a snapshot of your notebook with all outputs in a standalone HTML file. You can share this `.html` file via email, and other people can double-click the file to read your notebook. 
+
+!!! info
+    Important: you can open an HTML export file **on any computer**, you do not need to have Julia or Pluto installed!
+
+For some examples of HTML export files, check out our [featured notebooks](https://featured.plutojl.org/).
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "Static HMTL".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/8664ff5d-4891-449d-b762-ee9dfb809587)
+
+
+
+
+## Reproducibility
+What's really cool about HTML export files is that they are **reproducible**: every HTML export file from Pluto **includes the `.jl` source code**! That means that someone who reads the notebook can also run the original code and make changes!
+
+Every HTML export contains an **Edit or run** button in the top right. When you press it, you see a screen where you can:
+1. Run the notebook with **[binder](https://mybinder.org/)**, a free service to run scientific notebooks in the cloud. This works on any browser (including mobile), without needing to install Julia or Pluto.
+2. **Download the `.jl` notebook file** that was used to generate the HTML export. You can open this file with Pluto.
+
+![Screenshot of the "Edit or run" menu with the option to download the notebook file.](https://github.com/user-attachments/assets/a4334cd9-c5ba-4a75-8ed3-bc1f0147a22a)
+
+
+`.html` files from Pluto can also be used as web pages on your blog. <a href="../notebooks-online/" class="arrow">Learn more</a>

@@ -1,0 +1,50 @@
+---
+title: "🎥 Recording – experimental video mode"
+description: "How to use the recording feature of Pluto.jl to create a special HTML video file,"
+tags: ["docs", "publishing", "recording", "html", "file", "export", "share", "web"]
+layout: "md.jlmd"
+order: 1.4
+---
+
+
+# Make a recording *(preview)* <span id="recording"></span>
+Pluto has one really cool experimental feature, and we're curious what you think! You can make a **Pluto recording**, which is a bit like recording your screen to a video, but the result is an HTML web page! 
+
+That means that while you watch the video, you can pause and scroll to a different section!
+
+> <a class="arrow" href="https://plutojl.org/unitful%20sliders/">Take a look at this example video</a>
+
+Please try it out, and let us know what you think!
+
+
+### Step 1
+Open your notebook in Pluto, and wait for all cells to finish running.
+
+### Step 2
+Press the **Share** button in the top right.
+
+![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+
+### Step 3
+Choose "Record".
+
+![Screenshot of the export options](https://github.com/user-attachments/assets/fc177f52-5b72-44e1-bbd9-2a976cede45d)
+
+### Step 4
+Click to start a recording. You can choose between recording **with microphone audio** or **without audio** (screen only).
+
+![Screenshot of the two record buttons](https://github.com/user-attachments/assets/1655550f-08a8-497e-9ac9-9884e5327ca7)
+
+
+
+### Step 5
+You are now recording! You can:
+- Interact with `@bind` elements and see your notebook update.
+- Scroll through the notebook.
+- Speak! Audio can be recorded.
+- Make code changes (currently, individual keystrokes cannot be recorded, you need to run the cell to make changes show in the recording).
+
+### Step 6
+When you are done, press "Stop recording". After a couple seconds, you can choose a location to store the `.html` file.
+
+![Screenshot of the Stop Recording button](https://github.com/user-attachments/assets/ca7e36da-d355-4823-a4d2-a37aca5e8e0e)

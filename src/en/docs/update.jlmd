@@ -18,11 +18,10 @@ This should update Pluto to the latest version <span id="latesthere">(check our 
 ## Not the latest version?
 Sometimes, it is not possible to install the latest version of Pluto because of **compatibility issues with other packages** that you have installed in your environment. 
 
-First, use `Pkg.status()` to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.
-
-If this did not work, try updating all packages (not just Pluto) with `Pkg.update()`.
-
-Finally, you could use `Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)` to see the compatibility bounds. [Here is an example](https://discourse.julialang.org/t/package-is-not-updating-but-why/88338).
+Some tips to fix it:
+1. First, use `Pkg.status()` to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.
+2. If this did not work, try updating all packages (not just Pluto) with `Pkg.update()`.
+3. Finally, you could use `Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)` to see the compatibility bounds. [Here is an example](https://discourse.julialang.org/t/package-is-not-updating-but-why/88338).
 
 <script defer>
 const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {

@@ -8,7 +8,7 @@
 #> license = "Unlicense"
 #> description = "Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl."
 #> tags = ["docs", "PlutoDependencyExplorer", "internals", "reactivity", "ExpressionExplorer", "advanced"]
-#> layout = "docsnotebook.jlmd"
+#> layout = "layout.jlhtml"
 #> 
 #>     [[frontmatter.author]]
 #>     name = "Pluto.jl"

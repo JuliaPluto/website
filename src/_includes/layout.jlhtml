@@ -40,6 +40,13 @@ end)
 
 
 $(pluto_head)
+
+$(if "docs" in get(page.output.frontmatter, "tags", String[])
+    @htl("""
+    <link rel="stylesheet" href="$(root_url)/assets/styles/docs.css" type="text/css" />
+    """)
+end)
+
 </head>
 <body>
     <div id="pages-layout">

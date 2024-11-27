@@ -6,7 +6,7 @@
 #> date = "2024-04-22"
 #> tags = ["docs", "introduction"]
 #> description = "How to change settings of the Pluto.jl Julia notebook"
-#> layout = "docsnotebook.jlmd"
+#> layout = "layout.jlhtml"
 #> license = "MIT"
 #> 
 #>     [[frontmatter.author]]
@@ -121,8 +121,8 @@ Docs.Binding(Pluto.Configuration, categories[3])
 Docs.Binding(Pluto.Configuration, categories[4])
 
 # ╔═╡ Cell order:
-# ╟─5a7dc99c-4229-4c7d-8464-8a57d9fcb517
 # ╟─efda32af-e2e8-4793-b553-9c73706ea659
+# ╟─5a7dc99c-4229-4c7d-8464-8a57d9fcb517
 # ╟─a0da0b14-566e-4adc-bf23-702699e02c72
 # ╟─6606f0f0-e42d-4eef-bf57-fa02f165851d
 # ╟─cde195ce-fe33-48a7-9567-b4dc614a2e6f

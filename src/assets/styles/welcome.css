@@ -237,6 +237,13 @@ header #topnav .navlinks a img {
     margin-right: 0.3em;
 }
 
+blockquote {
+    opacity: 0.8;
+    border-inline-start: 3px solid var(--a-underline);
+    padding-inline-start: 1em;
+    margin-inline-start: 0.2em;
+}
+
 h1,
 h2 {
     font-weight: 800;

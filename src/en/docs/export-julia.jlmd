@@ -16,18 +16,18 @@ When you send your `.jl` notebook file to someone else, they can open the notebo
 
 
 
-### Step 1
-Open your notebook in Pluto, and wait for all cells to finish running.
-
-### Step 2
-Press the **Share** button in the top right.
-
-![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
-
-### Step 3
-Choose "Notebook file".
-
-![Screenshot of the export options](https://github.com/user-attachments/assets/18fa2a41-ab15-43aa-9ffa-c11f77079ba2)
+> ### Step 1
+> Open your notebook in Pluto, and wait for all cells to finish running.
+> 
+> ### Step 2
+> Press the **Share** button in the top right.
+> 
+> ![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+> 
+> ### Step 3
+> Choose "Notebook file".
+> 
+> ![Screenshot of the export options](https://github.com/user-attachments/assets/18fa2a41-ab15-43aa-9ffa-c11f77079ba2)
 
 
 !!! info

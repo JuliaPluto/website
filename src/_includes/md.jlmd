@@ -2,8 +2,8 @@
 layout: "layout.jlhtml"
 ---
 
-<div class="pages-markdown">
+<pluto-output class="pages-markdown rich_output">
 <main>
 $(content)
 </main>
-</div>
+</pluto-output>

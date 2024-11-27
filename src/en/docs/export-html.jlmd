@@ -15,18 +15,18 @@ This is a snapshot of your notebook with all outputs in a standalone HTML file. 
 For some examples of HTML export files, check out our [featured notebooks](https://featured.plutojl.org/).
 
 
-### Step 1
-Open your notebook in Pluto, and wait for all cells to finish running.
-
-### Step 2
-Press the **Share** button in the top right.
-
-![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
-
-### Step 3
-Choose "Static HMTL".
-
-![Screenshot of the export options](https://github.com/user-attachments/assets/8664ff5d-4891-449d-b762-ee9dfb809587)
+> ### Step 1
+> Open your notebook in Pluto, and wait for all cells to finish running.
+> 
+> ### Step 2
+> Press the **Share** button in the top right.
+> 
+> ![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+> 
+> ### Step 3
+> Choose "Static HMTL".
+> 
+> ![Screenshot of the export options](https://github.com/user-attachments/assets/8664ff5d-4891-449d-b762-ee9dfb809587)
 
 
 

@@ -13,18 +13,18 @@ If you want to print your notebook, or submit it as homework assignment, it migh
 *When possible, we recommend sharing an HTML file instead of a PDF file. HTML files are great for **reproducibility**!*
 
 
-### Step 1
-Open your notebook in Pluto, and wait for all cells to finish running.
-
-### Step 2
-Press the **Share** button in the top right.
-
-![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
-
-### Step 3
-Choose "PDF".
-
-![Screenshot of the export options](https://github.com/user-attachments/assets/3c4652c6-18e5-4f83-bac1-9738e88a4bc8)
+> ### Step 1
+> Open your notebook in Pluto, and wait for all cells to finish running.
+> 
+> ### Step 2
+> Press the **Share** button in the top right.
+> 
+> ![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+> 
+> ### Step 3
+> Choose "PDF".
+> 
+> ![Screenshot of the export options](https://github.com/user-attachments/assets/3c4652c6-18e5-4f83-bac1-9738e88a4bc8)
 
 
 ## Page layout

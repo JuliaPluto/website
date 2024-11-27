@@ -34,6 +34,10 @@ window.pluto_preamble_html = undefined;
 <script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.45/frontend-dist/editor.fe15171c.js" type="module" defer="" integrity="sha384-MtC7HTxBsZzis+g+b0pT5+eGtsY7xdnN9FDQnBYCu2MnV3wbSku5VpQ5nzHzl8Lj" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.45/frontend-dist/editor.8a3292da.js" integrity="sha384-itp4oE2PRbSrrTHVpWh8sqAuVUsz7ja6L2Dgp/JRfMCD2AwVdTk56K96POF3oLmu" crossorigin="anonymous"></script><script type="text/javascript" id="MathJax-script" integrity="sha384-4kE/rQ11E8xT9QgrCBTyvenkuPfQo8rXYQvJZuMgxyPOoUfpatjQPlgdv6V5yhUK" crossorigin="" not-the-src-yet="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" async=""></script>
 <meta name="pluto-insertion-spot-preload">
 
+
+<link rel="stylesheet" href="../../../assets/styles/docs.css" type="text/css" />
+
+
 </head>
 <body>
     <div id="pages-layout">
@@ -88,7 +92,7 @@ window.pluto_preamble_html = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <div class="pages-markdown">
+        <pluto-output class="pages-markdown rich_output">
 <main>
 <h1 id="notebook-file-span-idjlspan"><a href="#notebook-file-span-idjlspan" class="anchor"></a>Notebook file <span id="jl"></span></h1>
 <p>Pluto notebook files are <strong>stored as <code>.jl</code> Julia files</strong>. This file contains:</p>
@@ -98,6 +102,7 @@ window.pluto_preamble_html = undefined;
 <li>The exact version numbers of packages that were used. This is stored at the bottom of the <code>.jl</code> file, the Project.toml and Manifest.toml content.</li>
 </ul>
 <p>When you send your <code>.jl</code> notebook file to someone else, they can open the notebook in Pluto and see the same results. This concept is called <strong>reproducibility</strong>, and it is something we work very hard on at Pluto!</p>
+<blockquote>
 <h3 id="step-1"><a href="#step-1" class="anchor"></a>Step 1</h3>
 <p>Open your notebook in Pluto, and wait for all cells to finish running.</p>
 <h3 id="step-2"><a href="#step-2" class="anchor"></a>Step 2</h3>
@@ -106,6 +111,7 @@ window.pluto_preamble_html = undefined;
 <h3 id="step-3"><a href="#step-3" class="anchor"></a>Step 3</h3>
 <p>Choose “Notebook file”.</p>
 <p><img src="https://github.com/user-attachments/assets/18fa2a41-ab15-43aa-9ffa-c11f77079ba2" alt="Screenshot of the export options" /></p>
+</blockquote>
 <div class="admonition info"><p class="admonition-title">Info</p>
 <p>The steps above are a quick way to get the <code>.jl</code> file. You can also <strong>Save your notebook</strong> on your computer by giving it a file name. In that case, the steps above just give a copy of your file.</p>
 </div>
@@ -115,7 +121,7 @@ window.pluto_preamble_html = undefined;
 </code></pre>
 <p>The most useful application is to use <code>include(&quot;my_notebook.jl&quot;)</code> in the REPL or a script to get variables from your notebook outside of Pluto.</p>
 </main>
-</div>
+</pluto-output>
 
         </div>
     </div>

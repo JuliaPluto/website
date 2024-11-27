@@ -8,7 +8,7 @@
 #> date = "2024-04-22"
 #> tags = ["docs", "advanced", "widgets", "AbstractPlutoDingetjes", "JavaScript"]
 #> description = "Pluto provides a framework for advances input and display widgets."
-#> layout = "docsnotebook.jlmd"
+#> layout = "layout.jlhtml"
 #> license = "Unlicense"
 #> 
 #>     [[frontmatter.author]]

@@ -34,6 +34,10 @@ window.pluto_preamble_html = undefined;
 <script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.45/frontend-dist/editor.fe15171c.js" type="module" defer="" integrity="sha384-MtC7HTxBsZzis+g+b0pT5+eGtsY7xdnN9FDQnBYCu2MnV3wbSku5VpQ5nzHzl8Lj" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.45/frontend-dist/editor.8a3292da.js" integrity="sha384-itp4oE2PRbSrrTHVpWh8sqAuVUsz7ja6L2Dgp/JRfMCD2AwVdTk56K96POF3oLmu" crossorigin="anonymous"></script><script type="text/javascript" id="MathJax-script" integrity="sha384-4kE/rQ11E8xT9QgrCBTyvenkuPfQo8rXYQvJZuMgxyPOoUfpatjQPlgdv6V5yhUK" crossorigin="" not-the-src-yet="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" async=""></script>
 <meta name="pluto-insertion-spot-preload">
 
+
+<link rel="stylesheet" href="../../../assets/styles/docs.css" type="text/css" />
+
+
 </head>
 <body>
     <div id="pages-layout">
@@ -88,11 +92,12 @@ window.pluto_preamble_html = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <div class="pages-markdown">
+        <pluto-output class="pages-markdown rich_output">
 <main>
 <h1 id="export-to-pdf-span-idpdfspan"><a href="#export-to-pdf-span-idpdfspan" class="anchor"></a>Export to PDF <span id="pdf"></span></h1>
 <p>If you want to print your notebook, or submit it as homework assignment, it might be useful to get a PDF file!</p>
 <p><em>When possible, we recommend sharing an HTML file instead of a PDF file. HTML files are great for <strong>reproducibility</strong>!</em></p>
+<blockquote>
 <h3 id="step-1"><a href="#step-1" class="anchor"></a>Step 1</h3>
 <p>Open your notebook in Pluto, and wait for all cells to finish running.</p>
 <h3 id="step-2"><a href="#step-2" class="anchor"></a>Step 2</h3>
@@ -101,6 +106,7 @@ window.pluto_preamble_html = undefined;
 <h3 id="step-3"><a href="#step-3" class="anchor"></a>Step 3</h3>
 <p>Choose “PDF”.</p>
 <p><img src="https://github.com/user-attachments/assets/3c4652c6-18e5-4f83-bac1-9738e88a4bc8" alt="Screenshot of the export options" /></p>
+</blockquote>
 <h2 id="page-layout"><a href="#page-layout" class="anchor"></a>Page layout</h2>
 <p>Pluto tries to make your notebook look well on paper. One challenge is where to place “page breaks”. Our goal is:</p>
 <ul>
@@ -109,7 +115,7 @@ window.pluto_preamble_html = undefined;
 </ul>
 <p><em>🌸 If your notebook does not look good on PDF, generate an <a href="#html">HTML export</a> and send it to the Pluto developers! 🌸</em></p>
 </main>
-</div>
+</pluto-output>
 
         </div>
     </div>

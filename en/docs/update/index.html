@@ -34,6 +34,10 @@ window.pluto_preamble_html = undefined;
 <script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.45/frontend-dist/editor.fe15171c.js" type="module" defer="" integrity="sha384-MtC7HTxBsZzis+g+b0pT5+eGtsY7xdnN9FDQnBYCu2MnV3wbSku5VpQ5nzHzl8Lj" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.19.45/frontend-dist/editor.8a3292da.js" integrity="sha384-itp4oE2PRbSrrTHVpWh8sqAuVUsz7ja6L2Dgp/JRfMCD2AwVdTk56K96POF3oLmu" crossorigin="anonymous"></script><script type="text/javascript" id="MathJax-script" integrity="sha384-4kE/rQ11E8xT9QgrCBTyvenkuPfQo8rXYQvJZuMgxyPOoUfpatjQPlgdv6V5yhUK" crossorigin="" not-the-src-yet="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js" async=""></script>
 <meta name="pluto-insertion-spot-preload">
 
+
+<link rel="stylesheet" href="../../../assets/styles/docs.css" type="text/css" />
+
+
 </head>
 <body>
     <div id="pages-layout">
@@ -88,7 +92,7 @@ window.pluto_preamble_html = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <div class="pages-markdown">
+        <pluto-output class="pages-markdown rich_output">
 <main>
 <h1 id="update-your-pluto-installation"><a href="#update-your-pluto-installation" class="anchor"></a>Update your Pluto installation</h1>
 <p>You can update Pluto using the Julia package manager. Open a Julia process and use Pkg to update Pluto:</p>
@@ -98,9 +102,12 @@ julia&gt; Pkg.update(&quot;Pluto&quot;)
 <p>This should update Pluto to the latest version <span id="latesthere">(check our <a href="https://github.com/fonsp/Pluto.jl/releases/">GitHub releases</a> to find out!)</span>.</p>
 <h2 id="not-the-latest-version"><a href="#not-the-latest-version" class="anchor"></a>Not the latest version?</h2>
 <p>Sometimes, it is not possible to install the latest version of Pluto because of <strong>compatibility issues with other packages</strong> that you have installed in your environment.</p>
-<p>First, use <code>Pkg.status()</code> to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.</p>
-<p>If this did not work, try updating all packages (not just Pluto) with <code>Pkg.update()</code>.</p>
-<p>Finally, you could use <code>Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)</code> to see the compatibility bounds. <a href="https://discourse.julialang.org/t/package-is-not-updating-but-why/88338">Here is an example</a>.</p>
+<p>Some tips to fix it:</p>
+<ol>
+<li>First, use <code>Pkg.status()</code> to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.</li>
+<li>If this did not work, try updating all packages (not just Pluto) with <code>Pkg.update()</code>.</li>
+<li>Finally, you could use <code>Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)</code> to see the compatibility bounds. <a href="https://discourse.julialang.org/t/package-is-not-updating-but-why/88338">Here is an example</a>.</li>
+</ol>
 <script defer>
 const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
 method: "GET",
@@ -120,7 +127,7 @@ el.style.fontWeight = "bold"
 })
 </script>
 </main>
-</div>
+</pluto-output>
 
         </div>
     </div>

@@ -36,3 +36,8 @@ pluto-output .pluto-docs-binding h5,
 pluto-output .pluto-docs-binding h6 {
     font-size: 1.1em;
 }
+
+pluto-output img,
+pluto-output video {
+    border-radius: 7px;
+}

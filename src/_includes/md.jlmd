@@ -2,8 +2,19 @@
 layout: "layout.jlhtml"
 ---
 
-<pluto-output class="pages-markdown rich_output">
+<pluto-editor skip-custom-element>
 <main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
 $(content)
-</main>
+</div>
+</div>
 </pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>

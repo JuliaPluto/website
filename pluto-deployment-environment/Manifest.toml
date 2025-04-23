@@ -126,9 +126,9 @@ version = "0.11.5"
 
 [[deps.CommonMark]]
 deps = ["Crayons", "PrecompileTools"]
-git-tree-sha1 = "5fdf00d1979fd4883b44b754fc3423175c9504b4"
+git-tree-sha1 = "776030bc815edb44f59dc58a0a4348e836b85449"
 uuid = "a80b9123-70ca-4bc0-993e-6e3bcb318db6"
-version = "0.8.16"
+version = "0.9.0"
 
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -452,9 +452,9 @@ uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 
 [[deps.MarkdownLiteral]]
 deps = ["CommonMark", "HypertextLiteral"]
-git-tree-sha1 = "0d3fa2dd374934b62ee16a4721fe68c418b92899"
+git-tree-sha1 = "f7d73634acd573bf3489df1ee0d270a5d6d3a7a3"
 uuid = "736d6165-7244-6769-4267-6b50796e6954"
-version = "0.1.1"
+version = "0.1.2"
 
 [[deps.MbedTLS]]
 deps = ["Dates", "MbedTLS_jll", "MozillaCACerts_jll", "NetworkOptions", "Random", "Sockets"]
@@ -554,9 +554,9 @@ version = "0.1.6"
 
 [[deps.PlutoPages]]
 deps = ["BetterFileWatching", "CommonMark", "Gumbo", "HypertextLiteral", "InteractiveUtils", "JSON", "LiveServer", "Logging", "Malt", "Markdown", "MarkdownLiteral", "Pkg", "Pluto", "PlutoHooks", "PlutoLinks", "PlutoSliderServer", "PlutoUI", "ProgressLogging", "RelocatableFolders", "SHA", "ThreadsX", "Unicode", "YAML"]
-git-tree-sha1 = "2288ba368e27548484d599d870e5c58f8cc21927"
+git-tree-sha1 = "ce5616d4b498f5f04898bd67f970f8b45cf47ae4"
 uuid = "d5dc3dd1-4774-47c7-8860-0a1ad9e34b8c"
-version = "0.1.7"
+version = "0.1.8"
 
 [[deps.PlutoSliderServer]]
 deps = ["AbstractPlutoDingetjes", "Base64", "BetterFileWatching", "Configurations", "Distributed", "FromFile", "Git", "Glob", "HTTP", "JSON", "Logging", "Pkg", "Pluto", "PlutoDependencyExplorer", "SHA", "Serialization", "Sockets", "TOML", "TerminalLoggers", "UUIDs"]

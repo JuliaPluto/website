@@ -4,9 +4,10 @@
 #> [frontmatter]
 #> title = "⚙️ Configuring Pluto"
 #> date = "2024-04-22"
-#> tags = ["docs", "introduction"]
+#> tags = ["docs", "editor"]
 #> description = "How to change settings of the Pluto.jl Julia notebook"
 #> layout = "layout.jlhtml"
+#> order = 99
 #> license = "MIT"
 #> 
 #>     [[frontmatter.author]]
@@ -44,8 +45,8 @@ However, there are some settings intended for **system administrators** (e.g. ru
 
 These settings are mostly about the "backend" (everything you don't see). We intentionally don't have settings for the "frontend" (the GUI interface where you type code and see results). Such settings are usually more difficult to implement and maintain. In some cases, we also want to create a homogenous experience: a notebook should look the same on different computers.
 
-## The best configuration
-We thought long and hard to find the best default configuration. To get the best Pluto experience, **don't change these settings**.
+> ## The best configuration
+> We thought long and hard to find the best default configuration. To get the best Pluto experience, **don't change these settings**.
 
 ## A custom experience
 You can achieve a lot of customisability by writing special code! Take a look at [PlutoLinks.jl](https://github.com/JuliaPluto/PlutoLinks.jl), [PlutoHooks.jl](https://github.com/JuliaPluto/PlutoLinks.jl) and [AbstractPlutoDingetjes.jl](https://plutojl.org/en/docs/abstractplutodingetjes/). You can also use CSS (e.g. with [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl)) to customise the look of a notebook.

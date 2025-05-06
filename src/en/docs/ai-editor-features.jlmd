@@ -1,0 +1,55 @@
+---
+title: "✨ AI features"
+description: "Fix syntax errors with one click!"
+tags: ["docs", "editor"]
+layout: "md.jlmd"
+order: 8
+---
+
+# Automatic syntax fixes
+
+Pluto can help you fix syntax errors automatically! If you make a typo or your code doesn't parse, Pluto will offer a button to fix it for you automatically, powered by a cloud AI model.
+
+> 🚨 **Experimental!** This feature is available in Pluto v0.20.8 and above. See the [announcement PR](https://github.com/fonsp/Pluto.jl/pull/3201) for more details.
+
+
+## How to use it
+
+- When you hit a **syntax error** (e.g. missing `end`, typo in a function name), Pluto shows a button: **"Fix with AI"**.
+- Click the button, and you'll see a prompt explaining what will happen, and you can choose whether you want to use the service.
+- If you accept, Pluto will use a cloud AI model (currently Claude 3.5 haiku) to fix the error, and the cell will be updated with the new code.
+
+<video src="https://github.com/user-attachments/assets/9abd41e1-0d54-4fc8-aef2-9e74c0799434" controls="controls" muted="muted"></video>
+
+
+
+## Privacy
+The first time that you use the feature, Pluto will show a message explaining the current privacy policy of the feature. This might change over time, so check Pluto for the current information. _(If the privacy policy changes in the future, you will be asked to accept the new policy.)_
+
+The feature currently works **without sign-in**: you can use the feature directly in Pluto without creating an account.
+
+
+## Feedback
+Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues).
+
+# Configuration
+
+You can enable or disable Pluto's AI features with the `enable_ai_editor_features` setting. To turn off all features, set it to `false`:
+
+```julia
+Pluto.run(enable_ai_editor_features=false)
+```
+
+## ChatGPT block detection
+Some AI features will be **disabled automatically** if Pluto detects that ChatGPT is blocked on your network. 
+
+This is for universities/workplaces that don't allow LLM tools as a policy. If this university has already blocked the `chat.openai.com` (ChatGPT) domain, then Pluto will "go with the flow" and also not offer the AI service. *(We check ChatGPT regardless of which LLM is used by Pluto.)*
+
+<a href="https://github.com/fonsp/Pluto.jl/pull/3211" class="arrow">More info</a>
+
+## Blocking AI features in your course
+Are you a teacher who wants to block AI features in your course? You have the following options:
+- Ask your students to start Pluto with `Pluto.run(enable_ai_editor_features=false)`.
+- Ask the system administrator to block ChatGPT: `chat.openai.com`
+
+Does this not work for you? Or do you have other feedback? Let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues), or send Fons an email!

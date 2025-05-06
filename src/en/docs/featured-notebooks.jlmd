@@ -1,0 +1,25 @@
+---
+title: "⭐️ Featured notebooks"
+tags: ["docs", "introduction"]
+layout: "md.jlmd"
+order: 2
+---
+
+# ⭐️ Featured notebooks
+
+Check out some amazing Pluto notebooks created by the community! These notebooks are a good way to get started, and you can discover new things to do with Pluto.
+
+<a href="https://featured.plutojl.org" class="arrow">Browse featured notebooks</a>
+
+
+[![screenshot of a couple of featured notebooks](https://github.com/user-attachments/assets/fbe1850b-bf9b-4346-96ce-0dddedcb4461)](https://featured.plutojl.org)
+
+
+> # Submit your own
+> Interested in submitting one of your notebooks as a featured notebook? 
+> 
+> You don't need to be an expert to write a featured notebook! The notebooks are designed to help beginning Pluto users get underway with their own ideas; as such, short tutorials on basic Julia concepts, or short examples of neat ideas, are very much welcome, and are a great way to contribute to the Julia community when you're still learning yourself.
+> 
+> That said, we also very much welcome experienced Julia programmers to share their work. Featured notebooks can highlight how you use Julia in your domain, bring attention to a neat package, or share exercises that you created for a course.
+> 
+> <a href="https://github.com/JuliaPluto/featured/blob/main/CONTRIBUTING.md" class="arrow">Learn more</a>

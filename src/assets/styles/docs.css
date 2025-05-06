@@ -41,3 +41,8 @@ pluto-output img,
 pluto-output video {
     border-radius: 7px;
 }
+
+
+pluto-output code {
+    font-size: .8em;
+}

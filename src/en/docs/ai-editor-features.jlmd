@@ -32,6 +32,14 @@ The feature currently works **without sign-in**: you can use the feature directl
 ## Feedback
 Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues).
 
+
+# *(coming soon)* AI prompt generation
+Here is a sneak peak:
+
+<video src="$(root_url)/assets/img/ai context demo 1.mov" controls="controls" muted="muted"></video>
+
+<a href="https://github.com/fonsp/Pluto.jl/pull/3224" class="arrow">More info</a>
+
 # Configuration
 
 You can enable or disable Pluto's AI features with the `enable_ai_editor_features` setting. To turn off all features, set it to `false`:

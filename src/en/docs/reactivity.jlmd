@@ -1,0 +1,39 @@
+---
+title: "🔄 Reactivity – how Pluto notebooks update automatically"
+tags: ["docs", "reproducibility"]
+layout: "md.jlmd"
+order: 0
+---
+
+# Reactivity in Pluto.jl
+
+Pluto notebooks are **reactive**! This means that when you change a value or a line of code, Pluto automatically updates all the cells that depend on it. No need to run cells one by one — Pluto figures out what needs to be updated, and does it for you. ✨
+
+## Why is reactivity important?
+
+- **Reproducibility:** Your results always match your code. If you change an input, all outputs update instantly.
+- **No hidden state:** You can't accidentally use an old value—everything is always up to date.
+- **Easy exploration:** Try out ideas quickly! Change a number, see what happens.
+
+
+# How is this different from Jupyter?
+Cells **run automatically** when they need to. If a cell uses a variable, it will re-run when that variable changes.
+
+Global variables are **deleted** when their definition is removed. For example, if you change a cell from `apple = 1` to `banana = 2`, then the `apple` variable will be deleted. It does not "linger around" in the background.
+
+You are not allowed to **redefine a global variable** in a second cell. Two cells cannot both define `x`.
+
+
+# How does it work?
+Pluto tracks the dependencies between cells by looking at the syntax tree of your code. Pluto searches for variables assignemtns and referneces, and it uses this to build up a **reactive dependency graph** of your notebook.
+
+Using this dependency graph, Pluto knows how cells relate to each other. Pluto can search "up the tree" to find out which cells should run before, and "down the tree" to find out which cells depend on a given cell.
+
+Read more about Pluto's reactivity algorithm in: 
+- <a href="../ExpressionExplorer/" class="arrow">ExpressionExplorer.jl</a>
+- <a href="../PlutoDependencyExplorer/" class="arrow">PlutoDependencyExplorer.jl</a>
+
+# Help I want to turn it off!
+Pluto does not have a global switch to turn off reactivity, there is no "Jupyter mode".
+
+However, you can turn off reactivity for a specific cell! You can **disable a cell**. More on this later!

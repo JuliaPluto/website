@@ -1,0 +1,66 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Plutojl.org Website Content Guidelines
+
+This rule describes how to write and organize content for the [plutojl.org](mdc:plutojl website/plutojl website/https:/plutojl.org) website. See [README.md](mdc:plutojl website/plutojl website/README.md) and [src/en/docs/install.jlmd](mdc:plutojl website/plutojl website/src/en/docs/install.jlmd) for examples.
+
+The Static Site Generation is custom-made, called PlutoPages.jl. It's a small Julia port of eleventy.
+
+---
+
+## Creating New Docs Pages
+
+- **Location:** Place new documentation pages in `src/en/docs/` as `.jlmd` files (Julia-flavored Markdown).
+- **Frontmatter:** Start each file with a YAML frontmatter block, e.g.:
+  ```markdown
+  ---
+  title: "🚂 Page Title"
+  tags: ["docs", "category"]
+  layout: "md.jlmd"
+  order: 1
+  ---
+  ```
+  - `title`: Page title for sidebar and heading. Start with an emoji and a space.
+  - `tags`: List of tags for organization/search/sidebar.
+  - `layout`: Always use `md.jlmd` for docs pages.
+  - `order`: Floating point. Determines sidebar order (lower numbers appear first).
+- **Content:** Write content in Markdown below the frontmatter. Use Julia code blocks and Pluto-specific features as needed. You can use `$` for interpolation of Julia code, and `\$` to insert a dollar sign.
+
+## Adding Pages to the Docs Sidebar
+
+- Pages in `src/en/docs/` with proper frontmatter are automatically included in the sidebar, ordered by the `order` field.
+- The `tags` frontmatter is used to determine the sidebar category. Check [sidebar data.jl](mdc:plutojl website/plutojl website/src/sidebar data.jl) for existing categories, or add a new category.
+
+## Referencing Between Docs Pages
+
+- Use relative links. For example, to link to `src/en/docs/install.jlmd` from another page in the same folder:
+  ```markdown
+  [Installation Guide](mdc:plutojl website/plutojl website/install)
+  ```
+- Omit the `.jlmd` extension; use the folder or file name.
+- For subfolders, use relative paths:
+  ```markdown
+  [Advanced Widgets](mdc:plutojl website/advanced-widgets)
+  ```
+- For external resources, use full URLs:
+  ```markdown
+  [Pluto.jl homepage](mdc:plutojl website/plutojl website/https:/plutojl.org)
+  ```
+
+## Writing Style
+
+- **Friendly and Encouraging:** Use a welcoming, informal tone. Emojis and friendly language are encouraged (see [install.jlmd](mdc:plutojl website/plutojl website/src/en/docs/install.jlmd)).
+- **Clarity First:** Explain concepts simply. Assume the reader is new to Pluto and Julia.
+- **Short Paragraphs:** Use short paragraphs and bullet points for readability.
+- **Use Examples:** Show code snippets and practical examples where possible.
+- **Direct Instructions:** Use direct language for instructions (e.g., "Go to [this page] for more info!").
+- **Accessibility:** Avoid jargon unless explained. Use descriptive link text.
+
+## General Tips
+
+- **Preview Your Changes:** Use the development server as described in [README.md](mdc:plutojl website/plutojl website/README.md) to preview edits live.
+- **No Manual Sidebar Edits Needed:** The sidebar is generated automatically from the docs folder structure and frontmatter.
+- **Ask for Help:** If unsure, just add your file—maintainers will help with technical details.

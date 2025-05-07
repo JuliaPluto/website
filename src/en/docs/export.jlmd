@@ -12,6 +12,15 @@ order: 1
 After writing your Pluto notebook, you have a couple options to **export** your notebook, to share with someone else:
 - <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="24,0 48,40 0,40" fill="#a270ba" stroke="none"></polygon></svg> [**Notebook file (`.jl`)**](../export-julia/) – This is how Pluto stores your notebook file, and you can share it directly with someone else so they can run your notebook.
 - <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#E86F51" stroke="none"></polygon></svg> [**Static HTML**](../export-html/) – A snapshot of your notebook with outputs in a versatile format.
-- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#619b3d" stroke="none"></polygon></svg> [**PDF**](../export-pdf/) – A traditional PDF document for printing.
-- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em;"><circle cx="24" cy="24" r="24" fill="#E86F51"></circle></svg> [**Recording**](../export-recording/) – A special type of video!
+- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#619b3d" stroke="none"></polygon></svg> [**PDF**](../export-pdf/) – A traditional PDF document for printing.
+- <svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em;"><circle cx="24" cy="24" r="24" fill="#E86F51"></circle></svg> [**Recording**](../export-recording/) – A special type of video!
+
+> Press the **Share** button in the top right.
+> 
+> <img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button">
+> 
+> ### Step 3
+> Choose "Notebook file".
+> 
+> <img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options">
 

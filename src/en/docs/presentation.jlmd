@@ -20,17 +20,17 @@ Open your notebook in Pluto, and wait for all cells to finish running.
 
 ### Step 2
 Press the **Share** button in the top right.
-![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+<img src="https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161" alt="Screenshot of the Share button">
 
 ### Step 3
 Click the "Slideshow" button.
-![Screenshot of the present button](https://github.com/user-attachments/assets/3956df52-4732-4a10-ac86-6f334e11b3b1)
+<img src="https://github.com/user-attachments/assets/3956df52-4732-4a10-ac86-6f334e11b3b1" alt="Screenshot of the present button">
 
 
 ## Using presentation mode
 In presentation mode, you can use the **arrow buttons in the bottom right** to move between slides. You can also use the **keyboard arrow keys**. Press the **Escape key** to exit presentation mode.
 
-![Screenshot of presentation mode with the navigation buttons highlighted](https://github.com/user-attachments/assets/bc36ad12-826d-4945-9538-f4f9f0cedc6d)
+<img src="https://github.com/user-attachments/assets/bc36ad12-826d-4945-9538-f4f9f0cedc6d" alt="Screenshot of presentation mode with the navigation buttons highlighted">
 
 If you want to present in **full screen** (without the browser addres bar, etc), use your browser's full screen mode (F11).
 
@@ -63,11 +63,11 @@ Blablabla
 
 In regular Pluto, this looks like:
 
-![Screenshot of Pluto with both sections in view](https://github.com/user-attachments/assets/b55b56d5-e258-484f-b7d4-c93d9e5d1e62)
+<img src="https://github.com/user-attachments/assets/b55b56d5-e258-484f-b7d4-c93d9e5d1e62" alt="Screenshot of Pluto with both sections in view">
 
 #### Presentation mode
 In presentation mode, this creates two slides:
 
-![Screenshot of the first slide with centered content](https://github.com/user-attachments/assets/b01a8ba5-152c-4737-8446-d087ecabd497)
+<img src="https://github.com/user-attachments/assets/b01a8ba5-152c-4737-8446-d087ecabd497" alt="Screenshot of the first slide with centered content">
 
-![Screenshot of the second slide with top-aligned content](https://github.com/user-attachments/assets/9443276f-16fe-45c8-8e95-b07eaf71d430)
+<img src="https://github.com/user-attachments/assets/9443276f-16fe-45c8-8e95-b07eaf71d430" alt="Screenshot of the second slide with top-aligned content">

@@ -23,17 +23,17 @@ Open your notebook in Pluto, and wait for all cells to finish running.
 ### Step 2
 Press the **Share** button in the top right.
 
-<img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button">
+<img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button" width="1532" height="282">
 
 ### Step 3
 Choose "Record".
 
-<img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options">
+<img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options" width="1804" height="472">
 
 ### Step 4
 Click to start a recording. You can choose between recording **with microphone audio** or **without audio** (screen only).
 
-<img src="$(root_url)/assets/img/Record buttons screenshot.png" alt="Screenshot of the two record buttons">
+<img src="$(root_url)/assets/img/Record buttons screenshot.png" alt="Screenshot of the two record buttons" width="1314" height="246">
 
 
 
@@ -47,4 +47,4 @@ You are now recording! You can:
 ### Step 6
 When you are done, press "Stop recording". After a couple seconds, you can choose a location to store the `.html` file.
 
-<img src="$(root_url)/assets/img/Stop recording button screenshot.png" alt="Screenshot of the Stop Recording button">
+<img src="$(root_url)/assets/img/Stop recording button screenshot.png" alt="Screenshot of the Stop Recording button" width="432" height="114">

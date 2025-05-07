@@ -22,12 +22,12 @@ When you send your `.jl` notebook file to someone else, they can open the notebo
 > ### Step 2
 > Press the **Share** button in the top right.
 > 
-> <img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button">
+> <img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button" width="1532" height="282">
 > 
 > ### Step 3
 > Choose "Notebook file".
 > 
-> <img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options">
+> <img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options" width="1804" height="472">
 
 
 !!! info

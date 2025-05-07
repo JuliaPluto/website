@@ -24,7 +24,7 @@ Pluto has a _built-in_ package manager, which means:
 
 Pluto will automatically install or remove packages while you work on your notebook. When you import a new package, Pluto will install it:
 
-<img width="541" alt="Screenshot of code that imports the Plots package. Pluto says that the package will be installed when you run the cell." src="https://user-images.githubusercontent.com/6933510/121580636-45e66c00-ca2d-11eb-97e2-351068d58057.png">
+<img width="541" height="137" alt="Screenshot of code that imports the Plots package. Pluto says that the package will be installed when you run the cell." src="$(root_url)/assets/img/Import Plots package screenshot.png">
 
 
 > 🙋 Most packages will write _installation instructions_ in their documentation: like "Run `julia> ] install Example` to install `Example`". If you are using Pluto, you should **skip these instructions**, and import the package directly, using `import Example` or `using Example`.
@@ -54,7 +54,7 @@ Removing packages is automatic: when you delete code that imports a package, it 
 
 You can search for and install any available updates by clicking on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/arrow-up-circle-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon. A backup of your notebook file will be created in the same folder as your notebook, in case the new versions do not work as expected.
 
-<img width="541" alt="Screenshot of the update button visible next to the import of a package" src="https://user-images.githubusercontent.com/6933510/121583646-d1adc780-ca30-11eb-9741-fc9529756061.png">
+<img width="541" height="122" alt="Screenshot of the update button visible next to the import of a package" src="$(root_url)/assets/img/Update button screenshot.png">
 
 <br>
 <br>

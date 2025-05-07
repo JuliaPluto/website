@@ -21,12 +21,12 @@ For some examples of HTML export files, check out our [featured notebooks](https
 > ### Step 2
 > Press the **Share** button in the top right.
 > 
-> ![Screenshot of the Share button](https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161)
+> <img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button">
 > 
 > ### Step 3
 > Choose "Static HMTL".
 > 
-> ![Screenshot of the export options](https://github.com/user-attachments/assets/8664ff5d-4891-449d-b762-ee9dfb809587)
+> <img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options">
 
 
 
@@ -38,7 +38,7 @@ Every HTML export contains an **Edit or run** button in the top right. When you 
 1. Run the notebook with **[binder](https://mybinder.org/)**, a free service to run scientific notebooks in the cloud. This works on any browser (including mobile), without needing to install Julia or Pluto.
 2. **Download the `.jl` notebook file** that was used to generate the HTML export. You can open this file with Pluto.
 
-![Screenshot of the "Edit or run" menu with the option to download the notebook file.](https://github.com/user-attachments/assets/a4334cd9-c5ba-4a75-8ed3-bc1f0147a22a)
+<img src="$(root_url)/assets/img/Edit or run menu screenshot.png" alt="Screenshot of the 'Edit or run' menu with the option to download the notebook file.">
 
 
 `.html` files from Pluto can also be used as web pages on your blog. <a href="../notebooks-online/" class="arrow">Learn more</a>

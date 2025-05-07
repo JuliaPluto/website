@@ -29,7 +29,7 @@ If you have a GitHub account, then this is the easiest option. Go to [github.com
 - Takes 15-30 minutes to set up (but not too hard!)
 - You need to use GitHub
 
-![screenshot of the actions page, showing a currently running workflow](https://user-images.githubusercontent.com/6933510/103711844-978b5600-4fb8-11eb-8b1b-1e5bdacc1c85.png)
+<img alt="screenshot of the actions page, showing a currently running workflow" src="$(root_url)/assets/img/GitHub Actions workflow screenshot.png" width="1764" height="816">
 
 ## Glass Notebook
 If you have a GitHub account, then [glassnotebook.io](https://glassnotebook.io/) is a great option for hosting your notebooks online. Glass can also host notebooks **interactively**: people who visit your website can interact with sliders and buttons instantly! Glass was made specifically for Pluto.jl, so it works great with Julia and Pluto!

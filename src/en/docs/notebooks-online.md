@@ -43,7 +43,7 @@ If you have a GitHub account, then [glassnotebook.io](https://glassnotebook.io/)
 **Cons:**
 - You need to use GitHub
 
-![screenshot of Glass Notebook showing a list of repositories that are published](https://github.com/fonsp/Pluto.jl/assets/6933510/bb447901-2747-4b8a-9e91-af8e36a0c91e)
+<img src="$(root_url)/assets/img/Glass Notebook published repos screenshot.png" alt="screenshot of Glass Notebook showing a list of repositories that are published" width="1894" height="1212">
 
 ## Netlify drop: *"quick and dirty"*
 If you just have a couple of `.html` files that you exported with Pluto, then you can use [netlify drop](https://app.netlify.com/drop) to put them online as a website. Put all `.html` files in one folder on your computer, and drag the folder into netlify drop. This will give you a website!
@@ -59,12 +59,6 @@ If you just have a couple of `.html` files that you exported with Pluto, then yo
 - You need a Netlify account
 - No automatic index page listing all notebooks
 
-
-![screenshot of the Netlify Drop interface](https://github.com/fonsp/Pluto.jl/assets/6933510/ca2f1797-9fef-4991-b3b3-ff60b99b9191)
-
-
-
-
-
+<img src="$(root_url)/assets/img/Netlify Drop interface screenshot.png" alt="screenshot of the Netlify Drop interface" width="1338" height="656">
 
 # Work in progress, more coming!

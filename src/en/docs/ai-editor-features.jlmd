@@ -33,12 +33,53 @@ The feature currently works **without sign-in**: you can use the feature directl
 Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues).
 
 
-# *(coming soon)* AI prompt generation
-Here is a sneak peak:
+# _(beta)_ AI Prompt generation
+We notice that people often use Pluto side-by-side with other AI chat systems, like [chatgpt.com](https://chatgpt.com) or [claude.ai](https://claude.ai). This feature will make that workflow more effective!
+
+There is a button to generate a prompt about a cell with context from your notebook. When you ask a question like "What does this code do?" or "Help me add a linear trendline", it helps to tell the AI model not just the code, but also code from other cells, packages, current output, etc. The prompt generation will automatically add the relevant context to the prompt, so you can get better answers from AI models.
+
+<img src="$(root_url)/assets/img/ai prompt generation beta.png" alt="Screenshot of the Share button" width="950" height="826">
+
+Here is a video of the feature in action:
 
 <video src="$(root_url)/assets/img/ai context demo 1.mov" controls="controls" muted="muted"></video>
 
-<a href="https://github.com/fonsp/Pluto.jl/pull/3224" class="arrow">More info</a>
+
+> 🚨 **Experimental!** This feature is available in Pluto v0.20.9 and above, and is currently in beta. See the [announcement PR](https://github.com/fonsp/Pluto.jl/pull/3224) for more details.
+
+## How to use it
+In any cell in your notebook, click the _cell context menu_ in the top right of the cell TODO ICON, and click "Ask AI". This will open the prompt generation UI.
+
+<img src="$(root_url)/assets/img/cell context ask ai.png" alt="Screenshot of the Cell Context Menu with the Ask AI option" width="788" height="382">
+
+Now you see the prompt generation UI. If you want, you can type a question that is added to the prompt. When you press Enter or click the "Copy" button, the prompt is copied to your clipboard. You can paste it into an AI chat on another website, like [chatgpt.com](https://chatgpt.com) or [claude.ai](https://claude.ai).
+
+## How does it work?
+The prompt is auto-generated based on notebook context. Pluto uses **cell inputs**, some **cell outputs**, package information and the **reactive dependency graph** to generate a prompt. The important feature is that the reactive dependency graph is used to determine which cells are relevant to the current cell.
+
+The prompt contains XML tags like `<pluto-ai-context-current-cell>`. These tags are completely made up, but they help AI models understand the structure of the generated prompt.
+
+Try it out on a complicated notebook, and take a look at the generated prompt.
+
+
+## Token limit
+Most AI chat systems have a token limit, which limits the length of the prompt. Pluto will try to generate the best possible prompt that fits within a fixed token limit (currently 3000 tokens). If the token limit is reached, less context will be provided.
+
+
+
+
+## Privacy
+This feature does not use any LLMs or other web services, it just generates a prompt that you can use as you wish.
+
+## Feedback
+Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues).
+
+
+
+
+
+
+
 
 # Configuration
 

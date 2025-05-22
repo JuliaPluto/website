@@ -123,10 +123,29 @@ window.pluto_preamble_html = undefined;
 <p>The feature currently works <strong>without sign-in</strong>: you can use the feature directly in Pluto without creating an account.</p>
 <h2 id="feedback"><a href="#feedback" class="anchor"></a>Feedback</h2>
 <p>Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on <a href="https://github.com/fonsp/Pluto.jl/issues">GitHub</a>.</p>
-<h1 id="coming-soon-ai-prompt-generation"><a href="#coming-soon-ai-prompt-generation" class="anchor"></a><em>(coming soon)</em> AI prompt generation</h1>
-<p>Here is a sneak peak:</p>
+<h1 id="beta-ai-prompt-generation"><a href="#beta-ai-prompt-generation" class="anchor"></a><em>(beta)</em> AI Prompt generation</h1>
+<p>We notice that people often use Pluto side-by-side with other AI chat systems, like <a href="https://chatgpt.com">chatgpt.com</a> or <a href="https://claude.ai">claude.ai</a>. This feature will make that workflow more effective!</p>
+<p>There is a button to generate a prompt about a cell with context from your notebook. When you ask a question like “What does this code do?” or “Help me add a linear trendline”, it helps to tell the AI model not just the code, but also code from other cells, packages, current output, etc. The prompt generation will automatically add the relevant context to the prompt, so you can get better answers from AI models.</p>
+<img src="../../../assets/img/ai prompt generation beta.png" alt="Screenshot of the Share button" width="950" height="826">
+<p>Here is a video of the feature in action:</p>
 <p><video src="../../../assets/img/ai context demo 1.mov" controls="controls" muted="muted"></video></p>
-<p><a href="https://github.com/fonsp/Pluto.jl/pull/3224" class="arrow">More info</a></p>
+<blockquote>
+<p>🚨 <strong>Experimental!</strong> This feature is available in Pluto v0.20.9 and above, and is currently in beta. See the <a href="https://github.com/fonsp/Pluto.jl/pull/3224">announcement PR</a> for more details.</p>
+</blockquote>
+<h2 id="how-to-use-it-1"><a href="#how-to-use-it-1" class="anchor"></a>How to use it</h2>
+<p>In any cell in your notebook, click the <em>cell context menu</em> in the top right of the cell TODO ICON, and click “Ask AI”. This will open the prompt generation UI.</p>
+<img src="../../../assets/img/cell context ask ai.png" alt="Screenshot of the Cell Context Menu with the Ask AI option" width="788" height="382">
+<p>Now you see the prompt generation UI. If you want, you can type a question that is added to the prompt. When you press Enter or click the “Copy” button, the prompt is copied to your clipboard. You can paste it into an AI chat on another website, like <a href="https://chatgpt.com">chatgpt.com</a> or <a href="https://claude.ai">claude.ai</a>.</p>
+<h2 id="how-does-it-work"><a href="#how-does-it-work" class="anchor"></a>How does it work?</h2>
+<p>The prompt is auto-generated based on notebook context. Pluto uses <strong>cell inputs</strong>, some <strong>cell outputs</strong>, package information and the <strong>reactive dependency graph</strong> to generate a prompt. The important feature is that the reactive dependency graph is used to determine which cells are relevant to the current cell.</p>
+<p>The prompt contains XML tags like <code>&lt;pluto-ai-context-current-cell&gt;</code>. These tags are completely made up, but they help AI models understand the structure of the generated prompt.</p>
+<p>Try it out on a complicated notebook, and take a look at the generated prompt.</p>
+<h2 id="token-limit"><a href="#token-limit" class="anchor"></a>Token limit</h2>
+<p>Most AI chat systems have a token limit, which limits the length of the prompt. Pluto will try to generate the best possible prompt that fits within a fixed token limit (currently 3000 tokens). If the token limit is reached, less context will be provided.</p>
+<h2 id="privacy-1"><a href="#privacy-1" class="anchor"></a>Privacy</h2>
+<p>This feature does not use any LLMs or other web services, it just generates a prompt that you can use as you wish.</p>
+<h2 id="feedback-1"><a href="#feedback-1" class="anchor"></a>Feedback</h2>
+<p>Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on <a href="https://github.com/fonsp/Pluto.jl/issues">GitHub</a>.</p>
 <h1 id="configuration"><a href="#configuration" class="anchor"></a>Configuration</h1>
 <p>You can enable or disable Pluto’s AI features with the <code>enable_ai_editor_features</code> setting. To turn off all features, set it to <code>false</code>:</p>
 <pre><code class="language-julia">Pluto.run(enable_ai_editor_features=false)

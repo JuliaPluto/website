@@ -6,7 +6,7 @@ order: 1
 ---
 
 # Install Pluto on your own computer
-Go to [plutojl.org/#install](https://plutojl.org/#install) for instructions!
+> Go to [plutojl.org/#install](https://plutojl.org/#install) for instructions!
 
 ## System requirements
 Pluto works on Windows, Linux, MacOS, ChromeOS and Android. You need a computer with at least **4GB RAM**, but 8GB is recommended for running multiple notebooks in parallel, or for using large packages.

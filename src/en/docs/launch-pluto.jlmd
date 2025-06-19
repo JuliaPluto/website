@@ -1,0 +1,95 @@
+---
+title: "🌟 Launching Pluto"
+description: "How to start a Pluto notebook server"
+tags: ["docs", "file", "navigation"]
+layout: "md.jlmd"
+order: 1
+---
+
+
+# How to start Pluto
+
+Pluto is a **Julia package**, which runs on your computer. It start a small local web server, and you can **connect to it from your web browser**. 
+
+
+### Step 0: install Julia and Pluto
+Did you already install Julia and Pluto? Take a look at [the installation guide](../install/). 
+
+### Step 1: start Julia
+First, start Julia. In some cases, you can search for the app "Julia" on your computer and launch it. In other cases, you can open a terminal (search for the app "Terminal") and type the command `julia`.
+
+### Step 2: start Pluto
+In Julia, run this command to start Pluto:
+
+```julia
+import Pluto
+Pluto.run()
+```
+
+
+## Browser session
+When Pluto starts running, it automatically opens a new browser tab that connects to `http://localhost:1234`, which is the address of the Pluto server. You will see the _main menu_ of Pluto.
+
+
+# The Pluto main menu <span id="main-menu"></span>
+The first page you see when you open a new browser tab is the _main menu_ of Pluto. It's the page that says "Welcome to Pluto". From here, you can [create a new notebook](../files/#new), [open an existing notebook](../files/#open), or you can take a look at the featured notebooks, further down the page.
+
+<img src="$(root_url)/assets/img/main menu.png" alt="screenshot of the Pluto main menu, showing recent notebooks and a textbox to open a recent notebook" width="1762" height="1494">
+
+## Go to the main menu from a notebook
+To go back to the main menu from a notebook, you can **click the Pluto logo** in the top left corner of the browser window. 
+
+!!! tip
+    Just like on websites, you can **open pages in a new tab**. For example, you can right click the Pluto logo in the top left corner of the browser window, and select "Open in new tab". This will open a new tab that is connected to the same Pluto session.
+
+
+## Go to the main menu from a new tab
+If you open a new tab in your browser, you can also go directly to the Pluto server. Type `localhost:1234` in the address bar, and press Enter. You can also bookmark this page for easy access.
+
+
+
+
+
+## Multiple notebooks
+Something important to know: **each Pluto session** (created by running `Pluto.run()`) can run **multiple notebooks** at the same time. The notebooks in your Pluto session are managed from the Pluto main menu. In the screenshot above, you see the Pluto main menu, with 3 notebooks currently running.
+
+If you use the main menu to create a new notebook or open a notebook, it will be **added to the session**. If you go back to the main menu, you can add more notebooks to the session.
+
+
+
+
+
+
+
+
+# Advanced: Mirror view
+Pluto has a special feature – you can open the same notebook in two different browser windows, and they will stay synchronized. This is useful if you are working with two parts of a notebook at the same time. For example, you can change your analysis code (at the bottom of the notebook) in one window, and you can watch the plots (at the top of the notebook) in a second window.
+
+To use mirror view, you first open a notebook, and you copy the URL of the notebook from the address bar. This will look like `http://localhost:1234/edit?id=0ec9caa2-3fa7-11f0-3e46-3bcef32ce8e3`. Then open a new browser window, and paste the URL in the address bar. Now you have two windows that are connected to the same notebook, and they will stay synchronized.
+
+## Limitation: no unsaved edits
+Currently, unsaved edits (code changes before your press `Shift+Enter` or _Save_) are not synced between the two windows. This is usually not an issue, but it is possible to lose work if both sides are editing the same cell – submitting on one side will overwrite the other side. The otherside can still use `Ctrl+Z` to get their old code back. <a class="arrow" href="https://github.com/fonsp/Pluto.jl/pull/2296">See this PR for more details</a>
+
+
+!!! tip
+    You can also use the "Mirror view" feature to collaborate with someone else on another computer, which can be really fun! We recommend a service like [bore.pub](https://bore.pub) to share the notebook with someone else, and don't change Pluto's security settings. Because – be careful! Someone with access to the notebook, has complete access to your computer. They can install and run programs without your approval. 
+    
+    We have used this feature to collaborate on notebooks, and we found it quite important to have good communication using an audio call. This also avoids editing the same cell.
+
+
+
+
+
+
+
+# Advanced: Multiple Pluto sessions
+You can start Pluto multiple times in parallel (for example: on two different Julia versions). In this case, each Pluto server will find the first available port. Usually, the first server will find port `1234`, the second server will find port `1235`, and so on.
+
+This means that you can open two browser windows, and connect to the two different Pluto servers in parallel:
+
+```
+http://localhost:1234
+http://localhost:1235
+```
+
+Usually, this is not super useful. If you find yourself on port `1235` by accident, try shutting down all Pluto/Julia processes and starting again.

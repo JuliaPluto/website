@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "PlutoPages: run development server",
+            "label": "🌳 PlutoPages: run development server",
             "type": "shell",
             "command": "julia develop.jl",
             "group": "build"

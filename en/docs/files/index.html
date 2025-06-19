@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>🌸 How to update — Pluto.jl</title>
-
+<title>📄 Create, open and save files — Pluto.jl</title>
+<meta name="description" content='How to create, open and save notebook files' />
 
 <link rel="root" href="../../.." />
 
@@ -62,13 +62,13 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class='active'><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li>
 </ul>
 </li>
 <li>
 <h3>Using Pluto</h3>
 <ul>
-<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li>
+<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class='active'><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li>
 </ul>
 </li>
 <li>
@@ -114,38 +114,54 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="update-your-pluto-installation"><a href="#update-your-pluto-installation" class="anchor"></a>Update your Pluto installation</h1>
-<p>You can update Pluto using the Julia package manager. Open a Julia process and use Pkg to update Pluto:</p>
-<pre><code class="language-jl">julia&gt; import Pkg
-julia&gt; Pkg.update(&quot;Pluto&quot;)
-</code></pre>
-<p>This should update Pluto to the latest version <span id="latesthere">(check our <a href="https://github.com/fonsp/Pluto.jl/releases/">GitHub releases</a> to find out!)</span>.</p>
-<h2 id="not-the-latest-version"><a href="#not-the-latest-version" class="anchor"></a>Not the latest version?</h2>
-<p>Sometimes, it is not possible to install the latest version of Pluto because of <strong>compatibility issues with other packages</strong> that you have installed in your environment.</p>
-<p>Some tips to fix it:</p>
-<ol>
-<li>First, use <code>Pkg.status()</code> to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.</li>
-<li>If this did not work, try updating all packages (not just Pluto) with <code>Pkg.update()</code>.</li>
-<li>Finally, you could use <code>Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)</code> to see the compatibility bounds. <a href="https://discourse.julialang.org/t/package-is-not-updating-but-why/88338">Here is an example</a>.</li>
-</ol>
-<script defer>
-const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
-method: "GET",
-mode: "cors",
-cache: "no-cache",
-headers: {
-    "Content-Type": "application/json",
-},
-redirect: "follow",
-referrerPolicy: "no-referrer",
-}).then(r => r.json()).then(r => r.reverse()).then(releases => releases[releases.length - 1].tag_name)
-latest.then(v => {
-const el = document.querySelector("#latesthere")
-console.log(el, v)
-el.innerText = v
-el.style.fontWeight = "bold"
-})
-</script>
+<h1 id="how-to-create-a-new-notebook-span-idnewspan"><a href="#how-to-create-a-new-notebook-span-idnewspan" class="anchor"></a>How to create a new notebook <span id="new"></span></h1>
+<p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Then, click the “New” button. This will create a new empty notebook in the current Pluto session.</p>
+<img src="../../../assets/img/main menu new notebook.png" alt="screenshot of the Pluto main menu, showing the new notebook button" width="1762" height="621">
+<div class="admonition tip"><p class="admonition-title">Tip</p>
+<p>You can right click the “New” button, and select “Open in new tab”. This will open the new notebook in a new tab, and you can open more notebooks in parallel.</p>
+</div>
+<h1 id="how-to-save-a-notebook-span-idsavespan"><a href="#how-to-save-a-notebook-span-idsavespan" class="anchor"></a>How to save a notebook <span id="save"></span></h1>
+<p>Notebooks are <strong>saved automatically</strong> when you run code. When you start typing new code in a cell, this code is not yet saved, but when you run the cell, the code is saved.</p>
+<p>When there are unsaved changes in a notebook, you will see a button in the top right corner of the notebook – the “Save” button. Clicking this button will run all unsaved cells in one batch, which will automatically save the notebook.</p>
+<img src="../../../assets/img/save all changes.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
+<h2 id="notebook-path"><a href="#notebook-path" class="anchor"></a>Notebook path</h2>
+<p>The notebook is always stored somewhere on your computer as a <code>.jl</code> file. The path of the notebook is shown at the top of the notebook, and you can <strong>click on it to change the path</strong>. After typing a new path, click “” So: to move the notebook to a different location or to change the filename, you can just change the path.</p>
+<p>When you create a new notebook, the notebook is stored temporarily in the <code>~/.julia/pluto_notebooks/</code> folder with a random name (something like <code>Wild experiment 4.jl</code>). This is a hidden folder, and we recommend saving your notebooks somewhere else (like your Documents folder) if you want to keep your work.</p>
+<div class="admonition info"><p class="admonition-title">The .jl extension</p>
+<p>The <code>.jl</code> extension is used because Pluto notebooks are valid Julia files – you can run them as Julia scripts, or use the <code>include</code> function in the REPL to start a REPL session with the notebook.</p>
+<p>You are free to use a different extension (like <code>.plutojl</code>), the extension is not required to open the file.</p>
+</div>
+<h1 id="how-to-open-a-notebook-from-your-computer-span-idopenspan"><a href="#how-to-open-a-notebook-from-your-computer-span-idopenspan" class="anchor"></a>How to open a notebook from your computer <span id="open"></span></h1>
+<p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now you can type a notebook path in the textbox, and press Enter or click the “Open” button. While you type, there will be autocompletion suggestions with folders and files.</p>
+<img src="../../../assets/img/main menu open autocomplete.png" alt="screenshot of the Open button in the Pluto main menu, with a textbox for the notebook path and autocompletion suggestions" width="1774" height="558">
+<h2 id="how-to-find-the-notebook-path"><a href="#how-to-find-the-notebook-path" class="anchor"></a>How to find the notebook path</h2>
+<p>We need to know the <em>absolute path</em> of a <code>.jl</code> notebook file. Here’s how you do that in <a href="https://www.top-password.com/blog/copy-full-path-of-a-folder-file-in-windows/">Windows</a>. On MacOS, right click the notebook file in Finder, hold down <code>option</code>, and click “Copy … as pathname”. On Linux, right click and “Copy file path”.</p>
+<p>For example, you might have:</p>
+<ul>
+<li>
+<p><code>C:\Users\fons\Documents\my_notebook.jl</code> on <strong>Windows</strong>.</p>
+</li>
+<li>
+<p><code>/Users/fons/Documents/my_notebook.jl</code> on <strong>MacOS</strong>.</p>
+</li>
+<li>
+<p><code>/home/fons/Documents/my_notebook.jl</code> on <strong>Ubuntu</strong>.</p>
+</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">Why so difficult?</p>
+<p>It would be really nice if you could just pick the notebook file from your file browser, instead of having to type the path. But this is not possible, because Pluto is a web application, which does not have access to your file system for security reasons. See <a href="https://github.com/fonsp/Pluto.jl/issues/350">this issue</a> and</p>
+</div>
+<h1 id="how-to-open-a-notebook-from-the-web-span-idopen-from-urlspan"><a href="#how-to-open-a-notebook-from-the-web-span-idopen-from-urlspan" class="anchor"></a>How to open a notebook from the web <span id="open-from-url"></span></h1>
+<p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now you can type a notebook path in the textbox, and press Enter or click the “Open” button.</p>
+<p>The notebook will open in “Safe Preview” mode, which means that no code will be executed until you give permission.</p>
+<h1 id="open-a-notebook-using-the-clipboard-span-idopen-from-clipboardspan"><a href="#open-a-notebook-using-the-clipboard-span-idopen-from-clipboardspan" class="anchor"></a>Open a notebook using the Clipboard <span id="open-from-clipboard"></span></h1>
+<p>You can copy the <strong>complete contents</strong> of a <code>.jl</code> Pluto notebook file, and open it with Pluto. With the contents of a notebook file in your clipboard, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now simply paste the contents anywhere on the page using <code>Ctrl+V</code> or <code>Cmd+V</code>, and it will be opened as a new notebook.</p>
+<p>The notebook will open in “Safe Preview” mode, which means that no code will be executed until you give permission.</p>
+<h1 id="running-featured-notebooks-span-idfeaturedspan"><a href="#running-featured-notebooks-span-idfeaturedspan" class="anchor"></a>Running featured notebooks <span id="featured"></span></h1>
+<p>On the bottom of the <a href="../launch-pluto/#main-menu">Pluto main menu</a>, you will find a large collection of <strong>featured notebooks</strong> – notebooks written by the Julia community, featured by the Pluto developers. These notebooks are a great resource to get inspired about new ways to use Julia and Pluto!</p>
+<p>Click on any featured notebook to read it. This will instantly load the notebook (prerendered on our servers), and interactive elements will work (this is done using <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer.jl</a>). If you want to change code and run the notebook, simply click the “Edit or run” button in the top right of the screen. This will <strong>make a copy of the notebook</strong> on your computer that you can edit.</p>
+<h1 id="how-to-shut-down-a-notebook"><a href="#how-to-shut-down-a-notebook" class="anchor"></a>How to shut down a notebook</h1>
+<p>TODO</p>
 </div>
 </div>
 </pluto-output>

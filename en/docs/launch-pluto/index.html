@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>🌸 How to update — Pluto.jl</title>
-
+<title>🌟 Launching Pluto — Pluto.jl</title>
+<meta name="description" content='How to start a Pluto notebook server' />
 
 <link rel="root" href="../../.." />
 
@@ -62,13 +62,13 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class='active'><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li>
 </ul>
 </li>
 <li>
 <h3>Using Pluto</h3>
 <ul>
-<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li>
+<li class='active'><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li>
 </ul>
 </li>
 <li>
@@ -114,38 +114,48 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="update-your-pluto-installation"><a href="#update-your-pluto-installation" class="anchor"></a>Update your Pluto installation</h1>
-<p>You can update Pluto using the Julia package manager. Open a Julia process and use Pkg to update Pluto:</p>
-<pre><code class="language-jl">julia&gt; import Pkg
-julia&gt; Pkg.update(&quot;Pluto&quot;)
+<h1 id="how-to-start-pluto"><a href="#how-to-start-pluto" class="anchor"></a>How to start Pluto</h1>
+<p>Pluto is a <strong>Julia package</strong>, which runs on your computer. It start a small local web server, and you can <strong>connect to it from your web browser</strong>.</p>
+<h3 id="step-0-install-julia-and-pluto"><a href="#step-0-install-julia-and-pluto" class="anchor"></a>Step 0: install Julia and Pluto</h3>
+<p>Did you already install Julia and Pluto? Take a look at <a href="../install/">the installation guide</a>.</p>
+<h3 id="step-1-start-julia"><a href="#step-1-start-julia" class="anchor"></a>Step 1: start Julia</h3>
+<p>First, start Julia. In some cases, you can search for the app “Julia” on your computer and launch it. In other cases, you can open a terminal (search for the app “Terminal”) and type the command <code>julia</code>.</p>
+<h3 id="step-2-start-pluto"><a href="#step-2-start-pluto" class="anchor"></a>Step 2: start Pluto</h3>
+<p>In Julia, run this command to start Pluto:</p>
+<pre><code class="language-julia">import Pluto
+Pluto.run()
 </code></pre>
-<p>This should update Pluto to the latest version <span id="latesthere">(check our <a href="https://github.com/fonsp/Pluto.jl/releases/">GitHub releases</a> to find out!)</span>.</p>
-<h2 id="not-the-latest-version"><a href="#not-the-latest-version" class="anchor"></a>Not the latest version?</h2>
-<p>Sometimes, it is not possible to install the latest version of Pluto because of <strong>compatibility issues with other packages</strong> that you have installed in your environment.</p>
-<p>Some tips to fix it:</p>
-<ol>
-<li>First, use <code>Pkg.status()</code> to find out which packages you have installed, and remove any packages that you are no longer using. Now try to update again.</li>
-<li>If this did not work, try updating all packages (not just Pluto) with <code>Pkg.update()</code>.</li>
-<li>Finally, you could use <code>Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)</code> to see the compatibility bounds. <a href="https://discourse.julialang.org/t/package-is-not-updating-but-why/88338">Here is an example</a>.</li>
-</ol>
-<script defer>
-const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
-method: "GET",
-mode: "cors",
-cache: "no-cache",
-headers: {
-    "Content-Type": "application/json",
-},
-redirect: "follow",
-referrerPolicy: "no-referrer",
-}).then(r => r.json()).then(r => r.reverse()).then(releases => releases[releases.length - 1].tag_name)
-latest.then(v => {
-const el = document.querySelector("#latesthere")
-console.log(el, v)
-el.innerText = v
-el.style.fontWeight = "bold"
-})
-</script>
+<h2 id="browser-session"><a href="#browser-session" class="anchor"></a>Browser session</h2>
+<p>When Pluto starts running, it automatically opens a new browser tab that connects to <code>http://localhost:1234</code>, which is the address of the Pluto server. You will see the <em>main menu</em> of Pluto.</p>
+<h1 id="the-pluto-main-menu-span-idmain-menuspan"><a href="#the-pluto-main-menu-span-idmain-menuspan" class="anchor"></a>The Pluto main menu <span id="main-menu"></span></h1>
+<p>The first page you see when you open a new browser tab is the <em>main menu</em> of Pluto. It’s the page that says “Welcome to Pluto”. From here, you can <a href="../files/#new">create a new notebook</a>, <a href="../files/#open">open an existing notebook</a>, or you can take a look at the featured notebooks, further down the page.</p>
+<img src="../../../assets/img/main menu.png" alt="screenshot of the Pluto main menu, showing recent notebooks and a textbox to open a recent notebook" width="1762" height="1494">
+<h2 id="go-to-the-main-menu-from-a-notebook"><a href="#go-to-the-main-menu-from-a-notebook" class="anchor"></a>Go to the main menu from a notebook</h2>
+<p>To go back to the main menu from a notebook, you can <strong>click the Pluto logo</strong> in the top left corner of the browser window.</p>
+<div class="admonition tip"><p class="admonition-title">Tip</p>
+<p>Just like on websites, you can <strong>open pages in a new tab</strong>. For example, you can right click the Pluto logo in the top left corner of the browser window, and select “Open in new tab”. This will open a new tab that is connected to the same Pluto session.</p>
+</div>
+<h2 id="go-to-the-main-menu-from-a-new-tab"><a href="#go-to-the-main-menu-from-a-new-tab" class="anchor"></a>Go to the main menu from a new tab</h2>
+<p>If you open a new tab in your browser, you can also go directly to the Pluto server. Type <code>localhost:1234</code> in the address bar, and press Enter. You can also bookmark this page for easy access.</p>
+<h2 id="multiple-notebooks"><a href="#multiple-notebooks" class="anchor"></a>Multiple notebooks</h2>
+<p>Something important to know: <strong>each Pluto session</strong> (created by running <code>Pluto.run()</code>) can run <strong>multiple notebooks</strong> at the same time. The notebooks in your Pluto session are managed from the Pluto main menu. In the screenshot above, you see the Pluto main menu, with 3 notebooks currently running.</p>
+<p>If you use the main menu to create a new notebook or open a notebook, it will be <strong>added to the session</strong>. If you go back to the main menu, you can add more notebooks to the session.</p>
+<h1 id="advanced-mirror-view"><a href="#advanced-mirror-view" class="anchor"></a>Advanced: Mirror view</h1>
+<p>Pluto has a special feature – you can open the same notebook in two different browser windows, and they will stay synchronized. This is useful if you are working with two parts of a notebook at the same time. For example, you can change your analysis code (at the bottom of the notebook) in one window, and you can watch the plots (at the top of the notebook) in a second window.</p>
+<p>To use mirror view, you first open a notebook, and you copy the URL of the notebook from the address bar. This will look like <code>http://localhost:1234/edit?id=0ec9caa2-3fa7-11f0-3e46-3bcef32ce8e3</code>. Then open a new browser window, and paste the URL in the address bar. Now you have two windows that are connected to the same notebook, and they will stay synchronized.</p>
+<h2 id="limitation-no-unsaved-edits"><a href="#limitation-no-unsaved-edits" class="anchor"></a>Limitation: no unsaved edits</h2>
+<p>Currently, unsaved edits (code changes before your press <code>Shift+Enter</code> or <em>Save</em>) are not synced between the two windows. This is usually not an issue, but it is possible to lose work if both sides are editing the same cell – submitting on one side will overwrite the other side. The otherside can still use <code>Ctrl+Z</code> to get their old code back. <a class="arrow" href="https://github.com/fonsp/Pluto.jl/pull/2296">See this PR for more details</a></p>
+<div class="admonition tip"><p class="admonition-title">Tip</p>
+<p>You can also use the “Mirror view” feature to collaborate with someone else on another computer, which can be really fun! We recommend a service like <a href="https://bore.pub">bore.pub</a> to share the notebook with someone else, and don’t change Pluto’s security settings. Because – be careful! Someone with access to the notebook, has complete access to your computer. They can install and run programs without your approval.</p>
+<p>We have used this feature to collaborate on notebooks, and we found it quite important to have good communication using an audio call. This also avoids editing the same cell.</p>
+</div>
+<h1 id="advanced-multiple-pluto-sessions"><a href="#advanced-multiple-pluto-sessions" class="anchor"></a>Advanced: Multiple Pluto sessions</h1>
+<p>You can start Pluto multiple times in parallel (for example: on two different Julia versions). In this case, each Pluto server will find the first available port. Usually, the first server will find port <code>1234</code>, the second server will find port <code>1235</code>, and so on.</p>
+<p>This means that you can open two browser windows, and connect to the two different Pluto servers in parallel:</p>
+<pre><code>http://localhost:1234
+http://localhost:1235
+</code></pre>
+<p>Usually, this is not super useful. If you find yourself on port <code>1235</code> by accident, try shutting down all Pluto/Julia processes and starting again.</p>
 </div>
 </div>
 </pluto-output>

@@ -3,8 +3,8 @@
 
 #> [frontmatter]
 #> title = "⚙️ Configuring Pluto"
-#> date = "2024-04-22"
-#> tags = ["docs", "editor"]
+#> date = "2025-06-20"
+#> tags = ["docs", "editor", "configuration"]
 #> description = "How to change settings of the Pluto.jl Julia notebook"
 #> layout = "layout.jlhtml"
 #> order = 99
@@ -75,7 +75,7 @@ You can also create a session first, configure it, and then run a server on that
 session = Pluto.ServerSession()
 
 session.options.server.auto_reload_from_file = true
-session.options.server.optimize = 0
+session.options.compiler.optimize = 0
 
 Pluto.run(session)
 ```

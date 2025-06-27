@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>📕 Notebooks online – Pluto.jl notebooks as web pages — Pluto.jl</title>
-<meta name="description" content='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.' />
+<title>💫 PlutoSliderServer.jl — Pluto.jl</title>
+<meta name="description" content='How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web.' />
 
 <link rel="root" href="../../.." />
 
@@ -86,7 +86,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class='active'><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class=''><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li><li class=''><a href='../../../en/docs/binder/' title='How to use Binder to run Pluto notebooks in the cloud.'>🤹 Binder</a></li><li class=''><a href='../../../en/docs/PlutoSliderServer/' title='How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web.'>💫 PlutoSliderServer.jl</a></li><li class=''><a href='../../../en/docs/PlutoPages/' title='How to use PlutoPages.jl to generate static websites from Pluto notebooks.'>🏗️ PlutoPages.jl</a></li>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class=''><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li><li class=''><a href='../../../en/docs/binder/' title='How to use Binder to run Pluto notebooks in the cloud.'>🤹 Binder</a></li><li class='active'><a href='../../../en/docs/PlutoSliderServer/' title='How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web.'>💫 PlutoSliderServer.jl</a></li><li class=''><a href='../../../en/docs/PlutoPages/' title='How to use PlutoPages.jl to generate static websites from Pluto notebooks.'>🏗️ PlutoPages.jl</a></li>
 </ul>
 </li>
 <li>
@@ -114,75 +114,37 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="how-to-host-plutojl-notebooks-online"><a href="#how-to-host-plutojl-notebooks-online" class="anchor"></a>How to host Pluto.jl notebooks online</h1>
-<p>When you are done writing your notebook, you can put it on the internet as a website! Notebooks as websites is a core feature of Pluto. This page will explain how you go from a notebook on your computer, say <code>animals.jl</code>, to a website like <code>https://example.com/animals</code>, where anyone can read your notebook directly, without needing to install Julia or Pluto.</p>
-<p>There are many options fitting to different needs. Some are really easy, while others are more complex.</p>
-<blockquote>
-<h3 id="pluto-file-formats"><a href="#pluto-file-formats" class="anchor"></a>📎 Pluto file formats</h3>
-<p>And good to know: Pluto notebooks are <code>.jl</code> files, which only contain the code of your notebook, not the outputs. For example, if your notebook contains <code>plot(x, y)</code>, then the resulting PNG image is not stored in the <code>.jl</code> file. Other people need to install Pluto to open the file.</p>
-<p>You can also use Pluto to <strong>export</strong> a notebook to a <code>.html</code> or <code>.pdf</code> file by clicking the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/share-outline.svg" alt="share" width=17px style="filter: var(--image-filters);"> icon. These files <strong>contain outputs</strong>, like the plot image. Other people can open these files directly on their computer, without needing to install Pluto.</p>
-</blockquote>
-<h2 id="plutoland-simple-sharing"><a href="#plutoland-simple-sharing" class="anchor"></a><strong>pluto.land</strong>: Simple sharing</h2>
-<p><a href="https://pluto.land">pluto.land</a> is a new, simple way to share your Pluto notebooks online. Just <a href="../export-html/">export your notebook to HTML</a>, then upload the HTML file to pluto.land. You’ll get a unique URL that you can share with anyone!</p>
-<p><strong>Pros:</strong></p>
+<h1 id="plutosliderserverjl"><a href="#plutosliderserverjl" class="anchor"></a>PlutoSliderServer.jl</h1>
+<p>Pluto notebooks can be made interactive, using the <code>@bind</code> macro. However, when you <a href="../export/">export your notebook to a file</a>, the <code>@bind</code> interactions do not work. This is because <code>@bind</code> requires a running Julia process to work. Every time that you move a slider or click a button, a Julia process needs to calculate the new reactive values.</p>
+<p>So how do you get live interactivity on your website? You could run a public Pluto.jl server that runs the notebook, but this has a couple of problems: when someone edits the notebook, all future visitors will see these updates – it will quickly stop working. That’s not what we want! You could start a new Pluto session for every visitor (like <a href="../binder/">binder</a>), but this means that every visitor needs to wait for the notebook to load, since Julia is quite slow.</p>
+<p><strong>👉 This is where <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer.jl</a> comes in.</strong> It is a web server that runs Pluto notebooks, and it can <strong>only</strong> calculate changes from <code>@bind</code> updates, code changes are not supported. This, together with some other tricks, means that every visitor gets their own isolated experience, but without the need to start a new Julia process for every visitor.</p>
+<h2 id="plutosliderserver-in-practice"><a href="#plutosliderserver-in-practice" class="anchor"></a>PlutoSliderServer in practice</h2>
+<p>PlutoSliderServer.jl is a web server that serves <code>@bind</code> interactivity for one or multiple Pluto notebooks. The typical setup is:</p>
 <ul>
-<li>Free</li>
-<li>Awesome</li>
-<li>Super simple to use</li>
-<li>No account required</li>
+<li>You have a GitHub repository with your Pluto notebooks.</li>
+<li>You rent a Linux server from a provider (like hetzner, digitalocean, gcp, aws, etc.), from your university (SURF Research Cloud in Netherland), or you have a computer that you can leave running. <em>(It is important that this is a <strong>isolated environment</strong>, without personal data. PlutoSliderServer.jl is not designed to be secure, and you should assume that visitors can execute code on your server.)</em></li>
+<li>You set up PlutoSliderServer.jl using <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl/wiki/Sample-setup">our guide</a>, with auto-git watching enabled.</li>
 </ul>
-<p><strong>Cons:</strong></p>
+<p>Now, you have a website with your notebooks, and all <code>@bind</code> interactivity will work. When you push changess to the notebooks in your GitHub repository, the website will automatically update.</p>
+<h2 id="try-it-out"><a href="#try-it-out" class="anchor"></a>Try it out</h2>
+<p>It is easy to try out PlutoSliderServer.jl on your own computer. If you have a notebook file ready, just run:</p>
+<pre><code class="language-julia">import PlutoSliderServer
+# fill in your own notebook path here!
+path_to_notebook = download(&quot;https://raw.githubusercontent.com/JuliaPluto/featured/50205f3/src/basic/turtles-art.jl&quot;)
+PlutoSliderServer.run_notebook(path_to_notebook)
+</code></pre>
+<h2 id="how-does-it-work"><a href="#how-does-it-work" class="anchor"></a>How does it work?</h2>
+<p>Take a look at the <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer.jl README or documentation</a> for more details.</p>
+<h2 id="who-uses-plutosliderserverjl"><a href="#who-uses-plutosliderserverjl" class="anchor"></a>Who uses PlutoSliderServer.jl?</h2>
+<p>PlutoSliderServer is used by various groups and universities since 2020.</p>
+<p>The Pluto developers use PlutoSliderServer for:</p>
 <ul>
-<li>No updates: to change the notebook, you just need to upload a new HTML file, and you get a new URL</li>
+<li>The featured notebooks on <a href="https://featured.plutojl.org">featured.plutojl.org</a></li>
+<li>The course <a href="https://github.com/bmlip/colorized">BMLIP at TU Eindhoven</a></li>
+<li>The course <a href="https://computationalthinking.mit.edu/">Computational Thinking at MIT</a></li>
 </ul>
-<img src="../../../assets/img/plutoland screenshot.png" alt="Screenshot of pluto.land showing an upload button" width="1792" height="870">
-<h2 id="github-static-export-template"><a href="#github-static-export-template" class="anchor"></a>GitHub: <code>static-export-template</code></h2>
-<p>If you have a GitHub account, then this is the easiest option. Go to <a href="https://github.com/JuliaPluto/static-export-template">github.com/JuliaPluto/static-export-template</a> and follow the easy instructions with screenshots to set up your repository. This sets up a repository with <code>.jl</code> notebook files, which are automatically executed, exported and hosted on the cloud. You get a website like <code>https://username.github.io/my_project</code> where you can read the notebooks.</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Free</li>
-<li>Works for multiple notebooks</li>
-<li>Easy notebook updates: changing <code>.jl</code> files automatically updates the website</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Takes 15-30 minutes to set up (but not too hard!)</li>
-<li>You need to use GitHub</li>
-</ul>
-<img alt="screenshot of the actions page, showing a currently running workflow" src="../../../assets/img/GitHub Actions workflow screenshot.png" width="1764" height="816">
-<h2 id="netlify-drop-quick-and-dirty"><a href="#netlify-drop-quick-and-dirty" class="anchor"></a>Netlify drop: <em>“quick and dirty”</em></h2>
-<p>If you just have a couple of <code>.html</code> files that you exported with Pluto, then you can use <a href="https://app.netlify.com/drop">netlify drop</a> to put them online as a website. Put all <code>.html</code> files in one folder on your computer, and drag the folder into netlify drop. This will give you a website!</p>
-<blockquote>
-<p>This only works with <code>.html</code> files that you exported yourself, not with <code>.jl</code> notebook files.</p>
-</blockquote>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Free</li>
-<li>Fast and easy</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Updating the website with new notebooks requires a bit of care</li>
-<li>You need a Netlify account</li>
-<li>No automatic index page listing all notebooks</li>
-</ul>
-<img src="../../../assets/img/Netlify Drop interface screenshot.png" alt="screenshot of the Netlify Drop interface" width="1338" height="656">
-<h1 id="deprecated"><a href="#deprecated" class="anchor"></a>Deprecated</h1>
-<p>The options below used to work in the past, but they are no longer supported.</p>
-<h2 id="glass-notebook-deprecated"><a href="#glass-notebook-deprecated" class="anchor"></a>Glass Notebook <em>(deprecated)</em></h2>
-<p>If you have a GitHub account, then <a href="https://glassnotebook.io/">glassnotebook.io</a> is a great option for hosting your notebooks online. Glass can also host notebooks <strong>interactively</strong>: people who visit your website can interact with sliders and buttons instantly! Glass was made specifically for Pluto.jl, so it works great with Julia and Pluto!</p>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Free (for static notebooks)</li>
-<li>Ability to host <strong>interactive</strong> notebooks (paid option)</li>
-<li>Easy user interface</li>
-<li>Support from developers if things don’t work</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>You need to use GitHub</li>
-</ul>
-<img src="../../../assets/img/Glass Notebook published repos screenshot.png" alt="screenshot of Glass Notebook showing a list of repositories that are published" width="1894" height="1212">
+<h2 id="help-and-support"><a href="#help-and-support" class="anchor"></a>Help and support</h2>
+<p>If you have any questions, or you want help setting up PlutoSliderServer.jl, please reach out in all the usual Pluto channels! (Julia Discourse, Julia Slack, Julia Zulip, GitHub issues, etc.).</p>
 </div>
 </div>
 </pluto-output>

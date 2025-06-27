@@ -1,0 +1,53 @@
+---
+title: "💫 PlutoSliderServer.jl"
+description: "How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web."
+tags: ["docs", "publishing", "PlutoSliderServer", "share", "web", "interactivity"]
+layout: "md.jlmd"
+order: 9
+---
+
+# PlutoSliderServer.jl
+Pluto notebooks can be made interactive, using the `@bind` macro. However, when you [export your notebook to a file](../export/), the `@bind` interactions do not work. This is because `@bind` requires a running Julia process to work. Every time that you move a slider or click a button, a Julia process needs to calculate the new reactive values.
+
+So how do you get live interactivity on your website? You could run a public Pluto.jl server that runs the notebook, but this has a couple of problems: when someone edits the notebook, all future visitors will see these updates – it will quickly stop working. That's not what we want! You could start a new Pluto session for every visitor (like [binder](../binder/)), but this means that every visitor needs to wait for the notebook to load, since Julia is quite slow.
+
+**👉 This is where [PlutoSliderServer.jl](https://github.com/JuliaPluto/PlutoSliderServer.jl) comes in.** It is a web server that runs Pluto notebooks, and it can **only** calculate changes from `@bind` updates, code changes are not supported. This, together with some other tricks, means that every visitor gets their own isolated experience, but without the need to start a new Julia process for every visitor.
+
+
+## PlutoSliderServer in practice
+PlutoSliderServer.jl is a web server that serves `@bind` interactivity for one or multiple Pluto notebooks. The typical setup is:
+- You have a GitHub repository with your Pluto notebooks.
+- You rent a Linux server from a provider (like hetzner, digitalocean, gcp, aws, etc.), from your university (SURF Research Cloud in Netherland), or you have a computer that you can leave running. _(It is important that this is a **isolated environment**, without personal data. PlutoSliderServer.jl is not designed to be secure, and you should assume that visitors can execute code on your server.)_
+- You set up PlutoSliderServer.jl using [our guide](https://github.com/JuliaPluto/PlutoSliderServer.jl/wiki/Sample-setup), with auto-git watching enabled.
+
+Now, you have a website with your notebooks, and all `@bind` interactivity will work. When you push changess to the notebooks in your GitHub repository, the website will automatically update.
+
+
+## Try it out
+It is easy to try out PlutoSliderServer.jl on your own computer. If you have a notebook file ready, just run:
+
+```julia
+import PlutoSliderServer
+# fill in your own notebook path here!
+path_to_notebook = download("https://raw.githubusercontent.com/JuliaPluto/featured/50205f3/src/basic/turtles-art.jl")
+PlutoSliderServer.run_notebook(path_to_notebook)
+```
+
+
+## How does it work?
+Take a look at the [PlutoSliderServer.jl README or documentation](https://github.com/JuliaPluto/PlutoSliderServer.jl) for more details.
+
+
+## Who uses PlutoSliderServer.jl?
+PlutoSliderServer is used by various groups and universities since 2020.
+
+The Pluto developers use PlutoSliderServer for:
+- The featured notebooks on [featured.plutojl.org](https://featured.plutojl.org)
+- The course [BMLIP at TU Eindhoven](https://github.com/bmlip/colorized)
+- The course [Computational Thinking at MIT](https://computationalthinking.mit.edu/)
+
+
+## Help and support
+If you have any questions, or you want help setting up PlutoSliderServer.jl, please reach out in all the usual Pluto channels! (Julia Discourse, Julia Slack, Julia Zulip, GitHub issues, etc.).
+
+

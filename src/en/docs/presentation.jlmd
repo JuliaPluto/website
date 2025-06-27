@@ -15,16 +15,16 @@ Pluto.jl has a built-in **presentation mode** that lets you view your notebook i
 ## How to start presentation mode
 Presentation mode can be started from the Pluto.jl interface.
 
-### Step 1
-Open your notebook in Pluto, and wait for all cells to finish running.
-
-### Step 2
-Press the **Share** button in the top right.
-<img src="https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161" alt="Screenshot of the Share button">
-
-### Step 3
-Click the "Slideshow" button.
-<img src="https://github.com/user-attachments/assets/3956df52-4732-4a10-ac86-6f334e11b3b1" alt="Screenshot of the present button">
+> ### Step 1
+> Open your notebook in Pluto, and wait for all cells to finish running.
+> 
+> ### Step 2
+> Press the **Share** button in the top right.
+> <img src="https://github.com/user-attachments/assets/82e1e878-e0e5-4386-a4fa-fd0337e28161" alt="Screenshot of the Share button">
+> 
+> ### Step 3
+> Click the "Slideshow" button.
+> <img src="https://github.com/user-attachments/assets/3956df52-4732-4a10-ac86-6f334e11b3b1" alt="Screenshot of the present button">
 
 
 ## Using presentation mode
@@ -63,11 +63,11 @@ Blablabla
 
 In regular Pluto, this looks like:
 
-<img src="https://github.com/user-attachments/assets/b55b56d5-e258-484f-b7d4-c93d9e5d1e62" alt="Screenshot of Pluto with both sections in view">
+> <img src="https://github.com/user-attachments/assets/b55b56d5-e258-484f-b7d4-c93d9e5d1e62" alt="Screenshot of Pluto with both sections in view">
 
 #### Presentation mode
 In presentation mode, this creates two slides:
 
-<img src="https://github.com/user-attachments/assets/b01a8ba5-152c-4737-8446-d087ecabd497" alt="Screenshot of the first slide with centered content">
-
-<img src="https://github.com/user-attachments/assets/9443276f-16fe-45c8-8e95-b07eaf71d430" alt="Screenshot of the second slide with top-aligned content">
+> <img src="https://github.com/user-attachments/assets/b01a8ba5-152c-4737-8446-d087ecabd497" alt="Screenshot of the first slide with centered content">
+> 
+> <img src="https://github.com/user-attachments/assets/9443276f-16fe-45c8-8e95-b07eaf71d430" alt="Screenshot of the second slide with top-aligned content">

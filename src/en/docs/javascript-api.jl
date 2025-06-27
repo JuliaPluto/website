@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.41
+# v0.20.14
 
 #> [frontmatter]
 #> license_url = "https://github.com/JuliaPluto/featured/blob/2a6a9664e5428b37abe4957c1dca0994f4a8b7fd/LICENSES/Unlicense"
@@ -21,12 +21,14 @@ using InteractiveUtils
 
 # This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
 macro bind(def, element)
-    quote
+    #! format: off
+    return quote
         local iv = try Base.loaded_modules[Base.PkgId(Base.UUID("6e696c72-6542-2067-7265-42206c756150"), "AbstractPlutoDingetjes")].Bonds.initial_value catch; b -> missing; end
         local el = $(esc(element))
         global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : iv(el)
         el
     end
+    #! format: on
 end
 
 # ╔═╡ 571613a1-6b4b-496d-9a68-aac3f6a83a4b
@@ -481,6 +483,30 @@ return html`<h5>Hello world!</h5>`
 </script>
 """)
 
+# ╔═╡ f611bf4e-8d7a-415a-8633-e5b84afe08e6
+html"<span id=lodash>"
+
+# ╔═╡ aaa3e85e-9b09-45ae-9c47-c14979cde65d
+md"""
+# Lodash
+The [Lodash](https://lodash.com/) library is pre-imported, and is available with `_` inside your code.
+"""
+
+# ╔═╡ e32d8a7f-91e3-4d85-b1ca-b6afef83f433
+@htl("""
+<script>
+	const data = $(rand(1:10, 15))
+	const parted = _.partition(data, n => n % 2)
+	
+	return html`<ul>\${
+		_.map(parted, (ns) => {
+			return html`<li>\${ns.join(", ")}</li>`
+		})
+	}</ul>`
+
+</script>
+""")
+
 # ╔═╡ 9d0e67d1-f6ed-4f1d-a181-28a6e9d7016a
 html"<span id=this>"
 
@@ -885,7 +911,7 @@ version = "0.11.5"
 [[CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "e66e0078-7015-5450-92f7-15fbd957f2ae"
-version = "1.0.5+1"
+version = "1.1.1+0"
 
 [[Dates]]
 deps = ["Printf"]
@@ -995,7 +1021,7 @@ version = "1.2.0"
 [[OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
 uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
-version = "0.3.23+2"
+version = "0.3.23+4"
 
 [[Parsers]]
 deps = ["Dates", "PrecompileTools", "UUIDs"]
@@ -1107,7 +1133,7 @@ version = "1.2.13+1"
 [[libblastrampoline_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
-version = "5.8.0+1"
+version = "5.11.0+0"
 
 [[nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -1163,6 +1189,9 @@ version = "17.4.0+2"
 # ╟─b79cb583-6ebb-411d-845e-0e68c1fd5e27
 # ╟─27231bd2-deb3-4c37-849e-b07782439dea
 # ╠═6ce86c19-6f05-4679-b6dc-bd5a9945f316
+# ╟─f611bf4e-8d7a-415a-8633-e5b84afe08e6
+# ╟─aaa3e85e-9b09-45ae-9c47-c14979cde65d
+# ╠═e32d8a7f-91e3-4d85-b1ca-b6afef83f433
 # ╟─9d0e67d1-f6ed-4f1d-a181-28a6e9d7016a
 # ╟─a33c7d7a-8071-448e-abd6-4e38b5444a3a
 # ╠═91f3dab8-5521-44a0-9890-8d988a994076

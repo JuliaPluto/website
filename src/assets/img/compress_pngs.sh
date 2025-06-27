@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # PNG Compression Script
-# Compresses all PNG files in the current directory using pngquant
+# Compresses PNG files using pngquant
+# Can compress all PNGs in current directory or a specific file
 # Shows before/after sizes and calculates total savings
 # Skips files that are already compressed (8-bit or limited palette)
 
@@ -28,34 +29,87 @@ if ! command -v identify &> /dev/null; then
     exit 1
 fi
 
-# Check if there are PNG files in the current directory
-if ! ls *.png >/dev/null 2>&1; then
-    echo -e "${RED}No PNG files found in the current directory.${NC}"
-    exit 1
-fi
+# Parse arguments
+FORCE=false
+TARGET_FILE=""
 
-echo -e "${BLUE}🖼️  PNG Compression Script${NC}"
-echo -e "${BLUE}=========================${NC}\n"
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --force)
+            FORCE=true
+            shift
+            ;;
+        --help)
+            echo -e "${BLUE}Usage:${NC}"
+            echo -e "  ./compress_pngs.sh [OPTIONS] [FILENAME]"
+            echo -e ""
+            echo -e "${BLUE}Options:${NC}"
+            echo -e "  --force    Force compress all files (not recommended)"
+            echo -e "  --help     Show this help"
+            echo -e ""
+            echo -e "${BLUE}Examples:${NC}"
+            echo -e "  ./compress_pngs.sh                    # Compress all PNGs in current directory"
+            echo -e "  ./compress_pngs.sh image.png          # Compress only image.png"
+            echo -e "  ./compress_pngs.sh --force             # Force compress all files"
+            exit 0
+            ;;
+        -*)
+            echo -e "${RED}Unknown option: $1${NC}"
+            echo "Use --help for usage information"
+            exit 1
+            ;;
+        *)
+            if [[ -z "$TARGET_FILE" ]]; then
+                TARGET_FILE="$1"
+            else
+                echo -e "${RED}Error: Only one filename can be specified${NC}"
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+# Determine which files to process
+PNG_FILES=()
+if [[ -n "$TARGET_FILE" ]]; then
+    # Single file specified
+    if [[ ! -f "$TARGET_FILE" ]]; then
+        echo -e "${RED}Error: File '$TARGET_FILE' does not exist.${NC}"
+        exit 1
+    fi
+    
+    # Check if it's a PNG file (case insensitive)
+    if [[ ! "$TARGET_FILE" =~ \.[Pp][Nn][Gg]$ ]]; then
+        echo -e "${RED}Error: '$TARGET_FILE' is not a PNG file.${NC}"
+        exit 1
+    fi
+    
+    PNG_FILES=("$TARGET_FILE")
+    echo -e "${BLUE}🖼️  PNG Compression Script - Single File Mode${NC}"
+    echo -e "${BLUE}=============================================${NC}\n"
+else
+    # Process all PNG files in current directory
+    if ! ls *.png >/dev/null 2>&1; then
+        echo -e "${RED}No PNG files found in the current directory.${NC}"
+        exit 1
+    fi
+    
+    for file in *.png; do
+        if [[ -f "$file" ]]; then
+            PNG_FILES+=("$file")
+        fi
+    done
+    
+    echo -e "${BLUE}🖼️  PNG Compression Script - Directory Mode${NC}"
+    echo -e "${BLUE}===========================================${NC}\n"
+fi
 
 # Quality setting (can be modified)
 QUALITY="65-80"
 
-# Option to create backups
-BACKUP=false
-FORCE=false
-if [[ "$1" == "--backup" ]]; then
-    BACKUP=true
-    echo -e "${YELLOW}Creating backups of original files...${NC}"
-elif [[ "$1" == "--force" ]]; then
-    FORCE=true
+if [[ "$FORCE" == true ]]; then
     echo -e "${YELLOW}Force mode: will compress all files regardless of current state${NC}"
-elif [[ "$1" == "--help" ]]; then
-    echo -e "${BLUE}Usage:${NC}"
-    echo -e "  ./compress_pngs.sh           # Normal compression (skips already compressed)"
-    echo -e "  ./compress_pngs.sh --backup  # Create backups before compression"
-    echo -e "  ./compress_pngs.sh --force   # Force compress all files (not recommended)"
-    echo -e "  ./compress_pngs.sh --help    # Show this help"
-    exit 0
 fi
 
 # Function to check if PNG is already compressed (8-bit or limited colors)
@@ -83,7 +137,7 @@ TO_COMPRESS=()
 ALREADY_COMPRESSED=()
 FAILED_ANALYSIS=()
 
-for file in *.png; do
+for file in "${PNG_FILES[@]}"; do
     if [[ -f "$file" ]]; then
         if [[ "$FORCE" == true ]]; then
             TO_COMPRESS+=("$file")
@@ -121,13 +175,6 @@ if [[ ${#ALREADY_COMPRESSED[@]} -gt 0 ]]; then
 fi
 
 echo ""
-
-# Create backup if requested
-if [[ "$BACKUP" == true ]]; then
-    mkdir -p originals
-    cp "${TO_COMPRESS[@]}" originals/
-    echo -e "${GREEN}✅ Backups created in 'originals' folder${NC}\n"
-fi
 
 # Compress each PNG file that needs compression
 echo -e "${BLUE}🔄 Compressing files...${NC}"
@@ -172,10 +219,6 @@ echo -e "Size before: ${TOTAL_BEFORE:-0}"
 echo -e "Size after:  ${TOTAL_AFTER}"
 echo -e "Space saved: ${SAVINGS_KB}KB"
 echo -e "${GREEN}Reduction: ${SAVINGS_PERCENT}%${NC}"
-
-if [[ "$BACKUP" == true ]]; then
-    echo -e "${YELLOW}\n💡 Original files are backed up in 'originals' folder${NC}"
-fi
 
 echo -e "\n${BLUE}ℹ️  Note: This uses lossy compression (reduces colors to ~256)${NC}"
 echo -e "${BLUE}   Quality setting used: ${QUALITY}${NC}"

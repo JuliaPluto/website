@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>🎥 Recording – experimental video mode — Pluto.jl</title>
-<meta name="description" content='How to use the recording feature of Pluto.jl to create a special HTML video file,' />
+<title>📰 Frontmatter — Pluto.jl</title>
+<meta name="description" content='How to use frontmatter in Pluto.jl notebooks.' />
 
 <link rel="root" href="../../.." />
 
@@ -86,7 +86,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Publishing</h3>
 <ul>
-<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class='active'><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class=''><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class='active'><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li>
 </ul>
 </li>
 <li>
@@ -114,35 +114,51 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="make-a-recording-preview-span-idrecordingspan"><a href="#make-a-recording-preview-span-idrecordingspan" class="anchor"></a>Make a recording <em>(preview)</em> <span id="recording"></span></h1>
-<p>Pluto has one really cool experimental feature, and we’re curious what you think! You can make a <strong>Pluto recording</strong>, which is a bit like recording your screen to a video, but the result is an HTML web page!</p>
-<p>That means that while you watch the video, you can pause and scroll to a different section!</p>
-<blockquote>
-<p><a class="arrow" href="https://plutojl.org/unitful%20sliders/">Take a look at this example video</a></p>
-</blockquote>
-<p>Please try it out, and let us know what you think!</p>
-<h3 id="step-1"><a href="#step-1" class="anchor"></a>Step 1</h3>
-<p>Open your notebook in Pluto, and wait for all cells to finish running.</p>
-<h3 id="step-2"><a href="#step-2" class="anchor"></a>Step 2</h3>
-<p>Press the <strong>Share</strong> button in the top right.</p>
+<h1 id="frontmatter-span-idfrontmatterspan"><a href="#frontmatter-span-idfrontmatterspan" class="anchor"></a>Frontmatter <span id="frontmatter"></span></h1>
+<p>Frontmatter is a way to add metadata to a Pluto.jl notebook, such as the title, description, authors, cover image, license, date and more. This data is used when <strong>sharing notebooks online</strong>, using <a href="../export-html/">Pluto HTML exports</a>, <a href="https://featured.plutojl.org/basic/plutoui.jl#NotebookCard"><code>PlutoUI.NotebookCard</code></a>, <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer</a>, <a href="https://github.com/JuliaPluto/PlutoPages.jl">PlutoPages</a> or <a href="https://pluto.land">pluto.land</a>.</p>
+<p>For example, the <a href="../featured-notebooks/">featured notebooks</a> use frontmatter. When you see the list of all featured notebooks, notice how they all have a title, description, cover image and authors. And they are</p>
+<h2 id="the-frontmatter-gui"><a href="#the-frontmatter-gui" class="anchor"></a>The frontmatter GUI</h2>
+<p>When editing a Pluto notebook, you can open the frontmatter editor by clicking the “Share button” in the top right.</p>
 <img src="../../../assets/img/Share button screenshot.png" alt="Screenshot of the Share button" width="1532" height="282">
-<h3 id="step-3"><a href="#step-3" class="anchor"></a>Step 3</h3>
-<p>Choose “Record”.</p>
-<img src="../../../assets/img/Export options screenshot.png" alt="Screenshot of the export options" width="1804" height="472">
-<h3 id="step-4"><a href="#step-4" class="anchor"></a>Step 4</h3>
-<p>Click to start a recording. You can choose between recording <strong>with microphone audio</strong> or <strong>without audio</strong> (screen only).</p>
-<img src="../../../assets/img/Record buttons screenshot.png" alt="Screenshot of the two record buttons" width="1314" height="246">
-<h3 id="step-5"><a href="#step-5" class="anchor"></a>Step 5</h3>
-<p>You are now recording! You can:</p>
+<p>In the share menu, click the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/newspaper-outline.svg" alt="📰" width=17px style="filter: var(--image-filters);"> icon to open the frontmatter editor.</p>
+<blockquote style="max-height: 300px; overflow-y: auto;">
+<p>Here is a screenshot of the frontmatter editor. Scroll down to see more.</p>
+<img src="../../../assets/img/frontmatter heatmap screenshot.png" alt="Screenshot of the frontmatter editor" width="854" height="1570">
+</blockquote>
+<p>In this editor, you can edit fields and add new fields. You are free to enter any data that you want (which you might want to <a href="#Pluto.frontmatter">use</a> in your custom scripts), but some frontmatter entries have special meaning in the Pluto ecosystem.</p>
+<h3 id="special-frontmatter-entries"><a href="#special-frontmatter-entries" class="anchor"></a>Special frontmatter entries</h3>
+<p>The following keys have special meaning:</p>
 <ul>
-<li>Interact with <code>@bind</code> elements and see your notebook update.</li>
-<li>Scroll through the notebook.</li>
-<li>Speak! Audio can be recorded.</li>
-<li>Make code changes (currently, individual keystrokes cannot be recorded, you need to run the cell to make changes show in the recording).</li>
+<li><strong><code>title</code></strong> – the title of the document. When not used, the notebook filename is used as title. This is used in Pluto.jl HTML exports as the <code>&lt;title&gt;</code> tag.</li>
+<li><strong><code>description</code></strong> – the description of the document. This is used in Pluto.jl HTML exports as the <code>&lt;meta name=&quot;description&quot; content=&quot;...&quot;&gt;</code> tag.</li>
+<li><strong><code>image</code></strong> – the URL of the cover image of the document.</li>
+<li><strong><code>date</code></strong> – the date of the document.</li>
+<li><strong><code>license</code></strong> – the license of the document.</li>
+<li><strong><code>tags</code></strong> – a vector of tags for the document, used by the PlutoPages.jl sidebar and search, and PlutoSliderServer.jl.</li>
+<li><strong><code>layout</code></strong> – the PlutoPages.jl layout file of the document.</li>
+<li><strong><code>order</code></strong> – the order of the document within its category.</li>
 </ul>
-<h3 id="step-6"><a href="#step-6" class="anchor"></a>Step 6</h3>
-<p>When you are done, press “Stop recording”. After a couple seconds, you can choose a location to store the <code>.html</code> file.</p>
-<img src="../../../assets/img/Stop recording button screenshot.png" alt="Screenshot of the Stop Recording button" width="432" height="114">
+<h3 id="open-graph-og-tags"><a href="#open-graph-og-tags" class="anchor"></a>Open Graph (OG) tags</h3>
+<p>The following keys are used as <a href="https://ogp.me/">Open Graph (OG) tags</a> in Pluto.jl HTML exports (using <code>&lt;meta property=&quot;og:...&quot;&gt;</code>):</p>
+<p><code>title</code>, <code>type</code>, <code>description</code>, <code>image</code>, <code>article:tag</code>, <code>url</code>, <code>audio</code>, <code>video</code>, <code>site_name</code>, <code>locale</code>, <code>locale:alternate</code>, <code>determiner</code>.</p>
+<p>Setting these values helps with sharing notebooks on social media and search engine optimization.</p>
+<h3 id="the-author-field"><a href="#the-author-field" class="anchor"></a>The <code>author</code> field</h3>
+<p>There is also a vector <code>author</code> that is used to provide the authors of the notebook. The following fields have special meaning in the Pluto ecosystem:</p>
+<ul>
+<li><strong><code>name</code></strong> – the name of the author.</li>
+<li><strong><code>url</code></strong> – the URL of the author’s website. If this is a github user/organization URL, the author’s avatar will be shown in the notebook.</li>
+<li><strong><code>image</code></strong> - the URL of the author’s avatar. This is not needed if the <code>url</code> is a github URL.</li>
+</ul>
+<h2 id="plutopagesjl"><a href="#plutopagesjl" class="anchor"></a>PlutoPages.jl</h2>
+<p>If you are using <a href="https://github.com/JuliaPluto/PlutoPages.jl">PlutoPages.jl</a> to write your website, you should at least set the following frontmatter entries for every page: <code>layout</code> and <code>tags</code>. (<code>layout</code> is the name of the layout file in the <code>src/_includes/</code> directory.)</p>
+<h2 id="featured-notebooks"><a href="#featured-notebooks" class="anchor"></a>Featured notebooks</h2>
+<p>If you are writing a featured notebook, check out other featured notebook files to see which frontmatter entries are required.</p>
+<h2 id="span-idplutofrontmatteraccessing-frontmatter-from-juliaspan"><a href="#span-idplutofrontmatteraccessing-frontmatter-from-juliaspan" class="anchor"></a><span id="Pluto.frontmatter">Accessing frontmatter from Julia</span></h2>
+<p>If you are writing a script to process Pluto notebooks, you can access the frontmatter data using the <strong><code>Pluto.frontmatter</code></strong> function. This function takes a notebook path as an argument, and returns a <code>Dict</code> with the frontmatter data.</p>
+<pre><code class="language-julia">path = &quot;/path/to/notebook.jl&quot;
+frontmatter = Pluto.frontmatter(path)
+@info &quot;Written by&quot; frontmatter[&quot;author&quot;]
+</code></pre>
 </div>
 </div>
 </pluto-output>

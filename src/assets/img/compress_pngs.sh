@@ -112,19 +112,19 @@ if [[ "$FORCE" == true ]]; then
     echo -e "${YELLOW}Force mode: will compress all files regardless of current state${NC}"
 fi
 
-# Function to check if PNG is already compressed (8-bit or limited colors)
+# Function to check if PNG is already compressed (low bit-depth AND limited colors)
 is_already_compressed() {
     local file="$1"
     local depth=$(identify -format "%[bit-depth]" "$file" 2>/dev/null || echo "unknown")
     local colors=$(identify -format "%[colors]" "$file" 2>/dev/null || echo "999999")
     
-    # If bit depth is 8 or less, it's likely already compressed
-    if [[ "$depth" == "8" ]] || [[ "$depth" == "4" ]] || [[ "$depth" == "1" ]]; then
+    # If it has 256 colors or fewer, it's likely already quantized
+    if [[ "$colors" =~ ^[0-9]+$ ]] && [[ "$colors" -le 256 ]]; then
         return 0  # Already compressed
     fi
     
-    # If it has 256 colors or fewer, it's likely already quantized
-    if [[ "$colors" =~ ^[0-9]+$ ]] && [[ "$colors" -le 256 ]]; then
+    # If bit depth is very low (1-4 bits) AND has few colors, it's compressed
+    if ([[ "$depth" == "4" ]] || [[ "$depth" == "1" ]]) && [[ "$colors" =~ ^[0-9]+$ ]] && [[ "$colors" -le 16 ]]; then
         return 0  # Already compressed
     fi
     
@@ -222,5 +222,5 @@ echo -e "${GREEN}Reduction: ${SAVINGS_PERCENT}%${NC}"
 
 echo -e "\n${BLUE}ℹ️  Note: This uses lossy compression (reduces colors to ~256)${NC}"
 echo -e "${BLUE}   Quality setting used: ${QUALITY}${NC}"
-echo -e "${BLUE}   Skipped files with ≤8-bit depth or ≤256 colors${NC}"
+echo -e "${BLUE}   Skipped files with ≤256 colors or very low bit-depth${NC}"
 echo -e "${BLUE}   For lossless compression, use optipng or similar tools.${NC}" 

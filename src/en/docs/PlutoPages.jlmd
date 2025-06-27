@@ -1,0 +1,29 @@
+---
+title: "🏗️ PlutoPages.jl"
+description: "How to use PlutoPages.jl to generate static websites from Pluto notebooks."
+tags: ["docs", "publishing", "PlutoPages", "share", "web", "static"]
+layout: "md.jlmd"
+order: 10
+---
+
+# PlutoPages.jl
+[PlutoPages.jl](https://github.com/JuliaPluto/PlutoPages.jl) is a _Static Site Generator_ designed to work well with Pluto notebooks. It's a tool that turns a folder of files (Pluto notebook, Markdown files, images, and more) into a complete static website, that you can host using a service like GitHub Pages or Netlify. It is heavily inspired by [Eleventy](https://www.11ty.dev/), so you can also read their documentation to understand the concepts better. 
+
+PlutoPages allows for more complex sites than PlutoSliderServer.jl, since it is a full-fledged static site generator. Compared to Eleventy, it has direct support for Pluto notebooks (and their [frontmatter](../frontmatter/)). This means that you can easily build things like the sidebar on the left (which is generated from frontmatter fields `title`, `tags` and `order`).
+
+Check out the [PlutoPages.jl README](https://github.com/JuliaPluto/PlutoPages.jl) to get started.
+
+## Combination with PlutoSliderServer.jl
+You can combine PlutoPages.jl with PlutoSliderServer.jl to add interactivity to your website. The idea is as follows:
+- Set up a PlutoSliderServer.jl instance that runs all notebooks in the `src/` folder. Serve it on a domain, like `plutosliderserver.my-site.org`.
+- Set up PlutoPages.jl to generate a static website from the `src/` folder in a GitHub action. Publish the site with GitHub pages or Netlify, e.g. `my-site.org`.
+- Link the two together using `PlutoDeployment.toml`: add the line `slider_server_url = "https://plutosliderserver.my-site.org"`. Now your website will regenerate, and the PlutoPages.jl output will be set to use the slider server for interactivity.
+
+
+## Who uses PlutoPages.jl?
+PlutoPages is relatively new (2023). It is being used in the following places:
+- This website!
+- The course [Computational Thinking at MIT](https://computationalthinking.mit.edu/)
+- (WIP) The repository [computational-thinking-template](https://github.com/JuliaPluto/computational-thinking-template)
+
+

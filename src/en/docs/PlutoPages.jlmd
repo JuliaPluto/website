@@ -1,5 +1,5 @@
 ---
-title: "💫 PlutoPages.jl"
+title: "🏗️ PlutoPages.jl"
 description: "How to use PlutoPages.jl to generate static websites from Pluto notebooks."
 tags: ["docs", "publishing", "PlutoPages", "share", "web", "static"]
 layout: "md.jlmd"

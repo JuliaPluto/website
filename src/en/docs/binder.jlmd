@@ -1,0 +1,35 @@
+---
+title: "💫 PlutoPages.jl"
+description: "How to use PlutoPages.jl to generate static websites from Pluto notebooks."
+tags: ["docs", "publishing", "PlutoPages", "share", "web", "static"]
+layout: "md.jlmd"
+order: 7.5
+---
+
+# Binder support
+Pluto notebooks can be run in [Binder](https://mybinder.org/), an awesome service that allows you to run scientific computational notebooks in the cloud. This service is really useful for science accessibility, and for promoting reproducibility.
+
+Using Binder with Pluto is a bit different from using it with Jupyter and other languages. This is because Binder is designed directly for Jupyter, and it needs some convincing to serve Pluto notebooks instead. The setup is also different – instead of creating a repository on GitHub for your Binder project, we already created one repository for everyone ([`fonsp/pluto-on-binder`](https://github.com/fonsp/pluto-on-binder)), and Binder is built-in to all Pluto notebook exports.
+
+## Binder for your notebooks
+This is really simple! Just create an [HTML export](../export/) of your notebook, that's it! Each export from Pluto binder functionality built-in, without additional setup.
+
+When you view an HTML export from Pluto (like [this featured notebook](https://featured.plutojl.org/turtles.html)), you will see a button in the top right corner that says "Edit or run". Clicking this will open a new popup with the options for running the notebook. You can either download the notebook file and run it locally with Pluto, or run the notebook with Binder, directly in your browser.
+
+When you share your notebook file (e.g. with [pluto.land](https://pluto.land/)), this button is also visible, and people can run the notebook with binder.
+
+## Try out Pluto
+You can also use Binder to try out Pluto.jl. Go to [plutojl.org/#try](https://plutojl.org/#try) to get started.
+
+
+
+
+## Launch time
+We have created a Binder image that is optimized to launch Pluto as fast as possible. Yet, it can still take a while to run your notebook, because packages from the notebook need to be installed and precompiled. In some cases, the launch may fail because the precompilation uses too much memory. 
+
+We think it might be possible to improve this by creating a custom Binder image that is optimized for your notebook, by installing and precompiling the notebook packages during the binder build process, so that they are ready to be loaded when the binder image is launched. If you're interested in helping us with this, please reach out!
+
+
+
+
+

@@ -42,7 +42,8 @@ body {
 }
 
 p,
-ol {
+ol,
+ul {
     line-height: 1.5;
 }
 

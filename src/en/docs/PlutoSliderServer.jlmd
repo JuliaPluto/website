@@ -51,3 +51,6 @@ The Pluto developers use PlutoSliderServer for:
 If you have any questions, or you want help setting up PlutoSliderServer.jl, please reach out in all the usual Pluto channels! (Julia Discourse, Julia Slack, Julia Zulip, GitHub issues, etc.).
 
 
+
+<img src="$(root_url)/assets/img/collatz/c3.png" aria-hidden="true" width="700" height="200">
+

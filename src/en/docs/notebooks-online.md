@@ -46,7 +46,7 @@ If you have a GitHub account, then this is the easiest option. Go to [github.com
 
 <img alt="screenshot of the actions page, showing a currently running workflow" src="$(root_url)/assets/img/GitHub Actions workflow screenshot.png" width="1764" height="816">
 
-## Netlify drop: *"quick and dirty"*
+## Netlify drop: *"easy for folders"*
 If you just have a couple of `.html` files that you exported with Pluto, then you can use [netlify drop](https://app.netlify.com/drop) to put them online as a website. Put all `.html` files in one folder on your computer, and drag the folder into netlify drop. This will give you a website!
 
 > This only works with `.html` files that you exported yourself, not with `.jl` notebook files.

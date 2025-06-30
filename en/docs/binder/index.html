@@ -62,7 +62,7 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li>
 </ul>
 </li>
 <li>
@@ -116,17 +116,19 @@ window.pluto_recording_audio_url = undefined;
 <div class="markdown">
 <h1 id="binder"><a href="#binder" class="anchor"></a>Binder</h1>
 <p>Pluto notebooks can be run in <a href="https://mybinder.org/">Binder</a>, an awesome service that allows you to run scientific computational notebooks in the cloud. This service is really useful for science accessibility, and for promoting reproducibility.</p>
+<div class="admonition info"><p class="admonition-title">Different from Jupyter</p>
 <p>Using Binder with Pluto is a bit different from using it with Jupyter and other languages. This is because Binder is designed directly for Jupyter, and it needs some convincing to serve Pluto notebooks instead. The setup is also different – instead of creating a repository on GitHub for your Binder project, we already created one repository for everyone (<a href="https://github.com/fonsp/pluto-on-binder"><code>fonsp/pluto-on-binder</code></a>), and Binder is built-in to all Pluto notebook exports.</p>
+</div>
 <h2 id="binder-for-your-notebooks"><a href="#binder-for-your-notebooks" class="anchor"></a>Binder for your notebooks</h2>
-<p>This is really simple! Just create an <a href="../export/">HTML export</a> of your notebook, that’s it! Each export from Pluto binder functionality built-in, without additional setup.</p>
+<p>This is really simple! <strong>Just create an <a href="../export/">HTML export</a> of your notebook, that’s it!</strong> Each export from Pluto binder functionality built-in, without additional setup.</p>
 <p>When you view an HTML export from Pluto (like <a href="https://featured.plutojl.org/turtles.html">this featured notebook</a>), you will see a button in the top right corner that says “Edit or run”. Clicking this will open a new popup with the options for running the notebook. You can either download the notebook file and run it locally with Pluto, or run the notebook with Binder, directly in your browser.</p>
 <p>When you share your notebook file (e.g. with <a href="https://pluto.land/">pluto.land</a>), this button is also visible, and people can run the notebook with binder.</p>
 <img src="../../../assets/img/Edit or run dialog.png" alt="Screenshot of the Edit or run dialog" width="1602" height="1050">
-<h2 id="try-out-pluto"><a href="#try-out-pluto" class="anchor"></a>Try out Pluto</h2>
-<p>You can also use Binder to try out Pluto.jl. Go to <a href="https://plutojl.org/#try">plutojl.org/#try</a> to get started.</p>
 <h2 id="launch-time"><a href="#launch-time" class="anchor"></a>Launch time</h2>
-<p>We have created a Binder image that is optimized to launch Pluto as fast as possible. Yet, it can still take a while to run your notebook, because packages from the notebook need to be installed and precompiled. In some cases, the launch may fail because the precompilation uses too much memory.</p>
-<p>We think it might be possible to improve this by creating a custom Binder image that is optimized for your notebook, by installing and precompiling the notebook packages during the binder build process, so that they are ready to be loaded when the binder image is launched. If you’re interested in helping us with this, please reach out!</p>
+<p>We have created a Binder image that is optimized to launch Pluto as fast as possible. Yet, it can still take a while to run your notebook, because packages from the notebook need to be installed and precompiled. In some cases, the launch may even fail because the precompilation uses too much memory.</p>
+<p>We think it might be possible to improve this by creating a custom Binder image that is optimized for your notebook, by installing and precompiling the notebook packages during the binder build process, so that they are ready to be loaded when the binder image is launched. <em>If you’re interested in helping us with this, please reach out!</em></p>
+<h1 id="use-binder-to-try-out-pluto"><a href="#use-binder-to-try-out-pluto" class="anchor"></a>Use Binder to try out Pluto</h1>
+<p>You can also use Binder to try out Pluto.jl. Go to <a href="https://plutojl.org/#try">plutojl.org/#try</a> to get started.</p>
 </div>
 </div>
 </pluto-output>

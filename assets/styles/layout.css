@@ -169,6 +169,7 @@ body:not(.adsfasdfasdf):not(.sdfsdfdsffdsfds) {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    line-height: 1;
 }
 
 #pages-sidebar li li.active a {

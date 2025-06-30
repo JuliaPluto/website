@@ -62,7 +62,7 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li>
 </ul>
 </li>
 <li>
@@ -127,6 +127,7 @@ Pluto.run()
 </code></pre>
 <h2 id="browser-session"><a href="#browser-session" class="anchor"></a>Browser session</h2>
 <p>When Pluto starts running, it automatically opens a new browser tab that connects to <code>http://localhost:1234</code>, which is the address of the Pluto server. You will see the <em>main menu</em> of Pluto.</p>
+<img src="../../../assets/img/collatz/c9.png" aria-hidden="true" width="700" height="200">
 <h1 id="the-pluto-main-menu-span-idmain-menuspan"><a href="#the-pluto-main-menu-span-idmain-menuspan" class="anchor"></a>The Pluto main menu <span id="main-menu"></span></h1>
 <p>The first page you see when you open a new browser tab is the <em>main menu</em> of Pluto. It’s the page that says “Welcome to Pluto”. From here, you can <a href="../files/#new">create a new notebook</a>, <a href="../files/#open">open an existing notebook</a>, or you can take a look at the featured notebooks, further down the page.</p>
 <img src="../../../assets/img/main menu.png" alt="screenshot of the Pluto main menu, showing recent notebooks and a textbox to open a recent notebook" width="1762" height="1494">
@@ -140,6 +141,7 @@ Pluto.run()
 <h2 id="multiple-notebooks"><a href="#multiple-notebooks" class="anchor"></a>Multiple notebooks</h2>
 <p>Something important to know: <strong>each Pluto session</strong> (created by running <code>Pluto.run()</code>) can run <strong>multiple notebooks</strong> at the same time. The notebooks in your Pluto session are managed from the Pluto main menu. In the screenshot above, you see the Pluto main menu, with 3 notebooks currently running.</p>
 <p>If you use the main menu to create a new notebook or open a notebook, it will be <strong>added to the session</strong>. If you go back to the main menu, you can add more notebooks to the session.</p>
+<img src="../../../assets/img/collatz/c6.png" aria-hidden="true" width="700" height="200">
 <h1 id="advanced-mirror-view"><a href="#advanced-mirror-view" class="anchor"></a>Advanced: Mirror view</h1>
 <p>Pluto has a special feature – you can open the same notebook in two different browser windows, and they will stay synchronized. This is useful if you are working with two parts of a notebook at the same time. For example, you can change your analysis code (at the bottom of the notebook) in one window, and you can watch the plots (at the top of the notebook) in a second window.</p>
 <p>To use mirror view, you first open a notebook, and you copy the URL of the notebook from the address bar. This will look like <code>http://localhost:1234/edit?id=0ec9caa2-3fa7-11f0-3e46-3bcef32ce8e3</code>. Then open a new browser window, and paste the URL in the address bar. Now you have two windows that are connected to the same notebook, and they will stay synchronized.</p>

@@ -6,7 +6,7 @@ layout: "md.jlmd"
 order: 10
 ---
 
-# PlutoPages.jl
+# PlutoPages.jl <em style="opacity: 0.5">(advanced)</em>
 [PlutoPages.jl](https://github.com/JuliaPluto/PlutoPages.jl) is a _Static Site Generator_ designed to work well with Pluto notebooks. It's a tool that turns a folder of files (Pluto notebook, Markdown files, images, and more) into a complete static website, that you can host using a service like GitHub Pages or Netlify. It is heavily inspired by [Eleventy](https://www.11ty.dev/), so you can also read their documentation to understand the concepts better. 
 
 PlutoPages allows for more complex sites than PlutoSliderServer.jl, since it is a full-fledged static site generator. Compared to Eleventy, it has direct support for Pluto notebooks (and their [frontmatter](../frontmatter/)). This means that you can easily build things like the sidebar on the left (which is generated from frontmatter fields `title`, `tags` and `order`).

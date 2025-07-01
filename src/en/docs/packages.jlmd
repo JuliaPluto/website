@@ -27,7 +27,9 @@ Pluto will automatically install or remove packages while you work on your noteb
 <img width="541" height="137" alt="Screenshot of code that imports the Plots package. Pluto says that the package will be installed when you run the cell." src="$(root_url)/assets/img/Import Plots package screenshot.png">
 
 
-> 🙋 Most packages will write _installation instructions_ in their documentation: like "Run `julia> ] install Example` to install `Example`". If you are using Pluto, you should **skip these instructions**, and import the package directly, using `import Example` or `using Example`.
+> 🙋 Most packages will write _installation instructions_ in their documentation: like "Run `julia> ] install Example` to install `Example`". 
+> 
+> If you are using Pluto, you should **skip these instructions**, and import the package directly, using `import Example` or `using Example`.
 
 ### Logs
 

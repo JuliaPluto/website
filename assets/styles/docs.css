@@ -1,8 +1,11 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"); */
 
+:root {
+    --plutojl-docs-font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 pluto-output {
-    /* font-family: "Jaldi", sans-serif; */
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* font-family: "Nunito", sans-serif; */
+    font-family: var(--plutojl-docs-font-family);
     font-size: 16px;
     overflow-y: hidden;
 }
@@ -13,10 +16,15 @@ pluto-output h3,
 pluto-output h4,
 pluto-output h5,
 pluto-output h6 {
-    /* font-family: Jaldi, sans-serif; */
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--plutojl-docs-font-family);
+    /* font-family: Nunito, ui-sans-serif, sans-serif; */
     letter-spacing: -0.02ch;
-    margin-block-end: .2em;
+    margin-block-end: 0.4em;
+    border-bottom: none;
+}
+
+pluto-output div.admonition .admonition-title {
+    font-family: var(--plutojl-docs-font-family);
 }
 
 pluto-output .pluto-docs-binding h1 {
@@ -24,10 +32,19 @@ pluto-output .pluto-docs-binding h1 {
 }
 
 pluto-output > div > div > h1 {
+    margin-block-start: 5.5em !important;
+}
+
+pluto-cell:first-child pluto-output > div > div > :is(h1, h2, h3):first-child {
+    margin-block-start: 0 !important;
+}
+
+pluto-output > div > div > h2 {
     margin-block-start: 3.5em !important;
 }
-pluto-cell:first-child pluto-output > div > div > h1:first-child {
-    margin-block-start: 0 !important;
+
+pluto-output > div > div > :is(h3, h4, h5, h6) {
+    margin-block-start: 2.5em !important;
 }
 
 pluto-output .pluto-docs-binding h2 {

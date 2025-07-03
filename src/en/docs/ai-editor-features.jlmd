@@ -38,7 +38,7 @@ We notice that people often use Pluto side-by-side with other AI chat systems, l
 
 There is a button to generate a prompt about a cell with context from your notebook. When you ask a question like "What does this code do?" or "Help me add a linear trendline", it helps to tell the AI model not just the code, but also code from other cells, packages, current output, etc. The prompt generation will automatically add the relevant context to the prompt, so you can get better answers from AI models.
 
-<img src="$(root_url)/assets/img/ai prompt generation beta.png" alt="Screenshot of the Share button" width="950" height="826">
+<img src="$(root_url)/assets/img/ai prompt generation beta.png" alt="Screenshot of the AI prompt generation UI" width="950" height="826">
 
 Here is a video of the feature in action:
 

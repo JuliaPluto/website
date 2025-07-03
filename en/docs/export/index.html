@@ -119,14 +119,24 @@ window.pluto_recording_audio_url = undefined;
 <p>After writing your Pluto notebook, you have a couple options to <strong>export</strong> your notebook, to share with someone else. The following options are available directly from the Pluto editor:</p>
 <ul>
 <li><svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="24,0 48,40 0,40" fill="#a270ba" stroke="none"></polygon></svg> <a href="../export-julia/"><strong>Notebook file (<code>.jl</code>)</strong></a> – This is how Pluto stores your notebook file, and you can share it directly with someone else so they can run your notebook.</li>
-<li><svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#E86F51" stroke="none"></polygon></svg> <a href="../export-html/"><strong>Static HTML</strong></a> – A snapshot of your notebook with outputs in a versatile format.</li>
-<li><svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#619b3d" stroke="none"></polygon></svg> <a href="../export-pdf/"><strong>PDF</strong></a> – A traditional PDF document for printing.</li>
+<li><svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#E86F51" stroke="none"></polygon></svg> <a href="../export-html/"><strong>Static HTML</strong></a> – A snapshot of your notebook with outputs in a versatile format. You don’t need to have Julia or Pluto installed to view it.</li>
+<li><svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em; margin-bottom: -0.1em;"><polygon points="0,0 0,40 40,40 40,0" fill="#619b3d" stroke="none"></polygon></svg> <a href="../export-pdf/"><strong>PDF</strong></a> – A traditional PDF document for printing or sharing online.</li>
 <li><svg width="48" height="48" viewBox="0 0 48 48" style="height: 0.7em; width: 0.7em; margin-left: 0.3em; margin-right: 0.2em;"><circle cx="24" cy="24" r="24" fill="#E86F51"></circle></svg> <a href="../export-recording/"><strong>Recording</strong></a> – A special type of video!</li>
 </ul>
 <blockquote>
-<p>Press the <strong>Share</strong> button in the top right.</p>
+<p>To access these options, press the <strong>Share</strong> button in the top right.</p>
 <img src="../../../assets/img/Share button screenshot.png" alt="Screenshot of the Share button" width="1532" height="282">
 </blockquote>
+<div class="admonition info"><p class="admonition-title">🌟 New: pluto.land</p>
+<p>Check out the new <a href="https://pluto.land/">pluto.land</a>, a website to easily share your Pluto notebooks!</p>
+</div>
+<h2 id="publishing-on-the-web"><a href="#publishing-on-the-web" class="anchor"></a>Publishing on the web</h2>
+<p>The options above are useful if you want <strong>a file to share</strong> with someone else. If you want to publish your notebook on the web (with a URL), or if you want live interactivity (with <code>@bind</code>) on your website, you need one of the more advanced options below.</p>
+<h3 id="notebooks-as-websites"><a href="#notebooks-as-websites" class="anchor"></a>Notebooks as websites</h3>
+<p>There are various ways to publish your notebook as a website, which makes it ideal for sharing with others. <a href="../notebooks-online/" class="arrow">Learn more</a></p>
+<h3 id="notebooks-as-interactive-websites"><a href="#notebooks-as-interactive-websites" class="anchor"></a>Notebooks as <em>interactive</em> websites</h3>
+<p>Pluto notebooks can be interactive, using the <code>@bind</code> macro. But when you export your notebook to a file, the <code>@bind</code> interactions do not work. This is because <code>@bind</code> requires a running Julia process to work. Every time that you move a slider or click a button, a Julia process needs to calculate the new reactive values.</p>
+<p>So how do you get <strong>live interactivity on your website</strong>? With <a href="../PlutoSliderServer/" class="arrow">PlutoSliderServer.jl</a></p>
 </div>
 </div>
 </pluto-output>

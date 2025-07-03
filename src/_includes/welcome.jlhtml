@@ -82,9 +82,9 @@
 
                     <p dir="auto">In this example, changing the parameter <code>A</code> and running the first cell will directly re-evaluate the second cell and display the new plot.</p>
                     
-                    <img alt="interactivity screencap" src="$(root_url)/assets/img/Interactivity screencap.gif" width="600" height="738">
+                    <img alt="Example of interactive ODE" src="$(root_url)/assets/img/interactive ode.gif" width="496" height="628">
 
-                    <a href="en/docs/" class="arrow">Learn more</a>
+                    <a href="en/docs/reactivity/" class="arrow">Learn more</a>
                 </card-text>
             </p-card>
 
@@ -96,13 +96,13 @@
                     
                     <p>Pluto lets you <em>bind</em> a Julia variable to an GUI element. Moving a slider from 0 to 100 will actually change one of your variables from <code>0</code> to <code>100</code>! Combined with reactivity, this is a very powerful tool!</p>
 
-                    <img alt="@bind macro screencap" src="$(root_url)/assets/img/Bind macro screencap.gif" width="884" height="330">
+                    <img alt="PlutoUI Slider example" src="$(root_url)/assets/img/basic slider.gif" width="496" height="264">
                     
                     <p>It's that simple to make your Julia code come to life! That's because reactivity and widget interactivity are the same concept! Less to learn, more to discover.</p>
 
                     <p>The package <a href="https://github.com/fonsp/PlutoUI.jl">PlutoUI.jl</a> contains lots of common widgets like sliders, textfields and buttons. Need something different? PlutoUI.jl was made by us, but anyone can create their own special widgets! We give you full control over HTML, CSS and JS, with powerful API to connect a web component to Julia.</p>
                     
-                    <a href="en/docs/" class="arrow">Learn more</a>
+                    <a href="https://featured.plutojl.org/basic/plutoui.jl" class="arrow">Learn more</a>
                 </card-text>
                 
             </p-card>
@@ -133,7 +133,7 @@
                     <p>Pluto uses code analysis to understand which packages are being used in a notebook, and it <strong>automatically manages a package environment</strong> for your notebook. You no longer need to install packages, you can directly import any registered package like <code>Plots</code> or <code>DataFrames</code> and use it.</p>
                     
                     <p class="extra">To ensure reproducibility, the information to exactly reproduce the package environment is <strong>stored in your notebook file</strong>. When someone else opens your notebook with Pluto, the exact same package environment will be used, and packages will work on their computer, automatically!</p>
-                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                    <a href="en/docs/packages/" class="arrow">Learn more</a>
                 </card-text>
                 <card-showcase>
                     <img alt="package manager screencap" src="$(root_url)/assets/img/Package manager screencap.gif" width="978" height="548">
@@ -154,7 +154,7 @@
                     <p>
                         No hidden state, no hidden bugs.
                     </p>
-                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                    <!-- <a href="en/docs/" class="arrow">Learn more</a> -->
                 </card-text>
             </p-card>
 
@@ -245,7 +245,7 @@
 
                     <p dir="auto">Are you interested in using Pluto for your class? Here are some presentations by people who are using it already: <a href="https://www.youtube.com/watch?v=LFRI3s0DE-o" rel="nofollow">the MIT team</a>, <a href="https://www.youtube.com/watch?v=6Qs5EXDpZBI" rel="nofollow">Gerhard Dorn</a>, <a href="https://www.youtube.com/watch?v=NrIxgnFXslg" rel="nofollow">Daniel Molina</a>, <a href="https://youtu.be/GnEKgW23PvY?t=586" rel="nofollow">Henki W. Ashadi</a> and <a href="https://www.youtube.com/watch?v=8H5KgSIWsWQ" rel="nofollow">Max Köhler</a>.</p>
 
-                    <a href="https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%8E%81-Package-management" class="arrow">Learn more</a>
+                    <a href="en/docs/education/" class="arrow">Learn more</a>
                 </card-text>
                 <card-showcase>
                     <video src="$(root_url)/assets/img/Grant Sanderson 3Blue1Brown Pluto demo.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 width-fit" style="max-height:640px;"></video>

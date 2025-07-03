@@ -19,11 +19,11 @@ Students and teachers are our primary target audience, and we are committed to W
 
 
 
-# How can you use Pluto for education?
+# Why is Pluto good for education?
 Here's our evil plan to take over the world: 
-1. We make programming and exploration easy – this makes it great for writing lectures notes. You can experiment with your idea, and when you're done, you organize the code and add some text.
-2. Then we add interactivity in a very accessible way (easy, but not as flexible as some other tools) – and you can write awesome lectures with sliders, buttons and animation! 
-3. When it's the students' turn to write code, we make Pluto as easy as possible to set up and use, with a coding experience that is designed specifically for users that are new to programming and Julia. 
+1. We make **programming and exploration easy** – this makes it great for writing lectures notes. You can experiment with your idea, and when you're done, you organize the code and add some text.
+2. Then we add **interactivity in a very accessible way** (easy, but not as flexible as some other tools) – and you can write awesome lectures with sliders, buttons and animation! 
+3. When it's the students' turn to write code, we make Pluto as **easy as possible to set up and use**, with a coding experience that is designed specifically for users that are new to programming and Julia. 
 
 Let's look in more detail at writing lectures and assignments in Pluto.
 

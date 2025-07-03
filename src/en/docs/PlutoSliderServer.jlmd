@@ -9,7 +9,7 @@ order: 9
 # PlutoSliderServer.jl
 Pluto notebooks can be made interactive, using the `@bind` macro. However, when you [export your notebook to a file](../export/), the `@bind` interactions do not work. This is because `@bind` requires a running Julia process to work. Every time that you move a slider or click a button, a Julia process needs to calculate the new reactive values.
 
-So how do you get live interactivity on your website? You could run a public Pluto.jl server that runs the notebook, but this has a couple of problems: when someone edits the notebook, all future visitors will see these updates – it will quickly stop working. That's not what we want! You could start a new Pluto session for every visitor (like [binder](../binder/)), but this means that every visitor needs to wait for the notebook to load, since Julia is quite slow.
+So how do you get **live interactivity on your website**? You could run a public Pluto.jl server that runs the notebook, but this has a couple of problems: when someone edits the notebook, all future visitors will see these updates – it will quickly stop working. That's not what we want! You could start a new Pluto session for every visitor (like [binder](../binder/)), but this means that every visitor needs to wait for the notebook to load, since Julia is quite slow.
 
 **👉 This is where [PlutoSliderServer.jl](https://github.com/JuliaPluto/PlutoSliderServer.jl) comes in.** It is a web server that runs Pluto notebooks, and it can **only** calculate changes from `@bind` updates, code changes are not supported. This, together with some other tricks, means that every visitor gets their own isolated experience, but without the need to start a new Julia process for every visitor.
 

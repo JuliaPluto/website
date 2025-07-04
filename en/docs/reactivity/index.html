@@ -116,6 +116,8 @@ window.pluto_recording_audio_url = undefined;
 <div class="markdown">
 <h1 id="reactivity-in-plutojl"><a href="#reactivity-in-plutojl" class="anchor"></a>Reactivity in Pluto.jl</h1>
 <p>Pluto notebooks are <strong>reactive</strong>! This means that when you change a value or a line of code, Pluto automatically updates all the cells that depend on it. No need to run cells one by one — Pluto figures out what needs to be updated, and does it for you. ✨</p>
+<p>In this example, changing the parameter <code>A</code> and running the first cell will directly re-evaluate the second cell and display the new plot.</p>
+<img alt="Example of interactive ODE" src="../../../assets/img/interactive ode.gif" width="496" height="628">
 <h2 id="why-is-reactivity-important"><a href="#why-is-reactivity-important" class="anchor"></a>Why is reactivity important?</h2>
 <ul>
 <li><strong>Reproducibility:</strong> Your results always match your code. If you change an input, all outputs update instantly.</li>
@@ -127,7 +129,7 @@ window.pluto_recording_audio_url = undefined;
 <p>Global variables are <strong>deleted</strong> when their definition is removed. For example, if you change a cell from <code>apple = 1</code> to <code>banana = 2</code>, then the <code>apple</code> variable will be deleted. It does not “linger around” in the background.</p>
 <p>You are not allowed to <strong>redefine a global variable</strong> in a second cell. Two cells cannot both define <code>x</code>.</p>
 <h1 id="how-does-it-work"><a href="#how-does-it-work" class="anchor"></a>How does it work?</h1>
-<p>Pluto tracks the dependencies between cells by looking at the syntax tree of your code. Pluto searches for variables assignemtns and referneces, and it uses this to build up a <strong>reactive dependency graph</strong> of your notebook.</p>
+<p>Pluto tracks the dependencies between cells by looking at the syntax tree of your code. Pluto searches for variable assignments and references, and it uses this to build up a <strong>reactive dependency graph</strong> of your notebook.</p>
 <p>Using this dependency graph, Pluto knows how cells relate to each other. Pluto can search “up the tree” to find out which cells should run before, and “down the tree” to find out which cells depend on a given cell.</p>
 <p>Read more about Pluto’s reactivity algorithm in:</p>
 <ul>
@@ -135,8 +137,8 @@ window.pluto_recording_audio_url = undefined;
 <li><a href="../PlutoDependencyExplorer/" class="arrow">PlutoDependencyExplorer.jl</a></li>
 </ul>
 <h1 id="help-i-want-to-turn-it-off"><a href="#help-i-want-to-turn-it-off" class="anchor"></a>Help I want to turn it off!</h1>
-<p>Pluto does not have a global switch to turn off reactivity, there is no “Jupyter mode”.</p>
-<p>However, you can turn off reactivity for a specific cell! You can <strong>disable a cell</strong>. More on this later!</p>
+<p>Pluto does not have a global switch to turn off reactivity, there is no “Jupyter mode”. However, you can turn off reactivity for a specific cell! You can <strong>disable a cell</strong>. More on this later!</p>
+
 </div>
 </div>
 </pluto-output>

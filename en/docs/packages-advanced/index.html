@@ -192,13 +192,17 @@ end
 <br>
 <h1 id="advanced-edit-the-notebook-environment"><a href="#advanced-edit-the-notebook-environment" class="anchor"></a>Advanced: edit the notebook environment</h1>
 <p>Pluto.jl includes a helper function <code>Pluto.activate_notebook_environment</code> that activates a notebook Pkg environment in the REPL:</p>
-<pre><code class="language-julia">julia&gt; import Pluto
-<p>julia&gt; Pluto.activate_notebook_environment(&quot;~/Documents/hello.jl&quot;)</p>
-<p>julia&gt; ]</p>
-<p>(hello.jl) &gt; status
-</code></pre></p>
+<pre><code class="language-julia-repl">julia&gt; import Pluto
+
+julia&gt; Pluto.activate_notebook_environment(&quot;~/Documents/hello.jl&quot;)
+
+julia&gt; ]
+
+(hello.jl) &gt; status
+</code></pre>
 <p>After activating a notebook environment, you can use the <a href="https://pkgdocs.julialang.org/v1/repl/">Pkg REPL</a> to view or modify the embedded environment. Changes from either side are synchronised (i.e. Pkg REPL changes are written to the notebook, editing the notebook updates the Pkg REPL env). Watch the demo video:</p>
 <p><video src="../../../assets/img/Package update demo.mov" controls="controls" muted="muted"></video></p>
+
 </div>
 </div>
 </pluto-output>

@@ -6,7 +6,7 @@ order: 1
 ---
 
 # Install Pluto on your own computer
-> Go to [plutojl.org/#install](https://plutojl.org/#install) for instructions!
+> 👉 Go to [plutojl.org/#install](https://plutojl.org/#install) for instructions!
 
 ## System requirements
 Pluto works on Windows, Linux, MacOS, ChromeOS and Android. You need a computer with at least **4GB RAM**, but 8GB is recommended for running multiple notebooks in parallel, or for using large packages.
@@ -24,7 +24,7 @@ Pluto works on a chromebook! You need to set up the [Linux development environme
 It is not possible to run Julia on iPad or iOS (we think)... But you could run Pluto on another computer or a web server, and access Pluto remotely on your iPad or iOS phone. 
 
 
-# Try Pluto without installation
+# Pluto without installation
 You can try Pluto in your browser without installation before installing! Go to [plutojl.org/#try](https://plutojl.org/#install) to learn more. Note that your files will not be stored in the cloud!
 
 

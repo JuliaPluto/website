@@ -128,7 +128,7 @@ Placing all code in a single `begin` block ensures that the lines will run in th
 
 Pluto.jl includes a helper function `Pluto.activate_notebook_environment` that activates a notebook Pkg environment in the REPL:
 
-```julia
+```julia-repl
 julia> import Pluto
 
 julia> Pluto.activate_notebook_environment("~/Documents/hello.jl")

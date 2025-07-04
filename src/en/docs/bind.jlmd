@@ -1,0 +1,59 @@
+---
+title: "🎚️ PlutoUI and @bind"
+description: "How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more."
+tags: ["docs", "writing", "interactivity", "@bind", "reactivity", "widgets"]
+layout: "md.jlmd"
+order: 2
+---
+
+# Interactivity with `@bind` and PlutoUI
+Making your notebook interactive is very easy with Pluto! This article will teach you how to use `@bind` to add interactive UI like sliders, buttons, scrubbables, text fields, and more.
+
+## `@bind` with PlutoUI
+The easiest way to get started is with PlutoUI. Add the following code in your notebook:
+
+```julia
+using PlutoUI
+```
+
+```julia
+@bind apples Slider(5:50)
+```
+
+```julia
+apples
+```
+
+```julia
+repeat("🍎", apples)
+```
+
+This is what you get:
+
+
+> <div style="aspect-ratio: 998/598; width: 100%; contain: all; overflow: hidden;"><video src="$(root_url)/assets/img/interactive apples.mov" controls="controls" muted="muted" ></video></div>
+
+
+
+## Global variables
+The core idea with `@bind` is that you can **control a global variable** with a UI element. Because Pluto has **reactive global variables**, it is up to your creativity what you do with it! Anything that depends (indirectly) on the bound variable will automatically update when you change the UI element.
+
+
+
+
+
+
+
+# Discover more widgets!
+To see the **complete list** of UI that PlutoUI provides, including buttons, file upload and layout, check out the PlutoUI documentation! 👇
+
+$(begin
+    import PlutoUI
+    PlutoUI.NotebookCard("https://featured.plutojl.org/basic/plutoui.jl"; link_text="Read documentation")
+end)
+
+
+
+
+
+

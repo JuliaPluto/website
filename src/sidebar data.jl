@@ -3,6 +3,7 @@ Dict(
         "docs" => [
             "Introduction" => collections["docs"].pages ∩ collections["introduction"].pages,
             "Using Pluto" => collections["docs"].pages ∩ collections["navigation"].pages,
+            "Writing a notebook" => collections["docs"].pages ∩ collections["writing"].pages,
             "Reproducibility" => collections["docs"].pages ∩ collections["reproducibility"].pages,
             "Editor" => collections["docs"].pages ∩ collections["editor"].pages,
             "Publishing" => collections["docs"].pages ∩ collections["publishing"].pages,

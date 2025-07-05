@@ -576,9 +576,9 @@ version = "0.1.6"
 
 [[deps.PlutoPages]]
 deps = ["BetterFileWatching", "CommonMark", "Gumbo", "HypertextLiteral", "InteractiveUtils", "JSON", "LiveServer", "Logging", "Malt", "Markdown", "MarkdownLiteral", "Pkg", "Pluto", "PlutoHooks", "PlutoLinks", "PlutoSliderServer", "PlutoUI", "ProgressLogging", "RelocatableFolders", "SHA", "ThreadsX", "Unicode", "YAML"]
-git-tree-sha1 = "c03e74428593803ff93279cda283e81b9078ce67"
+git-tree-sha1 = "bf1cc68c691cfc42d9ac01a997f332d222cb9a58"
 uuid = "d5dc3dd1-4774-47c7-8860-0a1ad9e34b8c"
-version = "0.1.11"
+version = "0.1.12"
 
 [[deps.PlutoSliderServer]]
 deps = ["AbstractPlutoDingetjes", "Base64", "BetterFileWatching", "Configurations", "Distributed", "FromFile", "Git", "Glob", "HTTP", "JSON", "Logging", "Pkg", "Pluto", "PlutoDependencyExplorer", "SHA", "Serialization", "Sockets", "TOML", "TerminalLoggers", "UUIDs"]
@@ -588,9 +588,9 @@ version = "1.3.1"
 
 [[deps.PlutoUI]]
 deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "Downloads", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "JSON", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
-git-tree-sha1 = "3601f64c0963312585173b61a8169ebb8d500368"
+git-tree-sha1 = "ec9e63bd098c50e4ad28e7cb95ca7a4860603298"
 uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
-version = "0.7.67"
+version = "0.7.68"
 
 [[deps.PrecompileSignatures]]
 git-tree-sha1 = "18ef344185f25ee9d51d80e179f8dad33dc48eb1"

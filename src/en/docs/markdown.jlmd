@@ -1,0 +1,48 @@
+---
+title: "📝 Markdown"
+description: "How to write markdown in Pluto."
+tags: ["docs", "writing", "markdown", "md", "markdown", "text", "writing"]
+layout: "md.jlmd"
+order: 1
+---
+
+# Markdown in Pluto
+Markdown is the easiest way to write text in Pluto notebooks. With Markdown, you can write text with **bold**, _italic_, and other formatting, and you can use it to add titles, lists, images, and more.
+
+You use markdown with the `md"\""` string macro inside a Pluto cell:
+
+```julia
+md""\"
+This text is in **bold** and _italic_.
+""\"
+```
+
+> This is what that looks like in the notebook:
+> 
+> <img src="$(root_url)/assets/img/markdown.png" alt="Markdown in cell" width="998" height="222">
+
+## Complete guide
+Read more about Markdown in Pluto here:
+
+$(begin
+    import PlutoUI
+    PlutoUI.NotebookCard("https://featured.plutojl.org/basic/markdown"; link_text="How use Markdown in Pluto")
+end)
+
+
+## Keyboard shortcut
+When editing a cell, you can press `Cmd+M` or `Ctrl+M` to automatically add or remove the `md"\""` string macro.
+
+## Julia cells and Markdown cells
+Some notebook environments have different **cell types**: a *code* cell and a *Markdown* cell. In Pluto, there is **only one cell type**: a Julia cell. But you can use the Julia string macro `md"` to write Markdown inside of Julia! 🤯
+
+# Markdown syntax
+The library that provides the `md"` macro is the Julia standard library (stdlib) [Markdown](https://docs.julialang.org/en/v1/stdlib/Markdown/). This library might work a bit differently from the Markdown that you are used to in GitHub, Jupyter, or elsewhere.
+
+# Other Markdown libraries
+The Markdown stdlib is `using`ed by default in Pluto, but you are free to use other Markdown libraries. You can also use something other than Markdown, like HTML (with [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl)).
+
+Some other Markdown libraries that you can use in Pluto:
+- [CommonMark.jl](https://github.com/MichaelHatherly/CommonMark.jl)
+- [MarkdownLiteral.jl](https://github.com/JuliaPluto/MarkdownLiteral.jl)
+

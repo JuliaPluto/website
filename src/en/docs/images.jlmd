@@ -1,0 +1,100 @@
+---
+title: "🖼️ Images"
+description: "How to add images to your Pluto notebook."
+tags: ["docs", "writing", "images", "image", "picture", "photo", "picture", "photo", "image", "picture", "photo"]
+layout: "md.jlmd"
+order: 1.2
+---
+
+
+# Adding images to your notebook
+You can add images to your Pluto notebook quite easily! But it is different from what you might be used to in Jupyter, Word, or Google Docs.
+
+## Method 1: Using imgur and Markdown
+The easiest way to add images to your notebook is to upload the image to imgur.com (or a similar service), and then use the Markdown syntax to embed the image URL.
+
+First, go to imgur.com and upload your image. (You don't need to create an account.) Now, click on the `...`, and then _"Get Share Links"_.
+
+<img src="$(root_url)/assets/img/imgur share links.png" alt="Imgur share links" width="1514" height="678">
+
+We want the URL that points directly to the image. It should end with `.png`, `.jpg`, or something similar. You can get it from the "BBCode" option.
+
+<img src="$(root_url)/assets/img/imgur share options 2.png" alt="Imgur share options" width="1728" height="942">
+
+This should give you a URL like this:
+
+```
+https://i.imgur.com/qHCI8RS.png
+```
+
+#### Using the image URL in Markdown
+In Pluto, create a new cell. We will use the Markdown image syntax to embed the image.
+
+```julia
+md""\"
+
+![Description of the image](https://i.imgur.com/qHCI8RS.png)
+
+""\"
+```
+
+<img src="$(root_url)/assets/img/imgur image in markdown.png" alt="Imgur markdown" width="1486" height="622">
+
+You can also use `PlutoUI.Resource` or HypertextLiteral.jl to have more control over how the image is displayed.
+
+
+
+# Method 2: Using an image from GitHub
+If your **image is stored in a repository on GitHub**, you can use the Markdown syntax to embed the image URL.
+
+First, go to the image on GitHub. Click on the `...`, and then _"Copy permalink"_. Now you have a permalink, which means that the URL will keep working, even if the repository changes.
+
+<img src="$(root_url)/assets/img/github image permalink.png" alt="GitHub image, with a button to copy the permalink" width="1334" height="1056">
+
+This permalink looks like:
+
+```
+https://github.com/fonsp/fonsp.github.io/blob/b74c865b0292006af89496418c2c19f48517ca2e/img/doggoSmall.jpg
+```
+
+Now, you need to **add `?raw=true` to the end of the URL**, to get a URL that points directly to the image. This looks like:
+
+<pre><code>https://github.com/fonsp/fonsp.github.io/blob/b74c865b0292006af89496418c2c19f48517ca2e/img/doggoSmall.jpg<strong>?raw=true</strong></code></pre> 
+
+#### Using the image URL in Markdown
+In Pluto, create a new cell. We will use the Markdown image syntax to embed the image.
+
+```julia
+md""\"
+
+![Description of the image](https://github.com/fonsp/fonsp.github.io/blob/b74c865b0292006af89496418c2c19f48517ca2e/img/doggoSmall.jpg?raw=true)
+
+""\"
+```
+
+You can also use `PlutoUI.Resource` or HypertextLiteral.jl to have more control over how the image is displayed.
+
+
+
+# Method 3: Using a local image
+You can also embed images from your computer in Pluto notebooks, but we want to issue a warning here. It is often a better idea to use images hosted online (like imgur or GitHub).
+
+!!! warning
+    Embedding images from your computer means that the notebook will not work if you try to open it on a different computer. 
+    
+!!! info "Images in the same repository"
+    A special case is when the image is in the same repository as the notebook. In this case, other people can also see the image, if they clone the repository and run the notebook that way.
+    
+    But if people run the notebook directly (with [Binder](../binder/), or by running the file without downloading the full repository), the image will not work.
+
+To embed an image from your computer, you can use the `PlutoUI.LocalResource`:
+
+```julia
+using PlutoUI
+```
+
+```julia
+PlutoUI.LocalResource("../images/dogs.png")
+```
+
+<img src="$(root_url)/assets/img/PlutoUI localresource.png" alt="Local image" width="998" height="698">

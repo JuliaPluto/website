@@ -1,0 +1,109 @@
+---
+title: "📊 Plotting"
+description: "How to plot data in Pluto, using Plots, Makie, Plotly and more."
+tags: ["docs", "writing", "plotting", "plot", "data", "makie", "plots", "plotly", "visualization"]
+layout: "md.jlmd"
+order: 3
+---
+
+# Plotting in Pluto
+It's super easy to create plots in Pluto! There are many plotting libraries for Julia, and most will work well with Pluto.
+
+## Plots.jl
+[Plots.jl](https://docs.juliaplots.org/) is an easy-to-use plotting library for Julia. It is a versatile plotting library, with a syntax that is similar to Python's Matplotlib. To use it in Pluto, you add the following code to your notebook:
+
+```julia
+using Plots
+```
+
+```julia
+plot([4,5,8,2,3,1,0])
+```
+
+
+### Larger code blocks
+You often want to combine multiple plot calls in a single cell. The `let` block is really useful for this! Here is an example:
+
+```julia
+data = rand(100)::Vector{Float64}
+```
+
+```julia
+let
+    plot(data)
+
+    # use the ! explamation mark to modify the previous plot
+    scatter!(data)
+
+    # add a horizontal line
+	mean = sum(data) / length(data)
+	hline!([mean]; label="Average value")
+end
+```
+
+Using a `let` block instead of `begin` means that the variables defined in the block are local to the block, and they will not affect the rest of the notebook. In this example, the `mean` variable is only defined inside the `let` block, not in other cells.
+
+
+#### My plot is not showing!
+Sometimes, you create a plot in your code, but you don't see it. This is because Pluto **displays the last output of a cell** . The `plot` function "creates a plot", but it only gets displayed if the cell output is that object.
+
+For example, this code will not show a plot:
+
+```julia
+let
+    x = 1:10
+    y = rand(10)
+    
+    plot(x, y, label="Data points")
+    
+    for i in 1:length(x)
+        scatter!([x[i]], [y[i]], label="Point \$i")
+    end
+end
+```
+
+This is because the last expression in the let block is a `for` loop, which returns `nothing`. (So `nothing` will be displayed.)
+
+To fix it, add a `plot!()` call at the end of the cell. This will get the current plot, and just return it.
+
+```julia
+let
+    x = 1:10
+    y = rand(10)
+    
+    plot(x, y, label="Data points")
+    
+    for i in 1:length(x)
+        scatter!([x[i]], [y[i]], label="Point \$i")
+    end
+
+    # ✅ This is the fix!
+	plot!()
+end
+```
+
+
+Take a look at the Plots.jl featured notebook to learn more!
+
+$(begin
+    import PlutoUI
+    PlutoUI.NotebookCard("https://featured.plutojl.org/plot/plots.jl"; link_text="Read featured notebook")
+end)
+
+
+## Makie.jl
+[Makie.jl](https://docs.makie.org/) is a powerful plotting library for Julia. It is built on top of the Julia plotting ecosystem and provides a simple interface for creating plots.
+
+Not all Makie backends work well with Pluto. The best option is to use the **GLMakie** or **CairoMakie** backend. To see an example, take a look at this featured notebook:
+
+$(PlutoUI.NotebookCard("https://featured.plutojl.org/plot/heatmap.html"; link_text="GLMakie example"))
+
+$(PlutoUI.NotebookCard("https://featured.plutojl.org/math/convolution_1d.html"; link_text="CairoMakie example"))
+
+
+## Plotly
+You can use the Plotly JS plotting library in Pluto! Check out the [PlutoPlotly.jl](https://github.com/JuliaPluto/PlutoPlotly.jl) package to get started.
+
+
+## More libraries
+There are more (experimental) plotting libraries for Julia. They probably work with Pluto, try them out!

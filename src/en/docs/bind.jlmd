@@ -1,7 +1,7 @@
 ---
 title: "🎚️ PlutoUI and @bind"
 description: "How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more."
-tags: ["docs", "writing", "interactivity", "@bind", "reactivity", "widgets"]
+tags: ["docs", "writing", "interactivity", "@bind", "slider", "button", "reactivity", "widgets"]
 layout: "md.jlmd"
 order: 2
 ---

@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>Advanced widgets – overview — Pluto.jl</title>
-<meta name="description" content='Pluto provides a framework for advances input and display widgets.' />
+<title>🖼️ Images — Pluto.jl</title>
+<meta name="description" content='How to add images to your Pluto notebook.' />
 
 <link rel="root" href="../../.." />
 
@@ -75,7 +75,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Writing a notebook</h3>
 <ul>
-<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li>
+<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class='active'><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li>
 </ul>
 </li>
 <li>
@@ -99,7 +99,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Advanced: Widgets</h3>
 <ul>
-<li class='active'><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li>
 </ul>
 </li>
 <li>
@@ -113,12 +113,80 @@ window.pluto_recording_audio_url = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <pluto-editor statefile='../../../generated_assets/advanced-widgets_9bfc8afb.plutostate' notebookfile='../../../generated_assets/advanced-widgets_c0a5e19f.jl' disable-ui=''></pluto-editor>
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="adding-images-to-your-notebook"><a href="#adding-images-to-your-notebook" class="anchor"></a>Adding images to your notebook</h1>
+<p>You can add images to your Pluto notebook quite easily! But it is different from what you might be used to in Jupyter, Word, or Google Docs.</p>
+<h2 id="method-1-using-imgur-and-markdown"><a href="#method-1-using-imgur-and-markdown" class="anchor"></a>Method 1: Using imgur and Markdown</h2>
+<p>The easiest way to add images to your notebook is to upload the image to imgur.com (or a similar service), and then use the Markdown syntax to embed the image URL.</p>
+<p>First, go to imgur.com and upload your image. (You don’t need to create an account.) Now, click on the <code>...</code>, and then <em>“Get Share Links”</em>.</p>
+<img src="../../../assets/img/imgur share links.png" alt="Imgur share links" width="1514" height="678">
+<p>We want the URL that points directly to the image. It should end with <code>.png</code>, <code>.jpg</code>, or something similar. You can get it from the “BBCode” option.</p>
+<img src="../../../assets/img/imgur share options 2.png" alt="Imgur share options" width="1728" height="942">
+<p>This should give you a URL like this:</p>
+<pre><code>https://i.imgur.com/qHCI8RS.png
+</code></pre>
+<h4 id="using-the-image-url-in-markdown"><a href="#using-the-image-url-in-markdown" class="anchor"></a>Using the image URL in Markdown</h4>
+<p>In Pluto, create a new cell. We will use the Markdown image syntax to embed the image.</p>
+<pre><code class="language-julia">md&quot;&quot;&quot;
+
+![Description of the image](https://i.imgur.com/qHCI8RS.png)
+
+&quot;&quot;&quot;
+</code></pre>
+<img src="../../../assets/img/imgur image in markdown.png" alt="Imgur markdown" width="1486" height="622">
+<p>You can also use <code>PlutoUI.Resource</code> or HypertextLiteral.jl to have more control over how the image is displayed.</p>
+<h1 id="method-2-using-an-image-from-github"><a href="#method-2-using-an-image-from-github" class="anchor"></a>Method 2: Using an image from GitHub</h1>
+<p>If your <strong>image is stored in a repository on GitHub</strong>, you can use the Markdown syntax to embed the image URL.</p>
+<p>First, go to the image on GitHub. Click on the <code>...</code>, and then <em>“Copy permalink”</em>. Now you have a permalink, which means that the URL will keep working, even if the repository changes.</p>
+<img src="../../../assets/img/github image permalink.png" alt="GitHub image, with a button to copy the permalink" width="1334" height="1056">
+<p>This permalink looks like:</p>
+<pre><code>https://github.com/fonsp/fonsp.github.io/blob/b74c865b0292006af89496418c2c19f48517ca2e/img/doggoSmall.jpg
+</code></pre>
+<p>Now, you need to <strong>add <code>?raw=true</code> to the end of the URL</strong>, to get a URL that points directly to the image. This looks like:</p>
+<pre><code>https://github.com/fonsp/fonsp.github.io/blob/b74c865b0292006af89496418c2c19f48517ca2e/img/doggoSmall.jpg<strong>?raw=true</strong></code></pre> 
+<h4 id="using-the-image-url-in-markdown-1"><a href="#using-the-image-url-in-markdown-1" class="anchor"></a>Using the image URL in Markdown</h4>
+<p>In Pluto, create a new cell. We will use the Markdown image syntax to embed the image.</p>
+<pre><code class="language-julia">md&quot;&quot;&quot;
+
+![Description of the image](https://github.com/fonsp/fonsp.github.io/blob/b74c865b0292006af89496418c2c19f48517ca2e/img/doggoSmall.jpg?raw=true)
+
+&quot;&quot;&quot;
+</code></pre>
+<p>You can also use <code>PlutoUI.Resource</code> or HypertextLiteral.jl to have more control over how the image is displayed.</p>
+<h1 id="method-3-using-a-local-image"><a href="#method-3-using-a-local-image" class="anchor"></a>Method 3: Using a local image</h1>
+<p>You can also embed images from your computer in Pluto notebooks, but we want to issue a warning here. It is often a better idea to use images hosted online (like imgur or GitHub).</p>
+<div class="admonition warning"><p class="admonition-title">Warning</p>
+<p>Embedding images from your computer means that the notebook will not work if you try to open it on a different computer.</p>
+</div><div class="admonition info"><p class="admonition-title">Images in the same repository</p>
+<p>A special case is when the image is in the same repository as the notebook. In this case, other people can also see the image, if they clone the repository and run the notebook that way.</p>
+<p>But if people run the notebook directly (with <a href="../binder/">Binder</a>, or by running the file without downloading the full repository), the image will not work.</p>
+</div>
+<p>To embed an image from your computer, you can use the <code>PlutoUI.LocalResource</code>:</p>
+<pre><code class="language-julia">using PlutoUI
+</code></pre>
+<pre><code class="language-julia">PlutoUI.LocalResource(&quot;../images/dogs.png&quot;)
+</code></pre>
+<img src="../../../assets/img/PlutoUI localresource.png" alt="Local image" width="998" height="698">
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/advanced-widgets.jl" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/images.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

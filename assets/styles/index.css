@@ -120,3 +120,11 @@ a.pluto_home_link {
     align-items: center;
     gap: 0.5ch;
 }
+
+
+.edit-this-page {
+    display: grid;
+    place-items: center;
+    padding: 1em 1em 3em 1em;
+    opacity: 0.5;
+}

@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>ExpressionExplorer.jl – documentation  — Pluto.jl</title>
-<meta name="description" content='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.' />
+<title>🎚️ PlutoUI and @bind — Pluto.jl</title>
+<meta name="description" content='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.' />
 
 <link rel="root" href="../../.." />
 
@@ -75,7 +75,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Writing a notebook</h3>
 <ul>
-<li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li>
+<li class='active'><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li>
 </ul>
 </li>
 <li>
@@ -105,7 +105,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Advanced: Internals</h3>
 <ul>
-<li class='active'><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
+<li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
 </ul>
 </li>
 
@@ -113,12 +113,156 @@ window.pluto_recording_audio_url = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <pluto-editor statefile='../../../generated_assets/ExpressionExplorer_fe081c2b.plutostate' notebookfile='../../../generated_assets/ExpressionExplorer_86a342b8.jl' disable-ui=''></pluto-editor>
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="interactivity-with-bind-and-plutoui"><a href="#interactivity-with-bind-and-plutoui" class="anchor"></a>Interactivity with <code>@bind</code> and PlutoUI</h1>
+<p>Making your notebook interactive is very easy with Pluto! This article will teach you how to use <code>@bind</code> to add interactive UI like sliders, buttons, scrubbables, text fields, and more.</p>
+<h2 id="bind-with-plutoui"><a href="#bind-with-plutoui" class="anchor"></a><code>@bind</code> with PlutoUI</h2>
+<p>The easiest way to get started is with PlutoUI. Add the following code in your notebook:</p>
+<pre><code class="language-julia">using PlutoUI
+</code></pre>
+<pre><code class="language-julia">@bind apples Slider(5:50)
+</code></pre>
+<pre><code class="language-julia">apples
+</code></pre>
+<pre><code class="language-julia">repeat(&quot;🍎&quot;, apples)
+</code></pre>
+<p>This is what you get:</p>
+<blockquote>
+<div style="aspect-ratio: 998/598; width: 100%; contain: all; overflow: hidden;"><video src="../../../assets/img/interactive apples.mov" controls="controls" muted="muted" ></video></div>
+</blockquote>
+<h2 id="global-variables"><a href="#global-variables" class="anchor"></a>Global variables</h2>
+<p>The core idea with <code>@bind</code> is that you can <strong>control a global variable</strong> with a UI element. Because Pluto has <strong>reactive global variables</strong>, it is up to your creativity what you do with it! Anything that depends (indirectly) on the bound variable will automatically update when you change the UI element.</p>
+<h1 id="discover-more-widgets"><a href="#discover-more-widgets" class="anchor"></a>Discover more widgets!</h1>
+<p>To see the <strong>complete list</strong> of UI that PlutoUI provides, including buttons, file upload and layout, check out the PlutoUI documentation! 👇</p>
+<div class="pe-container">
+<div class="pe-card">
+	<a href='https://featured.plutojl.org/basic/plutoui.jl' aria-hidden="true"><img src='https://user-images.githubusercontent.com/6933510/174067690-50c8128d-748b-4f50-8a76-2ce18166642b.png'></a>
+	<div class="pe-right">
+		<div class="pe-about">
+			<h2 class="no-toc">Interactivity</h2>
+			<p>Sliders, buttons, dropdowns, and more using PlutoUI.jl!</p>
+		</div>
+		<div class="pe-nav">
+			<a href='https://featured.plutojl.org/basic/plutoui.jl'>Read documentation →</a>
+		</div>
+	</div>
+</div>
+<script>
+	const json_url = "https://featured.plutojl.org/pluto_export.json"
+	const jlpath_relative = "basic/PlutoUI.jl.jl"
+
+	const json_data = await (await fetch(json_url)).json()
+	console.log(json_data)
+
+	const frontmatter = json_data.notebooks[jlpath_relative].frontmatter
+	console.log(frontmatter)
+
+	const q = sel => currentScript.parentElement.querySelector(".pe-card").querySelector(sel)
+
+	q("a img").src = frontmatter.image ?? "data:image/svg+xml;utf8,<\svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><rect width='100%' height='100%' fill='ivory'/><\/svg>"
+	q(".pe-about h2").innerText = frontmatter.title ?? "Untitled"
+	q(".pe-about p").innerText = frontmatter.description ?? ""
+</script>
+<style>
+
+	.pe-container {
+		container-type: inline-size;
+	}
+	
+	.pe-card {
+		display: flex;
+		flex-direction: row;
+		max-width: 700px;
+
+		border-radius: 6px;
+		background: salmon;
+	background: linear-gradient(80deg, #e9dbe3, #ffdabe);
+padding: 10px;
+gap: 20px;
+margin: 10px 0;
+box-shadow: 0 2px 10px rgb(0 0 0 / 14%);
+
+	}
+
+	@container (max-width: 400px) {
+		.pe-card {
+			flex-direction: column;
+			gap: 0;
+		}
+	.pe-about {
+		margin: 0 10px 10px 10px;
+	}
+	}
+
+	.pe-card > a {
+		overflow: hidden;
+		border-radius: 5px;
+
+		flex: 0 0 35%;
+		aspect-ratio: 3 / 2;
+	}
+	
+	.pe-card > a > img {
+		height: 100%;
+		width: 100%;
+		
+		object-fit: cover;
+	}
+
+	div.pe-about :is(p, h2) {
+		color: black;
+		text-decoration: none;
+		border-bottom: none;
+		margin-block-end: 0;
+	}
+	div.pe-about h2 {
+	}
+
+	.pe-right {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.pe-nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	.pe-nav a {
+		text-decoration: none;
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Apple Color Emoji", "Segoe UI Emoji",
+	"Segoe UI Symbol", system-ui, sans-serif;
+		font-weight: 700;
+		background: white;
+		color: black;
+		padding: 8px 14px;
+		border-radius: 1000px;
+	}
+</style>
+</div>
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/ExpressionExplorer.jl" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/bind.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

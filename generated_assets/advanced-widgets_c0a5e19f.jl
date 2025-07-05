@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.42
+# v0.20.14
 
 #> [frontmatter]
 #> image = "https://github.com/fonsp/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a"
@@ -20,12 +20,14 @@ using InteractiveUtils
 
 # This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
 macro bind(def, element)
-    quote
+    #! format: off
+    return quote
         local iv = try Base.loaded_modules[Base.PkgId(Base.UUID("6e696c72-6542-2067-7265-42206c756150"), "AbstractPlutoDingetjes")].Bonds.initial_value catch; b -> missing; end
         local el = $(esc(element))
         global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : iv(el)
         el
     end
+    #! format: on
 end
 
 # ╔═╡ a17a8282-05f6-469d-9579-63029db89f79
@@ -42,6 +44,14 @@ Pluto has a number of advanced features for developers who want to create comple
 - **Custom inputs**: widgets that are used with `@bind`, like a slider or a map location picker.
 - **Custom outputs**: for visualising results, like a plot or a map with labels.
 
+"""
+
+# ╔═╡ daddd959-7aa1-44b2-b40b-8e8407863b48
+md"""
+!!! warning "This is an advanced guide"
+	This document explains **how to make new widgets** for Pluto. 
+	
+	Are you looking for information on **getting started with interactivity in Pluto**, and how to use `@bind`? Then take a look at [the `@bind` documentation](../bind/) instead.
 """
 
 # ╔═╡ 80020cac-56d9-4a5b-9959-e61c7042d900
@@ -748,6 +758,7 @@ version = "17.4.0+2"
 
 # ╔═╡ Cell order:
 # ╟─1913bd73-41fb-437a-9505-4e0f24d62ac6
+# ╟─daddd959-7aa1-44b2-b40b-8e8407863b48
 # ╟─80020cac-56d9-4a5b-9959-e61c7042d900
 # ╟─41fd552d-35bd-4be6-b103-116f4bcd4998
 # ╟─782f4475-3e54-4916-8e7a-616a14dc9cc8

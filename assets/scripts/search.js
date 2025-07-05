@@ -30,6 +30,7 @@ const setup_search_index = async () => {
         this.ref("url")
 
         this.field("title", { boost: 10 })
+        this.field("description", { boost: 8 })
         this.field("tags", { boost: 5 })
         this.field("text")
         this.metadataWhitelist = ["position"]

@@ -47,6 +47,10 @@ pluto-output > div > div > :is(h3, h4, h5, h6) {
     margin-block-start: 2.5em !important;
 }
 
+pluto-output > div > div > :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: 0 !important;
+}
+
 pluto-output .pluto-docs-binding h2 {
     font-size: 1.3em;
 }
@@ -60,6 +64,10 @@ pluto-output .pluto-docs-binding h6 {
 pluto-output img,
 pluto-output video {
     border-radius: 7px;
+}
+
+pluto-output .markdown > img {
+    margin-block-end: var(--pluto-cell-spacing);
 }
 
 pluto-output code {

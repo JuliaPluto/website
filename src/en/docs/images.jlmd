@@ -80,7 +80,7 @@ You can also use `PlutoUI.Resource` or HypertextLiteral.jl to have more control 
 You can also embed images from your computer in Pluto notebooks, but we want to issue a warning here. It is often a better idea to use images hosted online (like imgur or GitHub).
 
 !!! warning
-    Embedding images from your computer means that the notebook will not work if you try to open it on a different computer. 
+    Embedding images from your computer means that the notebook will not work if you open it on a different computer. 
     
 !!! info "Images in the same repository"
     A special case is when the image is in the same repository as the notebook. In this case, other people can also see the image, if they clone the repository and run the notebook that way.

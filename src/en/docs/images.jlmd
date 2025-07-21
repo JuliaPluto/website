@@ -10,7 +10,7 @@ order: 1.2
 # Adding images to your notebook
 You can add images to your Pluto notebook quite easily! But it is different from what you might be used to in Jupyter, Word, or Google Docs.
 
-## Method 1: Using imgur and Markdown
+# Method 1: Using imgur and Markdown
 The easiest way to add images to your notebook is to upload the image to imgur.com (or a similar service), and then use the Markdown syntax to embed the image URL.
 
 First, go to imgur.com and upload your image. (You don't need to create an account.) Now, click on the `...`, and then _"Get Share Links"_.

@@ -11,12 +11,13 @@ order: 50
 This page lists the default keyboard shortcuts in Pluto. The keys shown below adapt to your system.
 
 <table class="keyboard-shortcuts">
-<thead>
+<!-- <thead>
 <tr>
     <th>Shortcut</th><th>Action</th>
 </tr>
-</thead>
+</thead> -->
 <tbody>
+<tr><th colspan="2" class="keyboard-shortcut-section">Running cells</th></tr>
 <tr>
     <td><kbd>Shift</kbd><span class="and"></span><kbd>Enter</kbd></td>
     <td>Run cell</td>
@@ -29,10 +30,28 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
     <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>S</kbd></td>
     <td>Submit all changes</td>
 </tr>
+<tr><th colspan="2" class="keyboard-shortcut-section">Editing</th></tr>
 <tr>
     <td><kbd>Tab</kbd> / <kbd>Shift</kbd><span class="and"></span><kbd>Tab</kbd></td>
     <td>Indent / outdent</td>
 </tr>
+<tr>
+    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>M</kbd></td>
+    <td>Toggle markdown</td>
+</tr>
+<tr>
+    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>/</kbd></td>
+    <td>Toggle comment</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>D</kbd></td>
+    <td>Select word / next occurrence</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Shift</kbd><span class="and"></span><kbd>D</kbd></td>
+    <td>Unselect previous occurrence</td>
+</tr>
+<tr><th colspan="2" class="keyboard-shortcut-section">Cell actions</th></tr>
 <tr>
     <td><kbd>Delete</kbd> or <kbd>Backspace</kbd></td>
     <td>Delete empty cell</td>
@@ -50,14 +69,6 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
     <td>Jump to definition</td>
 </tr>
 <tr>
-    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>/</kbd></td>
-    <td>Toggle comment</td>
-</tr>
-<tr>
-    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>M</kbd></td>
-    <td>Toggle markdown</td>
-</tr>
-<tr>
     <td><kbd class="fold-prefix"></kbd><span class="and"></span><kbd>[</kbd></td>
     <td>Hide cell code</td>
 </tr>
@@ -69,24 +80,52 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
     <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Q</kbd></td>
     <td>Interrupt notebook</td>
 </tr>
+<tr><th colspan="2" class="keyboard-shortcut-section">Clipboard</th></tr>
 <tr>
     <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>C</kbd></td>
-    <td>Copy selected cells</td>
+    <td>Copy <a href="../moving-cells/#selecting-cells">selected cells</a></td>
 </tr>
 <tr>
     <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>X</kbd></td>
-    <td>Cut selected cells</td>
+    <td>Cut <a href="../moving-cells/#selecting-cells">selected cells</a></td>
 </tr>
 <tr>
     <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>V</kbd></td>
-    <td>Paste selected cells</td>
+    <td>Paste <a href="../moving-cells/#selecting-cells">selected cells</a></td>
+</tr>
+<tr><th colspan="2" class="keyboard-shortcut-section">Navigation</th></tr>
+<tr>
+    <td><kbd>Page Up</kbd> / <kbd>fn</kbd><span class="and"></span><kbd>↑</kbd></td>
+    <td>Jump to cell above</td>
 </tr>
 <tr>
-    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>D</kbd></td>
-    <td>Select word / next occurrence</td>
+    <td><kbd>Page Down</kbd> / <kbd>fn</kbd><span class="and"></span><kbd>↓</kbd></td>
+    <td>Jump to cell below</td>
+</tr>
+<tr><th colspan="2" class="keyboard-shortcut-section">Help</th></tr>
+<tr>
+    <td><kbd>F1</kbd> or <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>?</kbd></td>
+    <td>Show keyboard tips</td>
 </tr>
 </tbody>
 </table>
+
+<style>
+    /* Keyboard shortcuts table styles */
+.keyboard-shortcuts th:first-child {
+    text-align: center;
+}
+
+.keyboard-shortcuts td:first-child {
+    text-align: right;
+}
+
+    .keyboard-shortcuts th.keyboard-shortcut-section {
+        background: hsl(268.46deg 45.95% 47.7% / 14%);
+        text-align: left;
+        border-radius: 0.5rem;
+    }
+</style>
 
 
 ## View this list in Pluto

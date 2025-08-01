@@ -24,23 +24,24 @@ You can select multiple cells, which is useful for moving them together. To sele
 
 <video alt="Selecting cells by clicking between two cells and dragging" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/selecting cells.mp4" controls="controls" muted="muted" loop="loop"></video>
 
-> 💡 If your window is wide enough, you can also use the **right margin** to start a selection:
-> 
-> <video alt="Selecting cells by clicking on the right margin and dragging" style="aspect-ratio: 707/467; max-width: 100%;" src="$(root_url)/assets/img/selecting cells by right margin.mp4" controls="controls" muted="muted" loop="loop"></video>
+### Selecting cells on wide screens
+If your window is wide enough, you can also use the **right margin** to start a selection:
+    
+<video alt="Selecting cells by clicking on the right margin and dragging" style="aspect-ratio: 707/467; max-width: 100%;" src="$(root_url)/assets/img/selecting cells by right margin.mp4" controls="controls" muted="muted" loop="loop"></video>
 
 
 
 
-## Moving multiple cells
+### Moving multiple cells
 You can move multiple cells by **Selecting multiple cells** and then dragging one of them.
 
 
 
-## Copying cells
+### Copying cells
 If you press <kbd>Ctrl</kbd>+<kbd>C</kbd> (or <kbd>Cmd</kbd><kbd>C</kbd> on Mac) while cells are selected, you can copy them to the clipboard. You can paste these cells in a notebook, or as plain text in another application.
 
 
-## More actions
+### More actions
 While multiple cells are selected, you can apply various actions to them simultaneously: moving, copying, deleting, folding and un-folding.
 
 

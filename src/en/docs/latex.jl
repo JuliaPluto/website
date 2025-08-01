@@ -3,7 +3,7 @@
 
 #> [frontmatter]
 #> order = "4"
-#> title = "𝚺 LaTeX"
+#> title = "🧮 LaTeX"
 #> date = "2025-08-01"
 #> tags = ["docs", "writing", "latex", "markdown"]
 #> description = "How to use LaTeX in Pluto"

@@ -59,11 +59,15 @@ Something important to know: **each Pluto session** (created by running `Pluto.r
 If you use the main menu to create a new notebook or open a notebook, it will be **added to the session**. If you go back to the main menu, you can add more notebooks to the session.
 
 
-
-
-
-
 <img src="$(root_url)/assets/img/collatz/c6.png" aria-hidden="true" width="700" height="200">
+
+
+# How to stop Pluto
+To stop Pluto, you can **press `Ctrl+C` in the terminal where you started Pluto**. You might need to press `Ctrl+C` multiple times. This will stop the Pluto server, and all notebooks in the session will shut down.
+
+<img alt="screenshot of the terminal, showing the command `Ctrl+C`" src="$(root_url)/assets/img/ctrl-c.png" width="793" height="322">
+
+
 
 
 # Advanced: Mirror view

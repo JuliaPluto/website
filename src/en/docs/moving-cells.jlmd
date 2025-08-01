@@ -1,0 +1,54 @@
+---
+title: "🔃 Selecting and moving cells"
+description: "How to move cells in Pluto"
+tags: ["docs", "editor"]
+layout: "md.jlmd"
+order: 20
+---
+
+# Moving a single cell
+ Pluto allows you to place your cells in **any order**. You can do this by dragging the cell from the left shoulder. A bold line shows where the cell will be moved to.
+ 
+ 
+<video alt="Moving a cell by dragging the left shoulder" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/dragging cells.mp4" controls="controls" muted="muted" loop="loop"></video>
+
+
+!!! tip
+    Pluto's reactivity means that you can put cells in **any order**, and they will still execute correctly based on the dependencies between cells. This means that you can place cells in the order that makes the most sense for your story, which is not always the order that makes the most sense for the computer.
+    
+    For example, you can first tell your story using Markdown cells and plots, and then add a section `# Appendix` with package imports, helper functions and more.
+
+
+# Selecting cells
+You can select multiple cells, which is useful for moving them together. To select cells, **click between two cells and drag to make a selection**. 
+
+<video alt="Selecting cells by clicking between two cells and dragging" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/selecting cells.mp4" controls="controls" muted="muted" loop="loop"></video>
+
+> 💡 If your window is wide enough, you can also use the **right margin** to start a selection:
+> 
+> <video alt="Selecting cells by clicking on the right margin and dragging" style="aspect-ratio: 707/467; max-width: 100%;" src="$(root_url)/assets/img/selecting cells by right margin.mp4" controls="controls" muted="muted" loop="loop"></video>
+
+
+
+
+## Moving multiple cells
+You can move multiple cells by **Selecting multiple cells** and then dragging one of them.
+
+
+
+## Copying cells
+If you press <kbd>Ctrl</kbd>+<kbd>C</kbd> (or <kbd>Cmd</kbd><kbd>C</kbd> on Mac) while cells are selected, you can copy them to the clipboard. You can paste these cells in a notebook, or as plain text in another application.
+
+
+## More actions
+While multiple cells are selected, you can apply various actions to them simultaneously: moving, copying, deleting, folding and un-folding.
+
+
+
+
+# Moving between notebooks
+You can also move cells between different notebooks. To do this, [open two notebooks in two different windows](https://plutojl.org/en/docs/launch-pluto/), and place them side-by-side. You can now **drag cells between the two notebooks**, and they will be copied to the other notebook.
+
+
+<video alt="Moving cells between notebooks by dragging them between two open notebooks" style="aspect-ratio: 1038/624; max-width: 100%;" src="$(root_url)/assets/img/moving cells between notebooks.mp4" controls="controls" muted="muted" loop="loop"></video>
+

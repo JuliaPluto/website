@@ -1,0 +1,121 @@
+---
+title: "⌨️ Keyboard shortcuts"
+description: "Overview of keyboard shortcuts in Pluto's editor"
+tags: ["docs", "editor"]
+layout: "md.jlmd"
+order: 50
+---
+
+# Keyboard shortcuts
+
+This page lists the default keyboard shortcuts in Pluto. The keys shown below adapt to your system.
+
+<table class="keyboard-shortcuts">
+<thead>
+<tr>
+    <th>Shortcut</th><th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td><kbd>Shift</kbd><span class="and"></span><kbd>Enter</kbd></td>
+    <td>Run cell</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Enter</kbd></td>
+    <td>Run cell and add cell below</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>S</kbd></td>
+    <td>Submit all changes</td>
+</tr>
+<tr>
+    <td><kbd>Tab</kbd> / <kbd>Shift</kbd><span class="and"></span><kbd>Tab</kbd></td>
+    <td>Indent / outdent</td>
+</tr>
+<tr>
+    <td><kbd>Delete</kbd> or <kbd>Backspace</kbd></td>
+    <td>Delete empty cell</td>
+</tr>
+<tr>
+    <td><kbd class="alt-name"></kbd><span class="and"></span><kbd>↑</kbd></td>
+    <td>Move line/cell up</td>
+</tr>
+<tr>
+    <td><kbd class="alt-name"></kbd><span class="and"></span><kbd>↓</kbd></td>
+    <td>Move line/cell down</td>
+</tr>
+<tr>
+    <td><kbd class="control-name"></kbd><span class="and"></span>click</td>
+    <td>Jump to definition</td>
+</tr>
+<tr>
+    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>/</kbd></td>
+    <td>Toggle comment</td>
+</tr>
+<tr>
+    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>M</kbd></td>
+    <td>Toggle markdown</td>
+</tr>
+<tr>
+    <td><kbd class="fold-prefix"></kbd><span class="and"></span><kbd>[</kbd></td>
+    <td>Hide cell code</td>
+</tr>
+<tr>
+    <td><kbd class="fold-prefix"></kbd><span class="and"></span><kbd>]</kbd></td>
+    <td>Show cell code</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Q</kbd></td>
+    <td>Interrupt notebook</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>C</kbd></td>
+    <td>Copy selected cells</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>X</kbd></td>
+    <td>Cut selected cells</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>V</kbd></td>
+    <td>Paste selected cells</td>
+</tr>
+<tr>
+    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>D</kbd></td>
+    <td>Select word / next occurrence</td>
+</tr>
+</tbody>
+</table>
+
+
+## View this list in Pluto
+Press <kbd>F1</kbd> or <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>?</kbd> in Pluto to see a pop-up with the most important tips.
+
+## Navigating between cells
+You can navigate between cell inputs using the arrow keys: when your cursor is at the beginning or end of a cell, you can use additional arrow key presses to navigate to the next or previous cell. 
+
+You can also use <kbd>fn</kbd><span class="and"></span><kbd>↑</kbd> and <kbd>fn</kbd><span class="and"></span><kbd>↓</kbd> (on Mac) or <kbd>Page Up</kbd> and <kbd>Page Down</kbd> to jump between cells directly.
+
+
+## Keyboard-only navigation
+Pluto can be used in keyboard-only mode, using [tabbing navigation](https://en.wikipedia.org/wiki/Tabbing_navigation). Use <kbd>Tab</kbd> to move focus to the next element. Inside the code editor press <kbd>Esc</kbd> first, then <kbd>Tab</kbd>, because Tab alone indents your code. Use <kbd>Shift</kbd><span class="and"></span><kbd>Tab</kbd> to move focus back.
+
+Keyboard-only navigation is important for accessibility, so if you find a UI element that has poor keyboard access, please let us know!
+
+<script type="module">
+const isMac = /Mac/i.test(navigator.userAgentData?.platform ?? navigator.platform);
+const controlName = isMac ? "\u2303" : "Ctrl"; // ⌃
+const ctrlOrCmd = isMac ? "\u2318" : "Ctrl";  // ⌘
+const altName = isMac ? "\u2325" : "Alt";     // ⌥
+const and = isMac ? " " : "+";
+const foldPrefix = isMac ? `\${altName}\${and}\${ctrlOrCmd}` : `Ctrl\${and}Shift`;
+for (const el of document.querySelectorAll('.control-name')) el.textContent = controlName;
+for (const el of document.querySelectorAll('.ctrl-or-cmd')) el.textContent = ctrlOrCmd;
+for (const el of document.querySelectorAll('.alt-name')) el.textContent = altName;
+for (const el of document.querySelectorAll('.and')) el.textContent = and;
+for (const el of document.querySelectorAll('.fold-prefix')) el.textContent = foldPrefix;
+</script>
+
+
+

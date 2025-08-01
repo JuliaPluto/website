@@ -1,0 +1,22 @@
+---
+title: "📚 Live Docs"
+description: "The Live Docs tab in Pluto to read documentation while you code!"
+tags: ["docs", "editor", "live-docs", "docs"]
+layout: "md.jlmd"
+order: 4
+---
+
+# Live Docs
+
+The Live Docs tab in Pluto lets you read documentation while you code. Julia has a built-in [documentation system](https://docs.julialang.org/en/v1/manual/documentation/), which lets Pluto query the documentation of any Julia object.
+
+<img alt="Screenshot of the Live Docs tab, showing documentation for the sqrt function." src="$(root_url)/assets/img/live docs sqrt.png" width="702" height="926" style="max-width: 300px;">
+
+
+## Documentation while you type
+While you are typing code, or when you select some text, Live Docs will automatically start searching for documentation. This means that you can just leave the window open, and it will quietly search documentation while you work. Whenever you need to know how a function works, just take a look at the Live Docs tab.
+
+You can also search for documentation directly, by typing something into the search box.
+
+
+

@@ -12,13 +12,9 @@ Pluto's package manager is enabled for all users, for ease of use and to promote
 
 The philosophy here is that everyone should have a reproducible package environment **by default**, without having to do anything. This takes priority over other use cases, and hence _not_ using the built-in package manager requires some extra work.
 
-<br>
-
 
 **Any notebook that calls [`Pkg.activate`](https://pkgdocs.julialang.org/v1/api/#Pkg.activate) will not use Pluto's package management,** and run in 'backwards compatibility mode'. The `Pkg.activate` call should be placed directly in your notebook code: it is detecting using the same syntax analysis used for reactivity.
 
-<br>
-<br>
 
 ## Pattern: The "global environment"
 If you do not intend on sharing a notebook file and you want to use your global package environment (called `(v1.6)` or similar, the one you get when you launch the Julia REPL), then you can call `Pkg.activate()` without any arguments.
@@ -41,8 +37,6 @@ end
 When running this in Pluto (try it out!), you will notice that the status marks next to packages disappear, and Pluto is running in 'backwards compatibility mode'. Packages will no longer be installed or removed automatically, you have to use the Pkg REPL to do this yourself.
 
 
-<br>
-<br>
 
 ## Pattern: The "shared environment"
 If you have multiple notebooks in a repository and you want to use share a Pkg environment between them, then you can call `Pkg.activate(path_to_environment)`. You can use `@__DIR__` to get the path of the notebook's folder, and `joinpath(@__DIR__, "..")` to get its parent, `joinpath(@__DIR__, "..", "..")` for the parent's parent, etc. 
@@ -80,8 +74,6 @@ end
 When running this in Pluto, you will notice that the status marks next to packages disappear, and Pluto is running in 'backwards compatibility mode'. Packages will no longer be installed or removed automatically, you have to use the Pkg REPL to do this yourself.
 
 
-<br>
-<br>
 
 ## Pattern: The "Pkg cell"
 When adding packages, Pluto's default package management will always install the latest version from the registry. If you need to install a specific version or branch of a package, or a package is not registered, you can use a "Pkg cell".
@@ -109,19 +101,6 @@ Placing all code in a single `begin` block ensures that the lines will run in th
 
 
 
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 # Advanced: edit the notebook environment

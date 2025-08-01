@@ -10,7 +10,7 @@ order: 4
 
 The Live Docs tab in Pluto lets you read documentation while you code. Julia has a built-in [documentation system](https://docs.julialang.org/en/v1/manual/documentation/), which lets Pluto query the documentation of any Julia object.
 
-<img alt="Screenshot of the Live Docs tab, showing documentation for the sqrt function." src="$(root_url)/assets/img/live docs sqrt.png" width="702" height="926" style="max-width: 300px;">
+<img alt="Screenshot of the Live Docs tab, showing documentation for the sqrt function." src="$(root_url)/assets/img/live docs sqrt.png" width="702" height="864" style="max-width: 300px;">
 
 
 ## Documentation while you type

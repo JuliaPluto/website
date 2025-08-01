@@ -21,7 +21,7 @@ This text is in **bold** and _italic_.
 > 
 > <img src="$(root_url)/assets/img/markdown.png" alt="Markdown in cell" width="998" height="222">
 
-## Complete guide
+### Complete guide
 Read more about Markdown in Pluto here:
 
 $(begin
@@ -30,13 +30,13 @@ $(begin
 end)
 
 
-## Keyboard shortcut
+### Keyboard shortcut
 When editing a cell, you can press `Cmd+M` or `Ctrl+M` to automatically add or remove the `md"\""` string macro.
 
-## Julia cells and Markdown cells
+### Julia cells and Markdown cells
 Some notebook environments have different **cell types**: a *code* cell and a *Markdown* cell. In Pluto, there is **only one cell type**: a Julia cell. But you can use the Julia string macro `md"` to write Markdown inside of Julia! 🤯
 
-# Markdown syntax
+### Markdown syntax
 The library that provides the `md"` macro is the Julia standard library (stdlib) [Markdown](https://docs.julialang.org/en/v1/stdlib/Markdown/). This library might work a bit differently from the Markdown that you are used to in GitHub, Jupyter, or elsewhere.
 
 # Other Markdown libraries

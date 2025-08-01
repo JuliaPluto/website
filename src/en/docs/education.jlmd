@@ -71,7 +71,7 @@ One tool that may help you with guided assignments is [PlutoSplitter.jl](https:/
 
 <img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
 
-## Why Julia for education?
+## Why *Julia* for education?
 
 We believe that Julia is a great language for scientific education! Here are the main advantages from an educational perspective:
 

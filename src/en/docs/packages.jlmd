@@ -14,13 +14,10 @@ Pluto has a _built-in_ package manager, which means:
 
 🙋 These two features are designed to make it easy to write and share **reproducible notebooks**.
 
-<br>
-<br>
-<br>
 
-# Basic usage
+## Basic usage
 
-## Installing and using packages
+### Installing and using packages
 
 Pluto will automatically install or remove packages while you work on your notebook. When you import a new package, Pluto will install it:
 
@@ -31,53 +28,39 @@ Pluto will automatically install or remove packages while you work on your noteb
 > 
 > If you are using Pluto, you should **skip these instructions**, and import the package directly, using `import Example` or `using Example`.
 
-### Logs
+#### Logs
 
 Installing packages can take some time, especially when starting Julia for the first time. Click on the status mark next to a package to view the installation progress. You can click on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/document-text-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon to view the logs.
 
 <img width="541" alt="Screen recording of the package Plots being installed in a cell. The package terminal is visible, where the precompilatino progress is visible in a small terminal." src="https://media.giphy.com/media/EMv3miTVQPsVspplgY/giphy.gif">
 
 
-<br>
-<br>
 
-
-## Removing packages
+### Removing packages
 
 Removing packages is automatic: when you delete code that imports a package, it will be uninstalled from the package environment. It is _recommended_ to restart the notebook process afterwards to get a fresh start.
 
 <img width="541" alt="Screen recording of a notebook requesting the user to restart the notebook. Clicking on the message restart the notebook, and the message disappears." src="https://media.giphy.com/media/dIFYIHZ2zBFrFDCodM/giphy.gif">
 
-<br>
-<br>
 
-
-## Updating packages
+### Updating packages
 
 You can search for and install any available updates by clicking on the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/arrow-up-circle-outline.svg" alt="📄" width=17px style="filter: var(--image-filters);"> icon. A backup of your notebook file will be created in the same folder as your notebook, in case the new versions do not work as expected.
 
 <img width="541" height="122" alt="Screenshot of the update button visible next to the import of a package" src="$(root_url)/assets/img/Update button screenshot.png">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-
-# Long waiting times
+## Long waiting times
 Julia needs to download and precompile packages before you can use them. When using many packages, this can take a **couple of minutes**. Before installing a new package, Pluto can give an estimate of how long it will take to install:
 
 <img width="541" alt="Screenshot of code that imports the DataFrames package. Pluto says that the package will be installed when you run the cell, and it gives an estimate of 53 second for the time it will take to install." src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
 
-## Pre-installed versions are preferred
+### Pre-installed versions are preferred
 When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer. This was added in May 2024, on older versions, Pkg would always try to install the newest versions.
 
 This should make it much faster to open a notebook and import some packages that you already used recently. If you need the latest versions, then you have to use the **Update** button after adding the packages.
 
-## Package installations are shared between environments
+### Package installations are shared between environments
 
 In Julia, packages are always installed globally, while _environments_ (including notebooks) only store **version information**, not the package code itself. This means that multiple notebooks that use the same version of `Plots` will not lead to more disk usage or precompile time. (This is different from `venv` in Python/pip, or `node_modules` in NodeJS/npm, where every environment contains copies of package code by default.) Julia's package manager is designed to work well with many package environments on the same computer.
 

@@ -1,0 +1,64 @@
+---
+title: "🔗 Linking"
+description: "How to link to other pages in Pluto."
+tags: ["docs", "writing", "linking", "link", "href", "reference", "section"]
+layout: "md.jlmd"
+order: 4
+---
+
+# Linking to sections
+You can use `#` in a URL to link to a specific section of a Pluto notebook. You can link to:
+- global variables with `#variable_name`
+- function definitions with `#function_name`
+- Markdown headers with `#header-text` _(see below for instructions)_
+
+### Within a notebook
+You can use Markdown hyperlinks to link to a different section of the same notebook. For example, if you define a variable `fruits = ["apple", "pear"]` at the top of your notebook, then you can link to it with:
+
+```julia
+md"\""
+Take a look at [the fruits variable](#fruits).
+""\"
+```
+
+Clicking on the link will jump straight to the definition of `fruits`.
+
+
+### A section in a notebook online
+You can also link to a specific section of a notebook online. For example, if your notebook is hosted at:
+
+<a href="https://pluto.land/n/lp7p4qk7"><code>https://pluto.land/n/lp7p4qk7</code></a>
+
+Then I can link to sections by adding the `#` hash to the URL. For example, to link to the `example_step` variable:
+
+<a href="https://pluto.land/n/lp7p4qk7#example_step"><code><span style="opacity: .6;">https://pluto.land/n/lp7p4qk7</span><strong>#example_step</strong></code></a>
+
+Or I can link to the header "Adding color":
+
+<a href="https://pluto.land/n/lp7p4qk7#Adding-color"><code><span style="opacity: .6;">https://pluto.land/n/lp7p4qk7</span><strong>#Adding-color</strong></code></a>
+
+
+## Linking to variables and functions
+All global variables (and functions, types, etc.) are automatically linkable in Pluto notebooks. The variable name is the link text.
+
+!!! tip
+    You can use this to make items linkable! For example, if you want to link to a plot (which usually has no id), you can add a "dummy variable" `my_plot = 123` inside the cell that creates the plot, and then link to it with `#my_plot`.
+
+
+## Linking to Markdown headers
+When you hover over a Markdown header, you can click the 🔗 button to copy the header id to your clipboard. This will copy a string like `#Adding-color` to your clipboard, which you can then paste somewhere to use as URL.
+
+<img src="$(root_url)/assets/img/copy-header-id.png" alt="screenshot of a Pluto notebook, showing a Markdown header and the button to copy the header id" width="992" height="596">
+
+When you are reading a notebook online (instead of editing on localhost), the button will copy not just the header id, but the full URL to the header, like `https://pluto.land/n/lp7p4qk7#Adding-color`.
+
+
+!!! info
+    This feature is only available in Pluto 0.20.13 and later.
+
+
+
+
+
+
+

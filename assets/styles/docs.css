@@ -95,12 +95,3 @@ pluto-output table td,
 pluto-output table th {
     padding: 0.4em 0.7em;
 }
-
-/* Keyboard shortcuts table styles */
-pluto-output .keyboard-shortcuts th:first-child {
-    text-align: center;
-}
-
-pluto-output .keyboard-shortcuts td:first-child {
-    text-align: right;
-}

@@ -1,1 +1,151 @@
-<!DOCTYPE html>
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>📚 Live Docs — Pluto.jl</title>
+<meta name="description" content='The Live Docs tab in Pluto to read documentation while you code!' />
+
+<link rel="root" href="../../.." />
+
+<link rel="icon" href="../../../assets/favicon.ico" />
+<link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../../assets/styles/layout.css" type="text/css" />
+<script src="../../../assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../assets/scripts/search.js" type="module" defer></script>
+
+
+<meta name="viewport" content="width=device-width"><meta charset="utf-8">
+<meta name="pluto-insertion-spot-meta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928"><meta name="color-scheme" content="light dark"><link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/logo.49a14041.svg"><link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/favicon_unsaturated.c11d4d33.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.15e94937.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.69b60e77.css"><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/index.8e5508d8.js"></script><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.runtime.54cd98a7.js"></script><script defer>console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends \uD83C\uDF08");</script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.21e3b1fd.js" defer></script><link rel="pluto-external-source" id="vmsg-wasm" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/vmsg.56bb9389.wasm"><link rel="pluto-external-source" id="arrow_up_circle_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/arrow-up-circle-outline.3f146ffe.svg"><link rel="pluto-external-source" id="document_text_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/document-text-outline.8d1e2333.svg"><link rel="pluto-external-source" id="help_circle_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/help-circle-outline.a023036a.svg"><link rel="pluto-external-source" id="open_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/open-outline.87533923.svg"><script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.69996afe.js" crossorigin defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.fa1be6bc.css" type="text/css"><script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.20.13";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+<script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/editor.914724dc.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/index.11569726.js"></script><link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.13/frontend-dist/tex-svg-full.f72d1ae1.js" type="text/javascript">
+<meta name="pluto-insertion-spot-preload">
+
+
+<link rel="stylesheet" href="../../../assets/styles/docs.css" type="text/css" />
+<script src="../../../assets/scripts/highlight-code.js" type="module" defer></script>
+
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="pluto_home_link"><a class="pluto_home_link" href='../../..'><img src="../../../assets/favicon.svg" width="32" height="32"><span> Pluto.jl</span></a>
+            </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="../../../en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
+        <li>
+<h3>Introduction</h3>
+<ul>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li>
+</ul>
+</li>
+<li>
+<h3>Using Pluto</h3>
+<ul>
+<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li>
+</ul>
+</li>
+<li>
+<h3>Writing a notebook</h3>
+<ul>
+<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>🧮 LaTeX</a></li><li class=''><a href='../../../en/docs/linking/' title='How to link to other pages in Pluto.'>🔗 Linking</a></li>
+</ul>
+</li>
+<li>
+<h3>Reproducibility</h3>
+<ul>
+<li class=''><a href='../../../en/docs/reactivity/'>🔄 Reactivity <br><small> how Pluto notebooks update automatically</small></a></li><li class=''><a href='../../../en/docs/packages/' title='Pluto.jl automatically manages a package environment for your notebook.'>📦 Packages <br><small> Built-in package management</small></a></li><li class=''><a href='../../../en/docs/packages-advanced/' title='How to use Pkg.activate in Pluto.jl notebooks to set up a custom Pkg environment.'>📦 Packages: advanced <br><small> Pkg.activate in a cell</small></a></li>
+</ul>
+</li>
+<li>
+<h3>Editor</h3>
+<ul>
+<li class='active'><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
+</ul>
+</li>
+<li>
+<h3>Publishing</h3>
+<ul>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class=''><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li><li class=''><a href='../../../en/docs/binder/' title='How to use Binder to run Pluto notebooks in the cloud.'>🤹 Binder</a></li><li class=''><a href='../../../en/docs/PlutoSliderServer/' title='How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web.'>💫 PlutoSliderServer.jl</a></li><li class=''><a href='../../../en/docs/PlutoPages/' title='How to use PlutoPages.jl to generate static websites from Pluto notebooks.'>🏗️ PlutoPages.jl</a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Widgets</h3>
+<ul>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Internals</h3>
+<ul>
+<li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
+</ul>
+</li>
+
+        </ul>
+        </div>
+        </nav>
+        <div id="pages-content">
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="live-docs"><a href="#live-docs" class="anchor"></a>Live Docs</h1>
+<p>The Live Docs tab in Pluto lets you read documentation while you code. Julia has a built-in <a href="https://docs.julialang.org/en/v1/manual/documentation/">documentation system</a>, which lets Pluto query the documentation of any Julia object.</p>
+<img alt="Screenshot of the Live Docs tab, showing documentation for the sqrt function." src="../../../assets/img/live docs sqrt.png" width="702" height="926" style="max-width: 300px;">
+<h2 id="documentation-while-you-type"><a href="#documentation-while-you-type" class="anchor"></a>Documentation while you type</h2>
+<p>While you are typing code, or when you select some text, Live Docs will automatically start searching for documentation. This means that you can just leave the window open, and it will quietly search documentation while you work. Whenever you need to know how a function works, just take a look at the Live Docs tab.</p>
+<p>You can also search for documentation directly, by typing something into the search box.</p>
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
+
+        
+        
+        <div class="edit-this-page">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/live-docs.jlmd" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Edit this page
+            </a>
+        </div>
+    </div>
+</body>
+</html>

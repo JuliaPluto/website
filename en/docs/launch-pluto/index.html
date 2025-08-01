@@ -75,7 +75,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Writing a notebook</h3>
 <ul>
-<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>𝚺 LaTeX</a></li>
+<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>🧮 LaTeX</a></li>
 </ul>
 </li>
 <li>
@@ -149,6 +149,9 @@ Pluto.run()
 <p>Something important to know: <strong>each Pluto session</strong> (created by running <code>Pluto.run()</code>) can run <strong>multiple notebooks</strong> at the same time. The notebooks in your Pluto session are managed from the Pluto main menu. In the screenshot above, you see the Pluto main menu, with 3 notebooks currently running.</p>
 <p>If you use the main menu to create a new notebook or open a notebook, it will be <strong>added to the session</strong>. If you go back to the main menu, you can add more notebooks to the session.</p>
 <img src="../../../assets/img/collatz/c6.png" aria-hidden="true" width="700" height="200">
+<h1 id="how-to-stop-pluto"><a href="#how-to-stop-pluto" class="anchor"></a>How to stop Pluto</h1>
+<p>To stop Pluto, you can <strong>press <code>Ctrl+C</code> in the terminal where you started Pluto</strong>. You might need to press <code>Ctrl+C</code> multiple times. This will stop the Pluto server, and all notebooks in the session will shut down.</p>
+<img alt="screenshot of the terminal, showing the command `Ctrl+C`" src="../../../assets/img/ctrl-c.png" width="793" height="322">
 <h1 id="advanced-mirror-view"><a href="#advanced-mirror-view" class="anchor"></a>Advanced: Mirror view</h1>
 <p>Pluto has a special feature – you can open the same notebook in two different browser windows, and they will stay synchronized. This is useful if you are working with two parts of a notebook at the same time. For example, you can change your analysis code (at the bottom of the notebook) in one window, and you can watch the plots (at the top of the notebook) in a second window.</p>
 <p>To use mirror view, you first open a notebook, and you copy the URL of the notebook from the address bar. This will look like <code>http://localhost:1234/edit?id=0ec9caa2-3fa7-11f0-3e46-3bcef32ce8e3</code>. Then open a new browser window, and paste the URL in the address bar. Now you have two windows that are connected to the same notebook, and they will stay synchronized.</p>

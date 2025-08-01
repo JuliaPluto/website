@@ -178,6 +178,14 @@ body:not(.adsfasdfasdf):not(.sdfsdfdsffdsfds) {
 #pages-sidebar li li:hover a {
     background-color: var(--sidebar-li-hover-bg);
 }
+#pages-sidebar .pluto_version {
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0.6;
+    font-size: 0.7em;
+    font-family: monospace;
+    letter-spacing: 0ch;
+}
 
 /* SIDEBAR LOGO */
 

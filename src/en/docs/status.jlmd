@@ -1,0 +1,32 @@
+---
+title: "🔋 Status"
+description: "The status tab in Pluto to see what's going on!"
+tags: ["docs", "editor", "status"]
+layout: "md.jlmd"
+order: 5
+---
+
+# Status tab
+The status tab in Pluto shows you what is currently running. This includes cell execution, reactive code analysis, Pkg operations and starting the notebook process.
+
+<img alt="Screenshot of the status tab showing one cell running" src="$(root_url)/assets/img/status tab.png" width="650" height="710" style="max-width: 300px;">
+
+
+### Not visible on small screens
+If your screen is not wide enough (like a phone screen), the Status tab is not visible. Try using your device in landscape mode, zooming out, or resizing the window.
+
+## Notification 🔔
+You can ask Pluto to send you a notification when all items are done. (This button appears at the bottom of the status tab after a couple of seconds of activity.) This is useful if you are doing something that takes a long time to run, and you want to work on something else while you wait.
+
+Using this feature for the first time will prompt the browser to ask for permission to send you a notification.
+
+
+<img alt="Screenshot of the notification from Chrome when all tasks are done" src="$(root_url)/assets/img/status notification.png" width="754" height="222" style="max-width: 400px;">
+
+
+
+
+## Current running cell
+To jump to the cell that is currently running, you can either:
+- Click on the task "Evaluating cells" → "Running code" in the **Status tab**.
+- Click on the orange **progress bar** at the top of the screen.

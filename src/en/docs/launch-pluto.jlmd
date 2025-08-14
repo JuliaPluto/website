@@ -33,8 +33,8 @@ When Pluto starts running, it automatically opens a new browser tab that connect
 
 <img src="$(root_url)/assets/img/collatz/c9.png" aria-hidden="true" width="700" height="200">
 
-
-# The Pluto main menu <span id="main-menu"></span>
+{#main-menu}
+# The Pluto main menu
 The first page you see when you open a new browser tab is the _main menu_ of Pluto. It's the page that says "Welcome to Pluto". From here, you can [create a new notebook](../files/#new), [open an existing notebook](../files/#open), or you can take a look at the featured notebooks, further down the page.
 
 <img src="$(root_url)/assets/img/main menu.png" alt="screenshot of the Pluto main menu, showing recent notebooks and a textbox to open a recent notebook" width="1762" height="1494">

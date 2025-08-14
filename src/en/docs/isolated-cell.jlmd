@@ -1,0 +1,61 @@
+---
+title: "Isolated Cells – notebooks as web apps"
+description: "Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app."
+tags: ["docs", "widgets", "isolated-cell", "advanced"]
+layout: "md.jlmd"
+---
+
+# Isolated Cells – notebooks as web apps
+
+
+Pluto has a featured called "isolated cells", which lets you embed one or more cells in a very minimalistic way. This is really useful if you want to use Pluto to develop a **web app**.
+
+With isolated cells:
+- No Pluto UI is shown (like "Edit or Run", binder, cell markers, etc.)
+- All cell inputs (code) is hidden
+- All cells display in **full width** and there are no margins
+- Cells can be reordered
+
+
+
+## How to use isolated cells
+
+To use isolated cells, you first need to write a notebook that is hosted somewhere as HTML. This is most useful for notebooks that are hosted using PlutoSliderServer.jl, so that you can use `@bind` to make your web app interactive.
+
+As an example, let's work with the following notebook:
+
+[https://featured.plutojl.org/basic/turtles-art.html](https://featured.plutojl.org/basic/turtles-art.html)
+
+We will use "isolated cells" to make the final artwork in the notebook into its own web app. Currently, the notebook looks like this:
+
+
+
+<img alt="Screenshot of the complete notebook." src="$(root_url)/assets/img/isolated cell full.png" width="853" height="775">
+
+
+
+## Find the Cell IDs
+Next, you need to find the **cell IDs** of the cells that you want to isolate. You can find this in the `.jl` notebook file, as comment before each cell.
+
+You can also right-click on the cell in the browser, click "Inspect Element", and then find the wrapping `pluto-cell` element. The `id` attribute of this element is the cell ID.
+
+In this example, the cell IDs are:
+```
+e51d4b19-fa30-4643-8d12-407941a4757d
+6deab6a2-f298-42a8-9c86-db8a2a26ac17
+c668c791-9c3b-4eed-babe-9a484a88b68e
+```
+
+## Create the URL
+
+Now, we use a URL query parameter to tell Pluto to isolate these cells. Add `?` to the URL, and then add `isolated_cell_id=...` for each cell ID, separated by `&`.
+
+This gives:
+
+
+[https://featured.plutojl.org/basic/turtles-art.html?isolated_cell_id=e51d4b19-fa30-4643-8d12-407941a4757d&isolated_cell_id=6deab6a2-f298-42a8-9c86-db8a2a26ac17&isolated_cell_id=c668c791-9c3b-4eed-babe-9a484a88b68e](https://featured.plutojl.org/basic/turtles-art.html?isolated_cell_id=e51d4b19-fa30-4643-8d12-407941a4757d&isolated_cell_id=6deab6a2-f298-42a8-9c86-db8a2a26ac17&isolated_cell_id=c668c791-9c3b-4eed-babe-9a484a88b68e)
+
+Try it out! It should look like this:
+
+
+<img alt="Screenshot of the isolated cells." src="$(root_url)/assets/img/isolated cell.png" width="860" height="578">

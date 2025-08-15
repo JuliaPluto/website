@@ -1,0 +1,89 @@
+---
+title: "💡 Disabling cells"
+description: "How to disable a cell in Pluto, or disable a cell in the file."
+tags: ["docs", "editor"]
+layout: "md.jlmd"
+order: 30
+---
+
+{#disable}
+# Disabling cells
+Pluto allows you to **disable a cell**, which means that it will not get executed with reactivity. When one of the dependencies of a disabled cell changes, the disabled cell will **not** get executed as usual.
+
+Disabled cells are indicated by a 'greyed-out' appearance. Pressing the "Run" button (Shift-Enter) will **not** execute the cell, but it will save any changes to the cell code.
+
+
+<video alt="Disabling a cell by clicking the 'Disable' button. It is no longer reactive." style="aspect-ratio: 998/528; max-width: 100%;" src="$(root_url)/assets/img/disable cell.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
+
+In this video, the disabled cell no longer responds to changes in the `count` variable. (The same applies when `count` is defined in code, instead of with a slider.)
+
+### Reactive
+The cell disabling feature is **reactive** – any cells that depend on a disabled cell will **also be disabled**. This ensures that the notebook remains consistent, and there is no code that executes with old values that no longer exist.
+
+This is also a really powerful feature, because you can easily disable a large number of cells at once, by disabling a core cell that is used in all of them.
+
+
+<video alt="Disabling a cell by clicking the 'Disable' button. It is no longer reactive, and the cell that depends on it is also disabled." style="aspect-ratio: 998/528; max-width: 100%;" src="$(root_url)/assets/img/disable cell indirect.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
+
+In this video, the last cell is disabled indirectly, because it depends on the disabled cell through the `text` variable.
+
+
+
+
+
+## Other uses
+Disabling a cell can also be useful for other purposes, such as:
+- **Dramatic effect**: You can use this when showing a piece of code, but you don't want to show the result yet.
+
+
+
+{#disable-in-file}
+# Disabling in file
+There is also the option to **disable a cell in the file**. This makes no difference when running the notebook in Pluto, but the cell code will be stored as a Julia comment in the file.
+
+This is useful when you are writing a Pluto notebook file (`.jl`) that is also used as a Julia script. This lets you write code that is only executed when the notebook is used in Pluto, such as additional plots, testing, or more.
+
+<img alt="A screenshot of a Pluto notebook file with a disabled cell." src="$(root_url)/assets/img/disable in file.png" width="998" height="528">
+
+_Notice the gray markers to the right of the cells, marking a cell disabled in file (second cell) and a cell disabled indirectly in file (last cell)._
+
+
+### File format
+Before the cell is disabled in file, the `.jl` notebook file looks like:
+
+```julia
+# ╔═╡ d5697b7b-a916-468c-9a2a-e84a87d7320f
+@bind count Slider(5:20)
+
+# ╔═╡ 6a653410-c595-45fb-8357-6ffe815e9d49
+text = repeat("🎈", count)
+
+# ╔═╡ 94216444-bcfb-4925-bc16-44b698181286
+sum(codeunits(text))
+```
+
+After disabling the second cell in file, you get:
+
+```julia
+# ╔═╡ d5697b7b-a916-468c-9a2a-e84a87d7320f
+@bind count Slider(5:20)
+
+# ╔═╡ 6a653410-c595-45fb-8357-6ffe815e9d49
+# ╠═╡ skip_as_script = true
+#=╠═╡
+text = repeat("🎈", count)
+  ╠═╡ =#
+
+# ╔═╡ 94216444-bcfb-4925-bc16-44b698181286
+#=╠═╡
+sum(codeunits(text))
+  ╠═╡ =#
+```
+
+
+### Reactive
+The _Disable in File_ feature is **reactive**, just like the ["Disable" feature](#disable). This means that any cells that depend on a cell that is disabled in file will **also be disabled in file**. The reasons here are similar: it makes sense for consistency, and it makes it easy to disable a large number of cells at once.
+
+
+
+

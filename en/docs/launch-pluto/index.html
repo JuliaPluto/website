@@ -151,10 +151,10 @@ Pluto.run()
 <p>Something important to know: <strong>each Pluto session</strong> (created by running <code>Pluto.run()</code>) can run <strong>multiple notebooks</strong> at the same time. The notebooks in your Pluto session are managed from the Pluto main menu. In the screenshot above, you see the Pluto main menu, with 3 notebooks currently running.</p>
 <p>If you use the main menu to create a new notebook or open a notebook, it will be <strong>added to the session</strong>. If you go back to the main menu, you can add more notebooks to the session.</p>
 <img src="../../../assets/img/collatz/c6.png" aria-hidden="true" width="700" height="200">
-<h1 id="how-to-stop-pluto"><a href="#how-to-stop-pluto" class="anchor"></a>How to stop Pluto</h1>
+<h1 id="stop"><a href="#stop" class="anchor"></a>How to stop Pluto</h1>
 <p>To stop Pluto, you can <strong>press <code>Ctrl+C</code> in the terminal where you started Pluto</strong>. You might need to press <code>Ctrl+C</code> multiple times. This will stop the Pluto server, and all notebooks in the session will shut down.</p>
 <img alt="screenshot of the terminal, showing the command `Ctrl+C`" src="../../../assets/img/ctrl-c.png" width="793" height="322">
-<h1 id="advanced-mirror-view"><a href="#advanced-mirror-view" class="anchor"></a>Advanced: Mirror view</h1>
+<h1 id="mirror-view"><a href="#mirror-view" class="anchor"></a>Advanced: Mirror view</h1>
 <p>Pluto has a special feature – you can open the same notebook in two different browser windows, and they will stay synchronized. This is useful if you are working with two parts of a notebook at the same time. For example, you can change your analysis code (at the bottom of the notebook) in one window, and you can watch the plots (at the top of the notebook) in a second window.</p>
 <p>To use mirror view, you first open a notebook, and you copy the URL of the notebook from the address bar. This will look like <code>http://localhost:1234/edit?id=0ec9caa2-3fa7-11f0-3e46-3bcef32ce8e3</code>. Then open a new browser window, and paste the URL in the address bar. Now you have two windows that are connected to the same notebook, and they will stay synchronized.</p>
 <h2 id="limitation-no-unsaved-edits"><a href="#limitation-no-unsaved-edits" class="anchor"></a>Limitation: no unsaved edits</h2>
@@ -163,7 +163,7 @@ Pluto.run()
 <p>You can also use the “Mirror view” feature to collaborate with someone else on another computer, which can be really fun! We recommend a service like <a href="https://bore.pub">bore.pub</a> to share the notebook with someone else, and don’t change Pluto’s security settings. Because – be careful! Someone with access to the notebook, has complete access to your computer. They can install and run programs without your approval.</p>
 <p>We have used this feature to collaborate on notebooks, and we found it quite important to have good communication using an audio call. This also avoids editing the same cell.</p>
 </div>
-<h1 id="advanced-multiple-pluto-sessions"><a href="#advanced-multiple-pluto-sessions" class="anchor"></a>Advanced: Multiple Pluto sessions</h1>
+<h1 id="multiple-sessions"><a href="#multiple-sessions" class="anchor"></a>Advanced: Multiple Pluto sessions</h1>
 <p>You can start Pluto multiple times in parallel (for example: on two different Julia versions). In this case, each Pluto server will find the first available port. Usually, the first server will find port <code>1234</code>, the second server will find port <code>1235</code>, and so on.</p>
 <p>This means that you can open two browser windows, and connect to the two different Pluto servers in parallel:</p>
 <pre><code>http://localhost:1234

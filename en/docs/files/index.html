@@ -123,13 +123,13 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="how-to-create-a-new-notebook-span-idnewspan"><a href="#how-to-create-a-new-notebook-span-idnewspan" class="anchor"></a>How to create a new notebook <span id="new"></span></h1>
+<h1 id="new"><a href="#new" class="anchor"></a>How to create a new notebook</h1>
 <p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Then, click the “New” button. This will create a new empty notebook in the current Pluto session.</p>
 <img src="../../../assets/img/main menu new notebook.png" alt="screenshot of the Pluto main menu, showing the new notebook button" width="1762" height="621">
 <div class="admonition tip"><p class="admonition-title">Tip</p>
 <p>You can right click the “New” button, and select “Open in new tab”. This will open the new notebook in a new tab, and you can open more notebooks in parallel.</p>
 </div>
-<h1 id="how-to-save-a-notebook-span-idsavespan"><a href="#how-to-save-a-notebook-span-idsavespan" class="anchor"></a>How to save a notebook <span id="save"></span></h1>
+<h1 id="save"><a href="#save" class="anchor"></a>How to save a notebook</h1>
 <p>Notebooks are <strong>saved automatically</strong> when you run code. When you start typing new code in a cell, this code is not yet saved, but when you run the cell, the code is saved.</p>
 <p>When there are unsaved changes in a notebook, you will see a button in the top right corner of the notebook – the “Save” button. Clicking this button will run all unsaved cells in one batch, which will automatically save the notebook.</p>
 <img src="../../../assets/img/save all changes.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
@@ -140,7 +140,7 @@ window.pluto_recording_audio_url = undefined;
 <p>The <code>.jl</code> extension is used because Pluto notebooks are valid Julia files – you can run them as Julia scripts, or use the <code>include</code> function in the REPL to start a REPL session with the notebook.</p>
 <p>You are free to use a different extension (like <code>.plutojl</code>), the extension is not required to open the file.</p>
 </div>
-<h1 id="how-to-open-a-notebook-from-your-computer-span-idopenspan"><a href="#how-to-open-a-notebook-from-your-computer-span-idopenspan" class="anchor"></a>How to open a notebook from your computer <span id="open"></span></h1>
+<h1 id="open"><a href="#open" class="anchor"></a>How to open a notebook from your computer</h1>
 <p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now you can type a notebook path in the textbox, and press Enter or click the “Open” button. While you type, there will be autocompletion suggestions with folders and files.</p>
 <img src="../../../assets/img/main menu open autocomplete.png" alt="screenshot of the Open button in the Pluto main menu, with a textbox for the notebook path and autocompletion suggestions" width="1774" height="558">
 <h2 id="how-to-find-the-notebook-path"><a href="#how-to-find-the-notebook-path" class="anchor"></a>How to find the notebook path</h2>
@@ -160,16 +160,16 @@ window.pluto_recording_audio_url = undefined;
 <div class="admonition info"><p class="admonition-title">Why so difficult?</p>
 <p>It would be really nice if you could just pick the notebook file from your file browser, instead of having to type the path. But this is not possible, because Pluto is a web application, which does not have access to your file system for security reasons. See <a href="https://github.com/fonsp/Pluto.jl/issues/350">this issue</a> and</p>
 </div>
-<h1 id="how-to-open-a-notebook-from-the-web-span-idopen-from-urlspan"><a href="#how-to-open-a-notebook-from-the-web-span-idopen-from-urlspan" class="anchor"></a>How to open a notebook from the web <span id="open-from-url"></span></h1>
+<h1 id="open-from-url"><a href="#open-from-url" class="anchor"></a>How to open a notebook from the web</h1>
 <p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now you can type a notebook path in the textbox, and press Enter or click the “Open” button.</p>
 <p>The notebook will open in “Safe Preview” mode, which means that no code will be executed until you give permission.</p>
-<h1 id="open-a-notebook-using-the-clipboard-span-idopen-from-clipboardspan"><a href="#open-a-notebook-using-the-clipboard-span-idopen-from-clipboardspan" class="anchor"></a>Open a notebook using the Clipboard <span id="open-from-clipboard"></span></h1>
+<h1 id="open-from-clipboard"><a href="#open-from-clipboard" class="anchor"></a>Open a notebook using the Clipboard</h1>
 <p>You can copy the <strong>complete contents</strong> of a <code>.jl</code> Pluto notebook file, and open it with Pluto. With the contents of a notebook file in your clipboard, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now simply paste the contents anywhere on the page using <code>Ctrl+V</code> or <code>Cmd+V</code>, and it will be opened as a new notebook.</p>
 <p>The notebook will open in “Safe Preview” mode, which means that no code will be executed until you give permission.</p>
-<h1 id="running-featured-notebooks-span-idfeaturedspan"><a href="#running-featured-notebooks-span-idfeaturedspan" class="anchor"></a>Running featured notebooks <span id="featured"></span></h1>
+<h1 id="featured"><a href="#featured" class="anchor"></a>Running featured notebooks</h1>
 <p>On the bottom of the <a href="../launch-pluto/#main-menu">Pluto main menu</a>, you will find a large collection of <strong>featured notebooks</strong> – notebooks written by the Julia community, featured by the Pluto developers. These notebooks are a great resource to get inspired about new ways to use Julia and Pluto!</p>
 <p>Click on any featured notebook to read it. This will instantly load the notebook (prerendered on our servers), and interactive elements will work (this is done using <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer.jl</a>). If you want to change code and run the notebook, simply click the “Edit or run” button in the top right of the screen. This will <strong>make a copy of the notebook</strong> on your computer that you can edit.</p>
-<h1 id="how-to-shut-down-a-notebook"><a href="#how-to-shut-down-a-notebook" class="anchor"></a>How to shut down a notebook</h1>
+<h1 id="shutdown"><a href="#shutdown" class="anchor"></a>How to shut down a notebook</h1>
 <p>TODO</p>
 
 </div>

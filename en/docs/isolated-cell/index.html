@@ -132,13 +132,13 @@ window.pluto_recording_audio_url = undefined;
 <li>All cells display in <strong>full width</strong> and there are no margins</li>
 <li>Cells can be reordered</li>
 </ul>
-<h2 id="how-to-use-isolated-cells"><a href="#how-to-use-isolated-cells" class="anchor"></a>How to use isolated cells</h2>
+<h2 id="how-to-use"><a href="#how-to-use" class="anchor"></a>How to use isolated cells</h2>
 <p>To use isolated cells, you first need to write a notebook that is hosted somewhere as HTML. This is most useful for notebooks that are hosted using PlutoSliderServer.jl, so that you can use <code>@bind</code> to make your web app interactive.</p>
 <p>As an example, let’s work with the following notebook:</p>
 <p><a href="https://featured.plutojl.org/basic/turtles-art.html">https://featured.plutojl.org/basic/turtles-art.html</a></p>
 <p>We will use “isolated cells” to make the final artwork in the notebook into its own web app. Currently, the notebook looks like this:</p>
 <img alt="Screenshot of the complete notebook." src="../../../assets/img/isolated cell full.png" width="853" height="775">
-<h2 id="find-the-cell-ids"><a href="#find-the-cell-ids" class="anchor"></a>Find the Cell IDs</h2>
+<h2 id="find-cell-ids"><a href="#find-cell-ids" class="anchor"></a>Find the Cell IDs</h2>
 <p>Next, you need to find the <strong>cell IDs</strong> of the cells that you want to isolate. You can find this in the <code>.jl</code> notebook file, as comment before each cell.</p>
 <p>You can also right-click on the cell in the browser, click “Inspect Element”, and then find the wrapping <code>pluto-cell</code> element. The <code>id</code> attribute of this element is the cell ID.</p>
 <p>In this example, the cell IDs are:</p>
@@ -146,7 +146,7 @@ window.pluto_recording_audio_url = undefined;
 6deab6a2-f298-42a8-9c86-db8a2a26ac17
 c668c791-9c3b-4eed-babe-9a484a88b68e
 </code></pre>
-<h2 id="create-the-url"><a href="#create-the-url" class="anchor"></a>Create the URL</h2>
+<h2 id="create-url"><a href="#create-url" class="anchor"></a>Create the URL</h2>
 <p>Now, we use a URL query parameter to tell Pluto to isolate these cells. Add <code>?</code> to the URL, and then add <code>isolated_cell_id=...</code> for each cell ID, separated by <code>&amp;</code>.</p>
 <p>This gives:</p>
 <p><a href="https://featured.plutojl.org/basic/turtles-art.html?isolated_cell_id=e51d4b19-fa30-4643-8d12-407941a4757d&amp;isolated_cell_id=6deab6a2-f298-42a8-9c86-db8a2a26ac17&amp;isolated_cell_id=c668c791-9c3b-4eed-babe-9a484a88b68e">https://featured.plutojl.org/basic/turtles-art.html?isolated_cell_id=e51d4b19-fa30-4643-8d12-407941a4757d&amp;isolated_cell_id=6deab6a2-f298-42a8-9c86-db8a2a26ac17&amp;isolated_cell_id=c668c791-9c3b-4eed-babe-9a484a88b68e</a></p>

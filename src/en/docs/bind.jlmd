@@ -31,7 +31,7 @@ repeat("🍎", apples)
 This is what you get:
 
 
-> <div style="aspect-ratio: 998/598; width: 100%; contain: all; overflow: hidden;"><video src="$(root_url)/assets/img/interactive apples.mov" controls="controls" muted="muted" loop="loop"></video></div>
+> <div style="aspect-ratio: 998/598; width: 100%; contain: all; overflow: hidden;"><video src="$(root_url)/assets/img/interactive apples.mov" controls="controls" muted="muted" loop="loop" playsinline></video></div>
 
 
 

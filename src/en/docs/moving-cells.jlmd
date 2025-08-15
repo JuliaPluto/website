@@ -10,7 +10,7 @@ order: 20
  Pluto allows you to place your cells in **any order**. You can do this by dragging the cell from the left shoulder. A bold line shows where the cell will be moved to.
  
  
-<video alt="Moving a cell by dragging the left shoulder" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/dragging cells.mp4" controls="controls" muted="muted" loop="loop"></video>
+<video alt="Moving a cell by dragging the left shoulder" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/dragging cells.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 
 
 !!! tip
@@ -23,12 +23,12 @@ order: 20
 # Selecting cells
 You can select multiple cells, which is useful for moving them together. To select cells, **click between two cells and drag to make a selection**. 
 
-<video alt="Selecting cells by clicking between two cells and dragging" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/selecting cells.mp4" controls="controls" muted="muted" loop="loop"></video>
+<video alt="Selecting cells by clicking between two cells and dragging" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/selecting cells.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 
 ### Selecting cells on wide screens
 If your window is wide enough, you can also use the **right margin** to start a selection:
     
-<video alt="Selecting cells by clicking on the right margin and dragging" style="aspect-ratio: 707/467; max-width: 100%;" src="$(root_url)/assets/img/selecting cells by right margin.mp4" controls="controls" muted="muted" loop="loop"></video>
+<video alt="Selecting cells by clicking on the right margin and dragging" style="aspect-ratio: 707/467; max-width: 100%;" src="$(root_url)/assets/img/selecting cells by right margin.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 
 
 
@@ -52,5 +52,5 @@ While multiple cells are selected, you can apply various actions to them simulta
 You can also move cells between different notebooks. To do this, [open two notebooks in two different windows](https://plutojl.org/en/docs/launch-pluto/), and place them side-by-side. You can now **drag cells between the two notebooks**, and they will be copied to the other notebook.
 
 
-<video alt="Moving cells between notebooks by dragging them between two open notebooks" style="aspect-ratio: 1038/624; max-width: 100%;" src="$(root_url)/assets/img/moving cells between notebooks.mp4" controls="controls" muted="muted" loop="loop"></video>
+<video alt="Moving cells between notebooks by dragging them between two open notebooks" style="aspect-ratio: 1038/624; max-width: 100%;" src="$(root_url)/assets/img/moving cells between notebooks.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 

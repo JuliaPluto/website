@@ -19,7 +19,7 @@ Pluto can help you fix syntax errors automatically! If you make a typo or your c
 - Click the button, and you'll see a prompt explaining what will happen, and you can choose whether you want to use the service.
 - If you accept, Pluto will use a cloud AI model (currently Claude 3.5 haiku) to fix the error, and the cell will be updated with the new code.
 
-<video src="https://github.com/user-attachments/assets/9abd41e1-0d54-4fc8-aef2-9e74c0799434" controls="controls" muted="muted"></video>
+<video src="https://github.com/user-attachments/assets/9abd41e1-0d54-4fc8-aef2-9e74c0799434" controls="controls" muted="muted" playsinline></video>
 
 
 
@@ -42,7 +42,7 @@ There is a button to generate a prompt about a cell with context from your noteb
 
 Here is a video of the feature in action:
 
-<video src="$(root_url)/assets/img/ai context demo 1.mov" controls="controls" muted="muted"></video>
+<video src="$(root_url)/assets/img/ai context demo 1.mov" controls="controls" muted="muted" playsinline></video>
 
 
 > 🚨 **Experimental!** This feature is available in Pluto v0.20.9 and above, and is currently in beta. See the [announcement PR](https://github.com/fonsp/Pluto.jl/pull/3224) for more details.

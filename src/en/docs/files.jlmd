@@ -6,7 +6,8 @@ layout: "md.jlmd"
 order: 2
 ---
 
-# How to create a new notebook <span id="new"></span>
+{#new}
+# How to create a new notebook
 First, go to the [Pluto main menu](../launch-pluto/#main-menu). Then, click the "New" button. This will create a new empty notebook in the current Pluto session.
 
 <img src="$(root_url)/assets/img/main menu new notebook.png" alt="screenshot of the Pluto main menu, showing the new notebook button" width="1762" height="621">
@@ -15,7 +16,8 @@ First, go to the [Pluto main menu](../launch-pluto/#main-menu). Then, click the 
     You can right click the "New" button, and select "Open in new tab". This will open the new notebook in a new tab, and you can open more notebooks in parallel.
 
 
-# How to save a notebook <span id="save"></span>
+{#save}
+# How to save a notebook
 Notebooks are **saved automatically** when you run code. When you start typing new code in a cell, this code is not yet saved, but when you run the cell, the code is saved.
 
 When there are unsaved changes in a notebook, you will see a button in the top right corner of the notebook – the "Save" button. Clicking this button will run all unsaved cells in one batch, which will automatically save the notebook.
@@ -34,8 +36,8 @@ When you create a new notebook, the notebook is stored temporarily in the `~/.ju
     You are free to use a different extension (like `.plutojl`), the extension is not required to open the file.    
 
 
-
-# How to open a notebook from your computer <span id="open"></span>
+{#open}
+# How to open a notebook from your computer
 First, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can type a notebook path in the textbox, and press Enter or click the "Open" button. While you type, there will be autocompletion suggestions with folders and files.
 
 <img src="$(root_url)/assets/img/main menu open autocomplete.png" alt="screenshot of the Open button in the Pluto main menu, with a textbox for the notebook path and autocompletion suggestions" width="1774" height="558">
@@ -60,27 +62,28 @@ For example, you might have:
 
 
 
-
-# How to open a notebook from the web <span id="open-from-url"></span>
+{#open-from-url}
+# How to open a notebook from the web
 First, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can type a notebook path in the textbox, and press Enter or click the "Open" button.
 
 The notebook will open in "Safe Preview" mode, which means that no code will be executed until you give permission.
 
 
-
-# Open a notebook using the Clipboard <span id="open-from-clipboard"></span>
+{#open-from-clipboard}
+# Open a notebook using the Clipboard
 You can copy the **complete contents** of a `.jl` Pluto notebook file, and open it with Pluto. With the contents of a notebook file in your clipboard, go to the [Pluto main menu](../launch-pluto/#main-menu). Now simply paste the contents anywhere on the page using `Ctrl+V` or `Cmd+V`, and it will be opened as a new notebook.
 
 The notebook will open in "Safe Preview" mode, which means that no code will be executed until you give permission.
 
 
-# Running featured notebooks <span id="featured"></span>
+{#featured}
+# Running featured notebooks
 On the bottom of the [Pluto main menu](../launch-pluto/#main-menu), you will find a large collection of **featured notebooks** – notebooks written by the Julia community, featured by the Pluto developers. These notebooks are a great resource to get inspired about new ways to use Julia and Pluto!
 
 Click on any featured notebook to read it. This will instantly load the notebook (prerendered on our servers), and interactive elements will work (this is done using [PlutoSliderServer.jl](https://github.com/JuliaPluto/PlutoSliderServer.jl)). If you want to change code and run the notebook, simply click the "Edit or run" button in the top right of the screen. This will **make a copy of the notebook** on your computer that you can edit.
 
 
 
-
+{#shutdown}
 # How to shut down a notebook
 TODO

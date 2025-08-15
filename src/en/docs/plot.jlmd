@@ -9,6 +9,7 @@ order: 3
 # Plotting in Pluto
 It's super easy to create plots in Pluto! There are many plotting libraries for Julia, and most will work well with Pluto.
 
+{#plots.jl}
 ## Plots.jl
 [Plots.jl](https://docs.juliaplots.org/) is an easy-to-use plotting library for Julia. It is a versatile plotting library, with a syntax that is similar to Python's Matplotlib. To use it in Pluto, you add the following code to your notebook:
 
@@ -91,6 +92,7 @@ $(begin
 end)
 
 
+{#makie.jl}
 ## Makie.jl
 [Makie.jl](https://docs.makie.org/) is a powerful plotting library for Julia. It is built on top of the Julia plotting ecosystem and provides a simple interface for creating plots.
 
@@ -101,6 +103,7 @@ $(PlutoUI.NotebookCard("https://featured.plutojl.org/plot/heatmap.html"; link_te
 $(PlutoUI.NotebookCard("https://featured.plutojl.org/math/convolution_1d.html"; link_text="CairoMakie example"))
 
 
+{#plotly}
 ## Plotly
 You can use the Plotly JS plotting library in Pluto! Check out the [PlutoPlotly.jl](https://github.com/JuliaPluto/PlutoPlotly.jl) package to get started.
 

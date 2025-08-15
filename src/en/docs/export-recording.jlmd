@@ -6,8 +6,8 @@ layout: "md.jlmd"
 order: 1.4
 ---
 
-
-# Make a recording *(preview)* <span id="recording"></span>
+{#recording}
+# Make a recording *(preview)*
 Pluto has one really cool experimental feature, and we're curious what you think! You can make a **Pluto recording**, which is a bit like recording your screen to a video, but the result is an HTML web page! 
 
 That means that while you watch the video, you can pause and scroll to a different section!

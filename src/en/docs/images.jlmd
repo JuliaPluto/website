@@ -10,6 +10,7 @@ order: 1.2
 # Adding images to your notebook
 You can add images to your Pluto notebook quite easily! But it is different from what you might be used to in Jupyter, Word, or Google Docs.
 
+{#imgur}
 # Method 1: Using imgur and Markdown
 The easiest way to add images to your notebook is to upload the image to imgur.com (or a similar service), and then use the Markdown syntax to embed the image URL.
 
@@ -43,7 +44,7 @@ md""\"
 You can also use `PlutoUI.Resource` or HypertextLiteral.jl to have more control over how the image is displayed.
 
 
-
+{#github}
 # Method 2: Using an image from GitHub
 If your **image is stored in a repository on GitHub**, you can use the Markdown syntax to embed the image URL.
 
@@ -75,7 +76,7 @@ md""\"
 You can also use `PlutoUI.Resource` or HypertextLiteral.jl to have more control over how the image is displayed.
 
 
-
+{#local}
 # Method 3: Using a local image
 You can also embed images from your computer in Pluto notebooks, but we want to issue a warning here. It is often a better idea to use images hosted online (like imgur or GitHub).
 

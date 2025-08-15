@@ -128,6 +128,7 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
 </style>
 
 
+{#f1}
 ## View this list in Pluto
 Press <kbd>F1</kbd> or <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>?</kbd> in Pluto to see a pop-up with the most important tips.
 

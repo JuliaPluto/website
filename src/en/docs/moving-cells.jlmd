@@ -19,6 +19,7 @@ order: 20
     For example, you can first tell your story using Markdown cells and plots, and then add a section `# Appendix` with package imports, helper functions and more.
 
 
+{#selecting}
 # Selecting cells
 You can select multiple cells, which is useful for moving them together. To select cells, **click between two cells and drag to make a selection**. 
 
@@ -46,7 +47,7 @@ While multiple cells are selected, you can apply various actions to them simulta
 
 
 
-
+{#between-notebooks}
 # Moving between notebooks
 You can also move cells between different notebooks. To do this, [open two notebooks in two different windows](https://plutojl.org/en/docs/launch-pluto/), and place them side-by-side. You can now **drag cells between the two notebooks**, and they will be copied to the other notebook.
 

@@ -6,7 +6,8 @@ layout: "md.jlmd"
 order: 1.1
 ---
 
-# Notebook file <span id="jl"></span>
+{#jl}
+# Notebook file
 Pluto notebook files are **stored as `.jl` Julia files**. This file contains:
 - Code for each cell
 - Special comments (start with `#`) that Pluto uses to understand which code belongs to which cell.

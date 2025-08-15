@@ -62,6 +62,7 @@ If you use the main menu to create a new notebook or open a notebook, it will be
 <img src="$(root_url)/assets/img/collatz/c6.png" aria-hidden="true" width="700" height="200">
 
 
+{#stop}
 # How to stop Pluto
 To stop Pluto, you can **press `Ctrl+C` in the terminal where you started Pluto**. You might need to press `Ctrl+C` multiple times. This will stop the Pluto server, and all notebooks in the session will shut down.
 
@@ -69,7 +70,7 @@ To stop Pluto, you can **press `Ctrl+C` in the terminal where you started Pluto*
 
 
 
-
+{#mirror-view}
 # Advanced: Mirror view
 Pluto has a special feature – you can open the same notebook in two different browser windows, and they will stay synchronized. This is useful if you are working with two parts of a notebook at the same time. For example, you can change your analysis code (at the bottom of the notebook) in one window, and you can watch the plots (at the top of the notebook) in a second window.
 
@@ -89,7 +90,7 @@ Currently, unsaved edits (code changes before your press `Shift+Enter` or _Save_
 
 
 
-
+{#multiple-sessions}
 # Advanced: Multiple Pluto sessions
 You can start Pluto multiple times in parallel (for example: on two different Julia versions). In this case, each Pluto server will find the first available port. Usually, the first server will find port `1234`, the second server will find port `1235`, and so on.
 

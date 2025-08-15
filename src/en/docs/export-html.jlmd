@@ -6,7 +6,8 @@ layout: "md.jlmd"
 order: 1.2
 ---
 
-# Export to HTML <span id="html"></span>
+{#html}
+# Export to HTML
 This is a snapshot of your notebook with all outputs in a standalone HTML file. You can share this `.html` file via email, and other people can double-click the file to read your notebook. 
 
 !!! info

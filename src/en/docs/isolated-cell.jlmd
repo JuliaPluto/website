@@ -18,6 +18,7 @@ With isolated cells:
 
 
 
+{#how-to-use}
 ## How to use isolated cells
 
 To use isolated cells, you first need to write a notebook that is hosted somewhere as HTML. This is most useful for notebooks that are hosted using PlutoSliderServer.jl, so that you can use `@bind` to make your web app interactive.
@@ -34,6 +35,7 @@ We will use "isolated cells" to make the final artwork in the notebook into its 
 
 
 
+{#find-cell-ids}
 ## Find the Cell IDs
 Next, you need to find the **cell IDs** of the cells that you want to isolate. You can find this in the `.jl` notebook file, as comment before each cell.
 
@@ -46,6 +48,7 @@ e51d4b19-fa30-4643-8d12-407941a4757d
 c668c791-9c3b-4eed-babe-9a484a88b68e
 ```
 
+{#create-url}
 ## Create the URL
 
 Now, we use a URL query parameter to tell Pluto to isolate these cells. Add `?` to the URL, and then add `isolated_cell_id=...` for each cell ID, separated by `&`.

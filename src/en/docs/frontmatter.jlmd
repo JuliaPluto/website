@@ -6,13 +6,13 @@ layout: "md.jlmd"
 order: 7
 ---
 
-# Frontmatter <span id="frontmatter"></span>
+# Frontmatter
 
 Frontmatter is a way to add metadata to a Pluto.jl notebook, such as the title, description, authors, cover image, license, date and more. This data is used when **sharing notebooks online**, using [Pluto HTML exports](../export-html/), [`PlutoUI.NotebookCard`](https://featured.plutojl.org/basic/plutoui.jl#NotebookCard), [PlutoSliderServer](https://github.com/JuliaPluto/PlutoSliderServer.jl), [PlutoPages](https://github.com/JuliaPluto/PlutoPages.jl) or [pluto.land](https://pluto.land).
 
 For example, the [featured notebooks](../featured-notebooks/) use frontmatter. When you see the list of all featured notebooks, notice how they all have a title, description, cover image and authors. And they are 
 
-
+{#gui}
 ## The frontmatter GUI
 When editing a Pluto notebook, you can open the frontmatter editor by clicking the "Share button" in the top right.
 
@@ -29,6 +29,7 @@ In the share menu, click the <img src="https://cdn.jsdelivr.net/gh/ionic-team/io
 
 In this editor, you can edit fields and add new fields. You are free to enter any data that you want (which you might want to [use](#Pluto.frontmatter) in your custom scripts), but some frontmatter entries have special meaning in the Pluto ecosystem.
 
+{#special-entries}
 ### Special frontmatter entries
 The following keys have special meaning:
 - **`title`** – the title of the document. When not used, the notebook filename is used as title. This is used in Pluto.jl HTML exports as the `<title>` tag.
@@ -40,6 +41,7 @@ The following keys have special meaning:
 - **`layout`** – the PlutoPages.jl layout file of the document.
 - **`order`** – the order of the document within its category.
 
+{#og-tags}
 ### Open Graph (OG) tags
 The following keys are used as [Open Graph (OG) tags](https://ogp.me/) in Pluto.jl HTML exports (using `<meta property="og:...">`): 
 
@@ -47,6 +49,7 @@ The following keys are used as [Open Graph (OG) tags](https://ogp.me/) in Pluto.
 
 Setting these values helps with sharing notebooks on social media and search engine optimization.
 
+{#author}
 ### The `author` field
 There is also a vector `author` that is used to provide the authors of the notebook. The following fields have special meaning in the Pluto ecosystem:
 - **`name`** – the name of the author.
@@ -54,6 +57,7 @@ There is also a vector `author` that is used to provide the authors of the noteb
 - **`image`** - the URL of the author's avatar. This is not needed if the `url` is a github URL.
 
 
+{#plutopages}
 ## PlutoPages.jl
 If you are using [PlutoPages.jl](https://github.com/JuliaPluto/PlutoPages.jl) to write your website, you should at least set the following frontmatter entries for every page: `layout` and `tags`. (`layout` is the name of the layout file in the `src/_includes/` directory.)
 
@@ -62,7 +66,8 @@ If you are using [PlutoPages.jl](https://github.com/JuliaPluto/PlutoPages.jl) to
 If you are writing a featured notebook, check out other featured notebook files to see which frontmatter entries are required.
 
 
-## <span id="Pluto.frontmatter">Accessing frontmatter from Julia</span>
+{#Pluto.frontmatter}
+## Accessing frontmatter from Julia
 If you are writing a script to process Pluto notebooks, you can access the frontmatter data using the **`Pluto.frontmatter`** function. This function takes a notebook path as an argument, and returns a `Dict` with the frontmatter data.
 
 ```julia

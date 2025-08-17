@@ -7,8 +7,12 @@ order: 30
 ---
 
 {#disable}
-# Disabling cells
+# Disable a cell
 Pluto allows you to **disable a cell**, which means that it will not get executed with reactivity. When one of the dependencies of a disabled cell changes, the disabled cell will **not** get executed as usual.
+
+Disable a cell by opening the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/ellipsis-vertical-circle-outline.svg" alt="..." class="ionicon"> **Cell context menu** menu in the top right of a cell input. Then click on <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/ban-outline.svg" alt="🚫" class="ionicon"> **Disable**. 
+
+Enable it again in the same menu, by clicking on <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/caret-forward-circle-outline.svg" alt="✅" class="ionicon"> **Enable**.
 
 Disabled cells are indicated by a 'greyed-out' appearance. Pressing the "Run" button (Shift-Enter) will **not** execute the cell, but it will save any changes to the cell code.
 
@@ -38,7 +42,7 @@ Disabling a cell can also be useful for other purposes, such as:
 
 
 {#disable-in-file}
-# Disabling in file
+# Disable a cell in file
 There is also the option to **disable a cell in the file**. This makes no difference when running the notebook in Pluto, but the cell code will be stored as a Julia comment in the file.
 
 This is useful when you are writing a Pluto notebook file (`.jl`) that is also used as a Julia script. This lets you write code that is only executed when the notebook is used in Pluto, such as additional plots, testing, or more.

@@ -15,7 +15,7 @@ There are many options fitting to different needs. Some are really easy, while o
 > ### 📎 Pluto file formats
 > And good to know: Pluto notebooks are `.jl` files, which only contain the code of your notebook, not the outputs. For example, if your notebook contains `plot(x, y)`, then the resulting PNG image is not stored in the `.jl` file. Other people need to install Pluto to open the file.
 > 
-> You can also use Pluto to **export** a notebook to a `.html` or `.pdf` file by clicking the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/share-outline.svg" alt="share" width=17px style="filter: var(--image-filters);"> icon. These files **contain outputs**, like the plot image. Other people can open these files directly on their computer, without needing to install Pluto.
+> You can also use Pluto to **export** a notebook to a `.html` or `.pdf` file by clicking the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/share-outline.svg" alt="📤" class="ionicon"> icon. These files **contain outputs**, like the plot image. Other people can open these files directly on their computer, without needing to install Pluto.
 
 {#plutoland}
 ## **pluto.land**: Simple sharing

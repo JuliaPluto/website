@@ -123,8 +123,10 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="disable"><a href="#disable" class="anchor"></a>Disabling cells</h1>
+<h1 id="disable"><a href="#disable" class="anchor"></a>Disable a cell</h1>
 <p>Pluto allows you to <strong>disable a cell</strong>, which means that it will not get executed with reactivity. When one of the dependencies of a disabled cell changes, the disabled cell will <strong>not</strong> get executed as usual.</p>
+<p>Disable a cell by opening the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/ellipsis-vertical-circle-outline.svg" alt="..." class="ionicon"> <strong>Cell context menu</strong> menu in the top right of a cell input. Then click on <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/ban-outline.svg" alt="🚫" class="ionicon"> <strong>Disable</strong>.</p>
+<p>Enable it again in the same menu, by clicking on <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/caret-forward-circle-outline.svg" alt="✅" class="ionicon"> <strong>Enable</strong>.</p>
 <p>Disabled cells are indicated by a ‘greyed-out’ appearance. Pressing the “Run” button (Shift-Enter) will <strong>not</strong> execute the cell, but it will save any changes to the cell code.</p>
 <p><video alt="Disabling a cell by clicking the 'Disable' button. It is no longer reactive." style="aspect-ratio: 998/528; max-width: 100%;" src="../../../assets/img/disable cell.mp4" controls="controls" muted="muted" loop="loop" playsinline></video></p>
 <p>In this video, the disabled cell no longer responds to changes in the <code>count</code> variable. (The same applies when <code>count</code> is defined in code, instead of with a slider.)</p>
@@ -138,7 +140,7 @@ window.pluto_recording_audio_url = undefined;
 <ul>
 <li><strong>Dramatic effect</strong>: You can use this when showing a piece of code, but you don’t want to show the result yet.</li>
 </ul>
-<h1 id="disable-in-file"><a href="#disable-in-file" class="anchor"></a>Disabling in file</h1>
+<h1 id="disable-in-file"><a href="#disable-in-file" class="anchor"></a>Disable a cell in file</h1>
 <p>There is also the option to <strong>disable a cell in the file</strong>. This makes no difference when running the notebook in Pluto, but the cell code will be stored as a Julia comment in the file.</p>
 <p>This is useful when you are writing a Pluto notebook file (<code>.jl</code>) that is also used as a Julia script. This lets you write code that is only executed when the notebook is used in Pluto, such as additional plots, testing, or more.</p>
 <img alt="A screenshot of a Pluto notebook file with a disabled cell." src="../../../assets/img/disable in file.png" width="998" height="528">

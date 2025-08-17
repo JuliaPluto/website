@@ -127,3 +127,10 @@ a.pluto_home_link {
     padding: 1em 1em 3em 1em;
     opacity: 0.5;
 }
+
+.ionicon {
+    filter: var(--image-filters);
+    vertical-align: -0.15em;
+    width: 1em;
+    height: 1em;
+}

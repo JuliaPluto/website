@@ -1,0 +1,81 @@
+---
+title: "🌐 Language"
+description: "How to change the language of Pluto"
+tags: ["docs", "localization", "navigation"]
+layout: "md.jlmd"
+order: 3
+---
+
+# Language
+Pluto can be used in multiple languages. You can change the language of Pluto by opening a notebook, and selecting a language in the **bottom left** of the interface.
+
+<img src="$(root_url)/assets/img/change language.png" alt="Screenshot of the language menu" width="1132" height="376">
+
+Currently, Pluto is available in the following languages (in alphabetical order):
+- **Deutsch** (German) _(by [@kellertuer](https://github.com/kellertuer))_
+- **Ελληνικά** (Greek) _(by [@pankgeorg](https://github.com/pankgeorg))_
+- **English**
+- **Nederlands** (Dutch) _(by [@fonsp](https://github.com/fonsp))_
+- **Polski** (Polish) _(by [@s-zymon](https://github.com/s-zymon))_
+
+<br>
+<br>
+<br>
+
+> ### Example: Pluto in Greek
+> 
+> <img src="$(root_url)/assets/img/greek demo.png" alt="Screenshot of a Pluto notebook in Greek" width="1138" height="680">
+> 
+> _Example of the Pluto interface in Greek. Notice that interface elements are translated, but the [featured notebook](https://featured.plutojl.org/machine-learning/classification-knn.html) is still in English._
+
+
+{#not-localized}
+## What is not localized?
+Selecting the language will localize the *Pluto interface* (button names, warning messages, etc from Pluto). **This setting does not affect:**
+- The notebook content (code, markdown, etc). You can write in any language you want!
+  - One exception: Julia keywords like `function`, `if`, `for`, etc are always in English.
+- Error messages (these are always in English)
+- Documentation (this is always in English)
+
+We also don't localize number formats. Numbers are always formatted in Julia style (e.g. `1.5` for `3 / 2`, not `1,5`).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#contribute}
+# Contributing
+**Would you like to help make Pluto available in more languages?**
+
+We want to make Pluto and Julia more accessible to a wider audience! Since 0.20.14 (August 2025), Pluto has a *localization* system, which means that the Pluto UI interface can be used in a different language (English, Greek, etc). Because the Pluto developers only speak a couple of languages, we rely on **contributions from the community** to make Pluto available in more languages!
+
+
+Localizing Pluto is a great way to help the Julia community, because it makes Julia more accessible to a much wider audience. Pluto is used around the world, but Julia and Pluto are still hard to use for people who don't speak English.
+
+We also want to break the tradition that "programming is in English". Programming is for everyone, and we hope that computers can be used regardless of language and culture.
+
+Your work is also an **open source** contribution! Because you contribute localizations via git and github, you will be listed in the [Pluto contributors list](https://github.com/fonsp/Pluto.jl), and in the [Pluto release notes](https://github.com/fonsp/Pluto.jl/releases).
+
+
+
+## Collaboration
+The Pluto developers are really grateful for your help in localizing Pluto! 🌟 And we are super excited to collaborate with you! 
+
+The ability to localize Pluto is quite new, and there will still be rough edges. Feel free to reach out whenever you want, and we will try to help you quickly! You can email us, open an issue, open a draft PR, whatever you prefer!
+
+We are really interested in a right-to-left language (like Arabic or Farsi). This might require some additional tweaking, so reach out if you are interested to contribute, and we can work together to support it!
+
+## How to contribute
+Take a look at our [localization documentation](https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang) to get started! We look forward to your contributions! 💛

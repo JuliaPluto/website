@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>💡 Disabling cells — Pluto.jl</title>
-<meta name="description" content='How to disable a cell in Pluto, or disable a cell in the file.' />
+<title>🌐 Language — Pluto.jl</title>
+<meta name="description" content='How to change the language of Pluto' />
 
 <link rel="root" href="../../.." />
 
@@ -69,7 +69,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Using Pluto</h3>
 <ul>
-<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li><li class=''><a href='../../../en/docs/language/' title='How to change the language of Pluto'>🌐 Language</a></li>
+<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, open and save notebook files'>📄 Create, open and save files</a></li><li class='active'><a href='../../../en/docs/language/' title='How to change the language of Pluto'>🌐 Language</a></li>
 </ul>
 </li>
 <li>
@@ -87,7 +87,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Editor</h3>
 <ul>
-<li class=''><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class='active'><a href='../../../en/docs/disable-cell/' title='How to disable a cell in Pluto, or disable a cell in the file.'>💡 Disabling cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
+<li class=''><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class=''><a href='../../../en/docs/disable-cell/' title='How to disable a cell in Pluto, or disable a cell in the file.'>💡 Disabling cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -123,56 +123,49 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="disable"><a href="#disable" class="anchor"></a>Disable a cell</h1>
-<p>Pluto allows you to <strong>disable a cell</strong>, which means that it will not get executed with reactivity. When one of the dependencies of a disabled cell changes, the disabled cell will <strong>not</strong> get executed as usual.</p>
-<p>Disable a cell by opening the <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/ellipsis-vertical-circle-outline.svg" alt="..." class="ionicon"> <strong>Cell context menu</strong> menu in the top right of a cell input. Then click on <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/ban-outline.svg" alt="🚫" class="ionicon"> <strong>Disable</strong>.</p>
-<p>Enable it again in the same menu, by clicking on <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/caret-forward-circle-outline.svg" alt="✅" class="ionicon"> <strong>Enable</strong>.</p>
-<p>Disabled cells are indicated by a ‘greyed-out’ appearance. Pressing the “Run” button (Shift-Enter) will <strong>not</strong> execute the cell, but it will save any changes to the cell code.</p>
-<p><video alt="Disabling a cell by clicking the 'Disable' button. It is no longer reactive." style="aspect-ratio: 998/528; max-width: 100%;" src="../../../assets/img/disable cell.mp4" controls="controls" muted="muted" loop="loop" playsinline></video></p>
-<p>In this video, the disabled cell no longer responds to changes in the <code>count</code> variable. (The same applies when <code>count</code> is defined in code, instead of with a slider.)</p>
-<h3 id="reactive"><a href="#reactive" class="anchor"></a>Reactive</h3>
-<p>The cell disabling feature is <strong>reactive</strong> – any cells that depend on a disabled cell will <strong>also be disabled</strong>. This ensures that the notebook remains consistent, and there is no code that executes with old values that no longer exist.</p>
-<p>This is also a really powerful feature, because you can easily disable a large number of cells at once, by disabling a core cell that is used in all of them.</p>
-<p><video alt="Disabling a cell by clicking the 'Disable' button. It is no longer reactive, and the cell that depends on it is also disabled." style="aspect-ratio: 998/528; max-width: 100%;" src="../../../assets/img/disable cell indirect.mp4" controls="controls" muted="muted" loop="loop" playsinline></video></p>
-<p>In this video, the last cell is disabled indirectly, because it depends on the disabled cell through the <code>text</code> variable.</p>
-<h2 id="other-uses"><a href="#other-uses" class="anchor"></a>Other uses</h2>
-<p>Disabling a cell can also be useful for other purposes, such as:</p>
+<h1 id="language"><a href="#language" class="anchor"></a>Language</h1>
+<p>Pluto can be used in multiple languages. You can change the language of Pluto by opening a notebook, and selecting a language in the <strong>bottom left</strong> of the interface.</p>
+<img src="../../../assets/img/change language.png" alt="Screenshot of the language menu" width="1132" height="376">
+<p>Currently, Pluto is available in the following languages (in alphabetical order):</p>
 <ul>
-<li><strong>Dramatic effect</strong>: You can use this when showing a piece of code, but you don’t want to show the result yet.</li>
+<li><strong>Deutsch</strong> (German) <em>(by <a href="https://github.com/kellertuer"><span class="citation"><a href="#ref-kellertuer">@kellertuer</a></span></a>)</em></li>
+<li><strong>Ελληνικά</strong> (Greek) <em>(by <a href="https://github.com/pankgeorg"><span class="citation"><a href="#ref-pankgeorg">@pankgeorg</a></span></a>)</em></li>
+<li><strong>English</strong></li>
+<li><strong>Nederlands</strong> (Dutch) <em>(by <a href="https://github.com/fonsp"><span class="citation"><a href="#ref-fonsp">@fonsp</a></span></a>)</em></li>
+<li><strong>Polski</strong> (Polish) <em>(by <a href="https://github.com/s-zymon"><span class="citation"><a href="#ref-s-zymon">@s-zymon</a></span></a>)</em></li>
 </ul>
-<h1 id="disable-in-file"><a href="#disable-in-file" class="anchor"></a>Disable a cell in file</h1>
-<p>There is also the option to <strong>disable a cell in the file</strong>. This makes no difference when running the notebook in Pluto, but the cell code will be stored as a Julia comment in the file.</p>
-<p>This is useful when you are writing a Pluto notebook file (<code>.jl</code>) that is also used as a Julia script. This lets you write code that is only executed when the notebook is used in Pluto, such as additional plots, testing, or more.</p>
-<img alt="A screenshot of a Pluto notebook file with a disabled cell." src="../../../assets/img/disable in file.png" width="998" height="528">
-<p><em>Notice the gray markers to the right of the cells, marking a cell disabled in file (second cell) and a cell disabled indirectly in file (last cell).</em></p>
-<h3 id="file-format"><a href="#file-format" class="anchor"></a>File format</h3>
-<p>Before the cell is disabled in file, the <code>.jl</code> notebook file looks like:</p>
-<pre><code class="language-julia"># ╔═╡ d5697b7b-a916-468c-9a2a-e84a87d7320f
-@bind count Slider(5:20)
-
-# ╔═╡ 6a653410-c595-45fb-8357-6ffe815e9d49
-text = repeat(&quot;🎈&quot;, count)
-
-# ╔═╡ 94216444-bcfb-4925-bc16-44b698181286
-sum(codeunits(text))
-</code></pre>
-<p>After disabling the second cell in file, you get:</p>
-<pre><code class="language-julia"># ╔═╡ d5697b7b-a916-468c-9a2a-e84a87d7320f
-@bind count Slider(5:20)
-
-# ╔═╡ 6a653410-c595-45fb-8357-6ffe815e9d49
-# ╠═╡ skip_as_script = true
-#=╠═╡
-text = repeat(&quot;🎈&quot;, count)
-  ╠═╡ =#
-
-# ╔═╡ 94216444-bcfb-4925-bc16-44b698181286
-#=╠═╡
-sum(codeunits(text))
-  ╠═╡ =#
-</code></pre>
-<h3 id="reactive-1"><a href="#reactive-1" class="anchor"></a>Reactive</h3>
-<p>The <em>Disable in File</em> feature is <strong>reactive</strong>, just like the <a href="#disable">“Disable” feature</a>. This means that any cells that depend on a cell that is disabled in file will <strong>also be disabled in file</strong>. The reasons here are similar: it makes sense for consistency, and it makes it easy to disable a large number of cells at once.</p>
+<br>
+<br>
+<br>
+<blockquote>
+<h3 id="example-pluto-in-greek"><a href="#example-pluto-in-greek" class="anchor"></a>Example: Pluto in Greek</h3>
+<img src="../../../assets/img/greek demo.png" alt="Screenshot of a Pluto notebook in Greek" width="1138" height="680">
+<p><em>Example of the Pluto interface in Greek. Notice that interface elements are translated, but the <a href="https://featured.plutojl.org/machine-learning/classification-knn.html">featured notebook</a> is still in English.</em></p>
+</blockquote>
+<h2 id="not-localized"><a href="#not-localized" class="anchor"></a>What is not localized?</h2>
+<p>Selecting the language will localize the <em>Pluto interface</em> (button names, warning messages, etc from Pluto). <strong>This setting does not affect:</strong></p>
+<ul>
+<li>The notebook content (code, markdown, etc). You can write in any language you want!
+<ul>
+<li>One exception: Julia keywords like <code>function</code>, <code>if</code>, <code>for</code>, etc are always in English.</li>
+</ul>
+</li>
+<li>Error messages (these are always in English)</li>
+<li>Documentation (this is always in English)</li>
+</ul>
+<p>We also don’t localize number formats. Numbers are always formatted in Julia style (e.g. <code>1.5</code> for <code>3 / 2</code>, not <code>1,5</code>).</p>
+<h1 id="contribute"><a href="#contribute" class="anchor"></a>Contributing</h1>
+<p><strong>Would you like to help make Pluto available in more languages?</strong></p>
+<p>We want to make Pluto and Julia more accessible to a wider audience! Since 0.20.14 (August 2025), Pluto has a <em>localization</em> system, which means that the Pluto UI interface can be used in a different language (English, Greek, etc). Because the Pluto developers only speak a couple of languages, we rely on <strong>contributions from the community</strong> to make Pluto available in more languages!</p>
+<p>Localizing Pluto is a great way to help the Julia community, because it makes Julia more accessible to a much wider audience. Pluto is used around the world, but Julia and Pluto are still hard to use for people who don’t speak English.</p>
+<p>We also want to break the tradition that “programming is in English”. Programming is for everyone, and we hope that computers can be used regardless of language and culture.</p>
+<p>Your work is also an <strong>open source</strong> contribution! Because you contribute localizations via git and github, you will be listed in the <a href="https://github.com/fonsp/Pluto.jl">Pluto contributors list</a>, and in the <a href="https://github.com/fonsp/Pluto.jl/releases">Pluto release notes</a>.</p>
+<h2 id="collaboration"><a href="#collaboration" class="anchor"></a>Collaboration</h2>
+<p>The Pluto developers are really grateful for your help in localizing Pluto! 🌟 And we are super excited to collaborate with you!</p>
+<p>The ability to localize Pluto is quite new, and there will still be rough edges. Feel free to reach out whenever you want, and we will try to help you quickly! You can email us, open an issue, open a draft PR, whatever you prefer!</p>
+<p>We are really interested in a right-to-left language (like Arabic or Farsi). This might require some additional tweaking, so reach out if you are interested to contribute, and we can work together to support it!</p>
+<h2 id="how-to-contribute"><a href="#how-to-contribute" class="anchor"></a>How to contribute</h2>
+<p>Take a look at our <a href="https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang">localization documentation</a> to get started! We look forward to your contributions! 💛</p>
 
 </div>
 </div>
@@ -185,7 +178,7 @@ sum(codeunits(text))
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/disable-cell.jlmd" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/language.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

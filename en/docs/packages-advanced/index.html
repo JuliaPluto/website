@@ -128,7 +128,7 @@ window.pluto_recording_audio_url = undefined;
 <p>The philosophy here is that everyone should have a reproducible package environment <strong>by default</strong>, without having to do anything. This takes priority over other use cases, and hence <em>not</em> using the built-in package manager requires some extra work.</p>
 <p><strong>Any notebook that calls <a href="https://pkgdocs.julialang.org/v1/api/#Pkg.activate"><code>Pkg.activate</code></a> will not use Pluto’s package management,</strong> and run in ‘backwards compatibility mode’. The <code>Pkg.activate</code> call should be placed directly in your notebook code: it is detecting using the same syntax analysis used for reactivity.</p>
 <h2 id="global-environment"><a href="#global-environment" class="anchor"></a>Pattern: The “global environment”</h2>
-<p>If you do not intend on sharing a notebook file and you want to use your global package environment (called <code>(v1.6)</code> or similar, the one you get when you launch the Julia REPL), then you can call <code>Pkg.activate()</code> without any arguments.</p>
+<p>If you do not intend on sharing a notebook file and you want to use your global package environment (called <code>(v1.10)</code> or similar, the one you get when you launch the Julia REPL), then you can call <code>Pkg.activate()</code> without any arguments.</p>
 <blockquote>
 <p>🙋 If you are developing a package, then activating your global environment is an easy way to test your local version in Pluto.</p>
 </blockquote>

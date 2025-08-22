@@ -18,7 +18,7 @@ The philosophy here is that everyone should have a reproducible package environm
 
 {#global-environment}
 ## Pattern: The "global environment"
-If you do not intend on sharing a notebook file and you want to use your global package environment (called `(v1.6)` or similar, the one you get when you launch the Julia REPL), then you can call `Pkg.activate()` without any arguments.
+If you do not intend on sharing a notebook file and you want to use your global package environment (called `(v1.10)` or similar, the one you get when you launch the Julia REPL), then you can call `Pkg.activate()` without any arguments.
 
 > 🙋 If you are developing a package, then activating your global environment is an easy way to test your local version in Pluto.
 

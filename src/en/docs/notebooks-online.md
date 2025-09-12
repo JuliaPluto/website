@@ -29,7 +29,7 @@ There are many options fitting to different needs. Some are really easy, while o
 - Developed and maintained by the Pluto team
 
 **Cons:**
-- No updates: to change the notebook, you upload a new HTML file, and you get a new URL
+- No changes after upload: to change the notebook, you upload a new HTML file, and you get a new URL
 
 <img src="$(root_url)/assets/img/plutoland screenshot.png" alt="Screenshot of pluto.land showing an upload button" width="1792" height="870">
 

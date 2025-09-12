@@ -28,8 +28,10 @@ It is easy to try out PlutoSliderServer.jl on your own computer. If you have a n
 
 ```julia
 import PlutoSliderServer
+
 # fill in your own notebook path here!
 path_to_notebook = download("https://raw.githubusercontent.com/JuliaPluto/featured/50205f3/src/basic/turtles-art.jl")
+
 PlutoSliderServer.run_notebook(path_to_notebook)
 ```
 
@@ -43,7 +45,7 @@ PlutoSliderServer is used by various groups and universities since 2020.
 
 The Pluto developers use PlutoSliderServer for:
 - The featured notebooks on [featured.plutojl.org](https://featured.plutojl.org)
-- The course [BMLIP at TU Eindhoven](https://github.com/bmlip/colorized)
+- The course [BMLIP at TU Eindhoven](https://github.com/bmlip/course)
 - The course [Computational Thinking at MIT](https://computationalthinking.mit.edu/)
 
 

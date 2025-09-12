@@ -1,0 +1,120 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>JuliaCon 2025 Workshop — Pluto.jl</title>
+
+
+<link rel="root" href=".." />
+
+<link rel="icon" href="../assets/favicon.ico" />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../assets/styles/layout.css" type="text/css" />
+<script src="../assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../assets/scripts/search.js" type="module" defer></script>
+
+
+<meta name="viewport" content="width=device-width"><meta charset="utf-8">
+<meta name="pluto-insertion-spot-meta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928"><meta name="color-scheme" content="light dark"><link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/logo.49a14041.svg"><link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/favicon_unsaturated.c11d4d33.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.f5de63b3.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.69b60e77.css"><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/index.183d291c.js"></script><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.runtime.2bebe4ef.js"></script><script defer>console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends \uD83C\uDF08");</script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.21e3b1fd.js" defer></script><link rel="pluto-external-source" id="vmsg-wasm" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/vmsg.56bb9389.wasm"><link rel="pluto-external-source" id="arrow_up_circle_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/arrow-up-circle-outline.3f146ffe.svg"><link rel="pluto-external-source" id="document_text_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/document-text-outline.8d1e2333.svg"><link rel="pluto-external-source" id="help_circle_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/help-circle-outline.a023036a.svg"><link rel="pluto-external-source" id="open_icon" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/open-outline.87533923.svg"><script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.69996afe.js" crossorigin defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.a19283c8.css" type="text/css"><script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.20.17";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+<script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/editor.2df7c5ec.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/index.11569726.js"></script><link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.17/frontend-dist/tex-svg-full.f72d1ae1.js" type="text/javascript">
+<meta name="pluto-insertion-spot-preload">
+
+
+
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="pluto_home_link"><a class="pluto_home_link" href='..'><img src="../assets/favicon.svg" width="32" height="32"><span> Pluto.jl</span></a>
+            </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="../en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
+        
+        </ul>
+        <div class="pluto_version">
+            Pluto <span class="Base-VersionNumber">0.20.17</span>
+        </div>
+        </nav>
+        <div id="pages-content">
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="juliacon-2025-workshop"><a href="#juliacon-2025-workshop" class="anchor"></a>JuliaCon 2025 Workshop</h1>
+<p>To learn more about Pluto:</p>
+<ul>
+<li><a href="https://plutojl.org">Pluto.jl website</a></li>
+<li><a href="https://github.com/fonsp/Pluto.jl">Pluto.jl GitHub repository</a> (give us a 🌟!)</li>
+<li><a href="https://plutojl.org/en/docs/">Pluto.jl documentation</a></li>
+</ul>
+<br>
+<br>
+<h2 id="install"><a href="#install" class="anchor"></a>Install</h2>
+<p>To install Pluto:</p>
+<ul>
+<li><a href="https://plutojl.org/#install">Installation instructions</a></li>
+</ul>
+<br>
+<br>
+<h2 id="workshop"><a href="#workshop" class="anchor"></a>Workshop</h2>
+<p>Workshop materials:</p>
+<ul>
+<li>Boring notebook TODO LINK</li>
+<li>Slides TODO LINK</li>
+</ul>
+<img src="../assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
+
+        
+        
+        <div class="edit-this-page">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/workshop.md" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Edit this page
+            </a>
+        </div>
+    </div>
+</body>
+</html>

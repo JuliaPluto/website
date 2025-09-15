@@ -9,9 +9,9 @@ layout: "md.jlmd"
 
 To learn more about Pluto:
 
-- [Pluto.jl website](https://plutojl.org)
-- [Pluto.jl GitHub repository](https://github.com/fonsp/Pluto.jl) (give us a 🌟!)
-- [Pluto.jl documentation](https://plutojl.org/en/docs/)
+- Check out the [Pluto.jl website](https://plutojl.org)
+- Pluto is open source! You can give us a 🌟 on the [GitHub repository](https://github.com/fonsp/Pluto.jl)
+- The new [Pluto.jl documentation](https://plutojl.org/en/docs/) is a good way to learn more about what you can do with Pluto!
 
 
 <br>
@@ -19,8 +19,7 @@ To learn more about Pluto:
 
 
 ## Install
-
-To install Pluto:
+This workshop, you will get started with Pluto! Follow these instructions to install Pluto:
 - [Installation instructions](https://plutojl.org/#install)
 
 
@@ -30,8 +29,8 @@ To install Pluto:
 
 ## Workshop
 Workshop materials:
-- Boring notebook TODO LINK
-- Slides TODO LINK
+- We will start with a [boring notebook]() TODO LINK
+- [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTtnrpbazWQAiVAQhNRx_0aRnyqmqyPalvNX0Yh-PdmEwaYt04GZzUSKcx6DB3nlFaTOvTC68xFcR2p/pub?start=false&loop=false&delayms=3000)
 
 
 <img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">

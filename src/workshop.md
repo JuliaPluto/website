@@ -29,7 +29,7 @@ This workshop, you will get started with Pluto! Follow these instructions to ins
 
 ## Workshop
 Workshop materials:
-- We will start with a [boring notebook]() TODO LINK
+- We will start with a boring notebook: [`https://pluto.land/n/s5k1mhpg`](https://pluto.land/n/s5k1mhpg) Click "Edit or run" in the top right to start running this notebook.
 - [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTtnrpbazWQAiVAQhNRx_0aRnyqmqyPalvNX0Yh-PdmEwaYt04GZzUSKcx6DB3nlFaTOvTC68xFcR2p/pub?start=false&loop=false&delayms=3000)
 
 

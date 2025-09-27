@@ -12,11 +12,13 @@ Pluto can be used in multiple languages. You can change the language of Pluto by
 <img src="$(root_url)/assets/img/change language.png" alt="Screenshot of the language menu" width="1132" height="376">
 
 Currently, Pluto is available in the following languages (in alphabetical order):
+- **Chinese** (Chinese) _(by [@Fromduststar](https://github.com/Fromduststar))_ (not yet released)
 - **Deutsch** (German) _(by [@kellertuer](https://github.com/kellertuer))_
 - **Ελληνικά** (Greek) _(by [@pankgeorg](https://github.com/pankgeorg))_
 - **English**
+- **Corporate English** (💼🗄️👔) _(by [@pankgeorg](https://github.com/pankgeorg))_ (not yet released)
 - **Français** (French) _(by [@Pangoraw](https://github.com/Pangoraw) and [@gdalle](https://github.com/gdalle))_
-- **Japanese** (Japanese) _(by [@Itou-Kouki](https://github.com/Itou-Kouki))
+- **Japanese** (Japanese) _(by [@Itou-Kouki](https://github.com/Itou-Kouki))_
 - **Nederlands** (Dutch) _(by [@fonsp](https://github.com/fonsp))_
 - **Norsk Bokmål** (Norwegian) _(by [@kellertuer](https://github.com/kellertuer))_
 - **Polski** (Polish) _(by [@s-zymon](https://github.com/s-zymon))_

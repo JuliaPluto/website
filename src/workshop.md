@@ -20,9 +20,9 @@ To learn more about Pluto:
 
 ## Install
 This workshop, you will get started with Pluto! Follow these instructions to install Pluto:
-- [Installation instructions](https://plutojl.org/#install)
+- [Installation instructions](https://plutojl.org/#install) – do this during the workshop introduction!
 
-Already installed Pluto? Make sure you have the **latest version** (0.20.19). To update Pluto:
+Already installed Pluto? Make sure you have the **latest version** (`0.20.19`). To update Pluto, you can update it with Pkg like any other package. More info:
 - [Update instructions](https://plutojl.org/en/docs/update/)
 
 <br>

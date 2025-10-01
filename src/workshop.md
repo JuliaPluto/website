@@ -22,14 +22,17 @@ To learn more about Pluto:
 This workshop, you will get started with Pluto! Follow these instructions to install Pluto:
 - [Installation instructions](https://plutojl.org/#install)
 
-
+Already installed Pluto? Make sure you have the **latest version** (0.20.19). To update Pluto:
+- [Update instructions](https://plutojl.org/en/docs/update/)
 
 <br>
 <br>
 
 ## Workshop
 Workshop materials:
-- We will start with a boring notebook: [`https://pluto.land/n/s5k1mhpg`](https://pluto.land/n/s5k1mhpg) Click "Edit or run" in the top right to start running this notebook.
+- Boshra will demonstrate a boring notebook: [`https://pluto.land/n/s5k1mhpg`](https://pluto.land/n/s5k1mhpg)...
+- ...and a cool version of the notebook: [`https://pluto.land/n/jsryfilq`](https://pluto.land/n/jsryfilq)
+- Other notebooks demonstrated are available on [Pluto.jl featured notebooks](https://featured.plutojl.org/)
 - [Slides](https://docs.google.com/presentation/d/e/2PACX-1vTtnrpbazWQAiVAQhNRx_0aRnyqmqyPalvNX0Yh-PdmEwaYt04GZzUSKcx6DB3nlFaTOvTC68xFcR2p/pub?start=false&loop=false&delayms=3000)
 
 

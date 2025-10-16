@@ -11,6 +11,8 @@ Pluto can be used in multiple languages. You can change the language of Pluto by
 
 <img src="$(root_url)/assets/img/change language.png" alt="Screenshot of the language menu" width="1132" height="376">
 
+_The percentage shown next to the language name shows how much of the Pluto interface is localized. Some (new) features might not be localized yet, they will be displayed in English._
+
 Currently, Pluto is available in the following languages (in alphabetical order):
 - **Chinese** (Chinese) _(by [@Fromduststar](https://github.com/Fromduststar))_
 - **Deutsch** (German) _(by [@kellertuer](https://github.com/kellertuer))_

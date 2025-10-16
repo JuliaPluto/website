@@ -77,7 +77,7 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
     <td>Show cell code</td>
 </tr>
 <tr>
-    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Q</kbd></td>
+    <td><kbd class="control-name"></kbd><span class="and"></span><kbd>Q</kbd></td>
     <td>Interrupt notebook</td>
 </tr>
 <tr><th colspan="2" class="keyboard-shortcut-section">Clipboard</th></tr>

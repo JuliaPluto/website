@@ -54,7 +54,7 @@ We also don't localize number formats. Numbers are always formatted in Julia sty
 ## Automatic translation support
 Pluto notebook content (notably: markdown) can be translated automatically when reading a notebook. You can use a service that translates complete websites (like the Chrome Translate feature) when reading a notebook. This will translate cell outputs (like markdown cells), but **not** cell inputs (code), because code might become hard to interpret when translated. _Pluto uses the [`translate` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/translate) to mark which content should be translated._
 
-If you have any feedback on this feature, please let us know! You can open an issue, or reach out to us on [Discord](https://discord.gg/plutojl).
+If you have any feedback on this feature, please let us know! You can open an issue, or TODO.
 
 
 

@@ -33,5 +33,6 @@ If you want to use Pluto without installation for more serious projects, there a
 - [Jolin Cloud](https://cloud.jolin.io/) – jolin.io offers a cloud service for Pluto notebooks, with additional real-time data features
 - [JuliaHub](https://juliahub.com/) – see the [documentation](https://help.juliahub.com/juliahub/stable/tutorials/pluto_notebooks/)
 - [CoCalc](https://cocalc.com/) – see the [documentation](https://doc.cocalc.com/howto/pluto.html)
+- (EU research staff only) [European Open Science Cloud](https://open-science-cloud.ec.europa.eu/dashboard/notebooks) – You get 10 Medium (4 vCPU, 8GB RAM) notebook compute hours per day if you are staff/faculty/employee of an EU research institute (like a university).
 
 With these three options you can **store notebooks in the cloud**, and you can also try **bigger computers** and **GPUs**. Jolin and JuliaHub also let you publish notebooks as public/private websites.

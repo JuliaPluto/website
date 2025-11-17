@@ -28,7 +28,7 @@ When you send your `.jl` notebook file to someone else, they can open the notebo
 > ### Step 3
 > Choose "Notebook file".
 > 
-> <img src="$(root_url)/assets/img/<img src="$(root_url)/assets/img/export options.png" alt="Screenshot of the export options" width="1882" height="468">.png" alt="Screenshot of the export options" width="1804" height="472">
+> <img src="$(root_url)/assets/img/export options.png" alt="Screenshot of the export options" width="1882" height="468">
 
 
 !!! info

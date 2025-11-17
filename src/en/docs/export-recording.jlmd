@@ -28,7 +28,7 @@ Press the **Share** button in the top right.
 ### Step 3
 Choose "Record".
 
-<img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options" width="1804" height="472">
+<img src="$(root_url)/assets/img/Export options recording.png" alt="Screenshot of the export options" width="1804" height="472">
 
 ### Step 4
 Click to start a recording. You can choose between recording **with microphone audio** or **without audio** (screen only).

@@ -27,7 +27,14 @@ For some examples of HTML export files, check out our [featured notebooks](https
 > ### Step 3
 > Choose "Static HMTL".
 > 
-> <img src="$(root_url)/assets/img/Export options screenshot.png" alt="Screenshot of the export options" width="1804" height="472">
+> <img src="$(root_url)/assets/img/export options.png" alt="Screenshot of the export options" width="1882" height="468">
+> 
+> ### Step 4
+> Choose "Download HTML file".
+> 
+> <img src="$(root_url)/assets/img/export html local or plutoland.png" alt="Screenshot of the export options" width="852" height="896">
+> 
+> _You can learn more about pluto.land [here](../notebooks-online/#plutoland)._
 
 
 

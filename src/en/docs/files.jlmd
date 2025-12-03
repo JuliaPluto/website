@@ -64,7 +64,11 @@ For example, you might have:
 
 {#open-from-url}
 # How to open a notebook from the web
-First, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can type a notebook path in the textbox, and press Enter or click the "Open" button.
+You can use Pluto to open a notebook from the web, using the URL of the notebook file. First, **copy the URL** of the notebook file. This URL probably ends with `.jl`. For example:
+
+[https://github.com/JuliaPluto/featured/blob/main/src/basic/turtles.jl](https://github.com/JuliaPluto/featured/blob/main/src/basic/turtles.jl)
+
+Next, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can **paste the URL** in the textbox, and press Enter or click the "Open" button.
 
 The notebook will open in "Safe Preview" mode, which means that no code will be executed until you give permission.
 

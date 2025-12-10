@@ -70,6 +70,8 @@ You can use Pluto to open a notebook from the web, using the URL of the notebook
 
 Next, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can **paste the URL** in the textbox, and press Enter or click the "Open" button.
 
+<img src="$(root_url)/assets/img/open notebook path or url.png" alt="screenshot of the Open button in the Pluto main menu, with a textbox for the notebook URL" width="1144" height="344">
+
 The notebook will open in "Safe Preview" mode, which means that no code will be executed until you give permission.
 
 

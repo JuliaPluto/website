@@ -19,7 +19,7 @@ $(begin
 end)<html lang="en">
 <head>
 
-$(Pluto.frontmatter_html(page.output.frontmatter))
+$(Pluto.frontmatter_html(page.output.frontmatter) |> HTML)
 
 <link rel="root" href="$(root_url)" />
 

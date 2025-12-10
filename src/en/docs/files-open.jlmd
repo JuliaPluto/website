@@ -1,0 +1,104 @@
+---
+title: "📖 Open and move files"
+description: "How to open and move files from your computer or from the web"
+tags: ["docs", "file", "navigation"]
+layout: "md.jlmd"
+order: 3
+---
+{#files}
+# Pluto notebook files
+Pluto notebooks are stored as `.jl` files on your computer, and Pluto needs to know the exact location of each file to open, save, and manage it.
+
+When you create a new notebook, the notebook is stored temporarily in the `~/.julia/pluto_notebooks/` folder with a random name (something like `Wild experiment 4.jl`). This is a hidden folder, and we recommend saving your notebooks somewhere else (like your Documents folder) if you want to keep your work.
+
+!!! tip "To open this temporary folder"
+    You can quickly navigate to the temporary notebooks folder by running this command in Julia:
+    
+    ```julia
+    run(`open ~/.julia/pluto_notebooks/`)  # macOS
+    run(`explorer ~/.julia/pluto_notebooks/`)  # Windows
+    run(`xdg-open ~/.julia/pluto_notebooks/`)  # Linux
+    ```
+
+!!! info "The .jl extension"
+    The `.jl` extension is used because Pluto notebooks are valid Julia files – you can run them as Julia scripts, or use the `include` function in the REPL to start a REPL session with the notebook.
+    
+    You are free to use a different extension (like `.plutojl`), the extension is not required to open the file.  
+
+{#open}
+# How to open a notebook from your computer
+First, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can type a notebook path in the textbox, and press Enter or click the "Open" button. You would need to enter the _full path_ of the notebook into the blue bow. While you type, there will be autocompletion suggestions with folders and files.
+
+<img src="$(root_url)/assets/img/main menu open autocomplete.png" alt="screenshot of the Open button in the Pluto main menu, with a textbox for the notebook path and autocompletion suggestions" width="1774" height="558">
+
+!!! info "Finding file paths on your computer"
+    To open a notebook, Pluto needs to know the _full path_ of your `.jl` file — this is the complete address that tells your computer exactly where the file is located. The format of file paths differs depending on your operating system:
+
+    **On Windows:**
+    
+    - Paths start with a drive letter and use backslashes:
+    - An example is: `C:\\Users\\fons\\Documents\\my_notebook.jl`
+    - To copy a file's path: hold Shift, right-click the file in File Explorer, and select "Copy as path"
+    - For a detailed step-by-step guide, check out [this Windows tutorial](https://www.top-password.com/blog/copy-full-path-of-a-folder-file-in-windows/)
+
+    **On macOS:**
+    
+    - Paths start with a forward slash `/` 
+    - A path may look like: `/Users/fons/Documents/my_notebook.jl`
+    - To copy a file's path: right-click the file in Finder, hold Option (⌥), and select "Copy ... as Pathname"
+    - For a detailed step-by-step guide, check out [this MacOS tutorial](https://www.josharcher.uk/code/find-path-to-folder-on-mac/)
+    
+    **On Ubuntu (and other Linux distributions):**
+    
+    - Paths start with a forward slash `/` 
+    - They look like: `/home/fons/Documents/my_notebook.jl`
+    - To copy a file's path: right-click the file in your file manager (e.g., Nautilus), and select "Copy" or use the keyboard shortcut Ctrl+Shift+C in the file manager's address bar
+    - Alternatively, you can drag and drop the file into a terminal window to paste its full path
+    
+    ### Why so difficult?
+    It would be really nice if you could just pick the notebook file from your file browser, instead of having to type the path. But this is not possible, because Pluto is a web application, which does not have access to your file system for security reasons. See [this issue](https://github.com/fonsp/Pluto.jl/issues/350). BUT this feature _is_ possible in the [Pluto Desktop app](https://github.com/JuliaPluto/PlutoDesktop) (WIP) 
+
+{#open-existing}
+# How to open an existing notebook file
+When you launch Pluto for the second time, your recent notebooks will appear in the main menu. You can click on them to continue where you left off.
+
+<img src="$(root_url)/assets/img/existing-notebooks.png" alt="screenshot of the existing notebooks already open in the Pluto main menu" width="1774" height="558">
+
+{#open-from-url}
+# How to open a notebook from the web
+You can use Pluto to open a notebook from the web, using the URL of the notebook file. First, **copy the URL** of the notebook file. This URL probably ends with `.jl`. For example:
+
+[https://github.com/JuliaPluto/featured/blob/main/src/basic/turtles.jl](https://github.com/JuliaPluto/featured/blob/main/src/basic/turtles.jl)
+
+Next, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can **paste the URL** in the textbox, and press Enter or click the "Open" button.
+
+The notebook will open in "Safe Preview" mode, which means that no code will be executed until you give permission.
+
+<img src="$(root_url)/assets/img/open notebook path or url.png" alt="screenshot of the url bar for url or full paths" width="1774" height="558">
+
+
+{#open-from-clipboard}
+# Open a notebook using the Clipboard
+You can copy the **complete contents** of a `.jl` Pluto notebook file, and open it with Pluto. With the contents of a notebook file in your clipboard, go to the [Pluto main menu](../launch-pluto/#main-menu). Now simply paste the contents anywhere on the page using `Ctrl+V` or `Cmd+V`, and it will be opened as a new notebook.
+
+The notebook will open in "Safe Preview" mode, which means that no code will be executed until you give permission.
+
+{#move}
+# How to move files
+
+The path of your current notebook is displayed at the top of the Pluto interface. You can **click on it to change the path** — this allows you to:
+
+- Move the notebook to a different folder
+- Rename the notebook file
+- Save a copy in a new location
+
+After typing a new path, press Enter or click the save button to confirm the change. The notebook will be moved or renamed accordingly.
+
+<img src="$(root_url)/assets/img/change-move-files.png" alt="screenshot of how to change, move the open notebook files using the upper bar" width="1774" height="558">
+
+
+{#featured}
+# Running featured notebooks
+On the bottom of the [Pluto main menu](../launch-pluto/#main-menu), you will find a large collection of **featured notebooks** – notebooks written by the Julia community, featured by the Pluto developers. These notebooks are a great resource to get inspired about new ways to use Julia and Pluto!
+
+Click on any featured notebook to read it. This will instantly load the notebook (prerendered on our servers), and interactive elements will work (this is done using [PlutoSliderServer.jl](https://github.com/JuliaPluto/PlutoSliderServer.jl)). If you want to change code and run the notebook, simply click the "Edit or run" button in the top right of the screen. This will **make a copy of the notebook** on your computer that you can edit.

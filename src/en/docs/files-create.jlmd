@@ -1,0 +1,50 @@
+---
+title: "📄 Create, save and shutdown notebooks"
+description: "How to create, save and shutdown notebook files"
+tags: ["docs", "file", "navigation"]
+layout: "md.jlmd"
+order: 2
+---
+
+{#new}
+# How to create a new notebook
+First, go to the [Pluto main menu](../launch-pluto/#main-menu). Then, click the "New" button. This will create a new empty notebook in the current Pluto session.
+
+<img src="$(root_url)/assets/img/main menu new notebook.png" alt="screenshot of the Pluto main menu, showing the new notebook button" width="1762" height="621">
+
+!!! tip
+    You can right click the "New" button, and select "Open in new tab". This will open the new notebook in a new tab, and you can open more notebooks in parallel.
+
+
+{#save}
+# How to save a notebook
+Notebooks are **saved automatically** when you run code. When you start typing new code in a cell, this code is not yet saved, but when you run the cell, the code is saved.
+
+When there are unsaved changes in a notebook, you will see a button in the top right corner of the notebook – the "Save" button. Clicking this button will run all unsaved cells in one batch, which will automatically save the notebook.
+
+<img src="$(root_url)/assets/img/save all changes.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
+
+
+{#shutdown}
+# How to shut down a notebook
+⚠️ **Closing the browser tab doesn't stop the notebook** — it keeps running in the background. This means you can reopen the notebook anytime by navigating back to its URL in Pluto's main menu, and it will appear exactly as you left it without needing to rerun all the cells.
+
+**To actually shut down a notebook:**
+
+1. Navigate to Pluto's main menu (the home page with your list of notebooks)
+2. Find the notebook you want to shut down in the list
+3. Click the **<img src="https://unpkg.com/ionicons@7.1.0/dist/svg/close-circle.svg" width="12">
+button** on the left side of the notebook entry
+
+This will completely shut down the notebook and stop its Julia process, freeing up system resources. The notebook will remain in your list so you can easily reopen it later (it will need to rerun from scratch when you open it again).
+
+<img src="$(root_url)/assets/img/close-notebooks.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
+
+**To restart a notebook (restart kernel):** If you want to restart a notebook that's currently running — for example, to clear all variables and start fresh — simply shut it down using the <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/close-circle.svg" width="12"> button and then reopen it by clicking on it in the list. This is equivalent to "restarting the kernel" in other notebook environments like Jupyter.
+
+**To remove a notebook from the list:** If you want to clear a notebook from your main menu entirely, click the **"forget" button** on the right side of the notebook entry. This only removes it from the list — the notebook file itself remains saved on your computer.
+
+<img src="$(root_url)/assets/img/forget-notebook.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
+
+
+**Tip:** To stop all running notebooks at once, you can close the Pluto server by pressing `Ctrl+C` in the terminal or command prompt where Pluto is running.

@@ -21,6 +21,7 @@ pluto-output h6 {
     letter-spacing: -0.02ch;
     margin-block-end: 0.4rem;
     border-bottom: none;
+    overflow: hidden;
 }
 
 pluto-output h1 {

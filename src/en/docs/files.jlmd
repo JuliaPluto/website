@@ -24,6 +24,22 @@ When there are unsaved changes in a notebook, you will see a button in the top r
 
 <img src="$(root_url)/assets/img/save all changes.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
 
+{#preview}
+# How to preview and run a notebook
+When you first open a Pluto notebook, it opens in *safe preview* mode. This lets you explore the notebook without running any code yet. In this view, you can:
+
+- Read through the code and verify you want to run it
+- Edit code, move cells around, or hide cells, all without executing anything!
+- View `md""` and `html""` blocks without interpolation (JS and CSS won't run)
+
+When you're ready to run the notebook:
+
+- Click the "Run Notebook Code" button to start
+- The package environment will initialize
+- All cells will execute
+
+<video alt="Previewing in Safe mode and Running a Notebook" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/safe-preview.mov" controls="controls" muted="muted" loop="loop" playsinline></video>
+
 
 {#shutdown}
 # How to shut down a notebook
@@ -49,3 +65,7 @@ This will completely shut down the notebook and stop its Julia process, freeing 
 
 !!! tip "To restart a notebook (restart kernel)"
     If you want to restart a notebook that's currently running — for example, to clear all variables and start fresh — simply shut it down using the <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/close-circle.svg" width="12"> button and then reopen it by clicking on it in the list. This is equivalent to "restarting the kernel" in other notebook environments like Jupyter.
+
+
+
+

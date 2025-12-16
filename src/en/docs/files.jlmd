@@ -40,11 +40,12 @@ This will completely shut down the notebook and stop its Julia process, freeing 
 
 <img src="$(root_url)/assets/img/close-notebooks.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
 
-**To restart a notebook (restart kernel):** If you want to restart a notebook that's currently running — for example, to clear all variables and start fresh — simply shut it down using the <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/close-circle.svg" width="12"> button and then reopen it by clicking on it in the list. This is equivalent to "restarting the kernel" in other notebook environments like Jupyter.
-
 **To remove a notebook from the list:** If you want to clear a notebook from your main menu entirely, click the **"forget" button** on the right side of the notebook entry. This only removes it from the list — the notebook file itself remains saved on your computer.
 
 <img src="$(root_url)/assets/img/forget-notebook.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
 
 
 **Tip:** To stop all running notebooks at once, you can close the Pluto server by pressing `Ctrl+C` in the terminal or command prompt where Pluto is running.
+
+!!! tip "To restart a notebook (restart kernel)"
+    If you want to restart a notebook that's currently running — for example, to clear all variables and start fresh — simply shut it down using the <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/close-circle.svg" width="12"> button and then reopen it by clicking on it in the list. This is equivalent to "restarting the kernel" in other notebook environments like Jupyter.

@@ -11,15 +11,6 @@ Pluto notebooks are stored as `.jl` files on your computer, and Pluto needs to k
 
 When you create a new notebook, the notebook is stored temporarily in the `~/.julia/pluto_notebooks/` folder with a random name (something like `Wild experiment 4.jl`). This is a hidden folder, and we recommend saving your notebooks somewhere else (like your Documents folder) if you want to keep your work.
 
-!!! tip "To open this temporary folder"
-    You can quickly navigate to the temporary notebooks folder by running this command in Julia:
-    
-    ```julia
-    run(`open ~/.julia/pluto_notebooks/`)  # macOS
-    run(`explorer ~/.julia/pluto_notebooks/`)  # Windows
-    run(`xdg-open ~/.julia/pluto_notebooks/`)  # Linux
-    ```
-
 !!! info "The .jl extension"
     The `.jl` extension is used because Pluto notebooks are valid Julia files – you can run them as Julia scripts, or use the `include` function in the REPL to start a REPL session with the notebook.
     
@@ -64,6 +55,15 @@ When you launch Pluto for the second time, your recent notebooks will appear in 
 
 <img src="$(root_url)/assets/img/existing-notebooks.png" alt="screenshot of the existing notebooks already open in the Pluto main menu" width="1774" height="558">
 
+!!! tip "To open this temporary folder"
+    You can quickly navigate to the temporary notebooks folder by running this command in Julia:
+    
+    ```julia
+    run(`open ~/.julia/pluto_notebooks/`)  # macOS
+    run(`explorer ~/.julia/pluto_notebooks/`)  # Windows
+    run(`xdg-open ~/.julia/pluto_notebooks/`)  # Linux
+    ```
+
 {#open-from-url}
 # How to open a notebook from the web
 You can use Pluto to open a notebook from the web, using the URL of the notebook file. First, **copy the URL** of the notebook file. This URL probably ends with `.jl`. For example:
@@ -95,7 +95,6 @@ The path of your current notebook is displayed at the top of the Pluto interface
 After typing a new path, press Enter or click the save button to confirm the change. The notebook will be moved or renamed accordingly.
 
 <img src="$(root_url)/assets/img/change-move-files.png" alt="screenshot of how to change, move the open notebook files using the upper bar" width="1774" height="558">
-
 
 {#featured}
 # Running featured notebooks

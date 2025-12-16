@@ -84,6 +84,3 @@ The Pluto developers are really grateful for your help in localizing Pluto! 🌟
 The ability to localize Pluto is quite new, and there will still be rough edges. Feel free to reach out whenever you want, and we will try to help you quickly! You can email us, open an issue, open a draft PR, whatever you prefer!
 
 We are really interested in a right-to-left language (like Arabic or Farsi). This might require some additional tweaking, so reach out if you are interested to contribute, and we can work together to support it!
-
-## How to contribute
-Take a look at our [localization documentation](https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang) to get started! We look forward to your contributions! 💛

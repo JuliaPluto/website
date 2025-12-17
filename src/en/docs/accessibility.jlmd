@@ -7,7 +7,9 @@ order: 4
 ---
 
 # Accessibility Features
-Pluto is designed to be accessible to all users. We follow web accessibility standards and continuously work to improve the experience for everyone.
+Pluto is designed to be accessible to all users. We follow web accessibility standards and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!
+
+Here is an overview of the accessibility features of Pluto:
 
 ## Keyboard Navigation and Shortcuts
 **Pluto is fully usable without a mouse.** You can navigate and control everything using only your keyboard:

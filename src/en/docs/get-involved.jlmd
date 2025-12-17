@@ -1,0 +1,33 @@
+---
+title: "🤝 Get involved"
+description: "How to contribute or give feedback to Pluto"
+tags: ["docs", "collaborate", "feedback", "localization", "navigation"]
+layout: "md.jlmd"
+order: 6
+---
+
+## How to give Feedback
+How is your experience with Pluto? Pluto has a built-in feedback form for complaints, praises, nice-to-haves, or any suggestions you might have, we're always glad to hear from you!
+
+The easiest way to reach us: Use the built-in feedback tool at the bottom right of each notebook. 👨‍🏫
+
+- Your feedback goes directly to the Pluto developers in a private database
+- Feedback is anonymous by default, but you can optionally leave your email address
+- We might contact you for more details or to share a solution 😉
+
+<img src="$(root_url)/assets/img/feedback-tool.png" alt="screenshot of the feedback tool" width="2998" height="140">
+
+
+You can also reach us through Julia community channels:
+- [Discourse](https://discourse.julialang.org/)
+- [JuliaLang zulip](https://github.com/JuliaPluto/pluto-developer-instructions/blob/main/How%20to%20join%20the%20Pluto%20zulip.md) - we have a Pluto channel, just pop by!
+- [JuliaLang slack](https://julialang.slack.com)
+
+Or email us directly :) you can find Pluto developers' email addresses on their GitHub profiles.
+
+### Education
+We are specially interested in feedback from students and teachers:
+- Using Pluto to teach? We'd love to think together about your course
+- Learning Julia with Pluto? Let us know how it's going and what could be better
+
+We're working to make Pluto helpful for new Julia users, so your feedback is invaluable! 🎉

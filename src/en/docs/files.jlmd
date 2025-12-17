@@ -38,7 +38,7 @@ When you're ready to run the notebook:
 - The package environment will initialize
 - All cells will execute
 
-<video alt="Previewing in Safe mode and Running a Notebook" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/safe-preview.mov" controls="controls" muted="muted" loop="loop" playsinline></video>
+<video alt="Previewing in Safe mode and Running a Notebook" style="aspect-ratio: 1280/1148; max-width: 100%;" src="$(root_url)/assets/img/safe-preview.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 
 
 {#shutdown}
@@ -54,11 +54,11 @@ button** on the left side of the notebook entry
 
 This will completely shut down the notebook and stop its Julia process, freeing up system resources. The notebook will remain in your list so you can easily reopen it later (it will need to rerun from scratch when you open it again).
 
-<img src="$(root_url)/assets/img/close-notebooks.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
+<img src="$(root_url)/assets/img/close-notebooks.png" alt="screenshot of the Save button in the top right corner of a notebook" width="1874" height="658">
 
 **To remove a notebook from the list:** If you want to clear a notebook from your main menu entirely, click the **"forget" button** on the right side of the notebook entry. This only removes it from the list — the notebook file itself remains saved on your computer.
 
-<img src="$(root_url)/assets/img/forget-notebook.png" alt="screenshot of the Save button in the top right corner of a notebook" width="852" height="250">
+<img src="$(root_url)/assets/img/forget-notebook.png" alt="screenshot of the Save button in the top right corner of a notebook" width="1484" height="98">
 
 
 **Tip:** To stop all running notebooks at once, you can close the Pluto server by pressing `Ctrl+C` in the terminal or command prompt where Pluto is running.

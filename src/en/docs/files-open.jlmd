@@ -53,7 +53,7 @@ First, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can type
 # How to open an existing notebook file
 When you launch Pluto for the second time, your recent notebooks will appear in the main menu. You can click on them to continue where you left off.
 
-<img src="$(root_url)/assets/img/existing-notebooks.png" alt="screenshot of the existing notebooks already open in the Pluto main menu" width="1774" height="558">
+<img src="$(root_url)/assets/img/existing-notebooks.png" alt="screenshot of the existing notebooks already open in the Pluto main menu" width="1874" height="658">
 
 !!! tip "To open this temporary folder"
     You can quickly navigate to the temporary notebooks folder by running this command in Julia:
@@ -94,7 +94,7 @@ The path of your current notebook is displayed at the top of the Pluto interface
 
 After typing a new path, press Enter or click the save button to confirm the change. The notebook will be moved or renamed accordingly.
 
-<img src="$(root_url)/assets/img/change-move-files.png" alt="screenshot of how to change, move the open notebook files using the upper bar" width="1774" height="558">
+<img src="$(root_url)/assets/img/change-move-files.png" alt="screenshot of how to change, move the open notebook files using the upper bar" width="1432" height="558">
 
 {#featured}
 # Running featured notebooks

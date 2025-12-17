@@ -16,7 +16,7 @@ Pluto is designed to be accessible to all users. We follow web accessibility sta
 - Tab navigation: Move through all interactive elements on the page using the Tab key
 - Code editor navigation: Special tab handling inside code cells lets you indent code with Tab while still being able to navigate out of the editor with keyboard-only controls. This video shows an example: 
 
-<video alt="Using tab navigation inside and outside cells" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/tab-navigation.mov" controls="controls" muted="muted" loop="loop" playsinline></video>
+<video alt="Using tab navigation inside and outside cells" style="aspect-ratio: 1358/946; max-width: 100%;" src="$(root_url)/assets/img/tab-navigation.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 
 You can find a fuller overview of the keyboard shortcuts and between-cell navigation [here](https://plutojl.org/en/docs/keyboard-shortcuts/)
 

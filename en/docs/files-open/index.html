@@ -1,19 +1,14 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>🎚️ PlutoUI and @bind</title>
-<meta name="description" content='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>
+<title>📖 Open and move files</title>
+<meta name="description" content='How to open and move files from your computer or from the web'>
 <meta property="og:article:tag" content='docs'>
-<meta property="og:article:tag" content='writing'>
-<meta property="og:article:tag" content='interactivity'>
-<meta property="og:article:tag" content='@bind'>
-<meta property="og:article:tag" content='slider'>
-<meta property="og:article:tag" content='button'>
-<meta property="og:article:tag" content='reactivity'>
-<meta property="og:article:tag" content='widgets'>
-<meta property='og:title' content='🎚️ PlutoUI and @bind'>
+<meta property="og:article:tag" content='file'>
+<meta property="og:article:tag" content='navigation'>
+<meta property='og:title' content='📖 Open and move files'>
 <meta property='og:type' content='article'>
-<meta property='og:description' content='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>
+<meta property='og:description' content='How to open and move files from your computer or from the web'>
 
 
 <link rel="root" href="../../.." />
@@ -81,13 +76,13 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Using Pluto</h3>
 <ul>
-<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, save and shutdown notebook files'>📄 Create, save and shutdown notebooks</a></li><li class=''><a href='../../../en/docs/files-open/' title='How to open and move files from your computer or from the web'>📖 Open and move files</a></li><li class=''><a href='../../../en/docs/accessibility/' title='Accessibility features of Pluto'>✋ Accessibility</a></li><li class=''><a href='../../../en/docs/language/' title='How to change the language of Pluto'>🌐 Language</a></li><li class=''><a href='../../../en/docs/get-involved/' title='How to contribute or give feedback to Pluto'>🤝 Get involved</a></li>
+<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, save and shutdown notebook files'>📄 Create, save and shutdown notebooks</a></li><li class='active'><a href='../../../en/docs/files-open/' title='How to open and move files from your computer or from the web'>📖 Open and move files</a></li><li class=''><a href='../../../en/docs/accessibility/' title='Accessibility features of Pluto'>✋ Accessibility</a></li><li class=''><a href='../../../en/docs/language/' title='How to change the language of Pluto'>🌐 Language</a></li><li class=''><a href='../../../en/docs/get-involved/' title='How to contribute or give feedback to Pluto'>🤝 Get involved</a></li>
 </ul>
 </li>
 <li>
 <h3>Writing a notebook</h3>
 <ul>
-<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class='active'><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>🧮 LaTeX</a></li><li class=''><a href='../../../en/docs/linking/' title='How to link to other pages in Pluto.'>🔗 Linking</a></li>
+<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>🧮 LaTeX</a></li><li class=''><a href='../../../en/docs/linking/' title='How to link to other pages in Pluto.'>🔗 Linking</a></li>
 </ul>
 </li>
 <li>
@@ -135,135 +130,73 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="interactivity-with-bind-and-plutoui"><a href="#interactivity-with-bind-and-plutoui" class="anchor"></a>Interactivity with <code>@bind</code> and PlutoUI</h1>
-<p>Making your notebook interactive is very easy with Pluto! This article will teach you how to use <code>@bind</code> to add interactive UI like sliders, buttons, scrubbables, text fields, and more.</p>
-<h2 id="bind-with-plutoui"><a href="#bind-with-plutoui" class="anchor"></a><code>@bind</code> with PlutoUI</h2>
-<p>The easiest way to get started is with PlutoUI. Add the following code in your notebook:</p>
-<pre><code class="language-julia">using PlutoUI
-</code></pre>
-<pre><code class="language-julia">@bind apples Slider(5:50)
-</code></pre>
-<pre><code class="language-julia">apples
-</code></pre>
-<pre><code class="language-julia">repeat(&quot;🍎&quot;, apples)
-</code></pre>
-<p>This is what you get:</p>
-<blockquote>
-<div style="aspect-ratio: 998/598; width: 100%; contain: all; overflow: hidden;"><video src="../../../assets/img/interactive apples.mov" controls="controls" muted="muted" loop="loop" playsinline></video></div>
-</blockquote>
-<h2 id="global-variables"><a href="#global-variables" class="anchor"></a>Global variables</h2>
-<p>The core idea with <code>@bind</code> is that you can <strong>control a global variable</strong> with a UI element. Because Pluto has <strong>reactive global variables</strong>, it is up to your creativity what you do with it! Anything that depends (indirectly) on the bound variable will automatically update when you change the UI element.</p>
-<h1 id="discover-more-widgets"><a href="#discover-more-widgets" class="anchor"></a>Discover more widgets!</h1>
-<p>To see the <strong>complete list</strong> of UI that PlutoUI provides, including buttons, file upload and layout, check out the PlutoUI documentation! 👇</p>
-<div class="pe-container">
-<div class="pe-card">
-	<a href='https://featured.plutojl.org/basic/plutoui.jl' aria-hidden="true"><img src='https://user-images.githubusercontent.com/6933510/174067690-50c8128d-748b-4f50-8a76-2ce18166642b.png'></a>
-	<div class="pe-right">
-		<div class="pe-about">
-			<h2 class="no-toc">Interactivity</h2>
-			<p>Sliders, buttons, dropdowns, and more using PlutoUI.jl!</p>
-		</div>
-		<div class="pe-nav">
-			<a href='https://featured.plutojl.org/basic/plutoui.jl'>Read documentation →</a>
-		</div>
-	</div>
+<h1 id="files"><a href="#files" class="anchor"></a>Pluto notebook files</h1>
+<p>Pluto notebooks are stored as <code>.jl</code> files on your computer, and Pluto needs to know the exact location of each file to open, save, and manage it.</p>
+<p>When you create a new notebook, the notebook is stored temporarily in the <code>~/.julia/pluto_notebooks/</code> folder with a random name (something like <code>Wild experiment 4.jl</code>). This is a hidden folder, and we recommend saving your notebooks somewhere else (like your Documents folder) if you want to keep your work.</p>
+<div class="admonition info"><p class="admonition-title">The .jl extension</p>
+<p>The <code>.jl</code> extension is used because Pluto notebooks are valid Julia files – you can run them as Julia scripts, or use the <code>include</code> function in the REPL to start a REPL session with the notebook.</p>
+<p>You are free to use a different extension (like <code>.plutojl</code>), the extension is not required to open the file.</p>
 </div>
-<script>
-	const json_url = "https://featured.plutojl.org/pluto_export.json"
-	const jlpath_relative = "basic/PlutoUI.jl.jl"
-
-	const json_data = await (await fetch(json_url)).json()
-	console.log(json_data)
-
-	const frontmatter = json_data.notebooks[jlpath_relative].frontmatter
-	console.log(frontmatter)
-
-	const q = sel => currentScript.parentElement.querySelector(".pe-card").querySelector(sel)
-
-	q("a img").src = frontmatter.image ?? "data:image/svg+xml;utf8,<\svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><rect width='100%' height='100%' fill='ivory'/><\/svg>"
-	q(".pe-about h2").innerText = frontmatter.title ?? "Untitled"
-	q(".pe-about p").innerText = frontmatter.description ?? ""
-</script>
-<style>
-
-	.pe-container {
-		container-type: inline-size;
-	}
-	
-	.pe-card {
-		display: flex;
-		flex-direction: row;
-		max-width: 700px;
-
-		border-radius: 6px;
-		background: salmon;
-	background: linear-gradient(80deg, #e9dbe3, #ffdabe);
-padding: 10px;
-gap: 20px;
-margin: 10px 0;
-box-shadow: 0 2px 10px rgb(0 0 0 / 14%);
-
-	}
-
-	@container (max-width: 400px) {
-		.pe-card {
-			flex-direction: column;
-			gap: 0;
-		}
-	.pe-about {
-		margin: 0 10px 10px 10px;
-	}
-	}
-
-	.pe-card > a {
-		overflow: hidden;
-		border-radius: 5px;
-
-		flex: 0 0 35%;
-		aspect-ratio: 3 / 2;
-	}
-	
-	.pe-card > a > img {
-		height: 100%;
-		width: 100%;
-		
-		object-fit: cover;
-	}
-
-	div.pe-about :is(p, h2) {
-		color: black;
-		text-decoration: none;
-		border-bottom: none;
-		margin-block-end: 0;
-	}
-	div.pe-about h2 {
-	}
-
-	.pe-right {
-		flex: 1 1 auto;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
-	.pe-nav {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-	}
-
-	.pe-nav a {
-		text-decoration: none;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Cantarell, "Apple Color Emoji", "Segoe UI Emoji",
-	"Segoe UI Symbol", system-ui, sans-serif;
-		font-weight: 700;
-		background: white;
-		color: black;
-		padding: 8px 14px;
-		border-radius: 1000px;
-	}
-</style>
+<h1 id="open"><a href="#open" class="anchor"></a>How to open a notebook from your computer</h1>
+<p>First, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now you can type a notebook path in the textbox, and press Enter or click the “Open” button. You would need to enter the <em>full path</em> of the notebook into the blue bow. While you type, there will be autocompletion suggestions with folders and files.</p>
+<img src="../../../assets/img/main menu open autocomplete.png" alt="screenshot of the Open button in the Pluto main menu, with a textbox for the notebook path and autocompletion suggestions" width="1774" height="558">
+<div class="admonition info"><p class="admonition-title">Finding file paths on your computer</p>
+<p>To open a notebook, Pluto needs to know the <em>full path</em> of your <code>.jl</code> file — this is the complete address that tells your computer exactly where the file is located. The format of file paths differs depending on your operating system:</p>
+<p><strong>On Windows:</strong></p>
+<ul>
+<li>Paths start with a drive letter and use backslashes:</li>
+<li>An example is: <code>C:\Users\fons\Documents\my_notebook.jl</code></li>
+<li>To copy a file’s path: hold Shift, right-click the file in File Explorer, and select “Copy as path”</li>
+<li>For a detailed step-by-step guide, check out <a href="https://www.top-password.com/blog/copy-full-path-of-a-folder-file-in-windows/">this Windows tutorial</a></li>
+</ul>
+<p><strong>On macOS:</strong></p>
+<ul>
+<li>Paths start with a forward slash <code>/</code></li>
+<li>A path may look like: <code>/Users/fons/Documents/my_notebook.jl</code></li>
+<li>To copy a file’s path: right-click the file in Finder, hold Option (⌥), and select “Copy … as Pathname”</li>
+<li>For a detailed step-by-step guide, check out <a href="https://www.josharcher.uk/code/find-path-to-folder-on-mac/">this MacOS tutorial</a></li>
+</ul>
+<p><strong>On Ubuntu (and other Linux distributions):</strong></p>
+<ul>
+<li>Paths start with a forward slash <code>/</code></li>
+<li>They look like: <code>/home/fons/Documents/my_notebook.jl</code></li>
+<li>To copy a file’s path: right-click the file in your file manager (e.g., Nautilus), and select “Copy” or use the keyboard shortcut Ctrl+Shift+C in the file manager’s address bar</li>
+<li>Alternatively, you can drag and drop the file into a terminal window to paste its full path</li>
+</ul>
+<h3 id="why-so-difficult"><a href="#why-so-difficult" class="anchor"></a>Why so difficult?</h3>
+<p>It would be really nice if you could just pick the notebook file from your file browser, instead of having to type the path. But this is not possible, because Pluto is a web application, which does not have access to your file system for security reasons. See <a href="https://github.com/fonsp/Pluto.jl/issues/350">this issue</a>. BUT this feature <em>is</em> possible in the <a href="https://github.com/JuliaPluto/PlutoDesktop">Pluto Desktop app</a> (WIP)</p>
 </div>
+<h1 id="open-existing"><a href="#open-existing" class="anchor"></a>How to open an existing notebook file</h1>
+<p>When you launch Pluto for the second time, your recent notebooks will appear in the main menu. You can click on them to continue where you left off.</p>
+<img src="../../../assets/img/existing-notebooks.png" alt="screenshot of the existing notebooks already open in the Pluto main menu" width="1874" height="658">
+<div class="admonition tip"><p class="admonition-title">To open this temporary folder</p>
+<p>You can quickly navigate to the temporary notebooks folder by running this command in Julia:</p>
+<pre><code class="language-julia">run(`open ~/.julia/pluto_notebooks/`)  # macOS
+run(`explorer ~/.julia/pluto_notebooks/`)  # Windows
+run(`xdg-open ~/.julia/pluto_notebooks/`)  # Linux
+</code></pre>
+</div>
+<h1 id="open-from-url"><a href="#open-from-url" class="anchor"></a>How to open a notebook from the web</h1>
+<p>You can use Pluto to open a notebook from the web, using the URL of the notebook file. First, <strong>copy the URL</strong> of the notebook file. This URL probably ends with <code>.jl</code>. For example:</p>
+<p><a href="https://github.com/JuliaPluto/featured/blob/main/src/basic/turtles.jl">https://github.com/JuliaPluto/featured/blob/main/src/basic/turtles.jl</a></p>
+<p>Next, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now you can <strong>paste the URL</strong> in the textbox, and press Enter or click the “Open” button.</p>
+<p>The notebook will open in “Safe Preview” mode, which means that no code will be executed until you give permission.</p>
+<img src="../../../assets/img/open notebook path or url.png" alt="screenshot of the url bar for url or full paths" width="1774" height="558">
+<h1 id="open-from-clipboard"><a href="#open-from-clipboard" class="anchor"></a>Open a notebook using the Clipboard</h1>
+<p>You can copy the <strong>complete contents</strong> of a <code>.jl</code> Pluto notebook file, and open it with Pluto. With the contents of a notebook file in your clipboard, go to the <a href="../launch-pluto/#main-menu">Pluto main menu</a>. Now simply paste the contents anywhere on the page using <code>Ctrl+V</code> or <code>Cmd+V</code>, and it will be opened as a new notebook.</p>
+<p>The notebook will open in “Safe Preview” mode, which means that no code will be executed until you give permission.</p>
+<h1 id="move"><a href="#move" class="anchor"></a>How to move files</h1>
+<p>The path of your current notebook is displayed at the top of the Pluto interface. You can <strong>click on it to change the path</strong> — this allows you to:</p>
+<ul>
+<li>Move the notebook to a different folder</li>
+<li>Rename the notebook file</li>
+<li>Save a copy in a new location</li>
+</ul>
+<p>After typing a new path, press Enter or click the save button to confirm the change. The notebook will be moved or renamed accordingly.</p>
+<img src="../../../assets/img/change-move-files.png" alt="screenshot of how to change, move the open notebook files using the upper bar" width="1432" height="558">
+<h1 id="featured"><a href="#featured" class="anchor"></a>Running featured notebooks</h1>
+<p>On the bottom of the <a href="../launch-pluto/#main-menu">Pluto main menu</a>, you will find a large collection of <strong>featured notebooks</strong> – notebooks written by the Julia community, featured by the Pluto developers. These notebooks are a great resource to get inspired about new ways to use Julia and Pluto!</p>
+<p>Click on any featured notebook to read it. This will instantly load the notebook (prerendered on our servers), and interactive elements will work (this is done using <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer.jl</a>). If you want to change code and run the notebook, simply click the “Edit or run” button in the top right of the screen. This will <strong>make a copy of the notebook</strong> on your computer that you can edit.</p>
 
 </div>
 </div>
@@ -276,7 +209,7 @@ box-shadow: 0 2px 10px rgb(0 0 0 / 14%);
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/bind.jlmd" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/files-open.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

@@ -1,0 +1,9 @@
+The following images are used in other services and they should stay in this repo:
+
+
+og1.png
+terminal add pluto.png
+terminal run pluto.png
+terminal one plus one.png
+open notebook path or url.png
+

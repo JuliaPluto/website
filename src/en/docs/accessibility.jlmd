@@ -1,0 +1,67 @@
+---
+title: "✋ Accessibility"
+description: "Accessibility features of Pluto"
+tags: ["docs", "accessibility", "screen reader", "keyboard navigation", "WCAG", "navigation"]
+layout: "md.jlmd"
+order: 4
+---
+
+# Accessibility Features
+Pluto is designed to be accessible to all users. We follow web accessibility standards and continuously work to improve the experience for everyone.
+
+## Keyboard Navigation and Shortcuts
+**Pluto is fully usable without a mouse.** You can navigate and control everything using only your keyboard:
+
+- Keyboard shortcuts: Execute cells, navigate between cells, and access common functions quickly. You can find a list of all our shortcuts [here](https://plutojl.org/en/docs/keyboard-shortcuts/)
+- Tab navigation: Move through all interactive elements on the page using the Tab key
+- Code editor navigation: Special tab handling inside code cells lets you indent code with Tab while still being able to navigate out of the editor with keyboard-only controls. This video shows an example: 
+
+<video alt="Using tab navigation inside and outside cells" style="aspect-ratio: 520/568; max-width: 100%;" src="$(root_url)/assets/img/tab-navigation.mov" controls="controls" muted="muted" loop="loop" playsinline></video>
+
+You can find a fuller overview of the keyboard shortcuts and between-cell navigation [here](https://plutojl.org/en/docs/keyboard-shortcuts/)
+
+Pluto also supports touch-only use with your device's on-screen keyboard (OSK): the virtual keyboard that appears on your screen when you tap a text field on tablets, touchscreen laptops, or any device without a physical keyboard.
+
+This makes Pluto accessible for users who rely on keyboard-only navigation, whether due to motor disabilities, personal preference, or assistive technology requirements.
+
+## Visual Accessibility
+### High Contrast Text
+We design almost everything with enough visual contrast in light and dark mode. This way:
+
+- All text meets WCAG 2.0 Level AA contrast standards (minimum ratio of 4.5:1)
+- Ensures readability for users with low vision or color blindness
+
+### Dark Mode Support
+
+- Pluto automatically follows your operating system or browser's light/dark mode preference
+- No manual switching needed, it adapts to your system settings
+
+### Font Size and Zoom
+
+- Use your browser's zoom function (`Ctrl/Cmd + ±`) to adjust the size of Pluto's interface
+- Your zoom preference automatically saves between sessions
+- Text and UI elements scale proportionally for consistent readability
+
+### Reduced Motion
+
+- Pluto respects the `prefers-reduced-motion` CSS setting. If you've enabled "Reduce motion" or "Prefers reduced motion" in your browser or OS accessibility settings, Pluto will minimize animations
+- Helps users with vestibular disorders or motion sensitivity
+
+## Screen Reader Support
+Pluto uses semantic HTML and ARIA (Accessible Rich Internet Applications) labels to work with popular screen readers including JAWS, NVDA, VoiceOver, TalkBack, and Narrator. We follow WAI-ARIA best practices to ensure interactive elements are properly announced and navigable.
+**Current screen reader experience:**
+
+- HTML exports are very screen reader friendly
+- Live notebook editing has basic screen reader support, but we're actively working to improve this experience
+
+**We need your feedback!** If you use a screen reader with Pluto, please share your experience - what works well and what could be better. Your input is essential for helping us prioritize improvements. See [this issue](https://github.com/fonsp/Pluto.jl/issues/2768) to join the conversation or use our feedback tool to report accessibility barriers.
+
+## Language Support
+Pluto is available in multiple languages, making it accessible to non-English speakers.  You can:
+
+- Switch languages at the bottom of each notebook 
+- Contribute translations to help make Pluto available in your language
+
+You can read more on about it in [this section](https://plutojl.org/en/docs/language/). 
+
+**Found an accessibility issue?** Let us know through our feedback tool or community channels!

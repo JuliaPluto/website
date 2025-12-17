@@ -3,7 +3,7 @@ title: "🤝 Get involved"
 description: "How to contribute or give feedback to Pluto"
 tags: ["docs", "collaborate", "feedback", "localization", "navigation"]
 layout: "md.jlmd"
-order: 4
+order: 6
 ---
 ## How to contribute
 Take a look at our [localization documentation](https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang) to get started! We look forward to your contributions! 💛

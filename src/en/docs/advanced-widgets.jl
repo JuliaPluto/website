@@ -65,7 +65,7 @@ PlutoUI.jl provides some basic inputs, like sliders, textfields and more. But yo
 - [map location picker](https://github.com/lukavdplas/PlutoMapPicker.jl), showing a map, and giving back the clicked coordinate with `@bind`.
   ![screenshot](https://github.com/lukavdplas/PlutoMapPicker.jl/raw/main/screenshot.png)
 - [chemical equation builder](https://youtu.be/lNbU5jNp67s?t=1546), giving back a `Catalyst.ReactionSystem` with `@bind`.
-  ![screenshot](https://github.com/fonsp/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a)
+  ![screenshot](https://github.com/JuliaPluto/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a)
 - widget composed with Markdown and PlutoUI, giving back 4 values in a tuple with `@bind`.
   ![screenshot](https://user-images.githubusercontent.com/6933510/145588612-14824654-5c73-45f8-983c-8913c7101a78.png)
  

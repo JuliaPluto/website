@@ -10,7 +10,7 @@ layout: "md.jlmd"
 To learn more about Pluto:
 
 - Check out the [Pluto.jl website](https://plutojl.org)
-- Pluto is open source! You can give us a 🌟 on the [GitHub repository](https://github.com/fonsp/Pluto.jl)
+- Pluto is open source! You can give us a 🌟 on the [GitHub repository](https://github.com/JuliaPluto/Pluto.jl)
 - The new [Pluto.jl documentation](https://plutojl.org/en/docs/) is a good way to learn more about what you can do with Pluto!
 
 

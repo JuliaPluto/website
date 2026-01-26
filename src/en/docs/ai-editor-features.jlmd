@@ -30,7 +30,7 @@ The feature currently works **without sign-in**: you can use the feature directl
 
 
 ## Feedback
-Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues).
+Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/JuliaPluto/Pluto.jl/issues).
 
 
 # _(beta)_ AI Prompt generation
@@ -72,7 +72,7 @@ Most AI chat systems have a token limit, which limits the length of the prompt. 
 This feature does not use any LLMs or other web services, it just generates a prompt that you can use as you wish.
 
 ## Feedback
-Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues).
+Does this not work for you? Or do you have other feedback? Use the built-in feedback form in Pluto, or let us know on [GitHub](https://github.com/JuliaPluto/Pluto.jl/issues).
 
 
 
@@ -101,4 +101,4 @@ Are you a teacher who wants to block AI features in your course? You have the fo
 - Ask your students to start Pluto with `Pluto.run(enable_ai_editor_features=false)`.
 - Ask the system administrator to block ChatGPT: `chat.openai.com`
 
-Does this not work for you? Or do you have other feedback? Let us know on [GitHub](https://github.com/fonsp/Pluto.jl/issues), or send Fons an email!
+Does this not work for you? Or do you have other feedback? Let us know on [GitHub](https://github.com/JuliaPluto/Pluto.jl/issues), or send Fons an email!

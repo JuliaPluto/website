@@ -6,7 +6,7 @@
         {
             "label": "🌳 PlutoPages: run development server",
             "type": "shell",
-            "command": "julia develop.jl",
+            "command": "julia +1.10 develop.jl",
             "group": "build"
         }
     ]

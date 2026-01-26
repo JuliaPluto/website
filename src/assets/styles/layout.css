@@ -186,6 +186,9 @@ body:not(.adsfasdfasdf):not(.sdfsdfdsffdsfds) {
     font-family: monospace;
     letter-spacing: 0ch;
 }
+#pages-sidebar small {
+    opacity: 0.7;
+}
 
 /* SIDEBAR LOGO */
 

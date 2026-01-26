@@ -1,0 +1,264 @@
+---
+title: "🧩 Pluto public API – control Pluto"
+description: "Overview of the public API exposed by the Pluto.jl package."
+tags: ["docs", "internals", "advanced", "sessionactions", "API"]
+layout: "md.jlmd"
+order: 0
+---
+
+
+The Pluto package has a few functions that allow you to programmatically control Pluto. This page contains an [overview](#overview) of the public API exposed by the Pluto.jl package. We have also factored out the packages [Malt.jl](https://github.com/JuliaPluto/Malt.jl), [ExpressionExplorer.jl](../ExpressionExplorer/) and [PlutoDependencyExplorer.jl](../PlutoDependencyExplorer/). These packages contain useful functionality that is not documented here.
+
+# Overview
+You can use [`ServerSession`](#serversession) and [`SessionActions`](#sessionactions) (module) for opening notebooks, shutting down, reading results and exporting to a file. With [`run`](#run) you can serve a web interface of a `ServerSession` on localhost. 
+
+The `Notebook` and `Cell` structs are used to store notebook state. Their fields are not public API, but they are mostly stable in practice. You can read our tests, like [this one](https://github.com/JuliaPluto/Pluto.jl/blob/main/test/React.jl) to see how to interact with notebooks.
+
+There is public API to change bond values programmatically: [`get_bond_names`](#get_bond_names) and [`set_bond_values_reactive`](#set_bond_values_reactive), to trigger reactivity.
+
+The functions [`frontmatter_html`](#frontmatter_html) and [`generate_html`](#generate_html) let you export a notebook to a standalone HTML file. (A PDF file is just a browser print of the HTML file, see PlutoPDF.jl.) See also [`frontmatter`](../frontmatter/#Pluto.frontmatter). You can use [`notebook_to_js`](#notebook_to_js) to get a 'statefile'. You can use `pack` and `unpack` to access Pluto's MsgPack implementation. [`Firebasey`](#firebasey) contains Pluto's deep-state diffing algorithm (like immer.js).
+
+
+Pluto contains functions to programmatically manage the package environment contained in a Pluto notebook: [`reset_notebook_environment`](#reset_notebook_environment), [`update_notebook_dependencies`](#update_notebook_dependencies), [`activate_notebook_environment`](#activate_notebook_environment) and [`will_use_pluto_pkg`](#will_use_pluto_pkg).
+
+There are some utility functions to work with Pluto notebook file extensions: [`pluto_file_extensions`](#pluto_file_extensions), [`without_pluto_file_extension`](#without_pluto_file_extension) and [`is_pluto_notebook`](#is_pluto_notebook).
+
+
+
+# SessionActions
+These functions are in the `Pluto.SessionActions` module. Everything in `Pluto.SessionActions` is public API, and covered by semver. Available functions are:
+- `SessionActions.open`
+- `SessionActions.open_url`
+- `SessionActions.new`
+- `SessionActions.shutdown`
+- `SessionActions.move`
+
+## `ServerSession`
+All functionality in `SessionActions` requires a `Pluto.ServerSession` object. You can create a session with the `Pluto.ServerSession()` constructor:
+
+```julia
+session = Pluto.ServerSession()
+```
+
+You can also specify the keyword argument `options` to change the [Configuration](../configuration/). For example:
+
+```julia
+session = Pluto.ServerSession(;
+        options=Pluto.Configuration.from_flat_kwargs(
+            auto_reload_from_file=true,
+            etc...
+        )
+    )
+```
+
+
+
+## Opening notebooks
+Once you have a `ServerSession`, you can open notebooks in it. You can use `open` and `open_url`.
+
+### `open`
+You can use `open` to open a notebook from a local file path, and add it to the session.
+
+```julia
+open(session::ServerSession, path::AbstractString; 
+    run_async::Bool=true, 
+    as_sample::Bool=false, 
+    execution_allowed::Bool=true,
+    notebook_id::UUID=uuid1()
+    clear_frontmatter::Bool=false,
+)
+```
+
+Useful keyword arguments:
+- `execution_allowed`: If `false`, the notebook will launch in "Safe Preview" mode. This is the default behavior when opening notebooks using the Pluto web interface.
+- `run_async`: If `true`, the function will block until all cells in the notebook have finished executing. If `false`, the function will return immediately after starting the notebook, and cells will execute in the background.
+- `as_sample`: If `true`, Pluto will not open the path, but create a new temporary copy of the notebook at `path` and open that instead.
+- `clear_frontmatter`: If `true`, any [frontmatter](../frontmatter/) in the notebook file will be removed.
+
+
+### `open_url`
+You can use `open_url` to download a notebook from the web and open it.
+
+```julia
+function open_url(session::ServerSession, url::AbstractString; kwargs...)
+```
+
+The same keyword arguments as `open` are supported.
+
+### `new`
+
+You can use `new` to create a new empty notebook in the session.
+
+```julia
+new(session::ServerSession;
+    run_async=true,
+    notebook_id::UUID=uuid1()
+)
+```
+
+See `open` for the meaning of `run_async`.
+
+## More actions
+
+### `shutdown`
+You can use `shutdown` to shut down a session.
+
+```julia
+shutdown(session::ServerSession, notebook::Notebook;
+    keep_in_session::Bool=false,
+    async::Bool=false,
+    verbose::Bool=true
+)
+```
+
+Keyword arguments:
+- `keep_in_session`: If `false`, the notebook will also be removed from `session.notebooks`.
+- `async`: If `true`, the function will return quickly, and the shutdown will happen in the background.
+- `verbose`: If `true`, warning messages might be logged.
+
+
+### `move`
+You can use `move` to change where a notebook is stored.
+
+```julia
+move(session::ServerSession, notebook::Notebook, newpath::String)
+```
+
+# `run`
+Use `Pluto.run` to start Pluto. This is how most people start Pluto:
+
+```julia
+run(; kwargs...)
+```
+
+Keyword arguments: check out [Configuration](../configuration/).
+
+If you created your own `ServerSession`, you can use `run!` and `run` to start the web interface for that session.
+
+```julia
+run(session::ServerSession)
+run!(session::ServerSession)
+```
+
+`run!` will start the server, and return a `RunningPlutoServer` once it's ready. You can `Base.wait` on it to block until the server stops (with <kbd>Ctrl+C</kbd>), or `Base.close` to shut it down. `run` is a shorthand for `Base.wait ∘ run!`.
+
+# <span id="frontmatter_html"><span id="generate_html">Exporting notebooks </span></span>
+Generate the HTML export contents of a notebook:
+
+```julia
+generate_html(notebook::Notebook)::String
+```
+
+This includes frontmatter HTML head content, but you can also generate this separately with:
+
+```julia
+frontmatter_html(fm::Dict{String,Any})::String
+```
+
+`fm` can be the output of [`Pluto.frontmatter`](../frontmatter/#Pluto.frontmatter).
+
+{#notebook_to_js}
+# Statefile
+A core part of how Pluto works is its state synchronization (between the Julia server and the connected web browsers). All parties work on a shared "statefile" representation of the notebook. This is a JSON-like structure that contains all information about the notebook (cells, code, outputs, logs, timings, etc). Read more about it in Pluto's source code, by reading the docstring of `Pluto.Firebasey`.
+
+To get the statefile of a `Notebook`, use:
+
+```julia
+notebook_to_js(notebook::Notebook)::Dict{String,Any}
+```
+
+The output structure is easy to work with in another language (like JavaScript). Its structure is not covered by semver.
+
+<details>
+<summary>More info about Pluto's state management (Firebasey docstring)</summary>
+
+ $(Docs.Binding(Base.loaded_modules[Base.PkgId(Base.UUID("c3e4b0f8-55cb-11ea-2926-15256bba5781"), "Pluto")], :Firebasey) |> Base.Docs.doc)
+
+</details>
+
+
+# <span id="pack"><span id="unpack">`pack` and `unpack`</span></span>
+You can use `Pluto.pack` and `Pluto.unpack` to serialize and deserialize data (like the statefile) using MsgPack (with a couple of Pluto extensions and optimizations).
+
+```julia
+pack(x::Any)::Vector{UInt8}
+unpack(data::Vector{UInt8})::Any
+```
+
+# Firebasey
+Firebasey is Pluto's deep-state diffing algorithm (like immer.js). It is used to efficiently synchronize notebook state between the Julia server and the web browsers. To see simple examples of Firebasey usage (and its public API), check out the PlutoSliderServer.jl source code.
+
+Firebasey is written as a Pluto notebook, and you can open [`src/webserver/Firebasey.jl`](https://github.com/JuliaPluto/Pluto.jl/blob/main/src/webserver/Firebasey.jl) in Pluto to see many more examples.
+
+# <span id="get_bond_names"><span id="set_bond_values_reactive">Bonds</span></span>
+
+You can use `get_bond_names` to get the list of variables names that are bound with `@bind`:
+
+```julia
+get_bond_names(session::ServerSession, notebook::Notebook)::Set{String}
+```
+
+With `set_bond_values_reactive` you can change the values of bound variables to trigger a reactive run in a `Notebook`. Note that the values should be those [before transformation](#https://plutojl.org/en/docs/abstractplutodingetjes/#transform_value).
+
+```julia
+# set the new values
+notebook.bonds[:x] = Dict("value" => 1)
+notebook.bonds[:y] = Dict("value" => "two")
+
+set_bond_values_reactive(;
+    session::ServerSession, notebook::Notebook,
+    # names of the bonds that are changed
+    bound_sym_names::AbstractVector{Symbol},
+    # just leave this as default
+    is_first_values::AbstractVector{Bool}=[false for x in bound_sym_names],
+    # if `false`, the function will block until all reactive cells have run
+    run_async::Bool=true,
+)::TopologicalOrder
+```
+
+
+# Package management
+
+Pluto contains functions to programmatically manage the package environment contained in a Pluto notebook. These functions are:
+
+
+{#reset_notebook_environment}
+## `reset_notebook_environment`
+$(Docs.Binding(Base.loaded_modules[Base.PkgId(Base.UUID("c3e4b0f8-55cb-11ea-2926-15256bba5781"), "Pluto")], :reset_notebook_environment) |> Base.Docs.doc)
+
+
+{#update_notebook_environment}
+## `update_notebook_environment`
+$(Docs.Binding(Base.loaded_modules[Base.PkgId(Base.UUID("c3e4b0f8-55cb-11ea-2926-15256bba5781"), "Pluto")], :update_notebook_environment) |> Base.Docs.doc)
+
+
+{#activate_notebook_environment}
+## `activate_notebook_environment`
+$(Docs.Binding(Base.loaded_modules[Base.PkgId(Base.UUID("c3e4b0f8-55cb-11ea-2926-15256bba5781"), "Pluto")], :activate_notebook_environment) |> Base.Docs.doc)
+
+
+{#will_use_pluto_pkg}
+## `will_use_pluto_pkg`
+$(Docs.Binding(Base.loaded_modules[Base.PkgId(Base.UUID("c3e4b0f8-55cb-11ea-2926-15256bba5781"), "Pluto")], :will_use_pluto_pkg) |> Base.Docs.doc)
+
+
+# <span id="pluto_file_extensions"><span id="without_pluto_file_extension"><span id="is_pluto_notebook">File extensions </span></span></span>
+Pluto notebook files are usually `.jl`, but there are some other "official" extensions like `.plutojl`, `.pluto.jl` and more. There are some utility functions:
+
+```julia
+# List of "official" Pluto file extensions
+pluto_file_extensions::Vector{String}
+
+# Remove Pluto file extension from path
+without_pluto_file_extension(path::String)::String
+
+## Does the path end with a pluto file extension (like `.jl` or `.pluto.jl`) and does the first line say `### A Pluto.jl notebook ###`?
+is_pluto_notebook(path::String)::Bool
+```
+
+
+
+
+
+
+

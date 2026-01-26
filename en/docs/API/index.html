@@ -1,0 +1,384 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>🧩 Pluto public API – control Pluto</title>
+<meta name="description" content='Overview of the public API exposed by the Pluto.jl package.'>
+<meta property="og:article:tag" content='docs'>
+<meta property="og:article:tag" content='internals'>
+<meta property="og:article:tag" content='advanced'>
+<meta property="og:article:tag" content='sessionactions'>
+<meta property="og:article:tag" content='API'>
+<meta property='og:title' content='🧩 Pluto public API – control Pluto'>
+<meta property='og:type' content='article'>
+<meta property='og:description' content='Overview of the public API exposed by the Pluto.jl package.'>
+
+
+<link rel="root" href="../../.." />
+
+<link rel="icon" href="../../../assets/favicon.ico" />
+<link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../../assets/styles/layout.css" type="text/css" />
+<script src="../../../assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../assets/scripts/search.js" type="module" defer></script>
+
+
+<meta name="viewport" content="width=device-width"><meta charset="utf-8">
+<meta name="pluto-insertion-spot-meta">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="white"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928"><meta name="color-scheme" content="light dark"><link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/logo.49a14041.svg"><link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/favicon_unsaturated.c11d4d33.svg"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.5017d7bd.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.8365375a.css"><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/index.8d714875.js"></script><script type="module" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.runtime.dda76f2f.js"></script><script defer>console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends \uD83C\uDF08");</script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.21e3b1fd.js" defer></script><script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.69996afe.js" crossorigin defer></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.a19283c8.css" type="text/css"><script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.20.21";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+<script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/editor.2d3393ce.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/index.11569726.js"></script><link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/fonsp/Pluto.jl@0.20.21/frontend-dist/tex-svg-full.f72d1ae1.js" type="text/javascript">
+<meta name="pluto-insertion-spot-preload">
+
+
+<link rel="stylesheet" href="../../../assets/styles/docs.css" type="text/css" />
+<script src="../../../assets/scripts/enhanced_markup.js" type="module" defer></script>
+
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="pluto_home_link"><a class="pluto_home_link" href='../../..'><img src="../../../assets/favicon.svg" width="32" height="32"><span> Pluto.jl</span></a>
+            </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="../../../en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
+        <li>
+<h3>Introduction</h3>
+<ul>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li>
+</ul>
+</li>
+<li>
+<h3>Using Pluto</h3>
+<ul>
+<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, save and shutdown notebook files'>📄 Create, save and shutdown notebooks</a></li><li class=''><a href='../../../en/docs/files-open/' title='How to open and move files from your computer or from the web'>📖 Open and move files</a></li><li class=''><a href='../../../en/docs/accessibility/' title='Accessibility features of Pluto'>✋ Accessibility</a></li><li class=''><a href='../../../en/docs/language/' title='How to change the language of Pluto'>🌐 Language</a></li><li class=''><a href='../../../en/docs/get-involved/' title='How to contribute or give feedback to Pluto'>🤝 Get involved</a></li>
+</ul>
+</li>
+<li>
+<h3>Writing a notebook</h3>
+<ul>
+<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>🧮 LaTeX</a></li><li class=''><a href='../../../en/docs/linking/' title='How to link to other pages in Pluto.'>🔗 Linking</a></li>
+</ul>
+</li>
+<li>
+<h3>Reproducibility</h3>
+<ul>
+<li class=''><a href='../../../en/docs/reactivity/'>🔄 Reactivity <br><small> how Pluto notebooks update automatically</small></a></li><li class=''><a href='../../../en/docs/packages/' title='Pluto.jl automatically manages a package environment for your notebook.'>📦 Packages <br><small> Built-in package management</small></a></li><li class=''><a href='../../../en/docs/packages-advanced/' title='How to use Pkg.activate in Pluto.jl notebooks to set up a custom Pkg environment.'>📦 Packages: advanced <br><small> Pkg.activate in a cell</small></a></li>
+</ul>
+</li>
+<li>
+<h3>Editor</h3>
+<ul>
+<li class=''><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class=''><a href='../../../en/docs/disable-cell/' title='How to disable a cell in Pluto, or disable a cell in the file.'>💡 Disabling cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
+</ul>
+</li>
+<li>
+<h3>Publishing</h3>
+<ul>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class=''><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li><li class=''><a href='../../../en/docs/binder/' title='How to use Binder to run Pluto notebooks in the cloud.'>🤹 Binder</a></li><li class=''><a href='../../../en/docs/PlutoSliderServer/' title='How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web.'>💫 PlutoSliderServer.jl</a></li><li class=''><a href='../../../en/docs/PlutoPages/' title='How to use PlutoPages.jl to generate static websites from Pluto notebooks.'>🏗️ PlutoPages.jl</a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Widgets</h3>
+<ul>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Internals</h3>
+<ul>
+<li class='active'><a href='../../../en/docs/API/' title='Overview of the public API exposed by the Pluto.jl package.'>🧩 Pluto public API <br><small> control Pluto</small></a></li><li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
+</ul>
+</li>
+
+        </ul>
+        <div class="pluto_version">
+            Pluto <span class="Base-VersionNumber">0.20.21</span>
+        </div>
+        </nav>
+        <div id="pages-content">
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<p>The Pluto package has a few functions that allow you to programmatically control Pluto. This page contains an <a href="#overview">overview</a> of the public API exposed by the Pluto.jl package. We have also factored out the packages <a href="https://github.com/JuliaPluto/Malt.jl">Malt.jl</a>, <a href="../ExpressionExplorer/">ExpressionExplorer.jl</a> and <a href="../PlutoDependencyExplorer/">PlutoDependencyExplorer.jl</a>. These packages contain useful functionality that is not documented here.</p>
+<h1 id="overview"><a href="#overview" class="anchor"></a>Overview</h1>
+<p>You can use <a href="#serversession"><code>ServerSession</code></a> and <a href="#sessionactions"><code>SessionActions</code></a> (module) for opening notebooks, shutting down, reading results and exporting to a file. With <a href="#run"><code>run</code></a> you can serve a web interface of a <code>ServerSession</code> on localhost.</p>
+<p>The <code>Notebook</code> and <code>Cell</code> structs are used to store notebook state. Their fields are not public API, but they are mostly stable in practice. You can read our tests, like <a href="https://github.com/JuliaPluto/Pluto.jl/blob/main/test/React.jl">this one</a> to see how to interact with notebooks.</p>
+<p>There is public API to change bond values programmatically: <a href="#get_bond_names"><code>get_bond_names</code></a> and <a href="#set_bond_values_reactive"><code>set_bond_values_reactive</code></a>, to trigger reactivity.</p>
+<p>The functions <a href="#frontmatter_html"><code>frontmatter_html</code></a> and <a href="#generate_html"><code>generate_html</code></a> let you export a notebook to a standalone HTML file. (A PDF file is just a browser print of the HTML file, see PlutoPDF.jl.) See also <a href="../frontmatter/#Pluto.frontmatter"><code>frontmatter</code></a>. You can use <a href="#notebook_to_js"><code>notebook_to_js</code></a> to get a ‘statefile’. You can use <code>pack</code> and <code>unpack</code> to access Pluto’s MsgPack implementation. <a href="#firebasey"><code>Firebasey</code></a> contains Pluto’s deep-state diffing algorithm (like immer.js).</p>
+<p>Pluto contains functions to programmatically manage the package environment contained in a Pluto notebook: <a href="#reset_notebook_environment"><code>reset_notebook_environment</code></a>, <a href="#update_notebook_dependencies"><code>update_notebook_dependencies</code></a>, <a href="#activate_notebook_environment"><code>activate_notebook_environment</code></a> and <a href="#will_use_pluto_pkg"><code>will_use_pluto_pkg</code></a>.</p>
+<p>There are some utility functions to work with Pluto notebook file extensions: <a href="#pluto_file_extensions"><code>pluto_file_extensions</code></a>, <a href="#without_pluto_file_extension"><code>without_pluto_file_extension</code></a> and <a href="#is_pluto_notebook"><code>is_pluto_notebook</code></a>.</p>
+<h1 id="sessionactions"><a href="#sessionactions" class="anchor"></a>SessionActions</h1>
+<p>These functions are in the <code>Pluto.SessionActions</code> module. Everything in <code>Pluto.SessionActions</code> is public API, and covered by semver. Available functions are:</p>
+<ul>
+<li><code>SessionActions.open</code></li>
+<li><code>SessionActions.open_url</code></li>
+<li><code>SessionActions.new</code></li>
+<li><code>SessionActions.shutdown</code></li>
+<li><code>SessionActions.move</code></li>
+</ul>
+<h2 id="serversession"><a href="#serversession" class="anchor"></a><code>ServerSession</code></h2>
+<p>All functionality in <code>SessionActions</code> requires a <code>Pluto.ServerSession</code> object. You can create a session with the <code>Pluto.ServerSession()</code> constructor:</p>
+<pre><code class="language-julia">session = Pluto.ServerSession()
+</code></pre>
+<p>You can also specify the keyword argument <code>options</code> to change the <a href="../configuration/">Configuration</a>. For example:</p>
+<pre><code class="language-julia">session = Pluto.ServerSession(;
+        options=Pluto.Configuration.from_flat_kwargs(
+            auto_reload_from_file=true,
+            etc...
+        )
+    )
+</code></pre>
+<h2 id="opening-notebooks"><a href="#opening-notebooks" class="anchor"></a>Opening notebooks</h2>
+<p>Once you have a <code>ServerSession</code>, you can open notebooks in it. You can use <code>open</code> and <code>open_url</code>.</p>
+<h3 id="open"><a href="#open" class="anchor"></a><code>open</code></h3>
+<p>You can use <code>open</code> to open a notebook from a local file path, and add it to the session.</p>
+<pre><code class="language-julia">open(session::ServerSession, path::AbstractString; 
+    run_async::Bool=true, 
+    as_sample::Bool=false, 
+    execution_allowed::Bool=true,
+    notebook_id::UUID=uuid1()
+    clear_frontmatter::Bool=false,
+)
+</code></pre>
+<p>Useful keyword arguments:</p>
+<ul>
+<li><code>execution_allowed</code>: If <code>false</code>, the notebook will launch in “Safe Preview” mode. This is the default behavior when opening notebooks using the Pluto web interface.</li>
+<li><code>run_async</code>: If <code>true</code>, the function will block until all cells in the notebook have finished executing. If <code>false</code>, the function will return immediately after starting the notebook, and cells will execute in the background.</li>
+<li><code>as_sample</code>: If <code>true</code>, Pluto will not open the path, but create a new temporary copy of the notebook at <code>path</code> and open that instead.</li>
+<li><code>clear_frontmatter</code>: If <code>true</code>, any <a href="../frontmatter/">frontmatter</a> in the notebook file will be removed.</li>
+</ul>
+<h3 id="openurl"><a href="#openurl" class="anchor"></a><code>open_url</code></h3>
+<p>You can use <code>open_url</code> to download a notebook from the web and open it.</p>
+<pre><code class="language-julia">function open_url(session::ServerSession, url::AbstractString; kwargs...)
+</code></pre>
+<p>The same keyword arguments as <code>open</code> are supported.</p>
+<h3 id="new"><a href="#new" class="anchor"></a><code>new</code></h3>
+<p>You can use <code>new</code> to create a new empty notebook in the session.</p>
+<pre><code class="language-julia">new(session::ServerSession;
+    run_async=true,
+    notebook_id::UUID=uuid1()
+)
+</code></pre>
+<p>See <code>open</code> for the meaning of <code>run_async</code>.</p>
+<h2 id="more-actions"><a href="#more-actions" class="anchor"></a>More actions</h2>
+<h3 id="shutdown"><a href="#shutdown" class="anchor"></a><code>shutdown</code></h3>
+<p>You can use <code>shutdown</code> to shut down a session.</p>
+<pre><code class="language-julia">shutdown(session::ServerSession, notebook::Notebook;
+    keep_in_session::Bool=false,
+    async::Bool=false,
+    verbose::Bool=true
+)
+</code></pre>
+<p>Keyword arguments:</p>
+<ul>
+<li><code>keep_in_session</code>: If <code>false</code>, the notebook will also be removed from <code>session.notebooks</code>.</li>
+<li><code>async</code>: If <code>true</code>, the function will return quickly, and the shutdown will happen in the background.</li>
+<li><code>verbose</code>: If <code>true</code>, warning messages might be logged.</li>
+</ul>
+<h3 id="move"><a href="#move" class="anchor"></a><code>move</code></h3>
+<p>You can use <code>move</code> to change where a notebook is stored.</p>
+<pre><code class="language-julia">move(session::ServerSession, notebook::Notebook, newpath::String)
+</code></pre>
+<h1 id="run"><a href="#run" class="anchor"></a><code>run</code></h1>
+<p>Use <code>Pluto.run</code> to start Pluto. This is how most people start Pluto:</p>
+<pre><code class="language-julia">run(; kwargs...)
+</code></pre>
+<p>Keyword arguments: check out <a href="../configuration/">Configuration</a>.</p>
+<p>If you created your own <code>ServerSession</code>, you can use <code>run!</code> and <code>run</code> to start the web interface for that session.</p>
+<pre><code class="language-julia">run(session::ServerSession)
+run!(session::ServerSession)
+</code></pre>
+<p><code>run!</code> will start the server, and return a <code>RunningPlutoServer</code> once it’s ready. You can <code>Base.wait</code> on it to block until the server stops (with <kbd>Ctrl+C</kbd>), or <code>Base.close</code> to shut it down. <code>run</code> is a shorthand for <code>Base.wait ∘ run!</code>.</p>
+<h1 id="span-idfrontmatterhtmlspan-idgeneratehtmlexporting-notebooks-spanspan"><a href="#span-idfrontmatterhtmlspan-idgeneratehtmlexporting-notebooks-spanspan" class="anchor"></a><span id="frontmatter_html"><span id="generate_html">Exporting notebooks </span></span></h1>
+<p>Generate the HTML export contents of a notebook:</p>
+<pre><code class="language-julia">generate_html(notebook::Notebook)::String
+</code></pre>
+<p>This includes frontmatter HTML head content, but you can also generate this separately with:</p>
+<pre><code class="language-julia">frontmatter_html(fm::Dict{String,Any})::String
+</code></pre>
+<p><code>fm</code> can be the output of <a href="../frontmatter/#Pluto.frontmatter"><code>Pluto.frontmatter</code></a>.</p>
+<h1 id="notebook_to_js"><a href="#notebook_to_js" class="anchor"></a>Statefile</h1>
+<p>A core part of how Pluto works is its state synchronization (between the Julia server and the connected web browsers). All parties work on a shared “statefile” representation of the notebook. This is a JSON-like structure that contains all information about the notebook (cells, code, outputs, logs, timings, etc). Read more about it in Pluto’s source code, by reading the docstring of <code>Pluto.Firebasey</code>.</p>
+<p>To get the statefile of a <code>Notebook</code>, use:</p>
+<pre><code class="language-julia">notebook_to_js(notebook::Notebook)::Dict{String,Any}
+</code></pre>
+<p>The output structure is easy to work with in another language (like JavaScript). Its structure is not covered by semver.</p>
+<details>
+<summary>More info about Pluto's state management (Firebasey docstring)</summary>
+ <div class="markdown"><h2>State management in Pluto</h2>
+<p><em>Aka: how do the server and clients stay in sync?</em></p>
+<p>A Pluto notebook session has <em>state</em>: with this, we mean:</p>
+<ol>
+<li><p>The input and ouput of each cell, the cell order, and more metadata about the notebook and cells <a href="#footnote-state" class="footnote">[state]</a></p>
+</li>
+</ol>
+<p>This state needs to be <strong>synchronised between the server and all clients</strong> &#40;we support multiple synchronised clients&#41;, and note that:</p>
+<ul>
+<li><p>Either side wants to update the state. Generally, a client will update cell inputs, the server will update cell outputs.</p>
+</li>
+<li><p>Both sides want to <em>react</em> to state updates</p>
+</li>
+<li><p>The server is in Julia, the clients are in JS</p>
+</li>
+<li><p>This is built on top of our websocket&#43;msgpack connection, but that doesn&#39;t matter too much</p>
+</li>
+</ul>
+<p>We do this by implementing something similar to how you use Google Firebase: there is <strong>one shared state object, any party can mutate it, and it will synchronise to all others automatically</strong>. The state object is a nested structure of mutable <code>Dict</code>s, with immutable ints, strings, bools, arrays, etc at the endpoints.</p>
+<p>Some cool things are:</p>
+<ul>
+<li><p>Our system uses object diffing, so only <em>changes to the state</em> are actually tranferred over the network. But you can use it as if the entire state is sent around constantly.</p>
+</li>
+<li><p>In the frontend, the <em>shared state</em> is part of the <em>react state</em>, i.e. shared state updates automatically trigger visual updates.</p>
+</li>
+<li><p>Within the client, state changes take effect instantly, without waiting for a round trip to the server. This means that when you add a cell, it shows up instantly.</p>
+</li>
+</ul>
+<p>Diffing is done using <code>immer.js</code> &#40;frontend&#41; and <code>src/webserver/Firebasey.jl</code> &#40;server&#41;. We wrote Firebasey ourselves to match immer&#39;s functionality, and the cool thing is: <strong>it is a Pluto notebook</strong>&#33; Since Pluto notebooks are <code>.jl</code> files, we can just <code>include</code> it in our module.</p>
+<p>The shared state object is generated by <a href="@ref"><code>notebook_to_js</code></a>. Take a look&#33; The Julia server orchestrates this firebasey stuff. For this, we keep a <strong>copy</strong> of the latest state of each client on the server &#40;see <a href="@ref"><code>current_state_for_clients</code></a>&#41;. When anything changes to the Julia state &#40;e.g. when a cell finished running&#41;, we call <a href="@ref"><code>send_notebook_changes&#33;</code></a>, which will call <a href="@ref"><code>notebook_to_js</code></a> to compute the new desired state object. For each client, we diff the new state to their last known state, and send them the difference.</p>
+<h3>Responding to changes made by a client</h3>
+<p>When a client updates the shared state object, we want the server to <em>react</em> to that change by taking an action. Which action to take depends on which field changes. For example, when <code>state&#91;&quot;path&quot;&#93;</code> changes, we should rename the notebook file. When <code>state&#91;&quot;cell_inputs&quot;&#93;&#91;a_cell_id&#93;&#91;&quot;code&quot;&#93;</code> changes, we should reparse and analyze that cel, etc. This location of the change, e.g.  <code>&quot;cell_inputs/&lt;a_cell_id&gt;/code&quot;</code> is called the <em>path</em> of the change.</p>
+<p><a href="@ref"><code>effects_of_changed_state</code></a> define these pattern-matchers. We use a <code>Wildcard&#40;&#41;</code> to take the place of <em>any</em> key, see <a href="@ref"><code>Wildcard</code></a>, and we use the change/update/patch inside the given function.</p>
+<h3>Not everything uses the shared state &#40;yet&#41;</h3>
+<p>Besides <code>:update_notebook</code>, you will find more functions in <a href="@ref"><code>responses</code></a> that respond to classic &#39;client requests&#39;, such as <code>:reshow_cell</code> and <code>:shutdown_notebook</code>. Some of these requests get a direct response, like the list of autocomplete options to a <code>:complete</code> request &#40;in <code>src/webserver/REPLTools.jl</code>&#41;. On the javascript side, these direct responses can be <code>awaited</code>, because every message has a unique ID.</p>
+<div class="footnote" id="footnote-state"><p class="footnote-title">state</p><p>Two other meanings of <em>state</em> could be:</p>
+<ol start="2">
+<li><p>The reactivity data: the parsed AST &#40;<code>Expr</code>&#41; of each cell, which variables are defined or referenced by which cells, in what order will cells run?</p>
+</li>
+<li><p>The state of the Julia process: i.e. which variables are defined, which packages are imported, etc.</p>
+</li>
+</ol>
+<p>The first two &#40;1 &amp; 2&#41; are stored in a <a href="@ref"><code>Notebook</code></a> struct, remembered by the server process &#40;Julia&#41;. &#40;In fact, &#40;2&#41; is entirely described by &#40;1&#41;, but we store it for performance reasons.&#41; I included &#40;3&#41; for completeness, but it is not stored by us, we hope to control and minimize &#40;3&#41; by keeping track of &#40;1&#41; and &#40;2&#41;.</p>
+</div>
+</div>
+</details>
+<h1 id="span-idpackspan-idunpackpack-and-unpackspanspan"><a href="#span-idpackspan-idunpackpack-and-unpackspanspan" class="anchor"></a><span id="pack"><span id="unpack"><code>pack</code> and <code>unpack</code></span></span></h1>
+<p>You can use <code>Pluto.pack</code> and <code>Pluto.unpack</code> to serialize and deserialize data (like the statefile) using MsgPack (with a couple of Pluto extensions and optimizations).</p>
+<pre><code class="language-julia">pack(x::Any)::Vector{UInt8}
+unpack(data::Vector{UInt8})::Any
+</code></pre>
+<h1 id="firebasey"><a href="#firebasey" class="anchor"></a>Firebasey</h1>
+<p>Firebasey is Pluto’s deep-state diffing algorithm (like immer.js). It is used to efficiently synchronize notebook state between the Julia server and the web browsers. To see simple examples of Firebasey usage (and its public API), check out the PlutoSliderServer.jl source code.</p>
+<p>Firebasey is written as a Pluto notebook, and you can open <a href="https://github.com/JuliaPluto/Pluto.jl/blob/main/src/webserver/Firebasey.jl"><code>src/webserver/Firebasey.jl</code></a> in Pluto to see many more examples.</p>
+<h1 id="span-idgetbondnamesspan-idsetbondvaluesreactivebondsspanspan"><a href="#span-idgetbondnamesspan-idsetbondvaluesreactivebondsspanspan" class="anchor"></a><span id="get_bond_names"><span id="set_bond_values_reactive">Bonds</span></span></h1>
+<p>You can use <code>get_bond_names</code> to get the list of variables names that are bound with <code>@bind</code>:</p>
+<pre><code class="language-julia">get_bond_names(session::ServerSession, notebook::Notebook)::Set{String}
+</code></pre>
+<p>With <code>set_bond_values_reactive</code> you can change the values of bound variables to trigger a reactive run in a <code>Notebook</code>. Note that the values should be those <a href="#https://plutojl.org/en/docs/abstractplutodingetjes/#transform_value">before transformation</a>.</p>
+<pre><code class="language-julia"># set the new values
+notebook.bonds[:x] = Dict(&quot;value&quot; =&gt; 1)
+notebook.bonds[:y] = Dict(&quot;value&quot; =&gt; &quot;two&quot;)
+
+set_bond_values_reactive(;
+    session::ServerSession, notebook::Notebook,
+    # names of the bonds that are changed
+    bound_sym_names::AbstractVector{Symbol},
+    # just leave this as default
+    is_first_values::AbstractVector{Bool}=[false for x in bound_sym_names],
+    # if `false`, the function will block until all reactive cells have run
+    run_async::Bool=true,
+)::TopologicalOrder
+</code></pre>
+<h1 id="package-management"><a href="#package-management" class="anchor"></a>Package management</h1>
+<p>Pluto contains functions to programmatically manage the package environment contained in a Pluto notebook. These functions are:</p>
+<h2 id="reset_notebook_environment"><a href="#reset_notebook_environment" class="anchor"></a><code>reset_notebook_environment</code></h2>
+<div class="markdown"><pre><code class="language-julia">reset_notebook_environment&#40;notebook_path::String; keep_project::Bool&#61;false, backup::Bool&#61;true&#41;</code></pre>
+<p>Remove the embedded <code>Project.toml</code> and <code>Manifest.toml</code> from a notebook file, modifying the notebook file. If <code>keep_project</code> is true, only <code>Manifest.toml</code> will be deleted. A backup of the notebook file is created by default.</p>
+</div>
+<h2 id="update_notebook_environment"><a href="#update_notebook_environment" class="anchor"></a><code>update_notebook_environment</code></h2>
+<div class="markdown"><pre><code class="language-julia">update_notebook_environment&#40;notebook_path::String; backup::Bool&#61;true, level::Pkg.UpgradeLevel&#61;Pkg.UPLEVEL_MAJOR&#41;</code></pre>
+<p>Call <code>Pkg.update</code> in the package environment embedded in a notebook file, modifying the notebook file. A <a href="@ref"><code>Pkg.UpgradeLevel</code></a> can be passed to the <code>level</code> keyword argument. A backup file is created by default. </p>
+</div>
+<h2 id="activate_notebook_environment"><a href="#activate_notebook_environment" class="anchor"></a><code>activate_notebook_environment</code></h2>
+<div class="markdown"><pre><code class="language-julia">activate_notebook_environment&#40;notebook_path::String; show_help::Bool&#61;true&#41;::Nothing</code></pre>
+<p>Activate the package environment embedded in a notebook file, for interactive use. This will allow you to use the Pkg REPL and Pkg commands to modify the environment, and any changes you make will be automatically saved in the notebook file.</p>
+<p>More help will be displayed if <code>show_help</code> is <code>true</code>.</p>
+<p>Limitations:</p>
+<ul>
+<li><p>Shut down the notebook before using this functionality.</p>
+</li>
+<li><p>Non-interactive use is limited, use the functional form instead, or insert <code>sleep</code> calls after modifying the environment.</p>
+</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">Info</p><p>This functionality works using file watching. A dummy repository contains a copy of the embedded tomls and gets activated, and the notebook file is updated when the dummy repository changes.</p>
+</div>
+<pre><code class="language-julia">activate_notebook_environment&#40;f::Function, notebook_path::String&#41;</code></pre>
+<p>Temporarily activate the package environment embedded in a notebook file, for use inside scripts. Inside your function <code>f</code>, you can use Pkg commands to modify the environment, and any changes you make will be automatically saved in the notebook file after your function finishes. Not thread-safe.</p>
+<p>This method is best for scripts that update notebook files. For interactive use, the method <code>activate_notebook_environment&#40;notebook_path::String&#41;</code> is recommended.</p>
+<h1>Example</h1>
+<pre><code class="language-julia">Pluto.activate_notebook_environment&#40;&quot;notebook.jl&quot;&#41; do
+    Pkg.add&#40;&quot;Example&quot;&#41;
+end
+<h1 id="now-the-file-quotnotebookjlquot-was-updated33codepre"><a href="#now-the-file-quotnotebookjlquot-was-updated33codepre" class="anchor"></a>Now the file &quot;notebook.jl&quot; was updated!</code></pre></h1>
+<div class="admonition warning"><p class="admonition-title">Warning</p><p>This function uses the private method <code>Pkg.activate&#40;f::Function, path::String&#41;</code>. This API might not be available in future Julia versions. 🤷</p>
+</div>
+</div>
+<h2 id="will_use_pluto_pkg"><a href="#will_use_pluto_pkg" class="anchor"></a><code>will_use_pluto_pkg</code></h2>
+<div class="markdown"><pre><code class="language-julia">will_use_pluto_pkg&#40;notebook_path::String&#41;::Bool</code></pre>
+<p>Will this notebook use the Pluto package manager? <code>false</code> means that the notebook contains <code>Pkg.activate</code> or another deactivator.</p>
+</div>
+<h1 id="span-idplutofileextensionsspan-idwithoutplutofileextensionspan-idisplutonotebookfile-extensions-spanspanspan"><a href="#span-idplutofileextensionsspan-idwithoutplutofileextensionspan-idisplutonotebookfile-extensions-spanspanspan" class="anchor"></a><span id="pluto_file_extensions"><span id="without_pluto_file_extension"><span id="is_pluto_notebook">File extensions </span></span></span></h1>
+<p>Pluto notebook files are usually <code>.jl</code>, but there are some other “official” extensions like <code>.plutojl</code>, <code>.pluto.jl</code> and more. There are some utility functions:</p>
+<pre><code class="language-julia"># List of &quot;official&quot; Pluto file extensions
+pluto_file_extensions::Vector{String}
+
+# Remove Pluto file extension from path
+without_pluto_file_extension(path::String)::String
+
+## Does the path end with a pluto file extension (like `.jl` or `.pluto.jl`) and does the first line say `### A Pluto.jl notebook ###`?
+is_pluto_notebook(path::String)::Bool
+</code></pre>
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
+
+        
+        
+        <div class="edit-this-page">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/API.jlmd" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Edit this page
+            </a>
+        </div>
+    </div>
+</body>
+</html>

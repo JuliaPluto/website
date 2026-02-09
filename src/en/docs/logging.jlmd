@@ -1,0 +1,38 @@
+---
+title: "🧾 Logging"
+description: "How to log in Pluto"
+tags: ["docs", "editor", "logging"]
+layout: "md.jlmd"
+order: 21
+---
+
+# 🧾 Logging in Pluto.jl
+
+Pluto supports showing messages printed with the [standard library Logging module](https://docs.julialang.org/en/v1/stdlib/Logging/). This can be done using the `@info`, `@warn` and `@error` macro.
+
+![image](https://user-images.githubusercontent.com/9824244/166148765-d639b659-4e90-4f54-8697-856f24ad4fbc.png)
+
+<!--
+### Disabling logs for a notebook
+
+A simple way to disable all logs for a notebook is to change the global logger of the Logging module to a [`NullLogger`](https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.NullLogger) which removes all outputs of log messages.
+
+![image](https://user-images.githubusercontent.com/9824244/166149154-4139a545-8df7-4e2a-9f31-daaa09c1c41d.png)
+
+-->
+
+### Disabling logs for a cell
+
+If a package logs warnings or info messages that you want to hide (especially in the static export of the notebook), then the option to hide logs can be toggled by clicking on the cell menu (the three dots on the right).
+
+![image](https://user-images.githubusercontent.com/9824244/166149026-98e8d29d-4162-46ae-be1f-bb296059e2fd.png)
+
+### Logging progress
+
+Pluto supports an integration with the [ProgressLogging.jl](https://github.com/JuliaLogging/ProgressLogging.jl) package which can be used to display a progress bar in the log message area:
+
+![logs-demo-1](https://user-images.githubusercontent.com/9824244/166149390-f9fce3a4-3b48-4d77-8b06-546401c0103b.gif)
+
+## Writing to standard output
+
+To disable capturing and showing standard output inside Pluto and show it inside the terminal instead the `capture_stdout=false` option can be provided to `Pluto.run` when launching Pluto.

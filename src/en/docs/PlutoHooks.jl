@@ -24,6 +24,9 @@ Docs.Binding(PlutoHooks, Symbol("@use_deps"))
 # ╔═╡ aa3f1c57-8a50-44f4-be93-665c5c2d0c3d
 Docs.Binding(PlutoHooks, Symbol("@use_effect"))
 
+# ╔═╡ 5449d62d-54e4-459a-ad4b-f00388aa923f
+pkgversion(PlutoHooks)
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -92,5 +95,6 @@ version = "1.11.0"
 # ╟─9e93194f-4e08-44f3-9aff-6a18f7ef48ca
 # ╟─5e415434-71a5-4642-a0e3-d2299b263ba2
 # ╟─aa3f1c57-8a50-44f4-be93-665c5c2d0c3d
+# ╠═5449d62d-54e4-459a-ad4b-f00388aa923f
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

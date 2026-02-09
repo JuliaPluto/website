@@ -1,0 +1,88 @@
+---
+title: "💡 FAQ"
+description: "FAQ"
+tags: ["docs", "introduction"]
+layout: "md.jlmd"
+order: 6
+---
+
+How is Pluto.jl different from Jupyter?
+> Pluto.jl was built from the ground up to be a fresh new notebook system, written in Julia. The main differences are that Pluto notebooks are **reactive**, and that your notebooks are stored as **executable `.jl` files**. 
+
+<br >
+
+What's the deal with **reactivity**?
+> You use cells to define variables and functions to be used later. In a **reactive** notebook, changing a variable or function will _automagically_ re-evaluate all other cells that use it. _Just like a speadsheet editor!_ 
+>
+> ![this gif](https://pretalx.com/media/juliacon2020/submissions/WNBYW8/pluto_demo_DB6icv4.gif)
+> 
+> Programming is hard sometimes. Even more so when you need to keep track not only of your code, but also of your session's hidden state. Pluto gives you confidence that the code you see exactly matches the variables you're working with, eliminating bugs before you even knew you had them.
+
+<br >
+
+Will all cells be re-evaluated when I change something?
+> No. Pluto.jl figures out the _dependency graph_ between cells, and knows exactly which cells to re-evaluate, in which order. A cell never executes twice.
+
+<br >
+
+Will my code be **slower**?
+> Nope - Pluto.jl analyses your code, and then executes the code **without modifications**. Variables and functions are not wrapped in special objects. After analysis, your code will run on its own.
+
+<br >
+
+Can I use **`Plots`**?
+> Yes you can! All plotting back-ends should work right away. 
+
+
+<br >
+
+How to use multiple threads in Pluto.jl? `nthreads()` says 1 somehow
+> You can, but you need to set `JULIA_NUM_THREADS` environment variable as described in the [documentation](https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_NUM_THREADS) for the `worker` spawned by Pluto.jl to pick up.
+<br >
+
+Can I use **`[my favourite package]`**?
+> Yes you can! (Probably!) Your code is evaluated as-is, so if it works in the REPL or in Jupyter, it will work in Pluto.jl. There are some exceptions:
+> - packages that are made specifically for the REPL or Jupyter
+> - `Distributed`, and packages that use it ([#300](https://github.com/fonsp/Pluto.jl/issues/300))
+
+<br >
+
+Can I open **multiple notebooks** at the same time?
+> Yes! Click on the logo ( <img src="https://raw.githubusercontent.com/fonsp/Pluto.jl/master/frontend/img/logo.svg" width="60"> ) to go back to the welcome screen. You can use your browser tabs to see multiple notebooks simultaneously.
+
+
+Can I use Pluto **remotely**?
+> If the server (where Pluto will run) and the client (the machine whose browser will use Pluto) are on the same network then set the host to `0.0.0.0` while launching Pluto (e.g `Pluto.run(host="0.0.0.0"`). An example use case is if you have a headless raspberry pi and a laptop connected to the same wi-fi network in your home. You can run Pluto on the raspberry-pi and use your laptop's browser for development.
+>
+> However if the server is remote and has a public ip you need to set up an _SSH tunnel_. First, log in to your server using SSH and start a Pluto server. Then open a local terminal on your own computer and type:
+> 
+> ```bash
+> ssh user@ipaddress -N -L 1234:localhost:1234
+> ```
+> with `user` and `ipaddress` filled in accordingly. You can then go to [`http://localhost:1234/`](http://localhost:1234/) on your own computer to get started! For more info and instructions for Windows, see [this guide](https://medium.com/@apbetahouse45/how-to-run-jupyter-notebooks-on-remote-server-part-1-ssh-a2be0232c533). This can come in handy if your server is on a cloud service such as AWS or Azure. The latter method can be used in the former case too provided an ssh client is available and enabled on both machines.
+
+<br >
+
+
+Can I use **`@async`** to update values reactively on demand?
+> Unfortunately not. Pluto.jl uses _static code analysis_ to determine which cells to run next — it does _not_ use wrappers or a polling mechanism to watch variables in real-time. However, the **`@bind` macro** might be able to do what you want! Have a look at the Interactivity sample inside Pluto. Feel free to open a GitHub issue if this doesn't suit your needs.
+
+<br >
+
+How can I load `startup.jl`?
+> We want your notebooks to be reproducible, so our suggested method is that you copy and paste your personal setup script into a `begin ... end` block inside your notebook. This avoids implicit dependencies of your notebook. Alternatively, you could write `include("path/to/startup.jl")`, but this will only work on your computer.
+
+<br >
+
+How can I load a notebook upon launching Pluto?
+> You can pass the `notebook` keyword argument to `Pluto.run`, e.g. `Pluto.run(notebook="/path/to/notebook.jl")`.
+
+<br>
+
+How can I use a sysimage inside Pluto?
+
+> `Pluto.run()` takes a keyword argument `sysimage` which can be used to add sysimage used by each notebook. To load the currently loaded sysimage, start pluto using:
+
+```julia
+Pluto.run(sysimage=unsafe_string(Base.JLOptions().image_file))
+```

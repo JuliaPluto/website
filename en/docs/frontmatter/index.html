@@ -138,7 +138,8 @@ window.pluto_recording_audio_url = undefined;
 <div class="markdown">
 <h1 id="frontmatter"><a href="#frontmatter" class="anchor"></a>Frontmatter</h1>
 <p>Frontmatter is a way to add metadata to a Pluto.jl notebook, such as the title, description, authors, cover image, license, date and more. This data is used when <strong>sharing notebooks online</strong>, using <a href="../export-html/">Pluto HTML exports</a>, <a href="https://featured.plutojl.org/basic/plutoui.jl#NotebookCard"><code>PlutoUI.NotebookCard</code></a>, <a href="https://github.com/JuliaPluto/PlutoSliderServer.jl">PlutoSliderServer</a>, <a href="https://github.com/JuliaPluto/PlutoPages.jl">PlutoPages</a> or <a href="https://pluto.land">pluto.land</a>.</p>
-<p>For example, the <a href="../featured-notebooks/">featured notebooks</a> use frontmatter. When you see the list of all featured notebooks, notice how they all have a title, description, cover image and authors. And they are</p>
+<p>For example, the <a href="../featured-notebooks/">featured notebooks</a> use frontmatter. When you see the list of all featured notebooks, notice how they all have a title, description, cover image and authors. This information is written is taken from the frontmatter of the notebook files.</p>
+<p>Frontmatter is stored in the <code>.jl</code> notebook file as a TOML block at the top of the file. You can use <a href="#Pluto.frontmatter"><code>Pluto.frontmatter</code></a> to read this data from Julia, and you can edit it using the frontmatter GUI in Pluto (or by editing the <code>.jl</code> file directly).</p>
 <h2 id="gui"><a href="#gui" class="anchor"></a>The frontmatter GUI</h2>
 <p>When editing a Pluto notebook, you can open the frontmatter editor by clicking the “Share button” in the top right.</p>
 <img src="../../../assets/img/Share button screenshot.png" alt="Screenshot of the Share button" width="1532" height="282">

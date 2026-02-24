@@ -162,7 +162,12 @@ window.pluto_recording_audio_url = undefined;
 <li><strong>Download the <code>.jl</code> notebook file</strong> that was used to generate the HTML export. You can open this file with Pluto.</li>
 </ol>
 <img src="../../../assets/img/Edit or run menu screenshot.png" alt="Screenshot of the 'Edit or run' menu with the option to download the notebook file." width="1312" height="1454">
-<p><code>.html</code> files from Pluto can also be used as web pages on your blog. <a href="../notebooks-online/" class="arrow">Learn more</a></p>
+<h2 id="offline-support"><a href="#offline-support" class="anchor"></a>Offline support</h2>
+<p>HTML export files are all-inclusive, which means that you can open them without an internet connection. This is why the HTML files are quite large (around 8MB plus your content): it includes all the assets (JavaScript, CSS, fonts) that are needed to display the notebook.</p>
+<p>Some heavy assets like the JuliaMono font are not included in the file itself, and will load progressively if you have an internet connection.</p>
+<h2 id="using-html-files"><a href="#using-html-files" class="anchor"></a>Using HTML files</h2>
+<p>The HTML can be shared as a file (like PDF), and people can open it by double-clicking the file. But you can also host the HTML file online, and use it as a web page. <a href="../notebooks-online/" class="arrow">Learn more</a></p>
+<p>When sharing HTML files online, <a href="../frontmatter/">frontmatter</a> can be used to set the title, description, and author of the page. This information is used in the HTML <code>&lt;meta&gt;</code> tags, which are important for search engines and social media sharing.</p>
 
 </div>
 </div>

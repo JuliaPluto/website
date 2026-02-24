@@ -1,11 +1,12 @@
 # Pluto.jl — Comprehensive Feature List
 # _Written by 🤖_
-
-> # HOW TO USE THIS:
-> When a feature is documented, remove it from the list.
-
 > Compiled from all merged pull requests (PRs #20–#3484) on the JuliaPluto/Pluto.jl repository.
 > Goal: provide a reference for documentation coverage analysis.
+
+
+> # HOW TO USE THIS:
+> When a feature is documented, or if it does not need documentation, you can remove it from the list.
+
 
 ---
 
@@ -239,46 +240,7 @@
 
 ## 8. HTML Export & Static Notebooks
 
-- **HTML export** — Export a notebook as a standalone, shareable HTML file. (#414, #457)
-- **Embed original notebook file in HTML export** — Exported HTML contains the `.jl` source as a base64 data URL, enabling the Binder button and download. (#1191)
-- **Offline HTML export** — HTML exports can be opened without an internet connection (all assets bundled). (#2802, #3483)
-- **pluto.land support for offline HTML** — Offline HTML exports can be opened via pluto.land. (#3484)
-- **Consistent hide-ui styles in export** — The exported HTML matches the appearance of the live notebook. (#414)
-- **`<meta>` tags from frontmatter** — Exported HTML `<meta>` tags (title, description, author) come from notebook frontmatter. (#2111)
-- **Frontmatter in HTML export** — Notebook frontmatter fields are embedded in the exported HTML. (#2104, #2111)
-- **Static export state file** — Notebooks export a MessagePack statefile for use by PlutoSliderServer. (#1118, #1063)
-- **Statefile download progress bar** — A progress bar shows statefile download progress in static HTML. (#2790)
-- **Warn about large baked statefiles** — A warning is shown when the baked statefile is too large. (#2783)
-- **Faster static HTML load: bundled editor** — The bundled editor.html is used for faster static export loading. (#2133)
-- **Faster static HTML: preload statefile** — The statefile is prefetched to speed up initial render. (#2887)
-- **Faster load: prefetch editor assets** — `editor.js` and `editor.css` are prefetched from `index.html`. (#1838, #2890)
-- **Progress bar shown earlier during load** — An indeterminate progress bar appears immediately on slow connections. (#2889)
-- **"Binder" button in exported HTML** — Static HTML exports include an "Edit or run this notebook" button linking to Binder. (#811, #1191)
-- **Jump-to-definition in static export (no Ctrl needed)** — In exported HTML, clicking underlined variables jumps to definition without Ctrl. (#2452)
-- **Global variable links clickable in PDF** — Global variable links use `<a>` tags, making them clickable in PDFs. (#2450)
-- **PDF export layout improvements** — Widow headers, misaligned line numbers, and spacing improvements in PDF output. (#2738, #2848)
-- **Print view styling** — Print/PDF CSS is improved for readability. (#2468)
-- **Presentation mode** — A "presentation mode" hides code cells and shows only output, for slide-style presentations. (#2660, #2611)
-- **Keyboard arrow navigation in presentation mode** — Left/Right arrow keys navigate slides in presentation mode. (#2611)
-- **Button to toggle presentation mode in export menu** — The export menu includes a button to toggle presentation mode. (#2660)
 - **"View code" button in static export** — A button in the static HTML allows reading hidden/folded code. (#3313)
-- **`#id` URL fragment navigation** — Sharing a URL with `#cellid` scrolls to the correct cell. (#2789)
-- **SRI integrity attributes in bundle** — Auto-generated SRI (Subresource Integrity) attributes for CDN assets. (#2132, #2150)
-- **Pride flag in export menu** — A pride flag appears in the export menu during June. (#3254)
-- **Show error when statefile fails to load** — An informative error message is shown if the statefile can't be loaded. (#2686)
-
----
-
-## 9. Frontmatter
-
-- **Notebook frontmatter** — Notebooks support structured metadata (title, description, date, author, tags, image, license) stored in a YAML-like block. (#2008)
-- **Frontmatter GUI** — A graphical editor for frontmatter metadata, accessible from the notebook menu. (#2104)
-- **Frontmatter: multiple authors** — The frontmatter GUI supports entering multiple authors. (#2650)
-- **Frontmatter: preview** — The frontmatter editor shows a preview of how the metadata will appear. (#2688)
-- **Frontmatter: restyles to match Pluto** — The frontmatter dialog matches Pluto's visual style. (#2470)
-- **`Pluto.frontmatter(path)` API** — Julia function to extract frontmatter from a notebook file. (#2008, #2110)
-- **`Pluto.frontmatter(path)` performance** — `skip_nbpkg` option makes frontmatter extraction 4x faster. (#3150)
-- **Frontmatter lazy image loading** — Images in the frontmatter editor are loaded lazily. (#3199)
 
 ---
 

@@ -9,7 +9,7 @@ order: 5
 
 # Presentation mode
 
-Pluto.jl has a built-in **presentation mode** that lets you view your notebook in full-screen as a slideshow. 
+Pluto.jl has a built-in **presentation mode** that lets you view your notebook in full-screen as a slideshow. It's very easy to use!
 
 
 ## How to start presentation mode

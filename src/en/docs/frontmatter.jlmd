@@ -10,7 +10,9 @@ order: 7
 
 Frontmatter is a way to add metadata to a Pluto.jl notebook, such as the title, description, authors, cover image, license, date and more. This data is used when **sharing notebooks online**, using [Pluto HTML exports](../export-html/), [`PlutoUI.NotebookCard`](https://featured.plutojl.org/basic/plutoui.jl#NotebookCard), [PlutoSliderServer](https://github.com/JuliaPluto/PlutoSliderServer.jl), [PlutoPages](https://github.com/JuliaPluto/PlutoPages.jl) or [pluto.land](https://pluto.land).
 
-For example, the [featured notebooks](../featured-notebooks/) use frontmatter. When you see the list of all featured notebooks, notice how they all have a title, description, cover image and authors. And they are 
+For example, the [featured notebooks](../featured-notebooks/) use frontmatter. When you see the list of all featured notebooks, notice how they all have a title, description, cover image and authors. This information is written is taken from the frontmatter of the notebook files.
+
+Frontmatter is stored in the `.jl` notebook file as a TOML block at the top of the file. You can use [`Pluto.frontmatter`](#Pluto.frontmatter) to read this data from Julia, and you can edit it using the frontmatter GUI in Pluto (or by editing the `.jl` file directly).
 
 {#gui}
 ## The frontmatter GUI

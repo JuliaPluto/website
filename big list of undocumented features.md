@@ -20,12 +20,8 @@
 ---
 
 ## 3. Editor / Code Editing
-- **Rectangular selection** — Hold Alt/Option to make rectangular (column) selections. (#1545)
-- **Multi-cursor editing** — Support for multiple cursors with Tab key. (#3066)
 - **Unicode symbol autocomplete** — Tab-complete `\alpha` → `α`, `\:smile:` → emoji. (#153, #1485, #2876)
 - **Latex reverse search in Live Docs** — Type a Unicode character and see its LaTeX equivalent. (#2476)
-- **Keyboard shortcut for folding cell** — Platform-appropriate shortcuts to fold/unfold cells (`⌥⌘[` on Mac, `Ctrl+Shift+[` on Windows/Linux). (#2922)
-
 ---
 
 ## 4. Cell Features

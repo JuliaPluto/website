@@ -5,6 +5,11 @@ tags: ["docs", "collaborate", "feedback", "localization", "navigation"]
 layout: "md.jlmd"
 order: 6
 ---
+## How to contribute
+Take a look at our [localization documentation](https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang) to get started! Or at our [developer instructions](https://github.com/JuliaPluto/pluto-developer-instructions)
+We look forward to your contributions! 💛
+
+We’re also happy to hear about any issues we may have missed. Before opening a new one, please take a moment to check [this guide](https://github.com/JuliaPluto/Pluto.jl/issues/182).
 
 ## How to give Feedback
 How is your experience with Pluto? Pluto has a built-in feedback form for complaints, praises, nice-to-haves, or any suggestions you might have, we're always glad to hear from you!

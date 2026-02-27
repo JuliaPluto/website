@@ -73,26 +73,6 @@
 - **MathJax 3 for math rendering** — MathJax 3 renders LaTeX math in Markdown and outputs. (#1947, #2165, #2803)
 ---
 
-## 7. Logging
-
-- **Julia Logging integration** — `@info`, `@warn`, `@error`, `@debug` messages appear in notebook cell output. (#437)
-- **Logs relayed to browser console** — Log messages also appear in the browser developer console. (#496)
-- **Log level display** — Different log levels are styled differently. (#498)
-- **Vertical log layout** — Logs are displayed vertically below cell output. (#2297)
-- **Logs from async cells at source** — Log messages from async code appear under the correct cell. (#2115)
-- **Scoped loggers per cell** — Each cell has its own logger context for correct attribution. (#2249)
-- **`maxlog` keyword support** — The `maxlog` keyword in `@info` is respected to limit repeated log messages. (#1877, #1911, #2493)
-- **ProgressLogging support** — `ProgressLogging.@progress` shows progress bars in the notebook. (#2222, #2966)
-- **Custom progress bar names** — Custom names for progress bars from `@progress` are shown. (#2966)
-- **Show `stdout` and `stderr` in notebook** — Print statements go to a terminal-style output popup instead of the terminal. (#1957)
-- **Stdout popup generalized** — Popup system generalized to support multiple popup types. (#1956)
-- **Stdout logging scoped per notebook** — Log channels are scoped to individual notebooks. (#2027)
-- **`yield()` around logger redirect** — Fixed a bug where logs got stuck by adding yields. (#2026)
-- **Log message format for exceptions** — Exception and backtrace in logs are formatted like errors. (#1962)
-- **Fallback for errors in logging** — If logging itself throws, the error is handled gracefully. (#3013)
-- **Fix logging with ProgressLogging v1.6** — Compat fix for the latest ProgressLogging. (#3440)
-
----
 
 ## 8. HTML Export & Static Notebooks
 
@@ -325,66 +305,6 @@
 - **Binder progress in Status tab** — Binder launch steps are shown in the Status tab. (#2523)
 - **Notification when all cells complete** — After a long run, a browser notification can be sent when done. (#2531)
 
----
-
-## 22. Security
-
-- **Secret token authentication** — Pluto uses a secret token in the URL/cookie to authenticate requests. (#529)
-- **Token in WebSocket connect** — The secret is sent in the WebSocket connection for iframe use cases. (#2164)
-- **Auth tests** — Tests for the authentication system. (#1170)
-- **SHA256 polyfill for insecure contexts** — SHA256 hashing works in non-HTTPS contexts (for PlutoSliderServer). (#1825)
-- **CSP compatibility** — Avoids `eval()` calls that would be blocked by Content Security Policy. (#2566)
-- **Alert when WebSocket can't reconnect due to auth** — Users are notified when a stale auth cookie prevents reconnection. (#3385)
-
----
-
-## 23. AI Features
-
-- **"Fix with AI" button** — A button to automatically fix syntax errors using an AI (Claude/LLM). (#3201, #3261, #3482)
-- **AI fix: diff view** — The AI-suggested fix is shown as a diff, with Accept/Reject buttons. (#3261)
-- **AI fix disabled when blocked** — The "Fix with AI" button doesn't appear when the AI endpoint is blocked. (#3211)
-- **"AI prompt generator" button** — A button that composes a context-aware AI prompt to help users use external LLMs (ChatGPT, Claude, etc.). (#3224)
-
----
-
-## 24. Testing & Developer Infrastructure
-
-- **End-to-end frontend tests (Puppeteer/Jest)** — Automated browser tests using Puppeteer. (#387, #1922)
-- **Frontend tests run on bundle in offline mode** — Tests run against the bundled frontend. (#1737)
-- **Frontend tests for JavaScript API** — Tests for the JS API (Observable stdlib, `this` persistence, etc.). (#1184)
-- **Firefox, Safari, Chrome cross-browser tests** — Basic tests run on Firefox, Safari, and Chrome. (#2962, #2963)
-- **Parcel bundler** — Frontend is bundled with Parcel.js for production. (#1561)
-- **Bundle action checks for empty files** — The GitHub Action that creates the bundle checks for empty output files. (#2320)
-- **Bundle action runs on PRs** — Bundling is verified on every pull request. (#2415)
-- **TypeScript static type checking** — Frontend TypeScript code is type-checked in CI. (#2134)
-- **Compilation benchmarks** — Benchmarks track TTFX (time-to-first-X) for key operations. (#1959)
-- **SnoopPrecompile / PrecompileTools** — Precompile calls are tracked and maintained. (#2441, #2534)
-- **PlutoDependencyExplorer.jl** — The cell topology/dependency logic is factored into a separate package. (#2717, #2777)
-- **ExpressionExplorer.jl** — The expression analysis logic is factored into a separate package. (#2698)
-- **Malt.jl** — The process management library is a separate package. (#2240)
-
----
-
-## 25. Miscellaneous / UX Polish
-
-- **"File not found" page** — A friendly page shown when a notebook file doesn't exist. (#149)
-- **Automatic reconnect** — Pluto automatically reconnects if the WebSocket connection drops. (#370)
-- **Nice error when port fails** — A clear error message when port binding fails (e.g., permissions). (#2103)
-- **Horizontal layout for large screens** — On large screens, the notebook is centered; on medium screens, it aligns left with space for embedded elements. (#2903)
-- **`<pluto-editor>` fullscreen and embedded layouts** — The editor component supports both fullscreen and embedded modes. (#1976, #2903)
-- **WS message log for debugging** — `pluto_get_message_log()` returns recent server messages in the JS console. (#2926)
-- **Print secret if accessed without it** — If Pluto is accessed without a secret, it prints the secret URL to the console. (#2322)
-- **Em dash instead of hyphen in output** — Hyphens in variable names are displayed as em dashes to avoid confusion with subtraction. (#403)
-- **Markdown CSS: quotes and blockquotes** — CSS styles for `<blockquote>` elements in Markdown output. (#140)
-- **CSS for code inside Markdown** — Inline code styling in Markdown. (#551)
-- **Table CSS improvements** — CSS for table outputs including horizontal overflow fix on Firefox. (#247, #2805)
-- **`<details>` scrolling fix** — Opening a `<details>` element no longer causes unexpected scrolling. (#1231)
-- **CORS fix: secret not in Referer header** — The auth secret is not sent as a Referer to third-party CDN requests. (#722)
-- **`pluto.land` upload** — Share notebooks publicly via pluto.land. (#3360)
-- **Notebook file backup on bad git merge** — Cells missing from the cell order due to bad git merges are recovered. (#1772)
-- **`Pluto.run()` uses logging** — Startup messages use Julia's logging system for better filtering. (#2042)
-
----
 
 ## Total Feature Count: ~250+ features across 25 categories
 

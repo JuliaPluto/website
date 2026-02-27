@@ -132,6 +132,25 @@ window.pluto_recording_audio_url = undefined;
 <div class="markdown">
 <h1 id="logging-and-stdout"><a href="#logging-and-stdout" class="anchor"></a>Logging and <code>stdout</code></h1>
 <p>To help with debugging your code, Pluto supports showing messages printed with the <a href="https://docs.julialang.org/en/v1/stdlib/Logging/">standard library Logging module</a>. This can be done using the <code>@info</code>, <code>@warn</code> and <code>@error</code> macro.</p>
+<p>For example, you can use <code>@info</code> somewhere in your code to see the value of a variable while your code runs:</p>
+<pre><code class="language-julia">begin
+	result = 0
+	
+	for i in 1:5
+		x = i^2
+		@info(&quot;Current value&quot;, x)
+		result += x
+	end
+	result
+end
+</code></pre>
+<img alt="Screenshot of the log messages from the previous code example." src="../../../assets/img/log simple.png" width="1040" height="730" style="max-width: 500px;">
+<p>You can give <code>@info</code> as many arguments as you want. The first argument is a message, and the other arguments are key-value pairs that will be shown in the logs. For example, we can add <code>i</code> to the log.</p>
+<img alt="Screenshot of the log messages with 'i' added." src="../../../assets/img/log simple i.png" width="1040" height="822" style="max-width: 500px;">
+<h2 id="log-levels-debug-info-warn-error"><a href="#log-levels-debug-info-warn-error" class="anchor"></a>Log levels: <code>@debug</code>, <code>@info</code>, <code>@warn</code>, <code>@error</code></h2>
+<p>Each log message can have a <em>level</em> or <em>severity</em>. This makes it easy to distinguish between different types of log messages. To change the log level, you can use the corresponding macro: <code>@debug</code>, <code>@warn</code> or <code>@error</code> instead of <code>@info</code>.</p>
+<img alt="Screenshot of different log levels displayed in different colors." src="../../../assets/img/log levels.png" width="1040" height="1106" style="max-width: 500px;">
+<p><code>@debug</code> is useful when sharing your work as a package. <code>@debug</code> logs will only display in your notebook, but not when someone else imports your code/package.</p>
 <!--
 ### Disabling logs for a notebook
 
@@ -140,14 +159,29 @@ A simple way to disable all logs for a notebook is to change the global logger o
 ![image](https://user-images.githubusercontent.com/9824244/166149154-4139a545-8df7-4e2a-9f31-daaa09c1c41d.png)
 
 -->
-<h3 id="disabling-logs-for-a-cell"><a href="#disabling-logs-for-a-cell" class="anchor"></a>Disabling logs for a cell</h3>
+<h2 id="special-log-arguments"><a href="#special-log-arguments" class="anchor"></a>Special log arguments</h2>
+<p>Pluto will use its rich object inspector to display the arguments of log messages. This means that you can log complex objects like <code>Dict</code>s, <code>DataFrame</code>s, or even <code>plot</code>s, and they will be displayed in a nice way in the logs.</p>
+<p>Here is an example of logging a <code>Vector</code>, and an <code>Exception</code>:</p>
+<img alt="Screenshot of a log message containing a Vector and an Exception." src="../../../assets/img/log arguments inspector.png" width="1040" height="1106" style="max-width: 500px;">
+<h2 id="hiding-logs-for-a-cell"><a href="#hiding-logs-for-a-cell" class="anchor"></a>Hiding logs for a cell</h2>
 <p>If a package logs warnings or info messages that you want to hide (especially in the static export of the notebook), then the option to hide logs can be toggled by clicking on the cell menu (the three dots on the right).</p>
-<p><img src="https://user-images.githubusercontent.com/9824244/166149026-98e8d29d-4162-46ae-be1f-bb296059e2fd.png" alt="image" /></p>
-<h3 id="logging-progress"><a href="#logging-progress" class="anchor"></a>Logging progress</h3>
+<img alt="Screenshot of button to hide logs." src="../../../assets/img/log hiding.png" width="1040" height="352" style="max-width: 500px;">
+<p>To filter logs more specifically, you can use a package like <a href="https://github.com/JuliaLogging/LoggingExtras.jl">LoggingExtras.jl</a>.</p>
+<h2 id="logging-progress"><a href="#logging-progress" class="anchor"></a>Logging progress</h2>
 <p>Pluto supports an integration with the <a href="https://github.com/JuliaLogging/ProgressLogging.jl">ProgressLogging.jl</a> package which can be used to display a progress bar in the log message area:</p>
 <img alt="Screen recording of a Progress log going from 0% to 100%." src="../../../assets/img/progress log demo.gif" width="826" height="572" style="max-width: 400px;">
 <h2 id="writing-to-standard-output"><a href="#writing-to-standard-output" class="anchor"></a>Writing to standard output</h2>
-<p>To disable capturing and showing standard output inside Pluto and show it inside the terminal instead the <code>capture_stdout=false</code> option can be provided to <code>Pluto.run</code> when launching Pluto.</p>
+<p>You can also use Julia functions like <code>println</code>, <code>display</code>, <code>@show</code> or <code>show</code>, which will write information to the <strong>standard output stream</strong>. This is the “old” way of logging information, but it is still supported in Pluto in case you need it.</p>
+<img alt="Screenshot of standard-out logging." src="../../../assets/img/log stdout.png" width="1040" height="352" style="max-width: 500px;">
+<h3 id="use-logging-instead-of-stdout"><a href="#use-logging-instead-of-stdout" class="anchor"></a>Use Logging instead of stdout!</h3>
+<p>We recommend using Logging instead of <code>println</code>. There are many advantages of using Logging instead of writing to standard output:</p>
+<ul>
+<li>Logging works when writing multi-threaded code. <code>println</code> will mix different threads’ output together, making it unreadable.</li>
+<li>Logging allows for more structured information (from the 2nd argument onwards). For example, you can log a <code>Dict</code> and inspect it in Pluto. You can even log <code>plot(data)</code> and see the plot!</li>
+<li>Logging can be easily filtered/disabled by the caller of a function. This is useful when writing packages. It can improve the experience and performance of your package.</li>
+</ul>
+<h3 id="disable-capturing-of-standard-output"><a href="#disable-capturing-of-standard-output" class="anchor"></a>Disable capturing of standard output</h3>
+<p>By default, Pluto captures the standard output stream and shows it in the notebook. To disable this, and show it inside the terminal instead, the <code>capture_stdout=false</code> option can be provided to <code>Pluto.run</code> when launching Pluto. Learn more about <a href="../configuration/">configuring Pluto</a>.</p>
 
 </div>
 </div>

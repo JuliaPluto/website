@@ -19,31 +19,10 @@
 
 ## 2. Package Management (Built-in Pkg)
 
-- **Built-in Pkg management** — Each notebook has its own isolated `Project.toml` / `Manifest.toml` managed by Pluto. (#844)
-- **Automatic package installation** — When you add `using Foo`, Pluto automatically installs the package if missing. (#844)
-- **Per-notebook environments** — Each notebook's package environment is completely isolated from other notebooks and the global environment. (#341, #844)
-- **Pkg popup / bubble UI** — A visual popup shows the status of package operations next to the cell importing a package. (#844)
-- **Pkg terminal output in notebook** — Output from Pkg operations (install, resolve, update) is displayed inside the notebook UI. (#1210, #2498, #2500, #2507)
-- **Fancy Pkg terminal with spinners** — Pkg terminal shows animated spinners and progress bars (TTY mode). (#2500, #2787)
-- **Show Pkg logs in Process Status tab** — Pkg operation logs are visible in the dedicated Process Status panel. (#2498)
-- **Pkg install progress in Binder status** — Binder launch shows step-by-step Pkg install progress. (#2523)
-- **Button to view Pkg terminal in larger window** — A button pops out the Pkg terminal into a fullscreen view. (#3397)
-- **Prevent unnecessary registry updates** — Pluto avoids redundant Pkg registry updates during a session. (#2075)
-- **Auto-fix corrupted manifests** — When a notebook's manifest is broken, Pluto tries strategies to automatically fix it. (#2294, #2298)
-- **Pkg.instantiate before resolve** — Pluto calls `Pkg.instantiate()` before `Pkg.resolve()` when opening notebooks. (#2420, #2504, #2505)
-- **Use `PRESERVE_ALL_INSTALLED` when adding packages** — Pluto prefers already-installed package versions to avoid redundant downloads. (#2902)
 - **Guided Project.toml editor** — A UI for editing the notebook's `Project.toml` with compat entries. (#3218)
-- **Pkg.precompile in notebook process** — Precompilation runs inside the notebook process for better cache reuse. (#2499, #3367, #3377, #3381)
-- **Estimate package install/load time** — The UI shows an estimate of how long packages will take to install and load. (#2265, #2267, #2672)
-- **Inline widget explaining Pkg.activate behavior** — An in-notebook widget explains what `Pkg.activate` does in the notebook context. (#1293)
-- **Capture IO from `Pkg.rm`** — Logs from removing packages are captured and shown in the terminal UI. (#2924)
-- **Capture IO from resolve** — Logs from `Pkg.resolve` are captured and shown. (#3351)
-- **RegistryInstances.jl** — Uses public Pkg API via RegistryInstances.jl instead of internal Pkg internals. (#2289)
-- **Notebook scratch space for environments** — The notebook's hidden `Project.toml`/`Manifest.toml` is stored in a persistent Scratch.jl location (not a temp dir). (#3145)
-- **Package URL in Pkg popup** — Clicking on a package name in the Pkg popup opens its GitHub/docs page. (#3052)
-- **More embedded Pkg API** — `activate_notebook_environment(fun, path)` and related functions exposed for downstream tools. (#2868)
+- **Auto-fix corrupted manifests** — When a notebook's manifest is broken, Pluto tries strategies to automatically fix it. (#2294, #2298)
 - **GracefulPkg.jl integration** — Uses GracefulPkg.jl for safer, more user-friendly Pkg error handling. (#3185)
-- **TestEnv.activate() support** — Works correctly with TestEnv.jl for testing packages. (#3157)
+- **Show Pkg logs in Process Status tab** — Pkg operation logs are visible in the dedicated Process Status panel. (#2498)
 
 ---
 

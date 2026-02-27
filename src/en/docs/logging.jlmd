@@ -6,11 +6,11 @@ layout: "md.jlmd"
 order: 21
 ---
 
-# 🧾 Logging in Pluto.jl
+# Logging and `stdout`
 
-Pluto supports showing messages printed with the [standard library Logging module](https://docs.julialang.org/en/v1/stdlib/Logging/). This can be done using the `@info`, `@warn` and `@error` macro.
+To help with debugging your code, Pluto supports showing messages printed with the [standard library Logging module](https://docs.julialang.org/en/v1/stdlib/Logging/). This can be done using the `@info`, `@warn` and `@error` macro. 
 
-![image](https://user-images.githubusercontent.com/9824244/166148765-d639b659-4e90-4f54-8697-856f24ad4fbc.png)
+
 
 <!--
 ### Disabling logs for a notebook
@@ -31,7 +31,7 @@ If a package logs warnings or info messages that you want to hide (especially in
 
 Pluto supports an integration with the [ProgressLogging.jl](https://github.com/JuliaLogging/ProgressLogging.jl) package which can be used to display a progress bar in the log message area:
 
-![logs-demo-1](https://user-images.githubusercontent.com/9824244/166149390-f9fce3a4-3b48-4d77-8b06-546401c0103b.gif)
+<img alt="Screen recording of a Progress log going from 0% to 100%." src="$(root_url)/assets/img/progress log demo.gif" width="826" height="572" style="max-width: 400px;">
 
 ## Writing to standard output
 

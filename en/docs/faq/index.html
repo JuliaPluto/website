@@ -1,16 +1,13 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets</title>
-<meta name="description" content='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>
+<title>💡 FAQ</title>
+<meta name="description" content='FAQ'>
 <meta property="og:article:tag" content='docs'>
-<meta property="og:article:tag" content='widgets'>
-<meta property="og:article:tag" content='AbstractPlutoDingetjes'>
-<meta property="og:article:tag" content='advanced'>
-<meta property='og:image' content='https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif'>
-<meta property='og:title' content='AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets'>
+<meta property="og:article:tag" content='introduction'>
+<meta property='og:title' content='💡 FAQ'>
 <meta property='og:type' content='article'>
-<meta property='og:description' content='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>
+<meta property='og:description' content='FAQ'>
 
 
 <link rel="root" href="../../.." />
@@ -72,7 +69,7 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class='active'><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
 </ul>
 </li>
 <li>
@@ -108,7 +105,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Advanced: Widgets</h3>
 <ul>
-<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class='active'><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
 </ul>
 </li>
 <li>
@@ -124,12 +121,102 @@ window.pluto_recording_audio_url = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <pluto-editor statefile='../../../generated_assets/AbstractPlutoDingetjes_c871097d.plutostate' notebookfile='../../../generated_assets/AbstractPlutoDingetjes_e5d25c27.jl' disable-ui=''></pluto-editor>
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<p>How is Pluto.jl different from Jupyter?</p>
+<blockquote>
+<p>Pluto.jl was built from the ground up to be a fresh new notebook system, written in Julia. The main differences are that Pluto notebooks are <strong>reactive</strong>, and that your notebooks are stored as <strong>executable <code>.jl</code> files</strong>.</p>
+</blockquote>
+<br >
+<p>What’s the deal with <strong>reactivity</strong>?</p>
+<blockquote>
+<p>You use cells to define variables and functions to be used later. In a <strong>reactive</strong> notebook, changing a variable or function will <em>automagically</em> re-evaluate all other cells that use it. <em>Just like a speadsheet editor!</em></p>
+<p><img src="https://pretalx.com/media/juliacon2020/submissions/WNBYW8/pluto_demo_DB6icv4.gif" alt="this gif" /></p>
+<p>Programming is hard sometimes. Even more so when you need to keep track not only of your code, but also of your session’s hidden state. Pluto gives you confidence that the code you see exactly matches the variables you’re working with, eliminating bugs before you even knew you had them.</p>
+</blockquote>
+<br >
+<p>Will all cells be re-evaluated when I change something?</p>
+<blockquote>
+<p>No. Pluto.jl figures out the <em>dependency graph</em> between cells, and knows exactly which cells to re-evaluate, in which order. A cell never executes twice.</p>
+</blockquote>
+<br >
+<p>Will my code be <strong>slower</strong>?</p>
+<blockquote>
+<p>Nope - Pluto.jl analyses your code, and then executes the code <strong>without modifications</strong>. Variables and functions are not wrapped in special objects. After analysis, your code will run on its own.</p>
+</blockquote>
+<br >
+<p>Can I use <strong><code>Plots</code></strong>?</p>
+<blockquote>
+<p>Yes you can! All plotting back-ends should work right away.</p>
+</blockquote>
+<br >
+<p>How to use multiple threads in Pluto.jl? <code>nthreads()</code> says 1 somehow</p>
+<blockquote>
+<p>You can, but you need to set <code>JULIA_NUM_THREADS</code> environment variable as described in the <a href="https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_NUM_THREADS">documentation</a> for the <code>worker</code> spawned by Pluto.jl to pick up.</p>
+</blockquote>
+<br >
+<p>Can I use <strong><code>[my favourite package]</code></strong>?</p>
+<blockquote>
+<p>Yes you can! (Probably!) Your code is evaluated as-is, so if it works in the REPL or in Jupyter, it will work in Pluto.jl. There are some exceptions:</p>
+<ul>
+<li>packages that are made specifically for the REPL or Jupyter</li>
+<li><code>Distributed</code>, and packages that use it (<a href="https://github.com/fonsp/Pluto.jl/issues/300">#300</a>)</li>
+</ul>
+</blockquote>
+<br >
+<p>Can I open <strong>multiple notebooks</strong> at the same time?</p>
+<blockquote>
+<p>Yes! Click on the logo ( <img src="https://raw.githubusercontent.com/fonsp/Pluto.jl/master/frontend/img/logo.svg" width="60"> ) to go back to the welcome screen. You can use your browser tabs to see multiple notebooks simultaneously.</p>
+</blockquote>
+<p>Can I use Pluto <strong>remotely</strong>?</p>
+<blockquote>
+<p>If the server (where Pluto will run) and the client (the machine whose browser will use Pluto) are on the same network then set the host to <code>0.0.0.0</code> while launching Pluto (e.g <code>Pluto.run(host=&quot;0.0.0.0&quot;</code>). An example use case is if you have a headless raspberry pi and a laptop connected to the same wi-fi network in your home. You can run Pluto on the raspberry-pi and use your laptop’s browser for development.</p>
+<p>However if the server is remote and has a public ip you need to set up an <em>SSH tunnel</em>. First, log in to your server using SSH and start a Pluto server. Then open a local terminal on your own computer and type:</p>
+<pre><code class="language-bash">ssh user@ipaddress -N -L 1234:localhost:1234
+</code></pre>
+<p>with <code>user</code> and <code>ipaddress</code> filled in accordingly. You can then go to <a href="http://localhost:1234/"><code>http://localhost:1234/</code></a> on your own computer to get started! For more info and instructions for Windows, see <a href="https://medium.com/@apbetahouse45/how-to-run-jupyter-notebooks-on-remote-server-part-1-ssh-a2be0232c533">this guide</a>. This can come in handy if your server is on a cloud service such as AWS or Azure. The latter method can be used in the former case too provided an ssh client is available and enabled on both machines.</p>
+</blockquote>
+<br >
+<p>Can I use <strong><code>@async</code></strong> to update values reactively on demand?</p>
+<blockquote>
+<p>Unfortunately not. Pluto.jl uses <em>static code analysis</em> to determine which cells to run next — it does <em>not</em> use wrappers or a polling mechanism to watch variables in real-time. However, the <strong><code>@bind</code> macro</strong> might be able to do what you want! Have a look at the Interactivity sample inside Pluto. Feel free to open a GitHub issue if this doesn’t suit your needs.</p>
+</blockquote>
+<br >
+<p>How can I load <code>startup.jl</code>?</p>
+<blockquote>
+<p>We want your notebooks to be reproducible, so our suggested method is that you copy and paste your personal setup script into a <code>begin ... end</code> block inside your notebook. This avoids implicit dependencies of your notebook. Alternatively, you could write <code>include(&quot;path/to/startup.jl&quot;)</code>, but this will only work on your computer.</p>
+</blockquote>
+<br >
+<p>How can I load a notebook upon launching Pluto?</p>
+<blockquote>
+<p>You can pass the <code>notebook</code> keyword argument to <code>Pluto.run</code>, e.g. <code>Pluto.run(notebook=&quot;/path/to/notebook.jl&quot;)</code>.</p>
+</blockquote>
+<br>
+<p>How can I use a sysimage inside Pluto?</p>
+<blockquote>
+<p><code>Pluto.run()</code> takes a keyword argument <code>sysimage</code> which can be used to add sysimage used by each notebook. To load the currently loaded sysimage, start pluto using:</p>
+</blockquote>
+<pre><code class="language-julia">Pluto.run(sysimage=unsafe_string(Base.JLOptions().image_file))
+</code></pre>
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/AbstractPlutoDingetjes.jl" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/faq.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

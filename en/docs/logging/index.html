@@ -1,16 +1,14 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets</title>
-<meta name="description" content='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>
+<title>🧾 Logging</title>
+<meta name="description" content='How to log in Pluto'>
 <meta property="og:article:tag" content='docs'>
-<meta property="og:article:tag" content='widgets'>
-<meta property="og:article:tag" content='AbstractPlutoDingetjes'>
-<meta property="og:article:tag" content='advanced'>
-<meta property='og:image' content='https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif'>
-<meta property='og:title' content='AbstractPlutoDingetjes.jl – develop enhanced Pluto widgets'>
+<meta property="og:article:tag" content='editor'>
+<meta property="og:article:tag" content='logging'>
+<meta property='og:title' content='🧾 Logging'>
 <meta property='og:type' content='article'>
-<meta property='og:description' content='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>
+<meta property='og:description' content='How to log in Pluto'>
 
 
 <link rel="root" href="../../.." />
@@ -96,7 +94,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Editor</h3>
 <ul>
-<li class=''><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class=''><a href='../../../en/docs/logging/' title='How to log in Pluto'>🧾 Logging</a></li><li class=''><a href='../../../en/docs/disable-cell/' title='How to disable a cell in Pluto, or disable a cell in the file.'>💡 Disabling cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
+<li class=''><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class='active'><a href='../../../en/docs/logging/' title='How to log in Pluto'>🧾 Logging</a></li><li class=''><a href='../../../en/docs/disable-cell/' title='How to disable a cell in Pluto, or disable a cell in the file.'>💡 Disabling cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -108,7 +106,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Advanced: Widgets</h3>
 <ul>
-<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class='active'><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
 </ul>
 </li>
 <li>
@@ -124,12 +122,46 @@ window.pluto_recording_audio_url = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <pluto-editor statefile='../../../generated_assets/AbstractPlutoDingetjes_c871097d.plutostate' notebookfile='../../../generated_assets/AbstractPlutoDingetjes_e5d25c27.jl' disable-ui=''></pluto-editor>
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="logging-in-plutojl"><a href="#logging-in-plutojl" class="anchor"></a>🧾 Logging in Pluto.jl</h1>
+<p>Pluto supports showing messages printed with the <a href="https://docs.julialang.org/en/v1/stdlib/Logging/">standard library Logging module</a>. This can be done using the <code>@info</code>, <code>@warn</code> and <code>@error</code> macro.</p>
+<p><img src="https://user-images.githubusercontent.com/9824244/166148765-d639b659-4e90-4f54-8697-856f24ad4fbc.png" alt="image" /></p>
+<!--
+### Disabling logs for a notebook
+
+A simple way to disable all logs for a notebook is to change the global logger of the Logging module to a [`NullLogger`](https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.NullLogger) which removes all outputs of log messages.
+
+![image](https://user-images.githubusercontent.com/9824244/166149154-4139a545-8df7-4e2a-9f31-daaa09c1c41d.png)
+
+-->
+<h3 id="disabling-logs-for-a-cell"><a href="#disabling-logs-for-a-cell" class="anchor"></a>Disabling logs for a cell</h3>
+<p>If a package logs warnings or info messages that you want to hide (especially in the static export of the notebook), then the option to hide logs can be toggled by clicking on the cell menu (the three dots on the right).</p>
+<p><img src="https://user-images.githubusercontent.com/9824244/166149026-98e8d29d-4162-46ae-be1f-bb296059e2fd.png" alt="image" /></p>
+<h3 id="logging-progress"><a href="#logging-progress" class="anchor"></a>Logging progress</h3>
+<p>Pluto supports an integration with the <a href="https://github.com/JuliaLogging/ProgressLogging.jl">ProgressLogging.jl</a> package which can be used to display a progress bar in the log message area:</p>
+<p><img src="https://user-images.githubusercontent.com/9824244/166149390-f9fce3a4-3b48-4d77-8b06-546401c0103b.gif" alt="logs-demo-1" /></p>
+<h2 id="writing-to-standard-output"><a href="#writing-to-standard-output" class="anchor"></a>Writing to standard output</h2>
+<p>To disable capturing and showing standard output inside Pluto and show it inside the terminal instead the <code>capture_stdout=false</code> option can be provided to <code>Pluto.run</code> when launching Pluto.</p>
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/AbstractPlutoDingetjes.jl" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/logging.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

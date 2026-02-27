@@ -155,9 +155,12 @@ window.pluto_recording_audio_url = undefined;
 <img width="541" height="122" alt="Screenshot of the update button visible next to the import of a package" src="../../../assets/img/Update button screenshot.png">
 <h2 id="waiting-times"><a href="#waiting-times" class="anchor"></a>Long waiting times</h2>
 <p>Julia needs to download and precompile packages before you can use them. When using many packages, this can take a <strong>couple of minutes</strong>. Before installing a new package, Pluto can give an estimate of how long it will take to install:</p>
+<blockquote>
+<p>The estimates are available for popular packages, based on our own <a href="https://github.com/fonsp/package-loading-times">measurements</a>.</p>
+</blockquote>
 <img width="541" alt="Screenshot of code that imports the DataFrames package. Pluto says that the package will be installed when you run the cell, and it gives an estimate of 53 second for the time it will take to install." src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
 <h3 id="pre-installed-versions"><a href="#pre-installed-versions" class="anchor"></a>Pre-installed versions are preferred</h3>
-<p>When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer. This was added in May 2024, on older versions, Pkg would always try to install the newest versions.</p>
+<p>When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer (with <code>PRESERVE_ALL_INSTALLED</code>). This was added in May 2024, on older versions, Pkg would always try to install the newest versions.</p>
 <p>This should make it much faster to open a notebook and import some packages that you already used recently. If you need the latest versions, then you have to use the <strong>Update</strong> button after adding the packages.</p>
 <h3 id="shared-environments"><a href="#shared-environments" class="anchor"></a>Package installations are shared between environments</h3>
 <p>In Julia, packages are always installed globally, while <em>environments</em> (including notebooks) only store <strong>version information</strong>, not the package code itself. This means that multiple notebooks that use the same version of <code>Plots</code> will not lead to more disk usage or precompile time. (This is different from <code>venv</code> in Python/pip, or <code>node_modules</code> in NodeJS/npm, where every environment contains copies of package code by default.) Julia’s package manager is designed to work well with many package environments on the same computer.</p>
@@ -165,7 +168,7 @@ window.pluto_recording_audio_url = undefined;
 <p>In Julia 1.6, you can clean up package files that have not been used in a while with <code>import Pkg; Pkg.gc()</code>. In Julia 1.7 and up, this will be done <a href="https://github.com/JuliaLang/Pkg.jl/pull/2567">automatically</a>.</p>
 <h1 id="good-to-know"><a href="#good-to-know" class="anchor"></a>Good to know</h1>
 <h3 id="based-on-pkg"><a href="#based-on-pkg" class="anchor"></a>Based on Pkg</h3>
-<p>Pluto’s package management is a wrapper around <a href="https://pkgdocs.julialang.org/v1/">Pkg.jl</a>, Julia’s built-in package manager. Packages are installed from the <a href="https://github.com/JuliaRegistries/General">General registry</a>.</p>
+<p>Pluto’s package management is a wrapper around <a href="https://pkgdocs.julialang.org/v1/">Pkg.jl</a> (Julia’s built-in package manager) and <a href="https://github.com/GunnarFarneback/RegistryInstances.jl">RegistryInstances.jl</a>. Packages are installed from the <a href="https://github.com/JuliaRegistries/General">General registry</a>.</p>
 <blockquote>
 <p>🙋 You can discover all available packages on <a href="https://juliahub.com/ui/Home">juliahub.com</a>.</p>
 </blockquote>

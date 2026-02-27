@@ -130,9 +130,8 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<h1 id="logging-in-plutojl"><a href="#logging-in-plutojl" class="anchor"></a>🧾 Logging in Pluto.jl</h1>
-<p>Pluto supports showing messages printed with the <a href="https://docs.julialang.org/en/v1/stdlib/Logging/">standard library Logging module</a>. This can be done using the <code>@info</code>, <code>@warn</code> and <code>@error</code> macro.</p>
-<p><img src="https://user-images.githubusercontent.com/9824244/166148765-d639b659-4e90-4f54-8697-856f24ad4fbc.png" alt="image" /></p>
+<h1 id="logging-and-stdout"><a href="#logging-and-stdout" class="anchor"></a>Logging and <code>stdout</code></h1>
+<p>To help with debugging your code, Pluto supports showing messages printed with the <a href="https://docs.julialang.org/en/v1/stdlib/Logging/">standard library Logging module</a>. This can be done using the <code>@info</code>, <code>@warn</code> and <code>@error</code> macro.</p>
 <!--
 ### Disabling logs for a notebook
 
@@ -146,7 +145,7 @@ A simple way to disable all logs for a notebook is to change the global logger o
 <p><img src="https://user-images.githubusercontent.com/9824244/166149026-98e8d29d-4162-46ae-be1f-bb296059e2fd.png" alt="image" /></p>
 <h3 id="logging-progress"><a href="#logging-progress" class="anchor"></a>Logging progress</h3>
 <p>Pluto supports an integration with the <a href="https://github.com/JuliaLogging/ProgressLogging.jl">ProgressLogging.jl</a> package which can be used to display a progress bar in the log message area:</p>
-<p><img src="https://user-images.githubusercontent.com/9824244/166149390-f9fce3a4-3b48-4d77-8b06-546401c0103b.gif" alt="logs-demo-1" /></p>
+<img alt="Screen recording of a Progress log going from 0% to 100%." src="../../../assets/img/progress log demo.gif" width="826" height="572" style="max-width: 400px;">
 <h2 id="writing-to-standard-output"><a href="#writing-to-standard-output" class="anchor"></a>Writing to standard output</h2>
 <p>To disable capturing and showing standard output inside Pluto and show it inside the terminal instead the <code>capture_stdout=false</code> option can be provided to <code>Pluto.run</code> when launching Pluto.</p>
 

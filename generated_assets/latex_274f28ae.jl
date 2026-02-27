@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.13
+# v0.20.23
 
 #> [frontmatter]
 #> order = "4"
@@ -37,7 +37,12 @@ To write a large **block equation**, use triple backticks with `math` (this is a
 """
 
 # ╔═╡ 5a011a33-e97f-490e-b6a2-c7ea6e4091f8
+md"""
+!!! tip
+	If you don't know the LaTeX syntax for a symbol, you can use the Live Docs to look it up: just type the Unicode character and see its LaTeX equivalent.
 
+	You can also use this to find the name of emojis!
+"""
 
 # ╔═╡ f615f40c-8ced-408d-8f64-23198b350e27
 md"""
@@ -91,6 +96,13 @@ md"""
 	Instead of using the old `$` syntax, we recommend using backticks instead. See the section above.
 """
 
+# ╔═╡ 921f29fa-2262-4b02-a471-3a315d539cc4
+md"""
+# Emojis in Pluto
+
+Pluto has built-in support for Emojis. You use can them inside [Markdown](../markdown/) blocks or also to define some variables!
+"""
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -100,15 +112,15 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.10.10"
+julia_version = "1.12.5"
 manifest_format = "2.0"
-project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 
 [deps]
 """
 
 # ╔═╡ Cell order:
-# ╟─633cfe44-6ed5-11f0-2eee-e72949879521
+# ╠═633cfe44-6ed5-11f0-2eee-e72949879521
 # ╟─78ba3c95-e7a0-4374-bc5b-c44be72fdb62
 # ╠═bb6672b7-34b4-4838-853c-f186134f98e8
 # ╟─8399e685-e323-4795-ac54-029c4dc2ae28
@@ -122,5 +134,6 @@ project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 # ╟─44121ee2-8467-4147-89b0-1aa7689d0ba9
 # ╠═c835f6c9-920a-4285-b0f7-bf93aab6b94c
 # ╟─4963558c-fe1f-4d11-a164-a45d78984497
+# ╠═921f29fa-2262-4b02-a471-3a315d539cc4
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

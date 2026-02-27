@@ -113,26 +113,6 @@
 - **MathJax 3 for math rendering** — MathJax 3 renders LaTeX math in Markdown and outputs. (#1947, #2165, #2803)
 ---
 
-## 7. Logging
-
-- **Julia Logging integration** — `@info`, `@warn`, `@error`, `@debug` messages appear in notebook cell output. (#437)
-- **Logs relayed to browser console** — Log messages also appear in the browser developer console. (#496)
-- **Log level display** — Different log levels are styled differently. (#498)
-- **Vertical log layout** — Logs are displayed vertically below cell output. (#2297)
-- **Logs from async cells at source** — Log messages from async code appear under the correct cell. (#2115)
-- **Scoped loggers per cell** — Each cell has its own logger context for correct attribution. (#2249)
-- **`maxlog` keyword support** — The `maxlog` keyword in `@info` is respected to limit repeated log messages. (#1877, #1911, #2493)
-- **ProgressLogging support** — `ProgressLogging.@progress` shows progress bars in the notebook. (#2222, #2966)
-- **Custom progress bar names** — Custom names for progress bars from `@progress` are shown. (#2966)
-- **Show `stdout` and `stderr` in notebook** — Print statements go to a terminal-style output popup instead of the terminal. (#1957)
-- **Stdout popup generalized** — Popup system generalized to support multiple popup types. (#1956)
-- **Stdout logging scoped per notebook** — Log channels are scoped to individual notebooks. (#2027)
-- **`yield()` around logger redirect** — Fixed a bug where logs got stuck by adding yields. (#2026)
-- **Log message format for exceptions** — Exception and backtrace in logs are formatted like errors. (#1962)
-- **Fallback for errors in logging** — If logging itself throws, the error is handled gracefully. (#3013)
-- **Fix logging with ProgressLogging v1.6** — Compat fix for the latest ProgressLogging. (#3440)
-
----
 
 ## 8. HTML Export & Static Notebooks
 

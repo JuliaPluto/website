@@ -38,10 +38,18 @@ To write a large **block equation**, use triple backticks with `math` (this is a
 
 # ╔═╡ 5a011a33-e97f-490e-b6a2-c7ea6e4091f8
 md"""
-!!! tip
-	If you don't know the LaTeX syntax for a symbol, you can use the Live Docs to look it up: just type the Unicode character and see its LaTeX equivalent.
+## Finding LaTeX Syntax
+If you don't know the LaTeX syntax for a symbol, you can use the Live Docs to look it up: just type the Unicode character and see its LaTeX equivalent.
 
-	You can also use this to find the name of emojis!
+You can also use this to find the name of emojis!
+"""
+
+# ╔═╡ 1d5a3bb3-ee22-4c7c-b66e-8950ed471942
+
+md"""
+
+![Example of Reverse Search for Integral Symbol](https://github.com/JuliaPluto/website/blob/6cad65a4b0f3969b758c8b80c40623ea8dc04429/src/assets/img/live-docs-latex-search.png?raw=true)
+
 """
 
 # ╔═╡ f615f40c-8ced-408d-8f64-23198b350e27
@@ -125,6 +133,7 @@ project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 # ╠═bb6672b7-34b4-4838-853c-f186134f98e8
 # ╟─8399e685-e323-4795-ac54-029c4dc2ae28
 # ╟─5a011a33-e97f-490e-b6a2-c7ea6e4091f8
+# ╟─1d5a3bb3-ee22-4c7c-b66e-8950ed471942
 # ╠═f615f40c-8ced-408d-8f64-23198b350e27
 # ╟─e777296b-b176-4bd8-8eee-6324f89121f1
 # ╟─2a155246-c9b5-4bd4-9550-a0c9290c2859

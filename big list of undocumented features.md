@@ -11,36 +11,10 @@
 ---
 
 ## 1. Reactivity & Execution Model
-
-- **Reactive notebook execution** — Cells automatically re-run when their dependencies change, like a spreadsheet. (#20, #37)
-- **Distributed execution** — Each notebook runs in its own Julia process using Malt.jl (formerly Distributed.jl). (#66, #2240, #2767)
-- **Cell dependency graph** — Pluto builds a full dependency graph between cells and only re-runs affected cells. (#37)
-- **Topological ordering** — Cells are executed in dependency order, not top-to-bottom. (#37)
-- **Function-based cell wrapping** — Cell code is wrapped in functions so Julia can compile and cache it for speed. (#720)
-- **Reactive `using` / `import`** — Adding or removing `using` or `import` statements reactively updates the notebook. (#1541)
-- **Reactive method definitions** — Defining or redefining methods in other cells triggers reactive updates. (#1554)
 - **Cyclic dependency detection** — Pluto detects and reports cyclic cell dependencies. (#37)
-- **Multiple definitions error** — Pluto warns when two cells define the same variable and automatically disables the older one. (#2273, #2303)
 - **Soft interrupt (all platforms)** — Clicking the stop button interrupts running cells on all OS, including Windows (via Malt.jl). (#932, #2659, #2767)
 - **Cell queued state indicator** — Cells show a "queued" state while waiting to run. (#349)
 - **Broken process detection & restart offer** — If the notebook process crashes, Pluto detects it and offers to restart. (#948)
-- **New workspace on every run** — Each reactive run gets a fresh workspace to prevent stale variable pollution. (#1746)
-- **Ignore `_` assignments** — Assignments to `_` (throwaway variables) are ignored for reactivity purposes. (#1010)
-- **Handle `try/catch` scopes** — `try/catch` blocks are handled with proper scope analysis for reactivity. (#467)
-- **Handle generator filters** — Filter expressions in generators are correctly handled in the dependency graph. (#839)
-- **Handle parametric type assignments** — Parametric types like `T{A}` are correctly tracked as definitions. (#521)
-- **Handle macro definitions** — Macros defined in cells (`macro foo() ... end`) are reactively tracked. (#478)
-- **Handle callable structs** — `(obj::MyType)(a, b) = ...` is recognized as a method definition. (#889)
-- **Handle destructuring assignments** — `a, b = 1, 2` is correctly analyzed for variable definitions. (#1317)
-- **Handle splat assignments** — `a... = [1,2,3]` is handled in expression analysis. (#2365)
-- **Handle anonymous functions with keyword args** — Correctly tracks deps in `(x; p) -> x`. (#1000)
-- **Handle `using .A` (relative imports)** — Relative module imports with `.A` syntax work correctly. (#2955)
-- **BenchmarkTools support** — Improved reactivity heuristic to work correctly with `@benchmark`. (#1966)
-- **Memoize.jl support** — Variables starting with `#` (used by Memoize.jl) are copied to new workspaces. (#2328)
-- **Revise.jl integration** — Pluto loads Revise first when `using Revise` appears, enabling hot-reloading of external package code. (#416, #947, #1597, #3410)
-- **Parameters.jl macro fix** — Macro analysis works correctly with `@unpack` and similar macros. (#1339)
-- **Frontend scope state** — The frontend computes scope state (definitions, usages) in JavaScript for fast local features. (#3467–#3475)
-
 ---
 
 ## 2. Package Management (Built-in Pkg)

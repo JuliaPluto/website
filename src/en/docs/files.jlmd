@@ -66,6 +66,8 @@ This will completely shut down the notebook and stop its Julia process, freeing 
 !!! tip "To restart a notebook (restart kernel)"
     If you want to restart a notebook that's currently running — for example, to clear all variables and start fresh — simply shut it down using the <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/close-circle.svg" width="12"> button and then reopen it by clicking on it in the list. This is equivalent to "restarting the kernel" in other notebook environments like Jupyter.
 
+    If the notebook process crashes, for example due to an issue while precompiling or loading packages, Pluto automatically detects the interruption and offers to restart.
+
 
 
 

@@ -10,13 +10,6 @@
 
 ---
 
-## 1. Reactivity & Execution Model
-- **Cyclic dependency detection** — Pluto detects and reports cyclic cell dependencies. (#37)
-- **Soft interrupt (all platforms)** — Clicking the stop button interrupts running cells on all OS, including Windows (via Malt.jl). (#932, #2659, #2767)
-- **Cell queued state indicator** — Cells show a "queued" state while waiting to run. (#349)
-- **Broken process detection & restart offer** — If the notebook process crashes, Pluto detects it and offers to restart. (#948)
----
-
 ## 2. Package Management (Built-in Pkg)
 
 - **Guided Project.toml editor** — A UI for editing the notebook's `Project.toml` with compat entries. (#3218)
@@ -36,7 +29,6 @@
 ---
 
 ## 4. Cell Features
-
 - **Add/delete cells** — Cells can be added and deleted via the UI or keyboard shortcuts. (#37)
 - **Fold/hide cells** — Cell code can be folded (hidden) while keeping the output visible. (#484)
 - **Run button per cell** — Each cell has a run button, and shows its last execution time. (#37)
@@ -81,31 +73,15 @@
 ---
 
 ## 10. Main Menu / Welcome Screen
-
-- **Main menu / welcome screen** — The Pluto start page where you can open, create, or browse notebooks. (#37)
-- **Featured notebooks** — The main menu showcases curated notebooks from the Pluto community. (#2048, #2666, #2927)
-- **Featured notebooks: SliderServer integration** — Featured notebooks use a PlutoSliderServer for interactive previews. (#2666)
 - **Recents list** — Recently opened notebooks are shown on the main menu. (#37)
 - **Recents: shortest unambiguous path** — Recent notebooks are shown with the shortest unambiguous path. (#693)
-- **Recents: forget stale entries** — A button removes stale/non-existent notebooks from the recents list. (#3268)
-- **Loading screen on navigation** — A loading indicator appears when navigating away from the main menu. (#2292)
-- **File picker autocomplete** — The file path input on the welcome screen autocompletes file paths. (#2037, #3217, #3347)
-- **Fuzzy autocomplete in file picker** — The file picker uses fuzzy matching for completions. (#3217)
-- **"Open" button disabled when nothing typed** — The "Open" button is disabled until a path is entered. (#2020)
 - **Paste/drop `.jl` files to open** — You can paste or drop a `.jl` file onto the welcome screen to open it. (#1015)
 - **Open notebooks without browser** — `Pluto.run(notebook="path.jl")` opens a notebook without launching a browser. (#1324)
 - **Open multiple notebooks at start** — Multiple notebooks can be passed to `Pluto.run()` to open on startup. (#1324)
-- **`as_sample` URL parameter** — A notebook can be opened as a read-only sample by adding `?as_sample=yes` to the URL. (#828)
-- **Featured notebook sources configurable** — The source of featured notebooks is a configurable frontend parameter. (#2412)
-- **Multiple authors in featured card** — Featured notebook cards show "and others" for multiple authors. (#2723)
-
 ---
 
 ## 11. Notebook Files & Format
-
-- **`.jl` notebook file format** — Pluto notebooks are plain Julia files, valid Julia scripts. (#37)
 - **Auto-save on run** — The notebook file is saved every time a cell is run. (#37)
-- **Default save location** — Notebooks are saved in `~/.julia/pluto_notebooks` by default. (#475)
 - **Auto-reload from file** — Pluto watches the notebook file for external changes and reloads automatically. (#1029, #1555)
 - **Improved auto-reload** — Smarter timing avoids triggering reload from Pluto's own saves. (#1555)
 - **Don't save on bond changes** — Notebook file is not rewritten when bonds change (only on cell runs). (#2402)
@@ -117,11 +93,6 @@
 - **Compare metadata when reloading** — Notebook comparison considers cell metadata when checking for changes. (#2291)
 - **Update disabled cell dependency before saving** — Indirect dependencies of disabled cells are computed before saving. (#2239)
 - **Notebook metadata** — A `metadata` field in the notebook structure stores notebook-wide settings. (#2016)
-- **`skip_as_script` cells** — Cells can be marked to be skipped when the notebook file is used as a Julia script. (#2018, #2178, #2191)
-- **End-of-file line break** — Notebook files always end with a newline. (#1578)
-- **Remove trailing/leading quotes from path** — Paths pasted with surrounding quotes are cleaned up. (#1640)
-- **JuliaFormatter ignore `@bind`** — JuliaFormatter is configured to not reformat `@bind` macros. (#3072)
-- **`Pluto.is_single_expression` API** — Julia function to check if a string contains a single expression (as Pluto requires per cell). (#3134)
 - **Pluto Recording format** — A special file format for recording notebook sessions as interactive replays. (#1623)
 
 ---

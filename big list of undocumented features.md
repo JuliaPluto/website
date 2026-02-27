@@ -100,31 +100,9 @@
 
 - **Add/delete cells** — Cells can be added and deleted via the UI or keyboard shortcuts. (#37)
 - **Fold/hide cells** — Cell code can be folded (hidden) while keeping the output visible. (#484)
-- **Fold message: "👀 Reading hidden code"** — When folded cells are unhidden for viewing, a message explains this. (#2920)
-- **Disable/enable cells** — Cells can be disabled so they don't run, with persistent state saved to file. (#1895, #2018)
-- **Cell metadata** — Cells have a metadata dictionary (stored in the notebook file) for persistent settings. (#2016)
-- **Disable cells via metadata** — Cell enabled/disabled state is stored in cell metadata. (#2018)
-- **Hide logs per cell persistently** — Log visibility for each cell can be toggled and persisted. (#2023)
-- **Copy cells** — Multiple cells can be copied (Ctrl+C) and pasted (Ctrl+V). (#466)
-- **Paste cells at specific position** — Pasted cells appear after the currently selected cell. (#1263, #3373)
-- **Select multiple cells** — Click and drag or Shift+Click to select multiple cells. (#227, #443)
-- **Selection rectangle** — A visible selection rectangle appears when dragging to select cells. (#443)
 - **Run button per cell** — Each cell has a run button, and shows its last execution time. (#37)
-- **Cell runtime counter** — The cell runtime counter counts up while the cell is running. (#640)
 - **Copy output button** — Context menu item to copy cell output to clipboard. (#2160)
-- **Copy output button for error messages** — Copy the full error with stack trace in REPL format. (#3219)
-- **Isolated cell view** — A cell's output can be viewed in isolation (full page), useful for dashboards. (#1544)
-- **Progress bar in isolated cell view** — A progress bar is shown in the isolated cell view while cells are running. (#1950)
 - **Cell context menu** — Right-click a cell to get a context menu with actions. (#2759)
-- **"Cell deleted" popup with undo** — A popup appears when a cell is deleted, with an undo option. (#3148)
-- **Offer to split multi-line cells** — Pluto can split a cell with multiple top-level expressions into separate cells. (#335)
-- **Prevent top-level `return`** — Cells that use `return` at the top level are warned/handled. (#446)
-- **Allow `return` in function assignments** — `f() = return x` is handled correctly. (#1773)
-- **Cell scrollbar fix** — Horizontal scrollbar in cells doesn't appear when not needed. (#2377)
-- **Automatic `id` tags for Markdown headers** — All Markdown headers get auto-generated `id` attributes for linking. (#3243)
-- **Copy button for Markdown code blocks** — A copy-to-clipboard button appears on code blocks in Markdown cells. (#2799)
-- **Copy button for URL to header** — A link icon next to headers copies the URL fragment to clipboard. (#3264)
-
 ---
 
 ## 5. @bind and Interactivity

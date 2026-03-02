@@ -38,5 +38,24 @@ One tool that may help you with guided assignments is [PlutoSplitter.jl](https:/
 
 
 ## Open assignments
-Pluto is also a good tool for open-ended assignments, where students write the complete notebook themselves. For example, you could ask students to "Write a notebook that explores the Collatz conjecture, and explain it in an interactive way". Pluto is an easy environment for Julia newcomers to work in, which makes it easy for students to write a complete interactive article on their own.
+Pluto is also a good tool for open-ended assignments, where students write the complete notebook themselves. For example, you could ask students to "Write a notebook that explores the Collatz conjecture, and explain it in an interactive way". The end result could be an interactive article, or a [presentation](../presentation/). Pluto is an easy environment for Julia newcomers to work in, which makes it easy for students to write a complete interactive article on their own.
 
+Didactically, open-ended assignments in Pluto are really great! Pluto is designed to be a good playground to explore a computational topic. It's safe to try things, and easy to use. By asking students to write an interactive article, you force them to dive into a topic and understand how it works. 
+
+From a technical perspective, Pluto's **reproducibility** is really useful. It means that students can write a notebook with packages, interactions, plots, etc., and you will know that you can open the notebook on your computer for review, without having to install or debug packages.
+
+
+## Manual Grading
+Pluto notebooks are quite easy to review, because of the different export formats, and the reproducibility. From Fons's experience, grading is the easiest if you ask students to **hand in the assignment in HTML Export format** (you can link to the [documentation](../export-html/)). HTML files are fast to open and review (you don't need to run student code). HTML files also contain the `.jl` notebook file if needed. I would recommend this over collecting Julia or PDF files.
+
+### Canvas SpeedGrader
+If you are using Canvas for your course, you can use the SpeedGrader to review HTML files. This works **very well** in my experience! You can require submissions to be in HTML format, and speedgrader will let you cycle between student notebooks for grading.
+
+You can combine this with a "Grading Rubric". Then you will see the rubric next to the student's notebook.
+
+<img src="$(root_url)/assets/img/canvas speedgrader.png" alt="Screenshot of canvas speedgrader with a student notebook" width="2262" height="1354">
+
+
+
+## Automatic Grading
+There are several small projects to do autograding of Pluto notebooks. TODO (feel free to contribute)

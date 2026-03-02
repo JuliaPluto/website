@@ -10,7 +10,7 @@ order: 5
 # Courses taught with Pluto
 Pluto.jl is a programming environment [designed for education](../education/) and is being used in several courses around the world. Pluto was developed alongside the free online course [Introduction to Computational Thinking](https://computationalthinking.mit.edu/) at MIT, with the goal of creating a programming environment that is powerful, helpful and interactive, without being too intimidating for students and teachers. 
 
-## Featured courses
+## List of courses
 Feel free to add your course to this list by clicking "Edit this page" at the bottom of this page. Is your course not open source or not online? No problem, you can still add it without a URL.
 
 <div id="courselist-wrapper">

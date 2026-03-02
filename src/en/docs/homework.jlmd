@@ -35,3 +35,8 @@ One tool that may help you with guided assignments is [PlutoSplitter.jl](https:/
 
 
 <img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
+
+
+## Open assignments
+Pluto is also a good tool for open-ended assignments, where students write the complete notebook themselves. For example, you could ask students to "Write a notebook that explores the Collatz conjecture, and explain it in an interactive way". Pluto is an easy environment for Julia newcomers to work in, which makes it easy for students to write a complete interactive article on their own.
+

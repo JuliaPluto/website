@@ -11,7 +11,33 @@ We look forward to your contributions! 💛
 
 We’re also happy to hear about any issues we may have missed. Before opening a new one, please take a moment to check [this guide](https://github.com/JuliaPluto/Pluto.jl/issues/182).
 
-## How to give Feedback
+## Ask questions and discuss
+If you have questions about using Pluto or want to discuss ideas, there are several places where you can meet fellow Pluto users.
+
+!!! note
+    Get involved! If you are shy to ask a question or post your work, that's probably a good sign that you should do it! The Julia community is very welcoming and helpful, and people will be happy to hear from you!
+
+### Discourse
+The [JuliaLang Discourse](https://discourse.julialang.org/) is a very nice platform for the wider Julia community. There is a [Pluto category](https://discourse.julialang.org/c/tools/pluto/58) where you can ask questions and share your work.
+
+### Zulip
+The [JuliaLang Zulip](https://julialang.zulipchat.com/) is an open source chat platform in your browser. The Julia community has a very active Zulip, and there is a Pluto channel. To join:
+1. Click here to join the Julia zulip: [https://julialang.zulipchat.com/](https://julialang.zulipchat.com/)
+2. Create an account, or log in with github/google.
+3. After logging in, you need to **Add the Pluto stream** using this button:
+
+<img src="$(root_url)/assets/img/how to join zulip.png" alt="Screenshot of adding a channel in zulip" width="1022" height="512">
+
+That's it, see you there!
+
+!!! info
+    There is also a stream called `Pluto.jl developers`, if you are interested in contributing to Pluto.
+
+
+### Slack
+There is also the [JuliaLang Slack](https://julialang.slack.com/), which is a commercial chat platform (not open source). You can ask questions in the `#pluto` channel. The Pluto developers don't regularly check this channel.
+
+## How to give feedback to developers
 How is your experience with Pluto? Pluto has a built-in feedback form for complaints, praises, nice-to-haves, or any suggestions you might have, we're always glad to hear from you!
 
 The easiest way to reach us: Use the built-in feedback tool at the bottom right of each notebook. 👨‍🏫

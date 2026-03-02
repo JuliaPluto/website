@@ -148,7 +148,7 @@ window.pluto_recording_audio_url = undefined;
 Pluto.run()
 </code></pre>
 <h2 id="browser-session"><a href="#browser-session" class="anchor"></a>Browser session</h2>
-<p>When Pluto starts running, it automatically opens a new browser tab that connects to <code>http://localhost:1234</code>, which is the address of the Pluto server. You will see the <em>main menu</em> of Pluto.</p>
+<p>When Pluto starts running, it automatically opens a new browser tab that connects to <code>http://localhost:1234/</code>, which is the address of the Pluto server. You will see the <em>main menu</em> of Pluto.</p>
 <img src="../../../assets/img/collatz/c9.png" aria-hidden="true" width="700" height="200">
 <h1 id="main-menu"><a href="#main-menu" class="anchor"></a>The Pluto main menu</h1>
 <p>The first page you see when you open a new browser tab is the <em>main menu</em> of Pluto. It’s the page that says “Welcome to Pluto”. From here, you can <a href="../files/#new">create a new notebook</a>, <a href="../files/#open">open an existing notebook</a>, or you can take a look at the featured notebooks, further down the page.</p>
@@ -179,8 +179,8 @@ Pluto.run()
 <h1 id="multiple-sessions"><a href="#multiple-sessions" class="anchor"></a>Advanced: Multiple Pluto sessions</h1>
 <p>You can start Pluto multiple times in parallel (for example: on two different Julia versions). In this case, each Pluto server will find the first available port. Usually, the first server will find port <code>1234</code>, the second server will find port <code>1235</code>, and so on.</p>
 <p>This means that you can open two browser windows, and connect to the two different Pluto servers in parallel:</p>
-<pre><code>http://localhost:1234
-http://localhost:1235
+<pre><code>http://localhost:1234/
+http://localhost:1235/
 </code></pre>
 <p>Usually, this is not super useful. If you find yourself on port <code>1235</code> by accident, try shutting down all Pluto/Julia processes and starting again.</p>
 

@@ -1,0 +1,37 @@
+---
+title: "📄 Homework"
+description: "How to use Pluto to teach Julia with interactive homework assignments."
+tags: ["docs", "education"]
+layout: "md.jlmd"
+order: 3
+---
+
+# Pluto for homework assignments
+We also want people to **learn by doing**. There are several ways for students to get involved in the course by programming themselves. For example:
+- Open assignments – students can create a new notebook to solve a problem.
+- Guided assignments – you can write a notebook with assignments, and let students fill in the gaps. **Pluto is great for this!** For some examples, take a look at the homeworks from [Computational Thinking at MIT](https://computationalthinking.mit.edu/).
+- Remixing lecture notes – since Pluto notebooks are reproducible, students can easily run the lecture notes (on binder, or locally) and play around with the code.
+
+
+## Guided assignments
+Pluto is great for a style of assignment, which we will call "guided assignments". 
+
+The idea is a notebook that contains:
+- Text to **explain the assignment**.
+- Cells with `missing` content, where students **fill in their code**. 
+- Cells that **check the student's answer**, and give feedback. 
+- Bonus text and resources to explain more concepts. For example, you can add a [foldable section](https://featured.plutojl.org/basic/plutoui.jl#details) that explains how parametric types work in Julia, for students who want to dive deeper.
+
+!!! info "Examples"
+    For some examples, take a look at the homeworks from [Computational Thinking at MIT](https://computationalthinking.mit.edu/), in particular [Homework 1](https://featured.plutojl.org/computational-thinking/homework1.html) and [Homework 3](https://featured.plutojl.org/language/structure%20and%20language), which are also [featured](../featured-notebooks/) Pluto notebooks.
+
+!!! tip "JuliaCon talk"
+    [JuliaCon 2021 presentation](https://www.youtube.com/watch?v=LFRI3s0DE-o) on using Pluto at MIT, with interactive lectures and guided assignments.
+
+
+
+### PlutoSplitter.jl
+One tool that may help you with guided assignments is [PlutoSplitter.jl](https://github.com/Technici4n/PlutoSplitter.jl). This package lets you write a homework notebook with all the solutions already filled in, and then split it into two files: one with the solutions, and one with all answers removed. This lets you work on your answer-checking code easily, and then generate an assignment file for students.
+
+
+<img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">

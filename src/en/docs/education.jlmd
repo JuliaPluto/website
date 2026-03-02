@@ -1,76 +1,34 @@
 ---
 title: "🎓 Pluto for your course"
 description: "How to use Pluto to teach Julia with interactive lectures and engaging assignments."
-tags: ["docs", "introduction", "education"]
+tags: ["docs", "education"]
 layout: "md.jlmd"
-order: 4
+order: 1
 ---
 
 
 
 
 # Pluto for education
-Pluto.jl is a programming environment designed specifically for education! If you are planning to teach a scientific course, Pluto might be a good fit for you and your students. Pluto only works with Julia, 
-
+Pluto.jl is a programming environment designed specifically for education! If you are planning to teach a scientific course, Pluto might be a good fit for you and your students. Pluto only works with Julia, which is a great language for scientific education. Pluto is designed specifically for Julia, and addresses the needs that we had ourselves when teaching courses.
 
 Students and teachers are our primary target audience, and we are committed to We believe that there are enough 'advanced' tools for advanced users, but that a lot can be done to make programming more accessible to beginners.
+
+Learn more about [why you should use Pluto](#why-pluto) for education, and how to use Pluto for [lectures](../lectures/) and [homework assignments](../homework/).
 
 <img src="$(root_url)/assets/img/collatz/c2.png" aria-hidden="true" width="700" height="200">
 
 
-
+{#why-pluto}
 # Why is Pluto good for education?
 Here's our evil plan to take over the world: 
 1. We make **programming and exploration easy** – this makes it great for writing lectures notes. You can experiment with your idea, and when you're done, you organize the code and add some text.
 2. Then we add **interactivity in a very accessible way** (easy, but not as flexible as some other tools) – and you can write awesome lectures with sliders, buttons and animation! 
 3. When it's the students' turn to write code, we make Pluto as **easy as possible to set up and use**, with a coding experience that is designed specifically for users that are new to programming and Julia. 
 
-Let's look in more detail at writing lectures and assignments in Pluto.
+Let's look in more detail at writing [lectures](../lectures/) and [assignments](../homework/) in Pluto.
 
-## For lectures
-Pluto is great for writing lectures in the "Pluto style". This means lectures with:
-- A modern look – lectures with simple markdown and plots should look great, with modern typography and design, on desktops, mobile phones and PDF.
-- Interactive content – sliders, scrubbable numbers, buttons and more, to control outputs like plots, numbers and tables.
-- Reproducibility – Pluto notebooks are easy to share, and anyone can open a notebook and run it themselves. 
-
-
-And our goal is to make this **as easy as possible** to set up and use. This is how we do that:
-- A modern look – Pluto is built on "smart defaults". Instead of endless themes and settings pages, we have one modern design that is designed to look best on today's web.
-- Interactive content – Pluto uses [reactivity](../reactivity/) to make everything interactive. We believe that reactive global variables are the most accessible way to make notebooks interactive. Interactive UI (sliders) works using the same mechanism (reactive globals), which means that anyone can learn how to use it. Pluto is not the most advanced interactivity tool for Julia, but it is the easiest to learn.
-- Reproducibility – using [reacitivity](../reactivity/), a [built-in package manager](../packages/), [binder](../binder/) and more, we try our best to make sure that Pluto notebooks are **reproducible by default**. Our hope is to make Julia notebooks just like Powerpoint, Photoshop and Excel files – you can open them, and they will work.
-
-!!! info "Examples"
-    To see examples of interactive lectures, take a look at the [featured notebooks](https://featured.plutojl.org/).
-
-## For assignments
-We also want people to **learn by doing**. There are several ways for students to get involved in the course by programming themselves. For example:
-- Open assignments – students can create a new notebook to solve a problem.
-- Guided assignments – you can write a notebook with assignments, and let students fill in the gaps. **Pluto is great for this!** For some examples, take a look at the homeworks from [Computational Thinking at MIT](https://computationalthinking.mit.edu/).
-- Remixing lecture notes – since Pluto notebooks are reproducible, students can easily run the lecture notes (on binder, or locally) and play around with the code.
-
-
-### Guided assignments
-Pluto is great for a style of assignment, which we will call "guided assignments". 
-
-The idea is a notebook that contains:
-- Text to **explain the assignment**.
-- Cells with `missing` content, where students **fill in their code**. 
-- Cells that **check the student's answer**, and give feedback. 
-- Bonus text and resources to explain more concepts. For example, you can add a [foldable section](https://featured.plutojl.org/basic/plutoui.jl#details) that explains how parametric types work in Julia, for students who want to dive deeper.
-
-!!! info "Examples"
-    For some examples, take a look at the homeworks from [Computational Thinking at MIT](https://computationalthinking.mit.edu/), in particular [Homework 1](https://featured.plutojl.org/computational-thinking/homework1.html) and [Homework 3](https://featured.plutojl.org/language/structure%20and%20language), which are also [featured](../featured-notebooks/) Pluto notebooks.
-
-!!! tip "JuliaCon talk"
-    [JuliaCon 2021 presentation](https://www.youtube.com/watch?v=LFRI3s0DE-o) on using Pluto at MIT, with interactive lectures and guided assignments.
-
-
-#### PlutoSplitter.jl
-One tool that may help you with guided assignments is [PlutoSplitter.jl](https://github.com/Technici4n/PlutoSplitter.jl). This package lets you write a homework notebook with all the solutions already filled in, and then split it into two files: one with the solutions, and one with all answers removed. This lets you work on your answer-checking code easily, and then generate an assignment file for students.
-
-
-<img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
-
+{#why-julia}
 ## Why *Julia* for education?
 
 We believe that Julia is a great language for scientific education! Here are the main advantages from an educational perspective:
@@ -88,3 +46,5 @@ Let's be honest, many students will complain that your course is not using Pytho
 
 ### Connection to open source and the scientific community
 The Julia community is very open and welcoming, and Julia users are much more likely to **contribute to open source projects** than more established languages. This is a big advantage for students who are entering the scientific community, because Julia offers many opportunities to collaborate and get involved.
+
+

@@ -1,17 +1,13 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>Advanced widgets – overview</title>
-<meta name="description" content='Pluto provides a framework for advances input and display widgets.'>
+<title>🧑‍🏫 Lectures</title>
+<meta name="description" content='How to use Pluto to teach Julia with interactive lectures.'>
 <meta property="og:article:tag" content='docs'>
-<meta property="og:article:tag" content='advanced'>
-<meta property="og:article:tag" content='widgets'>
-<meta property="og:article:tag" content='AbstractPlutoDingetjes'>
-<meta property="og:article:tag" content='JavaScript'>
-<meta property='og:image' content='https://github.com/fonsp/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a'>
-<meta property='og:title' content='Advanced widgets – overview'>
+<meta property="og:article:tag" content='education'>
+<meta property='og:title' content='🧑‍🏫 Lectures'>
 <meta property='og:type' content='article'>
-<meta property='og:description' content='Pluto provides a framework for advances input and display widgets.'>
+<meta property='og:description' content='How to use Pluto to teach Julia with interactive lectures.'>
 
 
 <link rel="root" href="../../.." />
@@ -79,7 +75,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Pluto for education</h3>
 <ul>
-<li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/lectures/' title='How to use Pluto to teach Julia with interactive lectures.'>🧑‍🏫 Lectures</a></li><li class=''><a href='../../../en/docs/homework/' title='How to use Pluto to teach Julia with interactive homework assignments.'>📄 Homework</a></li><li class=''><a href='../../../en/docs/education-showcase/' title='Overview of courses taught using Pluto.jl'>🌟 Courses using Pluto</a></li>
+<li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class='active'><a href='../../../en/docs/lectures/' title='How to use Pluto to teach Julia with interactive lectures.'>🧑‍🏫 Lectures</a></li><li class=''><a href='../../../en/docs/homework/' title='How to use Pluto to teach Julia with interactive homework assignments.'>📄 Homework</a></li><li class=''><a href='../../../en/docs/education-showcase/' title='Overview of courses taught using Pluto.jl'>🌟 Courses using Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -115,7 +111,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Advanced: Widgets</h3>
 <ul>
-<li class='active'><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
 </ul>
 </li>
 <li>
@@ -131,12 +127,43 @@ window.pluto_recording_audio_url = undefined;
         </div>
         </nav>
         <div id="pages-content">
-        <pluto-editor statefile='../../../generated_assets/advanced-widgets_d8a9e688.plutostate' notebookfile='../../../generated_assets/advanced-widgets_cd6a86a7.jl' disable-ui=''></pluto-editor>
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="pluto-for-lectures"><a href="#pluto-for-lectures" class="anchor"></a>Pluto for lectures</h1>
+<p>Pluto is great for writing lectures in the “Pluto style”. This means lectures with:</p>
+<ul>
+<li><strong>A modern look</strong> – lectures with simple markdown and plots should look great, with modern typography and design, on desktops, mobile phones and PDF.</li>
+<li><strong>Interactive content</strong> – sliders, scrubbable numbers, buttons and more, to control outputs like plots, numbers and tables.</li>
+<li><strong>Reproducibility</strong> – Pluto notebooks are easy to share, and anyone can open a notebook and run it themselves.</li>
+</ul>
+<h2 id="easy-to-use"><a href="#easy-to-use" class="anchor"></a>Easy to use</h2>
+<p>And our goal is to make this <strong>as easy as possible</strong> to set up and use. This is how we do that:</p>
+<ul>
+<li><strong>A modern look</strong> – Pluto is built on “smart defaults”. Instead of endless themes and settings pages, we have one modern design that is designed to look best on today’s web.</li>
+<li><strong>Interactive content</strong> – Pluto uses <a href="../reactivity/">reactivity</a> to make everything interactive. We believe that reactive global variables are the most accessible way to make notebooks interactive. Interactive UI (sliders) works using the same mechanism (reactive globals), which means that anyone can learn how to use it. Pluto is not the most advanced interactivity tool for Julia, but it is the easiest to learn.</li>
+<li><strong>Reproducibility</strong> – using <a href="../reactivity/">reacitivity</a>, a <a href="../packages/">built-in package manager</a>, <a href="../binder/">binder</a> and more, we try our best to make sure that Pluto notebooks are <strong>reproducible by default</strong>. Our hope is to make Julia notebooks just like Powerpoint, Photoshop and Excel files – you can open them, and they will work.</li>
+</ul>
+<div class="admonition info"><p class="admonition-title">Examples</p>
+<p>To see examples of interactive lectures, take a look at the <a href="https://featured.plutojl.org/">featured notebooks</a>.</p>
+</div>
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
 
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/advanced-widgets.jl" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/lectures.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

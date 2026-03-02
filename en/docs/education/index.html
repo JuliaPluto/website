@@ -4,7 +4,6 @@
 <title>🎓 Pluto for your course</title>
 <meta name="description" content='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>
 <meta property="og:article:tag" content='docs'>
-<meta property="og:article:tag" content='introduction'>
 <meta property="og:article:tag" content='education'>
 <meta property='og:title' content='🎓 Pluto for your course'>
 <meta property='og:type' content='article'>
@@ -70,7 +69,13 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class='active'><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+</ul>
+</li>
+<li>
+<h3>Pluto for education</h3>
+<ul>
+<li class='active'><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/lectures/' title='How to use Pluto to teach Julia with interactive lectures.'>🧑‍🏫 Lectures</a></li><li class=''><a href='../../../en/docs/homework/' title='How to use Pluto to teach Julia with interactive homework assignments.'>📄 Homework</a></li><li class=''><a href='../../../en/docs/education-showcase/' title='Overview of courses taught using Pluto.jl'>🌟 Courses using Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -131,58 +136,19 @@ window.pluto_recording_audio_url = undefined;
 <div class="raw-html-wrapper ">
 <div class="markdown">
 <h1 id="pluto-for-education"><a href="#pluto-for-education" class="anchor"></a>Pluto for education</h1>
-<p>Pluto.jl is a programming environment designed specifically for education! If you are planning to teach a scientific course, Pluto might be a good fit for you and your students. Pluto only works with Julia,</p>
+<p>Pluto.jl is a programming environment designed specifically for education! If you are planning to teach a scientific course, Pluto might be a good fit for you and your students. Pluto only works with Julia, which is a great language for scientific education. Pluto is designed specifically for Julia, and addresses the needs that we had ourselves when teaching courses.</p>
 <p>Students and teachers are our primary target audience, and we are committed to We believe that there are enough ‘advanced’ tools for advanced users, but that a lot can be done to make programming more accessible to beginners.</p>
+<p>Learn more about <a href="#why-pluto">why you should use Pluto</a> for education, and how to use Pluto for <a href="../lectures/">lectures</a> and <a href="../homework/">homework assignments</a>.</p>
 <img src="../../../assets/img/collatz/c2.png" aria-hidden="true" width="700" height="200">
-<h1 id="why-is-pluto-good-for-education"><a href="#why-is-pluto-good-for-education" class="anchor"></a>Why is Pluto good for education?</h1>
+<h1 id="why-pluto"><a href="#why-pluto" class="anchor"></a>Why is Pluto good for education?</h1>
 <p>Here’s our evil plan to take over the world:</p>
 <ol>
 <li>We make <strong>programming and exploration easy</strong> – this makes it great for writing lectures notes. You can experiment with your idea, and when you’re done, you organize the code and add some text.</li>
 <li>Then we add <strong>interactivity in a very accessible way</strong> (easy, but not as flexible as some other tools) – and you can write awesome lectures with sliders, buttons and animation!</li>
 <li>When it’s the students’ turn to write code, we make Pluto as <strong>easy as possible to set up and use</strong>, with a coding experience that is designed specifically for users that are new to programming and Julia.</li>
 </ol>
-<p>Let’s look in more detail at writing lectures and assignments in Pluto.</p>
-<h2 id="for-lectures"><a href="#for-lectures" class="anchor"></a>For lectures</h2>
-<p>Pluto is great for writing lectures in the “Pluto style”. This means lectures with:</p>
-<ul>
-<li>A modern look – lectures with simple markdown and plots should look great, with modern typography and design, on desktops, mobile phones and PDF.</li>
-<li>Interactive content – sliders, scrubbable numbers, buttons and more, to control outputs like plots, numbers and tables.</li>
-<li>Reproducibility – Pluto notebooks are easy to share, and anyone can open a notebook and run it themselves.</li>
-</ul>
-<p>And our goal is to make this <strong>as easy as possible</strong> to set up and use. This is how we do that:</p>
-<ul>
-<li>A modern look – Pluto is built on “smart defaults”. Instead of endless themes and settings pages, we have one modern design that is designed to look best on today’s web.</li>
-<li>Interactive content – Pluto uses <a href="../reactivity/">reactivity</a> to make everything interactive. We believe that reactive global variables are the most accessible way to make notebooks interactive. Interactive UI (sliders) works using the same mechanism (reactive globals), which means that anyone can learn how to use it. Pluto is not the most advanced interactivity tool for Julia, but it is the easiest to learn.</li>
-<li>Reproducibility – using <a href="../reactivity/">reacitivity</a>, a <a href="../packages/">built-in package manager</a>, <a href="../binder/">binder</a> and more, we try our best to make sure that Pluto notebooks are <strong>reproducible by default</strong>. Our hope is to make Julia notebooks just like Powerpoint, Photoshop and Excel files – you can open them, and they will work.</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">Examples</p>
-<p>To see examples of interactive lectures, take a look at the <a href="https://featured.plutojl.org/">featured notebooks</a>.</p>
-</div>
-<h2 id="for-assignments"><a href="#for-assignments" class="anchor"></a>For assignments</h2>
-<p>We also want people to <strong>learn by doing</strong>. There are several ways for students to get involved in the course by programming themselves. For example:</p>
-<ul>
-<li>Open assignments – students can create a new notebook to solve a problem.</li>
-<li>Guided assignments – you can write a notebook with assignments, and let students fill in the gaps. <strong>Pluto is great for this!</strong> For some examples, take a look at the homeworks from <a href="https://computationalthinking.mit.edu/">Computational Thinking at MIT</a>.</li>
-<li>Remixing lecture notes – since Pluto notebooks are reproducible, students can easily run the lecture notes (on binder, or locally) and play around with the code.</li>
-</ul>
-<h3 id="guided-assignments"><a href="#guided-assignments" class="anchor"></a>Guided assignments</h3>
-<p>Pluto is great for a style of assignment, which we will call “guided assignments”.</p>
-<p>The idea is a notebook that contains:</p>
-<ul>
-<li>Text to <strong>explain the assignment</strong>.</li>
-<li>Cells with <code>missing</code> content, where students <strong>fill in their code</strong>.</li>
-<li>Cells that <strong>check the student’s answer</strong>, and give feedback.</li>
-<li>Bonus text and resources to explain more concepts. For example, you can add a <a href="https://featured.plutojl.org/basic/plutoui.jl#details">foldable section</a> that explains how parametric types work in Julia, for students who want to dive deeper.</li>
-</ul>
-<div class="admonition info"><p class="admonition-title">Examples</p>
-<p>For some examples, take a look at the homeworks from <a href="https://computationalthinking.mit.edu/">Computational Thinking at MIT</a>, in particular <a href="https://featured.plutojl.org/computational-thinking/homework1.html">Homework 1</a> and <a href="https://featured.plutojl.org/language/structure%20and%20language">Homework 3</a>, which are also <a href="../featured-notebooks/">featured</a> Pluto notebooks.</p>
-</div><div class="admonition tip"><p class="admonition-title">JuliaCon talk</p>
-<p><a href="https://www.youtube.com/watch?v=LFRI3s0DE-o">JuliaCon 2021 presentation</a> on using Pluto at MIT, with interactive lectures and guided assignments.</p>
-</div>
-<h4 id="plutosplitterjl"><a href="#plutosplitterjl" class="anchor"></a>PlutoSplitter.jl</h4>
-<p>One tool that may help you with guided assignments is <a href="https://github.com/Technici4n/PlutoSplitter.jl">PlutoSplitter.jl</a>. This package lets you write a homework notebook with all the solutions already filled in, and then split it into two files: one with the solutions, and one with all answers removed. This lets you work on your answer-checking code easily, and then generate an assignment file for students.</p>
-<img src="../../../assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
-<h2 id="why-julia-for-education"><a href="#why-julia-for-education" class="anchor"></a>Why <em>Julia</em> for education?</h2>
+<p>Let’s look in more detail at writing <a href="../lectures/">lectures</a> and <a href="../homework/">assignments</a> in Pluto.</p>
+<h2 id="why-julia"><a href="#why-julia" class="anchor"></a>Why <em>Julia</em> for education?</h2>
 <p>We believe that Julia is a great language for scientific education! Here are the main advantages from an educational perspective:</p>
 <h3 id="code-as-communication-tool"><a href="#code-as-communication-tool" class="anchor"></a>Code as communication tool</h3>
 <p>Julia has very expressive syntax, which can make your code look <strong>similar to the math or pseudocode</strong> that you use in your course. We think that (well-written) Julia code is relatively easy to understand by students and scientists, even if they don’t know Julia that well. <a href="https://www.youtube.com/watch?v=qGW0GT1rCvs">Watch the TED talk by Alan Edelman about this topic.</a></p>

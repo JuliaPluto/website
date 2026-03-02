@@ -70,7 +70,13 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+</ul>
+</li>
+<li>
+<h3>Pluto for education</h3>
+<ul>
+<li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/lectures/' title='How to use Pluto to teach Julia with interactive lectures.'>🧑‍🏫 Lectures</a></li><li class=''><a href='../../../en/docs/homework/' title='How to use Pluto to teach Julia with interactive homework assignments.'>📄 Homework</a></li><li class=''><a href='../../../en/docs/education-showcase/' title='Overview of courses taught using Pluto.jl'>🌟 Courses using Pluto</a></li>
 </ul>
 </li>
 <li>
@@ -177,7 +183,7 @@ A simple way to disable all logs for a notebook is to change the global logger o
 <p>We recommend using Logging instead of <code>println</code>. There are many advantages of using Logging instead of writing to standard output:</p>
 <ul>
 <li>Logging works when writing multi-threaded code. <code>println</code> will mix different threads’ output together, making it unreadable.</li>
-<li>Logging allows for more structured information (from the 2nd argument onwards). For example, you can log a <code>Dict</code> and inspect it in Pluto. You can even log <code>plot(data)</code> and see the plot!</li>
+<li>Logging allows for more structured information. For example, you can log a <code>Dict</code> and inspect it in Pluto. You can even log <code>plot(data)</code> and see the plot!</li>
 <li>Logging can be easily filtered/disabled by the caller of a function. This is useful when writing packages. It can improve the experience and performance of your package.</li>
 </ul>
 <h3 id="disable-capturing-of-standard-output"><a href="#disable-capturing-of-standard-output" class="anchor"></a>Disable capturing of standard output</h3>

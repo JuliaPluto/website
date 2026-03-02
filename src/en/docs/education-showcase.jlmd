@@ -1,0 +1,57 @@
+---
+title: "🌟 Courses using Pluto"
+description: "Overview of courses taught using Pluto.jl"
+tags: ["docs", "education"]
+layout: "md.jlmd"
+order: 5
+---
+
+
+# Courses taught with Pluto
+Pluto.jl is a programming environment [designed for education](../education/) and is being used in several courses around the world. Pluto was developed alongside the free online course [Introduction to Computational Thinking](https://computationalthinking.mit.edu/) at MIT, with the goal of creating a programming environment that is powerful, helpful and interactive, without being too intimidating for students and teachers. 
+
+## Featured courses
+Feel free to add your course to this list by clicking "Edit this page" at the bottom of this page. Is your course not open source or not online? No problem, you can still add it without a URL.
+
+<div id="courselist-wrapper">
+
+<!-- Year: the last updated year (not the start year). -->
+
+| Course | Topics | Year | Notes |
+|--------|--------|------|-------|
+| 🇺🇸 [MIT 18.S191 — Introduction to Computational Thinking](https://computationalthinking.mit.edu) (MIT) | scientific computing, epidemic modeling, climate modeling, raytracing, image processing | 2026 | 🎈 _Co-developed with Pluto!_ |
+| 🇳🇱 [Bayesian Machine Learning and Information Processing (5SSD0)](https://github.com/bmlip/course) (TU Eindhoven) | Bayesian ML, signal processing, variational Bayes | 2026 | 🎈 _Co-developed with Pluto!_ |
+| 🇬🇧 [RCDS Introduction to Julia](https://github.com/ImperialCollegeLondon/RCDS-introduction-to-julia) (Imperial College London) | Julia programming | 2025 | |
+| 🇬🇧 [Introduction to Julia for Computational Science](https://github.com/Cambridge-ICCS/Summer-School-Julia-Tutorial) (Cambridge ICCS) | Julia, computational science | 2025 | |
+| 🌍 [Julia Course](https://github.com/VEZY/julia_course) (VEZY) | Julia programming | 2025 | |
+| 🌍 [JuliaClimate Notebooks](https://juliaclimate.github.io/Notebooks/) (JuliaClimate) | climate science, global warming, CMIP6, sea surface temperature, marine ecosystems | 2025 | |
+| 🇨🇭 [Biological Data Science II: Machine Learning (BIO-322)](https://bio322.epfl.ch) (EPFL) | cross-validation, gradient descent, neural networks, tree-based methods, unsupervised learning, reinforcement learning | 2025 | |
+| 🇩🇪 [Julia for Machine Learning (JuML)](https://adrianhill.de/julia-ml-course/) (TU Berlin) | Julia, linear algebra, DataFrames, machine learning, automatic differentiation, deep learning | 2025 | Highly recommended! |
+| 🌍 [Statistical Rethinking in Julia (SR2TuringPluto)](https://github.com/StatisticalRethinkingJulia/SR2TuringPluto.jl) | Bayesian statistics | 2024 | Based on McElreath's *Statistical Rethinking*; uses Turing.jl |
+| 🇩🇪 [Mathematik für Informatiker 2b](https://ranocha.de/2024_MfI2b/) (Johannes Gutenberg-Universität Mainz) | calculus, numerical methods, Fourier series, PDEs, image processing | 2024 | |
+| 🇫🇷 [Computational Economics for PhDs](https://floswald.github.io/NumericalMethods/) (SciencesPo Paris) | optimization, parallel computing, dynamic programming, discrete/continuous choice | 2024 | |
+| 🇬🇧 [Macroeconomics (EC413)](https://github.com/SSabet/ec413-pluto-notebook.jl) (London School of Economics) | macroeconomics | 2023 |  |
+
+
+
+
+</div>
+
+<style>
+    #courselist-wrapper {
+        overflow-x: auto;
+    }
+    table {
+        min-width: 600px;
+    }
+    :is(td,th):nth-child(3) {
+        /* white-space: nowrap; */
+        /* font-weight: bold; */
+        min-width: 4ch;
+        padding: 0;
+    }
+</style>
+
+
+
+Are you using Pluto to teach a course? You can **add your course to this list** by clicking "Edit this page" at the bottom of this page. Is your course not open source or not online? No problem, you can still add it without a URL.

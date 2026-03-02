@@ -84,7 +84,7 @@ You can also use Julia functions like `println`, `display`, `@show` or `show`, w
 ### Use Logging instead of stdout!
 We recommend using Logging instead of `println`. There are many advantages of using Logging instead of writing to standard output:
 - Logging works when writing multi-threaded code. `println` will mix different threads' output together, making it unreadable.
-- Logging allows for more structured information (from the 2nd argument onwards). For example, you can log a `Dict` and inspect it in Pluto. You can even log `plot(data)` and see the plot!
+- Logging allows for more structured information. For example, you can log a `Dict` and inspect it in Pluto. You can even log `plot(data)` and see the plot!
 - Logging can be easily filtered/disabled by the caller of a function. This is useful when writing packages. It can improve the experience and performance of your package.
 
 ### Disable capturing of standard output

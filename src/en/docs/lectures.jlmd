@@ -1,0 +1,25 @@
+---
+title: "🧑‍🏫 Lectures"
+description: "How to use Pluto to teach Julia with interactive lectures."
+tags: ["docs", "education"]
+layout: "md.jlmd"
+order: 2
+---
+
+
+
+# Pluto for lectures
+Pluto is great for writing lectures in the "Pluto style". This means lectures with:
+- **A modern look** – lectures with simple markdown and plots should look great, with modern typography and design, on desktops, mobile phones and PDF.
+- **Interactive content** – sliders, scrubbable numbers, buttons and more, to control outputs like plots, numbers and tables.
+- **Reproducibility** – Pluto notebooks are easy to share, and anyone can open a notebook and run it themselves. 
+
+
+## Easy to use
+And our goal is to make this **as easy as possible** to set up and use. This is how we do that:
+- **A modern look** – Pluto is built on "smart defaults". Instead of endless themes and settings pages, we have one modern design that is designed to look best on today's web.
+- **Interactive content** – Pluto uses [reactivity](../reactivity/) to make everything interactive. We believe that reactive global variables are the most accessible way to make notebooks interactive. Interactive UI (sliders) works using the same mechanism (reactive globals), which means that anyone can learn how to use it. Pluto is not the most advanced interactivity tool for Julia, but it is the easiest to learn.
+- **Reproducibility** – using [reacitivity](../reactivity/), a [built-in package manager](../packages/), [binder](../binder/) and more, we try our best to make sure that Pluto notebooks are **reproducible by default**. Our hope is to make Julia notebooks just like Powerpoint, Photoshop and Excel files – you can open them, and they will work.
+
+!!! info "Examples"
+    To see examples of interactive lectures, take a look at the [featured notebooks](https://featured.plutojl.org/).

@@ -136,19 +136,19 @@ window.pluto_recording_audio_url = undefined;
 <div class="raw-html-wrapper ">
 <div class="markdown">
 <h1 id="pluto-for-homework-assignments"><a href="#pluto-for-homework-assignments" class="anchor"></a>Pluto for homework assignments</h1>
-<p>We also want people to <strong>learn by doing</strong>. There are several ways for students to get involved in the course by programming themselves. For example:</p>
+<p>We want people to <strong>learn by doing</strong>. There are several ways for students to get involved in the course by programming themselves using Pluto. For example:</p>
 <ul>
-<li>Open assignments – students can create a new notebook to solve a problem.</li>
-<li>Guided assignments – you can write a notebook with assignments, and let students fill in the gaps. <strong>Pluto is great for this!</strong> For some examples, take a look at the homeworks from <a href="https://computationalthinking.mit.edu/">Computational Thinking at MIT</a>.</li>
+<li><a href="#open">Open assignments</a> – students can create a new notebook from scratch to solve a problem.</li>
+<li><a href="#guided">Guided assignments</a> – you can write a notebook with assignments, and let students fill in the gaps. <strong>Pluto is great for this!</strong> For some examples, take a look at the homeworks from <a href="https://computationalthinking.mit.edu/">Computational Thinking at MIT</a>.</li>
 <li>Remixing lecture notes – since Pluto notebooks are reproducible, students can easily run the lecture notes (on binder, or locally) and play around with the code.</li>
 </ul>
-<h2 id="guided-assignments"><a href="#guided-assignments" class="anchor"></a>Guided assignments</h2>
+<h2 id="guided"><a href="#guided" class="anchor"></a>Guided assignments</h2>
 <p>Pluto is great for a style of assignment, which we will call “guided assignments”.</p>
 <p>The idea is a notebook that contains:</p>
 <ul>
 <li>Text to <strong>explain the assignment</strong>.</li>
 <li>Cells with <code>missing</code> content, where students <strong>fill in their code</strong>.</li>
-<li>Cells that <strong>check the student’s answer</strong>, and give feedback.</li>
+<li><em>(optional)</em> Cells that <strong>check the student’s answer</strong>, and give feedback. Because of <a href="../reactivity/">reactivity</a>, these cells will re-run automatically when students change their answer. This gives an interactive experience for students with instant feedback! You can use <a href="https://github.com/JuliaPluto/PlutoTeachingTools.jl">PlutoTeachingTools.jl</a> for this.</li>
 <li>Bonus text and resources to explain more concepts. For example, you can add a <a href="https://featured.plutojl.org/basic/plutoui.jl#details">foldable section</a> that explains how parametric types work in Julia, for students who want to dive deeper.</li>
 </ul>
 <div class="admonition info"><p class="admonition-title">Examples</p>
@@ -156,20 +156,20 @@ window.pluto_recording_audio_url = undefined;
 </div><div class="admonition tip"><p class="admonition-title">JuliaCon talk</p>
 <p><a href="https://www.youtube.com/watch?v=LFRI3s0DE-o">JuliaCon 2021 presentation</a> on using Pluto at MIT, with interactive lectures and guided assignments.</p>
 </div>
-<h3 id="plutosplitterjl"><a href="#plutosplitterjl" class="anchor"></a>PlutoSplitter.jl</h3>
+<h3 id="plutosplitter"><a href="#plutosplitter" class="anchor"></a>PlutoSplitter.jl</h3>
 <p>One tool that may help you with guided assignments is <a href="https://github.com/Technici4n/PlutoSplitter.jl">PlutoSplitter.jl</a>. This package lets you write a homework notebook with all the solutions already filled in, and then split it into two files: one with the solutions, and one with all answers removed. This lets you work on your answer-checking code easily, and then generate an assignment file for students.</p>
-<img src="../../../assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
-<h2 id="open-assignments"><a href="#open-assignments" class="anchor"></a>Open assignments</h2>
+<h2 id="open"><a href="#open" class="anchor"></a>Open assignments</h2>
 <p>Pluto is also a good tool for open-ended assignments, where students write the complete notebook themselves. For example, you could ask students to “Write a notebook that explores the Collatz conjecture, and explain it in an interactive way”. The end result could be an interactive article, or a <a href="../presentation/">presentation</a>. Pluto is an easy environment for Julia newcomers to work in, which makes it easy for students to write a complete interactive article on their own.</p>
 <p>Didactically, open-ended assignments in Pluto are really great! Pluto is designed to be a good playground to explore a computational topic. It’s safe to try things, and easy to use. By asking students to write an interactive article, you force them to dive into a topic and understand how it works.</p>
-<p>From a technical perspective, Pluto’s <strong>reproducibility</strong> is really useful. It means that students can write a notebook with packages, interactions, plots, etc., and you will know that you can open the notebook on your computer for review, without having to install or debug packages.</p>
+<p>From a technical perspective, Pluto’s <strong>reproducibility</strong> is really useful. It means that students can write a notebook with <a href="../packages/">packages</a>, <a href="../bind/">interactivity</a>, <a href="../plot/">plots</a>, etc., and you will know that you can open the notebook on your computer for review.</p>
+<img src="../../../assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
 <h2 id="manual-grading"><a href="#manual-grading" class="anchor"></a>Manual Grading</h2>
-<p>Pluto notebooks are quite easy to review, because of the different export formats, and the reproducibility. From Fons’s experience, grading is the easiest if you ask students to <strong>hand in the assignment in HTML Export format</strong> (you can link to the <a href="../export-html/">documentation</a>). HTML files are fast to open and review (you don’t need to run student code). HTML files also contain the <code>.jl</code> notebook file if needed. I would recommend this over collecting Julia or PDF files.</p>
+<p>Pluto notebooks are quite easy to review because of the different export formats and Pluto’s reproducibility. From Fons’s experience, grading is the easiest if you ask students to <strong>hand in the assignment in HTML Export format</strong> (you can link students to the <a href="../export-html/">documentation</a> for instructions). HTML files are fast to open and review (you don’t need to run student code). HTML files also contain the <code>.jl</code> notebook file if needed. I would recommend this over collecting Julia or PDF files.</p>
 <h3 id="canvas-speedgrader"><a href="#canvas-speedgrader" class="anchor"></a>Canvas SpeedGrader</h3>
 <p>If you are using Canvas for your course, you can use the SpeedGrader to review HTML files. This works <strong>very well</strong> in my experience! You can require submissions to be in HTML format, and speedgrader will let you cycle between student notebooks for grading.</p>
 <p>You can combine this with a “Grading Rubric”. Then you will see the rubric next to the student’s notebook.</p>
 <img src="../../../assets/img/canvas speedgrader.png" alt="Screenshot of canvas speedgrader with a student notebook" width="2262" height="1354">
-<h2 id="automatic-grading"><a href="#automatic-grading" class="anchor"></a>Automatic Grading</h2>
+<h2 id="autograding"><a href="#autograding" class="anchor"></a>Automatic Grading</h2>
 <p>There are several small projects to do autograding of Pluto notebooks. TODO (feel free to contribute)</p>
 
 </div>

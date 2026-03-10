@@ -14,17 +14,22 @@ Here is an overview of the accessibility features of Pluto:
 ## Keyboard Navigation and Shortcuts
 **Pluto is fully usable without a mouse.** You can navigate and control everything using only your keyboard:
 
-- Keyboard shortcuts: Execute cells, navigate between cells, and access common functions quickly. You can find a list of all our shortcuts [here](https://plutojl.org/en/docs/keyboard-shortcuts/)
-- Tab navigation: Move through all interactive elements on the page using the Tab key
-- Code editor navigation: Special tab handling inside code cells lets you indent code with Tab while still being able to navigate out of the editor with keyboard-only controls. This video shows an example: 
+### Keyboard shortcuts
+You can execute cells, navigate between cells, and access common functions quickly using shortcuts. You can find a list of all our shortcuts [here](../keyboard-shortcuts/).
+
+### Tab navigation
+Pluto's interface is designed to be keyboard accessible similar to a web page. You can move through all interactive elements on the page using the Tab key. 
+
+#### ⚠️ Tab navigation in cells
+A special note about tab navigation inside cells: when focused inside a cell code editor, the TAB key will indent code instead of navigating. To navigate, you <em>press <kbd>Esc</kbd> and then <kbd>Tab</kbd></em>. 
+
+This video shows an example: 
 
 <video alt="Using tab navigation inside and outside cells" style="aspect-ratio: 1358/946; max-width: 100%;" src="$(root_url)/assets/img/tab-navigation.mp4" controls="controls" muted="muted" loop="loop" playsinline></video>
 
 You can find a fuller overview of the keyboard shortcuts and between-cell navigation [here](https://plutojl.org/en/docs/keyboard-shortcuts/)
 
 Pluto also supports touch-only use with your device's on-screen keyboard (OSK): the virtual keyboard that appears on your screen when you tap a text field on tablets, touchscreen laptops, or any device without a physical keyboard.
-
-This makes Pluto accessible for users who rely on keyboard-only navigation, whether due to motor disabilities, personal preference, or assistive technology requirements.
 
 ## Visual Accessibility
 ### High Contrast Text

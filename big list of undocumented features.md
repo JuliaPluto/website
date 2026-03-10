@@ -136,35 +136,15 @@
 
 ## 14. Server Configuration & API
 
-- **`Pluto.run()` entry point** — Start the Pluto server with `Pluto.run()`. (#37)
-- **`Pluto.run!()` non-blocking API** — Non-blocking version that returns a server reference. (#2643)
-- **Automatic port selection** — Pluto finds an available port automatically if the default is taken. (#266)
-- **Custom port hint** — You can set a custom starting port for automatic port selection. (#2173)
-- **Custom host** — `Pluto.run(host="0.0.0.0")` to bind to a specific interface. (#310)
-- **Custom base URL** — `Pluto.run(base_url="/custom/path/")` for reverse proxy setups. (#2227)
-- **Auto-launch browser** — Pluto opens the browser automatically when started. (#190)
-- **WSL path support** — Pluto handles Windows Subsystem for Linux path conversions. (#520, #2085, #2219)
-- **IPv6 address support** — IPv6 host addresses are printed with square brackets. (#608)
-- **Configuration system** — Pluto uses Configurations.jl for structured configuration options. (#367, #1117)
-- **Compiler options** — Configure Julia compiler flags (threads, heap size, optimization level, sysimage, etc.) for the notebook process. (#2455, #2456, #2774, #3362)
-- **`JULIA_NUM_THREADS` support** — Pluto respects and passes `JULIA_NUM_THREADS` including `auto`. (#616, #990, #1814, #2263)
-- **`workspace_custom_startup_expr`** — Option to run custom Julia code when the notebook workspace starts. (#2654)
-- **`capture_stdout` option** — Option to enable/disable stdout capture. (#2022)
-- **`dismiss_motivational_quotes` option** — Option to disable the motivational words on error messages. (#3197)
 - **`extra_instrumentation_lines` / HTML injection** — Option to inject HTML at the top of the notebook for custom deployments. (#1683)
 - **Hide banner in CI** — Pluto detects the `CI` environment variable and suppresses the startup banner. (#1868)
 - **Display banner from `__init__`** — The banner is shown at load time, not during precompilation. (#2628)
 - **Separate notebook boot environment** — The notebook's boot environment is separate from the server environment to avoid conflicts. (#1556)
 - **Session event API** — `SessionActions` API for programmatically opening, closing, and managing notebooks. (#1644)
-- **`POST /notebookupload` with custom filename** — The notebook upload endpoint accepts a custom filename parameter. (#2051)
 - **State file export endpoint** — `/statefile?id=<session-id>` exports the notebook state as a MessagePack binary. (#1118)
-- **Pluto inside Pluto** — Run a Pluto server inside a Pluto notebook. (#1192)
-- **Desktop app support** — Changes to support the PlutoDesktop Electron app, including filesystem API integration. (#2177, #2651)
 - **RelocatableFolders for sysimage support** — Pluto can be bundled into a system image. (#1853)
 - **`cpu_target` option for Malt worker** — Pass `--cpu-target` to the notebook Julia process. (#3362)
 - **Server start event** — An event fires with the server's web address after startup. (#1882)
-- **Warn when using future Julia versions** — Pluto warns if the Julia version is newer than supported. (#3113, #3205)
-- **Warn when Julia version is before 1.10** — Users on old Julia versions get a deprecation warning. (#3049)
 - **`LOAD_PATH` preserved** — The original `LOAD_PATH` is preserved in the notebook process. (#2748)
 
 ---
@@ -208,31 +188,6 @@
 
 ---
 
-## 17. Internationalization (i18n)
-
-- **UI translation system** — Pluto's UI text can be translated to different languages. (#3307)
-- **Auto-detect user language** — The UI language is automatically detected from the browser's language settings. (#3327)
-- **Dutch translation** — Dutch (Nederlands) UI translation. (#3311, #3335)
-- **German translation** — German (Deutsch) UI translation. (#3325, #3334, #3417)
-- **Norwegian translation** — Norwegian (Bokmål) UI translation. (#3329, #3417)
-- **French translation** — French (Français) UI translation. (#3333, #3464)
-- **Greek translation** — Greek (Ελληνικά) UI translation. (#3308, #3331, #3353)
-- **Polish translation** — Polish (Polski) UI translation. (#3324)
-- **Finnish translation** — Finnish (Suomi) UI translation. (#3337)
-- **Czech translation** — Czech (Čeština) UI translation. (#3461)
-- **Danish translation** — Danish (Dansk) UI translation. (#3422)
-- **Spanish translation** — Spanish (Español) UI translation. (#3418)
-- **Italian translation** — Italian (Italiano) UI translation. (#3363)
-- **Simplified Chinese translation** — Simplified Chinese (中文) UI translation. (#3379)
-- **Japanese translation** — Japanese (日本語) UI translation. (#3341)
-- **Portuguese (PT-pt) translation** — Portuguese from Portugal UI translation. (#3352)
-- **Farsi/RTL support** — Initial right-to-left layout support for Farsi. (#3350)
-- **Removed i18next dependency** — The i18next library was replaced with a minimal custom implementation. (#3428)
-- **Machine translatability improvements** — `lang` and `translate` HTML attributes improved for machine translation. (#3328)
-- **`lang` attribute set dynamically** — The `<html lang="">` attribute reflects the UI language. (#3330)
-
----
-
 ## 18. Dark Mode & Themes
 
 - **Dark mode** — Pluto has a built-in dark mode that can be toggled. (#1661)
@@ -244,25 +199,6 @@
 ## 19. Fonts & Typography
 
 - **JuliaMono font** — JuliaMono is the default monospace font, with full Julia unicode character support. (#364, #1286, #3223, #3450)
-- **Alegreya Sans for body text** — Alegreya Sans is used for Markdown body text with proper sizing. (#2896)
-- **Font size rework** — Alegreya Sans font size rescaled for better consistency with fallback fonts. (#2896)
-- **Ligatures support** — Font ligatures are enabled correctly. (#590)
-- **Remove Woff v1 imports** — Unused Woff v1 font files removed from bundle to save 1MB. (#3458)
-
----
-
-## 20. Sample Notebooks
-
-- **Sample notebooks included** — Pluto ships with several built-in sample notebooks. (#144, #272, #639)
-- **"Getting started" sample** — A beginner-friendly introduction notebook. (#272)
-- **"Basic mathematics" sample** — A math-focused sample notebook. (#639)
-- **"Tower of Hanoi" sample** — An interactive animation sample. (#737, #909)
-- **"Plots" sample** — A notebook demonstrating plotting in Julia. (#1903)
-- **"JavaScript API" sample notebook** — Documents Pluto's JavaScript API with examples. (#1184, #1228, #1761, #1762)
-- **Offline Markdown sample** — A Markdown demo notebook that works without internet. (#2690)
-- **Featured notebooks from plutojl.org/docs** — Featured notebook list includes docs notebooks. (#2927)
-
----
 
 ## 21. Process Status Tab
 
@@ -272,7 +208,5 @@
 - **Binder progress in Status tab** — Binder launch steps are shown in the Status tab. (#2523)
 - **Notification when all cells complete** — After a long run, a browser notification can be sent when done. (#2531)
 
-
-## Total Feature Count: ~250+ features across 25 categories
 
 *This list was compiled from 1,013 merged pull requests on the JuliaPluto/Pluto.jl repository (PRs #20–#3484).*

@@ -7,19 +7,19 @@ order: 3
 ---
 
 # Pluto for homework assignments
-We also want people to **learn by doing**. There are several ways for students to get involved in the course by programming themselves. For example:
-- Open assignments – students can create a new notebook to solve a problem.
-- Guided assignments – you can write a notebook with assignments, and let students fill in the gaps. **Pluto is great for this!** For some examples, take a look at the homeworks from [Computational Thinking at MIT](https://computationalthinking.mit.edu/).
+We want people to **learn by doing**. There are several ways for students to get involved in the course by programming themselves using Pluto. For example:
+- [Open assignments](#open) – students can create a new notebook from scratch to solve a problem.
+- [Guided assignments](#guided) – you can write a notebook with assignments, and let students fill in the gaps. **Pluto is great for this!** For some examples, take a look at the homeworks from [Computational Thinking at MIT](https://computationalthinking.mit.edu/).
 - Remixing lecture notes – since Pluto notebooks are reproducible, students can easily run the lecture notes (on binder, or locally) and play around with the code.
 
-
+{#guided}
 ## Guided assignments
 Pluto is great for a style of assignment, which we will call "guided assignments". 
 
 The idea is a notebook that contains:
 - Text to **explain the assignment**.
 - Cells with `missing` content, where students **fill in their code**. 
-- Cells that **check the student's answer**, and give feedback. 
+- _(optional)_ Cells that **check the student's answer**, and give feedback. Because of [reactivity](../reactivity/), these cells will re-run automatically when students change their answer. This gives an interactive experience for students with instant feedback! You can use [PlutoTeachingTools.jl](https://github.com/JuliaPluto/PlutoTeachingTools.jl) for this.
 - Bonus text and resources to explain more concepts. For example, you can add a [foldable section](https://featured.plutojl.org/basic/plutoui.jl#details) that explains how parametric types work in Julia, for students who want to dive deeper.
 
 !!! info "Examples"
@@ -29,24 +29,26 @@ The idea is a notebook that contains:
     [JuliaCon 2021 presentation](https://www.youtube.com/watch?v=LFRI3s0DE-o) on using Pluto at MIT, with interactive lectures and guided assignments.
 
 
-
+{#plutosplitter}
 ### PlutoSplitter.jl
 One tool that may help you with guided assignments is [PlutoSplitter.jl](https://github.com/Technici4n/PlutoSplitter.jl). This package lets you write a homework notebook with all the solutions already filled in, and then split it into two files: one with the solutions, and one with all answers removed. This lets you work on your answer-checking code easily, and then generate an assignment file for students.
 
 
-<img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
-
-
+{#open}
 ## Open assignments
 Pluto is also a good tool for open-ended assignments, where students write the complete notebook themselves. For example, you could ask students to "Write a notebook that explores the Collatz conjecture, and explain it in an interactive way". The end result could be an interactive article, or a [presentation](../presentation/). Pluto is an easy environment for Julia newcomers to work in, which makes it easy for students to write a complete interactive article on their own.
 
 Didactically, open-ended assignments in Pluto are really great! Pluto is designed to be a good playground to explore a computational topic. It's safe to try things, and easy to use. By asking students to write an interactive article, you force them to dive into a topic and understand how it works. 
 
-From a technical perspective, Pluto's **reproducibility** is really useful. It means that students can write a notebook with packages, interactions, plots, etc., and you will know that you can open the notebook on your computer for review, without having to install or debug packages.
+From a technical perspective, Pluto's **reproducibility** is really useful. It means that students can write a notebook with [packages](../packages/), [interactivity](../bind/), [plots](../plot/), etc., and you will know that you can open the notebook on your computer for review.
+
+
+
+<img src="$(root_url)/assets/img/collatz/c8.png" aria-hidden="true" width="700" height="200">
 
 
 ## Manual Grading
-Pluto notebooks are quite easy to review, because of the different export formats, and the reproducibility. From Fons's experience, grading is the easiest if you ask students to **hand in the assignment in HTML Export format** (you can link to the [documentation](../export-html/)). HTML files are fast to open and review (you don't need to run student code). HTML files also contain the `.jl` notebook file if needed. I would recommend this over collecting Julia or PDF files.
+Pluto notebooks are quite easy to review because of the different export formats and Pluto's reproducibility. From Fons's experience, grading is the easiest if you ask students to **hand in the assignment in HTML Export format** (you can link students to the [documentation](../export-html/) for instructions). HTML files are fast to open and review (you don't need to run student code). HTML files also contain the `.jl` notebook file if needed. I would recommend this over collecting Julia or PDF files.
 
 ### Canvas SpeedGrader
 If you are using Canvas for your course, you can use the SpeedGrader to review HTML files. This works **very well** in my experience! You can require submissions to be in HTML format, and speedgrader will let you cycle between student notebooks for grading.
@@ -56,6 +58,6 @@ You can combine this with a "Grading Rubric". Then you will see the rubric next 
 <img src="$(root_url)/assets/img/canvas speedgrader.png" alt="Screenshot of canvas speedgrader with a student notebook" width="2262" height="1354">
 
 
-
+{#autograding}
 ## Automatic Grading
 There are several small projects to do autograding of Pluto notebooks. TODO (feel free to contribute)

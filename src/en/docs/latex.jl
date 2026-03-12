@@ -108,8 +108,25 @@ md"""
 md"""
 # Emojis in Pluto
 
-Pluto has built-in support for Emojis. You use can them inside [Markdown](../markdown/) blocks or also to define some variables!
+Pluto has built-in support for Emojis. You use can them inside [Markdown](../markdown/) blocks. To find the emoji or symbol you need, start with `\` and type the name of the emoji, some suggestions will be made, so you can find the correct emoji for you.
 """
+
+# ╔═╡ 8547c10a-ec25-4022-933d-ea727b0b848f
+md"""
+
+![Example of Reverse Search for Integral Symbol](https://github.com/JuliaPluto/website/blob/6cad65a4b0f3969b758c8b80c40623ea8dc04429/src/assets/img/live-docs-latex-search.png?raw=true)
+
+"""
+
+# ╔═╡ 73683cce-c6b8-499a-b14c-6680d0399117
+md"You can only use emojis to define some variables! "
+
+# ╔═╡ 380f641e-60c1-4cf2-ae2b-a39aacba2066
+begin
+	🐶 = 1
+	🐱 = 1
+	🏠 = 🐶 + 3 * 🐱
+end;
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -128,7 +145,7 @@ project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 """
 
 # ╔═╡ Cell order:
-# ╠═633cfe44-6ed5-11f0-2eee-e72949879521
+# ╟─633cfe44-6ed5-11f0-2eee-e72949879521
 # ╟─78ba3c95-e7a0-4374-bc5b-c44be72fdb62
 # ╠═bb6672b7-34b4-4838-853c-f186134f98e8
 # ╟─8399e685-e323-4795-ac54-029c4dc2ae28
@@ -143,6 +160,9 @@ project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 # ╟─44121ee2-8467-4147-89b0-1aa7689d0ba9
 # ╠═c835f6c9-920a-4285-b0f7-bf93aab6b94c
 # ╟─4963558c-fe1f-4d11-a164-a45d78984497
-# ╠═921f29fa-2262-4b02-a471-3a315d539cc4
+# ╟─921f29fa-2262-4b02-a471-3a315d539cc4
+# ╟─8547c10a-ec25-4022-933d-ea727b0b848f
+# ╟─73683cce-c6b8-499a-b14c-6680d0399117
+# ╠═380f641e-60c1-4cf2-ae2b-a39aacba2066
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

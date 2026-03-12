@@ -114,7 +114,7 @@ Pluto has built-in support for Emojis. You use can them inside [Markdown](../mar
 # ╔═╡ 8547c10a-ec25-4022-933d-ea727b0b848f
 md"""
 
-![Example of Reverse Search for Integral Symbol](https://github.com/JuliaPluto/website/blob/6cad65a4b0f3969b758c8b80c40623ea8dc04429/src/assets/img/live-docs-latex-search.png?raw=true)
+![Example of Emoji Auto-fill](https://github.com/JuliaPluto/website/blob/ce4f61d72a6fc804ae00dd73ea7c382dbfc78e09/src/assets/img/dog-emoji.png?raw=true)
 
 """
 

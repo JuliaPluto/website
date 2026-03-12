@@ -19,11 +19,6 @@
 
 ---
 
-## 3. Editor / Code Editing
-- **Unicode symbol autocomplete** — Tab-complete `\alpha` → `α`, `\:smile:` → emoji. (#153, #1485, #2876)
-- **Latex reverse search in Live Docs** — Type a Unicode character and see its LaTeX equivalent. (#2476)
----
-
 ## 4. Cell Features
 - **Add/delete cells** — Cells can be added and deleted via the UI or keyboard shortcuts. (#37)
 - **Fold/hide cells** — Cell code can be folded (hidden) while keeping the output visible. (#484)
@@ -33,23 +28,8 @@
 ---
 
 ## 5. @bind and Interactivity
-
-- **`@bind` macro** — Bind Julia variables to HTML input elements for interactive notebooks. (#86)
-- **Reactive `@bind`** — Changing a bound input re-runs all dependent cells. (#86)
 - **`@bind` with date/time inputs** — Works with `<input type=date>`, `<input type=range>`, etc. (#453)
-- **Bond value sent as Uint8Array** — File inputs send data as efficient binary arrays. (#439)
-- **Interactive `@bind` in static preview** — Static HTML exports allow interactive `@bind` widgets when connected to a PlutoSliderServer. (#988)
-- **Greyed-out bonds in static HTML** — Bonds in static HTML without a slider server are visually greyed out with an explanation. (#2047)
-- **Slider server running status** — Cells that are updated by a PlutoSliderServer appear in a "running" state. (#2601)
-- **Skip intermediate bond values** — When rapidly moving a slider, intermediate values are skipped for performance. (#1892, #2992)
-- **Send queued bond changes when notebook is idle** — Bond updates are batched and sent when no cells are running. (#1898)
 - **Bond-defining-bond support** — A bond's value can depend on another bond (for PlutoSliderServer). (#3158)
-- **`possible_bond_values`** — API for widgets to declare their possible values (used by PlutoSliderServer). (#1600, #1703, #1763)
-- **AbstractPlutoDingetjes.jl integration** — Package for widget authors to declare initial values, transformations, and more. (#1612)
-- **`publish_to_js` / Julia→JS data API** — API to pass Julia data to JavaScript in cell output. (#1124, #1719, #1721, #2608)
-- **`publish_to_js` in logs** — `publish_to_js` works inside log messages. (#2607)
-- **`with_js_link`** — JavaScript API to request calculations and data from Julia dynamically (lazy loading). (#2726, #2780)
-
 ---
 
 ## 6. Output Display & Rendering
@@ -72,22 +52,13 @@
 - **Recents list** — Recently opened notebooks are shown on the main menu. (#37)
 - **Recents: shortest unambiguous path** — Recent notebooks are shown with the shortest unambiguous path. (#693)
 - **Paste/drop `.jl` files to open** — You can paste or drop a `.jl` file onto the welcome screen to open it. (#1015)
-- **Open notebooks without browser** — `Pluto.run(notebook="path.jl")` opens a notebook without launching a browser. (#1324)
 - **Open multiple notebooks at start** — Multiple notebooks can be passed to `Pluto.run()` to open on startup. (#1324)
 ---
 
 ## 11. Notebook Files & Format
 - **Auto-save on run** — The notebook file is saved every time a cell is run. (#37)
-- **Auto-reload from file** — Pluto watches the notebook file for external changes and reloads automatically. (#1029, #1555)
-- **Improved auto-reload** — Smarter timing avoids triggering reload from Pluto's own saves. (#1555)
-- **Don't save on bond changes** — Notebook file is not rewritten when bonds change (only on cell runs). (#2402)
 - **Option to disable writing to file** — `disable_writing_notebook_file` option prevents Pluto from saving changes to disk. (#1047, #1717)
-- **Don't overwrite file on save error** — If a save fails, the existing file is preserved. (#976)
 - **Cell order is explicit** — The notebook file includes an explicit `Cell order:` section. (#37)
-- **Recover cells missing from cell order** — Cells in the file but not in cell order are recovered on load. (#1772)
-- **More stable file parsing when cell order is missing** — Notebook loading is more resilient to missing cell order sections. (#3285)
-- **Compare metadata when reloading** — Notebook comparison considers cell metadata when checking for changes. (#2291)
-- **Update disabled cell dependency before saving** — Indirect dependencies of disabled cells are computed before saving. (#2239)
 - **Notebook metadata** — A `metadata` field in the notebook structure stores notebook-wide settings. (#2016)
 - **Pluto Recording format** — A special file format for recording notebook sessions as interactive replays. (#1623)
 
@@ -146,30 +117,6 @@
 - **`cpu_target` option for Malt worker** — Pass `--cpu-target` to the notebook Julia process. (#3362)
 - **Server start event** — An event fires with the server's web address after startup. (#1882)
 - **`LOAD_PATH` preserved** — The original `LOAD_PATH` is preserved in the notebook process. (#2748)
-
----
-
-## 15. Performance
-
-- **Malt.jl process management** — Replaced Distributed.jl with Malt.jl for faster, cleaner process management. (#2240)
-- **Run process start and Pkg init in parallel** — These two startup tasks run concurrently, saving ~10 seconds. (#2406)
-- **Precompile with `PrecompileTools.jl`** — Uses `PrecompileTools.@precompile_all_calls` for better precompilation. (#2441, #2534)
-- **Precompile statements for SessionActions** — Precompile directives reduce time-to-first-X for opening notebooks. (#1934, #1977)
-- **`Base.Experimental.@max_methods 1`** — Reduces method invalidations for faster compilation. (#2068)
-- **Fix method invalidations around `Base.convert`** — 750+ method invalidations eliminated. (#2300)
-- **State diffing performance** — Lazy dictionaries and immutable comparison for faster notebook state diffing. (#2072, #2073)
-- **`@bind` 5x speedup** — Caching in `update_dependency_cache!` makes bond updates 5x faster. (#2080)
-- **Autocomplete 15x faster** — Latex/emoji completions done client-side in JS. (#2857, #2876)
-- **Large notebook speedups** — Fixed cache miss in `notebook_to_js`, LRU cache for topology, skipping unneeded updates. (#2973, #2974, #2976, #3164, #3165)
-- **State update throttle rework** — Background status sync is throttled more intelligently. (#2979, #2981)
-- **Delete stale connections** — Disconnected clients are cleaned up to avoid performance degradation. (#2977)
-- **Faster PlutoRunner process init** — Loader optimization speeds up workspace creation. (#3402)
-- **`deep_enough_copy` optimization** — Uses `@generated` for faster notebook state copying. (#2974)
-- **CSS animation performance** — Replaced CSS `top/left` animations with `translateY` for GPU compositing. (#634, #912, #1945)
-- **Don't render loading bar animation when idle** — Avoids unnecessary repaints. (#3239)
-- **CodeMirror lazy loading** — Code editors are created lazily as cells scroll into view. (#2885)
-- **Reduce overspecializations** — Reduced type specializations in PlutoRunner for smaller compilation footprint. (#2062)
-- **Preload statefile in static HTML** — Avoids double download of the statefile on page load. (#2887)
 
 ---
 

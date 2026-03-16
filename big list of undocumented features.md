@@ -6,12 +6,9 @@
 
 > # HOW TO USE THIS:
 > When a feature is documented, or if it does not need documentation, you can remove it from the list.
-
-
 ---
 
 ## 2. Package Management (Built-in Pkg)
-
 - **Guided Project.toml editor** — A UI for editing the notebook's `Project.toml` with compat entries. (#3218)
 - **Auto-fix corrupted manifests** — When a notebook's manifest is broken, Pluto tries strategies to automatically fix it. (#2294, #2298)
 - **GracefulPkg.jl integration** — Uses GracefulPkg.jl for safer, more user-friendly Pkg error handling. (#3185)
@@ -88,36 +85,14 @@
 ---
 
 ## 13. Collaboration & Sharing
-
 - **Secret token for access control** — Pluto generates a secret token to prevent unauthorized access on multi-user computers. (#529)
 - **Secret printed to console if page accessed without it** — If you access Pluto without the secret, the server prints it to the console. (#2322)
-- **Prevent secret leaking to cross-origins** — The `Referrer-Policy` is set to prevent leaking the secret to CDN/third-party requests. (#722)
-- **Binder integration** — Notebooks include a "run on Binder" button for one-click cloud execution. (#811, #429)
 - **Token in Binder URL** — On Binder, the token is embedded in the URL so it can be shared. (#429)
-- **Binder progress and logs** — Binder launch progress and logs are shown in the Process Status tab. (#2523)
 - **`open_url` / data URLs** — Pluto can open notebooks from URLs or data URLs directly. (#1670)
 - **GitHub raw link support** — Opening a GitHub raw link opens the notebook directly. (#493)
 - **PlutoSliderServer support** — Pluto supports PlutoSliderServer.jl for hosting interactive static notebooks. (#988, #1703, #2014)
 - **Slider server POST request** — Notebooks can be configured to force POST requests to the slider server. (#2362)
 - **`slider_server_url` in export JSON** — The slider server URL can be specified in the `pluto_export.json` file. (#2667)
-- **Bond names API** — A function exposes the list of bond variable names for SliderServer. (#2379)
-- **Upload to pluto.land** — A button in the export menu uploads the notebook directly to https://pluto.land. (#3360)
-
----
-
-## 14. Server Configuration & API
-
-- **`extra_instrumentation_lines` / HTML injection** — Option to inject HTML at the top of the notebook for custom deployments. (#1683)
-- **Hide banner in CI** — Pluto detects the `CI` environment variable and suppresses the startup banner. (#1868)
-- **Display banner from `__init__`** — The banner is shown at load time, not during precompilation. (#2628)
-- **Separate notebook boot environment** — The notebook's boot environment is separate from the server environment to avoid conflicts. (#1556)
-- **Session event API** — `SessionActions` API for programmatically opening, closing, and managing notebooks. (#1644)
-- **State file export endpoint** — `/statefile?id=<session-id>` exports the notebook state as a MessagePack binary. (#1118)
-- **RelocatableFolders for sysimage support** — Pluto can be bundled into a system image. (#1853)
-- **`cpu_target` option for Malt worker** — Pass `--cpu-target` to the notebook Julia process. (#3362)
-- **Server start event** — An event fires with the server's web address after startup. (#1882)
-- **`LOAD_PATH` preserved** — The original `LOAD_PATH` is preserved in the notebook process. (#2748)
-
 ---
 
 ## 16. Accessibility & Keyboard Navigation
@@ -136,24 +111,12 @@
 ---
 
 ## 18. Dark Mode & Themes
-
 - **Dark mode** — Pluto has a built-in dark mode that can be toggled. (#1661)
-- **CSS variable-based theming** — Colors are defined using CSS variables for easy theme customization. (#1661)
-- **Syntax highlighting colors update** — Colors defined with `oklch`, improved command/type/string highlighting. (#3017)
 
 ---
 
 ## 19. Fonts & Typography
 
 - **JuliaMono font** — JuliaMono is the default monospace font, with full Julia unicode character support. (#364, #1286, #3223, #3450)
-
-## 21. Process Status Tab
-
-- **Process Status tab** — A panel showing what is currently loading, running, or compiling. (#2399, #2376)
-- **Task failures shown in red** — Failed tasks in the Status tab are highlighted in red. (#2858)
-- **Show Pkg logs in Process Status** — Pkg operation logs appear in the Status tab. (#2498)
-- **Binder progress in Status tab** — Binder launch steps are shown in the Status tab. (#2523)
-- **Notification when all cells complete** — After a long run, a browser notification can be sent when done. (#2531)
-
 
 *This list was compiled from 1,013 merged pull requests on the JuliaPluto/Pluto.jl repository (PRs #20–#3484).*

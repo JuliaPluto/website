@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en">
+<head>
+
+<title>Architecture</title>
+<meta name="description" content='An overview of the internals of Pluto.jl.'>
+<meta property="og:article:tag" content='docs'>
+<meta property="og:article:tag" content='internals'>
+<meta property="og:article:tag" content='advanced'>
+<meta property="og:article:tag" content='architecture'>
+<meta property='og:title' content='Architecture'>
+<meta property='og:type' content='article'>
+<meta property='og:description' content='An overview of the internals of Pluto.jl.'>
+
+
+<link rel="root" href="../../.." />
+
+<link rel="icon" href="../../../assets/favicon.ico" />
+<link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+
+<link rel="stylesheet" href="../../../assets/styles/index.css" type="text/css" />
+<link rel="stylesheet" href="../../../assets/styles/layout.css" type="text/css" />
+<script src="../../../assets/scripts/sidebar.js" type="module" defer></script>
+<link rel="pp-search-data" href="../../../pp_search_data.json" />
+<script src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js" integrity="sha256-DFDZACuFeAqEKv/7Vnu1Tt5ALa58bcWZegGGFNgET8g=" crossorigin="anonymous" defer></script>
+<script src="../../../assets/scripts/search.js" type="module" defer></script>
+
+
+<script type="importmap">{"imports":{"9IVCm":"./firebase-firestore.97b3e0f3.js","g8zEq":"./firebase-app.513de744.js"}}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.f27d730b.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.4403bf6d.css"><script type="module" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/frontend.16ec773c.js"></script>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+
+    
+<meta name="pluto-insertion-spot-meta">
+
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+    <meta name="color-scheme" content="light dark">
+
+    
+    
+    
+    <link rel="pluto-external-source" id="pluto-logo-big" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/logo.103597bc.svg">
+    <link rel="pluto-external-source" id="pluto-logo-small" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/favicon_unsaturated.9ed3a6f6.svg">
+
+    <script defer="">console.log("Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends 🌈");</script>
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.ed1b15a7.js" defer=""></script>
+
+    <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+    <script id="iframe-resizer-content-window-script" src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.2ba45c45.js" crossorigin="anonymous" defer=""></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.409716be.css" type="text/css">
+
+    <meta rel="pluto-cdn-root" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/">
+    <script data-pluto-file="launch-parameters">
+window.pluto_notebook_id = undefined;
+window.pluto_isolated_cell_ids = undefined;
+window.pluto_notebookfile = undefined;
+window.pluto_disable_ui = true;
+window.pluto_slider_server_url = undefined;
+window.pluto_binder_url = "https://mybinder.org/v2/gh/fonsp/pluto-on-binder/v0.20.24";
+window.pluto_statefile = undefined;
+window.pluto_preamble_html = undefined;
+window.pluto_recording_url = undefined;
+window.pluto_recording_audio_url = undefined;
+</script>
+
+<meta name="pluto-insertion-spot-parameters">
+
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/editor.7ab89870.js" type="module" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/frontend.ae6e0116.js"></script>
+
+    <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+    <link rel="pluto-external-source" id="MathJax-script" href="https://cdn.jsdelivr.net/gh/JuliaPluto/Pluto.jl@0.20.24/frontend-dist/tex-svg-full.6762fe7d.js" type="text/javascript">
+    
+    
+<meta name="pluto-insertion-spot-preload">
+
+
+
+<link rel="stylesheet" href="../../../assets/styles/docs.css" type="text/css" />
+<script src="../../../assets/scripts/enhanced_markup.js" type="module" defer></script>
+
+
+</head>
+<body>
+    <div id="pages-layout">
+        <button id="toggle-nav" title="Open navigation"></button>
+        <nav id="pages-sidebar">
+        <div>
+        <ul>
+            <li class="pluto_home_link"><a class="pluto_home_link" href='../../..'><img src="../../../assets/favicon.svg" width="32" height="32"><span> Pluto.jl</span></a>
+            </li>
+            
+            <li>
+                <div class="search-bar">
+                    <form action="../../../en/docs/search" method="GET">
+                        <input type="search" name="q" placeholder="Search...">
+                        <input type=submit value="🔎">
+                    </form>
+                </div>
+            </li>
+            
+        <li>
+<h3>Introduction</h3>
+<ul>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+</ul>
+</li>
+<li>
+<h3>Pluto for education</h3>
+<ul>
+<li class=''><a href='../../../en/docs/education/' title='How to use Pluto to teach Julia with interactive lectures and engaging assignments.'>🎓 Pluto for your course</a></li><li class=''><a href='../../../en/docs/lectures/' title='How to use Pluto to teach Julia with interactive lectures.'>🧑‍🏫 Lectures</a></li><li class=''><a href='../../../en/docs/homework/' title='How to use Pluto to teach Julia with interactive homework assignments.'>📄 Homework</a></li><li class=''><a href='../../../en/docs/education-showcase/' title='Overview of courses taught using Pluto.jl'>🌟 Courses using Pluto</a></li>
+</ul>
+</li>
+<li>
+<h3>Using Pluto</h3>
+<ul>
+<li class=''><a href='../../../en/docs/launch-pluto/' title='How to start a Pluto notebook server'>🌟 Launching Pluto</a></li><li class=''><a href='../../../en/docs/files/' title='How to create, save and shutdown notebook files'>📄 Create, save and shutdown notebooks</a></li><li class=''><a href='../../../en/docs/files-open/' title='How to open and move files from your computer or from the web'>📖 Open and move files</a></li><li class=''><a href='../../../en/docs/accessibility/' title='Accessibility features of Pluto'>✋ Accessibility</a></li><li class=''><a href='../../../en/docs/language/' title='How to change the language of Pluto'>🌐 Language</a></li><li class=''><a href='../../../en/docs/get-involved/' title='How to contribute or give feedback to Pluto'>🤝 Get involved</a></li>
+</ul>
+</li>
+<li>
+<h3>Writing a notebook</h3>
+<ul>
+<li class=''><a href='../../../en/docs/markdown/' title='How to write markdown in Pluto.'>📝 Markdown</a></li><li class=''><a href='../../../en/docs/images/' title='How to add images to your Pluto notebook.'>🖼️ Images</a></li><li class=''><a href='../../../en/docs/bind/' title='How to use PlutoUI and @bind to have interactive UI like sliders, buttons, and more.'>🎚️ PlutoUI and @bind</a></li><li class=''><a href='../../../en/docs/plot/' title='How to plot data in Pluto, using Plots, Makie, Plotly and more.'>📊 Plotting</a></li><li class=''><a href='../../../en/docs/latex/' title='How to use LaTeX in Pluto'>🧮 LaTeX</a></li><li class=''><a href='../../../en/docs/linking/' title='How to link to other pages in Pluto.'>🔗 Linking</a></li>
+</ul>
+</li>
+<li>
+<h3>Reproducibility</h3>
+<ul>
+<li class=''><a href='../../../en/docs/reactivity/'>🔄 Reactivity <br><small> how Pluto notebooks update automatically</small></a></li><li class=''><a href='../../../en/docs/packages/' title='Pluto.jl automatically manages a package environment for your notebook.'>📦 Packages <br><small> Built-in package management</small></a></li><li class=''><a href='../../../en/docs/packages-advanced/' title='How to use Pkg.activate in Pluto.jl notebooks to set up a custom Pkg environment.'>📦 Packages: advanced <br><small> Pkg.activate in a cell</small></a></li>
+</ul>
+</li>
+<li>
+<h3>Editor</h3>
+<ul>
+<li class=''><a href='../../../en/docs/live-docs/' title='The Live Docs tab in Pluto to read documentation while you code!'>📚 Live Docs</a></li><li class=''><a href='../../../en/docs/status/' title='The status tab in Pluto to see what&apos;s going on!'>🔋 Status</a></li><li class=''><a href='../../../en/docs/ai-editor-features/' title='Fix syntax errors with one click!'>✨ AI features</a></li><li class=''><a href='../../../en/docs/moving-cells/' title='How to move cells in Pluto'>🔃 Selecting and moving cells</a></li><li class=''><a href='../../../en/docs/logging/' title='How to log in Pluto'>🧾 Logging</a></li><li class=''><a href='../../../en/docs/disable-cell/' title='How to disable a cell in Pluto, or disable a cell in the file.'>💡 Disabling cells</a></li><li class=''><a href='../../../en/docs/keyboard-shortcuts/' title='Overview of keyboard shortcuts in Pluto&apos;s editor'>⌨️ Keyboard shortcuts</a></li><li class=''><a href='../../../en/docs/configuration/' title='How to change settings of the Pluto.jl Julia notebook'>⚙️ Configuring Pluto</a></li>
+</ul>
+</li>
+<li>
+<h3>Publishing</h3>
+<ul>
+<li class=''><a href='../../../en/docs/export/' title='How to export a Pluto.jl notebook to HTML, PDF or a Julia file.'>Export options <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/export-julia/' title='How to export a Pluto.jl notebook to a Julia file.'>📗 Export to Julia</a></li><li class=''><a href='../../../en/docs/export-html/' title='How to export a Pluto.jl notebook to an HTML file.'>📗 Export to HTML</a></li><li class=''><a href='../../../en/docs/export-pdf/' title='How to export a Pluto.jl notebook to a PDF file.'>📗 Export to PDF</a></li><li class=''><a href='../../../en/docs/export-recording/' title='How to use the recording feature of Pluto.jl to create a special HTML video file,'>🎥 Recording <br><small> experimental video mode</small></a></li><li class=''><a href='../../../en/docs/notebooks-online/' title='How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer.'>📕 Notebooks online <br><small> Pluto.jl notebooks as web pages</small></a></li><li class=''><a href='../../../en/docs/presentation/' title='How to use the Presentation Mode in Pluto.jl to present your Julia notebook as a slideshow.'>📈 Presentation mode</a></li><li class=''><a href='../../../en/docs/frontmatter/' title='How to use frontmatter in Pluto.jl notebooks.'>📰 Frontmatter</a></li><li class=''><a href='../../../en/docs/binder/' title='How to use Binder to run Pluto notebooks in the cloud.'>🤹 Binder</a></li><li class=''><a href='../../../en/docs/PlutoPages/' title='How to use PlutoPages.jl to generate static websites from Pluto notebooks.'>🏗️ PlutoPages.jl</a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Widgets</h3>
+<ul>
+<li class=''><a href='../../../en/docs/advanced-widgets/' title='Pluto provides a framework for advances input and display widgets.'>Advanced widgets <br><small> overview</small></a></li><li class=''><a href='../../../en/docs/javascript-api/' title='Use JavaScript to make your own interactive visualizations!'>JavaScript API</a></li><li class=''><a href='../../../en/docs/threejs/' title='A simple example of using a JavaScript library in Pluto to create a visualisation library.'>Three.js in Pluto <br><small> example of using a JS library</small></a></li><li class=''><a href='../../../en/docs/PlutoSliderServer/' title='How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web.'>💫 PlutoSliderServer.jl <br><small> Overview</small></a></li><li class=''><a href='../../../en/docs/PlutoSliderServerDocs/'>💫 PlutoSliderServer.jl <br><small> References</small></a></li><li class=''><a href='../../../en/docs/AbstractPlutoDingetjes/' title='AbstractPlutoDingetjes allows you to write more advanced widgets to be used inside Pluto.jl.'>AbstractPlutoDingetjes.jl <br><small> develop enhanced Pluto widgets</small></a></li><li class=''><a href='../../../en/docs/isolated-cell/' title='Use isolated cells to embed one or more Pluto cells in a minimalistic way, to make a web app.'>Isolated Cells <br><small> notebooks as web apps</small></a></li>
+</ul>
+</li>
+<li>
+<h3>Advanced: Internals</h3>
+<ul>
+<li class=''><a href='../../../en/docs/API/' title='Overview of the public API exposed by the Pluto.jl package.'>🧩 Pluto public API <br><small> control Pluto</small></a></li><li class='active'><a href='../../../en/docs/architecture/' title='An overview of the internals of Pluto.jl.'>Architecture</a></li><li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
+</ul>
+</li>
+
+        </ul>
+        <div class="pluto_version">
+            Pluto <span class="Base-VersionNumber">0.20.24</span>
+        </div>
+        </nav>
+        <div id="pages-content">
+        <pluto-editor skip-custom-element class="disable_ui static_preview">
+<main>
+<preamble></preamble>
+<pluto-notebook>
+<pluto-cell>
+<pluto-output class="pages-markdown rich_output">
+<div class="raw-html-wrapper ">
+<div class="markdown">
+<h1 id="how-does-pluto-work"><a href="#how-does-pluto-work" class="anchor"></a>How does Pluto work?</h1>
+<p>Pluto.jl is written in JavaScript (frontend) and Julia (backend). The <strong>frontend</strong> is the app that runs in your web browser where you type code, see outputs, etc. The <strong>backend</strong> is the Julia program that runs in your terminal with an HTTP server (to serve the frontend and communicate with it), code analysis, reactivity and code execution. The backend runs a <strong>Julia process per notebook</strong> where user code runs.</p>
+<p>Before diving into the frontend and backend, let’s look at how they work together.</p>
+<h2 id="frontend--backend"><a href="#frontend--backend" class="anchor"></a>Frontend ↔ Backend</h2>
+<p><em>Aka: how do the server and clients stay in sync?</em></p>
+<p><em>(thank you <a href="https://github.com/dralletje">Michiel</a> for the idea, design and implementation!)</em></p>
+<p>A Pluto notebook session has <em>state</em>: with this, we mean: cell code, cell results, status and intermediate progress (eg logs), cell order, package information.</p>
+<p>This state needs to be <strong>synchronised between the server and all clients</strong> (we support multiple synchronised clients), and note that:</p>
+<ul>
+<li>All sides want to update the state. Generally, a client will update cell inputs, the server will update cell outputs.</li>
+<li>Both sides want to <em>react</em> to state updates</li>
+<li>The server is in Julia, the clients are in JS</li>
+<li>This is built on top of our websocket+msgpack connection, but that doesn’t matter too much</li>
+</ul>
+<p>We do this by implementing something similar to how you use Google Firebase: there is <strong>one shared state object, any party can mutate it, and it will synchronise to all others automatically</strong>. The state object is a nested structure of mutable <code>Dict</code>s, with immutable ints, strings, bools, arrays, etc at the endpoints.</p>
+<p>Some cool things are:</p>
+<ul>
+<li>Our system uses object diffing, so only <em>changes to the state</em> are actually tranferred over the network. But you can use it as if the entire state is sent around constantly.</li>
+<li>In the frontend, the <em>shared state</em> is part of the <em>react state</em>, i.e. shared state updates automatically trigger visual updates.</li>
+<li>Within the client, state changes take effect instantly, without waiting for a round trip to the server. This means that when you add a cell, it shows up instantly.</li>
+</ul>
+<p>Diffing is done using <code>immer.js</code> (frontend) and <code>src/webserver/Firebasey.jl</code> (server). We wrote Firebasey ourselves to match immer’s functionality, and the cool thing is: <strong>it is a Pluto notebook</strong>! Since Pluto notebooks are <code>.jl</code> files, we can just <code>include</code> it in our module.</p>
+<p>The shared state object is generated by <code>notebook_to_js</code> in <code>src/webserver/Dynamic.jl</code>. Take a look! The Julia server orchestrates this firebasey stuff. For this, we keep a <strong>copy</strong> of the latest state of each client on the server (see <code>current_state_for_clients</code>). When anything changes to the Julia state (e.g. when a cell finished running), we call <code>send_notebook_changes!</code>, which will call <code>notebook_to_js</code> to compute the new desired state object. For each client, we diff the new state to their last known state, and send them the difference.</p>
+<h3 id="responding-to-changes-made-by-a-client"><a href="#responding-to-changes-made-by-a-client" class="anchor"></a>Responding to changes made by a client</h3>
+<p>When a client updates the shared state object, we want the server to <em>react</em> to that change by taking an action. Which action to take depends on which field changes. For example, when <code>state[&quot;path&quot;]</code> changes, we should rename the notebook file. When <code>state[&quot;cell_inputs&quot;][a_cell_id][&quot;code&quot;]</code> changes, we should reparse and analyze that cel, etc. This location of the change, e.g.  <code>&quot;cell_inputs/&lt;a_cell_id&gt;/code&quot;</code> is called the <em>path</em> of the change.</p>
+<p><code>effects_of_changed_state</code> define these pattern-matchers. We use a <code>Wildcard()</code> to take the place of <em>any</em> key, see <code>Wildcard</code>, and we use the change/update/patch inside the given function.</p>
+<h3 id="not-everything-uses-the-shared-state-yet"><a href="#not-everything-uses-the-shared-state-yet" class="anchor"></a>Not everything uses the shared state (yet)</h3>
+<p>Besides <code>:update_notebook</code>, you will find more functions in <code>responses</code> that respond to classic ‘client requests’, such as <code>:reshow_cell</code> and <code>:shutdown_notebook</code>. Some of these requests get a direct response, like the list of autocomplete options to a <code>:complete</code> request (in <code>src/webserver/REPLTools.jl</code>). On the javascript side, these direct responses can be <code>awaited</code>, because every message has a unique ID.</p>
+<blockquote>
+<h3 id="example-running-a-cell"><a href="#example-running-a-cell" class="anchor"></a>Example: running a cell</h3>
+<p>The frontend changes the code for cell X in the shared state.</p>
+<p>The backend receives the changed code and updates its internal representation.</p>
+<p>The frontend waits for confirmation, and sends a “run cell” command. <em>(This could have been implemented without an explicit “run cell” command.)</em></p>
+<p>The backend start a reactive run based on running X. The cell becomes queued, then running, then finished with new results. Every time that something changes, it updates the state of all connected clients.</p>
+<p>Every time that the backend changes its state, it sends diffs to the frontend, which uses it to update its internal state, which triggers re-rendering of the cells.</p>
+</blockquote>
+<h2 id="frontend"><a href="#frontend" class="anchor"></a>Frontend</h2>
+<p>The Pluto app that displays in your web browser (where you type code and see results) is the frontend of Pluto. This application is written in <strong>JavaScript</strong> (with JSDoc for types), using <strong>CodeMirror 6</strong> (code editor platform), <strong>preact</strong> (variant of React), and <strong>immer</strong> (state management).</p>
+<p>Code is in the <code>frontend/</code> folder.</p>
+<h3 id="code-structure"><a href="#code-structure" class="anchor"></a>Code structure</h3>
+<p>The entry point of the app is the <code>frontend/components/Editor.js</code> component – this is the root component. Other components are children here.</p>
+<div class="admonition hint"><p class="admonition-title">Hint</p>
+<p>If you are interested in a specific component in Pluto, you can usually dive right into its code without understanding the whole structure. Tip: search for text that you see (like “Enable and run the cell”), find the i18n key (<code>t_enable_and_run_cell</code>), then search for they key.</p>
+</div>
+<p>The <code>Editor</code> component is loaded/rendered by the <code>frontend/editor.js</code> script, which is included in the <code>frontend/editor.html</code> file. When you visit <code>localhost:1234/edit</code> or when you view a notebook online, you are being served this HTML file.</p>
+<h3 id="state-synchronization-and-actions"><a href="#state-synchronization-and-actions" class="anchor"></a>State synchronization and actions</h3>
+<p>Most state is held in the <code>Editor</code> component. This component also contains the <code>notebook</code> state, which is the object shared with the backend.</p>
+<p>Some of this state is passed down to children, and there are some callbacks being passed down as well. To prevent ‘callback hell’, we have a system called “PlutoActions”, which contains lots of functions to influence the editor state and backend. PlutoActions is available through <em>context</em>. <em>(thank you <a href="https://github.com/pankgeorg">Panagiotis</a>!)</em></p>
+<p>If you are adding a new feature, try to implement it in a way that just requires placing more data in the shared state object in the backend.</p>
+<h3 id="reacitivity"><a href="#reacitivity" class="anchor"></a>Reacitivity</h3>
+<p>We use preact/react as a frontend framework, but this is not the reason why Pluto is reactive. ‘Reactive’ can mean a lot of things, but Pluto’s reacitivity is powered by our own reactivity algorithm in the backend. But: using a framework like React makes it easy to make an interactive app.</p>
+<h3 id="bundling"><a href="#bundling" class="anchor"></a>Bundling</h3>
+<p>Our frontend is <em>buildless</em>, which means that the browser can run our frontend assets (HTML, CSS, JS) directly, without a bundling step. This makes it easy for people to fork and modify Pluto in the normal Julia way. The Pluto server will serve the contents of the <code>frontend/</code> folder directly, which means that you can edit frontend files, refresh the browser, and see results.</p>
+<p>But we also have a bundler, which bundles <code>editor.html</code> and <code>index.html</code>. The output of the bundler is in the <code>frontend-dist</code> directory. This directory is gitignored, it only exists if you generate it, and on our official releases. (More on this later.)</p>
+<p>We bundle for a couple of reasons:</p>
+<ul>
+<li>Offline support. Our app uses many resources from CDNs (JS packages, typefaces and icons), which are otherwise not available without an internet connection.</li>
+<li>Reliability. This reduces our dependency on CDNs.</li>
+<li>Performance. Bundling makes our HTML Export files load faster.</li>
+</ul>
+<h4 id="bundler-ci"><a href="#bundler-ci" class="anchor"></a>Bundler CI</h4>
+<p>The Julia registry does not allow you to “upload a dist folder” for releases, like in npm. All files to be included in the release need to be on GitHub.</p>
+<p>Our solution is the <code>.github/workflows/Bundle.yml</code> CI action. For every commit to <code>main</code>, it bundles, and on the <code>dist</code> branch it removes all history, commits the <code>frontend-dist</code> folder (normally gitignored) and pushes. So this branch is always 1 commit ahead of <code>main</code>.</p>
+<p>When we make a Pluto release, we do it on the <code>dist</code> branch, so that it includes the bundle. TagBot will later <code>git tag</code> the commit, which preserves it forever, even if the <code>dist</code> branch is later overrided.</p>
+<h3 id="cell-input-codemirror"><a href="#cell-input-codemirror" class="anchor"></a>Cell input: CodeMirror</h3>
+<p>We make extensive use of CodeMirror 6. Its design aligns very well with our needs, and we are generally impressed by this package. We have implemented many features as CodeMirror extensions. This includes: highlighting globals, Live Docs, autocomplete, package ‘bubbles’ (icon next to <code>using Example</code>), special indenting, and much more. You can find our own extensions in the <code>frontend/components/CellInput</code> folder.</p>
+<p>The CodeMirror setup is in the the <code>frontend/components/CellInput.js</code> file.</p>
+<p>For reasons related to CDNs, we have a separate repository where we import and re-export all the API that we need from the different CodeMirror packages: <a href="https://github.com/JuliaPluto/codemirror-pluto-setup">codemirror-pluto-setup</a>.</p>
+<h3 id="cell-output-display"><a href="#cell-output-display" class="anchor"></a>Cell output: display</h3>
+<p>Cell output is implemented in a relatively straightforward way. We have a number of react components, which are matched to the right MIME type. Like a tree data inspector, image display, HTML renderer, plaintext, and some others.</p>
+<p>The HTML renderer has some special handling of JavaScript, to make it easy to use, and mostly compatible with the Observable Notebook API. You can read more about it <a href="../javascript-api/">here</a>.</p>
+<h3 id="design"><a href="#design" class="anchor"></a>Design</h3>
+<p>Pluto’s design is homemade, we don’t use a design system or component library. Styles are in vanilla CSS. We use the JuliaMono typeface <em>(thank you <a href="https://github.com/cormullion">Cormullion</a>!)</em>.</p>
+<h3 id="localisation"><a href="#localisation" class="anchor"></a>Localisation</h3>
+<p>Pluto is available in 15+ languages, thanks to contributions from the community! You can read more about this in the <a href="../language/">language documentation</a>.</p>
+<h3 id="testing"><a href="#testing" class="anchor"></a>Testing</h3>
+<p>Pluto has a puppeteer test suite for end-to-end testing. <em>(thank you <a href="https://github.com/novoselrok">Rok</a> for the initial setup!)</em> These tests run a Pluto server, open a browser, and interact with the app like a user would. We run these tests in CI using Chrome.</p>
+<p>We also have some sanity tests that check that a browser can open and view a notebook. We run these tests in CI using Chrome, Firefox and Safari. <code>.github/workflows/TestFirefox.yml</code> (for all browsers).</p>
+<h2 id="backend"><a href="#backend" class="anchor"></a>Backend</h2>
+<h3 id="configration"><a href="#configration" class="anchor"></a>Configration</h3>
+<p>Pluto has a configuration system using Configurations.jl. This is a very handy package! <em>(thank you <a href="https://github.com/Roger-luo">Roger</a> for your work and support!)</em> Nowadays there is also Preferences.jl, but this came too late for our package.</p>
+<p>Check out the <a href="../configuration/">configuration docs</a> to learn more about what can be configured. You can also read more about PlutoSliderServer.jl to see the configuration system in action.</p>
+<h3 id="http-server"><a href="#http-server" class="anchor"></a>HTTP server</h3>
+<p>Pluto runs its own HTTP and WebSocket server on <code>localhost</code>. It serves assets (HTML, CSS, JS, typefaces, SVG, etc) and it has HTTP endpoints for tasks (new notebook, open notebook, etc). After a WebSocket connection is set up, it works with a discrete “messages” system. Messages are encoded with MsgPack.jl. Each message has a type (<code>:current_time</code>) which corresponds to a function on the other side, and some data specific to that message. Messages can be broadcast to all connected frontends, or they can be sent as ‘answer’ to one specific connected client.</p>
+<p>Very important is the <code>:update_notebook</code> function in the backend (receive patches to the shared state) and its frontend equivalent <code>&quot;notebook_diff&quot;</code>.</p>
+<p>Sensitive endpoints of this server are secured with a token, which is generated randomly when you start a server.</p>
+<h3 id="process-management"><a href="#process-management" class="anchor"></a>Process management</h3>
+<p>Pluto runs user code in a separate Julia process. Each notebook gets a Julia process, which is managed using Malt.jl. We wrote Malt ourselves, out of a need for reliable management of Julia processes. <em>(thank you <a href="https://github.com/savq">Sergio</a> for your expertise and implementation!)</em> Code for this is in <code>src/evaluation/WorkspaceManager.jl</code>.</p>
+<h3 id="reacitivity-1"><a href="#reacitivity-1" class="anchor"></a>Reacitivity</h3>
+<p>Pluto’s reactivity works using <strong>static analysis</strong>. Pluto analyzes the expression of each cell to find <strong>references</strong> and <strong>definitions</strong> to global variables. Linking these between cells creates a DAG (graph), where cells are nodes and edges are matched reference-definition links.</p>
+<p>When you run a cell, Pluto will search this DAG to find cells that also need to run.</p>
+<p>How this works is covered in other documents. <a class="arrow" href="../reactivity/">Learn more</a></p>
+<h3 id="macro-handling"><a href="#macro-handling" class="anchor"></a>Macro handling</h3>
+<p>Pluto supports reactive macrocalls and <code>using</code>s. <em>(thank you <a href="https://github.com/Pangoraw">Paul</a>!)</em> This means that if an expression defines or uses a variable <em>after macroexpansion</em>, Pluto will handle it correctly. This is very difficult to implement, because Pluto now needs to <em>run code to be able to analyze it</em>. The simple flow <em>analyze → run</em> is no longer possible.</p>
+<p>This is implemented by running reactively in chunks. Pluto will start a reactive run as usual, but whenever a cell has been executed that <em>could give more information</em> (e.g. a new macro was defined, or package loaded), Pluto tries to macroexpand and analyze any remaining cells that still have unknowns. Macroexpansion happens in the notebook process, the resulting expression is sanitzed and returned to the server for analysis.</p>
+<h3 id="package-management"><a href="#package-management" class="anchor"></a>Package management</h3>
+<p>Pluto has integration with Pkg for:</p>
+<ul>
+<li>Isolated environment: embedded Project.toml and Manifest.toml</li>
+<li>Automatic package management (adding/removing packages)</li>
+<li>Version queries (what versions can be installed)</li>
+</ul>
+<p>The code for this is in <code>src/packages/PkgCompat.jl</code> (all internal Pkg API use is contained here), and Pluto’s package manager is in <code>src/packages/Packages.jl</code>.</p>
+<p>We have also written a package <a href="https://github.com/JuliaPluto/GracefulPkg.jl">GracefulPkg.jl</a> that can will try to convert a Manifest.toml between environments with minimal damage.</p>
+
+</div>
+</div>
+</pluto-output>
+</pluto-cell>
+</pluto-notebook>
+</main>
+</pluto-editor>
+
+        
+        
+        <div class="edit-this-page">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/architecture.jlmd" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+                Edit this page
+            </a>
+        </div>
+    </div>
+</body>
+</html>

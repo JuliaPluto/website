@@ -1,8 +1,9 @@
 ### A Pluto.jl notebook ###
 # v0.20.23
+
 #> [frontmatter]
-#> order = "0"
-#> title = "PlutoSliderServer Documentation"
+#> order = "10"
+#> title = "💫 PlutoSliderServer.jl – References"
 #> date = "2026-03-13"
 #> tags = ["docs", "advanced", "widgets", "PlutoSliderServer"]
 #> layout = "layout.jlhtml"
@@ -15,58 +16,13 @@
 using Markdown
 using InteractiveUtils
 
-# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
-macro bind(def, element)
-    #! format: off
-    return quote
-        local iv = try Base.loaded_modules[Base.PkgId(Base.UUID("6e696c72-6542-2067-7265-42206c756150"), "AbstractPlutoDingetjes")].Bonds.initial_value catch; b -> missing; end
-        local el = $(esc(element))
-        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : iv(el)
-        el
-    end
-    #! format: on
-end
-
 # ╔═╡ 181ae1f8-1e2d-11f1-a486-8101eea4ae16
 using PlutoSliderServer
 
 # ╔═╡ 88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
-md"# PlutoSliderServer.jl"
+md"""# PlutoSliderServer.jl
 
-# ╔═╡ ce1b3249-caf1-4d10-9df4-c2b8cc3600d5
-md"""
-PlutoSliderServer can **run a notebook** and generate the **export HTML** file. This will give you the same file as the export button inside Pluto (top right), but automatically, without opening a browser.
-
-One use case is to automatically create a **GitHub Pages site from a repository with notebooks**. For this, take a look at [our template repository](https://github.com/JuliaPluto/static-export-template) that used GitHub Actions and PlutoSliderServer to generate a website on every commit.
-
-##### Example
-```julia
-PlutoSliderServer.export_notebook("path/to/notebook.jl")
-# will create a file `path/to/notebook.html`
-```
-
-The main functionality of PlutoSliderServer is to run a ***slider server***. This is a web server that **runs a notebook using Pluto**, and allows visitors to **change the values of `@bind`-ed variables**.
-
-The important **differences** between running a *slider server* and running Pluto with public access are:
-- A *slider server* can only set `@bind` values, it is not possible to change the notebook's code.
-- A *slider server* is **stateless**: it does not keep track of user sessions. Every request to a slider server is an isolated HTTP `GET` request, while Pluto maintains a WebSocket connection.
-- Pluto synchronizes everything between all connected clients in realtime. The *slider server* does the opposite: all 'clients' are **disconnected**, they don't see the `@bind` values or state of others.
-
-> **To learn more, watch the [PlutoCon 2020 presentation about how PlutoSliderServer works](https://www.youtube.com/watch?v=QZ3xlKm92tk)**.
-
-##### Example
-```julia
-PlutoSliderServer.run_notebook("path/to/notebook.jl")
-# will create a file `path/to/notebook.html`
-```
-"""
-
-# ╔═╡ 0cfb8f38-15ac-409f-9a2d-a0482cd929c4
-# Docs.Binding(PlutoSliderServer, :PlutoSliderServer)
-# Markdown.parse(read(joinpath(pkgdir(PlutoSliderServer), "README.md"), String))
-
-# ╔═╡ 2b22220f-d95a-4d0c-a988-efea0adddf77
-md"# Main functions"
+### Main Functions"""
 
 # ╔═╡ e7504b8b-df12-468c-82fd-884410b2342e
 Docs.Binding(PlutoSliderServer, :run_directory)
@@ -90,7 +46,7 @@ Docs.Binding(PlutoSliderServer, :run_notebook)
 Docs.Binding(PlutoSliderServer, :find_notebook_files_recursive)
 
 # ╔═╡ 775010b3-b6f9-4543-9c33-5c25477800de
-md"# Helper Functions"
+md"### Helper Functions"
 
 # ╔═╡ 9f604baa-cac1-437f-8468-965b999673eb
 Docs.Binding(PlutoSliderServer, :cache_filename)
@@ -104,8 +60,13 @@ Docs.Binding(PlutoSliderServer, :base64urlencode)
 # ╔═╡ ee96e3f2-a217-40bf-9728-95ca891d771d
 Docs.Binding(PlutoSliderServer, :base64urldecode)
 
+# ╔═╡ 906748b6-a916-4fe7-b261-491342147f96
+md"### List of Options for the `PlutoDeployment.toml` file
+
+**Sample `PlutoDeployment.toml` file:**"
+
 # ╔═╡ df7e3ddb-2d6e-4c62-b1f0-3c49ad81f217
-show_sample_config_toml_file()
+PlutoSliderServer.show_sample_config_toml_file()
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -669,23 +630,21 @@ version = "17.7.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╟─88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
 # ╠═181ae1f8-1e2d-11f1-a486-8101eea4ae16
-# ╟─ce1b3249-caf1-4d10-9df4-c2b8cc3600d5
-# ╠═0cfb8f38-15ac-409f-9a2d-a0482cd929c4
-# ╟─2b22220f-d95a-4d0c-a988-efea0adddf77
-# ╠═e7504b8b-df12-468c-82fd-884410b2342e
-# ╠═f4fb3362-3258-4139-83ba-27660fff875c
-# ╠═3ac2411d-a546-40ce-aaee-5820ef6938df
-# ╠═4e33468d-679f-4329-8fdc-c25b026c6a6b
-# ╠═f8803ac0-f7b1-4dad-936a-9da543191b50
-# ╠═2a729a55-269b-41c4-bf7c-56356c3d2d36
-# ╠═c6bc4ca4-f710-448f-99fe-f1ddc753e213
+# ╟─88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
+# ╟─e7504b8b-df12-468c-82fd-884410b2342e
+# ╟─f4fb3362-3258-4139-83ba-27660fff875c
+# ╟─3ac2411d-a546-40ce-aaee-5820ef6938df
+# ╟─4e33468d-679f-4329-8fdc-c25b026c6a6b
+# ╟─f8803ac0-f7b1-4dad-936a-9da543191b50
+# ╟─2a729a55-269b-41c4-bf7c-56356c3d2d36
+# ╟─c6bc4ca4-f710-448f-99fe-f1ddc753e213
 # ╟─775010b3-b6f9-4543-9c33-5c25477800de
-# ╠═9f604baa-cac1-437f-8468-965b999673eb
-# ╠═c5057bee-fff9-4930-b25e-7b71af115435
-# ╠═d9e63c67-3758-4438-9d5c-1194eabcff1a
-# ╠═ee96e3f2-a217-40bf-9728-95ca891d771d
+# ╟─9f604baa-cac1-437f-8468-965b999673eb
+# ╟─c5057bee-fff9-4930-b25e-7b71af115435
+# ╟─d9e63c67-3758-4438-9d5c-1194eabcff1a
+# ╟─ee96e3f2-a217-40bf-9728-95ca891d771d
+# ╟─906748b6-a916-4fe7-b261-491342147f96
 # ╠═df7e3ddb-2d6e-4c62-b1f0-3c49ad81f217
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

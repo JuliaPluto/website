@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.13
+# v0.20.23
 
 #> [frontmatter]
 #> order = "4"
@@ -37,7 +37,20 @@ To write a large **block equation**, use triple backticks with `math` (this is a
 """
 
 # ╔═╡ 5a011a33-e97f-490e-b6a2-c7ea6e4091f8
+md"""
+## Finding LaTeX Syntax
+If you don't know the LaTeX syntax for a symbol, you can use the Live Docs to look it up: just type the Unicode character and see its LaTeX equivalent.
 
+You can also use this to find the name of emojis!
+"""
+
+# ╔═╡ 1d5a3bb3-ee22-4c7c-b66e-8950ed471942
+
+md"""
+
+![Example of Reverse Search for Integral Symbol](https://github.com/JuliaPluto/website/blob/6cad65a4b0f3969b758c8b80c40623ea8dc04429/src/assets/img/live-docs-latex-search.png?raw=true)
+
+"""
 
 # ╔═╡ f615f40c-8ced-408d-8f64-23198b350e27
 md"""
@@ -91,6 +104,32 @@ md"""
 	Instead of using the old `$` syntax, we recommend using backticks instead. See the section above.
 """
 
+# ╔═╡ 921f29fa-2262-4b02-a471-3a315d539cc4
+md"""
+# Emojis in Pluto
+
+Pluto has built-in support for Emojis. You use can them inside [Markdown](../markdown/) blocks. To find the emoji or symbol you need, start with `\` and type the name of the emoji, some suggestions will be made, so you can find the correct emoji for you.
+"""
+
+# ╔═╡ 8547c10a-ec25-4022-933d-ea727b0b848f
+md"""
+
+![Example of Emoji Auto-fill](https://github.com/JuliaPluto/website/blob/ce4f61d72a6fc804ae00dd73ea7c382dbfc78e09/src/assets/img/dog-emoji.png?raw=true)
+
+"""
+
+# ╔═╡ 73683cce-c6b8-499a-b14c-6680d0399117
+md"You can only use emojis to define some variables! "
+
+# ╔═╡ a5873a56-46ab-4ece-a490-edee750686fc
+🐶 = 1
+
+# ╔═╡ c7f56153-e9df-4641-9389-544fb4402494
+🐱 = 1
+
+# ╔═╡ 10f098df-a2d4-41f9-854d-903221004add
+🏠 = 🐶 + 3 * 🐱
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -100,9 +139,9 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.10.10"
+julia_version = "1.12.5"
 manifest_format = "2.0"
-project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+project_hash = "71853c6197a6a7f222db0f1978c7cb232b87c5ee"
 
 [deps]
 """
@@ -113,6 +152,7 @@ project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 # ╠═bb6672b7-34b4-4838-853c-f186134f98e8
 # ╟─8399e685-e323-4795-ac54-029c4dc2ae28
 # ╟─5a011a33-e97f-490e-b6a2-c7ea6e4091f8
+# ╟─1d5a3bb3-ee22-4c7c-b66e-8950ed471942
 # ╠═f615f40c-8ced-408d-8f64-23198b350e27
 # ╟─e777296b-b176-4bd8-8eee-6324f89121f1
 # ╟─2a155246-c9b5-4bd4-9550-a0c9290c2859
@@ -122,5 +162,11 @@ project_hash = "da39a3ee5e6b4b0d3255bfef95601890afd80709"
 # ╟─44121ee2-8467-4147-89b0-1aa7689d0ba9
 # ╠═c835f6c9-920a-4285-b0f7-bf93aab6b94c
 # ╟─4963558c-fe1f-4d11-a164-a45d78984497
+# ╟─921f29fa-2262-4b02-a471-3a315d539cc4
+# ╟─8547c10a-ec25-4022-933d-ea727b0b848f
+# ╟─73683cce-c6b8-499a-b14c-6680d0399117
+# ╠═a5873a56-46ab-4ece-a490-edee750686fc
+# ╠═c7f56153-e9df-4641-9389-544fb4402494
+# ╠═10f098df-a2d4-41f9-854d-903221004add
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

@@ -5,6 +5,30 @@ layout: "md.jlmd"
 order: 0
 ---
 
-# Welcome to Pluto!
+# Welcome to Pluto.jl!
 
-Welcome to the docs! Take a look at the sidebar on the left. ☺️
+This is the documentation website [Pluto.jl](https://plutojl.org/), a reactive, educational notebook for Julia. Pluto is Free Open Source Software (MIT License). You can [install Pluto](https://plutojl.org/#install) for free and try it today!
+
+
+## Discovering Pluto?
+To get a quick overview of Pluto, check out our [homepage](https://plutojl.org/).
+
+If you want to dive deeper, take a look at the sidebar on the left. The sidebar is divided into sections, which are useful for different types of users. If you are new to Pluto, I recommend skipping the sections labeled _"Advanced"_.
+
+
+
+
+
+## Looking for something specific?
+If you are looking for something specific, you can use the **search bar** in the top left, or below. It's **not** powered by AI <small>(hihi)</small> and it works pretty well!
+
+<blockquote>
+<h3>Search documentation</h3>
+<div class="search-bar big">
+    <form action="$(root_url)/en/docs/search" method="GET">
+        <input type="search" name="q" placeholder="Search...">
+        <input type=submit>
+    </form>
+</div>
+</blockquote>
+

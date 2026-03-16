@@ -131,6 +131,7 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
 {#f1}
 ## View this list in Pluto
 Press <kbd>F1</kbd> or <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>?</kbd> in Pluto to see a pop-up with the most important tips.
+Additionally, Pluto supports handy multi-select features: press <kbd>Tab</kbd> for multiple cursors, or hold <kbd class="alt-name"></kbd> to make clean rectangular selections.
 
 ## Navigating between cells
 You can navigate between cell inputs using the arrow keys: when your cursor is at the beginning or end of a cell, you can use additional arrow key presses to navigate to the next or previous cell. 

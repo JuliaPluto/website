@@ -28,7 +28,7 @@ Pluto.run()
 
 
 ## Browser session
-When Pluto starts running, it automatically opens a new browser tab that connects to `http://localhost:1234`, which is the address of the Pluto server. You will see the _main menu_ of Pluto.
+When Pluto starts running, it automatically opens a new browser tab that connects to `http://localhost:1234/`, which is the address of the Pluto server. You will see the _main menu_ of Pluto.
 
 
 <img src="$(root_url)/assets/img/collatz/c9.png" aria-hidden="true" width="700" height="200">
@@ -97,8 +97,8 @@ You can start Pluto multiple times in parallel (for example: on two different Ju
 This means that you can open two browser windows, and connect to the two different Pluto servers in parallel:
 
 ```
-http://localhost:1234
-http://localhost:1235
+http://localhost:1234/
+http://localhost:1235/
 ```
 
 Usually, this is not super useful. If you find yourself on port `1235` by accident, try shutting down all Pluto/Julia processes and starting again.

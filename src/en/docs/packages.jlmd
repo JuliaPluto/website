@@ -50,11 +50,13 @@ You can search for and install any available updates by clicking on the <img src
 ## Long waiting times
 Julia needs to download and precompile packages before you can use them. When using many packages, this can take a **couple of minutes**. Before installing a new package, Pluto can give an estimate of how long it will take to install:
 
+> The estimates are available for popular packages, based on our own [measurements](https://github.com/fonsp/package-loading-times).
+
 <img width="541" alt="Screenshot of code that imports the DataFrames package. Pluto says that the package will be installed when you run the cell, and it gives an estimate of 53 second for the time it will take to install." src="https://github.com/fonsp/Pluto.jl/assets/6933510/942dbfd9-9e25-452e-beb6-2e759be3becf">
 
 {#pre-installed-versions}
 ### Pre-installed versions are preferred
-When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer. This was added in May 2024, on older versions, Pkg would always try to install the newest versions.
+When adding a package to your notebook, Pluto will ask Pkg to install a version that was previously downloaded on your computer (with `PRESERVE_ALL_INSTALLED`). This was added in May 2024, on older versions, Pkg would always try to install the newest versions.
 
 This should make it much faster to open a notebook and import some packages that you already used recently. If you need the latest versions, then you have to use the **Update** button after adding the packages.
 
@@ -73,7 +75,7 @@ In Julia 1.6, you can clean up package files that have not been used in a while 
 {#based-on-pkg}
 ### Based on Pkg
 
-Pluto's package management is a wrapper around [Pkg.jl](https://pkgdocs.julialang.org/v1/), Julia's built-in package manager. Packages are installed from the [General registry](https://github.com/JuliaRegistries/General). 
+Pluto's package management is a wrapper around [Pkg.jl](https://pkgdocs.julialang.org/v1/) (Julia's built-in package manager) and [RegistryInstances.jl](https://github.com/GunnarFarneback/RegistryInstances.jl). Packages are installed from the [General registry](https://github.com/JuliaRegistries/General). 
 
 > 🙋 You can discover all available packages on [juliahub.com](https://juliahub.com/ui/Home).
 

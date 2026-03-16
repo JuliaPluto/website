@@ -1,7 +1,7 @@
 ---
-title: "💫 PlutoSliderServer.jl"
+title: "💫 PlutoSliderServer.jl – Overview"
 description: "How to use PlutoSliderServer.jl to serve Pluto notebooks interactively on the web."
-tags: ["docs", "publishing", "PlutoSliderServer", "share", "web", "interactivity"]
+tags: ["docs", "advanced", "widgets", "PlutoSliderServer", "share", "web", "interactivity"]
 layout: "md.jlmd"
 order: 9
 ---

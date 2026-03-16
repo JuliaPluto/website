@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.20.23
 
 #> [frontmatter]
 #> image = "https://media.giphy.com/media/l3vRfDn9ca5PVkHv2/giphy.gif"

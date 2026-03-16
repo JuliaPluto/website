@@ -14,7 +14,7 @@ order: 20
 
 
 !!! tip
-    Pluto's reactivity means that you can put cells in **any order**, and they will still execute correctly based on the dependencies between cells. This means that you can place cells in the order that makes the most sense for your story, which is not always the order that makes the most sense for the computer.
+    Pluto's reactivity means that you can put cells in **any order**, and they will still execute correctly based on the dependencies between cells. This means that you can place cells in the order that makes the most sense for your story, which is not always the order that makes the most sense for the computer. And if you accidentally create a cyclic dependency between your variables, Pluto will detect it and notify you.
     
     For example, you can first tell your story using Markdown cells and plots, and then add a section `# Appendix` with package imports, helper functions and more.
 

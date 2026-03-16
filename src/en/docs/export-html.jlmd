@@ -49,4 +49,16 @@ Every HTML export contains an **Edit or run** button in the top right. When you 
 <img src="$(root_url)/assets/img/Edit or run menu screenshot.png" alt="Screenshot of the 'Edit or run' menu with the option to download the notebook file." width="1312" height="1454">
 
 
-`.html` files from Pluto can also be used as web pages on your blog. <a href="../notebooks-online/" class="arrow">Learn more</a>
+## Offline support
+HTML export files are all-inclusive, which means that you can open them without an internet connection. This is why the HTML files are quite large (around 8MB plus your content): it includes all the assets (JavaScript, CSS, fonts) that are needed to display the notebook. 
+
+Some heavy assets like the JuliaMono font are not included in the file itself, and will load progressively if you have an internet connection.
+
+
+## Using HTML files
+The HTML can be shared as a file (like PDF), and people can open it by double-clicking the file. But you can also host the HTML file online, and use it as a web page. <a href="../notebooks-online/" class="arrow">Learn more</a>
+
+When sharing HTML files online, [frontmatter](../frontmatter/) can be used to set the title, description, and author of the page. This information is used in the HTML `<meta>` tags, which are important for search engines and social media sharing.
+
+
+

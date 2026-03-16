@@ -1,0 +1,37 @@
+---
+title: "🧑‍🏫 Lectures"
+description: "How to use Pluto to teach Julia with interactive lectures."
+tags: ["docs", "education"]
+layout: "md.jlmd"
+order: 2
+---
+
+# Pluto for lectures
+Pluto is great for writing lectures in the "Pluto style". This means lectures with:
+- **A modern look** – lectures with simple markdown and plots should look great, with modern typography and design, on desktops, mobile phones and PDF.
+- **Interactive content** – sliders, scrubbable numbers, buttons and more, to control outputs like plots, numbers and tables.
+- **Reproducibility** – Pluto notebooks are easy to share, and anyone can open a notebook and run it themself. 
+
+
+## Easy to use
+And our goal is to make this **as easy as possible** to set up and use. This is how we do that:
+- **A modern look** – Pluto is built on "smart defaults". Instead of endless themes and settings pages, we have one modern design that is designed to look best on today's web. We find that students appreciate a modern-looking tool!
+- **Interactive content** – Pluto uses [reactivity](../reactivity/) to make everything interactive. We believe that reactive global variables are the most accessible way to make notebooks interactive. Interactive UI (sliders) works using the same mechanism (reactive globals), which means that anyone can learn how to use it. Pluto is not the most advanced interactivity tool for Julia, but it is the easiest to learn.
+- **Reproducibility** – using [reacitivity](../reactivity/), a [built-in package manager](../packages/), [binder](../binder/) and more, we try our best to make sure that Pluto notebooks are **reproducible by default**. Our hope is to make Julia notebooks just like Powerpoint, Photoshop and Excel files – you can open them, and they will work.
+
+!!! info "Examples"
+    To see examples of interactive lectures, take a look at the [featured notebooks](https://featured.plutojl.org/).
+
+
+
+
+
+
+
+## Lecture notes online
+Your notebooks are stored as `.jl` Julia files, but Pluto makes it easy to distribute your lecture notes in formats that are easily readable by students. You can [export to HTML files](../export-html/) (recommended) which look great on any device (mobile and desktop), or you can [generate PDF files](../export-pdf/).
+
+You can also generate HTML files automatically using GitHub Actions (or similar), and turn your git repository into a website automatically. This is ideal for courses under development, with multiple contributors.
+
+<a href="../notebooks-online/" class="arrow">Learn more</a>
+

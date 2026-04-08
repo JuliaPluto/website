@@ -17,16 +17,16 @@ Once Pluto is installed, you can either choose to open your own notebook or star
 ## Step 3: Creating and Running a Cell
 To add code, you need to first add a cell. This can be done with clicking on the `+` icon as shown below or by using the shortcut `Ctrl+Enter`. 
 
-<img alt="screenshot of creating a cell" src="$(root_url)/assets/img/create-cell.png" width="1406" height="994"></a>
+<img alt="screenshot of creating a cell" src="$(root_url)/assets/img/create-cell.png" width="1796" height="216"></a>
 
 !!! tip
     Once a cell is created, you can add either one line code or wrap your code in a `begin ... end` block to allow multiple lines. Don't worry if you forget about this, Pluto will suggest a fix for you! 
 
-    <img alt="screenshot of error message" src="$(root_url)/assets/img/pluto-error-msg.png" width="1406" height="994"></a>
+    <img alt="screenshot of error message" src="$(root_url)/assets/img/pluto-error-msg.png" width="1788" height="702"></a>
 
 To run the cell, you can either click on the Run Icon <img src="https://cdn.jsdelivr.net/gh/ionic-team/ionicons@5.5.1/src/svg/caret-forward-circle-outline.svg" alt="✅" class="ionicon"> or use the shortcut `Shift+Enter`.
 
-<img alt="screenshot of running a cell" src="$(root_url)/assets/img/run-button.png" width="1406" height="994"></a>
+<img alt="screenshot of running a cell" src="$(root_url)/assets/img/run-button.png" width="1780" height="174"></a>
 
 ## Step 4: Start Coding :) 
 
@@ -40,11 +40,11 @@ If you want to preserve the code in case you need it later, the cell can be temp
 ### Hiding Cells
 Pluto also lets you hide a cell's code while keeping it running and its output visible, pretty neat! To do this, just click on the <img src="https://unpkg.com/ionicons@7.1.0/dist/svg/eye-outline.svg" width="12"> icon to the left of the cell. 
 
-<img alt="screenshot of hiding a cell" src="$(root_url)/assets/img/hide-cell.png" width="706" height="594"></a>
+<img alt="screenshot of hiding a cell" src="$(root_url)/assets/img/hide-cell.png" width="1784" height="210"></a>
 
 To show the cell again, just click on the same icon again!
 
-<img alt="screenshot of hiding a cell" src="$(root_url)/assets/img/show-cell.png" width="706" height="594"></a>
+<img alt="screenshot of hiding a cell" src="$(root_url)/assets/img/show-cell.png" width="1784" height="128"></a>
 
 !!! tip
     This can be super useful for keeping things tidy! If you've got a chunky block of code (like one that generates a plot) that's not really the star of the show, just hide it and just leave the output. Check out more use cases in [Featured Notebooks](../featured-notebooks/) and see how we use it for education [here](../education-showcase).

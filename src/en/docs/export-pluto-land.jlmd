@@ -1,0 +1,24 @@
+---
+title: "📗 Export using Pluto.land"
+description: "How to export a Pluto.jl notebook using Pluto.land ."
+tags: ["docs", "publishing", "html", "export", "share", "web", "land"]
+layout: "md.jlmd"
+order: 1.4
+---
+
+# Export using `Pluto.land`
+
+`Pluto.land` is a simple web service run by the Pluto.jl team that makes sharing your Pluto notebook exports super easy!
+
+<img src="$(root_url)/assets/img/pluto-land.png" alt="screenshot of Pluto Land" width="1668" height="1250">
+
+To use this, just go to the export options as described [here](../export) and choose the `Static HTML` option, a window as seen below to pop up where you can upload your notebook to `pluto.land`. Once you click on `Upload to pluto.land`, you get a link that you can share, that's it! :)
+
+<img src="$(root_url)/assets/img/export html local or plutoland.png" alt="screenshot of Pluto Land" width="852" height="896">
+
+## Example 
+Once you don't need this anymore, the link can be deleted. A full rundown of this feature is found in the video below: 
+
+<video alt="Demo Pluto land." style="aspect-ratio: 1146/1238; max-width: 100%;" src="$(root_url)/assets/img/pluto-land.mov" controls="controls" muted="muted" loop="loop" playsinline></video>
+
+

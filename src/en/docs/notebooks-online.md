@@ -19,10 +19,9 @@ There are many options fitting to different needs. Some are really easy, while o
 
 {#plutoland}
 ## **pluto.land**: Simple sharing
-[pluto.land](https://pluto.land) is a new, simple way to share your Pluto notebooks online. Just [export your notebook to HTML](../export-html/), then upload the HTML file to pluto.land. You'll get a unique URL that you can share with anyone!
+[pluto.land](https://pluto.land) is a new, simple way to share your Pluto notebooks online. You can upload HTML export files, or [export directly from Pluto](../export-plutoland/). You'll get a unique URL that you can share with anyone!
 
 **Pros:**
-- Free
 - Awesome
 - Super simple to use
 - No account required

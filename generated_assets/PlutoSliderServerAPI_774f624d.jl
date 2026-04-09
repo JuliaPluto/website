@@ -1,11 +1,11 @@
 ### A Pluto.jl notebook ###
-# v0.20.23
+# v0.20.24
 
 #> [frontmatter]
 #> order = "10"
-#> title = "💫 PlutoSliderServer.jl – References"
+#> title = "PlutoSliderServer.jl – API reference"
 #> date = "2026-03-13"
-#> tags = ["docs", "advanced", "widgets", "PlutoSliderServer"]
+#> tags = ["docs", "advanced", "internals", "PlutoSliderServer"]
 #> layout = "layout.jlhtml"
 #> license = "Unlicense"
 #> 
@@ -19,10 +19,23 @@ using InteractiveUtils
 # ╔═╡ 181ae1f8-1e2d-11f1-a486-8101eea4ae16
 using PlutoSliderServer
 
-# ╔═╡ 88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
-md"""# PlutoSliderServer.jl
+# ╔═╡ 192adda9-de3e-4d15-9eef-b2b444ce392f
+using PlutoUI
 
-### Main Functions"""
+# ╔═╡ 88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
+md"""
+# PlutoSliderServer.jl
+
+This page gives a reference of the public API of PlutoSliderServer.jl. To learn more about this package, check out the [overview](https://plutojl.org/en/docs/plutosliderserver/) and the [repository](https://github.com/JuliaPluto/PlutoSliderServer.jl).
+"""
+
+# ╔═╡ 442a1f68-3bd1-42bd-9188-ebb3dcb15076
+PlutoUI.TableOfContents(include_definitions=true)
+
+# ╔═╡ 97e6a8a8-a783-4def-b414-364064967db5
+md"""
+## Public API
+"""
 
 # ╔═╡ e7504b8b-df12-468c-82fd-884410b2342e
 Docs.Binding(PlutoSliderServer, :run_directory)
@@ -46,7 +59,9 @@ Docs.Binding(PlutoSliderServer, :run_notebook)
 Docs.Binding(PlutoSliderServer, :find_notebook_files_recursive)
 
 # ╔═╡ 775010b3-b6f9-4543-9c33-5c25477800de
-md"### Helper Functions"
+md"""
+## Helper Functions
+"""
 
 # ╔═╡ 9f604baa-cac1-437f-8468-965b999673eb
 Docs.Binding(PlutoSliderServer, :cache_filename)
@@ -61,20 +76,28 @@ Docs.Binding(PlutoSliderServer, :base64urlencode)
 Docs.Binding(PlutoSliderServer, :base64urldecode)
 
 # ╔═╡ 906748b6-a916-4fe7-b261-491342147f96
-md"### List of Options for the `PlutoDeployment.toml` file
+md"""
+### Example `PlutoDeployment.toml` file
 
-**Sample `PlutoDeployment.toml` file:**"
+Here is the full list of options that can be provided in the `PlutoDeployment.toml` file. 
+
+*This is the output of running `PlutoSliderServer.show_sample_config_toml_file()`.*
+"""
 
 # ╔═╡ df7e3ddb-2d6e-4c62-b1f0-3c49ad81f217
-PlutoSliderServer.show_sample_config_toml_file()
+Markdown.MD([Markdown.Code("julia", string(
+	PlutoSliderServer.show_sample_config_toml_file()
+))])
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 PlutoSliderServer = "2fc8631c-6f24-4c5b-bca7-cbb509c42db4"
+PlutoUI = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
 
 [compat]
 PlutoSliderServer = "~1.8.0"
+PlutoUI = "~0.7.80"
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000002
@@ -83,7 +106,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.12.5"
 manifest_format = "2.0"
-project_hash = "0ddb68926f8f13a727a056118d70744b69a632bb"
+project_hash = "ca231d8b7cca5d2f6679ee4d33fc18d353de0b2e"
 
 [[deps.AbstractPlutoDingetjes]]
 deps = ["Pkg"]
@@ -125,18 +148,25 @@ git-tree-sha1 = "962834c22b66e32aa10f7611c08c8ca4e20749a9"
 uuid = "944b1d66-785c-5afd-91f1-9de20f533193"
 version = "0.7.8"
 
+[[deps.ColorTypes]]
+deps = ["FixedPointNumbers", "Random"]
+git-tree-sha1 = "67e11ee83a43eb71ddc950302c53bf33f0690dfe"
+uuid = "3da002f7-5984-5a60-b8a6-cbb66c0b333f"
+version = "0.12.1"
+weakdeps = ["StyledStrings"]
+
+    [deps.ColorTypes.extensions]
+    StyledStringsExt = "StyledStrings"
+
 [[deps.Compat]]
 deps = ["TOML", "UUIDs"]
 git-tree-sha1 = "9d8a54ce4b17aa5bdce0ea5c34bc5e7c340d16ad"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
 version = "4.18.1"
+weakdeps = ["Dates", "LinearAlgebra"]
 
     [deps.Compat.extensions]
     CompatLinearAlgebraExt = "LinearAlgebra"
-
-    [deps.Compat.weakdeps]
-    Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
-    LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -212,6 +242,12 @@ version = "0.10.14"
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 version = "1.11.0"
 
+[[deps.FixedPointNumbers]]
+deps = ["Statistics"]
+git-tree-sha1 = "05882d6995ae5c12bb5f36dd2ed3f61c98cbb172"
+uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
+version = "0.8.5"
+
 [[deps.FromFile]]
 deps = ["Downloads", "Requires"]
 git-tree-sha1 = "fd1b6f327472d0faf28b4d1fda8d9b582ab136df"
@@ -253,10 +289,22 @@ git-tree-sha1 = "5e6fe50ae7f23d171f44e311c2960294aaa0beb5"
 uuid = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 version = "1.10.19"
 
+[[deps.Hyperscript]]
+deps = ["Test"]
+git-tree-sha1 = "179267cfa5e712760cd43dcae385d7ea90cc25a4"
+uuid = "47d2ed2b-36de-50cf-bf87-49c2cf4b8b91"
+version = "0.0.5"
+
 [[deps.HypertextLiteral]]
 deps = ["Tricks"]
 git-tree-sha1 = "d1a86724f81bcd184a38fd284ce183ec067d71a0"
 uuid = "ac1192a8-f4b3-4bfe-ba22-af5b92cd3ab2"
+version = "1.0.0"
+
+[[deps.IOCapture]]
+deps = ["Logging", "Random"]
+git-tree-sha1 = "0ee181ec08df7d7c911901ea38baf16f755114dc"
+uuid = "b5f81e59-6552-4d32-b1f0-c071b021bf89"
 version = "1.0.0"
 
 [[deps.InteractiveUtils]]
@@ -347,6 +395,11 @@ git-tree-sha1 = "be484f5c92fad0bd8acfef35fe017900b0b73809"
 uuid = "94ce4f54-9a6c-5748-9c1c-f9c7231a4531"
 version = "1.18.0+0"
 
+[[deps.LinearAlgebra]]
+deps = ["Libdl", "OpenBLAS_jll", "libblastrampoline_jll"]
+uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+version = "1.12.0"
+
 [[deps.Logging]]
 uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 version = "1.11.0"
@@ -398,6 +451,11 @@ version = "1.2.1"
 [[deps.NetworkOptions]]
 uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 version = "1.3.0"
+
+[[deps.OpenBLAS_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
+uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
+version = "0.3.29+0"
 
 [[deps.OpenSSH_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "OpenSSL_jll", "Zlib_jll"]
@@ -459,6 +517,12 @@ git-tree-sha1 = "d00613560b367be5b9620defa748489c67023347"
 uuid = "2fc8631c-6f24-4c5b-bca7-cbb509c42db4"
 version = "1.8.0"
 
+[[deps.PlutoUI]]
+deps = ["AbstractPlutoDingetjes", "Base64", "ColorTypes", "Dates", "Downloads", "FixedPointNumbers", "Hyperscript", "HypertextLiteral", "IOCapture", "InteractiveUtils", "Logging", "MIMEs", "Markdown", "Random", "Reexport", "URIs", "UUIDs"]
+git-tree-sha1 = "fbc875044d82c113a9dee6fc14e16cf01fd48872"
+uuid = "7f904dfe-b85e-4ff6-b463-dae2292396a8"
+version = "0.7.80"
+
 [[deps.PrecompileSignatures]]
 git-tree-sha1 = "18ef344185f25ee9d51d80e179f8dad33dc48eb1"
 uuid = "91cefc8d-f054-46dc-8f8c-26e11d7c5411"
@@ -496,6 +560,11 @@ version = "1.11.0"
 deps = ["SHA"]
 uuid = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 version = "1.11.0"
+
+[[deps.Reexport]]
+git-tree-sha1 = "45e428421666073eab6f2da5c9d310d99bb12f9b"
+uuid = "189a3867-3050-52da-a836-e630ba90ab69"
+version = "1.2.2"
 
 [[deps.RegistryInstances]]
 deps = ["LazilyInitializedFields", "Pkg", "TOML", "Tar"]
@@ -537,6 +606,18 @@ version = "1.2.0"
 [[deps.Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
 version = "1.11.0"
+
+[[deps.Statistics]]
+deps = ["LinearAlgebra"]
+git-tree-sha1 = "ae3bb1eb3bba077cd276bc5cfc337cc65c3075c0"
+uuid = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+version = "1.11.1"
+
+    [deps.Statistics.extensions]
+    SparseArraysExt = ["SparseArrays"]
+
+    [deps.Statistics.weakdeps]
+    SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
 [[deps.StructUtils]]
 deps = ["Dates", "UUIDs"]
@@ -618,6 +699,11 @@ deps = ["Libdl"]
 uuid = "83775a58-1f1d-513f-b197-d71354ab007a"
 version = "1.3.1+2"
 
+[[deps.libblastrampoline_jll]]
+deps = ["Artifacts", "Libdl"]
+uuid = "8e850b90-86db-534c-a0d3-1478176c7d93"
+version = "5.15.0+0"
+
 [[deps.nghttp2_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "8e850ede-7688-5339-a07c-302acd2aaf8d"
@@ -630,8 +716,10 @@ version = "17.7.0+0"
 """
 
 # ╔═╡ Cell order:
-# ╠═181ae1f8-1e2d-11f1-a486-8101eea4ae16
 # ╟─88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
+# ╠═181ae1f8-1e2d-11f1-a486-8101eea4ae16
+# ╟─442a1f68-3bd1-42bd-9188-ebb3dcb15076
+# ╟─97e6a8a8-a783-4def-b414-364064967db5
 # ╟─e7504b8b-df12-468c-82fd-884410b2342e
 # ╟─f4fb3362-3258-4139-83ba-27660fff875c
 # ╟─3ac2411d-a546-40ce-aaee-5820ef6938df
@@ -646,5 +734,6 @@ version = "17.7.0+0"
 # ╟─ee96e3f2-a217-40bf-9728-95ca891d771d
 # ╟─906748b6-a916-4fe7-b261-491342147f96
 # ╠═df7e3ddb-2d6e-4c62-b1f0-3c49ad81f217
+# ╠═192adda9-de3e-4d15-9eef-b2b444ce392f
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002

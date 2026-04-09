@@ -20,7 +20,7 @@ After writing your Pluto notebook, you have a couple options to **export** your 
 > <img src="$(root_url)/assets/img/Share button screenshot.png" alt="Screenshot of the Share button" width="1532" height="282">
 
 !!! info "🌟 New: pluto.land"
-    Check out the new [pluto.land](https://pluto.land/), a website to easily share your Pluto notebooks!
+    Check out the new [pluto.land](https://pluto.land/), a website to easily share your Pluto notebooks! A full tutorial can be found [here](../export-pluto-land)
 
 ## Publishing on the web
 The options above are useful if you want **a file to share** with someone else. If you want to publish your notebook on the web (with a URL), or if you want live interactivity (with `@bind`) on your website, you need one of the more advanced options below.

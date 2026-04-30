@@ -262,10 +262,11 @@ window.pluto_recording_audio_url = undefined;
 <h3 id="reacitivity-1"><a href="#reacitivity-1" class="anchor"></a>Reacitivity</h3>
 <p>Pluto’s reactivity works using <strong>static analysis</strong>. Pluto analyzes the expression of each cell to find <strong>references</strong> and <strong>definitions</strong> to global variables. Linking these between cells creates a DAG (graph), where cells are nodes and edges are matched reference-definition links.</p>
 <p>When you run a cell, Pluto will search this DAG to find cells that also need to run.</p>
-<p>How this works is covered in other documents. <a class="arrow" href="../reactivity/">Learn more</a></p>
+<p>How this works is covered in other documents. Check out the <a class="arrow" href="../reactivity/">documentation page</a> and <a class="arrow" href="https://youtu.be/JY-wmGyz9tw">the PlutoCon talk by Mikolaj</a>.</p>
 <h3 id="macro-handling"><a href="#macro-handling" class="anchor"></a>Macro handling</h3>
 <p>Pluto supports reactive macrocalls and <code>using</code>s. <em>(thank you <a href="https://github.com/Pangoraw">Paul</a>!)</em> This means that if an expression defines or uses a variable <em>after macroexpansion</em>, Pluto will handle it correctly. This is very difficult to implement, because Pluto now needs to <em>run code to be able to analyze it</em>. The simple flow <em>analyze → run</em> is no longer possible.</p>
 <p>This is implemented by running reactively in chunks. Pluto will start a reactive run as usual, but whenever a cell has been executed that <em>could give more information</em> (e.g. a new macro was defined, or package loaded), Pluto tries to macroexpand and analyze any remaining cells that still have unknowns. Macroexpansion happens in the notebook process, the resulting expression is sanitzed and returned to the server for analysis.</p>
+<p><a href="https://www.youtube.com/watch?v=B0iWTxdmHNA">Watch the JuliaCon talk by Paul about this.</a></p>
 <h3 id="package-management"><a href="#package-management" class="anchor"></a>Package management</h3>
 <p>Pluto has integration with Pkg for:</p>
 <ul>

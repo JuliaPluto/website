@@ -28,6 +28,7 @@ Feel free to add your course to this list by clicking "Edit this page" at the bo
 | 🌍 [JuliaClimate Notebooks](https://juliaclimate.github.io/Notebooks/) (JuliaClimate) | climate science, global warming, CMIP6, sea surface temperature, marine ecosystems | 2025 | |
 | 🇨🇭 [Biological Data Science II: Machine Learning (BIO-322)](https://bio322.epfl.ch) (EPFL) | cross-validation, gradient descent, neural networks, tree-based methods, unsupervised learning, reinforcement learning | 2025 | |
 | 🇩🇪 [Julia for Machine Learning (JuML)](https://adrianhill.de/julia-ml-course/) (TU Berlin) | Julia, linear algebra, DataFrames, machine learning, automatic differentiation, deep learning | 2025 | Highly recommended! |
+| 🇵🇹 [Applied Computational Notebooks for Electric Machinery II](https://ricardo-luis.github.io/me-2/) (ISEL/IPL, in portuguese) | DC Machines, 3-phase Synchronous Machines, Dynamics of Electrical Machines | 2025 | |
 | 🌍 [Statistical Rethinking in Julia (SR2TuringPluto)](https://github.com/StatisticalRethinkingJulia/SR2TuringPluto.jl) | Bayesian statistics | 2024 | Based on McElreath's *Statistical Rethinking*; uses Turing.jl |
 | 🇩🇪 [Mathematik für Informatiker 2b](https://ranocha.de/2024_MfI2b/) (Johannes Gutenberg-Universität Mainz) | calculus, numerical methods, Fourier series, PDEs, image processing | 2024 | |
 | 🇫🇷 [Computational Economics for PhDs](https://floswald.github.io/NumericalMethods/) (SciencesPo Paris) | optimization, parallel computing, dynamic programming, discrete/continuous choice | 2024 | |

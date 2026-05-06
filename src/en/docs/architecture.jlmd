@@ -188,5 +188,6 @@ The code for this is in `src/packages/PkgCompat.jl` (all internal Pkg API use is
 We have also written a package [GracefulPkg.jl](https://github.com/JuliaPluto/GracefulPkg.jl) that can will try to convert a Manifest.toml between environments with minimal damage.
 
 
-
+## Developing Pluto
+Are you interested to work on Pluto? Take a look at our [developer instructions](https://github.com/JuliaPluto/pluto-developer-instructions) to get started.
 

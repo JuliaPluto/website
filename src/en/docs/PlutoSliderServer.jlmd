@@ -39,6 +39,8 @@ PlutoSliderServer.run_notebook(path_to_notebook)
 ## How does it work?
 Take a look at the [PlutoSliderServer.jl README or documentation](https://github.com/JuliaPluto/PlutoSliderServer.jl) for more details.
 
+!!! info "API reference"
+    If you want to see the API reference of PlutoSliderServer.jl, check out the [API reference documentation](../PlutoSliderServerAPI/).
 
 ## Who uses PlutoSliderServer.jl?
 PlutoSliderServer is used by various groups and universities since 2020.

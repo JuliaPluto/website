@@ -13,6 +13,9 @@ PlutoPages allows for more complex sites than PlutoSliderServer.jl, since it is 
 
 Check out the [PlutoPages.jl README](https://github.com/JuliaPluto/PlutoPages.jl) to get started.
 
+<img alt="screenshot of the search page of a website generated with PlutoPages" src="$(root_url)/assets/img/plutopages search.png" width="2002" height="1422">
+
+
 ## Combination with PlutoSliderServer.jl
 You can combine PlutoPages.jl with PlutoSliderServer.jl to add interactivity to your website. The idea is as follows:
 - Set up a PlutoSliderServer.jl instance that runs all notebooks in the `src/` folder. Serve it on a domain, like `plutosliderserver.my-site.org`.
@@ -24,6 +27,6 @@ You can combine PlutoPages.jl with PlutoSliderServer.jl to add interactivity to 
 PlutoPages is relatively new (2023). It is being used in the following places:
 - This website!
 - The course [Computational Thinking at MIT](https://computationalthinking.mit.edu/)
-- (WIP) The repository [computational-thinking-template](https://github.com/JuliaPluto/computational-thinking-template)
+- The repository [computational-thinking-template](https://github.com/JuliaPluto/computational-thinking-template)
 
 

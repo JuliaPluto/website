@@ -21,12 +21,14 @@ Feel free to add your course to this list by clicking "Edit this page" at the bo
 |--------|--------|------|-------|
 | 🇳🇱 [Bayesian Machine Learning and Information Processing (5SSD0)](https://github.com/bmlip/course) (TU Eindhoven) | Bayesian ML, signal processing, variational Bayes | 2026 | 🎈 _Co-developed with Pluto!_ |
 | 🇺🇸 [MIT 18.S191 — Introduction to Computational Thinking](https://computationalthinking.mit.edu) (MIT) | scientific computing, epidemic modeling, climate modeling, raytracing, image processing | 2026 | 🎈 _Co-developed with Pluto!_ |
+| 🇩🇪 [Research Software Engineering with Julia](https://vchuravy.dev/rse-course/) (University of Mainz) | Julia programming, research software engineering, parallelism, type stability, multiple dispatch, accelerated computing | 2026 | Uses [CT template](../notebooks-online/#ct-template) |
 | 🇬🇧 [RCDS Introduction to Julia](https://github.com/ImperialCollegeLondon/RCDS-introduction-to-julia) (Imperial College London) | Julia programming | 2025 | |
 | 🇬🇧 [Introduction to Julia for Computational Science](https://github.com/Cambridge-ICCS/Summer-School-Julia-Tutorial) (Cambridge ICCS) | Julia, computational science | 2025 | |
 | 🌍 [Julia Course](https://github.com/VEZY/julia_course) (VEZY) | Julia programming | 2025 | |
 | 🌍 [JuliaClimate Notebooks](https://juliaclimate.github.io/Notebooks/) (JuliaClimate) | climate science, global warming, CMIP6, sea surface temperature, marine ecosystems | 2025 | |
 | 🇨🇭 [Biological Data Science II: Machine Learning (BIO-322)](https://bio322.epfl.ch) (EPFL) | cross-validation, gradient descent, neural networks, tree-based methods, unsupervised learning, reinforcement learning | 2025 | |
 | 🇩🇪 [Julia for Machine Learning (JuML)](https://adrianhill.de/julia-ml-course/) (TU Berlin) | Julia, linear algebra, DataFrames, machine learning, automatic differentiation, deep learning | 2025 | Highly recommended! |
+| 🇵🇹 [Applied Computational Notebooks for Electric Machinery II](https://ricardo-luis.github.io/me-2/) (ISEL/IPL, in portuguese) | DC Machines, 3-phase Synchronous Machines, Dynamics of Electrical Machines | 2025 | |
 | 🌍 [Statistical Rethinking in Julia (SR2TuringPluto)](https://github.com/StatisticalRethinkingJulia/SR2TuringPluto.jl) | Bayesian statistics | 2024 | Based on McElreath's *Statistical Rethinking*; uses Turing.jl |
 | 🇩🇪 [Mathematik für Informatiker 2b](https://ranocha.de/2024_MfI2b/) (Johannes Gutenberg-Universität Mainz) | calculus, numerical methods, Fourier series, PDEs, image processing | 2024 | |
 | 🇫🇷 [Computational Economics for PhDs](https://floswald.github.io/NumericalMethods/) (SciencesPo Paris) | optimization, parallel computing, dynamic programming, discrete/continuous choice | 2024 | |

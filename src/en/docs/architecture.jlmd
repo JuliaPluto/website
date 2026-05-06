@@ -1,15 +1,13 @@
 ---
-title: "Architecture"
+title: "🔬 Architecture – How does Pluto work?"
 description: "An overview of the internals of Pluto.jl."
 tags: ["docs", "internals", "advanced", "architecture"]
 layout: "md.jlmd"
-order: 99
+order: 0
 ---
 
 # How does Pluto work?
 Pluto.jl is written in JavaScript (frontend) and Julia (backend). The **frontend** is the app that runs in your web browser where you type code, see outputs, etc. The **backend** is the Julia program that runs in your terminal with an HTTP server (to serve the frontend and communicate with it), code analysis, reactivity and code execution. The backend runs a **Julia process per notebook** where user code runs.
-
-
 
 Before diving into the frontend and backend, let's look at how they work together.
 
@@ -169,12 +167,14 @@ Pluto's reactivity works using **static analysis**. Pluto analyzes the expressio
 
 When you run a cell, Pluto will search this DAG to find cells that also need to run.
 
-How this works is covered in other documents. <a class="arrow" href="../reactivity/">Learn more</a>
+How this works is covered in other documents. Check out the <a class="arrow" href="../reactivity/">documentation page</a> and <a class="arrow" href="https://youtu.be/JY-wmGyz9tw">the PlutoCon talk by Mikolaj</a>.
 
 ### Macro handling
 Pluto supports reactive macrocalls and `using`s. _(thank you [Paul](https://github.com/Pangoraw)!)_ This means that if an expression defines or uses a variable _after macroexpansion_, Pluto will handle it correctly. This is very difficult to implement, because Pluto now needs to _run code to be able to analyze it_. The simple flow _analyze → run_ is no longer possible.
 
 This is implemented by running reactively in chunks. Pluto will start a reactive run as usual, but whenever a cell has been executed that _could give more information_ (e.g. a new macro was defined, or package loaded), Pluto tries to macroexpand and analyze any remaining cells that still have unknowns. Macroexpansion happens in the notebook process, the resulting expression is sanitzed and returned to the server for analysis. 
+
+[Watch the JuliaCon talk by Paul about this.](https://www.youtube.com/watch?v=B0iWTxdmHNA)
 
 
 ### Package management
@@ -188,5 +188,6 @@ The code for this is in `src/packages/PkgCompat.jl` (all internal Pkg API use is
 We have also written a package [GracefulPkg.jl](https://github.com/JuliaPluto/GracefulPkg.jl) that can will try to convert a Manifest.toml between environments with minimal damage.
 
 
-
+## Developing Pluto
+Are you interested to work on Pluto? Take a look at our [developer instructions](https://github.com/JuliaPluto/pluto-developer-instructions) to get started.
 

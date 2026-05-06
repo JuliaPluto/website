@@ -1,0 +1,32 @@
+---
+title: "📗 Upload to pluto.land"
+description: "How to export a Pluto.jl notebook using pluto.land ."
+tags: ["docs", "publishing", "html", "export", "share", "web", "pluto.land"]
+layout: "md.jlmd"
+order: 1.4
+---
+
+# Upload to `pluto.land`
+[`pluto.land`](https://pluto.land/) is a simple web service run by the Pluto.jl team that makes sharing your Pluto notebook exports super easy!
+
+You can upload a notebook to `pluto.land` to get a shareable public link, where people can read and download your notebook.
+
+<img src="$(root_url)/assets/img/plutoland screenshot.png" alt="Screenshot of pluto.land showing an upload button" width="1792" height="870">
+
+There are two ways to upload a notebook to `pluto.land`:
+
+### Option 1: Upload HTML file
+The first option is to go to [pluto.land](https://pluto.land/) and upload a Pluto HTML export file that you have already downloaded. You will get a shareable link to your notebook on `pluto.land`.
+
+### Option 2: Directly from Pluto
+The second option is to upload your notebook directly from Pluto, without downloading the HTML file first. 
+
+You follow the same steps as described in the [HTML export guide](../export-html/), but instead of choosing "Download HTML file" in step 4, you choose "Upload to pluto.land". When the upload is finished, you will get a shareable link to your notebook on `pluto.land`.
+
+<img src="$(root_url)/assets/img/export html local or plutoland plutoland.png" alt="screenshot of Pluto's HTML export menu" style="max-width: 400px;" width="852" height="896">
+
+#### Delete after upload 
+If you uploaded a notebook by accident, you can delete it after uploading, by clicking the 'trash' icon next to the URL. This option is only available directly after uploading. Once you close the window, the notebook will be permanently available on `pluto.land`.
+
+## More information
+To learn more about how `pluto.land` works, and how to use it, check out the [`pluto.land`](https://pluto.land/) website. The website has an FAQ section with more details.

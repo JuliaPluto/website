@@ -33,5 +33,5 @@ Your notebooks are stored as `.jl` Julia files, but Pluto makes it easy to distr
 
 You can also generate HTML files automatically using GitHub Actions (or similar), and turn your git repository into a website automatically. This is ideal for courses under development, with multiple contributors.
 
-<a href="../notebooks-online/" class="arrow">Learn more</a>
+<a href="../notebooks-online/" class="arrow">Learn more about lecture notes online</a>
 

@@ -1,6 +1,6 @@
 cd(@__DIR__)
 
-@assert v"1.10.0" <= VERSION < v"1.11.4"
+include("tools/verify_correct_julia_version.jl")
 
 import Pkg
 Pkg.activate("./pluto-deployment-environment")

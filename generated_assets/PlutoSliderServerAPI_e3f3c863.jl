@@ -29,6 +29,14 @@ md"""
 This page gives a reference of the public API of PlutoSliderServer.jl. To learn more about this package, check out the [overview](https://plutojl.org/en/docs/plutosliderserver/) and the [repository](https://github.com/JuliaPluto/PlutoSliderServer.jl).
 """
 
+# ╔═╡ ca7ac729-db77-4261-ace0-e18487170b3e
+md"""
+!!! info
+	This is the **API reference** of the PlutoSliderServer.jl package. 
+	
+	Do you want to [read an overview instead](https://plutojl.org/en/docs/plutosliderserver/)?
+"""
+
 # ╔═╡ 442a1f68-3bd1-42bd-9188-ebb3dcb15076
 PlutoUI.TableOfContents(include_definitions=true)
 
@@ -718,6 +726,7 @@ version = "17.7.0+0"
 # ╔═╡ Cell order:
 # ╟─88b9e20c-1f9e-4bce-9ba3-98bd89fa1ce3
 # ╠═181ae1f8-1e2d-11f1-a486-8101eea4ae16
+# ╟─ca7ac729-db77-4261-ace0-e18487170b3e
 # ╟─442a1f68-3bd1-42bd-9188-ebb3dcb15076
 # ╟─97e6a8a8-a783-4def-b414-364064967db5
 # ╟─e7504b8b-df12-468c-82fd-884410b2342e

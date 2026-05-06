@@ -5,6 +5,7 @@
 #> image = "https://media.giphy.com/media/242BaXJnCfe7hOVrsE/giphy.gif"
 #> title = "ExpressionExplorer.jl – documentation "
 #> layout = "layout.jlhtml"
+#> order = 70
 #> license = "MIT"
 #> description = "Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl."
 #> tags = ["docs", "internals", "reactivity", "advanced", "ExpressionExplorer"]

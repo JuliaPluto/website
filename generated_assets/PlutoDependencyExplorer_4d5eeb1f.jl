@@ -5,6 +5,7 @@
 #> image = "https://media.giphy.com/media/242BaXJnCfe7hOVrsE/giphy.gif"
 #> title = "PlutoDependencyExplorer.jl – documentation"
 #> date = "2024-01-21"
+#> order = 80
 #> license = "Unlicense"
 #> description = "Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl."
 #> tags = ["docs", "PlutoDependencyExplorer", "internals", "reactivity", "ExpressionExplorer", "advanced"]

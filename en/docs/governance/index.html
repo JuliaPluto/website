@@ -1,13 +1,16 @@
 <!DOCTYPE html><html lang="en">
 <head>
 
-<title>💡 FAQ</title>
-<meta name="description" content='FAQ'>
+<title>Governance</title>
+<meta name="description" content='The governance model for the Pluto.jl project.'>
 <meta property="og:article:tag" content='docs'>
-<meta property="og:article:tag" content='introduction'>
-<meta property='og:title' content='💡 FAQ'>
+<meta property="og:article:tag" content='internals'>
+<meta property="og:article:tag" content='advanced'>
+<meta property="og:article:tag" content='governance'>
+<meta property="og:article:tag" content='open source'>
+<meta property='og:title' content='Governance'>
 <meta property='og:type' content='article'>
-<meta property='og:description' content='FAQ'>
+<meta property='og:description' content='The governance model for the Pluto.jl project.'>
 
 
 <link rel="root" href="../../.." />
@@ -103,7 +106,7 @@ window.pluto_recording_audio_url = undefined;
         <li>
 <h3>Introduction</h3>
 <ul>
-<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class='active'><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
+<li class=''><a href='../../../en/docs/'>🙋 Introduction</a></li><li class=''><a href='../../../en/docs/install/'>🌼 How to install</a></li><li class=''><a href='../../../en/docs/update/'>🌸 How to update</a></li><li class=''><a href='../../../en/docs/featured-notebooks/'>⭐️ Featured notebooks</a></li><li class=''><a href='../../../en/docs/faq/' title='FAQ'>💡 FAQ</a></li>
 </ul>
 </li>
 <li>
@@ -151,7 +154,7 @@ window.pluto_recording_audio_url = undefined;
 <li>
 <h3>Advanced: Internals</h3>
 <ul>
-<li class=''><a href='../../../en/docs/architecture/' title='An overview of the internals of Pluto.jl.'>🔬 Architecture <br><small> How does Pluto work?</small></a></li><li class=''><a href='../../../en/docs/API/' title='Overview of the public API exposed by the Pluto.jl package.'>🧩 Pluto public API <br><small> Control Pluto</small></a></li><li class=''><a href='../../../en/docs/governance/' title='The governance model for the Pluto.jl project.'>Governance</a></li><li class=''><a href='../../../en/docs/PlutoSliderServerAPI/'>PlutoSliderServer.jl <br><small> API reference</small></a></li><li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
+<li class=''><a href='../../../en/docs/architecture/' title='An overview of the internals of Pluto.jl.'>🔬 Architecture <br><small> How does Pluto work?</small></a></li><li class=''><a href='../../../en/docs/API/' title='Overview of the public API exposed by the Pluto.jl package.'>🧩 Pluto public API <br><small> Control Pluto</small></a></li><li class='active'><a href='../../../en/docs/governance/' title='The governance model for the Pluto.jl project.'>Governance</a></li><li class=''><a href='../../../en/docs/PlutoSliderServerAPI/'>PlutoSliderServer.jl <br><small> API reference</small></a></li><li class=''><a href='../../../en/docs/ExpressionExplorer/' title='Find all variables referenced and assigned in a Julia expression. Used internally by Pluto.jl.'>ExpressionExplorer.jl <br><small> documentation </small></a></li><li class=''><a href='../../../en/docs/PlutoDependencyExplorer/' title='Given a list of cell codes, PlutoDependencyExplorer can tell you in which order these cells should run. Used internally by Pluto.jl.'>PlutoDependencyExplorer.jl <br><small> documentation</small></a></li>
 </ul>
 </li>
 
@@ -169,81 +172,74 @@ window.pluto_recording_audio_url = undefined;
 <pluto-output class="pages-markdown rich_output">
 <div class="raw-html-wrapper ">
 <div class="markdown">
-<p>How is Pluto.jl different from Jupyter?</p>
-<blockquote>
-<p>Pluto.jl was built from the ground up to be a fresh new notebook system, written in Julia. The main differences are that Pluto notebooks are <strong>reactive</strong>, and that your notebooks are stored as <strong>executable <code>.jl</code> files</strong>.</p>
-</blockquote>
-<br >
-<p>What’s the deal with <strong>reactivity</strong>?</p>
-<blockquote>
-<p>You use cells to define variables and functions to be used later. In a <strong>reactive</strong> notebook, changing a variable or function will <em>automagically</em> re-evaluate all other cells that use it. <em>Just like a speadsheet editor!</em></p>
-<p><img src="https://pretalx.com/media/juliacon2020/submissions/WNBYW8/pluto_demo_DB6icv4.gif" alt="this gif" /></p>
-<p>Programming is hard sometimes. Even more so when you need to keep track not only of your code, but also of your session’s hidden state. Pluto gives you confidence that the code you see exactly matches the variables you’re working with, eliminating bugs before you even knew you had them.</p>
-</blockquote>
-<br >
-<p>Will all cells be re-evaluated when I change something?</p>
-<blockquote>
-<p>No. Pluto.jl figures out the <em>dependency graph</em> between cells, and knows exactly which cells to re-evaluate, in which order. A cell never executes twice.</p>
-</blockquote>
-<br >
-<p>Will my code be <strong>slower</strong>?</p>
-<blockquote>
-<p>Nope - Pluto.jl analyses your code, and then executes the code <strong>without modifications</strong>. Variables and functions are not wrapped in special objects. After analysis, your code will run on its own.</p>
-</blockquote>
-<br >
-<p>Can I use <strong><code>Plots</code></strong>?</p>
-<blockquote>
-<p>Yes you can! All plotting back-ends should work right away.</p>
-</blockquote>
-<br >
-<p>How to use multiple threads in Pluto.jl? <code>nthreads()</code> says 1 somehow</p>
-<blockquote>
-<p>You can, but you need to set <code>JULIA_NUM_THREADS</code> environment variable as described in the <a href="https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_NUM_THREADS">documentation</a> for the <code>worker</code> spawned by Pluto.jl to pick up.</p>
-</blockquote>
-<br >
-<p>Can I use <strong><code>[my favourite package]</code></strong>?</p>
-<blockquote>
-<p>Yes you can! (Probably!) Your code is evaluated as-is, so if it works in the REPL or in Jupyter, it will work in Pluto.jl. There are some exceptions:</p>
+<h1 id="governance"><a href="#governance" class="anchor"></a>Governance</h1>
+<p>Pluto is a Free Open Source Software project. The Pluto project includes Pluto.jl, and all other projects in the <a href="https://github.com/JuliaPluto">JuliaPluto GitHub organisation</a>. The project is developed by volunteers, employees of organizations that support Pluto, and by contributors with funding from Open Source grants. This document outlines the <strong>decision-making process</strong> behind Pluto’s development, and how other people can get involved.</p>
+<p>We welcome new contributors! If you want to contribute, please check out our <a href="https://github.com/JuliaPluto/pluto-developer-instructions">contributing guidelines</a>, and <a href="../get-involved/">get in touch</a> with the Pluto developers.</p>
+<h2 id="decision-making"><a href="#decision-making" class="anchor"></a>Decision making</h2>
+<p>Decisions about the project are made by the <strong>core developers</strong>, or by other (new) contributors in collaboration with core developers. Decisions that should be made by (or approved by) core developers include:</p>
 <ul>
-<li>packages that are made specifically for the REPL or Jupyter</li>
-<li><code>Distributed</code>, and packages that use it (<a href="https://github.com/fonsp/Pluto.jl/issues/300">#300</a>)</li>
+<li>New features</li>
+<li>Refactoring</li>
+<li>Package interoperability</li>
+<li>UI/UX design changes</li>
+<li>Public API</li>
+<li>Releases</li>
 </ul>
-</blockquote>
-<br >
-<p>Can I open <strong>multiple notebooks</strong> at the same time?</p>
-<blockquote>
-<p>Yes! Click on the logo ( <img src="https://raw.githubusercontent.com/fonsp/Pluto.jl/master/frontend/img/logo.svg" width="60"> ) to go back to the welcome screen. You can use your browser tabs to see multiple notebooks simultaneously.</p>
-</blockquote>
-<p>Can I use Pluto <strong>remotely</strong>?</p>
-<blockquote>
-<p>If the server (where Pluto will run) and the client (the machine whose browser will use Pluto) are on the same network then set the host to <code>0.0.0.0</code> while launching Pluto (e.g <code>Pluto.run(host=&quot;0.0.0.0&quot;</code>). An example use case is if you have a headless raspberry pi and a laptop connected to the same wi-fi network in your home. You can run Pluto on the raspberry-pi and use your laptop’s browser for development.</p>
-<p>However if the server is remote and has a public ip you need to set up an <em>SSH tunnel</em>. First, log in to your server using SSH and start a Pluto server. Then open a local terminal on your own computer and type:</p>
-<pre><code class="language-bash">ssh user@ipaddress -N -L 1234:localhost:1234
-</code></pre>
-<p>with <code>user</code> and <code>ipaddress</code> filled in accordingly. You can then go to <a href="http://localhost:1234/"><code>http://localhost:1234/</code></a> on your own computer to get started! For more info and instructions for Windows, see <a href="https://medium.com/@apbetahouse45/how-to-run-jupyter-notebooks-on-remote-server-part-1-ssh-a2be0232c533">this guide</a>. This can come in handy if your server is on a cloud service such as AWS or Azure. The latter method can be used in the former case too provided an ssh client is available and enabled on both machines.</p>
-</blockquote>
-<br >
-<p>Can I use <strong><code>@async</code></strong> to update values reactively on demand?</p>
-<blockquote>
-<p>Unfortunately not. Pluto.jl uses <em>static code analysis</em> to determine which cells to run next — it does <em>not</em> use wrappers or a polling mechanism to watch variables in real-time. However, the <strong><code>@bind</code> macro</strong> might be able to do what you want! Have a look at the Interactivity sample inside Pluto. Feel free to open a GitHub issue if this doesn’t suit your needs.</p>
-</blockquote>
-<br >
-<p>How can I load <code>startup.jl</code>?</p>
-<blockquote>
-<p>We want your notebooks to be reproducible, so our suggested method is that you copy and paste your personal setup script into a <code>begin ... end</code> block inside your notebook. This avoids implicit dependencies of your notebook. Alternatively, you could write <code>include(&quot;path/to/startup.jl&quot;)</code>, but this will only work on your computer.</p>
-</blockquote>
-<br >
-<p>How can I load a notebook upon launching Pluto?</p>
-<blockquote>
-<p>You can pass the <code>notebook</code> keyword argument to <code>Pluto.run</code>, e.g. <code>Pluto.run(notebook=&quot;/path/to/notebook.jl&quot;)</code>.</p>
-</blockquote>
-<br>
-<p>How can I use a sysimage inside Pluto?</p>
-<blockquote>
-<p><code>Pluto.run()</code> takes a keyword argument <code>sysimage</code> which can be used to add sysimage used by each notebook. To load the currently loaded sysimage, start pluto using:</p>
-</blockquote>
-<pre><code class="language-julia">Pluto.run(sysimage=unsafe_string(Base.JLOptions().image_file))
-</code></pre>
+<h3 id="always-welcome"><a href="#always-welcome" class="anchor"></a>Always welcome</h3>
+<p>Some contributions are less contested, and you can assume that this work will be appreciated. This includes:</p>
+<ul>
+<li>Bug fixes (especially GitHub Issues labeled <code>Bug</code>)</li>
+<li>Localization (<a href="../language/#contribute">info</a>)</li>
+<li>Compatibility work</li>
+<li>Optimization (if it includes an improved benchmark)</li>
+<li>Fixing spelling errors</li>
+<li>Accessiblity improvements</li>
+</ul>
+<p>This means that (new) contributors can always work on these areas independently, and open a PR without discussing it first.</p>
+<h3 id="core-developers"><a href="#core-developers" class="anchor"></a>Core developers</h3>
+<p>The core developers of the Pluto ecosystem include (in alphabetical order):</p>
+<ul>
+<li><a href="https://github.com/fonsp">Fons van der Plas</a></li>
+<li><a href="https://github.com/malyvsen">Mikołaj Bocheński</a></li>
+<li><a href="https://github.com/dralletje">Michiel Dral</a></li>
+<li><a href="https://github.com/pankgeorg">Παναγιώτης Γεωργακόπουλος</a></li>
+<li><a href="https://github.com/Pangoraw">Paul Berg</a></li>
+</ul>
+<p>You can find their contact information on their GitHub profiles. Feel free to reach out!</p>
+<h4 id="subprojects--additional-core-developers"><a href="#subprojects--additional-core-developers" class="anchor"></a>Subprojects – additional core developers</h4>
+<p>Some subprojects of the Pluto ecosystem (like some packages) have additional core developers. Anyone with “Maintain” or “Admin” rights to a repository is considered core developer of that project or package. This includes (but not limited to):</p>
+<ul>
+<li><a href="https://github.com/JuliaPluto/website">pluto.jl website</a>: <a href="https://github.com/ariguiba">Boshra Ariguib</a></li>
+<li><a href="https://github.com/JuliaPluto/featured">featured</a>: <a href="https://github.com/ariguiba">Boshra Ariguib</a>, <a href="https://github.com/behinger">Benedikt Ehinger</a>, <a href="https://github.com/lukavdplas">Luka van der Plas</a></li>
+<li><a href="https://github.com/JuliaPluto/PlutoDesktop">PlutoDesktop</a>: <a href="https://github.com/ariguiba">Boshra Ariguib</a></li>
+<li><a href="https://github.com/JuliaPluto/lezer-julia">lezer-julia</a>: <a href="https://github.com/savq">Sergio Vargas</a>, <a href="https://github.com/andreypopp">Andrey Popp</a></li>
+<li><a href="https://github.com/JuliaPluto/Malt.jl">Malt.jl</a>: <a href="https://github.com/savq">Sergio Vargas</a>, <a href="https://github.com/MichaelHatherly">Michael Hatherly</a></li>
+<li><a href="https://github.com/JuliaPluto/PlutoTeachingTools.jl">PlutoTeachingTools.jl</a>: <a href="https://github.com/adrhill">Adrian Hill</a>, <a href="https://github.com/eford">Eric Ford</a>, <a href="https://github.com/greimel">Fabian Greimel</a></li>
+<li><a href="https://github.com/JuliaPluto/HypertextLiteral.jl">HypertextLiteral.jl</a>: <a href="https://github.com/clarkevans">Clark Evans</a></li>
+</ul>
+<h3 id="becoming-a-core-developer"><a href="#becoming-a-core-developer" class="anchor"></a>Becoming a core developer</h3>
+<p>Any core developer can add additional core developers. Subproject core developers can add additional core developers to their subprojects. If you are interested in becoming a core developer, get in touch! You are expected to have familiarity with the project, an interest in maintaining it, and you should get to know the other contributors.</p>
+<p>Any (subproject) core developer can step down (temporarily or permanently) from their role at their own choice.</p>
+<h2 id="community-work"><a href="#community-work" class="anchor"></a>Community work</h2>
+<p>Pluto is not just a codebase, but also a community project. Our community work inlcudes:</p>
+<ul>
+<li>Issue tracking, triage, review
+<ul>
+<li>Our GitHub Issues, Discussions and PRs.</li>
+</ul>
+</li>
+<li>Online discussions (Discourse, Zulip, Slack, etc)</li>
+<li>Documentation (this website)</li>
+<li>Featured notebooks (<a href="../featured-notebooks/">info</a>)</li>
+<li>Conference talks, workshops, meetups, etc</li>
+<li>Developer meetups, onboarding, mentoring, etc</li>
+</ul>
+<p>Note that our <a href="https://github.com/JuliaPluto/Pluto.jl/blob/main/CODE_OF_CONDUCT.md">code of conduct</a> applies to these spaces.</p>
+<h3 id="community-leaders"><a href="#community-leaders" class="anchor"></a>Community leaders</h3>
+<p>All core developers are also community leaders, but we also have some additional community leaders who focus on the non-code aspects of the project. These include (in alphabetical order):</p>
+<ul>
+<li><a href="https://github.com/dorn-gerhard">Gerhard Dorn</a></li>
+</ul>
 
 </div>
 </div>
@@ -256,7 +252,7 @@ window.pluto_recording_audio_url = undefined;
         
         
         <div class="edit-this-page">
-            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/faq.jlmd" target="_blank">
+            <a href="https://github.com/JuliaPluto/website/blob/main/src/en/docs/governance.jlmd" target="_blank">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: middle; margin: 0 4px 1px 0;">
                     <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>

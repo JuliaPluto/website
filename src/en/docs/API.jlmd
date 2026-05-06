@@ -1,5 +1,5 @@
 ---
-title: "🧩 Pluto public API – control Pluto"
+title: "🧩 Pluto public API – Control Pluto"
 description: "Overview of the public API exposed by the Pluto.jl package."
 tags: ["docs", "internals", "advanced", "sessionactions", "API"]
 layout: "md.jlmd"

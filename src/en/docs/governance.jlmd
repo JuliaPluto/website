@@ -3,7 +3,7 @@ title: "Governance"
 description: "The governance model for the Pluto.jl project."
 tags: ["docs", "internals", "advanced", "governance", "open source"]
 layout: "md.jlmd"
-order: 99
+order: 2
 ---
 
 # Governance

@@ -3,7 +3,7 @@ title: "🧩 Pluto public API – control Pluto"
 description: "Overview of the public API exposed by the Pluto.jl package."
 tags: ["docs", "internals", "advanced", "sessionactions", "API"]
 layout: "md.jlmd"
-order: 0
+order: 1
 ---
 
 

@@ -1,9 +1,9 @@
 ---
-title: "Architecture"
+title: "🔬 Architecture – How does Pluto work?"
 description: "An overview of the internals of Pluto.jl."
 tags: ["docs", "internals", "advanced", "architecture"]
 layout: "md.jlmd"
-order: 99
+order: 0
 ---
 
 # How does Pluto work?

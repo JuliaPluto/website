@@ -45,13 +45,13 @@ You can find their contact information on their GitHub profiles. Feel free to re
 #### Subprojects – additional core developers
 Some subprojects of the Pluto ecosystem (like some packages) have additional core developers. Anyone with "Maintain" or "Admin" rights to a repository is considered core developer of that project or package. This includes (but not limited to):
 
-- [pluto.jl website](https://github.com/JuliaPluto/website): [Boshra Ariguib](https://github.com/ariguiba)
-- [featured](https://github.com/JuliaPluto/featured): [Boshra Ariguib](https://github.com/ariguiba), [Benedikt Ehinger](https://github.com/behinger), [Luka van der Plas](https://github.com/lukavdplas)
-- [PlutoDesktop](https://github.com/JuliaPluto/PlutoDesktop): [Boshra Ariguib](https://github.com/ariguiba)
-- [lezer-julia](https://github.com/JuliaPluto/lezer-julia): [Sergio Vargas](https://github.com/savq), [Andrey Popp](https://github.com/andreypopp)
-- [Malt.jl](https://github.com/JuliaPluto/Malt.jl): [Sergio Vargas](https://github.com/savq), [Michael Hatherly](https://github.com/MichaelHatherly)
-- [PlutoTeachingTools.jl](https://github.com/JuliaPluto/PlutoTeachingTools.jl): [Adrian Hill](https://github.com/adrhill), [Eric Ford](https://github.com/eford), [Fabian Greimel](https://github.com/greimel)
-- [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl): [Clark Evans](https://github.com/clarkevans)
+- pluto.jl website ([link](https://github.com/JuliaPluto/website)): [Boshra Ariguib](https://github.com/ariguiba)
+- featured ([link](https://github.com/JuliaPluto/featured)): [Boshra Ariguib](https://github.com/ariguiba), [Benedikt Ehinger](https://github.com/behinger), [Luka van der Plas](https://github.com/lukavdplas)
+- PlutoDesktop ([link](https://github.com/JuliaPluto/PlutoDesktop)): [Boshra Ariguib](https://github.com/ariguiba)
+- lezer-julia ([link](https://github.com/JuliaPluto/lezer-julia)): [Sergio Vargas](https://github.com/savq), [Andrey Popp](https://github.com/andreypopp)
+- Malt.jl ([link](https://github.com/JuliaPluto/Malt.jl)): [Sergio Vargas](https://github.com/savq), [Michael Hatherly](https://github.com/MichaelHatherly)
+- PlutoTeachingTools.jl ([link](https://github.com/JuliaPluto/PlutoTeachingTools.jl)): [Adrian Hill](https://github.com/adrhill), [Eric Ford](https://github.com/eford), [Fabian Greimel](https://github.com/greimel)
+- HypertextLiteral.jl ([link](https://github.com/JuliaPluto/HypertextLiteral.jl)): [Clark Evans](https://github.com/clarkevans)
 
 
 ### Becoming a core developer

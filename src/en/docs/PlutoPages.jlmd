@@ -27,6 +27,6 @@ You can combine PlutoPages.jl with PlutoSliderServer.jl to add interactivity to 
 PlutoPages is relatively new (2023). It is being used in the following places:
 - This website!
 - The course [Computational Thinking at MIT](https://computationalthinking.mit.edu/)
-- (WIP) The repository [computational-thinking-template](https://github.com/JuliaPluto/computational-thinking-template)
+- The repository [computational-thinking-template](https://github.com/JuliaPluto/computational-thinking-template)
 
 

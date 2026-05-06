@@ -1,0 +1,79 @@
+---
+title: "Governance"
+description: "The governance model for the Pluto.jl project."
+tags: ["docs", "internals", "advanced", "governance", "open source"]
+layout: "md.jlmd"
+order: 2
+---
+
+# Governance
+Pluto is a Free Open Source Software project. The Pluto project includes Pluto.jl, and all other projects in the [JuliaPluto GitHub organisation](https://github.com/JuliaPluto). The project is developed by volunteers, employees of organizations that support Pluto, and by contributors with funding from Open Source grants. This document outlines the **decision-making process** behind Pluto's development, and how other people can get involved.
+
+We welcome new contributors! If you want to contribute, please check out our [contributing guidelines](https://github.com/JuliaPluto/pluto-developer-instructions), and [get in touch](../get-involved/) with the Pluto developers. 
+
+## Decision making
+Decisions about the project are made by the **core developers**, or by other (new) contributors in collaboration with core developers. Decisions that should be made by (or approved by) core developers include:
+- New features
+- Refactoring
+- Package interoperability
+- UI/UX design changes
+- Public API
+- Releases
+
+### Always welcome
+Some contributions are less contested, and you can assume that this work will be appreciated. This includes:
+- Bug fixes (especially GitHub Issues labeled `Bug`)
+- Localization ([info](../language/#contribute))
+- Compatibility work
+- Optimization (if it includes an improved benchmark)
+- Fixing spelling errors
+- Accessiblity improvements
+
+This means that (new) contributors can always work on these areas independently, and open a PR without discussing it first.
+
+### Core developers
+The core developers of the Pluto ecosystem include (in alphabetical order):
+
+- [Fons van der Plas](https://github.com/fonsp)
+- [Mikołaj Bocheński](https://github.com/malyvsen)
+- [Michiel Dral](https://github.com/dralletje)
+- [Παναγιώτης Γεωργακόπουλος](https://github.com/pankgeorg)
+- [Paul Berg](https://github.com/Pangoraw)
+
+You can find their contact information on their GitHub profiles. Feel free to reach out!
+
+#### Subprojects – additional core developers
+Some subprojects of the Pluto ecosystem (like some packages) have additional core developers. Anyone with "Maintain" or "Admin" rights to a repository is considered core developer of that project or package. This includes (but not limited to):
+
+- [pluto.jl website](https://github.com/JuliaPluto/website): [Boshra Ariguib](https://github.com/ariguiba)
+- [featured](https://github.com/JuliaPluto/featured): [Boshra Ariguib](https://github.com/ariguiba), [Benedikt Ehinger](https://github.com/behinger), [Luka van der Plas](https://github.com/lukavdplas)
+- [PlutoDesktop](https://github.com/JuliaPluto/PlutoDesktop): [Boshra Ariguib](https://github.com/ariguiba)
+- [lezer-julia](https://github.com/JuliaPluto/lezer-julia): [Sergio Vargas](https://github.com/savq), [Andrey Popp](https://github.com/andreypopp)
+- [Malt.jl](https://github.com/JuliaPluto/Malt.jl): [Sergio Vargas](https://github.com/savq), [Michael Hatherly](https://github.com/MichaelHatherly)
+- [PlutoTeachingTools.jl](https://github.com/JuliaPluto/PlutoTeachingTools.jl): [Adrian Hill](https://github.com/adrhill), [Eric Ford](https://github.com/eford), [Fabian Greimel](https://github.com/greimel)
+- [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl): [Clark Evans](https://github.com/clarkevans)
+
+
+### Becoming a core developer
+Any core developer can add additional core developers. Subproject core developers can add additional core developers to their subprojects. If you are interested in becoming a core developer, get in touch! You are expected to have familiarity with the project, an interest in maintaining it, and you should get to know the other contributors.
+
+Any (subproject) core developer can step down (temporarily or permanently) from their role at their own choice.
+
+
+## Community work
+Pluto is not just a codebase, but also a community project. Our community work inlcudes:
+- Issue tracking, triage, review
+  - Our GitHub Issues, Discussions and PRs.
+- Online discussions (Discourse, Zulip, Slack, etc)
+- Documentation (this website)
+- Featured notebooks ([info](../featured-notebooks/))
+- Conference talks, workshops, meetups, etc
+- Developer meetups, onboarding, mentoring, etc
+
+Note that our [code of conduct](https://github.com/JuliaPluto/Pluto.jl/blob/main/CODE_OF_CONDUCT.md) applies to these spaces.
+
+### Community leaders
+All core developers are also community leaders, but we also have some additional community leaders who focus on the non-code aspects of the project. These include (in alphabetical order):
+
+- [Gerhard Dorn](https://github.com/dorn-gerhard)
+

@@ -102,3 +102,15 @@ http://localhost:1235/
 ```
 
 Usually, this is not super useful. If you find yourself on port `1235` by accident, try shutting down all Pluto/Julia processes and starting again.
+
+{#ssh}
+# Advanced: Remote access with SSH
+If the server (where Pluto will run) and the client (the machine whose browser will use Pluto) are on the same network then set the host to `0.0.0.0` while launching Pluto (e.g `Pluto.run(host="0.0.0.0")`). An example use case is if you have a headless raspberry pi and a laptop connected to the same wi-fi network in your home. You can run Pluto on the raspberry-pi and use your laptop's browser for development.
+
+However, if the server is remote and has a public ip you need to set up an SSH tunnel. First, log in to your server using SSH and start a Pluto server. Then open a local terminal on your own computer and type:
+
+```bash
+ssh user@ipaddress -N -L 1234:localhost:1234
+```
+
+with `user` and `ipaddress` filled in accordingly. You can then go to `http://localhost:1234/` on your own computer to get started! For more info and instructions for Windows, see [this guide](https://medium.com/@apbetahouse45/how-to-run-jupyter-notebooks-on-remote-server-part-1-ssh-a2be0232c533). This can come in handy if your server is on a cloud service such as AWS or Azure. The latter method can be used in the former case too provided an ssh client is available and enabled on both machines.

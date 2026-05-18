@@ -77,7 +77,7 @@ Pluto has a special feature – you can open the same notebook in two different
 To use mirror view, you first open a notebook, and you copy the URL of the notebook from the address bar. This will look like `http://localhost:1234/edit?id=0ec9caa2-3fa7-11f0-3e46-3bcef32ce8e3`. Then open a new browser window, and paste the URL in the address bar. Now you have two windows that are connected to the same notebook, and they will stay synchronized.
 
 ## Limitation: no unsaved edits
-Currently, unsaved edits (code changes before your press `Shift+Enter` or _Save_) are not synced between the two windows. This is usually not an issue, but it is possible to lose work if both sides are editing the same cell – submitting on one side will overwrite the other side. The otherside can still use `Ctrl+Z` to get their old code back. <a class="arrow" href="https://github.com/fonsp/Pluto.jl/pull/2296">See this PR for more details</a>
+Currently, unsaved edits (code changes before your press `Shift+Enter` or _Save_) are not synced between the two windows. This is usually not an issue, but it is possible to lose work if both sides are editing the same cell – submitting on one side will overwrite the other side. The other side can still use `Ctrl+Z` to get their old code back. <a class="arrow" href="https://github.com/fonsp/Pluto.jl/pull/2296">See this PR for more details</a>
 
 
 !!! tip

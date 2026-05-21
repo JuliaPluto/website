@@ -7,7 +7,7 @@ order: 4
 ---
 
 # Accessibility Features
-Pluto is designed to be accessible to all users. We follow web accessibility standards and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!
+Pluto is designed with accessibility in mind. We follow web accessibility standards and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!
 
 Here is an overview of the accessibility features of Pluto:
 
@@ -33,42 +33,30 @@ Pluto also supports touch-only use with your device's on-screen keyboard (OSK): 
 
 ## Visual Accessibility
 ### High Contrast Text
-We design almost everything with enough visual contrast in light and dark mode. This way:
-
-- All text meets WCAG 2.0 Level AA contrast standards (minimum ratio of 4.5:1)
-- Ensures readability for users with low vision or color blindness
+We design almost everything with enough visual contrast in light and dark mode. Our design goal is that all text meets WCAG 2.0 Level AA contrast standards (minimum ratio of 4.5:1). This improves readability for users with low vision or color blindness.
 
 ### Dark Mode Support
-
-- Pluto automatically follows your operating system or browser's light/dark mode preference
-- No manual switching needed, it adapts to your system settings
+Pluto automatically follows your operating system or browser's light/dark mode preference. Dark mode can reduce eye strain.
 
 ### Font Size and Zoom
+If you want to use a larger font size, you can use your browser's zoom function (`Ctrl/Cmd + ±`) to adjust the size of Pluto's interface. Pluto is designed to scale well, and it also works in very high zoom levels. The layout will adapt to the available screen size.
 
-- Use your browser's zoom function (`Ctrl/Cmd + ±`) to adjust the size of Pluto's interface
-- Your zoom preference automatically saves between sessions
-- Text and UI elements scale proportionally for consistent readability
+
 
 ### Reduced Motion
-
-- Pluto respects the `prefers-reduced-motion` CSS setting. If you've enabled "Reduce motion" or "Prefers reduced motion" in your browser or OS accessibility settings, Pluto will minimize animations
-- Helps users with vestibular disorders or motion sensitivity
+Pluto respects the `prefers-reduced-motion` CSS setting. If you've enabled "Reduce motion" or "Prefers reduced motion" in your browser or OS accessibility settings, then Pluto will minimize animations. This helps users with motion sensitivity.
 
 ## Screen Reader Support
-Pluto uses semantic HTML and ARIA (Accessible Rich Internet Applications) labels to work with popular screen readers including JAWS, NVDA, VoiceOver, TalkBack, and Narrator. We follow WAI-ARIA best practices to ensure interactive elements are properly announced and navigable.
-**Current screen reader experience:**
+Pluto uses semantic HTML and ARIA (Accessible Rich Internet Applications) labels to work with screen readers (like JAWS, NVDA, VoiceOver, TalkBack, and Narrator). We follow WAI-ARIA best practices to ensure interactive elements are properly announced and navigable.
 
-- HTML exports are very screen reader friendly
-- Live notebook editing has basic screen reader support, but we're actively working to improve this experience
+Screen reader support is available, but not perfect yet. We need more user feedback to continue improving. The current experience is as follows:
+- HTML exports from Pluto are believed to be screen reader friendly, as long as the notebook author also takes care to produce accessible content.
+- Live notebook editing has basic screen reader support, including announcing (`aria-live: polite`) reactive changes to cell output. All interface UI has ARIA labels and is keyboard navigable.
 
 **We need your feedback!** If you use a screen reader with Pluto, please share your experience - what works well and what could be better. Your input is essential for helping us prioritize improvements. See [this issue](https://github.com/fonsp/Pluto.jl/issues/2768) to join the conversation or use our feedback tool to report accessibility barriers.
 
 ## Language Support
-Pluto is available in multiple languages, making it accessible to non-English speakers.  You can:
+Pluto is available in multiple languages, making it accessible to non-English speakers. You can read more on about it in [this section](https://plutojl.org/en/docs/language/). 
 
-- Switch languages at the bottom of each notebook 
-- Contribute translations to help make Pluto available in your language
-
-You can read more on about it in [this section](https://plutojl.org/en/docs/language/). 
-
-**Found an accessibility issue?** Let us know through our feedback tool or community channels!
+> ## And more?
+> **Found an accessibility issue?** Let us know through our feedback tool or community channels!

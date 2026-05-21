@@ -174,14 +174,14 @@ window.pluto_recording_audio_url = undefined;
 <div class="raw-html-wrapper ">
 <div class="markdown">
 <h1 id="accessibility-features"><a href="#accessibility-features" class="anchor"></a>Accessibility Features</h1>
-<p>Pluto is designed with accessibility in mind. We follow web accessibility standards and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!</p>
-<p>Here is an overview of the accessibility features of Pluto:</p>
+<p>Pluto is designed with accessibility in mind. We follow web accessibility standards (<strong>WCAG 2.2 Level AA</strong>) and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!</p>
+<p>Here is an <strong>overview of the accessibility features</strong> of Pluto.</p>
 <h2 id="keyboard-navigation-and-shortcuts"><a href="#keyboard-navigation-and-shortcuts" class="anchor"></a>Keyboard Navigation and Shortcuts</h2>
-<p><strong>Pluto is fully usable without a mouse.</strong> You can navigate and control everything using only your keyboard:</p>
+<p><strong>Pluto is fully usable without a mouse.</strong> You can navigate and control everything using only your keyboard.</p>
 <h3 id="keyboard-shortcuts"><a href="#keyboard-shortcuts" class="anchor"></a>Keyboard shortcuts</h3>
 <p>You can execute cells, navigate between cells, and access common functions quickly using shortcuts. You can find a list of all our shortcuts <a href="../keyboard-shortcuts/">here</a>.</p>
 <h3 id="tab-navigation"><a href="#tab-navigation" class="anchor"></a>Tab navigation</h3>
-<p>Pluto’s interface is designed to be keyboard accessible similar to a web page. You can move through all interactive elements on the page using the Tab key.</p>
+<p>Pluto’s interface is designed to be <strong>keyboard accessible similar to a web page</strong>. You can move through all interactive elements on the page using the Tab key.</p>
 <h4 id="tab-navigation-in-cells"><a href="#tab-navigation-in-cells" class="anchor"></a>⚠️ Tab navigation in cells</h4>
 <p>A special note about tab navigation inside cells: when focused inside a cell code editor, the TAB key will indent code instead of navigating. To navigate, you <em>press <kbd>Esc</kbd> and then <kbd>Tab</kbd></em>.</p>
 <p>This video shows an example:</p>
@@ -190,7 +190,7 @@ window.pluto_recording_audio_url = undefined;
 <p>Pluto also supports touch-only use with your device’s on-screen keyboard (OSK): the virtual keyboard that appears on your screen when you tap a text field on tablets, touchscreen laptops, or any device without a physical keyboard.</p>
 <h2 id="visual-accessibility"><a href="#visual-accessibility" class="anchor"></a>Visual Accessibility</h2>
 <h3 id="high-contrast-text"><a href="#high-contrast-text" class="anchor"></a>High Contrast Text</h3>
-<p>We design almost everything with enough visual contrast in light and dark mode. Our design goal is that all text meets WCAG 2.0 Level AA contrast standards (minimum ratio of 4.5:1). This improves readability for users with low vision or color blindness.</p>
+<p>We design almost everything with enough visual contrast in light and dark mode. Our design goal is that all text meets <strong>WCAG 2.2 Level AA contrast standards</strong> (minimum ratio of 4.5:1). This improves readability for users with low vision or color blindness.</p>
 <h3 id="dark-mode-support"><a href="#dark-mode-support" class="anchor"></a>Dark Mode Support</h3>
 <p>Pluto automatically follows your operating system or browser’s light/dark mode preference. Dark mode can reduce eye strain.</p>
 <h3 id="font-size-and-zoom"><a href="#font-size-and-zoom" class="anchor"></a>Font Size and Zoom</h3>
@@ -205,8 +205,10 @@ window.pluto_recording_audio_url = undefined;
 <li>Live notebook editing has basic screen reader support, including announcing (<code>aria-live: polite</code>) reactive changes to cell output. All interface UI has ARIA labels and is keyboard navigable.</li>
 </ul>
 <p><strong>We need your feedback!</strong> If you use a screen reader with Pluto, please share your experience - what works well and what could be better. Your input is essential for helping us prioritize improvements. See <a href="https://github.com/fonsp/Pluto.jl/issues/2768">this issue</a> to join the conversation or use our feedback tool to report accessibility barriers.</p>
-<h2 id="language-support"><a href="#language-support" class="anchor"></a>Language Support</h2>
-<p>Pluto is available in multiple languages, making it accessible to non-English speakers. You can read more on about it in <a href="https://plutojl.org/en/docs/language/">this section</a>.</p>
+<h2 id="language"><a href="#language" class="anchor"></a>Language</h2>
+<p>We try to use simple language in the Pluto interface and in our documentation.</p>
+<p>Pluto is available in multiple languages, making it accessible to non-English speakers. Pluto can be used in Left-to-Right and Right-to-Left text layouts (both interface and content). You can <a href="https://plutojl.org/en/docs/language/">read more about language support here</a>. Our documentation is currently only available in English.</p>
+<p>HTML export from Pluto are designed to be machine-translation-friendly. This means using <code>lang</code> and <code>translate</code> attributes in the HTML. You can also use machine translation while editing a notebook.</p>
 <blockquote>
 <h2 id="and-more"><a href="#and-more" class="anchor"></a>And more?</h2>
 <p><strong>Found an accessibility issue?</strong> Let us know through our feedback tool or community channels!</p>

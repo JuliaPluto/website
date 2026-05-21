@@ -7,18 +7,18 @@ order: 4
 ---
 
 # Accessibility Features
-Pluto is designed with accessibility in mind. We follow web accessibility standards and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!
+Pluto is designed with accessibility in mind. We follow web accessibility standards (**WCAG 2.2 Level AA**) and continuously work to improve the experience for everyone. If you find any accessibility issues, please get in touch!
 
-Here is an overview of the accessibility features of Pluto:
+Here is an **overview of the accessibility features** of Pluto.
 
 ## Keyboard Navigation and Shortcuts
-**Pluto is fully usable without a mouse.** You can navigate and control everything using only your keyboard:
+**Pluto is fully usable without a mouse.** You can navigate and control everything using only your keyboard.
 
 ### Keyboard shortcuts
 You can execute cells, navigate between cells, and access common functions quickly using shortcuts. You can find a list of all our shortcuts [here](../keyboard-shortcuts/).
 
 ### Tab navigation
-Pluto's interface is designed to be keyboard accessible similar to a web page. You can move through all interactive elements on the page using the Tab key. 
+Pluto's interface is designed to be **keyboard accessible similar to a web page**. You can move through all interactive elements on the page using the Tab key. 
 
 #### ⚠️ Tab navigation in cells
 A special note about tab navigation inside cells: when focused inside a cell code editor, the TAB key will indent code instead of navigating. To navigate, you <em>press <kbd>Esc</kbd> and then <kbd>Tab</kbd></em>. 
@@ -33,7 +33,7 @@ Pluto also supports touch-only use with your device's on-screen keyboard (OSK): 
 
 ## Visual Accessibility
 ### High Contrast Text
-We design almost everything with enough visual contrast in light and dark mode. Our design goal is that all text meets WCAG 2.0 Level AA contrast standards (minimum ratio of 4.5:1). This improves readability for users with low vision or color blindness.
+We design almost everything with enough visual contrast in light and dark mode. Our design goal is that all text meets **WCAG 2.2 Level AA contrast standards** (minimum ratio of 4.5:1). This improves readability for users with low vision or color blindness.
 
 ### Dark Mode Support
 Pluto automatically follows your operating system or browser's light/dark mode preference. Dark mode can reduce eye strain.
@@ -55,8 +55,12 @@ Screen reader support is available, but not perfect yet. We need more user feedb
 
 **We need your feedback!** If you use a screen reader with Pluto, please share your experience - what works well and what could be better. Your input is essential for helping us prioritize improvements. See [this issue](https://github.com/fonsp/Pluto.jl/issues/2768) to join the conversation or use our feedback tool to report accessibility barriers.
 
-## Language Support
-Pluto is available in multiple languages, making it accessible to non-English speakers. You can read more on about it in [this section](https://plutojl.org/en/docs/language/). 
+## Language
+We try to use simple language in the Pluto interface and in our documentation. 
+
+Pluto is available in multiple languages, making it accessible to non-English speakers. Pluto can be used in Left-to-Right and Right-to-Left text layouts (both interface and content). You can [read more about language support here](https://plutojl.org/en/docs/language/). Our documentation is currently only available in English.
+
+HTML export from Pluto are designed to be machine-translation-friendly. This means using `lang` and `translate` attributes in the HTML. You can also use machine translation while editing a notebook.
 
 > ## And more?
 > **Found an accessibility issue?** Let us know through our feedback tool or community channels!

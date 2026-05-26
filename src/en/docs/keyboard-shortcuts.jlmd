@@ -46,11 +46,13 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
 </tr>
 
 <tr>
-    <td><kbd><span class="ctrl-or-cmd"></span></kbd><span class="and"></span><kbd><span class="ctrl-or-cmd"></span></kbd><span class="and"></span><kbd>\</kbd></td>
+    <td><kbd><span class="ctrl-or-cmd"></span></kbd><span class="and"></span><kbd><span class="ctrl-or-cmd"></span></kbd><span class="and"></span><kbd>\\</kbd></td>
     <td>Auto indent</td>
 </tr>
 <tr>
-    <td><kbd>Tab</kbd> or <kbd class="control-name"></kbd><span class="and"></span><kbd>Space</kbd> or <kbd class="alt-name"></kbd><span class="and"></span><kbd>I</kbd></td>
+    <td>
+        <kbd>Tab</kbd> or <kbd class="control-name"></kbd><span class="and"></span><kbd>Space</kbd> or <kbd class="alt-name"></kbd><span class="and"></span><kbd>I</kbd>
+    </td>
     <td>Show autocomplete</td>
 </tr>
 <tr>
@@ -66,7 +68,9 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
     <td>Select word / next occurrence</td>
 </tr>
 <tr>
-    <td><kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Shift</kbd><span class="and"></span><kbd>D</kbd></td>
+    <td>
+        <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd>Shift</kbd><span class="and"></span><kbd>D</kbd>
+    </td>
     <td>Unselect previous occurrence</td>
 </tr>
 
@@ -97,7 +101,7 @@ This page lists the default keyboard shortcuts in Pluto. The keys shown below ad
 
 <tr>
     <td>
-        <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd class="shift-name"></kbd><span class="and"></span><kbd>\</kbd>
+        <kbd class="ctrl-or-cmd"></kbd><span class="and"></span><kbd class="shift-name"></kbd><span class="and"></span><kbd>\\</kbd>
     </td>
     <td>Jump to matching bracket</td>
 </tr>

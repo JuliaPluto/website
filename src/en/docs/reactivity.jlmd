@@ -39,4 +39,6 @@ Read more about Pluto's reactivity algorithm in:
 - <a href="../PlutoDependencyExplorer/" class="arrow">PlutoDependencyExplorer.jl</a>
 
 # Help I want to turn it off!
-Pluto does not have a global switch to turn off reactivity, there is no "Jupyter mode". However, you can turn off reactivity for a specific cell! You can **disable a cell**. More on this later!
+Pluto does not have a global switch to turn off reactivity, there is no "Jupyter mode". However, you can turn off reactivity for a specific cell! You can **disable a cell**.
+
+<a href="../disable-cell/" class="arrow">Learn how to disable cells</a>

@@ -27,7 +27,7 @@ begin
 	else
 		@warn "Notebook launched outside of plutojl.org website repository... Installing Pluto from registry."
 		Pkg.activate(temp=true)
-		Pkg.add(["Pluto", "PlutoUI"])
+		Pkg.add(["HypertextLiteral", "Pluto", "PlutoUI"])
 	end
 	import Pluto, PlutoUI
 	using HypertextLiteral

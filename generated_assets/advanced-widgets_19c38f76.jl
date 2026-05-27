@@ -56,6 +56,9 @@ Pluto has a number of advanced features for developers who want to create comple
 - **Custom inputs**: widgets that are used with `@bind`, like a slider or a map location picker.
 - **Custom outputs**: for visualising results, like a plot or a map with labels.
 
+Pluto provides lots of API that lets you write your own widgets, using a high level of integration into the Pluto engine. You can easily add Pluto-specific widgets to an existing package (without adding a Pluto dependency), or write a new package. [PlutoUI.jl](https://featured.plutojl.org/basic/plutoui.jl) is also built using this API.
+
+**A quick list of things that our API offers**: You can use [HypertextLiteral.jl](https://github.com/JuliaPluto/HypertextLiteral.jl) (or similar) to create dynamic HTML output that reacts to data. We have a [JavaScript execution engine](https://plutojl.org/en/docs/javascript-api/), and you can [send large amounts of data](https://plutojl.org/en/docs/abstractplutodingetjes/#published_to_js) (like `Vector{Float64}`) directly to your visualization with minimal overhead. You can also [send _functions_](https://plutojl.org/en/docs/abstractplutodingetjes/#with_js_link), which can be called dynamically from JavaScript. Pluto's display system can be [embedded](https://plutojl.org/en/docs/abstractplutodingetjes/#@embed) inside of your app, and you can [manipulate Preact's Virtual DOM](https://plutojl.org/en/docs/abstractplutodingetjes/#ReactDOMElement) from Julia.
 """
 
 # ╔═╡ daddd959-7aa1-44b2-b40b-8e8407863b48

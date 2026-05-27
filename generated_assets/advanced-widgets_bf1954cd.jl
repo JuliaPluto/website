@@ -7,7 +7,7 @@
 #> title = "Advanced widgets – overview"
 #> date = "2024-04-22"
 #> tags = ["docs", "advanced", "widgets", "AbstractPlutoDingetjes", "JavaScript"]
-#> description = "Pluto provides a framework for advances input and display widgets."
+#> description = "Pluto provides a framework for advanced input and display widgets."
 #> layout = "layout.jlhtml"
 #> license = "Unlicense"
 #> 

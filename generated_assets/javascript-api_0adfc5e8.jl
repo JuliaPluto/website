@@ -248,7 +248,7 @@ import confetti from "https://esm.sh/canvas-confetti@1.4.0"
 import { html, render, useEffect } from "https://cdn.jsdelivr.net/npm/htm@3.0.4/preact/standalone.mjs"
 ```
 
-In Pluto, this is [currently not yet supported](https://github.com/fonsp/Pluto.jl/issues/992), and you need to use a different syntax as workaround:
+In Pluto, this is [currently not yet supported](https://github.com/JuliaPluto/Pluto.jl/issues/992), and you need to use a different syntax as workaround:
 ```javascript
 // ✔ use:
 const { default: confetti } = await import("https://esm.sh/canvas-confetti@1.4.0")
@@ -833,7 +833,7 @@ md"""
 # Metadata for notebooks and cells
 
 
-Notebooks can have metadata, which is stored as TOML content at the top of the `.jl` file. For example, [frontmatter](https://github.com/fonsp/Pluto.jl/pull/2104) is stored as notebook metadata.
+Notebooks can have metadata, which is stored as TOML content at the top of the `.jl` file. For example, [frontmatter](https://github.com/JuliaPluto/Pluto.jl/pull/2104) is stored as notebook metadata.
 
 We have some experimental API that lets you work with notebook metadata from widgets! This could be a very powerful feature when used well!
 

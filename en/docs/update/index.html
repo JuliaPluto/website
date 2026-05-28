@@ -172,7 +172,7 @@ window.pluto_recording_audio_url = undefined;
 <pre><code class="language-jl">julia&gt; import Pkg
 julia&gt; Pkg.update(&quot;Pluto&quot;)
 </code></pre>
-<p>This should update Pluto to the latest version <span id="latesthere">(check our <a href="https://github.com/fonsp/Pluto.jl/releases/">GitHub releases</a> to find out!)</span>.</p>
+<p>This should update Pluto to the latest version <span id="latesthere">(check our <a href="https://github.com/JuliaPluto/Pluto.jl/releases/">GitHub releases</a> to find out!)</span>.</p>
 <h2 id="not-the-latest-version"><a href="#not-the-latest-version" class="anchor"></a>Not the latest version?</h2>
 <p>Sometimes, it is not possible to install the latest version of Pluto because of <strong>compatibility issues with other packages</strong> that you have installed in your environment.</p>
 <p>Some tips to fix it:</p>
@@ -182,7 +182,7 @@ julia&gt; Pkg.update(&quot;Pluto&quot;)
 <li>Finally, you could use <code>Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)</code> to see the compatibility bounds. <a href="https://discourse.julialang.org/t/package-is-not-updating-but-why/88338">Here is an example</a>.</li>
 </ol>
 <script defer>
-const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
+const latest = fetch("https://api.github.com/repos/JuliaPluto/Pluto.jl/releases", {
 method: "GET",
 mode: "cors",
 cache: "no-cache",

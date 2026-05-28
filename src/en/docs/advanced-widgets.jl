@@ -2,7 +2,7 @@
 # v1.0.0
 
 #> [frontmatter]
-#> image = "https://github.com/fonsp/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a"
+#> image = "https://github.com/JuliaPluto/Pluto.jl/assets/6933510/0a27e62f-6ef1-4f13-b47c-2a2cefa8850a"
 #> order = "0"
 #> title = "Advanced widgets – overview"
 #> date = "2024-04-22"

@@ -17,7 +17,7 @@ Pluto can help you fix syntax errors automatically! If you make a typo or your c
 !!! info "Impact for students"
     Note that his feature **only fix syntax parse errors**, not runtime errors (like `MethodError`, exceptions, etc). Our view is that syntax errors are just frustrating, and it's preventing students from having a more valuable learning experience with other topics. The feature still **shows what it does**, so students get a chance to review the fix and learn from it if they want to.
 
-> 🚨 **Experimental!** This feature is available in Pluto v0.20.8 and above. See the [announcement PR](https://github.com/fonsp/Pluto.jl/pull/3201) for more details.
+> 🚨 **Experimental!** This feature is available in Pluto v0.20.8 and above. See the [announcement PR](https://github.com/JuliaPluto/Pluto.jl/pull/3201) for more details.
 
 
 ### How to use it
@@ -55,7 +55,7 @@ Here is a video of the feature in action:
 <video src="$(root_url)/assets/img/ai context demo 1.mov" controls="controls" muted="muted" playsinline></video>
 
 
-> 🚨 **Experimental!** This feature is available in Pluto v0.20.9 and above, and is currently in beta. See the [announcement PR](https://github.com/fonsp/Pluto.jl/pull/3224) for more details.
+> 🚨 **Experimental!** This feature is available in Pluto v0.20.9 and above, and is currently in beta. See the [announcement PR](https://github.com/JuliaPluto/Pluto.jl/pull/3224) for more details.
 
 ### How to use it
 In any cell in your notebook, click the _cell context menu_ in the top right of the cell TODO ICON, and click "Ask AI". This will open the prompt generation UI.
@@ -104,7 +104,7 @@ Some AI features will be **disabled automatically** if Pluto detects that ChatGP
 
 This is for universities/workplaces that don't allow LLM tools as a policy. If this university has already blocked the `chat.openai.com` (ChatGPT) domain, then Pluto will "go with the flow" and also not offer the AI service. *(We check ChatGPT regardless of which LLM is used by Pluto.)*
 
-<a href="https://github.com/fonsp/Pluto.jl/pull/3211" class="arrow">More info</a>
+<a href="https://github.com/JuliaPluto/Pluto.jl/pull/3211" class="arrow">More info</a>
 
 ### Blocking AI features in your course
 Are you a teacher who wants to block AI features in your course? You have the following options:

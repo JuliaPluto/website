@@ -14,23 +14,23 @@ Pluto can be used in multiple languages. You can change the language of Pluto by
 _The percentage shown next to the language name shows how much of the Pluto interface is localized. Some (new) features might not be localized yet, they will be displayed in English._
 
 Currently, Pluto is available in the following languages (in alphabetical order):
-- **Chinese** (Chinese) _(by [@Fromduststar](https://github.com/Fromduststar))_
-- **Dansk** (Danish) _(by [@gwr-de](https://github.com/gwr-de))_
-- **Deutsch** (German) _(by [@kellertuer](https://github.com/kellertuer))_
-- **Ελληνικά** (Greek) _(by [@pankgeorg](https://github.com/pankgeorg))_
+- **Chinese** (Chinese) _(by [`@Fromduststar`](https://github.com/Fromduststar))_
+- **Dansk** (Danish) _(by [`@gwr`-de](https://github.com/gwr-de))_
+- **Deutsch** (German) _(by [`@kellertuer`](https://github.com/kellertuer))_
+- **Ελληνικά** (Greek) _(by [`@pankgeorg`](https://github.com/pankgeorg))_
 - **English**
-- **Español Latinoamericano** (Latin American Spanish) _(by [@gruumsh1](https://github.com/gruumsh1))_
-- **Corporate English** (💼🗄️👔) _(by [@pankgeorg](https://github.com/pankgeorg))_
-- **Français** (French) _(by [@Pangoraw](https://github.com/Pangoraw) and [@gdalle](https://github.com/gdalle))_
-- **Čeština** (Czech) _(by [@kunzaatko](https://github.com/kunzaatko))_
-- **Italiano** (Italian) _(by [@disberd](https://github.com/disberd))_
-- **Japanese** (Japanese) _(by [@Itou-Kouki](https://github.com/Itou-Kouki))_
-- **Nederlands** (Dutch) _(by [@fonsp](https://github.com/fonsp))_
-- **Norsk Bokmål** (Norwegian) _(by [@kellertuer](https://github.com/kellertuer))_
-- **فارسی** (Persian) _(by [@shosseinib](https://github.com/shosseinib))_
-- **Polski** (Polish) _(by [@s-zymon](https://github.com/s-zymon))_
-- **Português (Portugal)** (Portuguese Portuguese) _(by [@rgouveiamendes](https://github.com/rgouveiamendes))_
-- **Suomi** (Finnish) _(by [@eteppo](https://github.com/eteppo))_
+- **Español Latinoamericano** (Latin American Spanish) _(by [`@gruumsh1`](https://github.com/gruumsh1))_
+- **Corporate English** (💼🗄️👔) _(by [`@pankgeorg`](https://github.com/pankgeorg))_
+- **Français** (French) _(by [`@Pangoraw`](https://github.com/Pangoraw) and [`@gdalle`](https://github.com/gdalle))_
+- **Čeština** (Czech) _(by [`@kunzaatko`](https://github.com/kunzaatko))_
+- **Italiano** (Italian) _(by [`@disberd`](https://github.com/disberd))_
+- **Japanese** (Japanese) _(by [`@Itou`-Kouki](https://github.com/Itou-Kouki))_
+- **Nederlands** (Dutch) _(by [`@fonsp`](https://github.com/fonsp))_
+- **Norsk Bokmål** (Norwegian) _(by [`@kellertuer`](https://github.com/kellertuer))_
+- **فارسی** (Persian) _(by [`@shosseinib`](https://github.com/shosseinib))_
+- **Polski** (Polish) _(by [`@s`-zymon](https://github.com/s-zymon))_
+- **Português (Portugal)** (Portuguese Portuguese) _(by [`@rgouveiamendes`](https://github.com/rgouveiamendes))_
+- **Suomi** (Finnish) _(by [`@eteppo`](https://github.com/eteppo))_
 
 <br>
 <br>
@@ -76,7 +76,7 @@ Localizing Pluto is a great way to help the Julia community, because it makes Ju
 
 We also want to break the tradition that "programming is in English". Programming is for everyone, and we hope that computers can be used regardless of language and culture.
 
-Your work is also an **open source** contribution! Because you contribute localizations via git and github, you will be listed in the [Pluto contributors list](https://github.com/fonsp/Pluto.jl), and in the [Pluto release notes](https://github.com/fonsp/Pluto.jl/releases).
+Your work is also an **open source** contribution! Because you contribute localizations via git and github, you will be listed in the [Pluto contributors list](https://github.com/JuliaPluto/Pluto.jl), and in the [Pluto release notes](https://github.com/JuliaPluto/Pluto.jl/releases).
 
 
 
@@ -89,4 +89,4 @@ We are really interested in a right-to-left language (like Arabic or Farsi). Thi
 
 
 ## How to contribute
-Take a look at our [localization documentation](https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang#readme) to get started! We look forward to your contributions! 💛
+Take a look at our [localization documentation](https://github.com/JuliaPluto/Pluto.jl/tree/main/frontend/lang#readme) to get started! We look forward to your contributions! 💛

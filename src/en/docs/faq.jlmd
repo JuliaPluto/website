@@ -43,12 +43,12 @@ How to use multiple threads in Pluto.jl? `nthreads()` says 1 somehow
 Can I use **`[my favourite package]`**?
 > Yes you can! (Probably!) Your code is evaluated as-is, so if it works in the REPL or in Jupyter, it will work in Pluto.jl. There are some exceptions:
 > - packages that are made specifically for the REPL or Jupyter
-> - `Distributed`, and packages that use it ([#300](https://github.com/fonsp/Pluto.jl/issues/300))
+> - `Distributed`, and packages that use it ([#300](https://github.com/JuliaPluto/Pluto.jl/issues/300))
 
 <br >
 
 Can I open **multiple notebooks** at the same time?
-> Yes! Click on the logo ( <img src="https://raw.githubusercontent.com/fonsp/Pluto.jl/master/frontend/img/logo.svg" width="60"> ) to go back to the welcome screen. You can use your browser tabs to see multiple notebooks simultaneously.
+> Yes! Click on the logo ( <img src="https://raw.githubusercontent.com/JuliaPluto/Pluto.jl/refs/tags/v1.0.0/frontend/img/logo.svg" width="60"> ) to go back to the welcome screen. You can use your browser tabs to see multiple notebooks simultaneously.
 
 
 Can I use Pluto **remotely**?

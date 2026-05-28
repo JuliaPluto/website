@@ -13,7 +13,7 @@ julia> import Pkg
 julia> Pkg.update("Pluto")
 ```
 
-This should update Pluto to the latest version <span id="latesthere">(check our [GitHub releases](https://github.com/fonsp/Pluto.jl/releases/) to find out!)</span>.
+This should update Pluto to the latest version <span id="latesthere">(check our [GitHub releases](https://github.com/JuliaPluto/Pluto.jl/releases/) to find out!)</span>.
 
 ## Not the latest version?
 Sometimes, it is not possible to install the latest version of Pluto because of **compatibility issues with other packages** that you have installed in your environment. 
@@ -24,7 +24,7 @@ Some tips to fix it:
 3. Finally, you could use `Pkg.status(outdated=true, mode=Pkg.PKGMODE_MANIFEST)` to see the compatibility bounds. [Here is an example](https://discourse.julialang.org/t/package-is-not-updating-but-why/88338).
 
 <script defer>
-const latest = fetch("https://api.github.com/repos/fonsp/Pluto.jl/releases", {
+const latest = fetch("https://api.github.com/repos/JuliaPluto/Pluto.jl/releases", {
 method: "GET",
 mode: "cors",
 cache: "no-cache",

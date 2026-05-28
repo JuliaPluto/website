@@ -53,7 +53,7 @@ Screen reader support is available, but not perfect yet. We need more user feedb
 - HTML exports from Pluto are believed to be screen reader friendly, as long as the notebook author also takes care to produce accessible content.
 - Live notebook editing has basic screen reader support, including announcing (`aria-live: polite`) reactive changes to cell output. All interface UI has ARIA labels and is keyboard navigable.
 
-**We need your feedback!** If you use a screen reader with Pluto, please share your experience - what works well and what could be better. Your input is essential for helping us prioritize improvements. See [this issue](https://github.com/fonsp/Pluto.jl/issues/2768) to join the conversation or use our feedback tool to report accessibility barriers.
+**We need your feedback!** If you use a screen reader with Pluto, please share your experience - what works well and what could be better. Your input is essential for helping us prioritize improvements. See [this issue](https://github.com/JuliaPluto/Pluto.jl/issues/2768) to join the conversation or use our feedback tool to report accessibility barriers.
 
 ## Language
 We try to use simple language in the Pluto interface and in our documentation. 

@@ -6,7 +6,7 @@ layout: "md.jlmd"
 order: 6
 ---
 ## How to contribute
-Take a look at our [localization documentation](https://github.com/fonsp/Pluto.jl/tree/main/frontend/lang#readme) to get started! Or at our [developer instructions](https://github.com/JuliaPluto/pluto-developer-instructions)
+Take a look at our [localization documentation](https://github.com/JuliaPluto/Pluto.jl/tree/main/frontend/lang#readme) to get started! Or at our [developer instructions](https://github.com/JuliaPluto/pluto-developer-instructions)
 We look forward to your contributions! 💛
 
 We’re also happy to hear about any issues we may have missed. Before opening a new one, please take a moment to check [this guide](https://github.com/JuliaPluto/Pluto.jl/issues/182).
@@ -46,7 +46,7 @@ The easiest way to reach us: Use the built-in feedback tool at the bottom right 
 - Feedback is anonymous by default, but you can optionally leave your email address
 - We might contact you for more details or to share a solution 😉
 
-<img src="$(root_url)/assets/img/feedback-tool.png" alt="screenshot of the feedback tool" width="2998" height="140">
+<img src="$(root_url)/assets/img/feedback-tool.png" alt="screenshot of the feedback tool" width="1686" height="386">
 
 
 You can also reach us through Julia community channels:

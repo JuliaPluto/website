@@ -47,7 +47,7 @@ First, go to the [Pluto main menu](../launch-pluto/#main-menu). Now you can type
     - Alternatively, you can drag and drop the file into a terminal window to paste its full path
     
     ### Why so difficult?
-    It would be really nice if you could just pick the notebook file from your file browser, instead of having to type the path. But this is not possible, because Pluto is a web application, which does not have access to your file system for security reasons. See [this issue](https://github.com/fonsp/Pluto.jl/issues/350). BUT this feature _is_ possible in the [Pluto Desktop app](https://github.com/JuliaPluto/PlutoDesktop) (WIP) 
+    It would be really nice if you could just pick the notebook file from your file browser, instead of having to type the path. But this is not possible, because Pluto is a web application, which does not have access to your file system for security reasons. See [this issue](https://github.com/JuliaPluto/Pluto.jl/issues/350). BUT this feature _is_ possible in the [Pluto Desktop app](https://github.com/JuliaPluto/PlutoDesktop) (WIP) 
 
 {#open-existing}
 # How to open an existing notebook file

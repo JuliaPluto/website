@@ -23,6 +23,7 @@ Feel free to add your course to this list by clicking "Edit this page" at the bo
 | 🇺🇸 [MIT 18.S191 — Introduction to Computational Thinking](https://computationalthinking.mit.edu) (MIT) | scientific computing, epidemic modeling, climate modeling, raytracing, image processing | 2026 | 🎈 _Co-developed with Pluto!_ |
 | 🇮🇹 [Time-Domain Astrophysics](http://192.167.38.133:8081/Course.html) (Università dell'Insubria, Como) | Time-series analysis in astrophyisics | 2026 | |
 | 🇩🇪 [Research Software Engineering with Julia](https://vchuravy.dev/rse-course/) (University of Mainz) | Julia programming, research software engineering, parallelism, type stability, multiple dispatch, accelerated computing | 2026 | Uses [CT template](../notebooks-online/#ct-template) |
+| 🇩🇪 [Höhere Mathematik I+II](https://hm-hpsc.math.uni-augsburg.de/) (University of Augsburg) | fundamentals, calculus, linear algebra | 2025 | interactivity powered by [PlutoSliderServer.jl](https://github.com/JuliaPluto/PlutoSliderServer.jl) |
 | 🇬🇧 [RCDS Introduction to Julia](https://github.com/ImperialCollegeLondon/RCDS-introduction-to-julia) (Imperial College London) | Julia programming | 2025 | |
 | 🇬🇧 [Introduction to Julia for Computational Science](https://github.com/Cambridge-ICCS/Summer-School-Julia-Tutorial) (Cambridge ICCS) | Julia, computational science | 2025 | |
 | 🌍 [Julia Course](https://github.com/VEZY/julia_course) (VEZY) | Julia programming | 2025 | |
@@ -35,6 +36,7 @@ Feel free to add your course to this list by clicking "Edit this page" at the bo
 | 🇫🇷 [Computational Economics for PhDs](https://floswald.github.io/NumericalMethods/) (SciencesPo Paris) | optimization, parallel computing, dynamic programming, discrete/continuous choice | 2024 | |
 | 🇬🇧 [Macroeconomics (EC413)](https://github.com/SSabet/ec413-pluto-notebook.jl) (London School of Economics) | macroeconomics | 2023 |  |
 | 🇩🇪 [Scientific Computing](https://www.wias-berlin.de/people/fuhrmann/SciComp-WS2122/) (TU Berlin) | PDEs, finite volumes, finite elements, mesh generation, linear/nonlinear solvers, Julia, parallelization | 2022 | |
+| 🇧🇷 [Ciência de Dados e Computação Científica com Julia](https://github.com/storopoli/Computacao-Cientifica) (UNINOVE, in portuguese) | Julia, DataFrames, plots, JuMP optimization, Turing, ML, deep learning | 2022 | |
 | 🌍 [GeoStats.jl Tutorials](https://github.com/JuliaEarth/GeoStatsTutorials) (Online) | Introduction to geostatistical modeling in Julia | 2020 | |
 
 

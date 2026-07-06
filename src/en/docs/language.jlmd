@@ -14,6 +14,7 @@ Pluto can be used in multiple languages. You can change the language of Pluto by
 _The percentage shown next to the language name shows how much of the Pluto interface is localized. Some (new) features might not be localized yet, they will be displayed in English._
 
 Currently, Pluto is available in the following languages (in alphabetical order):
+- **العربية** (Arabic) _(by [`@ariguiba`](https://github.com/ariguiba))_
 - **Chinese** (Chinese) _(by [`@Fromduststar`](https://github.com/Fromduststar))_
 - **Dansk** (Danish) _(by [`@gwr`-de](https://github.com/gwr-de))_
 - **Deutsch** (German) _(by [`@kellertuer`](https://github.com/kellertuer))_
@@ -61,7 +62,7 @@ We also don't localize number formats. Numbers are always formatted in Julia sty
 ## Automatic translation support
 Pluto notebook content (notably: markdown) can be translated automatically when reading a notebook. You can use a service that translates complete websites (like the Chrome Translate feature) when reading a notebook. This will translate cell outputs (like markdown cells), but **not** cell inputs (code), because code might become hard to interpret when translated. _Pluto uses the [`translate` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/translate) to mark which content should be translated._
 
-If you have any feedback on this feature, please let us know! You can open an issue, or TODO.
+If you have any feedback on this feature, please let us know! You can open an issue, or [get in touch another way](../get-involved/).
 
 
 

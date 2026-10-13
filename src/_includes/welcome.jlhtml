@@ -333,7 +333,7 @@
                 <card-text>
                     <h2>Step 1: Install Julia</h2>
                     
-                    <p>Go to <a href="https://julialang.org/downloads">https://julialang.org/downloads</a> and follow the instructions. Pluto works on Julia 1.10 until 1.12.</p>
+                    <p>Go to <a href="https://julialang.org/downloads">https://julialang.org/downloads</a> and follow the instructions. Pluto works on Julia 1.10 until 1.13.</p>
                 </card-text>
                 <card-showcase>
                 </card-showcase>

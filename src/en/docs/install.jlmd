@@ -25,14 +25,15 @@ It is not possible to run Julia on iPad or iOS (we think)... But you could run P
 
 
 # Pluto without installation
-You can try Pluto in your browser without installation before installing! Go to [plutojl.org/#try](https://plutojl.org/#install) to learn more. Note that your files will not be stored in the cloud!
+You can try Pluto in your browser without installation! Go to [plutojl.org/#try](https://plutojl.org/#install) to learn more. Note that your files will not be stored in the cloud!
 
 
 ## Use Pluto in the cloud
 If you want to use Pluto without installation for more serious projects, there are a couple of options:
-- [Jolin Cloud](https://cloud.jolin.io/) – jolin.io offers a cloud service for Pluto notebooks, with additional real-time data features
+- _(deprecated)_ [Jolin Cloud](https://cloud.jolin.io/) – jolin.io offers a cloud service for Pluto notebooks, with additional real-time data features
 - [JuliaHub](https://juliahub.com/) – see the [documentation](https://help.juliahub.com/juliahub/stable/tutorials/pluto_notebooks/)
-- [CoCalc](https://cocalc.com/) – see the [documentation](https://doc.cocalc.com/howto/pluto.html)
+- _(deprecated)_ [CoCalc](https://cocalc.com/) – see the [documentation](https://doc.cocalc.com/howto/pluto.html)
 - (EU research staff only) [European Open Science Cloud](https://open-science-cloud.ec.europa.eu/dashboard/notebooks) – You get 10 Medium (4 vCPU, 8GB RAM) notebook compute hours per day if you are staff/faculty/employee of an EU research institute (like a university).
+- Your university? - If your institute has a cloud computing system, you could ask your computing staff to install Pluto as an app. Pluto has already been developed as an EESSI app and an Open OnDemand feature at TU Eindhoven. You can contact the [HPC Staff](mailto:hpcsupport@tue.nl) for more information, they are happy to share.
 
 With these three options you can **store notebooks in the cloud**, and you can also try **bigger computers** and **GPUs**. Jolin and JuliaHub also let you publish notebooks as public/private websites.

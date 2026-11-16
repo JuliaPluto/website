@@ -1,7 +1,7 @@
 ---
 title: "📕 Notebooks online – Pluto.jl notebooks as web pages"
 description: "How to turn Pluto.jl Julia notebooks into web pages by hosting them on a website. How to make them interactive with PlutoSliderServer."
-tags: ["docs", "publishing", "PlutoSliderServer", "glass", "glassnotebook", "github", "hosting", "web", "export", "html", "netlify"]
+tags: ["docs", "publishing", "PlutoSliderServer", "glass", "glassnotebook", "github", "hosting", "web", "export", "html", "netlify", "deed.page"]
 order: 2
 layout: "md.jlmd"
 ---
@@ -80,6 +80,33 @@ If you just have a couple of `.html` files that you exported with Pluto, then yo
 - No automatic index page listing all notebooks
 
 <img src="$(root_url)/assets/img/Netlify Drop interface screenshot.png" alt="screenshot of the Netlify Drop interface" width="1338" height="656">
+
+{#deedpage}
+## deed.page: *"one command, same link after updates"*
+[deed.page](https://deed.page) is a static host that publishes a file with a single HTTP request, without creating an account. Export your notebook as a [static HTML file](../export-html/), then upload it from a terminal (pick your own name for the page):
+
+```
+curl -T animals.html "https://deed.page/v1/sites?slug=animals-notebook-7f3k"
+```
+
+The JSON response contains the link (`https://animals-notebook-7f3k.deed.page/`) and a `token`. Save the token somewhere private: when you change your notebook, export it again and upload the new file to the same address with the token, and the page updates while the link stays the same:
+
+```
+curl -T animals.html "https://deed.page/v1/sites?slug=animals-notebook-7f3k" -H "Authorization: Bearer <your token>"
+```
+
+> This only works with `.html` files that you exported yourself, not with `.jl` notebook files.
+
+**Pros:**
+- Free plan
+- No account required
+- Updating the notebook keeps the same link
+- Works from a script or CI job
+
+**Cons:**
+- If you lose the token, you can't update or delete the page
+- Pages on the free plan show a small "Published with deed.page" link in the corner
+- Run by a third-party company, not by the Pluto team
 
 # Deprecated
 The options below used to work in the past, but they are no longer supported.
